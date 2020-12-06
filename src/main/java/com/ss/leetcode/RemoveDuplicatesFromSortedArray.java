@@ -1,6 +1,6 @@
 package com.ss.leetcode;
 
-public class RemoveDuplicatesSortedArray {
+public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
         if (nums.length == 1) return 1;
         int orderedNumbers = 1;

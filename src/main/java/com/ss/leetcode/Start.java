@@ -16,7 +16,10 @@ public class Start {
 //        start.riverRecords();
 //        start.mergeSortList();
 //        start.filterRestaurants();
-        start.longestMountain();
+//        start.longestMountain();
+//        start.powerfulIntegers();
+//        start.removeDuplicates2();
+        start.largestMultipleOfThree();
     }
 
 
@@ -48,7 +51,7 @@ public class Start {
         int[] nums2 = new int[] { 1, 1, 1 };
         int[] nums3 = new int[] { 1, 1, 2 };
         int[] nums4 = new int[] { 0,0,1,1,2,3,4 };
-        RemoveDuplicatesSortedArray rdsa = new RemoveDuplicatesSortedArray();
+        RemoveDuplicatesFromSortedArray rdsa = new RemoveDuplicatesFromSortedArray();
         System.out.println("RemoveElement  of " + Arrays.toString(nums) + " = " + rdsa.removeDuplicates(nums) + " =>" + Arrays.toString(nums));
 
         System.out.println("RemoveElement  of " + Arrays.toString(nums2) + " = " + rdsa.removeDuplicates(nums2)+ " =>" + Arrays.toString(nums2));
@@ -131,8 +134,40 @@ public class Start {
 
     private void longestMountain() {
         int[] numbers = {2,1,4,7,3,2,5};
+        int[] numbers2 = {2,2,2};
+        int[] numbers3 = {0,1,2,3,4,5,4,3,2,1,0};
+        int[] numbers4 = {2,1,4,7,3,2,5};
         LongestMountain lm = new LongestMountain();
-        System.out.println("Longest mountain =" + lm.longestMountain(numbers));
+        System.out.println("Longest mountain 5 = " + lm.longestMountain(numbers));
+        System.out.println("Longest mountain 0 = " + lm.longestMountain(numbers2));
+        System.out.println("Longest mountain 11 = " + lm.longestMountain(numbers3));
+        System.out.println("Longest mountain 5 = " + lm.longestMountain(numbers4));
+    }
+
+    private void powerfulIntegers() {
+        PowerfulIntegers pi = new PowerfulIntegers();
+        System.out.println(pi.powerfulIntegers(2, 3, 10));
+        System.out.println(pi.powerfulIntegers(2, 3, 10));
+        System.out.println(pi.powerfulIntegers(2, 1, 10));
+    }
+
+    private void removeDuplicates2() {
+        int[] nums = new int[] { 1,1,1,2,2,3};
+        int[] nums2 = new int[] { 0,0,1,1,1,1,2,3,3 };
+        int[] nums3 = new int[] {1,1,1,2,2,2,3,3};
+        RemoveDuplicatesFromSortedArray2 rdsa = new RemoveDuplicatesFromSortedArray2();
+//        System.out.println("RemoveElement  of " + Arrays.toString(nums) + " = " + rdsa.removeDuplicates(nums) + " =>" + Arrays.toString(nums));
+
+//        System.out.println("RemoveElement  of " + Arrays.toString(nums2) + " = " + rdsa.removeDuplicates(nums2)+ " =>" + Arrays.toString(nums2));
+        System.out.println("RemoveElement  of " + Arrays.toString(nums3) + " = " + rdsa.removeDuplicates(nums3)+ " =>" + Arrays.toString(nums3));
+    }
+
+    private void largestMultipleOfThree() {
+        int[] numbers = {8,0,0,1,9};
+        int[] numbers2 = {8,6,7,1,0};
+        LargestMultipleOfThree lmot = new LargestMultipleOfThree();
+        System.out.println("Largest M3 from " + Arrays.toString(numbers) + " [981= " + lmot.largestMultipleOfThree(numbers));
+        System.out.println("Largest M3 from " + Arrays.toString(numbers2) + " [8760 = " + lmot.largestMultipleOfThree(numbers2));
     }
 }
 
