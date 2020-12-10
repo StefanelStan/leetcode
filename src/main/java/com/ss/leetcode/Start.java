@@ -19,7 +19,11 @@ public class Start {
 //        start.longestMountain();
 //        start.powerfulIntegers();
 //        start.removeDuplicates2();
-        start.largestMultipleOfThree();
+//        start.largestMultipleOfThree();
+//        start.minimumDeletionCost();
+
+//        start.countingBits();
+        start.bestBreak();
     }
 
 
@@ -162,12 +166,42 @@ public class Start {
         System.out.println("RemoveElement  of " + Arrays.toString(nums3) + " = " + rdsa.removeDuplicates(nums3)+ " =>" + Arrays.toString(nums3));
     }
 
+    private void minimumDeletionCost() {
+        MinimumDeletionCost mdc = new MinimumDeletionCost();
+        System.out.println("Min cost deletion of[abaac] = " + mdc.minCost("abaac", new int[]{1,2,3,4,5}));
+        System.out.println("Min cost deletion of[abc] = " + mdc.minCost("abc", new int[]{1,2,3}));
+        System.out.println("Min cost deletion of[aabaa] = " + mdc.minCost("aabaa", new int[]{1,2,3,4,1}));
+        System.out.println("Min cost deletion of[bbbaaa] = " + mdc.minCost("bbbaaa", new int[]{4,9,3,8,8,9}));
+    }
+
     private void largestMultipleOfThree() {
-        int[] numbers = {8,0,0,1,9};
+        int[] numbers = {8,1,9};
         int[] numbers2 = {8,6,7,1,0};
+        int[] numbers3 = {0,0,0,0,0,0};
+        int[] numbers4 = {9,8,6,8,6};
+        int[] numbers5 = {0};
+        int[] numbers6 = {1};
+        int[] numbers7 = {7};
         LargestMultipleOfThree lmot = new LargestMultipleOfThree();
-        System.out.println("Largest M3 from " + Arrays.toString(numbers) + " [981= " + lmot.largestMultipleOfThree(numbers));
-        System.out.println("Largest M3 from " + Arrays.toString(numbers2) + " [8760 = " + lmot.largestMultipleOfThree(numbers2));
+//        System.out.println("Largest M3 from " + Arrays.toString(numbers) + " [981= " + lmot.largestMultipleOfThree(numbers));
+//        System.out.println("Largest M3 from " + Arrays.toString(numbers2) + " [8760 = " + lmot.largestMultipleOfThree(numbers2));
+//        System.out.println("Largest M3 from " + Arrays.toString(numbers3) + " [0 = " + lmot.largestMultipleOfThree(numbers3));
+        System.out.println("Largest M3 from " + Arrays.toString(numbers4) + " [0 = " + lmot.largestMultipleOfThree(numbers4));
+//        System.out.println("Largest M3 from " + Arrays.toString(numbers5) + " [0 = " + lmot.largestMultipleOfThree(numbers5));
+//        System.out.println("Largest M3 from " + Arrays.toString(numbers6) + " [0 = " + lmot.largestMultipleOfThree(numbers6));
+//        System.out.println("Largest M3 from " + Arrays.toString(numbers7) + " [0 = " + lmot.largestMultipleOfThree(numbers7));
+    }
+
+    private void countingBits() {
+        CountingBits cb = new CountingBits();
+        System.out.println(Arrays.toString(cb.countBits(2)));
+        System.out.println(Arrays.toString(cb.countBits(5)));
+    }
+
+    private void bestBreak() {
+        BestBreak bb = new BestBreak();
+        System.out.println(bb.integerBreak(11));
+        System.out.println(bb.integerBreak(8));
     }
 }
 
