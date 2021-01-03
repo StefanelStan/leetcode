@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.december;
 
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {

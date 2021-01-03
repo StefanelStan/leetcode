@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.january;
 
 import java.util.HashMap;
 import java.util.LinkedList;

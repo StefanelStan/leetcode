@@ -1,9 +1,32 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.december.AddTwoNumbers;
+import com.ss.leetcode.december.BestBreak;
+import com.ss.leetcode.december.CountingBits;
+import com.ss.leetcode.december.FilterRestaurants;
+import com.ss.leetcode.december.HandOfStraights;
+import com.ss.leetcode.december.LargestMultipleOfThree;
+import com.ss.leetcode.december.ListNode;
+import com.ss.leetcode.december.LongestMountain;
+import com.ss.leetcode.december.LongestSubstringWithoutRepeating;
+import com.ss.leetcode.december.MergeSortList;
+import com.ss.leetcode.december.MinimumDeletionCost;
+import com.ss.leetcode.december.PowerfulIntegers;
+import com.ss.leetcode.december.RemoveDuplicatesFromSortedArray;
+import com.ss.leetcode.december.RemoveDuplicatesFromSortedArray2;
+import com.ss.leetcode.december.RemoveElement;
+import com.ss.leetcode.december.RiverRecords;
+import com.ss.leetcode.december.ThreeSum;
+import com.ss.leetcode.december.TwoSum;
+import com.ss.leetcode.january.AddToArrayForm;
+import com.ss.leetcode.january.ConstructKPalindromeStrings;
+import com.ss.leetcode.january.ExcelSheetColumnNumber;
+import com.ss.leetcode.january.LargestNumber;
+import com.ss.leetcode.january.LongestStringChain;
+import com.ss.leetcode.january.ProductOfArrayExceptSelf;
+
 import java.util.Arrays;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 public class Start {
     public static void main(String[] args) {
@@ -30,7 +53,9 @@ public class Start {
 //        start.constructKPalindrome(); //unfinished
 //        start.excelSheetColumnNumber();
 //        start.largestNumber();
-        start.addToArrayForm();
+//        start.addToArrayForm();
+        start.productOfArrayExceptSelf();
+
     }
 
 
@@ -259,6 +284,12 @@ public class Start {
         System.out.println(ataf.addToArrayForm(digits1, 34));
         System.out.println(ataf.addToArrayForm(digits2, 181));
         System.out.println(ataf.addToArrayForm(digits3, 1));
+    }
+
+    private void productOfArrayExceptSelf() {
+        ProductOfArrayExceptSelf poaes = new ProductOfArrayExceptSelf();
+//        System.out.println(Arrays.toString(poaes.productExceptSelf(new int[]{1,0})));
+        System.out.println(Arrays.toString(poaes.productExceptSelf(new int[]{1,2,3,4})));
     }
 
 }

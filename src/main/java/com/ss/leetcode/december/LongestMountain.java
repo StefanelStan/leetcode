@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.december;
 
 public class LongestMountain {
     public int longestMountain(int[] numbers) {

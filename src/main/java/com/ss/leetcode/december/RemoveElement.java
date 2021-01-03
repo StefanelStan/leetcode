@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.december;
 
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {

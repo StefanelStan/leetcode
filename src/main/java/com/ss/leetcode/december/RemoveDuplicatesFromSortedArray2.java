@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.december;
 
 public class RemoveDuplicatesFromSortedArray2 {
     // https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/

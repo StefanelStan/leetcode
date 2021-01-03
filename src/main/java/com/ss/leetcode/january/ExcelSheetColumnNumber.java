@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.january;
 
 public class ExcelSheetColumnNumber {
     // https://leetcode.com/problems/excel-sheet-column-number/

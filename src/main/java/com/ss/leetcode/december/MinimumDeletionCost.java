@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.december;
 
 public class MinimumDeletionCost {
     // https://leetcode.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
