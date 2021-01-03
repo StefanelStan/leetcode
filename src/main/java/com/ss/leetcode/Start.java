@@ -6,7 +6,6 @@ import com.ss.leetcode.december.CountingBits;
 import com.ss.leetcode.december.FilterRestaurants;
 import com.ss.leetcode.december.HandOfStraights;
 import com.ss.leetcode.december.LargestMultipleOfThree;
-import com.ss.leetcode.december.ListNode;
 import com.ss.leetcode.december.LongestMountain;
 import com.ss.leetcode.december.LongestSubstringWithoutRepeating;
 import com.ss.leetcode.december.MergeSortList;
@@ -108,31 +107,31 @@ public class Start {
     }
 
     private void addTwoNumbers() {
-        AddTwoNumbers atn = new AddTwoNumbers();
-        ListNode l11 = new ListNode(9);
-        ListNode l12 = new ListNode(9);
-        ListNode l13 = new ListNode(9);
-        ListNode l14 = new ListNode(9);
-        ListNode l15 = new ListNode(9);
-        ListNode l16 = new ListNode(9);
-        ListNode l17 = new ListNode(9);
-        ListNode l18 = new ListNode(9);
-        l11.next = l12;
-        l12.next = l13;
-        l13.next = l14;
-        l14.next = l15;
-        l15.next = l16;
-        l16.next = l17;
-        l17.next = l18;
-
-        ListNode l21 = new ListNode(9);
-        ListNode l22 = new ListNode(9);
-        ListNode l23 = new ListNode(9);
-        ListNode l24 = new ListNode(9);
-        l21.next = l22;
-        l22.next = l23;
-        l23.next = l24;
-        atn.addTwoNumbers(l11, l21);
+//        AddTwoNumbers atn = new AddTwoNumbers();
+//        ListNode l11 = new ListNode(9);
+//        ListNode l12 = new ListNode(9);
+//        ListNode l13 = new ListNode(9);
+//        ListNode l14 = new ListNode(9);
+//        ListNode l15 = new ListNode(9);
+//        ListNode l16 = new ListNode(9);
+//        ListNode l17 = new ListNode(9);
+//        ListNode l18 = new ListNode(9);
+//        l11.next = l12;
+//        l12.next = l13;
+//        l13.next = l14;
+//        l14.next = l15;
+//        l15.next = l16;
+//        l16.next = l17;
+//        l17.next = l18;
+//
+//        ListNode l21 = new ListNode(9);
+//        ListNode l22 = new ListNode(9);
+//        ListNode l23 = new ListNode(9);
+//        ListNode l24 = new ListNode(9);
+//        l21.next = l22;
+//        l22.next = l23;
+//        l23.next = l24;
+//        atn.addTwoNumbers(l11, l21);
 
     }
 
