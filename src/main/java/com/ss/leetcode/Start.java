@@ -23,7 +23,10 @@ public class Start {
 //        start.minimumDeletionCost();
 
 //        start.countingBits();
-        start.bestBreak();
+//        start.bestBreak();
+//        start.longestStringChain();
+//        start.constructKPalindrome(); //unfinished
+        start.excelSheetColumnNumber();
     }
 
 
@@ -202,6 +205,32 @@ public class Start {
         BestBreak bb = new BestBreak();
         System.out.println(bb.integerBreak(11));
         System.out.println(bb.integerBreak(8));
+    }
+
+    private void longestStringChain() {
+        LongestStringChain lsc = new LongestStringChain();
+        String[] words = {"a","b","ba","bca","bda","bdca"};
+        String[] words2 = {"xbc","pcxbcf","xb","cxbc","pcxbc"};
+        System.out.println("4 ==" + lsc.longestStrChain(words));
+        System.out.println("5 ==" + lsc.longestStrChain(words2));
+
+    }
+
+    private void constructKPalindrome() {
+        ConstructKPalindromeStrings ckps = new ConstructKPalindromeStrings();
+        System.out.println("true ==" + ckps.canConstruct("annabelle", 2));
+        System.out.println("false ==" + ckps.canConstruct("leetcode", 3));
+        System.out.println("true ==" + ckps.canConstruct("true", 4));
+        System.out.println("true ==" + ckps.canConstruct("yzyzyzyzyzyzyzy", 2));
+        System.out.println("false ==" + ckps.canConstruct("cr", 7));
+        //undone
+    }
+
+    private void excelSheetColumnNumber() {
+        ExcelSheetColumnNumber escn = new ExcelSheetColumnNumber();
+        System.out.println("1 ==" + escn.titleToNumber("A"));
+        System.out.println("28 ==" + escn.titleToNumber("AB"));
+        System.out.println("701 ==" + escn.titleToNumber("ZY"));
     }
 }
 
