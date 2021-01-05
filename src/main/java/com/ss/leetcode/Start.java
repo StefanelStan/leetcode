@@ -6,6 +6,7 @@ import com.ss.leetcode.december.CountingBits;
 import com.ss.leetcode.december.FilterRestaurants;
 import com.ss.leetcode.december.HandOfStraights;
 import com.ss.leetcode.december.LargestMultipleOfThree;
+import com.ss.leetcode.december.AddTwoNumbers.ListNode;
 import com.ss.leetcode.december.LongestMountain;
 import com.ss.leetcode.december.LongestSubstringWithoutRepeating;
 import com.ss.leetcode.december.MergeSortList;
@@ -23,6 +24,10 @@ import com.ss.leetcode.january.ExcelSheetColumnNumber;
 import com.ss.leetcode.january.LargestNumber;
 import com.ss.leetcode.january.LongestStringChain;
 import com.ss.leetcode.january.ProductOfArrayExceptSelf;
+import com.ss.leetcode.january.ReduceArraySizeToTheHalf;
+import com.ss.leetcode.january.SmallestIntegerDivisibleByK;
+import com.ss.leetcode.january.SortColors;
+import com.ss.leetcode.january.SubrectangleQueries;
 
 import java.util.Arrays;
 import java.util.List;
@@ -53,8 +58,11 @@ public class Start {
 //        start.excelSheetColumnNumber();
 //        start.largestNumber();
 //        start.addToArrayForm();
-        start.productOfArrayExceptSelf();
-
+//        start.productOfArrayExceptSelf();
+//        start.subrectangleQueries();
+//        start.reduceArraySizeToTheHalf();
+//        start.smallestIntegerDivisibleByK();
+        start.sortColors();
     }
 
 
@@ -107,31 +115,31 @@ public class Start {
     }
 
     private void addTwoNumbers() {
-//        AddTwoNumbers atn = new AddTwoNumbers();
-//        ListNode l11 = new ListNode(9);
-//        ListNode l12 = new ListNode(9);
-//        ListNode l13 = new ListNode(9);
-//        ListNode l14 = new ListNode(9);
-//        ListNode l15 = new ListNode(9);
-//        ListNode l16 = new ListNode(9);
-//        ListNode l17 = new ListNode(9);
-//        ListNode l18 = new ListNode(9);
-//        l11.next = l12;
-//        l12.next = l13;
-//        l13.next = l14;
-//        l14.next = l15;
-//        l15.next = l16;
-//        l16.next = l17;
-//        l17.next = l18;
-//
-//        ListNode l21 = new ListNode(9);
-//        ListNode l22 = new ListNode(9);
-//        ListNode l23 = new ListNode(9);
-//        ListNode l24 = new ListNode(9);
-//        l21.next = l22;
-//        l22.next = l23;
-//        l23.next = l24;
-//        atn.addTwoNumbers(l11, l21);
+        AddTwoNumbers atn = new AddTwoNumbers();
+        ListNode l11 = new ListNode(9);
+        ListNode l12 = new ListNode(9);
+        ListNode l13 = new ListNode(9);
+        ListNode l14 = new ListNode(9);
+        ListNode l15 = new ListNode(9);
+        ListNode l16 = new ListNode(9);
+        ListNode l17 = new ListNode(9);
+        ListNode l18 = new ListNode(9);
+        l11.next = l12;
+        l12.next = l13;
+        l13.next = l14;
+        l14.next = l15;
+        l15.next = l16;
+        l16.next = l17;
+        l17.next = l18;
+
+        ListNode l21 = new ListNode(9);
+        ListNode l22 = new ListNode(9);
+        ListNode l23 = new ListNode(9);
+        ListNode l24 = new ListNode(9);
+        l21.next = l22;
+        l22.next = l23;
+        l23.next = l24;
+        atn.addTwoNumbers(l11, l21);
 
     }
 
@@ -291,5 +299,60 @@ public class Start {
         System.out.println(Arrays.toString(poaes.productExceptSelf(new int[]{1,2,3,4})));
     }
 
+    private void subrectangleQueries() {
+        int[][] rectangle = {{1,1,1}, {2,2,2}, {3,3,3}};
+        SubrectangleQueries sq = new SubrectangleQueries(rectangle);
+        System.out.println("1 ==" + sq.getValue(0,0));
+        sq.updateSubrectangle(0, 0, 2, 2, 100);
+        System.out.println("100 ==" + sq.getValue(0, 0));
+        System.out.println("100 ==" + sq.getValue(2, 2));
+        sq.updateSubrectangle(1, 1, 2, 2, 20);
+        System.out.println("20 ==" + sq.getValue(2, 2));
+    }
+
+    private void reduceArraySizeToTheHalf() {
+        ReduceArraySizeToTheHalf rasths = new ReduceArraySizeToTheHalf();
+        int[] arr = {3,3,3,3,5,5,5,2,2,7};
+        int[] arr2 = {7,7,7,7,7,7};
+        int[] arr3 = {1,9};
+        int[] arr4 = {1000,1000,3,7};
+        int[] arr5 = {1,2,3,4,5,6,7,8,9,10};
+
+        System.out.println("2 == " + rasths.minSetSize(arr));
+        System.out.println("1 == " + rasths.minSetSize(arr2));
+        System.out.println("1 == " + rasths.minSetSize(arr3));
+        System.out.println("1 == " + rasths.minSetSize(arr4));
+        System.out.println("5 == " + rasths.minSetSize(arr5));
+
+    }
+
+    private void smallestIntegerDivisibleByK() {
+        SmallestIntegerDivisibleByK sidbk = new SmallestIntegerDivisibleByK();
+//        System.out.println("1 ==" + sidbk.smallestRepunitDivByK(1));
+//        System.out.println("-1 ==" + sidbk.smallestRepunitDivByK(2));
+//        System.out.println("3 ==" + sidbk.smallestRepunitDivByK(3));
+//        System.out.println("6122 ==" + sidbk.smallestRepunitDivByK(18367));
+//        System.out.println("6122 ==" + sidbk.smallestRepunitDivByK(19927));
+    }
+
+    private void sortColors() {
+        int[] nums1 = {2,0,2,1,1,0};
+        int[] nums2 = {2,0,1};
+        int[] nums3 = {0};
+        int[] nums4 = {1};
+
+        SortColors sc = new SortColors();
+        sc.sortColors(nums1);
+        System.out.println("[0,0,1,1,2,2] == " + Arrays.toString(nums1));
+
+        sc.sortColors(nums2);
+        System.out.println("[0,1,2] == " + Arrays.toString(nums2));
+
+        sc.sortColors(nums3);
+        System.out.println("[0] == " + Arrays.toString(nums3));
+
+        sc.sortColors(nums4);
+        System.out.println("[1] == " + Arrays.toString(nums4));
+    }
 }
 
