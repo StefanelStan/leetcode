@@ -25,6 +25,7 @@ import com.ss.leetcode.january.LargestNumber;
 import com.ss.leetcode.january.LongestStringChain;
 import com.ss.leetcode.january.ProductOfArrayExceptSelf;
 import com.ss.leetcode.january.ReduceArraySizeToTheHalf;
+import com.ss.leetcode.january.RottingOranges;
 import com.ss.leetcode.january.SmallestIntegerDivisibleByK;
 import com.ss.leetcode.january.SortColors;
 import com.ss.leetcode.january.SubrectangleQueries;
@@ -62,9 +63,10 @@ public class Start {
 //        start.subrectangleQueries();
 //        start.reduceArraySizeToTheHalf();
 //        start.smallestIntegerDivisibleByK();
-        start.sortColors();
-    }
+//        start.sortColors();
+        start.rottingOranges();
 
+    }
 
     public void twoSum() {
         TwoSum twoSum = new TwoSum();
@@ -353,6 +355,18 @@ public class Start {
 
         sc.sortColors(nums4);
         System.out.println("[1] == " + Arrays.toString(nums4));
+    }
+
+    private void rottingOranges() {
+        RottingOranges ro = new RottingOranges();
+        int[][] grid1 = {{2,1,1}, {1,1,0}, {0,1,1}};
+        int[][] grid2 = {{2,1,1}, {0,1,1}, {1,0,1}};
+        int[][] grid3 = {{0,2}};
+
+        System.out.println("4 == " + ro.orangesRotting(grid1));
+        System.out.println("-1 == " + ro.orangesRotting(grid2));
+        System.out.println("0 == " + ro.orangesRotting(grid3));
+
     }
 }
 
