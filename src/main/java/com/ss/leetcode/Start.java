@@ -19,10 +19,12 @@ import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
 import com.ss.leetcode.january.AddToArrayForm;
+import com.ss.leetcode.january.CoinExchange;
 import com.ss.leetcode.january.ConstructKPalindromeStrings;
 import com.ss.leetcode.january.ExcelSheetColumnNumber;
 import com.ss.leetcode.january.LargestNumber;
 import com.ss.leetcode.january.LongestStringChain;
+import com.ss.leetcode.january.LongestTurbulentSubarray;
 import com.ss.leetcode.january.ProductOfArrayExceptSelf;
 import com.ss.leetcode.january.ReduceArraySizeToTheHalf;
 import com.ss.leetcode.january.RottingOranges;
@@ -64,8 +66,9 @@ public class Start {
 //        start.reduceArraySizeToTheHalf();
 //        start.smallestIntegerDivisibleByK();
 //        start.sortColors();
-        start.rottingOranges();
-
+//        start.rottingOranges();
+//        start.coinExchange();
+        start.longestTurbulentSubarray();
     }
 
     public void twoSum() {
@@ -366,7 +369,24 @@ public class Start {
         System.out.println("4 == " + ro.orangesRotting(grid1));
         System.out.println("-1 == " + ro.orangesRotting(grid2));
         System.out.println("0 == " + ro.orangesRotting(grid3));
+// https://leetcode.com/problems/coin-change/solution/
+    }
 
+    private void coinExchange() {
+        CoinExchange co =new CoinExchange();
+        System.out.println("3 == " + co.coinChange(new int[]{1,2,5}, 11));
+    }
+
+    private void longestTurbulentSubarray() {
+        LongestTurbulentSubarray lts = new LongestTurbulentSubarray();
+        int[] nums = {9,4,2,10,7,8,8,1,9};
+        int[] nums2 = {4,8,12,16};
+        int[] nums3 = {100};
+        int[] nums4 = {0,8,45,88,48,68,28,55,17,24};
+//        System.out.println("5 == " + lts.maxTurbulenceSize(nums));
+//        System.out.println("2 == " + lts.maxTurbulenceSize(nums2));
+//        System.out.println("1 == " + lts.maxTurbulenceSize(nums3));
+        System.out.println("8 == " + lts.maxTurbulenceSize(nums4));
     }
 }
 

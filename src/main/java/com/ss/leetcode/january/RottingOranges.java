@@ -38,23 +38,18 @@ public class RottingOranges {
 
     private boolean hasRottenOrangeNearby(int[][] grid, int i, int j) {
         // down
-        boolean hasRottenOrangeNearby = false;
-        if (i < grid.length - 1) {
-            hasRottenOrangeNearby = grid[i + 1][j] == 2;
+        if (i < grid.length - 1 && grid[i + 1][j] == 2) {
+            return true;
         }
         // up
-        if (i != 0 && !hasRottenOrangeNearby) {
-            hasRottenOrangeNearby = grid[i - 1][j] == 2;
+        if (i != 0 && grid[i - 1][j] == 2) {
+            return true;
         }
         // left
-        if (j > 0 && !hasRottenOrangeNearby) {
-            hasRottenOrangeNearby = grid[i][j - 1] == 2;
+        if (j > 0 && grid[i][j - 1] == 2) {
+            return true;
         }
         // right
-        if (j < grid[i].length - 1 && !hasRottenOrangeNearby) {
-            hasRottenOrangeNearby = grid[i][j + 1] == 2;
-        }
-
-        return hasRottenOrangeNearby;
+        return j < grid[i].length - 1 && grid[i][j + 1] == 2;
     }
 }
