@@ -25,6 +25,7 @@ import com.ss.leetcode.january.ExcelSheetColumnNumber;
 import com.ss.leetcode.january.LargestNumber;
 import com.ss.leetcode.january.LongestStringChain;
 import com.ss.leetcode.january.LongestTurbulentSubarray;
+import com.ss.leetcode.january.NextGreaterElementII;
 import com.ss.leetcode.january.ProductOfArrayExceptSelf;
 import com.ss.leetcode.january.ReduceArraySizeToTheHalf;
 import com.ss.leetcode.january.RottingOranges;
@@ -68,7 +69,8 @@ public class Start {
 //        start.sortColors();
 //        start.rottingOranges();
 //        start.coinExchange();
-        start.longestTurbulentSubarray();
+//        start.longestTurbulentSubarray();
+        start.nextGreaterElementII();
     }
 
     public void twoSum() {
@@ -387,6 +389,20 @@ public class Start {
 //        System.out.println("2 == " + lts.maxTurbulenceSize(nums2));
 //        System.out.println("1 == " + lts.maxTurbulenceSize(nums3));
         System.out.println("8 == " + lts.maxTurbulenceSize(nums4));
+    }
+
+    private void nextGreaterElementII() {
+        NextGreaterElementII nge = new NextGreaterElementII();
+        int[] nums = {1,2,1};
+        int[] nums2 = {3,6,8,6, 9};
+        int[] nums3 = {5,4,3,2,1};
+        int[] nums4 = {1,2,3,2,1};
+        int[] nums5 = {2,3,1,1,6,-100};
+        System.out.println("[2,-1,2] == " + Arrays.toString(nge.nextGreaterElements(nums)));
+        System.out.println("[6,8,9,9,-1] == " + Arrays.toString(nge.nextGreaterElements(nums2)));
+        System.out.println("[-1,5,5,5,5] == " + Arrays.toString(nge.nextGreaterElements(nums3)));
+        System.out.println("[2,3,-1,3,2] == " + Arrays.toString(nge.nextGreaterElements(nums4)));
+        System.out.println("[3,6,6,6,-1,2] == " + Arrays.toString(nge.nextGreaterElements(nums5)));
     }
 }
 
