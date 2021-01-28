@@ -32,6 +32,7 @@ import com.ss.leetcode.january.RottingOranges;
 import com.ss.leetcode.january.SearchA2DMatrixII;
 import com.ss.leetcode.january.SmallestIntegerDivisibleByK;
 import com.ss.leetcode.january.SortColors;
+import com.ss.leetcode.january.StreamChecker;
 import com.ss.leetcode.january.SubrectangleQueries;
 
 import java.util.Arrays;
@@ -72,8 +73,8 @@ public class Start {
 //        start.coinExchange();
 //        start.longestTurbulentSubarray();
 //        start.nextGreaterElementII();
-        start.searchA2DMatrixII();
-        // https://leetcode.com/problems/stream-of-characters/
+//        start.searchA2DMatrixII();
+        start.streamChecker();
     }
 
     public void twoSum() {
@@ -414,6 +415,22 @@ public class Start {
         int[][] nums = {{1,4,7,11,15}, {2,5,8,12,19}, {3,6,9,16,22}, {10,13,14,17,24}, {18,21,23,26,30}};
         System.out.println("true == " + sa2dm.searchMatrix(nums, 5));
         System.out.println("false == " + sa2dm.searchMatrix(nums, 20));
+    }
+
+    private void streamChecker() {
+        StreamChecker sc = new StreamChecker(new String[] {"cd", "f", "kl"});
+        System.out.println("false == " + sc.query('a'));
+        System.out.println("false == " + sc.query('b'));
+        System.out.println("false == " + sc.query('c'));
+        System.out.println("true == " + sc.query('d'));
+        System.out.println("false == " + sc.query('e'));
+        System.out.println("true == " + sc.query('f'));
+        System.out.println("false == " + sc.query('g'));
+        System.out.println("false == " + sc.query('h'));
+        System.out.println("false == " + sc.query('i'));
+        System.out.println("false == " + sc.query('j'));
+        System.out.println("false == " + sc.query('k'));
+        System.out.println("true == " + sc.query('l'));
     }
 }
 
