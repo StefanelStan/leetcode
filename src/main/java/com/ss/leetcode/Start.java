@@ -29,6 +29,7 @@ import com.ss.leetcode.january.NextGreaterElementII;
 import com.ss.leetcode.january.ProductOfArrayExceptSelf;
 import com.ss.leetcode.january.ReduceArraySizeToTheHalf;
 import com.ss.leetcode.january.RottingOranges;
+import com.ss.leetcode.january.SearchA2DMatrixII;
 import com.ss.leetcode.january.SmallestIntegerDivisibleByK;
 import com.ss.leetcode.january.SortColors;
 import com.ss.leetcode.january.SubrectangleQueries;
@@ -70,7 +71,9 @@ public class Start {
 //        start.rottingOranges();
 //        start.coinExchange();
 //        start.longestTurbulentSubarray();
-        start.nextGreaterElementII();
+//        start.nextGreaterElementII();
+        start.searchA2DMatrixII();
+        // https://leetcode.com/problems/stream-of-characters/
     }
 
     public void twoSum() {
@@ -403,6 +406,14 @@ public class Start {
         System.out.println("[-1,5,5,5,5] == " + Arrays.toString(nge.nextGreaterElements(nums3)));
         System.out.println("[2,3,-1,3,2] == " + Arrays.toString(nge.nextGreaterElements(nums4)));
         System.out.println("[3,6,6,6,-1,2] == " + Arrays.toString(nge.nextGreaterElements(nums5)));
+
+    }
+
+    private void searchA2DMatrixII() {
+        SearchA2DMatrixII sa2dm = new SearchA2DMatrixII();
+        int[][] nums = {{1,4,7,11,15}, {2,5,8,12,19}, {3,6,9,16,22}, {10,13,14,17,24}, {18,21,23,26,30}};
+        System.out.println("true == " + sa2dm.searchMatrix(nums, 5));
+        System.out.println("false == " + sa2dm.searchMatrix(nums, 20));
     }
 }
 
