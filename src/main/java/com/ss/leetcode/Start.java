@@ -32,6 +32,7 @@ import com.ss.leetcode.january.RottingOranges;
 import com.ss.leetcode.january.SearchA2DMatrixII;
 import com.ss.leetcode.january.SmallestIntegerDivisibleByK;
 import com.ss.leetcode.january.SortColors;
+import com.ss.leetcode.january.SplitTwoStringsToMakePalindrome;
 import com.ss.leetcode.january.StreamChecker;
 import com.ss.leetcode.january.SubrectangleQueries;
 
@@ -74,7 +75,8 @@ public class Start {
 //        start.longestTurbulentSubarray();
 //        start.nextGreaterElementII();
 //        start.searchA2DMatrixII();
-        start.streamChecker();
+//        start.streamChecker();
+        start.splitTwoStringsToMakePalindrome();
     }
 
     public void twoSum() {
@@ -431,6 +433,22 @@ public class Start {
         System.out.println("false == " + sc.query('j'));
         System.out.println("false == " + sc.query('k'));
         System.out.println("true == " + sc.query('l'));
+    }
+
+    private void splitTwoStringsToMakePalindrome() {
+        SplitTwoStringsToMakePalindrome ststmp = new SplitTwoStringsToMakePalindrome();
+        String s11 = "a";
+        String s12 = "b";
+        String s21 = "abdef";
+        String s22 = "fecab";
+        String s31 = "ulacfd";
+        String s32 = "jizalu";
+        String s41 = "xbdef";
+        String s42 = "xecab";
+        System.out.println("true == " + ststmp.checkPalindromeFormation(s11, s12));
+        System.out.println("true == " + ststmp.checkPalindromeFormation(s21, s22));
+        System.out.println("true == " + ststmp.checkPalindromeFormation(s31, s32));
+        System.out.println("false == " + ststmp.checkPalindromeFormation(s41, s42));
     }
 }
 
