@@ -18,6 +18,7 @@ import com.ss.leetcode.december.RemoveElement;
 import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
+import com.ss.leetcode.february.FourDivisors;
 import com.ss.leetcode.january.AddToArrayForm;
 import com.ss.leetcode.january.CoinExchange;
 import com.ss.leetcode.january.ConstructKPalindromeStrings;
@@ -76,7 +77,8 @@ public class Start {
 //        start.nextGreaterElementII();
 //        start.searchA2DMatrixII();
 //        start.streamChecker();
-        start.splitTwoStringsToMakePalindrome();
+//        start.splitTwoStringsToMakePalindrome();
+        start.fourDivisors();
     }
 
     public void twoSum() {
@@ -449,6 +451,14 @@ public class Start {
         System.out.println("true == " + ststmp.checkPalindromeFormation(s21, s22));
         System.out.println("true == " + ststmp.checkPalindromeFormation(s31, s32));
         System.out.println("false == " + ststmp.checkPalindromeFormation(s41, s42));
+    }
+
+    private void fourDivisors() {
+        int[] nums = {21,4,7};
+        int[] nums2 = {1,2,3,4,5,6,7,8,9,10};
+        FourDivisors fd = new FourDivisors();
+        System.out.println("32 == " + fd.sumFourDivisors(nums));
+        System.out.println("45 == " + fd.sumFourDivisors(nums2));
     }
 }
 
