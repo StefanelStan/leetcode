@@ -19,6 +19,8 @@ import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
 import com.ss.leetcode.february.FourDivisors;
+import com.ss.leetcode.february.MergeSortedArray;
+import com.ss.leetcode.february.SelfDividingNumbers;
 import com.ss.leetcode.january.AddToArrayForm;
 import com.ss.leetcode.january.CoinExchange;
 import com.ss.leetcode.january.ConstructKPalindromeStrings;
@@ -78,7 +80,9 @@ public class Start {
 //        start.searchA2DMatrixII();
 //        start.streamChecker();
 //        start.splitTwoStringsToMakePalindrome();
-        start.fourDivisors();
+//        start.fourDivisors();
+//        start.mergeSortedArray();
+        start.selfDividingNumbers();
     }
 
     public void twoSum() {
@@ -459,6 +463,33 @@ public class Start {
         FourDivisors fd = new FourDivisors();
         System.out.println("32 == " + fd.sumFourDivisors(nums));
         System.out.println("45 == " + fd.sumFourDivisors(nums2));
+    }
+
+    private void mergeSortedArray() {
+        MergeSortedArray msa = new MergeSortedArray();
+        int[] nums1 = {1,2,3,0,0,0};
+        int[] nums2 = {2,5,6};
+        int[] nums3 = {1};
+        int[] nums4 = {};
+        int[] nums5 = {0};
+        int[] nums6 = {1};
+        int[] nums7 = {2,0};
+        int[] nums8 = {1};
+
+        msa.merge(nums1, 3, nums2, 3);
+        msa.merge(nums3, 1, nums4, 0);
+        msa.merge(nums5, 0, nums6, 1);
+        msa.merge(nums7, 1, nums8, 1);
+        System.out.println("{1,2,2,3,5,6} ==" + Arrays.toString(nums1));
+        System.out.println("{1} ==" + Arrays.toString(nums3));
+        System.out.println("{1} ==" + Arrays.toString(nums5));
+        System.out.println("{1,2} ==" + Arrays.toString(nums7));
+
+    }
+
+    private void selfDividingNumbers() {
+        SelfDividingNumbers sdn = new SelfDividingNumbers();
+        System.out.println(sdn.selfDividingNumbers(1,22));
     }
 }
 
