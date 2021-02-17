@@ -20,6 +20,7 @@ import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
 import com.ss.leetcode.february.FourDivisors;
 import com.ss.leetcode.february.MergeSortedArray;
+import com.ss.leetcode.february.RestoreTheArrayFromAdjacentPairs;
 import com.ss.leetcode.february.SelfDividingNumbers;
 import com.ss.leetcode.january.AddToArrayForm;
 import com.ss.leetcode.january.CoinExchange;
@@ -82,7 +83,8 @@ public class Start {
 //        start.splitTwoStringsToMakePalindrome();
 //        start.fourDivisors();
 //        start.mergeSortedArray();
-        start.selfDividingNumbers();
+//        start.selfDividingNumbers();
+        start.restoreTheArrayFromAdjacentPairs();
     }
 
     public void twoSum() {
@@ -490,6 +492,19 @@ public class Start {
     private void selfDividingNumbers() {
         SelfDividingNumbers sdn = new SelfDividingNumbers();
         System.out.println(sdn.selfDividingNumbers(1,22));
+    }
+
+    private void restoreTheArrayFromAdjacentPairs() {
+        RestoreTheArrayFromAdjacentPairs rtafap =  new RestoreTheArrayFromAdjacentPairs();
+        int[][] pairs1 = {{2,1}, {3,4}, {3,2}};
+        int[][] pairs2 = {{4,-2}, {1,4}, {-3,1}};
+        int[][] pairs3 = {{100000, -100000}};
+        int[][] pairs4 = {{-3,-9},{-5,3},{2,-9},{6,-3},{6,1},{5,3},{8,5},{-5,1},{7,2}};
+
+        System.out.println(Arrays.toString(rtafap.restoreArray(pairs1)));
+        System.out.println(Arrays.toString(rtafap.restoreArray(pairs2)));
+        System.out.println(Arrays.toString(rtafap.restoreArray(pairs3)));
+        System.out.println(Arrays.toString(rtafap.restoreArray(pairs4)));
     }
 }
 
