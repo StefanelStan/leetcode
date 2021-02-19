@@ -18,10 +18,13 @@ import com.ss.leetcode.december.RemoveElement;
 import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
+import com.ss.leetcode.february.ApplyDiscountEveryNOrders;
+import com.ss.leetcode.february.ContiguousArray;
 import com.ss.leetcode.february.FourDivisors;
 import com.ss.leetcode.february.MergeSortedArray;
 import com.ss.leetcode.february.RestoreTheArrayFromAdjacentPairs;
 import com.ss.leetcode.february.SelfDividingNumbers;
+import com.ss.leetcode.february.ShiftingLetters;
 import com.ss.leetcode.january.AddToArrayForm;
 import com.ss.leetcode.january.CoinExchange;
 import com.ss.leetcode.january.ConstructKPalindromeStrings;
@@ -84,7 +87,10 @@ public class Start {
 //        start.fourDivisors();
 //        start.mergeSortedArray();
 //        start.selfDividingNumbers();
-        start.restoreTheArrayFromAdjacentPairs();
+//        start.restoreTheArrayFromAdjacentPairs();
+//        start.applyDiscountEveryNOrders();
+//        start.contiguousArray();
+        start.shiftingLetters();
     }
 
     public void twoSum() {
@@ -505,6 +511,35 @@ public class Start {
         System.out.println(Arrays.toString(rtafap.restoreArray(pairs2)));
         System.out.println(Arrays.toString(rtafap.restoreArray(pairs3)));
         System.out.println(Arrays.toString(rtafap.restoreArray(pairs4)));
+    }
+
+    private void applyDiscountEveryNOrders() {
+        int[] products = {1,2,3,4,5,6,7};
+        int[] prices = {100,200,300,400,300,200,100};
+
+        ApplyDiscountEveryNOrders adeno = new ApplyDiscountEveryNOrders(3, 50, products, prices);
+        System.out.println("500.0 == " + adeno.getBill(new int[]{1,2}, new int[]{1,2}));
+        System.out.println("4000.0 == " + adeno.getBill(new int[]{3,7}, new int[]{10,10}));
+        System.out.println("800.0 == " + adeno.getBill(new int[]{1,2,3,4,5,6,7}, new int[]{1,1,1,1,1,1,1}));
+        System.out.println("4000.0 == " + adeno.getBill(new int[]{4}, new int[]{10}));
+        System.out.println("4000.0 == " + adeno.getBill(new int[]{7,3}, new int[]{10,10}));
+        System.out.println("7350.0 == " + adeno.getBill(new int[]{7,5,3,1,6,4,2}, new int[]{10,10,10,9,9,9,7}));
+        System.out.println("2500.0 == " + adeno.getBill(new int[]{2,3,5}, new int[]{5,3,2}));
+    }
+
+    private void contiguousArray() {
+        final ContiguousArray ca = new ContiguousArray();
+        System.out.println("2 == " + ca.findMaxLength(new int[]{0,1}));
+        System.out.println("2 == " + ca.findMaxLength(new int[]{0,1,0}));
+        System.out.println("6 == " + ca.findMaxLength(new int[]{0,0,1,0,0,0,1,1}));
+    }
+
+    private void shiftingLetters() {
+        ShiftingLetters sl = new ShiftingLetters();
+        System.out.println("rpl ==" + sl.shiftingLetters("abc", new int[]{3,5,9}));
+        System.out.println("wqqwlcjnkphhsyvrkdod ==" + sl.shiftingLetters("mkgfzkkuxownxvfvxasy", new int[]{505870226,437526072,266740649,
+                224336793,532917782,311122363,567754492,595798950,81520022,684110326,137742843,275267355,856903962,
+                148291585,919054234,467541837,622939912,116899933,983296461,536563513}));
     }
 }
 
