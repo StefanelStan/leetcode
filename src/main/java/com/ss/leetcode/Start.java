@@ -20,8 +20,11 @@ import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
 import com.ss.leetcode.february.ApplyDiscountEveryNOrders;
 import com.ss.leetcode.february.ContiguousArray;
+import com.ss.leetcode.february.CountUnhappyFriends;
 import com.ss.leetcode.february.FourDivisors;
+import com.ss.leetcode.february.LongestSubarrayOf1AfterDeletingOneElement;
 import com.ss.leetcode.february.MergeSortedArray;
+import com.ss.leetcode.february.MinimumChangesToMakeAlternatingBinaryString;
 import com.ss.leetcode.february.RestoreTheArrayFromAdjacentPairs;
 import com.ss.leetcode.february.SelfDividingNumbers;
 import com.ss.leetcode.february.ShiftingLetters;
@@ -90,7 +93,10 @@ public class Start {
 //        start.restoreTheArrayFromAdjacentPairs();
 //        start.applyDiscountEveryNOrders();
 //        start.contiguousArray();
-        start.shiftingLetters();
+//        start.shiftingLetters();
+//        start.countUnhappyFriends();
+//        start.minimumChangesToMakeAlternatingBinaryString();
+        start.longestSubarrayOf1AfterDeletingOneElement();
     }
 
     public void twoSum() {
@@ -541,5 +547,40 @@ public class Start {
                 224336793,532917782,311122363,567754492,595798950,81520022,684110326,137742843,275267355,856903962,
                 148291585,919054234,467541837,622939912,116899933,983296461,536563513}));
     }
+
+    private void countUnhappyFriends() {
+        CountUnhappyFriends cuf = new CountUnhappyFriends();
+        int[][] pref1 = {{1, 2, 3}, {3, 2, 0}, {3, 1, 0}, {1, 2, 0}};
+        int[][] pairs1 = {{0, 1}, {2, 3}};
+
+        int[][] pref2 = {{1}, {0}};
+        int[][] pairs2 = {{1,0}};
+
+        int[][] pref3 = {{1, 3, 2}, {2, 3, 0}, {1, 3, 0}, {0, 2, 1}};
+        int[][] pairs3 = {{1,3}, {0,2}};
+
+        System.out.println("2 == " + cuf.unhappyFriends(4, pref1, pairs1));
+        System.out.println("0 == " + cuf.unhappyFriends(2, pref2, pairs2));
+        System.out.println("4 == " + cuf.unhappyFriends(4, pref3, pairs3));
+    }
+
+    private void minimumChangesToMakeAlternatingBinaryString() {
+        MinimumChangesToMakeAlternatingBinaryString mctmabs = new MinimumChangesToMakeAlternatingBinaryString();
+        System.out.println("1 == " + mctmabs.minOperations("0100"));
+        System.out.println("0 == " + mctmabs.minOperations("01"));
+        System.out.println("2 == " + mctmabs.minOperations("1111"));
+    }
+
+    private void longestSubarrayOf1AfterDeletingOneElement() {
+        LongestSubarrayOf1AfterDeletingOneElement lsooadoe =  new LongestSubarrayOf1AfterDeletingOneElement();
+        System.out.println("3 == " + lsooadoe.longestSubarray(new int[]{1,1,0,1}));
+        System.out.println("5 == " + lsooadoe.longestSubarray(new int[]{0,1,1,1,0,1,1,0,1}));
+        System.out.println("2 == " + lsooadoe.longestSubarray(new int[]{1,1,1}));
+        System.out.println("4 == " + lsooadoe.longestSubarray(new int[]{1,1,0,0,1,1,1,0,1}));
+        System.out.println("0 == " + lsooadoe.longestSubarray(new int[]{0,0,0}));
+        System.out.println("1 == " + lsooadoe.longestSubarray(new int[]{1,0,0,0,0}));
+
+    }
+
 }
 
