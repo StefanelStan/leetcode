@@ -23,11 +23,14 @@ import com.ss.leetcode.february.ContiguousArray;
 import com.ss.leetcode.february.CountUnhappyFriends;
 import com.ss.leetcode.february.FourDivisors;
 import com.ss.leetcode.february.LargestMergeOfTwoStrings;
+import com.ss.leetcode.february.LargestRectangleInHistogram;
 import com.ss.leetcode.february.LongestSubarrayOf1AfterDeletingOneElement;
 import com.ss.leetcode.february.MaximumOfAbsoluteValueExpression;
 import com.ss.leetcode.february.MergeSortedArray;
 import com.ss.leetcode.february.MinimumChangesToMakeAlternatingBinaryString;
 import com.ss.leetcode.february.PairsOfSongsWithTotalDurations;
+import com.ss.leetcode.february.ProductOfTheLastKNumbers;
+import com.ss.leetcode.february.ReplaceTheSubstringForBalancedString;
 import com.ss.leetcode.february.RestoreTheArrayFromAdjacentPairs;
 import com.ss.leetcode.february.SelfDividingNumbers;
 import com.ss.leetcode.february.Shift2DGrid;
@@ -52,6 +55,8 @@ import com.ss.leetcode.january.SubrectangleQueries;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Start {
     public static void main(String[] args) {
@@ -105,7 +110,10 @@ public class Start {
 //        start.largestMergeOfTwoStrings();
 //        start.pairsOfSongsWithTotalDurationsDivisibleBy60();
 //        start.maximumOfAbsoluteValueExpression();
-        start.dota2Senate();
+//        start.dota2Senate();
+//        start.largestRectangleInHistogram();
+//        start.replaceTheSubstringForBalancedString();
+        start.productOfTheLastKNumbers();
     }
 
 
@@ -695,9 +703,74 @@ public class Start {
 
     private void dota2Senate() {
         Dota2Senate d2s = new Dota2Senate();
-        System.out.println("Radiant ==" + d2s.predictPartyVictory("RD"));
-        System.out.println("Dire ==" + d2s.predictPartyVictory("RDD"));
+        System.out.println("Radiant == " + d2s.predictPartyVictory("RD"));
+        System.out.println("Dire == " + d2s.predictPartyVictory("RDD"));
+        System.out.println("Dire == " + d2s.predictPartyVictory("DDRRR"));
+        System.out.println("Radiant == " + d2s.predictPartyVictory("RRDDD"));
+        System.out.println("Radiant == " + d2s.predictPartyVictory("DRRDRDRDRDDRDRDR"));
+        System.out.println("Dire == " + d2s.predictPartyVictory("DRRDDR"));
     }
 
+    private void largestRectangleInHistogram() {
+        // excededed time
+        LargestRectangleInHistogram lrih = new LargestRectangleInHistogram();
+        System.out.println("10 == " + lrih.largestRectangleArea(new int[]{2,1,5,6,2,3}));
+        System.out.println("4 == " + lrih.largestRectangleArea(new int[]{2,4}));
+    }
+
+    private void replaceTheSubstringForBalancedString() {
+        // not done
+        ReplaceTheSubstringForBalancedString rtsfbs = new ReplaceTheSubstringForBalancedString();
+        System.out.println("0 == " + rtsfbs.balancedString("QWER"));
+        System.out.println("1 == " + rtsfbs.balancedString("QQER"));
+        System.out.println("2 == " + rtsfbs.balancedString("QQQR"));
+        System.out.println("3 == " + rtsfbs.balancedString("QQQQ"));
+
+        String s = "wqwqwqqwewerqqeqq";
+        Pattern pattern = Pattern.compile("{4}", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(s);
+        while(matcher.find()) {
+            System.out.println("found: " + matcher.group(0));
+            System.out.println("found: " + matcher.group(1));
+        }
+    }
+
+    private void productOfTheLastKNumbers() {
+        ProductOfTheLastKNumbers potlkn = new ProductOfTheLastKNumbers();
+        potlkn.add(3);
+        potlkn.add(0);
+        potlkn.add(2);
+        potlkn.add(5);
+        potlkn.add(4);
+        System.out.println("20 == " + potlkn.getProduct(2));
+        System.out.println("40 == " + potlkn.getProduct(3));
+        System.out.println("0 == " + potlkn.getProduct(4));
+        potlkn.add(8);
+        System.out.println("32 == " + potlkn.getProduct(2));
+        System.out.println("-----------------");
+
+        ProductOfTheLastKNumbers potlkn2 = new ProductOfTheLastKNumbers();
+        potlkn2.add(1);
+        System.out.println("1 == " + potlkn2.getProduct(1));
+        System.out.println("1 == " + potlkn2.getProduct(1));
+        System.out.println("1 == " + potlkn2.getProduct(1));
+        potlkn2.add(7);
+        potlkn2.add(6);
+        potlkn2.add(7);
+        System.out.println("-----------------");
+
+        ProductOfTheLastKNumbers potlkn3 = new ProductOfTheLastKNumbers();
+        potlkn3.add(3);
+        potlkn3.add(0);
+        potlkn3.add(2);
+        potlkn3.add(5);
+        potlkn3.add(4);
+        System.out.println("20 == " + potlkn3.getProduct(2));
+        System.out.println("40 == " + potlkn3.getProduct(3));
+        System.out.println("0 == " + potlkn3.getProduct(4));
+        potlkn3.add(8);
+        System.out.println("32 == " + potlkn3.getProduct(2));
+
+    }
 }
 
