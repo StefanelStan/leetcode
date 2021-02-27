@@ -19,6 +19,7 @@ import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
 import com.ss.leetcode.february.ApplyDiscountEveryNOrders;
+import com.ss.leetcode.february.ConcatenationOfConsecutiveBinaryNumbers;
 import com.ss.leetcode.february.ContiguousArray;
 import com.ss.leetcode.february.CountUnhappyFriends;
 import com.ss.leetcode.february.FourDivisors;
@@ -33,6 +34,7 @@ import com.ss.leetcode.february.ProductOfTheLastKNumbers;
 import com.ss.leetcode.february.ReplaceTheSubstringForBalancedString;
 import com.ss.leetcode.february.RestoreTheArrayFromAdjacentPairs;
 import com.ss.leetcode.february.SelfDividingNumbers;
+import com.ss.leetcode.february.SequentialDigits;
 import com.ss.leetcode.february.Shift2DGrid;
 import com.ss.leetcode.february.ShiftingLetters;
 import com.ss.leetcode.january.AddToArrayForm;
@@ -113,10 +115,10 @@ public class Start {
 //        start.dota2Senate();
 //        start.largestRectangleInHistogram();
 //        start.replaceTheSubstringForBalancedString();
-        start.productOfTheLastKNumbers();
+//        start.productOfTheLastKNumbers();
+//        start.sequentialDigits();
+        start.concatenationOfConsecutiveBinaryNumbers();
     }
-
-
 
     public void twoSum() {
         TwoSum twoSum = new TwoSum();
@@ -725,14 +727,6 @@ public class Start {
         System.out.println("1 == " + rtsfbs.balancedString("QQER"));
         System.out.println("2 == " + rtsfbs.balancedString("QQQR"));
         System.out.println("3 == " + rtsfbs.balancedString("QQQQ"));
-
-        String s = "wqwqwqqwewerqqeqq";
-        Pattern pattern = Pattern.compile("{4}", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(s);
-        while(matcher.find()) {
-            System.out.println("found: " + matcher.group(0));
-            System.out.println("found: " + matcher.group(1));
-        }
     }
 
     private void productOfTheLastKNumbers() {
@@ -772,5 +766,26 @@ public class Start {
         System.out.println("32 == " + potlkn3.getProduct(2));
 
     }
+
+    private void sequentialDigits() {
+        SequentialDigits sd = new SequentialDigits();
+
+        System.out.println("[67,78,89,123] == " + sd.sequentialDigits(58, 166));
+        System.out.println("[123,234] == " + sd.sequentialDigits(100, 300));
+        System.out.println("[1234,2345,3456,4567,5678,6789,12345] == " + sd.sequentialDigits(1000, 13000));
+        System.out.println("[] == " + sd.sequentialDigits(10, 1000000000));
+    }
+
+    private void concatenationOfConsecutiveBinaryNumbers() {
+        ConcatenationOfConsecutiveBinaryNumbers cocbn = new ConcatenationOfConsecutiveBinaryNumbers();
+//        System.out.println("1 == " + cocbn.concatenatedBinary(1));
+//        System.out.println("27 == " + cocbn.concatenatedBinary(3));
+//        System.out.println("505379714 == " + cocbn.concatenatedBinary(12));
+//        System.out.println("35297621 == " + cocbn.concatenatedBinary(15));
+//        System.out.println("385951001 == " + cocbn.concatenatedBinary(24));
+        System.out.println("727837408 == " + cocbn.concatenatedBinary(42));
+        System.out.println("727837408 == " + cocbn.concatenatedBinary(7167));
+    }
+
 }
 
