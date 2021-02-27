@@ -19,9 +19,12 @@ import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
 import com.ss.leetcode.february.ApplyDiscountEveryNOrders;
+import com.ss.leetcode.february.BinaryNumberWithAlternatingBits;
+import com.ss.leetcode.february.CheckIfItIsAStraightLine;
 import com.ss.leetcode.february.ConcatenationOfConsecutiveBinaryNumbers;
 import com.ss.leetcode.february.ContiguousArray;
 import com.ss.leetcode.february.CountUnhappyFriends;
+import com.ss.leetcode.february.FindRightInterval;
 import com.ss.leetcode.february.FourDivisors;
 import com.ss.leetcode.february.LargestMergeOfTwoStrings;
 import com.ss.leetcode.february.LargestRectangleInHistogram;
@@ -117,7 +120,11 @@ public class Start {
 //        start.replaceTheSubstringForBalancedString();
 //        start.productOfTheLastKNumbers();
 //        start.sequentialDigits();
-        start.concatenationOfConsecutiveBinaryNumbers();
+//        start.concatenationOfConsecutiveBinaryNumbers();
+//        start.binaryNumberWithAlternatingBits();
+//        start.numberOf1Bits();
+//        start.checkIfItIsAStraightLine();
+        start.findRightInterval();
     }
 
     public void twoSum() {
@@ -787,5 +794,35 @@ public class Start {
         System.out.println("727837408 == " + cocbn.concatenatedBinary(7167));
     }
 
+    private void binaryNumberWithAlternatingBits() {
+        BinaryNumberWithAlternatingBits bnwab = new BinaryNumberWithAlternatingBits();
+        System.out.println("true == " + bnwab.hasAlternatingBits(5));
+        System.out.println("false == " + bnwab.hasAlternatingBits(7));
+        System.out.println("false == " + bnwab.hasAlternatingBits(11));
+        System.out.println("true == " + bnwab.hasAlternatingBits(10));
+        System.out.println("false == " + bnwab.hasAlternatingBits(3));
+    }
+
+    private void numberOf1Bits() {
+        // workds OK
+    }
+
+    private void checkIfItIsAStraightLine() {
+        CheckIfItIsAStraightLine ciiiasl = new CheckIfItIsAStraightLine();
+        int[][] coords1 = {{1,2}, {2,3}, {3,4}, {4,5}, {5,6}, {6,7}};
+        int[][] coords2 = {{1,1}, {2,2}, {3,4}, {4,5}, {5,6}, {7,7}};
+        System.out.println("true == " + ciiiasl.checkStraightLine(coords1));
+        System.out.println("false == " + ciiiasl.checkStraightLine(coords2));
+    }
+
+    private void findRightInterval() {
+        FindRightInterval fri =  new FindRightInterval();
+        int[][] int1 = {{1,2}};
+        int[][] int2 = {{3,4}, {2,3}, {1,2}};
+        int[][] int3 = {{1,4}, {2,3}, {3,4}};
+        System.out.println("[-1] == " + Arrays.toString(fri.findRightInterval(int1)));
+        System.out.println("[-1,0,1] == " + Arrays.toString(fri.findRightInterval(int2)));
+        System.out.println("[-1,2,-1] == " + Arrays.toString(fri.findRightInterval(int3)));
+    }
 }
 
