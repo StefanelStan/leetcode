@@ -19,11 +19,13 @@ import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
 import com.ss.leetcode.february.ApplyDiscountEveryNOrders;
+import com.ss.leetcode.february.ArithmeticSubarrays;
 import com.ss.leetcode.february.BinaryNumberWithAlternatingBits;
 import com.ss.leetcode.february.CheckIfItIsAStraightLine;
 import com.ss.leetcode.february.ConcatenationOfConsecutiveBinaryNumbers;
 import com.ss.leetcode.february.ContiguousArray;
 import com.ss.leetcode.february.CountUnhappyFriends;
+import com.ss.leetcode.february.FindNumbersWithEvenNumberOfDigits;
 import com.ss.leetcode.february.FindRightInterval;
 import com.ss.leetcode.february.FourDivisors;
 import com.ss.leetcode.february.LargestMergeOfTwoStrings;
@@ -34,12 +36,15 @@ import com.ss.leetcode.february.MergeSortedArray;
 import com.ss.leetcode.february.MinimumChangesToMakeAlternatingBinaryString;
 import com.ss.leetcode.february.PairsOfSongsWithTotalDurations;
 import com.ss.leetcode.february.ProductOfTheLastKNumbers;
+import com.ss.leetcode.february.RemoveAllAdjacentDuplicatesInStringII;
 import com.ss.leetcode.february.ReplaceTheSubstringForBalancedString;
 import com.ss.leetcode.february.RestoreTheArrayFromAdjacentPairs;
+import com.ss.leetcode.february.ReverseInteger;
 import com.ss.leetcode.february.SelfDividingNumbers;
 import com.ss.leetcode.february.SequentialDigits;
 import com.ss.leetcode.february.Shift2DGrid;
 import com.ss.leetcode.february.ShiftingLetters;
+import com.ss.leetcode.february.StringToIntegerAtoi;
 import com.ss.leetcode.january.AddToArrayForm;
 import com.ss.leetcode.january.CoinExchange;
 import com.ss.leetcode.january.ConstructKPalindromeStrings;
@@ -124,7 +129,12 @@ public class Start {
 //        start.binaryNumberWithAlternatingBits();
 //        start.numberOf1Bits();
 //        start.checkIfItIsAStraightLine();
-        start.findRightInterval();
+//        start.findRightInterval();
+//        start.removeAllAdjacentDuplicatesInStringII();
+//        start.reverseInteger();
+//        start.stringToIntegerAtoi();
+//        start.findNumbersWithEvenNumberOfDigits();
+        start.arithmeticSubarrays();
     }
 
     public void twoSum() {
@@ -823,6 +833,58 @@ public class Start {
         System.out.println("[-1] == " + Arrays.toString(fri.findRightInterval(int1)));
         System.out.println("[-1,0,1] == " + Arrays.toString(fri.findRightInterval(int2)));
         System.out.println("[-1,2,-1] == " + Arrays.toString(fri.findRightInterval(int3)));
+    }
+
+    private void removeAllAdjacentDuplicatesInStringII() {
+        RemoveAllAdjacentDuplicatesInStringII rmadis2 = new RemoveAllAdjacentDuplicatesInStringII();
+        System.out.println("abcd == " + rmadis2.removeDuplicates("abcd", 2));
+        System.out.println("aa == " + rmadis2.removeDuplicates("deeedbbcccbdaa", 3));
+        System.out.println("ps == " + rmadis2.removeDuplicates("pbbcggttciiippooaais", 2));
+        System.out.println("ybth == " + rmadis2.removeDuplicates("yfttttfbbbbnnnnffbgffffgbbbbgssssgthyyyy", 4));
+    }
+
+    private void reverseInteger() {
+        ReverseInteger ri =  new ReverseInteger();
+        // put it into a Long and reverse it :D
+        System.out.println("321 == " + ri.reverse(123));
+        System.out.println("-321 == " + ri.reverse(-123));
+        System.out.println("21 == " + ri.reverse(120));
+        System.out.println("0 == " + ri.reverse(0));
+    }
+
+    private void stringToIntegerAtoi() {
+        // not solved yet. Cat and mouse game
+        StringToIntegerAtoi stia = new StringToIntegerAtoi();
+        System.out.println("42 == " + stia.myAtoi("42"));
+        System.out.println("-42 == " + stia.myAtoi("   -42"));
+        System.out.println("4193 == " + stia.myAtoi("4193 with words"));
+        System.out.println("0 == " + stia.myAtoi("words and 987"));
+        System.out.println("-2147483648 == " + stia.myAtoi("-91283472332"));
+        System.out.println("2147483648 == " + stia.myAtoi("20000000000000000000"));
+    }
+
+    private void findNumbersWithEvenNumberOfDigits() {
+        FindNumbersWithEvenNumberOfDigits fnwenod = new FindNumbersWithEvenNumberOfDigits();
+        int[] nums1 = {12,345,2,6,7896};
+        int[] nums2 = {555,901,482,1771};
+        System.out.println("2 == " + fnwenod.findNumbers(nums1));
+        System.out.println("1 == " + fnwenod.findNumbers(nums2));
+    }
+
+    private void arithmeticSubarrays() {
+        ArithmeticSubarrays as = new ArithmeticSubarrays();
+
+        int[] nums1 = {4,6,5,9,3,7};
+        int[] l1 = {0,0,2};
+        int[] r1 = {2,3,5};
+
+        int[] nums2 = {-12,-9,-3,-12,-6,15,20,-25,-20,-15,-10};
+        int[] l2 = {0,1,6,4,8,7};
+        int[] r2 = {4,4,9,7,9,10};
+
+        System.out.println("[true,false,true] == " + as.checkArithmeticSubarrays(nums1, l1, r1));
+        System.out.println("[false,true,false,false,true,true] == " + as.checkArithmeticSubarrays(nums2, l2, r2));
+
     }
 }
 
