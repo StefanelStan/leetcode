@@ -25,6 +25,7 @@ import com.ss.leetcode.february.CheckIfItIsAStraightLine;
 import com.ss.leetcode.february.ConcatenationOfConsecutiveBinaryNumbers;
 import com.ss.leetcode.february.ContiguousArray;
 import com.ss.leetcode.february.CountUnhappyFriends;
+import com.ss.leetcode.february.Dota2Senate;
 import com.ss.leetcode.february.FindNumbersWithEvenNumberOfDigits;
 import com.ss.leetcode.february.FindRightInterval;
 import com.ss.leetcode.february.FourDivisors;
@@ -62,11 +63,13 @@ import com.ss.leetcode.january.SortColors;
 import com.ss.leetcode.january.SplitTwoStringsToMakePalindrome;
 import com.ss.leetcode.january.StreamChecker;
 import com.ss.leetcode.january.SubrectangleQueries;
+import com.ss.leetcode.march.DefangingAnIPAddress;
+import com.ss.leetcode.march.DiagonalTraverseII;
+import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Start {
     public static void main(String[] args) {
@@ -134,7 +137,10 @@ public class Start {
 //        start.reverseInteger();
 //        start.stringToIntegerAtoi();
 //        start.findNumbersWithEvenNumberOfDigits();
-        start.arithmeticSubarrays();
+//        start.arithmeticSubarrays();
+//        start.defangingAnIPAddress();
+//        start.kidsWithTheGreatestNumberOfCandies();
+        start.diagonalTraverseII();
     }
 
     public void twoSum() {
@@ -885,6 +891,33 @@ public class Start {
         System.out.println("[true,false,true] == " + as.checkArithmeticSubarrays(nums1, l1, r1));
         System.out.println("[false,true,false,false,true,true] == " + as.checkArithmeticSubarrays(nums2, l2, r2));
 
+    }
+
+    private void defangingAnIPAddress() {
+        DefangingAnIPAddress daip = new DefangingAnIPAddress();
+        System.out.println("1[.]1[.]1[.]1 == " + daip.defangIPaddr("1.1.1.1"));
+        System.out.println("255[.]100[.]50[.]0 == " + daip.defangIPaddr("255.100.50.0"));
+    }
+
+    private void kidsWithTheGreatestNumberOfCandies() {
+        KidsWithTheGreatestNumberOfCandies kwtgnoc = new KidsWithTheGreatestNumberOfCandies();
+        System.out.println("[true,true,true,false,true] == " + kwtgnoc.kidsWithCandies(new int[]{2,3,5,1,3}, 3));
+        System.out.println("[true,false,false,false,false] == " + kwtgnoc.kidsWithCandies(new int[]{4,2,1,1,2}, 1));
+        System.out.println("[true,false,true] == " + kwtgnoc.kidsWithCandies(new int[]{12,1,12}, 10));
+
+    }
+
+    private void diagonalTraverseII() {
+        DiagonalTraverseII dt2 = new DiagonalTraverseII();
+        List<List<Integer>> nums1 = List.of(List.of(1,2,3), List.of(4,5,6), List.of(7,8,9));
+        List<List<Integer>> nums2 = List.of(List.of(1,2,3,4,5), List.of(6,7), List.of(8), List.of(9,10,11), List.of(12,13,14,15,16));
+        List<List<Integer>> nums3 = List.of(List.of(1,2,3), List.of(4), List.of(5,6,7), List.of(8), List.of(9,10,11));
+        List<List<Integer>> nums4 = List.of(List.of(1,2,3,4,5,6));
+
+        System.out.println("[1,4,2,7,5,3,8,6,9] == " + Arrays.toString(dt2.findDiagonalOrder(nums1)));
+        System.out.println("[1,6,2,8,7,3,9,4,12,10,5,13,11,14,15,16] == " + Arrays.toString(dt2.findDiagonalOrder(nums2)));
+        System.out.println("[1,4,2,5,3,8,6,9,7,10,11] == " + Arrays.toString(dt2.findDiagonalOrder(nums3)));
+        System.out.println("[1,2,3,4,5,6] == " + Arrays.toString(dt2.findDiagonalOrder(nums4)));
     }
 }
 

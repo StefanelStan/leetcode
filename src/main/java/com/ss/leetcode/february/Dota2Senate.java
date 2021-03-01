@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.february;
 
 import java.util.Collection;
 import java.util.Deque;
