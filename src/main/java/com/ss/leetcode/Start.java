@@ -66,6 +66,7 @@ import com.ss.leetcode.january.SubrectangleQueries;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
+import com.ss.leetcode.march.WidestVerticalAreaBetweenTwoPoints;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -140,7 +141,9 @@ public class Start {
 //        start.arithmeticSubarrays();
 //        start.defangingAnIPAddress();
 //        start.kidsWithTheGreatestNumberOfCandies();
-        start.diagonalTraverseII();
+//        start.diagonalTraverseII();
+//        start.widestVerticalAreaBetweenTwoPointsContainingNoPoints();
+        start.sortTheMatrixDiagonally();
     }
 
     public void twoSum() {
@@ -918,6 +921,22 @@ public class Start {
         System.out.println("[1,6,2,8,7,3,9,4,12,10,5,13,11,14,15,16] == " + Arrays.toString(dt2.findDiagonalOrder(nums2)));
         System.out.println("[1,4,2,5,3,8,6,9,7,10,11] == " + Arrays.toString(dt2.findDiagonalOrder(nums3)));
         System.out.println("[1,2,3,4,5,6] == " + Arrays.toString(dt2.findDiagonalOrder(nums4)));
+    }
+
+    private void widestVerticalAreaBetweenTwoPointsContainingNoPoints() {
+        WidestVerticalAreaBetweenTwoPoints wvabtp = new WidestVerticalAreaBetweenTwoPoints();
+        int[][] points1 = {{8,7}, {9,9}, {7,4}, {9,7}};
+        int[][] points2 = {{3,1}, {9,0}, {1,0}, {1,4}, {5,3}, {8,8}};
+
+        System.out.println("1 == " + wvabtp.maxWidthOfVerticalArea(points1));
+        System.out.println("3 == " + wvabtp.maxWidthOfVerticalArea(points2));
+
+    }
+
+    private void sortTheMatrixDiagonally() {
+        int[][] matrix1 = {{3,3,1,1}, {2,2,1,2}, {1,1,1,2}};
+        int[][] matrix2 = {{11,25,66,1,69,7}, {23,55,17,45,15,52}, {75,31,36,44,58,8}, {22,27,33,25,68,4}, {84,28,14,11,5,50}};
+
     }
 }
 
