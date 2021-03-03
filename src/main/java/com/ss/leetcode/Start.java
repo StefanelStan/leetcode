@@ -66,6 +66,8 @@ import com.ss.leetcode.january.SubrectangleQueries;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
+import com.ss.leetcode.march.SortTheMatrixDiagonally;
+import com.ss.leetcode.march.SplitAStringInBalancedStrings;
 import com.ss.leetcode.march.WidestVerticalAreaBetweenTwoPoints;
 
 import java.util.ArrayList;
@@ -143,7 +145,8 @@ public class Start {
 //        start.kidsWithTheGreatestNumberOfCandies();
 //        start.diagonalTraverseII();
 //        start.widestVerticalAreaBetweenTwoPointsContainingNoPoints();
-        start.sortTheMatrixDiagonally();
+//        start.sortTheMatrixDiagonally();
+        start.splitAStringInBalancedStrings();
     }
 
     public void twoSum() {
@@ -934,9 +937,21 @@ public class Start {
     }
 
     private void sortTheMatrixDiagonally() {
+        SortTheMatrixDiagonally stmd =  new SortTheMatrixDiagonally();
         int[][] matrix1 = {{3,3,1,1}, {2,2,1,2}, {1,1,1,2}};
         int[][] matrix2 = {{11,25,66,1,69,7}, {23,55,17,45,15,52}, {75,31,36,44,58,8}, {22,27,33,25,68,4}, {84,28,14,11,5,50}};
 
+        System.out.println("[[1,1,1,1],[1,2,2,2],[1,2,3,3]] == " + Arrays.deepToString(stmd.diagonalSort(matrix1)));
+        System.out.println("[5,17,4,1,52,7],[11,11,25,45,8,69],[14,23,25,44,58,15],[22,27,31,36,50,66],[84,28,75,33,55,68]] == "
+                           + Arrays.deepToString(stmd.diagonalSort(matrix2)));
+    }
+
+    private void splitAStringInBalancedStrings() {
+        SplitAStringInBalancedStrings sasibs = new SplitAStringInBalancedStrings();
+        System.out.println("4 == " + sasibs.balancedStringSplit("RLRRLLRLRL"));
+        System.out.println("3 == " + sasibs.balancedStringSplit("RLLLLRRRLR"));
+        System.out.println("1 == " + sasibs.balancedStringSplit("LLLLRRRR"));
+        System.out.println("2 == " + sasibs.balancedStringSplit("RLRRRLLRLL"));
     }
 }
 
