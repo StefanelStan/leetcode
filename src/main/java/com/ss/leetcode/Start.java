@@ -66,8 +66,10 @@ import com.ss.leetcode.january.SubrectangleQueries;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
+import com.ss.leetcode.march.MaxIncreaseToKeepCitySkyline;
 import com.ss.leetcode.march.SortTheMatrixDiagonally;
 import com.ss.leetcode.march.SplitAStringInBalancedStrings;
+import com.ss.leetcode.march.UniqueMorseCodeWords;
 import com.ss.leetcode.march.WidestVerticalAreaBetweenTwoPoints;
 
 import java.util.ArrayList;
@@ -146,7 +148,9 @@ public class Start {
 //        start.diagonalTraverseII();
 //        start.widestVerticalAreaBetweenTwoPointsContainingNoPoints();
 //        start.sortTheMatrixDiagonally();
-        start.splitAStringInBalancedStrings();
+//        start.splitAStringInBalancedStrings();
+//        start.maxIncreaseToKeepCitySkyline();
+        start.uniqueMorseCodeWords();
     }
 
     public void twoSum() {
@@ -952,6 +956,18 @@ public class Start {
         System.out.println("3 == " + sasibs.balancedStringSplit("RLLLLRRRLR"));
         System.out.println("1 == " + sasibs.balancedStringSplit("LLLLRRRR"));
         System.out.println("2 == " + sasibs.balancedStringSplit("RLRRRLLRLL"));
+    }
+
+    private void maxIncreaseToKeepCitySkyline() {
+        MaxIncreaseToKeepCitySkyline mitkcs = new MaxIncreaseToKeepCitySkyline();
+        int[][] grid = {{3,0,8,4}, {2,4,5,7}, {9,2,6,3}, {0,3,1,0}};
+        System.out.println("35 == " + mitkcs.maxIncreaseKeepingSkyline(grid));
+    }
+
+    private void uniqueMorseCodeWords() {
+        UniqueMorseCodeWords umcw = new UniqueMorseCodeWords();
+        String[] words = {"gin", "zen", "gig", "msg"};
+        System.out.println("2 == " + umcw.uniqueMorseRepresentations(words));
     }
 }
 
