@@ -63,10 +63,12 @@ import com.ss.leetcode.january.SortColors;
 import com.ss.leetcode.january.SplitTwoStringsToMakePalindrome;
 import com.ss.leetcode.january.StreamChecker;
 import com.ss.leetcode.january.SubrectangleQueries;
+import com.ss.leetcode.march.CellsWithOddValuesInAMatrix;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
 import com.ss.leetcode.march.MaxIncreaseToKeepCitySkyline;
+import com.ss.leetcode.march.QueriesOnAPermutationWithKey;
 import com.ss.leetcode.march.SortTheMatrixDiagonally;
 import com.ss.leetcode.march.SplitAStringInBalancedStrings;
 import com.ss.leetcode.march.UniqueMorseCodeWords;
@@ -150,7 +152,9 @@ public class Start {
 //        start.sortTheMatrixDiagonally();
 //        start.splitAStringInBalancedStrings();
 //        start.maxIncreaseToKeepCitySkyline();
-        start.uniqueMorseCodeWords();
+//        start.uniqueMorseCodeWords();
+//        start.queriesOnAPermutationWithKey();
+        start.cellsWithOddValuesInAMatrix();
     }
 
     public void twoSum() {
@@ -968,6 +972,28 @@ public class Start {
         UniqueMorseCodeWords umcw = new UniqueMorseCodeWords();
         String[] words = {"gin", "zen", "gig", "msg"};
         System.out.println("2 == " + umcw.uniqueMorseRepresentations(words));
+    }
+
+    private void queriesOnAPermutationWithKey() {
+        QueriesOnAPermutationWithKey qoapwk = new QueriesOnAPermutationWithKey();
+        int[] query1 = {3,1,2,1};
+        int[] query2 = {4,1,2,2};
+        int[] query3 = {7,5,5,8,3};
+
+//        System.out.println("[2,1,2,1] == " + Arrays.toString(qoapwk.processQueries(query1, 5)));
+        System.out.println("[3,1,2,0] == " + Arrays.toString(qoapwk.processQueries(query2, 4)));
+        System.out.println("[6,5,0,7,5] == " + Arrays.toString(qoapwk.processQueries(query3, 8)));
+
+    }
+
+    private void cellsWithOddValuesInAMatrix() {
+        CellsWithOddValuesInAMatrix cwoviam = new CellsWithOddValuesInAMatrix();
+        int[][] indices = {{0,1}, {1,1}};
+        int[][] indices2 = {{1,1}, {0,0}};
+
+        System.out.println("6 == " + cwoviam.oddCells(2,3, indices));
+        System.out.println("0 == " + cwoviam.oddCells(2,2, indices2));
+
     }
 }
 
