@@ -64,11 +64,15 @@ import com.ss.leetcode.january.SplitTwoStringsToMakePalindrome;
 import com.ss.leetcode.january.StreamChecker;
 import com.ss.leetcode.january.SubrectangleQueries;
 import com.ss.leetcode.march.CellsWithOddValuesInAMatrix;
+import com.ss.leetcode.march.ConsecutiveNumbersSum;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DiagonalTraverseII;
+import com.ss.leetcode.march.EncodeAndDecodeTinyURL;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
 import com.ss.leetcode.march.MaxIncreaseToKeepCitySkyline;
+import com.ss.leetcode.march.MaximumNumberOfCoinsYouCanGet;
 import com.ss.leetcode.march.QueriesOnAPermutationWithKey;
+import com.ss.leetcode.march.ReversePairs;
 import com.ss.leetcode.march.SortTheMatrixDiagonally;
 import com.ss.leetcode.march.SplitAStringInBalancedStrings;
 import com.ss.leetcode.march.UniqueMorseCodeWords;
@@ -154,7 +158,11 @@ public class Start {
 //        start.maxIncreaseToKeepCitySkyline();
 //        start.uniqueMorseCodeWords();
 //        start.queriesOnAPermutationWithKey();
-        start.cellsWithOddValuesInAMatrix();
+//        start.cellsWithOddValuesInAMatrix();
+//        start.encodeAndDecodeTinyURL();
+//        start.consecutiveNumbersSum();
+//        start.maximumNumberOfCoinsYouCanGet();
+        start.reversePairs();
     }
 
     public void twoSum() {
@@ -993,6 +1001,52 @@ public class Start {
 
         System.out.println("6 == " + cwoviam.oddCells(2,3, indices));
         System.out.println("0 == " + cwoviam.oddCells(2,2, indices2));
+
+    }
+
+    private void encodeAndDecodeTinyURL() {
+        EncodeAndDecodeTinyURL eadtu = new EncodeAndDecodeTinyURL();
+        String longUrl1 = "https://leetcode.com/problems/design-tinyurl";
+        String longUrl2 = "https://leetcode.com/problems/design-tinyurl2";
+        String encoded1 = eadtu.encode(longUrl1);
+        String encoded2 = eadtu.encode(longUrl2);
+
+        System.out.println("LongUrl1 enc-dec matches == " + longUrl1.equals(eadtu.decode(encoded1)));
+        System.out.println("LongUrl2 enc-dec matches == " + longUrl2.equals(eadtu.decode(encoded2)));
+    }
+
+    private void consecutiveNumbersSum() {
+        // Time Limit Exceeded
+        ConsecutiveNumbersSum cns = new ConsecutiveNumbersSum();
+        System.out.println("2 == " + cns.consecutiveNumbersSum(5));
+        System.out.println("3 == " + cns.consecutiveNumbersSum(9));
+        System.out.println("4 == " + cns.consecutiveNumbersSum(15));
+        System.out.println("4 == " + cns.consecutiveNumbersSum(77601076));
+        System.out.println("6 == " + cns.consecutiveNumbersSum(776021076));
+    }
+
+    private void maximumNumberOfCoinsYouCanGet() {
+        MaximumNumberOfCoinsYouCanGet mnocycg = new MaximumNumberOfCoinsYouCanGet();
+        int[] piles1 = {2,4,1,2,7,8};
+        int[] piles2 = {2,4,5};
+        int[] piles3 = {9,8,7,6,5,1,2,3,4};
+
+        System.out.println("9 == " + mnocycg.maxCoins(piles1));
+        System.out.println("4 == " + mnocycg.maxCoins(piles2));
+        System.out.println("18 == " + mnocycg.maxCoins(piles3));
+
+    }
+
+    private void reversePairs() {
+        // TLE - Time Limit Exceeded
+        ReversePairs rp = new ReversePairs();
+        int[] input1 = {1,3,2,3,1};
+        int[] input2 = {2,4,3,5,1};
+        int[] input3 = {-5, -5};
+
+        System.out.println("2 == " + rp.reversePairs(input1));
+        System.out.println("3 == " + rp.reversePairs(input2));
+        System.out.println("1 == " + rp.reversePairs(input3));
 
     }
 }
