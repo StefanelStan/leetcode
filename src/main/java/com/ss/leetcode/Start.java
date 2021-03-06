@@ -65,7 +65,9 @@ import com.ss.leetcode.january.StreamChecker;
 import com.ss.leetcode.january.SubrectangleQueries;
 import com.ss.leetcode.march.CellsWithOddValuesInAMatrix;
 import com.ss.leetcode.march.ConsecutiveNumbersSum;
+import com.ss.leetcode.march.CountNumberOfTeams;
 import com.ss.leetcode.march.DefangingAnIPAddress;
+import com.ss.leetcode.march.DesignBrowserHistory;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.EncodeAndDecodeTinyURL;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
@@ -162,7 +164,9 @@ public class Start {
 //        start.encodeAndDecodeTinyURL();
 //        start.consecutiveNumbersSum();
 //        start.maximumNumberOfCoinsYouCanGet();
-        start.reversePairs();
+//        start.reversePairs();
+//        start.countNumberOfTeams();
+        start.designBrowserHistory();
     }
 
     public void twoSum() {
@@ -1048,6 +1052,31 @@ public class Start {
         System.out.println("3 == " + rp.reversePairs(input2));
         System.out.println("1 == " + rp.reversePairs(input3));
 
+    }
+
+    private void countNumberOfTeams() {
+        CountNumberOfTeams cnot = new CountNumberOfTeams();
+        int[] rating1 = {2,5,3,4,1};
+        int[] rating2 = {2,1,3};
+        int[] rating3 = {1,2,3,4};
+
+        System.out.println("3 == " + cnot.numTeams(rating1));
+        System.out.println("0 == " + cnot.numTeams(rating2));
+        System.out.println("4 == " + cnot.numTeams(rating3));
+    }
+
+    private void designBrowserHistory() {
+        DesignBrowserHistory browserHistory = new DesignBrowserHistory("leetcode.com");
+        browserHistory.visit("google.com");
+        browserHistory.visit("facebook.com");
+        browserHistory.visit("youtube.com");
+        System.out.println("facebook.com == " + browserHistory.back(1));
+        System.out.println("google.com == " + browserHistory.back(1));
+        System.out.println("facebook.com == " + browserHistory.forward(1));
+        browserHistory.visit("linkedin.com");
+        System.out.println("linkedin.com == " + browserHistory.forward(2));
+        System.out.println("google.com == " + browserHistory.back(2));
+        System.out.println("leetcode.com == " + browserHistory.back(7));
     }
 }
 
