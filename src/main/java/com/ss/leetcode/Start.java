@@ -74,6 +74,7 @@ import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
 import com.ss.leetcode.march.MaxIncreaseToKeepCitySkyline;
 import com.ss.leetcode.march.MaximumNumberOfCoinsYouCanGet;
 import com.ss.leetcode.march.QueriesOnAPermutationWithKey;
+import com.ss.leetcode.march.RevealCardsInIncreasingOrder;
 import com.ss.leetcode.march.ReversePairs;
 import com.ss.leetcode.march.SortTheMatrixDiagonally;
 import com.ss.leetcode.march.SplitAStringInBalancedStrings;
@@ -166,7 +167,8 @@ public class Start {
 //        start.maximumNumberOfCoinsYouCanGet();
 //        start.reversePairs();
 //        start.countNumberOfTeams();
-        start.designBrowserHistory();
+//        start.designBrowserHistory();
+        start.revealCardsInIncreasingOrder();
     }
 
     public void twoSum() {
@@ -1077,6 +1079,23 @@ public class Start {
         System.out.println("linkedin.com == " + browserHistory.forward(2));
         System.out.println("google.com == " + browserHistory.back(2));
         System.out.println("leetcode.com == " + browserHistory.back(7));
+    }
+
+    private void  revealCardsInIncreasingOrder() {
+        RevealCardsInIncreasingOrder rciio = new RevealCardsInIncreasingOrder();
+        int[] input1 = {17,13,11,2,3,5,7};
+        int[] input2 = {17,13,11,2,3,5,7,8};
+        int[] input3 = {8,2,4,7,5};
+        int[] input4 = {2,3,7,5,4,6};
+        int[] input5 = {2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        int[] input6 = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+
+//        System.out.println("[2,13,3,11,5,17,7] == " + Arrays.toString(rciio.deckRevealedIncreasing(input1)));
+//        System.out.println("[2,8,3,13,5,11,7,17] == " + Arrays.toString(rciio.deckRevealedIncreasing(input2)));
+//        System.out.println("[2,8,4,7,5] == " + Arrays.toString(rciio.deckRevealedIncreasing(input3)));
+//        System.out.println("[2,5,3,7,4,6] == " + Arrays.toString(rciio.deckRevealedIncreasing(input4)));
+//        System.out.println("[2,13,3,10,4,15,5,11,6,14,7,12,8,16,9] == " + Arrays.toString(rciio.deckRevealedIncreasing(input5)));
+        System.out.println("[1,12,2,8,3,11,4,9,5,13,6,10,7] == " + Arrays.toString(rciio.deckRevealedIncreasing(input6)));
     }
 }
 
