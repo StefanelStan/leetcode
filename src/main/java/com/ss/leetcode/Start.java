@@ -68,6 +68,7 @@ import com.ss.leetcode.march.ConsecutiveNumbersSum;
 import com.ss.leetcode.march.CountNumberOfTeams;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DesignBrowserHistory;
+import com.ss.leetcode.march.DesignHashSet;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.EncodeAndDecodeTinyURL;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
@@ -168,7 +169,8 @@ public class Start {
 //        start.reversePairs();
 //        start.countNumberOfTeams();
 //        start.designBrowserHistory();
-        start.revealCardsInIncreasingOrder();
+//        start.revealCardsInIncreasingOrder();
+        start.designHashSet();
     }
 
     public void twoSum() {
@@ -1097,5 +1099,18 @@ public class Start {
 //        System.out.println("[2,13,3,10,4,15,5,11,6,14,7,12,8,16,9] == " + Arrays.toString(rciio.deckRevealedIncreasing(input5)));
         System.out.println("[1,12,2,8,3,11,4,9,5,13,6,10,7] == " + Arrays.toString(rciio.deckRevealedIncreasing(input6)));
     }
+
+    private void designHashSet() {
+        DesignHashSet dhs = new DesignHashSet();
+        dhs.add(1);      // set = [1]
+        dhs.add(2);      // set = [1, 2]
+        System.out.println("true == " + dhs.contains(1)); // return True
+        System.out.println("false == " + dhs.contains(3)); // return False, (not found)
+        dhs.add(2);      // set = [1, 2]
+        System.out.println("true == " + dhs.contains(2)); // return True
+        dhs.remove(2);   // set = [1]
+        System.out.println("false == " + dhs.contains(2)); // return False, (already removed)
+    }
+
 }
 
