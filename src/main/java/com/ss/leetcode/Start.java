@@ -69,10 +69,14 @@ import com.ss.leetcode.march.CountNumberOfTeams;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DesignBrowserHistory;
 import com.ss.leetcode.march.DesignHashSet;
+import com.ss.leetcode.march.DestinationCity;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.EncodeAndDecodeTinyURL;
+import com.ss.leetcode.march.FlippingAnImage;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
+import com.ss.leetcode.march.MatrixDiagonalSum;
 import com.ss.leetcode.march.MaxIncreaseToKeepCitySkyline;
+import com.ss.leetcode.march.Maximum69Number;
 import com.ss.leetcode.march.MaximumNumberOfCoinsYouCanGet;
 import com.ss.leetcode.march.QueriesOnAPermutationWithKey;
 import com.ss.leetcode.march.RevealCardsInIncreasingOrder;
@@ -170,7 +174,11 @@ public class Start {
 //        start.countNumberOfTeams();
 //        start.designBrowserHistory();
 //        start.revealCardsInIncreasingOrder();
-        start.designHashSet();
+//        start.designHashSet();
+//        start.flippingAnImage();
+//        start.maximum69Number();
+//        start.matrixDiagonalSum();
+//        start.destinationCity();
     }
 
     public void twoSum() {
@@ -1112,5 +1120,42 @@ public class Start {
         System.out.println("false == " + dhs.contains(2)); // return False, (already removed)
     }
 
+    private void flippingAnImage() {
+        FlippingAnImage fai = new FlippingAnImage();
+        int[][] image1 = {{1,1,0}, {1,0,1},{0,0,0}};
+        int[][] image2 = {{1,1,0,0},{1,0,0,1},{0,1,1,1},{1,0,1,0}};
+
+//        System.out.println("[[1,0,0],[0,1,0],[1,1,1]] == " + Arrays.deepToString(fai.flipAndInvertImage(image1)));
+        System.out.println("[[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]] == " + Arrays.deepToString(fai.flipAndInvertImage(image2)));
+    }
+
+    private void maximum69Number() {
+        Maximum69Number msnn = new Maximum69Number();
+        System.out.println("9969 == " + msnn.maximum69Number(9669));
+        System.out.println("9999 == " + msnn.maximum69Number(9996));
+        System.out.println("9999 == " + msnn.maximum69Number(9999));
+    }
+
+    private void matrixDiagonalSum() {
+        MatrixDiagonalSum mds = new MatrixDiagonalSum();
+        int[][] matrix1 = {{1,2,3},{4,5,6}, {7,8,9}};
+        int[][] matrix2 = {{1,1,1,1}, {1,1,1,1}, {1,1,1,1}, {1,1,1,1}};
+        int[][] matrix3 = {{5}};
+
+        System.out.println("25 == " + mds.diagonalSum(matrix1));
+        System.out.println("8 == " + mds.diagonalSum(matrix2));
+        System.out.println("5 == " + mds.diagonalSum(matrix3));
+    }
+
+    private void destinationCity() {
+        DestinationCity dc = new DestinationCity();
+        var paths1 = List.of(List.of("London","New York"), List.of("New York","Lima"), List.of("Lima","Sao Paulo"));
+        var paths2 = List.of(List.of("B","C"), List.of("D","B"), List.of("C","A"));
+        var paths3 = List.of(List.of("A","Z"));
+
+        System.out.println("Sao Paulo == " + dc.destCity(paths1));
+        System.out.println("A == " + dc.destCity(paths2));
+        System.out.println("Z == " + dc.destCity(paths3));
+    }
 }
 
