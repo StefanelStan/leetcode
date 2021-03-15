@@ -81,6 +81,8 @@ import com.ss.leetcode.march.MaximumNumberOfCoinsYouCanGet;
 import com.ss.leetcode.march.QueriesOnAPermutationWithKey;
 import com.ss.leetcode.march.RevealCardsInIncreasingOrder;
 import com.ss.leetcode.march.ReversePairs;
+import com.ss.leetcode.march.RichestCustomerWealth;
+import com.ss.leetcode.march.RunningSumOf1dArray;
 import com.ss.leetcode.march.SortTheMatrixDiagonally;
 import com.ss.leetcode.march.SplitAStringInBalancedStrings;
 import com.ss.leetcode.march.UniqueMorseCodeWords;
@@ -179,6 +181,8 @@ public class Start {
 //        start.maximum69Number();
 //        start.matrixDiagonalSum();
 //        start.destinationCity();
+//        start.runningSumOf1dArray();
+        start.richestCustomerWealth();
     }
 
     public void twoSum() {
@@ -1156,6 +1160,29 @@ public class Start {
         System.out.println("Sao Paulo == " + dc.destCity(paths1));
         System.out.println("A == " + dc.destCity(paths2));
         System.out.println("Z == " + dc.destCity(paths3));
+    }
+
+    private void runningSumOf1dArray() {
+        RunningSumOf1dArray rsooda = new RunningSumOf1dArray();
+        int[] array1 = {1,2,3,4};
+        int[] array2 = {1,1,1,1,1};
+        int[] array3 = {3,1,2,10,1};
+
+        System.out.println("[1,3,6,10] == " + Arrays.toString(rsooda.runningSum(array1)));
+        System.out.println("[1,2,3,4,5] == " + Arrays.toString(rsooda.runningSum(array2)));
+        System.out.println("[3,4,6,16,17] == " + Arrays.toString(rsooda.runningSum(array3)));
+    }
+
+    private void richestCustomerWealth() {
+        RichestCustomerWealth rcw = new RichestCustomerWealth();
+        int[][] accounts1 = {{1,2,3}, {3,2,1}};
+        int[][] accounts2 = {{1,5}, {7,3}, {3,5}};
+        int[][] accounts3 = {{2,8,7}, {7,1,3}, {1,9,5}};
+
+        System.out.println("6 == " + rcw.maximumWealth(accounts1));
+        System.out.println("10 == " + rcw.maximumWealth(accounts2));
+        System.out.println("17 == " + rcw.maximumWealth(accounts3));
+
     }
 }
 
