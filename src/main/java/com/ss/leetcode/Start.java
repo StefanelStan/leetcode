@@ -78,6 +78,8 @@ import com.ss.leetcode.march.MatrixDiagonalSum;
 import com.ss.leetcode.march.MaxIncreaseToKeepCitySkyline;
 import com.ss.leetcode.march.Maximum69Number;
 import com.ss.leetcode.march.MaximumNumberOfCoinsYouCanGet;
+import com.ss.leetcode.march.MinimumAddToMakeParenthesesValid;
+import com.ss.leetcode.march.MinimumNumberOfStepsAnagram;
 import com.ss.leetcode.march.QueriesOnAPermutationWithKey;
 import com.ss.leetcode.march.RevealCardsInIncreasingOrder;
 import com.ss.leetcode.march.ReversePairs;
@@ -182,7 +184,9 @@ public class Start {
 //        start.matrixDiagonalSum();
 //        start.destinationCity();
 //        start.runningSumOf1dArray();
-        start.richestCustomerWealth();
+//        start.richestCustomerWealth();
+//        start.minimumNumberOfStepsToMakeTwoStringsAnagram();
+        start.minimumAddToMakeParenthesesValid();
     }
 
     public void twoSum() {
@@ -1182,6 +1186,24 @@ public class Start {
         System.out.println("6 == " + rcw.maximumWealth(accounts1));
         System.out.println("10 == " + rcw.maximumWealth(accounts2));
         System.out.println("17 == " + rcw.maximumWealth(accounts3));
+
+    }
+
+    private void minimumNumberOfStepsToMakeTwoStringsAnagram() {
+        MinimumNumberOfStepsAnagram mnofa = new MinimumNumberOfStepsAnagram();
+        System.out.println("1 == " + mnofa.minSteps("bab", "aba"));
+        System.out.println("5 == " + mnofa.minSteps("leetcode", "practice"));
+        System.out.println("0 == " + mnofa.minSteps("anagram", "mangaar"));
+        System.out.println("0 == " + mnofa.minSteps("xxyyzz", "xxyyzz"));
+        System.out.println("4 == " + mnofa.minSteps("friend", "family"));
+    }
+
+    private void minimumAddToMakeParenthesesValid() {
+        MinimumAddToMakeParenthesesValid matmpv = new MinimumAddToMakeParenthesesValid();
+        System.out.println("1 == " +  matmpv.minAddToMakeValid("())"));
+        System.out.println("3 == " +  matmpv.minAddToMakeValid("((("));
+        System.out.println("0 == " +  matmpv.minAddToMakeValid("()"));
+        System.out.println("4 == " +  matmpv.minAddToMakeValid("()))(("));
 
     }
 }
