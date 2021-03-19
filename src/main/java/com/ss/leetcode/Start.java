@@ -72,6 +72,7 @@ import com.ss.leetcode.march.DesignHashSet;
 import com.ss.leetcode.march.DestinationCity;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.EncodeAndDecodeTinyURL;
+import com.ss.leetcode.march.FindAndReplacePattern;
 import com.ss.leetcode.march.FlippingAnImage;
 import com.ss.leetcode.march.KidsWithTheGreatestNumberOfCandies;
 import com.ss.leetcode.march.MatrixDiagonalSum;
@@ -85,6 +86,7 @@ import com.ss.leetcode.march.RevealCardsInIncreasingOrder;
 import com.ss.leetcode.march.ReversePairs;
 import com.ss.leetcode.march.RichestCustomerWealth;
 import com.ss.leetcode.march.RunningSumOf1dArray;
+import com.ss.leetcode.march.ScoreAfterFlippingMatrix;
 import com.ss.leetcode.march.SortTheMatrixDiagonally;
 import com.ss.leetcode.march.SplitAStringInBalancedStrings;
 import com.ss.leetcode.march.UniqueMorseCodeWords;
@@ -186,7 +188,9 @@ public class Start {
 //        start.runningSumOf1dArray();
 //        start.richestCustomerWealth();
 //        start.minimumNumberOfStepsToMakeTwoStringsAnagram();
-        start.minimumAddToMakeParenthesesValid();
+//        start.minimumAddToMakeParenthesesValid();
+//        start.findAndReplacePattern();
+        start.scoreAfterFlippingMatrix();
     }
 
     public void twoSum() {
@@ -1206,5 +1210,20 @@ public class Start {
         System.out.println("4 == " +  matmpv.minAddToMakeValid("()))(("));
 
     }
+
+    private void findAndReplacePattern() {
+        FindAndReplacePattern farp = new FindAndReplacePattern();
+        String[] words = {"abc","deq","mee","aqq","dkd","ccc"};
+
+        System.out.println("[\"mee\", \"aqq\"] == " + farp.findAndReplacePattern(words, "abb"));
+    }
+
+    private void scoreAfterFlippingMatrix() {
+        ScoreAfterFlippingMatrix scfm = new ScoreAfterFlippingMatrix();
+        int[][] matrix1 = {{0,0,1,1},{1,0,1,0},{1,1,0,0}};
+
+        System.out.println("39 ==" + scfm.matrixScore(matrix1));
+    }
+
 }
 
