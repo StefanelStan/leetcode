@@ -26,7 +26,7 @@ public class ScoreAfterFlippingMatrix {
                     zeroCount++;
                 }
             }
-            if (zeroCount > matrix.length) {
+            if (zeroCount > matrix.length / 2) {
                 for (int i = 0; i < matrix.length; i++) {
                     matrix[i][j] = matrix[i][j] == 0 ? 1 : 0;
                 }

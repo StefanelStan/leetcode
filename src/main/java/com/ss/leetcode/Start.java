@@ -1222,7 +1222,7 @@ public class Start {
         ScoreAfterFlippingMatrix scfm = new ScoreAfterFlippingMatrix();
         int[][] matrix1 = {{0,0,1,1},{1,0,1,0},{1,1,0,0}};
 
-        System.out.println("39 ==" + scfm.matrixScore(matrix1));
+        System.out.println("39 == " + scfm.matrixScore(matrix1));
     }
 
 }
