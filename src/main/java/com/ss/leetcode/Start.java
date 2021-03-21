@@ -69,6 +69,7 @@ import com.ss.leetcode.march.CountNumberOfTeams;
 import com.ss.leetcode.march.DefangingAnIPAddress;
 import com.ss.leetcode.march.DesignBrowserHistory;
 import com.ss.leetcode.march.DesignHashSet;
+import com.ss.leetcode.march.DesignUndergroundSystem;
 import com.ss.leetcode.march.DestinationCity;
 import com.ss.leetcode.march.DiagonalTraverseII;
 import com.ss.leetcode.march.EncodeAndDecodeTinyURL;
@@ -190,7 +191,8 @@ public class Start {
 //        start.minimumNumberOfStepsToMakeTwoStringsAnagram();
 //        start.minimumAddToMakeParenthesesValid();
 //        start.findAndReplacePattern();
-        start.scoreAfterFlippingMatrix();
+//        start.scoreAfterFlippingMatrix();
+        start.designUndergroundSystem();
     }
 
     public void twoSum() {
@@ -1223,6 +1225,22 @@ public class Start {
         int[][] matrix1 = {{0,0,1,1},{1,0,1,0},{1,1,0,0}};
 
         System.out.println("39 == " + scfm.matrixScore(matrix1));
+    }
+
+    private void designUndergroundSystem() {
+        DesignUndergroundSystem undergroundSystem = new DesignUndergroundSystem();
+        undergroundSystem.checkIn(45, "Leyton", 3);
+        undergroundSystem.checkIn(32, "Paradise", 8);
+        undergroundSystem.checkIn(27, "Leyton", 10);
+        undergroundSystem.checkOut(45, "Waterloo", 15);
+        undergroundSystem.checkOut(27, "Waterloo", 20);
+        undergroundSystem.checkOut(32, "Cambridge", 22);
+        System.out.println("14.0 == " + undergroundSystem.getAverageTime("Paradise", "Cambridge"));
+        System.out.println("11.0 == " + undergroundSystem.getAverageTime("Leyton", "Waterloo"));
+        undergroundSystem.checkIn(10, "Leyton", 24);
+        System.out.println("11.0 == " + undergroundSystem.getAverageTime("Leyton", "Waterloo"));
+        undergroundSystem.checkOut(10, "Waterloo", 38);
+        System.out.println("12.0 == " + undergroundSystem.getAverageTime("Leyton", "Waterloo"));
     }
 
 }
