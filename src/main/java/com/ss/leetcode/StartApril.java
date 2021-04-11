@@ -2,6 +2,8 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.april.BattleshipsInABoard;
 import com.ss.leetcode.april.BulbSwitcherIV;
+import com.ss.leetcode.april.LuckyNumbersInAMatrix;
+import com.ss.leetcode.april.QueensThatCanAttackTheKing;
 import com.ss.leetcode.april.RemoveAllAdjacentDuplicatesInString;
 import com.ss.leetcode.april.ReverseString;
 import com.ss.leetcode.april.SortArrayByParityII;
@@ -15,7 +17,9 @@ public class StartApril {
 //        start.sortArrayByParityII();
 //        start.reverseString();
 //        start.battleshipsInABoard();
-        start.removeAllAdjacentDuplicatesInString();
+//        start.removeAllAdjacentDuplicatesInString();
+//        start.luckyNumbersInAMatrix();
+        start.queensThatCanAttackTheKing();
     }
 
     private void bulbSwitcherIV() {
@@ -65,5 +69,27 @@ public class StartApril {
 //        System.out.println("ca == " + raadis.removeDuplicates("abbaca"));
 //        System.out.println(" == " + raadis.removeDuplicates("aaaaaaaa"));
         System.out.println("a == " + raadis.removeDuplicates("aaaaaaaaa"));
+    }
+
+    public void luckyNumbersInAMatrix() {
+        LuckyNumbersInAMatrix lniam = new LuckyNumbersInAMatrix();
+        int[][] matrix1 = {{3,7,8}, {9,11,13}, {15,16,17}};
+        int[][] matrix2 = {{1,10,4,2}, {9,3,8,7}, {15,16,17,12}};
+        int[][] matrix3 = {{7,8}, {1,2}};
+
+        System.out.println("[15] == " + lniam.luckyNumbers(matrix1));
+        System.out.println("[12] == " + lniam.luckyNumbers(matrix2));
+        System.out.println("[7] == " + lniam.luckyNumbers(matrix3));
+    }
+
+    public void queensThatCanAttackTheKing() {
+        QueensThatCanAttackTheKing qtcatk = new QueensThatCanAttackTheKing();
+        int[][] queens1 = {{0,1}, {1,0}, {4,0}, {0,4}, {3,3}, {2,4}};
+        int[][] queens2 = {{0,0}, {1,1}, {2,2}, {3,4}, {3,5}, {4,4}, {4,5}};
+        int[] king1 = {0,0};
+        int[] king2 = {3,3};
+
+        System.out.println("[[0,1],[1,0],[3,3]] == " + qtcatk.queensAttacktheKing(queens1, king1));
+//        System.out.println("[[2,2],[3,4],[4,4]] == " + qtcatk.queensAttacktheKing(queens2, king2));
     }
 }
