@@ -2,13 +2,16 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.april.BattleshipsInABoard;
 import com.ss.leetcode.april.BulbSwitcherIV;
+import com.ss.leetcode.april.DisplayTableOfFoodOrdersInARestaurant;
 import com.ss.leetcode.april.LuckyNumbersInAMatrix;
 import com.ss.leetcode.april.QueensThatCanAttackTheKing;
 import com.ss.leetcode.april.RemoveAllAdjacentDuplicatesInString;
 import com.ss.leetcode.april.ReverseString;
 import com.ss.leetcode.april.SortArrayByParityII;
+import com.ss.leetcode.april.SortIntegersByThePowerValue;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StartApril {
     public static void main(String[] args) {
@@ -19,7 +22,9 @@ public class StartApril {
 //        start.battleshipsInABoard();
 //        start.removeAllAdjacentDuplicatesInString();
 //        start.luckyNumbersInAMatrix();
-        start.queensThatCanAttackTheKing();
+//        start.queensThatCanAttackTheKing();
+//        start.sortIntegersByThePowerValue();
+        start.displayTableOfFoodOrdersInARestaurant();
     }
 
     private void bulbSwitcherIV() {
@@ -90,6 +95,53 @@ public class StartApril {
         int[] king2 = {3,3};
 
         System.out.println("[[0,1],[1,0],[3,3]] == " + qtcatk.queensAttacktheKing(queens1, king1));
-//        System.out.println("[[2,2],[3,4],[4,4]] == " + qtcatk.queensAttacktheKing(queens2, king2));
+        System.out.println("[[2,2],[3,4],[4,4]] == " + qtcatk.queensAttacktheKing(queens2, king2));
+    }
+
+    public void sortIntegersByThePowerValue() {
+        SortIntegersByThePowerValue sibtpv = new SortIntegersByThePowerValue();
+
+        System.out.println("13 == " + sibtpv.getKth(12, 15, 2));
+        System.out.println("1 == " + sibtpv.getKth(1, 1, 1));
+        System.out.println("7 == " + sibtpv.getKth(7, 11, 4));
+        System.out.println("18 == " + sibtpv.getKth(2, 61, 41));
+    }
+
+    public void displayTableOfFoodOrdersInARestaurant() {
+        DisplayTableOfFoodOrdersInARestaurant dtofoiar = new DisplayTableOfFoodOrdersInARestaurant();
+        var orders1 = List.of (List.of("David","3","Ceviche"),
+                List.of("Corina","10","Beef Burrito"),
+                List.of("David","3","Fried Chicken"),
+                List.of("Carla","5","Water"),
+                List.of("Carla","5","Ceviche"),
+                List.of("Rous","3","Ceviche")
+        );
+        var orders2 = List.of (List.of("James","12","Fried Chicken"),
+                List.of("Ratesh","12","Fried Chicken"),
+                List.of("Amadeus","12","Fried Chicken"),
+                List.of("Adam","1","Canadian Waffles"),
+                List.of("Brianna","1","Canadian Waffles")
+        );
+        var orders3 = List.of (List.of("Laura","2","Bean Burrito"),
+                List.of("Jhon","2","Beef Burrito"),
+                List.of("Melissa","2","Soda")
+        );
+
+        var output1 = List.of( List.of("Table","Beef Burrito","Ceviche","Fried Chicken","Water"),
+                List.of("3","0","2","1","0"),
+                List.of("5","0","1","0","1"),
+                List.of("10","1","0","0","0")
+        );
+        var output2 = List.of(List.of("Table","Canadian Waffles","Fried Chicken"),
+                List.of("1","2","0"),
+                List.of("12","0","3")
+        );
+        var output3 = List.of(List.of("Table","Bean Burrito","Beef Burrito","Soda"),
+                List.of("2","1","1","1")
+        );
+
+        System.out.println(output1 + " == " + dtofoiar.displayTable(orders1));
+        System.out.println(output2 + " == " + dtofoiar.displayTable(orders2));
+        System.out.println(output3 + " == " + dtofoiar.displayTable(orders3));
     }
 }
