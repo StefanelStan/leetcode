@@ -4,9 +4,13 @@ import com.ss.leetcode.april.BattleshipsInABoard;
 import com.ss.leetcode.april.BulbSwitcherIV;
 import com.ss.leetcode.april.DisplayTableOfFoodOrdersInARestaurant;
 import com.ss.leetcode.april.LuckyNumbersInAMatrix;
+import com.ss.leetcode.april.MaximumIceCreamBars;
+import com.ss.leetcode.april.NumberOfGoodPairs;
 import com.ss.leetcode.april.QueensThatCanAttackTheKing;
+import com.ss.leetcode.april.QueriesPointsInsideCircle;
 import com.ss.leetcode.april.RemoveAllAdjacentDuplicatesInString;
 import com.ss.leetcode.april.ReverseString;
+import com.ss.leetcode.april.ShuffleTheArray;
 import com.ss.leetcode.april.SortArrayByParityII;
 import com.ss.leetcode.april.SortIntegersByThePowerValue;
 
@@ -24,7 +28,11 @@ public class StartApril {
 //        start.luckyNumbersInAMatrix();
 //        start.queensThatCanAttackTheKing();
 //        start.sortIntegersByThePowerValue();
-        start.displayTableOfFoodOrdersInARestaurant();
+//        start.displayTableOfFoodOrdersInARestaurant();
+//        start.maximumIceCreamBars();
+//        start.shuffleTheArray();
+//        start.numberOfGoodPairs();
+        start.queriesOnNumberOfPointsInsideACircle();
     }
 
     private void bulbSwitcherIV() {
@@ -143,5 +151,54 @@ public class StartApril {
         System.out.println(output1 + " == " + dtofoiar.displayTable(orders1));
         System.out.println(output2 + " == " + dtofoiar.displayTable(orders2));
         System.out.println(output3 + " == " + dtofoiar.displayTable(orders3));
+    }
+
+    public void maximumIceCreamBars() {
+        MaximumIceCreamBars micb = new MaximumIceCreamBars();
+        int[] costs1 = {1,3,2,4,1};
+        int[] costs2 = {10,6,8,7,7,8};
+        int[] costs3 = {1,6,3,1,2,5};
+
+        System.out.println("4 == " + micb.maxIceCream(costs1, 7));
+        System.out.println("0 == " + micb.maxIceCream(costs2, 5));
+        System.out.println("6 == " + micb.maxIceCream(costs3, 20));
+
+    }
+
+    public void shuffleTheArray() {
+        ShuffleTheArray sta = new ShuffleTheArray();
+        int[] nums1 = {2,5,1,3,4,7};
+        int[] nums2 = {1,2,3,4,4,3,2,1};
+        int[] nums3 = {1,1,2,2};
+
+        System.out.println("[2,3,5,4,1,7] == " + Arrays.toString(sta.shuffle(nums1, 3)));
+        System.out.println("[1,4,2,3,3,2,4,1] == " + Arrays.toString(sta.shuffle(nums2, 4)));
+        System.out.println("[1,2,1,2] == " + Arrays.toString(sta.shuffle(nums3, 2)));
+    }
+
+    public void numberOfGoodPairs() {
+        NumberOfGoodPairs nogp = new NumberOfGoodPairs();
+        int[] nums1 = {1,2,3,1,1,3};
+        int[] nums2 = {1,1,1,1};
+        int[] nums3 = {1,2,3};
+        int[] nums4 = {2,2,1,5,1,5,5,2,3,1,1,5,3,2,3,3,3,1,3,3,4,3,1,3,1,4,5,5,2,2,1,3,5,2,2,4,3,2,5,3,1,1,3,3,2,5,2,
+                1,2,4,3,4,4,3,2,4,4,1,3,3,3,5,5,5,4,1,1,2,3,3,2,5,3,4,5,3,1,2,5,4,5,2,3,3,1,5,2,4,2,4,4,3,1,3};
+
+        System.out.println("4 == " + nogp.numIdenticalPairs(nums1));
+        System.out.println("6 == " + nogp.numIdenticalPairs(nums2));
+        System.out.println("0 == " + nogp.numIdenticalPairs(nums3));
+        System.out.println("885 == " + nogp.numIdenticalPairs(nums4));
+
+    }
+
+    public void queriesOnNumberOfPointsInsideACircle() {
+        QueriesPointsInsideCircle qpic = new QueriesPointsInsideCircle();
+        int[][] points1 =  {{1,3},{3,3},{5,3},{2,2}};
+        int[][] queries1 =  {{2,3,1},{4,3,1},{1,1,2}};
+        int[][] points2 =  {{1,1},{2,2},{3,3},{4,4},{5,5}};
+        int[][] queries2 =  {{1,2,2},{2,2,2},{4,3,2},{4,3,3}};
+
+        System.out.println("[3,2,2] == " + Arrays.toString(qpic.countPoints(points1, queries1)));
+        System.out.println("[2,3,2,4] == " + Arrays.toString(qpic.countPoints(points2, queries2)));
     }
 }
