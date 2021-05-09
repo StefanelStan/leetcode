@@ -1,9 +1,13 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.may.DecompressRunLengthEncodedList;
 import com.ss.leetcode.may.HowManyNumbersAreSmaller;
 import com.ss.leetcode.may.JewelsAndStones;
+import com.ss.leetcode.may.NumberOfStepsToReduceANumberToZero;
 import com.ss.leetcode.may.ParkingSystem;
 import com.ss.leetcode.may.PartitioningIntoMinimumNumber;
+import com.ss.leetcode.may.ShuffleString;
+import com.ss.leetcode.may.SubtractProductAndSumDigits;
 
 import java.util.Arrays;
 
@@ -13,7 +17,11 @@ public class StartMay {
 //        start.partitionIntoMinNumber();
 //        start.jewelsAndStones();
 //        start.designParkingSystem();
-        start.howManyNumbersAreSmaller();
+//        start.howManyNumbersAreSmaller();
+//        start.subtractProductAndSumDigits();
+//        start.numberOfStepsToReduceANumberToZero();
+//        start.shuffleString();
+        start.decompressRunLengthEncodedList();
     }
 
     public void partitionIntoMinNumber() {
@@ -48,5 +56,32 @@ public class StartMay {
         System.out.println("[0,0,0,0] == " + Arrays.toString(hmnas.smallerNumbersThanCurrent(nums2)));
     }
 
+    public void subtractProductAndSumDigits() {
+        SubtractProductAndSumDigits spasd = new SubtractProductAndSumDigits();
 
+        System.out.println("15 == " + spasd.subtractProductAndSum(234));
+        System.out.println("21 == " + spasd.subtractProductAndSum(4421));
+    }
+
+    public void numberOfStepsToReduceANumberToZero() {
+        NumberOfStepsToReduceANumberToZero nostrantz =  new NumberOfStepsToReduceANumberToZero();
+
+        System.out.println("6 == " + nostrantz.numberOfSteps(14));
+        System.out.println("4 == " + nostrantz.numberOfSteps(8));
+        System.out.println("12 == " + nostrantz.numberOfSteps(123));
+    }
+
+    public void shuffleString() {
+        ShuffleString ss = new ShuffleString();
+
+        System.out.println("leetcode == "+ ss.restoreString("codeleet", new int[]{4,5,6,7,0,2,1,3}));
+        System.out.println("abc == "+ ss.restoreString("abc", new int[]{0,1,2}));
+    }
+
+    public void decompressRunLengthEncodedList() {
+        DecompressRunLengthEncodedList drlel = new DecompressRunLengthEncodedList();
+
+        System.out.println("[2,4,4,4] == " + Arrays.toString(drlel.decompressRLElist(new int[]{1,2,3,4})));
+        System.out.println("[1,3,4] == " + Arrays.toString(drlel.decompressRLElist(new int[]{1,1,2,3})));
+    }
 }
