@@ -1,6 +1,10 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.may.CheckIfTheSentenceIsPangram;
+import com.ss.leetcode.may.CountItemsMatchingARule;
+import com.ss.leetcode.may.CreateTargetArrayInTheGivenOrder;
 import com.ss.leetcode.may.DecompressRunLengthEncodedList;
+import com.ss.leetcode.may.GoalParserInterpretation;
 import com.ss.leetcode.may.HowManyNumbersAreSmaller;
 import com.ss.leetcode.may.JewelsAndStones;
 import com.ss.leetcode.may.NumberOfStepsToReduceANumberToZero;
@@ -10,6 +14,7 @@ import com.ss.leetcode.may.ShuffleString;
 import com.ss.leetcode.may.SubtractProductAndSumDigits;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StartMay {
     public static void main(String[] args) {
@@ -21,7 +26,11 @@ public class StartMay {
 //        start.subtractProductAndSumDigits();
 //        start.numberOfStepsToReduceANumberToZero();
 //        start.shuffleString();
-        start.decompressRunLengthEncodedList();
+//        start.decompressRunLengthEncodedList();
+//        start.createTargetArrayInTheGivenOrder();
+//        start.goalParserInterpretation();
+//        start.countItemsMatchingARule();
+        start.checkIfTheSentenceIsPangram();
     }
 
     public void partitionIntoMinNumber() {
@@ -83,5 +92,44 @@ public class StartMay {
 
         System.out.println("[2,4,4,4] == " + Arrays.toString(drlel.decompressRLElist(new int[]{1,2,3,4})));
         System.out.println("[1,3,4] == " + Arrays.toString(drlel.decompressRLElist(new int[]{1,1,2,3})));
+    }
+
+    public void createTargetArrayInTheGivenOrder() {
+        CreateTargetArrayInTheGivenOrder ctaitgo = new CreateTargetArrayInTheGivenOrder();
+        int[] nums1 = { 0,1,2,3,4};
+        int[] index1 ={0,1,2,2,1};
+        int[] nums2 = {1,2,3,4,0};
+        int[] index2 = {0,1,2,3,0};
+        int[] nums3 = {1};
+        int[] index3 = {0};
+
+        System.out.println("[0,4,1,3,2] == " + Arrays.toString(ctaitgo.createTargetArray(nums1, index1)));
+        System.out.println("[0,1,2,3,4] == " + Arrays.toString(ctaitgo.createTargetArray(nums2, index2)));
+        System.out.println("[1] == " + Arrays.toString(ctaitgo.createTargetArray(nums3, index3)));
+    }
+
+    public void goalParserInterpretation() {
+        GoalParserInterpretation gpi = new GoalParserInterpretation();
+        System.out.println("Goal == " + gpi.interpret("G()(al)"));
+        System.out.println("Gooooal == " + gpi.interpret("G()()()()(al)"));
+        System.out.println("alGalooG == " + gpi.interpret("(al)G(al)()()G"));
+    }
+
+    public void countItemsMatchingARule() {
+        CountItemsMatchingARule cimar = new CountItemsMatchingARule();
+        var items1 = List.of(List.of("phone","blue","pixel"), List.of("computer","silver","lenovo"), List.of("phone","gold","iphone"));
+        var items2 = List.of(List.of("phone","blue","pixel"), List.of("computer","silver","phone"), List.of("phone","gold","iphone"));
+
+        System.out.println("1 == " + cimar.countMatches(items1, "color", "silver"));
+        System.out.println("2 == " + cimar.countMatches(items1, "type", "phone"));
+    }
+
+    public void checkIfTheSentenceIsPangram() {
+        CheckIfTheSentenceIsPangram cisip = new CheckIfTheSentenceIsPangram();
+        System.out.println("true == " + cisip.checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
+        System.out.println("false == " + cisip.checkIfPangram("leetcode"));
+
+        System.out.println("true == " + cisip.checkIfPangram2("thequickbrownfoxjumpsoverthelazydog"));
+        System.out.println("false == " + cisip.checkIfPangram2("leetcode"));
     }
 }
