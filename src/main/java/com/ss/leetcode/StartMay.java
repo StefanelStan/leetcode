@@ -1,6 +1,7 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.may.CheckIfTheSentenceIsPangram;
+import com.ss.leetcode.may.CheckIfTwoStringsAreEquivalent;
 import com.ss.leetcode.may.CountItemsMatchingARule;
 import com.ss.leetcode.may.CreateTargetArrayInTheGivenOrder;
 import com.ss.leetcode.may.DecompressRunLengthEncodedList;
@@ -12,6 +13,7 @@ import com.ss.leetcode.may.ParkingSystem;
 import com.ss.leetcode.may.PartitioningIntoMinimumNumber;
 import com.ss.leetcode.may.ShuffleString;
 import com.ss.leetcode.may.SubtractProductAndSumDigits;
+import com.ss.leetcode.may.SumOfAllOddLengthSubarrays;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,7 +32,9 @@ public class StartMay {
 //        start.createTargetArrayInTheGivenOrder();
 //        start.goalParserInterpretation();
 //        start.countItemsMatchingARule();
-        start.checkIfTheSentenceIsPangram();
+//        start.checkIfTheSentenceIsPangram();
+//        start.checkIfTwoStringArraysAreEquivalent();
+        start.sumOfAllOddLengthSubarrays();
     }
 
     public void partitionIntoMinNumber() {
@@ -131,5 +135,19 @@ public class StartMay {
 
         System.out.println("true == " + cisip.checkIfPangram2("thequickbrownfoxjumpsoverthelazydog"));
         System.out.println("false == " + cisip.checkIfPangram2("leetcode"));
+    }
+
+    public void checkIfTwoStringArraysAreEquivalent() {
+        CheckIfTwoStringsAreEquivalent citsae = new CheckIfTwoStringsAreEquivalent();
+        System.out.println("true ==" + citsae.arrayStringsAreEqual(new String[]{"ab", "c"}, new String[]{"a", "bc"}));
+        System.out.println("false == " + citsae.arrayStringsAreEqual(new String[]{"a", "cb"}, new String[]{"ab", "c"}));
+        System.out.println("true == " + citsae.arrayStringsAreEqual(new String[]{"abc", "d", "defg"}, new String[]{"abcddefg"}));
+    }
+
+    public void sumOfAllOddLengthSubarrays() {
+        SumOfAllOddLengthSubarrays soaols = new SumOfAllOddLengthSubarrays();
+        System.out.println("58 == " + soaols.sumOddLengthSubarrays(new int[]{1,4,2,5,3}));
+        System.out.println("3 == " + soaols.sumOddLengthSubarrays(new int[]{1,2}));
+        System.out.println("66 == " + soaols.sumOddLengthSubarrays(new int[]{10,11,12}));
     }
 }
