@@ -6,11 +6,15 @@ import com.ss.leetcode.may.CountItemsMatchingARule;
 import com.ss.leetcode.may.CreateTargetArrayInTheGivenOrder;
 import com.ss.leetcode.may.DecompressRunLengthEncodedList;
 import com.ss.leetcode.may.GoalParserInterpretation;
+import com.ss.leetcode.may.HammingDistance;
 import com.ss.leetcode.may.HowManyNumbersAreSmaller;
 import com.ss.leetcode.may.JewelsAndStones;
+import com.ss.leetcode.may.MaximumNestingDepthParentheses;
+import com.ss.leetcode.may.MergeStringsAlternately;
 import com.ss.leetcode.may.NumberOfStepsToReduceANumberToZero;
 import com.ss.leetcode.may.ParkingSystem;
 import com.ss.leetcode.may.PartitioningIntoMinimumNumber;
+import com.ss.leetcode.may.RobotReturnToOrigin;
 import com.ss.leetcode.may.ShuffleString;
 import com.ss.leetcode.may.SubtractProductAndSumDigits;
 import com.ss.leetcode.may.SumOfAllOddLengthSubarrays;
@@ -34,7 +38,11 @@ public class StartMay {
 //        start.countItemsMatchingARule();
 //        start.checkIfTheSentenceIsPangram();
 //        start.checkIfTwoStringArraysAreEquivalent();
-        start.sumOfAllOddLengthSubarrays();
+//        start.sumOfAllOddLengthSubarrays();
+//        start.mergeStringsAlternately();
+//        start.robotReturnToOrigin();
+//        start.hammingDistance();
+        start.maximumNestingDepthofTheParentheses();
     }
 
     public void partitionIntoMinNumber() {
@@ -149,5 +157,39 @@ public class StartMay {
         System.out.println("58 == " + soaols.sumOddLengthSubarrays(new int[]{1,4,2,5,3}));
         System.out.println("3 == " + soaols.sumOddLengthSubarrays(new int[]{1,2}));
         System.out.println("66 == " + soaols.sumOddLengthSubarrays(new int[]{10,11,12}));
+    }
+
+    public void mergeStringsAlternately() {
+        MergeStringsAlternately msa = new MergeStringsAlternately();
+
+        System.out.println("apbqcr == " + msa.mergeAlternately("abc", "pqr"));
+        System.out.println("apbqrs == " + msa.mergeAlternately("ab", "pqrs"));
+        System.out.println("apbqcd == " + msa.mergeAlternately("abcd", "pq"));
+    }
+
+    public void robotReturnToOrigin() {
+        RobotReturnToOrigin rrto = new RobotReturnToOrigin();
+
+        System.out.println("true == " + rrto.judgeCircle("UD"));
+        System.out.println("false == " + rrto.judgeCircle("LL"));
+        System.out.println("false == " + rrto.judgeCircle("RRDD"));
+        System.out.println("false == " + rrto.judgeCircle("LDRRLRUULR"));
+    }
+
+    public void hammingDistance() {
+        HammingDistance hd = new HammingDistance();
+
+        System.out.println("2 == " + hd.hammingDistance(1,4));
+        System.out.println("1 == " + hd.hammingDistance(3,1));
+
+    }
+
+    public void maximumNestingDepthofTheParentheses() {
+        MaximumNestingDepthParentheses mndp = new MaximumNestingDepthParentheses();
+
+        System.out.println("3 == " + mndp.maxDepth("(1+(2*3)+((8)/4))+1"));
+        System.out.println("3 == " + mndp.maxDepth("(1)+((2))+(((3)))"));
+        System.out.println("1 == " + mndp.maxDepth("1+(2*3)/(2-1)"));
+        System.out.println("0 == " + mndp.maxDepth("1"));
     }
 }

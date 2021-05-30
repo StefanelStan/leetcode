@@ -18,3 +18,21 @@ GROUP BY Email HAVING COUNT(*) > 1;
 -- https://leetcode.com/problems/combine-two-tables/
 SELECT p.FirstName, p.LastName, a.City, a.State FROM Person p
 LEFT JOIN Address a ON (p.PersonId = a.PersonId);
+
+-- Rising Temperature
+-- https://leetcode.com/problems/rising-temperature/
+SELECT id from Weather w1 WHERE w1.temperature >
+(SELECT w2.temperature FROM Weather w2 WHERE w2.recordDate = DATE_SUB(w1.recordDate, INTERVAL 1 DAY));
+
+-- Second Highest Salary
+-- https://leetcode.com/problems/second-highest-salary/
+SELECT Salary AS SecondHighestSalary FROM Employee
+ORDER BY SALARY DESC
+LIMIT 1 OFFSET 1;
+
+OR
+
+SELECT Salary AS SecondHighestSalary FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+ORDER BY SALARY DESC
+LIMIT 1;
