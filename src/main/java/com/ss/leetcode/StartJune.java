@@ -2,9 +2,13 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.june.CheckIfWordSumTwoWords;
 import com.ss.leetcode.june.ConvertBinaryNumber;
+import com.ss.leetcode.june.CountConsistentStrings;
 import com.ss.leetcode.june.CountOfMatchesInTournament;
+import com.ss.leetcode.june.DecryptStringFromAlphabet;
+import com.ss.leetcode.june.DetermineIfStringHalvesAreAlike;
 import com.ss.leetcode.june.FindTheHighestAltitude;
 import com.ss.leetcode.june.FindingTheUsersActiveMinutes;
+import com.ss.leetcode.june.MaximumTwoPairs;
 import com.ss.leetcode.june.MinimizeMaximumPairSumInArray;
 import com.ss.leetcode.june.RemoveOutermostParentheses;
 import com.ss.leetcode.june.ReplaceAllDigitsWithCharacters;
@@ -30,7 +34,11 @@ public class StartJune {
 //        start.replaceAllDigitsWithCharacters();
 //        start.findTheHighestAltitude();
 //        start.minimizeMaximumPairSumInArray();
-        start.findingTheUsersActiveMinutes();
+//        start.findingTheUsersActiveMinutes();
+//        start.determineIfStringHalvesAreAlike();
+//        start.countTheNumberOfConsistentStrings();
+//        start.maximumProductDifferenceBetweenTwoPairs();
+        start.decryptStringFromAlphabetToIntegerMapping();
     }
 
     public void checkIfWordEqualsSummationOfTwoWords() {
@@ -130,5 +138,39 @@ public class StartJune {
 
         System.out.println("[0,2,0,0,0] == "+ Arrays.toString(ftuam.findingUsersActiveMinutes(logs1, 5)));
         System.out.println("[1,1,0,0] == "+ Arrays.toString(ftuam.findingUsersActiveMinutes(logs2, 4)));
+    }
+
+    public void determineIfStringHalvesAreAlike() {
+        DetermineIfStringHalvesAreAlike dishaa = new DetermineIfStringHalvesAreAlike();
+
+        System.out.println("true == " + dishaa.halvesAreAlike("book"));
+        System.out.println("false == " + dishaa.halvesAreAlike("textbook"));
+        System.out.println("false == " + dishaa.halvesAreAlike("MerryChristmas"));
+    }
+
+    public void countTheNumberOfConsistentStrings() {
+        CountConsistentStrings ccs = new CountConsistentStrings();
+
+        System.out.println("2 == "+ccs.countConsistentStrings("ab", new String[]{"ad","bd","aaab","baa","badab"}));
+        System.out.println("7 == "+ccs.countConsistentStrings("abc", new String[]{"a","b","c","ab","ac","bc","abc"}));
+        System.out.println("4 == "+ccs.countConsistentStrings("cad", new String[]{"cc","acd","b","ba","bac","bad","ac","d"}));
+    }
+
+    public void maximumProductDifferenceBetweenTwoPairs() {
+        MaximumTwoPairs mtp = new MaximumTwoPairs();
+
+        System.out.println("34 == "+ mtp.maxProductDifference(new int[]{5,6,2,7,4}));
+        System.out.println("64 == "+ mtp.maxProductDifference(new int[]{4,2,5,9,7,4,8}));
+    }
+
+    public void decryptStringFromAlphabetToIntegerMapping() {
+        DecryptStringFromAlphabet dsfa = new DecryptStringFromAlphabet();
+
+        System.out.println("hxohz == "  + dsfa.freqAlphabets("824#15#826#"));
+        System.out.println("abcdefghijklmnopqrstuvwxyz == "  + dsfa.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#"));
+        System.out.println("jkab == " + dsfa.freqAlphabets("10#11#12"));
+        System.out.println("jkl == " + dsfa.freqAlphabets("10#11#12#"));
+        System.out.println("acz == " + dsfa.freqAlphabets("1326#"));
+        System.out.println("y == " + dsfa.freqAlphabets("25#"));
     }
 }
