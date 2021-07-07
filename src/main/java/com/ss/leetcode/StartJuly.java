@@ -2,6 +2,7 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.july.BuildArrayFromPermutation;
 import com.ss.leetcode.july.IncreasingDecreasingString;
+import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
 
@@ -14,7 +15,8 @@ public class StartJuly {
 //        start.buildArrayFromPermutation();
 //        start.minimumTimeVisitingAllPoints();
 //        start.minimumOperationsToMakeTheArrayIncreasing();
-        start.increasingDecreasingString();
+//        start.increasingDecreasingString();
+        start.kthSmallestElementInASortedMatrix();
     }
 
     public void buildArrayFromPermutation() {
@@ -57,5 +59,12 @@ public class StartJuly {
         System.out.println("cdelotee == " + ids.sortString("leetcode"));
         System.out.println("ggggggg == " + ids.sortString("ggggggg"));
         System.out.println("ops == " + ids.sortString("spo"));
+    }
+
+    public void kthSmallestElementInASortedMatrix() {
+        KthSmallestElementInASortedMatrix kseiasm = new KthSmallestElementInASortedMatrix();
+
+        System.out.println("13 == " + kseiasm.kthSmallest(new int[][]{{1,5,9}, {10, 11, 13}, {12,13,15}}, 8));
+        System.out.println("-5  == " + kseiasm.kthSmallest(new int[][]{{-5}}, 1));
     }
 }
