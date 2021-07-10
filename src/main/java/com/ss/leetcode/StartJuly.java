@@ -1,6 +1,8 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.july.BreakAPalindrome;
 import com.ss.leetcode.july.BuildArrayFromPermutation;
+import com.ss.leetcode.july.GenerateStringCharsOddCount;
 import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
@@ -16,7 +18,9 @@ public class StartJuly {
 //        start.minimumTimeVisitingAllPoints();
 //        start.minimumOperationsToMakeTheArrayIncreasing();
 //        start.increasingDecreasingString();
-        start.kthSmallestElementInASortedMatrix();
+//        start.kthSmallestElementInASortedMatrix();
+//        start.breakAPalindrome();
+        start.generateAStringWithCharactersThatHaveOddCounts();
     }
 
     public void buildArrayFromPermutation() {
@@ -66,5 +70,23 @@ public class StartJuly {
 
         System.out.println("13 == " + kseiasm.kthSmallest(new int[][]{{1,5,9}, {10, 11, 13}, {12,13,15}}, 8));
         System.out.println("-5  == " + kseiasm.kthSmallest(new int[][]{{-5}}, 1));
+    }
+
+    public void breakAPalindrome() {
+        BreakAPalindrome bap = new BreakAPalindrome();
+
+        System.out.println("aaccba == " + bap.breakPalindrome("abccba"));
+        System.out.println(" == " + bap.breakPalindrome("a"));
+        System.out.println("ab == " + bap.breakPalindrome("aa"));
+        System.out.println("abb == " + bap.breakPalindrome("aba"));
+        System.out.println("azzz == " + bap.breakPalindrome("zzzz"));
+    }
+
+    public void generateAStringWithCharactersThatHaveOddCounts() {
+        GenerateStringCharsOddCount gscod = new GenerateStringCharsOddCount();
+
+        System.out.println("abbb == " + gscod.generateTheString(4));
+        System.out.println("ab == " + gscod.generateTheString(2));
+        System.out.println("aaaaaaa == " + gscod.generateTheString(7));
     }
 }
