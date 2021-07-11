@@ -7,42 +7,39 @@ public class BreakAPalindrome {
             return "";
         }
         char[] palindromeChars = palindrome.toCharArray();
-        char[] brokenPalindrome = getBrokenPalindromeByDecreasing(palindromeChars);
-        if (brokenPalindrome.length == 0) {
-            brokenPalindrome = getBrokenPalindromeByIncreasing(palindromeChars);
+        if(!breakPalindromeByDecreasing(palindromeChars)) {
+            breakPalindromeByIncreasing(palindromeChars);
         }
-        return new String(brokenPalindrome);
+        return new String(palindromeChars);
     }
 
-    private char[] getBrokenPalindromeByDecreasing(char[] palindromeChars) {
+    private boolean breakPalindromeByDecreasing(char[] palindromeChars) {
         char currentChar;
         for (int i = 0; i < palindromeChars.length; i++) {
             currentChar = palindromeChars[i];
                 palindromeChars[i] = 'a';
                 if (!isPalindrome(palindromeChars)) {
-                    return palindromeChars;
+                    return true;
                 } else {
                     palindromeChars[i] = currentChar;
                 }
-
         }
-        return new char[0];
+        return false;
     }
 
-    private char[] getBrokenPalindromeByIncreasing(char[] palindromeChars) {
+    private void breakPalindromeByIncreasing(char[] palindromeChars) {
         char currentChar;
         for (int i = palindromeChars.length - 1; i >= 0; i--) {
             currentChar = palindromeChars[i];
             if (currentChar < 'z') {
                 palindromeChars[i] = (char) (palindromeChars[i] + 1);
                 if (!isPalindrome(palindromeChars)) {
-                    return palindromeChars;
+                    break;
                 } else {
                     palindromeChars[i] = currentChar;
                 }
             }
         }
-        return new char[0];
     }
 
     private boolean isPalindrome(char[] chars) {
