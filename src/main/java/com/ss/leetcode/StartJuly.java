@@ -5,6 +5,7 @@ import com.ss.leetcode.july.BuildArrayFromPermutation;
 import com.ss.leetcode.july.ConcatenationOfArray;
 import com.ss.leetcode.july.GenerateStringCharsOddCount;
 import com.ss.leetcode.july.IncreasingDecreasingString;
+import com.ss.leetcode.july.IsomorphicStrings;
 import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
 import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
@@ -26,7 +27,8 @@ public class StartJuly {
 //        start.generateAStringWithCharactersThatHaveOddCounts();
 //        start.findMedianFromDataStream();
 //        start.concatenationOfArray();
-        start.totalHammingDistance();
+//        start.totalHammingDistance();
+        start.isomorphicStrings();
     }
 
     public void buildArrayFromPermutation() {
@@ -143,5 +145,13 @@ public class StartJuly {
 
         System.out.println("6 == " + thd.totalHammingDistance(new int[]{4,14,2}));
         System.out.println("4 == " + thd.totalHammingDistance(new int[]{4,14,4}));
+    }
+
+    public void isomorphicStrings() {
+        IsomorphicStrings is = new IsomorphicStrings();
+
+        System.out.println("true == "+ is.isIsomorphic("egg", "add"));
+        System.out.println("false == "+ is.isIsomorphic("foo", "bar"));
+        System.out.println("true == "+ is.isIsomorphic("paper", "title"));
     }
 }
