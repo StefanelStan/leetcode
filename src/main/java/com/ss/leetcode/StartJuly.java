@@ -3,6 +3,8 @@ package com.ss.leetcode;
 import com.ss.leetcode.july.BreakAPalindrome;
 import com.ss.leetcode.july.BuildArrayFromPermutation;
 import com.ss.leetcode.july.ConcatenationOfArray;
+import com.ss.leetcode.july.CustomSortString;
+import com.ss.leetcode.july.FindPeakElement;
 import com.ss.leetcode.july.GenerateStringCharsOddCount;
 import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.IsomorphicStrings;
@@ -28,7 +30,10 @@ public class StartJuly {
 //        start.findMedianFromDataStream();
 //        start.concatenationOfArray();
 //        start.totalHammingDistance();
-        start.isomorphicStrings();
+//        start.isomorphicStrings();
+//        start.findPeakElement();
+        start.customSortString();
+
     }
 
     public void buildArrayFromPermutation() {
@@ -153,5 +158,18 @@ public class StartJuly {
         System.out.println("true == "+ is.isIsomorphic("egg", "add"));
         System.out.println("false == "+ is.isIsomorphic("foo", "bar"));
         System.out.println("true == "+ is.isIsomorphic("paper", "title"));
+    }
+
+    public void findPeakElement() {
+        FindPeakElement fpe = new FindPeakElement();
+
+        System.out.println("2 == " +fpe.findPeakElement(new int[]{1,2,3,1}));
+        System.out.println("2 == " +fpe.findPeakElement(new int[]{1,2,1,3,5,6,4}));
+    }
+
+    public void customSortString() {
+        CustomSortString css = new CustomSortString();
+
+        System.out.println("cbad == " + css.customSortString("cba", "abcd"));
     }
 }
