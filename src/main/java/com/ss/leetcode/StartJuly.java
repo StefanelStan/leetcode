@@ -13,6 +13,7 @@ import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
 import com.ss.leetcode.july.TotalHammingDistance;
+import com.ss.leetcode.july.ValidTriangleNumber;
 
 import java.util.Arrays;
 
@@ -32,8 +33,8 @@ public class StartJuly {
 //        start.totalHammingDistance();
 //        start.isomorphicStrings();
 //        start.findPeakElement();
-        start.customSortString();
-
+//        start.customSortString();
+        start.validTriangleNumber();
     }
 
     public void buildArrayFromPermutation() {
@@ -171,5 +172,12 @@ public class StartJuly {
         CustomSortString css = new CustomSortString();
 
         System.out.println("cbad == " + css.customSortString("cba", "abcd"));
+    }
+
+    public void validTriangleNumber() {
+        ValidTriangleNumber vtn = new ValidTriangleNumber();
+
+        System.out.println("3 == " + vtn.triangleNumber(new int[]{2,2,3,4}));
+        System.out.println("4 == " + vtn.triangleNumber(new int[]{4,2,3,4}));
     }
 }
