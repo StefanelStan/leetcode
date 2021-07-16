@@ -5,6 +5,7 @@ import com.ss.leetcode.july.BuildArrayFromPermutation;
 import com.ss.leetcode.july.ConcatenationOfArray;
 import com.ss.leetcode.july.CustomSortString;
 import com.ss.leetcode.july.FindPeakElement;
+import com.ss.leetcode.july.FourSum;
 import com.ss.leetcode.july.GenerateStringCharsOddCount;
 import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.IsomorphicStrings;
@@ -34,7 +35,8 @@ public class StartJuly {
 //        start.isomorphicStrings();
 //        start.findPeakElement();
 //        start.customSortString();
-        start.validTriangleNumber();
+//        start.validTriangleNumber();
+        start.fourSum();
     }
 
     public void buildArrayFromPermutation() {
@@ -180,4 +182,13 @@ public class StartJuly {
         System.out.println("3 == " + vtn.triangleNumber(new int[]{2,2,3,4}));
         System.out.println("4 == " + vtn.triangleNumber(new int[]{4,2,3,4}));
     }
+
+    public void fourSum() {
+        FourSum fs = new FourSum();
+
+        System.out.println("[[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]] == " + fs.fourSum(new int[]{1,0,-1,0,-2,2}, 0));
+        System.out.println("[[2,2,2,2]] == " + fs.fourSum(new int[]{2,2,2,2,2}, 8));
+    }
+
+
 }
