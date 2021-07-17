@@ -13,10 +13,12 @@ import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
 import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
+import com.ss.leetcode.july.ThreeEqualParts;
 import com.ss.leetcode.july.TotalHammingDistance;
 import com.ss.leetcode.july.ValidTriangleNumber;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -36,7 +38,8 @@ public class StartJuly {
 //        start.findPeakElement();
 //        start.customSortString();
 //        start.validTriangleNumber();
-        start.fourSum();
+//        start.fourSum();
+        start.threeEqualParts();
     }
 
     public void buildArrayFromPermutation() {
@@ -190,5 +193,13 @@ public class StartJuly {
         System.out.println("[[2,2,2,2]] == " + fs.fourSum(new int[]{2,2,2,2,2}, 8));
     }
 
+    public void threeEqualParts() {
+        ThreeEqualParts tep = new ThreeEqualParts();
+
+        System.out.println("[0, 3] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,0,1,0,1})));
+        System.out.println("[-1, -1] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,1,1})));
+        System.out.println("[0, 2] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,0,1})));
+        System.out.println("[-1, -1] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,0,1,1,0})));
+    }
 
 }
