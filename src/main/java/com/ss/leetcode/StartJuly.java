@@ -10,12 +10,18 @@ import com.ss.leetcode.july.GenerateStringCharsOddCount;
 import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.IsomorphicStrings;
 import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
+import com.ss.leetcode.july.LowestCommonAncestorOfaBST;
 import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
+import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
+import com.ss.leetcode.july.ReverseNodesInkGroup;
 import com.ss.leetcode.july.ThreeEqualParts;
 import com.ss.leetcode.july.TotalHammingDistance;
 import com.ss.leetcode.july.ValidTriangleNumber;
+import com.ss.leetcode.june.ConvertBinaryNumber;
+import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -39,7 +45,10 @@ public class StartJuly {
 //        start.customSortString();
 //        start.validTriangleNumber();
 //        start.fourSum();
-        start.threeEqualParts();
+//        start.threeEqualParts();
+//        start.reverseNodesInkGroup();
+//        start.numberOfRectanglesFormLargestSquare();
+        start.lowestCommonAncestorOfaBST();
     }
 
     public void buildArrayFromPermutation() {
@@ -202,4 +211,45 @@ public class StartJuly {
         System.out.println("[-1, -1] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,0,1,1,0})));
     }
 
+    public void reverseNodesInkGroup() {
+        ReverseNodesInkGroup rnikg = new ReverseNodesInkGroup();
+
+        System.out.println("[2,1,4,3,5] == " +  rnikg.reverseKGroup(ListNode.makeChain(new int[]{1,2,3,4,5}), 2).getAsList());
+        System.out.println("[3,2,1,4,5] == " + rnikg.reverseKGroup(ListNode.makeChain(new int[]{1,2,3,4,5}), 3).getAsList());
+        System.out.println("[1,2,3,4,5] == " + rnikg.reverseKGroup(ListNode.makeChain(new int[]{1,2,3,4,5}), 1).getAsList());
+        System.out.println("[1] == " + rnikg.reverseKGroup(ListNode.makeChain(new int[]{1}), 1).getAsList());
+    }
+
+    public void numberOfRectanglesFormLargestSquare() {
+        NumberOfRectanglesFormLargestSquare norfls = new NumberOfRectanglesFormLargestSquare();
+
+        System.out.println("3 == " + norfls.countGoodRectangles(new int[][]{{5,8}, {3,9}, {5,12}, {16,5}}));
+        System.out.println("3 == " + norfls.countGoodRectangles(new int[][]{{2,3}, {3,7}, {4,3}, {3,7}}));
+    }
+
+    public void lowestCommonAncestorOfaBST() {
+        LowestCommonAncestorOfaBST lcabst = new LowestCommonAncestorOfaBST();
+
+        TreeNode five = new TreeNode(5);
+        TreeNode three = new TreeNode(3);
+        TreeNode four = new TreeNode(4);
+        four.left = three;
+        four.right = five;
+        TreeNode zero = new TreeNode(0);
+        TreeNode two = new TreeNode(2);
+        two.left = zero;
+        two.right = four;
+        TreeNode seven = new TreeNode(7);
+        TreeNode nine = new TreeNode(9);
+        TreeNode eight = new TreeNode(8);
+        eight.left = seven;
+        eight.right = nine;
+        TreeNode root = new TreeNode(6);
+        root.left = two;
+        root.right = eight;
+
+        System.out.println("6 == " + lcabst.lowestCommonAncestor(root, two, eight).val);
+        System.out.println("2 == " + lcabst.lowestCommonAncestor(root, two, four).val);
+
+    }
 }
