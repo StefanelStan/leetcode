@@ -18,6 +18,7 @@ import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
 import com.ss.leetcode.july.ReverseNodesInkGroup;
 import com.ss.leetcode.july.ThreeEqualParts;
 import com.ss.leetcode.july.TotalHammingDistance;
+import com.ss.leetcode.july.ValidParentheses;
 import com.ss.leetcode.july.ValidTriangleNumber;
 import com.ss.leetcode.june.ConvertBinaryNumber;
 import com.ss.leetcode.shared.ListNode;
@@ -48,7 +49,8 @@ public class StartJuly {
 //        start.threeEqualParts();
 //        start.reverseNodesInkGroup();
 //        start.numberOfRectanglesFormLargestSquare();
-        start.lowestCommonAncestorOfaBST();
+//        start.lowestCommonAncestorOfaBST();
+        start.validParentheses();
     }
 
     public void buildArrayFromPermutation() {
@@ -251,5 +253,18 @@ public class StartJuly {
         System.out.println("6 == " + lcabst.lowestCommonAncestor(root, two, eight).val);
         System.out.println("2 == " + lcabst.lowestCommonAncestor(root, two, four).val);
 
+    }
+
+    public void validParentheses() {
+        ValidParentheses vp = new ValidParentheses();
+
+        System.out.println("true == " + vp.isValid("()"));
+        System.out.println("true == " + vp.isValid("()[]{}"));
+        System.out.println("false == " + vp.isValid("(]"));
+        System.out.println("false == " + vp.isValid("([)]"));
+        System.out.println("true == " + vp.isValid("{[]}"));
+        System.out.println("false == " + vp.isValid("(("));
+        System.out.println("false == " + vp.isValid("([]){"));
+        System.out.println("false == " + vp.isValid("()))"));
     }
 }
