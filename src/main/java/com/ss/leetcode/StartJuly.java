@@ -15,7 +15,9 @@ import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
 import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
+import com.ss.leetcode.july.PushDominoes;
 import com.ss.leetcode.july.ReverseNodesInkGroup;
+import com.ss.leetcode.july.ShuffleAnArray;
 import com.ss.leetcode.july.ThreeEqualParts;
 import com.ss.leetcode.july.TotalHammingDistance;
 import com.ss.leetcode.july.ValidParentheses;
@@ -50,7 +52,9 @@ public class StartJuly {
 //        start.reverseNodesInkGroup();
 //        start.numberOfRectanglesFormLargestSquare();
 //        start.lowestCommonAncestorOfaBST();
-        start.validParentheses();
+//        start.validParentheses();
+//        start.shuffleAnArray();
+        start.pushDominoes();
     }
 
     public void buildArrayFromPermutation() {
@@ -266,5 +270,21 @@ public class StartJuly {
         System.out.println("false == " + vp.isValid("(("));
         System.out.println("false == " + vp.isValid("([]){"));
         System.out.println("false == " + vp.isValid("()))"));
+    }
+
+    public void shuffleAnArray() {
+        ShuffleAnArray saa = new ShuffleAnArray(new int[]{1,2,3});
+
+        System.out.println("Shuffle1 == " + Arrays.toString(saa.shuffle()));
+        System.out.println("[1,2,3] == " + Arrays.toString(saa.reset()));
+        System.out.println("Shuffle2 == " + Arrays.toString(saa.shuffle()));
+    }
+
+    public void pushDominoes() {
+        PushDominoes pd = new PushDominoes();
+
+        System.out.println("RR.L == " + pd.pushDominoes("RR.L"));
+        System.out.println("LL.RR.LLRRLL.. == " + pd.pushDominoes(".L.R...LR..L.."));
+        System.out.println(".RRLL. == " + pd.pushDominoes(".R..L."));
     }
 }
