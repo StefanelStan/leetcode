@@ -40,8 +40,8 @@ public class MedianFinder {
     private double getEvenMedian(int rightIndex) {
         int cumulativeSize = 0;
         for (Map.Entry<Integer, Integer> entry : numbers.entrySet()) {
-            if (cumulativeSize + entry.getValue() >= rightIndex - 1 && cumulativeSize + entry.getValue() >= rightIndex) {
-                return (double)(entry.getKey() * 2) / 2;
+            if (cumulativeSize + entry.getValue() >= rightIndex) {
+                return (double)entry.getKey();
             } else {
                 if (cumulativeSize + entry.getValue() >= rightIndex -1 && cumulativeSize + entry.getValue() < rightIndex) {
                     return (double)(entry.getKey() + numbers.higherKey(entry.getKey())) / 2;

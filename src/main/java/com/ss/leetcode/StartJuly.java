@@ -15,6 +15,7 @@ import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
 import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
+import com.ss.leetcode.july.PartitionArrayDisjoinedIntervals;
 import com.ss.leetcode.july.PushDominoes;
 import com.ss.leetcode.july.ReverseNodesInkGroup;
 import com.ss.leetcode.july.ShuffleAnArray;
@@ -22,7 +23,6 @@ import com.ss.leetcode.july.ThreeEqualParts;
 import com.ss.leetcode.july.TotalHammingDistance;
 import com.ss.leetcode.july.ValidParentheses;
 import com.ss.leetcode.july.ValidTriangleNumber;
-import com.ss.leetcode.june.ConvertBinaryNumber;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -54,7 +54,8 @@ public class StartJuly {
 //        start.lowestCommonAncestorOfaBST();
 //        start.validParentheses();
 //        start.shuffleAnArray();
-        start.pushDominoes();
+//        start.pushDominoes();
+        start.partitionArrayIntoDisjointIntervals();
     }
 
     public void buildArrayFromPermutation() {
@@ -286,5 +287,12 @@ public class StartJuly {
         System.out.println("RR.L == " + pd.pushDominoes("RR.L"));
         System.out.println("LL.RR.LLRRLL.. == " + pd.pushDominoes(".L.R...LR..L.."));
         System.out.println(".RRLL. == " + pd.pushDominoes(".R..L."));
+    }
+
+    public void partitionArrayIntoDisjointIntervals() {
+        PartitionArrayDisjoinedIntervals padi = new PartitionArrayDisjoinedIntervals();
+
+        System.out.println("3 == " + padi.partitionDisjoint(new int[]{5,0,3,8,6}));
+        System.out.println("4 == " + padi.partitionDisjoint(new int[]{1,1,1,0,6,12}));
     }
 }
