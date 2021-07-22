@@ -2,6 +2,7 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.july.BreakAPalindrome;
 import com.ss.leetcode.july.BuildArrayFromPermutation;
+import com.ss.leetcode.july.CheckIfNAndDoubleExist;
 import com.ss.leetcode.july.ConcatenationOfArray;
 import com.ss.leetcode.july.CustomSortString;
 import com.ss.leetcode.july.FindPeakElement;
@@ -11,6 +12,7 @@ import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.IsomorphicStrings;
 import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
 import com.ss.leetcode.july.LowestCommonAncestorOfaBST;
+import com.ss.leetcode.july.MaximumPopulationYear;
 import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
@@ -27,7 +29,6 @@ import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -55,7 +56,9 @@ public class StartJuly {
 //        start.validParentheses();
 //        start.shuffleAnArray();
 //        start.pushDominoes();
-        start.partitionArrayIntoDisjointIntervals();
+//        start.partitionArrayIntoDisjointIntervals();
+//        start.maximumPopulationYear();
+        start.checkIfNAndDoubleExist();
     }
 
     public void buildArrayFromPermutation() {
@@ -294,5 +297,25 @@ public class StartJuly {
 
         System.out.println("3 == " + padi.partitionDisjoint(new int[]{5,0,3,8,6}));
         System.out.println("4 == " + padi.partitionDisjoint(new int[]{1,1,1,0,6,12}));
+    }
+
+    public void maximumPopulationYear() {
+        MaximumPopulationYear mpy = new MaximumPopulationYear();
+
+        System.out.println("1993 == " + mpy.maximumPopulation(new int[][]{{1993, 1999}, {2000, 2010}}));
+        System.out.println("1960 == " + mpy.maximumPopulation(new int[][]{{1950, 1961}, {1960,1971}, {1970,1981}}));
+    }
+
+    public void checkIfNAndDoubleExist() {
+        CheckIfNAndDoubleExist cinade = new CheckIfNAndDoubleExist();
+
+        System.out.println("true == " + cinade.checkIfExist(new int[]{-766,259,203,601,896,-226,-844,168,126,-542,159,
+            -833,950,-454,-253,824,-395,155,94,894,-766,-63,836,-433,-780,611,-907,695,-395,-975,256,373,-971,-813,-154,
+            -765,691,812,617,-919,-616,-510,608,201,-138,-669,-764,-77,-658,394,-506,-675,523}));
+        System.out.println("false == " + cinade.checkIfExist(new int[]{-2,0,10,-19,4,6,-8}));
+        System.out.println("true == " + cinade.checkIfExist(new int[]{-10,12,-20,-8,15}));
+        System.out.println("true == " + cinade.checkIfExist(new int[]{10,2,5,3}));
+        System.out.println("true == " + cinade.checkIfExist(new int[]{7,1,14,11}));
+        System.out.println("false == " + cinade.checkIfExist(new int[]{3,1,7,11}));
     }
 }
