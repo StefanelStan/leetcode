@@ -1,5 +1,6 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.july.BinaryTreePruning;
 import com.ss.leetcode.july.BreakAPalindrome;
 import com.ss.leetcode.july.BuildArrayFromPermutation;
 import com.ss.leetcode.july.CheckIfNAndDoubleExist;
@@ -27,6 +28,7 @@ import com.ss.leetcode.july.ValidParentheses;
 import com.ss.leetcode.july.ValidTriangleNumber;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 
@@ -58,7 +60,8 @@ public class StartJuly {
 //        start.pushDominoes();
 //        start.partitionArrayIntoDisjointIntervals();
 //        start.maximumPopulationYear();
-        start.checkIfNAndDoubleExist();
+//        start.checkIfNAndDoubleExist();
+        start.binaryTreePruning();
     }
 
     public void buildArrayFromPermutation() {
@@ -317,5 +320,52 @@ public class StartJuly {
         System.out.println("true == " + cinade.checkIfExist(new int[]{10,2,5,3}));
         System.out.println("true == " + cinade.checkIfExist(new int[]{7,1,14,11}));
         System.out.println("false == " + cinade.checkIfExist(new int[]{3,1,7,11}));
+    }
+
+    public void binaryTreePruning() {
+        BinaryTreePruning btp = new BinaryTreePruning();
+
+        TreeNode node11 = new TreeNode(0);
+        TreeNode node12 = new TreeNode(1);
+        TreeNode node13 = new TreeNode(0);
+        node13.left = node11;
+        node13.right = node12;
+        TreeNode root1 = new TreeNode(1);
+        root1.right = node13;
+        btp.pruneTree(root1);
+
+        TreeNode node21 = new TreeNode(0);
+        TreeNode node22 = new TreeNode(0);
+        TreeNode node23 = new TreeNode(0);
+        node23.left = node21;
+        node23.right = node22;
+        TreeNode node24 = new TreeNode(0);
+        TreeNode node25 = new TreeNode(1);
+        TreeNode node26 = new TreeNode(1);
+        node26.left = node24;
+        node26.right = node25;
+        TreeNode root2 = new TreeNode(1);
+        root2.left = node23;
+        root2.right = node26;
+
+        TreeNode node31 = new TreeNode(0);
+        TreeNode node32 = new TreeNode(1);
+        node32.left = node31;
+        TreeNode node33 = new TreeNode(1);
+        TreeNode node34 = new TreeNode(1);
+        node34.left = node32;
+        node34.right = node33;
+        TreeNode node35 = new TreeNode(0);
+        TreeNode node36 = new TreeNode(1);
+        TreeNode node37 = new TreeNode(0);
+        node37.left = node35;
+        node37.right = node36;
+        TreeNode root3 = new TreeNode(1);
+        root3.left = node34;
+        root3.right = node37;
+
+        System.out.println("[1, null, 0, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root1)));
+        System.out.println("[1, null, 1, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root2)));
+        System.out.println("[1, null, 0, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root3)));
     }
 }
