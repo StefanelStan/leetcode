@@ -3,17 +3,23 @@ package com.ss.leetcode;
 import com.ss.leetcode.july.BinaryTreePruning;
 import com.ss.leetcode.july.BreakAPalindrome;
 import com.ss.leetcode.july.BuildArrayFromPermutation;
+import com.ss.leetcode.july.CheckIfAllCharactersEqualOccurrences;
 import com.ss.leetcode.july.CheckIfNAndDoubleExist;
 import com.ss.leetcode.july.ConcatenationOfArray;
 import com.ss.leetcode.july.CustomSortString;
+import com.ss.leetcode.july.DescribeThePainting;
 import com.ss.leetcode.july.FindPeakElement;
 import com.ss.leetcode.july.FourSum;
 import com.ss.leetcode.july.GenerateStringCharsOddCount;
+import com.ss.leetcode.july.ImplementStrStr;
 import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.IsomorphicStrings;
+import com.ss.leetcode.july.KthMissingPositiveNumber;
 import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
+import com.ss.leetcode.july.LongestCommonPrefix;
 import com.ss.leetcode.july.LowestCommonAncestorOfaBST;
 import com.ss.leetcode.july.MaximumPopulationYear;
+import com.ss.leetcode.july.MaximumProductOfTwoElements;
 import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
@@ -21,7 +27,9 @@ import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
 import com.ss.leetcode.july.PartitionArrayDisjoinedIntervals;
 import com.ss.leetcode.july.PushDominoes;
 import com.ss.leetcode.july.ReverseNodesInkGroup;
+import com.ss.leetcode.july.SearchInsertPosition;
 import com.ss.leetcode.july.ShuffleAnArray;
+import com.ss.leetcode.july.SqrtX;
 import com.ss.leetcode.july.ThreeEqualParts;
 import com.ss.leetcode.july.TotalHammingDistance;
 import com.ss.leetcode.july.ValidParentheses;
@@ -61,7 +69,15 @@ public class StartJuly {
 //        start.partitionArrayIntoDisjointIntervals();
 //        start.maximumPopulationYear();
 //        start.checkIfNAndDoubleExist();
-        start.binaryTreePruning();
+//        start.binaryTreePruning();
+//        start.longestCommonPrefix();
+//        start.implementStrStr();
+//        start.searchInsertPosition();
+//        start.checkIfAllCharactersEqualOccurrences();
+//        start.describeThePainting();
+//        start.kthMissingPositiveNumber();
+//        start.maximumProductOfTwoElementsInAnArray();
+        start.sqrtX();
     }
 
     public void buildArrayFromPermutation() {
@@ -367,5 +383,73 @@ public class StartJuly {
         System.out.println("[1, null, 0, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root1)));
         System.out.println("[1, null, 1, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root2)));
         System.out.println("[1, null, 0, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root3)));
+    }
+
+    public void longestCommonPrefix() {
+        LongestCommonPrefix lcp = new LongestCommonPrefix();
+
+        System.out.println("fl == " + lcp.longestCommonPrefix(new String[]{"flower","flow","flight"}));
+        System.out.println("[] == " + lcp.longestCommonPrefix(new String[]{"dog","racecar","car"}));
+    }
+
+    public void implementStrStr() {
+        ImplementStrStr iss = new ImplementStrStr();
+
+        System.out.println("-1 == " + iss.strStr("mississippi", "issipi"));
+        System.out.println("2 == " + iss.strStr("hello", "ll"));
+        System.out.println("-1 == " + iss.strStr("aaaaa", "bba"));
+        System.out.println("0 == " + iss.strStr("", ""));
+    }
+
+    public void searchInsertPosition() {
+        SearchInsertPosition sip = new SearchInsertPosition();
+
+        System.out.println("2 == " + sip.searchInsert(new int[]{1,3,5,6}, 5));
+        System.out.println("1 == " + sip.searchInsert(new int[]{1,3,5,6}, 2));
+        System.out.println("4 == " + sip.searchInsert(new int[]{1,3,5,6}, 7));
+        System.out.println("0 == " + sip.searchInsert(new int[]{1,3,5,6}, 0));
+        System.out.println("0 == " + sip.searchInsert(new int[]{1}, 0));
+    }
+
+    public void checkIfAllCharactersEqualOccurrences() {
+        CheckIfAllCharactersEqualOccurrences ciaceo = new CheckIfAllCharactersEqualOccurrences();
+
+        System.out.println("true == " + ciaceo.areOccurrencesEqual("abacbc"));
+        System.out.println("false == " + ciaceo.areOccurrencesEqual("aaabb"));
+    }
+
+    public void describeThePainting() {
+        // TimeLimitExceeded
+        DescribeThePainting dtp = new DescribeThePainting();
+
+        System.out.println("[[1,4,14],[4,7,16]] == " + dtp.splitPainting(new int[][]{{1,4,5}, {4,7,7}, {1,7,9}}));
+        System.out.println("[[1,6,9],[6,7,24],[7,8,15],[8,10,7]] == " + dtp.splitPainting(new int[][]{{1,7,9}, {6,8,15}, {8,10,7}}));
+        System.out.println("[[1,4,12],[4,7,12]] == " + dtp.splitPainting(new int[][]{{1,4,5}, {1,4,7}, {4,7,1}, {4,7,11}}));
+    }
+
+    public void kthMissingPositiveNumber() {
+        KthMissingPositiveNumber kmpn = new KthMissingPositiveNumber();
+
+        System.out.println("1 == " + kmpn.findKthPositive(new int[]{2}, 1));
+        System.out.println("9 == " + kmpn.findKthPositive(new int[]{2,3,4,7,11}, 5));
+        System.out.println("6 == " + kmpn.findKthPositive(new int[]{1,2,3,4}, 2));
+    }
+
+    public void maximumProductOfTwoElementsInAnArray() {
+        MaximumProductOfTwoElements mpote = new MaximumProductOfTwoElements();
+
+        System.out.println("36 == " + mpote.maxProduct(new int[]{10,2,5,2}));
+        System.out.println("12 == " + mpote.maxProduct(new int[]{3,4,5,2}));
+        System.out.println("16 == " + mpote.maxProduct(new int[]{1,5,4,5}));
+        System.out.println("12 == " + mpote.maxProduct(new int[]{3,7}));
+    }
+
+    public void sqrtX() {
+        SqrtX sx = new SqrtX();
+
+        System.out.println("2 == " + sx.mySqrt(4));
+        System.out.println("2 == " + sx.mySqrt(8));
+        System.out.println("4 == " + sx.mySqrt(23));
+        System.out.println("46340 == " + sx.mySqrt(2147483647));
     }
 }
