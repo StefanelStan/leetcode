@@ -11,6 +11,12 @@ public class TreeNode {
 
     public TreeNode(int x) { val = x; }
 
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+
     public static List<Integer> extractValues(TreeNode n) {
         List<Integer> result = new ArrayList<>();
         if (n.left != null) {

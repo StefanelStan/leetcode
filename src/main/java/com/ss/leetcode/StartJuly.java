@@ -7,6 +7,7 @@ import com.ss.leetcode.july.CheckIfAllCharactersEqualOccurrences;
 import com.ss.leetcode.july.CheckIfNAndDoubleExist;
 import com.ss.leetcode.july.ConcatenationOfArray;
 import com.ss.leetcode.july.CustomSortString;
+import com.ss.leetcode.july.DeepestLeavesSum;
 import com.ss.leetcode.july.DescribeThePainting;
 import com.ss.leetcode.july.FindPeakElement;
 import com.ss.leetcode.july.FourSum;
@@ -31,6 +32,7 @@ import com.ss.leetcode.july.SearchInsertPosition;
 import com.ss.leetcode.july.ShuffleAnArray;
 import com.ss.leetcode.july.SqrtX;
 import com.ss.leetcode.july.ThreeEqualParts;
+import com.ss.leetcode.july.TopKFrequentWords;
 import com.ss.leetcode.july.TotalHammingDistance;
 import com.ss.leetcode.july.ValidParentheses;
 import com.ss.leetcode.july.ValidTriangleNumber;
@@ -77,7 +79,9 @@ public class StartJuly {
 //        start.describeThePainting();
 //        start.kthMissingPositiveNumber();
 //        start.maximumProductOfTwoElementsInAnArray();
-        start.sqrtX();
+//        start.sqrtX();
+//        start.topKFrequentWords();
+        start.deepestLeavesSum();
     }
 
     public void buildArrayFromPermutation() {
@@ -451,5 +455,24 @@ public class StartJuly {
         System.out.println("2 == " + sx.mySqrt(8));
         System.out.println("4 == " + sx.mySqrt(23));
         System.out.println("46340 == " + sx.mySqrt(2147483647));
+    }
+
+    public void topKFrequentWords() {
+        TopKFrequentWords tkfw = new TopKFrequentWords();
+
+        System.out.println("[i, love, coding] == "+ tkfw.topKFrequent(new String[]{"i", "love", "leetcode", "i", "love", "coding"}, 3));
+        System.out.println("[i, love] == "+ tkfw.topKFrequent(new String[]{"i", "love", "leetcode", "i", "love", "coding"}, 2));
+        System.out.println("[the, is, sunny, day] == "+ tkfw.topKFrequent(new String[]{"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}, 4));
+    }
+
+    public void deepestLeavesSum() {
+        DeepestLeavesSum dls = new DeepestLeavesSum();
+
+        TreeNode four = new TreeNode(4, new TreeNode(7), null);
+        TreeNode two = new TreeNode(2, four, new TreeNode(7));
+        TreeNode three = new TreeNode(3, null, new TreeNode(6, null, new TreeNode(8)));
+        TreeNode root = new TreeNode(1, two, three);
+
+        System.out.println("15 == " + dls.deepestLeavesSum(root));
     }
 }
