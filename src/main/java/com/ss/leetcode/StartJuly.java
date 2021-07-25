@@ -2,13 +2,17 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.july.BinaryTreePruning;
 import com.ss.leetcode.july.BreakAPalindrome;
+import com.ss.leetcode.july.BuddyStrings;
 import com.ss.leetcode.july.BuildArrayFromPermutation;
 import com.ss.leetcode.july.CheckIfAllCharactersEqualOccurrences;
 import com.ss.leetcode.july.CheckIfNAndDoubleExist;
 import com.ss.leetcode.july.ConcatenationOfArray;
+import com.ss.leetcode.july.ConstructBSTFromPreorderTraversal;
 import com.ss.leetcode.july.CustomSortString;
 import com.ss.leetcode.july.DeepestLeavesSum;
 import com.ss.leetcode.july.DescribeThePainting;
+import com.ss.leetcode.july.FindCenterOfStarGraph;
+import com.ss.leetcode.july.FindCorrespondingNodeBTInClone;
 import com.ss.leetcode.july.FindPeakElement;
 import com.ss.leetcode.july.FourSum;
 import com.ss.leetcode.july.GenerateStringCharsOddCount;
@@ -17,6 +21,7 @@ import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.IsomorphicStrings;
 import com.ss.leetcode.july.KthMissingPositiveNumber;
 import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
+import com.ss.leetcode.july.LargestNumberAfterMutatingSubstring;
 import com.ss.leetcode.july.LongestCommonPrefix;
 import com.ss.leetcode.july.LowestCommonAncestorOfaBST;
 import com.ss.leetcode.july.MaximumPopulationYear;
@@ -27,10 +32,12 @@ import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
 import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
 import com.ss.leetcode.july.PartitionArrayDisjoinedIntervals;
 import com.ss.leetcode.july.PushDominoes;
+import com.ss.leetcode.july.RangeSumOfBST;
 import com.ss.leetcode.july.ReverseNodesInkGroup;
 import com.ss.leetcode.july.SearchInsertPosition;
 import com.ss.leetcode.july.ShuffleAnArray;
 import com.ss.leetcode.july.SqrtX;
+import com.ss.leetcode.july.SumOfDigitsAfterConvert;
 import com.ss.leetcode.july.ThreeEqualParts;
 import com.ss.leetcode.july.TopKFrequentWords;
 import com.ss.leetcode.july.TotalHammingDistance;
@@ -81,7 +88,14 @@ public class StartJuly {
 //        start.maximumProductOfTwoElementsInAnArray();
 //        start.sqrtX();
 //        start.topKFrequentWords();
-        start.deepestLeavesSum();
+//        start.deepestLeavesSum();
+//        start.sumOfDigitsOfStringAfterConvert();
+//        start.largestNumberAfterMutatingSubstring();
+//        start.buddyStrings();
+//        start.findCorrespondingNodeBinaryTreeInClone();
+//        start.rangeSumOfBST();
+//        start.constructBSTFromPreorderTraversal();
+        start.findCenterOfStarGraph();
     }
 
     public void buildArrayFromPermutation() {
@@ -475,4 +489,97 @@ public class StartJuly {
 
         System.out.println("15 == " + dls.deepestLeavesSum(root));
     }
+
+    public void sumOfDigitsOfStringAfterConvert() {
+        SumOfDigitsAfterConvert sodac = new SumOfDigitsAfterConvert();
+
+        System.out.println("17 == " + sodac.getLucky("zbax", 1));
+        System.out.println("8 == " + sodac.getLucky("zbax", 2));
+        System.out.println("36 == " + sodac.getLucky("iiii", 1));
+        System.out.println("6 == " + sodac.getLucky("leetcode", 2));
+        System.out.println("15 == " + sodac.getLucky("vbyytoijnbgtyrjlsc", 2));
+    }
+
+    public void largestNumberAfterMutatingSubstring() {
+        LargestNumberAfterMutatingSubstring lnams = new LargestNumberAfterMutatingSubstring();
+
+        System.out.println("974676 == " + lnams.maximumNumber("214010", new int[]{6,7,9,7,4,0,3,4,4,7}));
+        System.out.println("334999 == " + lnams.maximumNumber("334111", new int[]{0,9,2,3,3,2,5,5,5,5}));
+        System.out.println("832 == " + lnams.maximumNumber("132", new int[]{9,8,5,0,3,6,4,2,6,8}));
+        System.out.println("934 == " + lnams.maximumNumber("021", new int[]{9,4,3,5,7,2,1,9,0,6}));
+        System.out.println("5 == " + lnams.maximumNumber("5", new int[]{1,4,7,5,3,2,5,6,9,4}));
+    }
+
+    public void buddyStrings() {
+        BuddyStrings bs = new BuddyStrings();
+
+        System.out.println("false == " + bs.buddyStrings("abcd", "badc"));
+        System.out.println("true == " + bs.buddyStrings("ab", "ba"));
+        System.out.println("false == " + bs.buddyStrings("ab", "ab"));
+        System.out.println("true == " + bs.buddyStrings("aa", "aa"));
+        System.out.println("true == " + bs.buddyStrings("aaaaaaabc", "aaaaaaacb"));
+
+    }
+
+    public void findCorrespondingNodeBinaryTreeInClone() {
+        FindCorrespondingNodeBTInClone fcnibtc = new FindCorrespondingNodeBTInClone();
+
+        TreeNode node_o11 = new TreeNode(3, new TreeNode(6), new TreeNode(19));
+        TreeNode root_o1 = new TreeNode(7, new TreeNode(4), node_o11);
+        TreeNode node_c11 = new TreeNode(3, new TreeNode(6), new TreeNode(19));
+        TreeNode root_c1 = new TreeNode(7, new TreeNode(4), node_c11);
+
+        TreeNode root_o2 = new TreeNode(7);
+        TreeNode root_c2 = new TreeNode(7);
+
+        TreeNode node_o31 = new TreeNode(4, null, new TreeNode(3, null, new TreeNode(2, null, new TreeNode(1))));
+        TreeNode root_o3 = new TreeNode(8, null, new TreeNode(6, null, new TreeNode(5, null, node_o31)));
+        TreeNode node_c31 = new TreeNode(4, null, new TreeNode(3, null, new TreeNode(2, null, new TreeNode(1))));
+        TreeNode root_c3 = new TreeNode(8, null, new TreeNode(6, null, new TreeNode(5, null, node_c31)));
+
+        TreeNode node_o41 = new TreeNode(2, new TreeNode(3), null);
+        TreeNode root_o4 = new TreeNode(1, node_o41, null);
+        TreeNode node_c41 = new TreeNode(2, new TreeNode(3), null);
+        TreeNode root_c4 = new TreeNode(1, node_c41, null);
+
+        TreeNode node_o51 = new TreeNode(5, new TreeNode(10), null);
+        TreeNode root_o5 = new TreeNode(1, new TreeNode(2, new TreeNode(4, new TreeNode(8), new TreeNode(9)), node_o51),
+                                        new TreeNode(3, new TreeNode(6), new TreeNode(7)));
+        TreeNode node_c51 = new TreeNode(5, new TreeNode(10), null);
+        TreeNode root_c5 = new TreeNode(1, new TreeNode(2, new TreeNode(4, new TreeNode(8), new TreeNode(9)), node_c51),
+            new TreeNode(3, new TreeNode(6), new TreeNode(7)));
+
+        System.out.println("true == " + node_c11.equals(fcnibtc.getTargetCopy(root_o1, root_c1, node_o11)));
+        System.out.println("true == " + root_c2.equals(fcnibtc.getTargetCopy(root_o2, root_c2, root_o2)));
+        System.out.println("true == " + node_c31.equals(fcnibtc.getTargetCopy(root_o3, root_c3, node_o31)));
+        System.out.println("true == " + node_c41.equals(fcnibtc.getTargetCopy(root_o4, root_c4, node_o41)));
+        System.out.println("true == " + node_c51.equals(fcnibtc.getTargetCopy(root_o5, root_c5, node_o51)));
+    }
+
+    public void rangeSumOfBST() {
+        RangeSumOfBST rsobst = new RangeSumOfBST();
+
+        TreeNode root1 = new TreeNode(10, new TreeNode(5, new TreeNode(3), new TreeNode(7)), new TreeNode(15, null, new TreeNode(18)));
+        TreeNode root2 = new TreeNode(10, new TreeNode(5, new TreeNode(3, new TreeNode(1), null), new TreeNode(7, new TreeNode(6), null)),
+                                      new TreeNode(15, new TreeNode(13), new TreeNode(18)));
+
+        System.out.println("32 == " + rsobst.rangeSumBST(root1, 7, 15));
+        System.out.println("23 == " + rsobst.rangeSumBST(root2, 6, 10));
+    }
+
+    public void constructBSTFromPreorderTraversal() {
+        // wrong answer on LeetCode.
+        ConstructBSTFromPreorderTraversal cbstfpt = new ConstructBSTFromPreorderTraversal();
+
+        System.out.println(cbstfpt.bstFromPreorder(new int[]{8,5,1,7,10,12}).val);
+        System.out.println(cbstfpt.bstFromPreorder(new int[]{1,3}).val);
+    }
+
+    public void findCenterOfStarGraph() {
+        FindCenterOfStarGraph fcosg = new FindCenterOfStarGraph();
+
+        System.out.println("2 == " + fcosg.findCenter(new int[][]{{1,2}, {2,3}, {4,2}}));
+        System.out.println("1 == " + fcosg.findCenter(new int[][]{{1,2}, {5,1}, {1,3}, {1,4}}));
+    }
+
 }
