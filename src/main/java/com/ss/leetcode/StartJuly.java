@@ -1,56 +1,9 @@
 package com.ss.leetcode;
 
-import com.ss.leetcode.july.BinaryTreePruning;
-import com.ss.leetcode.july.BreakAPalindrome;
-import com.ss.leetcode.july.BuddyStrings;
-import com.ss.leetcode.july.BuildArrayFromPermutation;
-import com.ss.leetcode.july.CheckIfAllCharactersEqualOccurrences;
-import com.ss.leetcode.july.CheckIfNAndDoubleExist;
-import com.ss.leetcode.july.ConcatenationOfArray;
-import com.ss.leetcode.july.ConstructBSTFromPreorderTraversal;
-import com.ss.leetcode.july.ConvertSortedArrayToBST;
-import com.ss.leetcode.july.CustomSortString;
-import com.ss.leetcode.july.DeepestLeavesSum;
-import com.ss.leetcode.july.DescribeThePainting;
-import com.ss.leetcode.july.ExcelSheetColumnTitle;
-import com.ss.leetcode.july.FindCenterOfStarGraph;
-import com.ss.leetcode.july.FindCorrespondingNodeBTInClone;
-import com.ss.leetcode.july.FindPeakElement;
-import com.ss.leetcode.july.FourSum;
-import com.ss.leetcode.july.GenerateStringCharsOddCount;
-import com.ss.leetcode.july.HeightChecker;
-import com.ss.leetcode.july.ImplementStrStr;
-import com.ss.leetcode.july.IncreasingDecreasingString;
-import com.ss.leetcode.july.IsomorphicStrings;
-import com.ss.leetcode.july.KthMissingPositiveNumber;
-import com.ss.leetcode.july.KthSmallestElementInASortedMatrix;
-import com.ss.leetcode.july.LargestNumberAfterMutatingSubstring;
-import com.ss.leetcode.july.LongestCommonPrefix;
-import com.ss.leetcode.july.LowestCommonAncestorOfaBST;
-import com.ss.leetcode.july.MaximumPopulationYear;
-import com.ss.leetcode.july.MaximumProductOfTwoElements;
-import com.ss.leetcode.july.MedianFinder;
-import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
-import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
-import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
-import com.ss.leetcode.july.NumberOfStudentDoingHomehork;
-import com.ss.leetcode.july.PartitionArrayDisjoinedIntervals;
-import com.ss.leetcode.july.PowXN;
-import com.ss.leetcode.july.PushDominoes;
-import com.ss.leetcode.july.RangeSumOfBST;
-import com.ss.leetcode.july.ReverseNodesInkGroup;
-import com.ss.leetcode.july.SearchInsertPosition;
-import com.ss.leetcode.july.ShuffleAnArray;
-import com.ss.leetcode.july.SqrtX;
-import com.ss.leetcode.july.SumOfDigitsAfterConvert;
-import com.ss.leetcode.july.ThreeEqualParts;
-import com.ss.leetcode.july.TopKFrequentWords;
-import com.ss.leetcode.july.TotalHammingDistance;
-import com.ss.leetcode.july.ValidParentheses;
-import com.ss.leetcode.july.ValidTriangleNumber;
+import com.ss.leetcode.july.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
+import com.ss.leetcode.shared.Utils;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -106,7 +59,11 @@ public class StartJuly {
 //        start.powXN();
 //        start.numberOfStudentsDoingHomeworkAtAGivenTime();
 //        start.excelSheetColumnTitle();
-        start.convertSortedArrayToBST();
+//        start.convertSortedArrayToBST();
+//        start.designAStackWithIncrementOperation();
+//        start.findNUniqueIntegersSumUpToZero();
+//        start.binarySearchTreeToGreaterSumTree();
+        start.convertBSTToGreaterTree();
     }
 
     public void buildArrayFromPermutation() {
@@ -636,4 +593,60 @@ public class StartJuly {
         System.out.println("3/1 == " + csotobst.sortedArrayToBST(new int[]{1,3}).val);
     }
 
+    public void designAStackWithIncrementOperation() {
+        DesignAStackWithIncrementOperation daswio = new DesignAStackWithIncrementOperation(3);
+
+        daswio.push(1);                             // stack becomes [1]
+        daswio.push(2);                             // stack becomes [1, 2]
+        System.out.println("2 == " + daswio.pop()); // return 2 --> Return top of the stack 2, stack becomes [1]
+        daswio.push(2);                             // stack becomes [1, 2]
+        daswio.push(3);                             // stack becomes [1, 2, 3]
+        daswio.push(4);                             // stack still [1, 2, 3], Don't add another elements as size is 4
+        daswio.increment(5, 100);                   // stack becomes [101, 102, 103]
+        daswio.increment(2, 100);                   // stack becomes [201, 202, 103]
+        System.out.println("103 == " + daswio.pop()); // return 103 --> Return top of the stack 103, stack becomes [201, 202]
+        System.out.println("202 == " + daswio.pop()); // return 202 --> Return top of the stack 102, stack becomes [201]
+        System.out.println("201 == " + daswio.pop()); // return 201 --> Return top of the stack 101, stack becomes []
+        System.out.println("-1 == " + daswio.pop());  // return -1 --> Stack is empty return -1.
+    }
+
+    public void findNUniqueIntegersSumUpToZero() {
+        FindNUniqueIntegersSumUpToZero fnuisutz = new FindNUniqueIntegersSumUpToZero();
+
+        System.out.println("0 == " + Utils.sumOfArray(fnuisutz.sumZero(2)));
+        System.out.println("0 == " + Utils.sumOfArray(fnuisutz.sumZero(4)));
+        System.out.println("0 == " + Utils.sumOfArray(fnuisutz.sumZero(6)));
+    }
+
+    public void binarySearchTreeToGreaterSumTree() {
+        BinarySearchTreeToGreaterSumTree bsttgst = new BinarySearchTreeToGreaterSumTree();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(1, new TreeNode(0), new TreeNode(2, null, new TreeNode(3))),
+                                      new TreeNode(6, new TreeNode(5), new TreeNode((7), null, new TreeNode(8))));
+        
+        TreeNode root2 = new TreeNode(0, null, new TreeNode(1));
+        TreeNode root3 = new TreeNode(1, new TreeNode(0), new TreeNode(2));
+        TreeNode root4 = new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4));
+
+        System.out.println("30 == " + bsttgst.bstToGst(root1).val);
+        System.out.println("1 == " + bsttgst.bstToGst(root2).val);
+        System.out.println("3 == " + bsttgst.bstToGst(root3).val);
+        System.out.println("7 == " + bsttgst.bstToGst(root4).val);
+    }
+
+    public void convertBSTToGreaterTree() {
+        ConvertBSTToGreaterTree cbsttgt = new ConvertBSTToGreaterTree();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(1, new TreeNode(0), new TreeNode(2, null, new TreeNode(3))),
+            new TreeNode(6, new TreeNode(5), new TreeNode((7), null, new TreeNode(8))));
+
+        TreeNode root2 = new TreeNode(0, null, new TreeNode(1));
+        TreeNode root3 = new TreeNode(1, new TreeNode(0), new TreeNode(2));
+        TreeNode root4 = new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4));
+
+        System.out.println("30 == " + cbsttgt.convertBST(root1).val);
+        System.out.println("1 == " + cbsttgt.convertBST(root2).val);
+        System.out.println("3 == " + cbsttgt.convertBST(root3).val);
+        System.out.println("7 == " + cbsttgt.convertBST(root4).val);
+    }
 }
