@@ -11,11 +11,13 @@ import com.ss.leetcode.july.ConstructBSTFromPreorderTraversal;
 import com.ss.leetcode.july.CustomSortString;
 import com.ss.leetcode.july.DeepestLeavesSum;
 import com.ss.leetcode.july.DescribeThePainting;
+import com.ss.leetcode.july.ExcelSheetColumnTitle;
 import com.ss.leetcode.july.FindCenterOfStarGraph;
 import com.ss.leetcode.july.FindCorrespondingNodeBTInClone;
 import com.ss.leetcode.july.FindPeakElement;
 import com.ss.leetcode.july.FourSum;
 import com.ss.leetcode.july.GenerateStringCharsOddCount;
+import com.ss.leetcode.july.HeightChecker;
 import com.ss.leetcode.july.ImplementStrStr;
 import com.ss.leetcode.july.IncreasingDecreasingString;
 import com.ss.leetcode.july.IsomorphicStrings;
@@ -30,7 +32,9 @@ import com.ss.leetcode.july.MedianFinder;
 import com.ss.leetcode.july.MinimumOperationsArrayIncreasing;
 import com.ss.leetcode.july.MinimumTimeVisitingAllPoints;
 import com.ss.leetcode.july.NumberOfRectanglesFormLargestSquare;
+import com.ss.leetcode.july.NumberOfStudentDoingHomehork;
 import com.ss.leetcode.july.PartitionArrayDisjoinedIntervals;
+import com.ss.leetcode.july.PowXN;
 import com.ss.leetcode.july.PushDominoes;
 import com.ss.leetcode.july.RangeSumOfBST;
 import com.ss.leetcode.july.ReverseNodesInkGroup;
@@ -48,6 +52,7 @@ import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -95,7 +100,11 @@ public class StartJuly {
 //        start.findCorrespondingNodeBinaryTreeInClone();
 //        start.rangeSumOfBST();
 //        start.constructBSTFromPreorderTraversal();
-        start.findCenterOfStarGraph();
+//        start.findCenterOfStarGraph();
+//        start.heightChecker();
+//        start.powXN();
+//        start.numberOfStudentsDoingHomeworkAtAGivenTime();
+        start.excelSheetColumnTitle();
     }
 
     public void buildArrayFromPermutation() {
@@ -580,6 +589,42 @@ public class StartJuly {
 
         System.out.println("2 == " + fcosg.findCenter(new int[][]{{1,2}, {2,3}, {4,2}}));
         System.out.println("1 == " + fcosg.findCenter(new int[][]{{1,2}, {5,1}, {1,3}, {1,4}}));
+    }
+
+    public void heightChecker() {
+        HeightChecker hc = new HeightChecker();
+
+        System.out.println("3 == " + hc.heightChecker(new int[]{1,1,4,2,1,3}));
+        System.out.println("5 == " + hc.heightChecker(new int[]{5,1,2,3,4}));
+        System.out.println("0 == " + hc.heightChecker(new int[]{1,2,3,4,5}));
+    }
+
+    public void powXN() {
+        PowXN powXN = new PowXN();
+
+        System.out.println("1024.00000 == " + powXN.myPow(2.00000, 10));
+        System.out.println("9.26100 == " + powXN.myPow(2.10000, 3));
+        System.out.println("0.25000 == " + powXN.myPow(2.00000, -2));
+    }
+
+    public void numberOfStudentsDoingHomeworkAtAGivenTime() {
+        NumberOfStudentDoingHomehork nosdh = new NumberOfStudentDoingHomehork();
+
+        System.out.println("1 == " + nosdh.busyStudent(new int[]{1,2,3}, new int[]{3,2,7}, 4));
+        System.out.println("1 == " + nosdh.busyStudent(new int[]{4}, new int[]{4}, 4));
+        System.out.println("0 == " + nosdh.busyStudent(new int[]{4}, new int[]{4}, 5));
+        System.out.println("0 == " + nosdh.busyStudent(new int[]{1,1,1,1}, new int[]{1,3,2,4}, 7));
+        System.out.println("5 == " + nosdh.busyStudent(new int[]{9,8,7,6,5,4,3,2,1}, new int[]{10,10,10,10,10,10,10,10,10}, 5));
+    }
+
+    public void excelSheetColumnTitle() {
+        ExcelSheetColumnTitle esct = new ExcelSheetColumnTitle();
+
+        System.out.println("AZ == " + esct.convertToTitle(52));
+        System.out.println("A == " + esct.convertToTitle(1));
+        System.out.println("AB == " + esct.convertToTitle(28));
+        System.out.println("ZY == " + esct.convertToTitle(701));
+        System.out.println("FXSHRXW == " + esct.convertToTitle(2147483647));
     }
 
 }
