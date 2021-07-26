@@ -8,6 +8,7 @@ import com.ss.leetcode.july.CheckIfAllCharactersEqualOccurrences;
 import com.ss.leetcode.july.CheckIfNAndDoubleExist;
 import com.ss.leetcode.july.ConcatenationOfArray;
 import com.ss.leetcode.july.ConstructBSTFromPreorderTraversal;
+import com.ss.leetcode.july.ConvertSortedArrayToBST;
 import com.ss.leetcode.july.CustomSortString;
 import com.ss.leetcode.july.DeepestLeavesSum;
 import com.ss.leetcode.july.DescribeThePainting;
@@ -104,7 +105,8 @@ public class StartJuly {
 //        start.heightChecker();
 //        start.powXN();
 //        start.numberOfStudentsDoingHomeworkAtAGivenTime();
-        start.excelSheetColumnTitle();
+//        start.excelSheetColumnTitle();
+        start.convertSortedArrayToBST();
     }
 
     public void buildArrayFromPermutation() {
@@ -625,6 +627,13 @@ public class StartJuly {
         System.out.println("AB == " + esct.convertToTitle(28));
         System.out.println("ZY == " + esct.convertToTitle(701));
         System.out.println("FXSHRXW == " + esct.convertToTitle(2147483647));
+    }
+
+    public void convertSortedArrayToBST() {
+        ConvertSortedArrayToBST csotobst = new ConvertSortedArrayToBST();
+
+        System.out.println("0 == " + csotobst.sortedArrayToBST(new int[]{-10,-3,0,5,9}).val);
+        System.out.println("3/1 == " + csotobst.sortedArrayToBST(new int[]{1,3}).val);
     }
 
 }
