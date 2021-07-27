@@ -63,7 +63,11 @@ public class StartJuly {
 //        start.designAStackWithIncrementOperation();
 //        start.findNUniqueIntegersSumUpToZero();
 //        start.binarySearchTreeToGreaterSumTree();
-        start.convertBSTToGreaterTree();
+//        start.convertBSTToGreaterTree();
+//        start.fibonacciNumber();
+//        start.substringsOfSizeThreeDistinct();
+//        start.threeSumClosest();
+        start.maximumNumberOfBallsInABox();
     }
 
     public void buildArrayFromPermutation() {
@@ -648,5 +652,36 @@ public class StartJuly {
         System.out.println("1 == " + cbsttgt.convertBST(root2).val);
         System.out.println("3 == " + cbsttgt.convertBST(root3).val);
         System.out.println("7 == " + cbsttgt.convertBST(root4).val);
+    }
+
+    public void fibonacciNumber() {
+        FibonacciNumber fn = new FibonacciNumber();
+
+        System.out.println("5 == " + fn.fib(5));
+        System.out.println("8 == " + fn.fib(6));
+        System.out.println("13 == " + fn.fib(7));
+    }
+
+    public void substringsOfSizeThreeDistinct() {
+        SubstringsOfSizeThreeDistinct sostd =  new SubstringsOfSizeThreeDistinct();
+
+        System.out.println("1 == " + sostd.countGoodSubstrings("xyzzaz"));
+        System.out.println("4 == " + sostd.countGoodSubstrings("aababcabc"));
+    }
+
+    public void threeSumClosest() {
+        ThreeSumClosest tsc = new ThreeSumClosest();
+
+        System.out.println("2 == " + tsc.threeSumClosest(new int[]{-1, 2, 1, -4}, 1));
+        System.out.println("0 == " + tsc.threeSumClosest(new int[]{-10, 24, 10, -2, -5, 7}, 1));
+        System.out.println("3 == " + tsc.threeSumClosest(new int[]{1,1,1,1}, 100));
+
+    }
+
+    public void maximumNumberOfBallsInABox() {
+        MaximumNumberOfBallsInABox mnobiab = new MaximumNumberOfBallsInABox();
+
+        System.out.println("2 == " + mnobiab.countBalls(1, 10));
+        System.out.println("2 == " + mnobiab.countBalls(5, 15));
     }
 }
