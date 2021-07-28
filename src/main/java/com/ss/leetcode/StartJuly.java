@@ -1,5 +1,6 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.december.AddTwoNumbers;
 import com.ss.leetcode.july.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
@@ -67,7 +68,8 @@ public class StartJuly {
 //        start.fibonacciNumber();
 //        start.substringsOfSizeThreeDistinct();
 //        start.threeSumClosest();
-        start.maximumNumberOfBallsInABox();
+//        start.maximumNumberOfBallsInABox();
+        start.middleOfTheLinkedList();
     }
 
     public void buildArrayFromPermutation() {
@@ -683,5 +685,14 @@ public class StartJuly {
 
         System.out.println("2 == " + mnobiab.countBalls(1, 10));
         System.out.println("2 == " + mnobiab.countBalls(5, 15));
+    }
+
+    public void middleOfTheLinkedList() {
+        MiddleOfTheLinkedList mofll = new MiddleOfTheLinkedList();
+
+        System.out.println("[3, 4, 5] == " + mofll.middleNode(new ListNode(1, new ListNode(2, new ListNode(3,
+                                                              new ListNode(4, new ListNode(5)))))).getAsList());
+        System.out.println("[4, 5, 6] == " + mofll.middleNode(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4,
+                                                              new ListNode(5, new ListNode(6))))))).getAsList());
     }
 }

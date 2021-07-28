@@ -23,24 +23,7 @@ import java.util.Arrays;
 public class StartJanuary {
     public static void main(String[] args) {
         StartJanuary start = new StartJanuary();
-//        start.twoSum();
-//        start.threeSum();
-//        start.remvoveElement();
-//        start.removeDuplicates();
-//        start.handOfStraights();
-//        start.addTwoNumbers();
-//        start.longestSubstringWithoutRepeating();
-//        start.riverRecords();
-//        start.mergeSortList();
-//        start.filterRestaurants();
-//        start.longestMountain();
-//        start.powerfulIntegers();
-//        start.removeDuplicates2();
-//        start.largestMultipleOfThree();
-//        start.minimumDeletionCost();
 
-//        start.countingBits();
-//        start.bestBreak();
 //        start.longestStringChain();
 //        start.constructKPalindrome(); //unfinished
 //        start.excelSheetColumnNumber();

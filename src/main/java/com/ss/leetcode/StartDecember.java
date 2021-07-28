@@ -17,15 +17,16 @@ import com.ss.leetcode.december.RemoveElement;
 import com.ss.leetcode.december.RiverRecords;
 import com.ss.leetcode.december.ThreeSum;
 import com.ss.leetcode.december.TwoSum;
+import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class StartDecember {
     public static void main(String[] args) {
-        StartJanuary start = new StartJanuary();
+        StartDecember start = new StartDecember();
 //        start.twoSum();
-//        start.threeSum();
+        start.threeSum();
 //        start.remvoveElement();
 //        start.removeDuplicates();
 //        start.handOfStraights();
@@ -51,10 +52,10 @@ public class StartDecember {
         System.out.println("TwoSum of " + Arrays.toString(nums) + " = " + Arrays.toString(twoSum.twoSum(nums, 9)));
     }
 
-    private void threeSum() {
+    public void threeSum() {
         ThreeSum threeSum = new ThreeSum();
-        int[] nums = { -1, 0, 1, 2, -1, -4 };
-        System.out.println("ThreeSum of " + Arrays.toString(nums) + " = " + threeSum.threeSum(nums));
+//        System.out.println("[[-1,-1,2],[-1,0,1]] = " + threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println("[[-2,0,2],[-2,1,1]] = " + threeSum.threeSum(new int[]{-2,0,1,1,2}));
     }
 
     private void remvoveElement() {
@@ -95,14 +96,14 @@ public class StartDecember {
 
     private void addTwoNumbers() {
         AddTwoNumbers atn = new AddTwoNumbers();
-        AddTwoNumbers.ListNode l11 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l12 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l13 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l14 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l15 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l16 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l17 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l18 = new AddTwoNumbers.ListNode(9);
+        ListNode l11 = new ListNode(9);
+        ListNode l12 = new ListNode(9);
+        ListNode l13 = new ListNode(9);
+        ListNode l14 = new ListNode(9);
+        ListNode l15 = new ListNode(9);
+        ListNode l16 = new ListNode(9);
+        ListNode l17 = new ListNode(9);
+        ListNode l18 = new ListNode(9);
         l11.next = l12;
         l12.next = l13;
         l13.next = l14;
@@ -111,10 +112,10 @@ public class StartDecember {
         l16.next = l17;
         l17.next = l18;
 
-        AddTwoNumbers.ListNode l21 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l22 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l23 = new AddTwoNumbers.ListNode(9);
-        AddTwoNumbers.ListNode l24 = new AddTwoNumbers.ListNode(9);
+        ListNode l21 = new ListNode(9);
+        ListNode l22 = new ListNode(9);
+        ListNode l23 = new ListNode(9);
+        ListNode l24 = new ListNode(9);
         l21.next = l22;
         l22.next = l23;
         l23.next = l24;
