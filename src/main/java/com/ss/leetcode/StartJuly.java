@@ -69,7 +69,11 @@ public class StartJuly {
 //        start.substringsOfSizeThreeDistinct();
 //        start.threeSumClosest();
 //        start.maximumNumberOfBallsInABox();
-        start.middleOfTheLinkedList();
+//        start.middleOfTheLinkedList();
+//        start.beautifulArray();
+//        start.palindromeNumber();
+//        start.mergeTwoSortedLists();
+        start.minimumAbsoluteDifference();
     }
 
     public void buildArrayFromPermutation() {
@@ -694,5 +698,40 @@ public class StartJuly {
                                                               new ListNode(4, new ListNode(5)))))).getAsList());
         System.out.println("[4, 5, 6] == " + mofll.middleNode(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4,
                                                               new ListNode(5, new ListNode(6))))))).getAsList());
+    }
+
+    public void beautifulArray() {
+        BeautifulArray ba = new BeautifulArray();
+
+        System.out.println("[2,1,4,3] == " + Arrays.toString(ba.beautifulArray(4)));
+        System.out.println("[3,1,2,5,4] == " + Arrays.toString(ba.beautifulArray(5)));
+    }
+
+    public void palindromeNumber() {
+        PalindromeNumber pn = new PalindromeNumber();
+
+        System.out.println("true == " + pn.isPalindrome(121));
+        System.out.println("false == " + pn.isPalindrome(-121));
+    }
+
+    public void mergeTwoSortedLists() {
+        MergeTwoSortedLists mtsl = new MergeTwoSortedLists();
+
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode head2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+        ListNode head3 = new ListNode(3, new ListNode(6, new ListNode(7)));
+        ListNode head4 = new ListNode(2, new ListNode(3, new ListNode(9)));
+        System.out.println("[1,1,2,3,4,4] == " + mtsl.mergeTwoLists(head1, head2).getAsList());
+        System.out.println("[] == " + mtsl.mergeTwoLists(null, null));
+        System.out.println("[0] == " + mtsl.mergeTwoLists(null, new ListNode(0)).getAsList());
+        System.out.println("[2,3,3,6,7,9] == " + mtsl.mergeTwoLists(head3, head4).getAsList());
+    }
+
+    public void minimumAbsoluteDifference() {
+        MinimumAbsoluteDifference mad = new MinimumAbsoluteDifference();
+
+        System.out.println(("[[1,2],[2,3],[3,4]] == " + mad.minimumAbsDifference(new int[]{4,2,1,3})));
+        System.out.println(("[[1,3]] == " + mad.minimumAbsDifference(new int[]{1,3,6,10,15})));
+        System.out.println(("[[-14,-10],[19,23],[23,27]] == " + mad.minimumAbsDifference(new int[]{3,8,-10,23,19,-4,-14,27})));
     }
 }
