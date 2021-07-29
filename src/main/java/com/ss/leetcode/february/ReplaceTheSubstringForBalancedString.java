@@ -17,8 +17,6 @@ public class ReplaceTheSubstringForBalancedString {
             return 0;
         }
 
-
-
         return 1;
     }
 

@@ -8,6 +8,7 @@ import com.ss.leetcode.shared.Utils;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -73,7 +74,10 @@ public class StartJuly {
 //        start.beautifulArray();
 //        start.palindromeNumber();
 //        start.mergeTwoSortedLists();
-        start.minimumAbsoluteDifference();
+//        start.minimumAbsoluteDifference();
+//        start.removeDuplicatesFromSortedList();
+//        start.zeroOneMatrix();
+        start.balanceABST();
     }
 
     public void buildArrayFromPermutation() {
@@ -734,4 +738,35 @@ public class StartJuly {
         System.out.println(("[[1,3]] == " + mad.minimumAbsDifference(new int[]{1,3,6,10,15})));
         System.out.println(("[[-14,-10],[19,23],[23,27]] == " + mad.minimumAbsDifference(new int[]{3,8,-10,23,19,-4,-14,27})));
     }
+
+    public void removeDuplicatesFromSortedList() {
+        RemoveDuplicatesFromSortedList rdfss = new RemoveDuplicatesFromSortedList();
+
+        ListNode head1 = new ListNode(1, new ListNode(1, new ListNode(2)));
+        ListNode head2 = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))));
+        ListNode head3 = new ListNode(1, new ListNode(1, new ListNode(1)));
+
+        System.out.println("[1,2] == " + rdfss.deleteDuplicates(head1).getAsList());
+        System.out.println("[1,2,3] == " + rdfss.deleteDuplicates(head2).getAsList());
+        System.out.println("[1] == " + rdfss.deleteDuplicates(head3).getAsList());
+
+    }
+
+    public void zeroOneMatrix() {
+        ZeroOneMatrix zoMatrix = new ZeroOneMatrix();
+
+        System.out.println("[[0,0,0],[0,1,0],[0,0,0]] == " + Arrays.deepToString(zoMatrix.updateMatrix(new int[][]{{0,0,0}, {0,1,0}, {0,0,0}})));
+        System.out.println("[[0,0,0],[0,1,0],[1,2,1]] == " + Arrays.deepToString(zoMatrix.updateMatrix(new int[][]{{0,0,0}, {0,1,0}, {1,1,1}})));
+    }
+
+    public void balanceABST() {
+        BalanceABST babst = new BalanceABST();
+
+        TreeNode root = babst.balanceBST(new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3, null,
+                                    new TreeNode(4, null, new TreeNode(5, null, new TreeNode(6, null, new TreeNode(7))))))));
+        System.out.println("4 == " + root.val);
+        System.out.println("2 == " + root.left.val);
+        System.out.println("6 == " + root.right.val);
+    }
+
 }
