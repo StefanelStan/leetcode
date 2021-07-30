@@ -1,14 +1,11 @@
 package com.ss.leetcode;
 
-import com.ss.leetcode.december.AddTwoNumbers;
 import com.ss.leetcode.july.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import com.ss.leetcode.shared.Utils;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -77,7 +74,10 @@ public class StartJuly {
 //        start.minimumAbsoluteDifference();
 //        start.removeDuplicatesFromSortedList();
 //        start.zeroOneMatrix();
-        start.balanceABST();
+//        start.balanceABST();
+//        start.allElementsInTwoBinarySearchTrees();
+//        start.mapSumPairs();
+        start.removeAllOccurrencesOfASubstring();
     }
 
     public void buildArrayFromPermutation() {
@@ -749,7 +749,6 @@ public class StartJuly {
         System.out.println("[1,2] == " + rdfss.deleteDuplicates(head1).getAsList());
         System.out.println("[1,2,3] == " + rdfss.deleteDuplicates(head2).getAsList());
         System.out.println("[1] == " + rdfss.deleteDuplicates(head3).getAsList());
-
     }
 
     public void zeroOneMatrix() {
@@ -769,4 +768,34 @@ public class StartJuly {
         System.out.println("6 == " + root.right.val);
     }
 
+    public void allElementsInTwoBinarySearchTrees() {
+        AllElementsInTwoBST aeitbst = new AllElementsInTwoBST();
+
+        TreeNode root1 = new TreeNode(2, new TreeNode(1), new TreeNode(4));
+        TreeNode root2 = new TreeNode(1, new TreeNode(0), new TreeNode(3));
+
+        System.out.println("[0,1,1,2,3,4] == " + aeitbst.getAllElements(root1, root2));
+    }
+
+    public void mapSumPairs() {
+//        MapSumPairs msp = new MapSumPairs();
+        MapSumPairs2 msp = new MapSumPairs2();
+
+        MapSumPairs mapSum = new MapSumPairs();
+        msp.insert("apple", 3);
+        System.out.println("3 == "+ msp.sum("ap"));           // return 3 (apple = 3)
+        msp.insert("app", 2);
+        System.out.println("5 == "+ msp.sum("ap"));           // return 5 (apple + app = 3 + 2 = 5)
+
+        // override the values
+        msp.insert("apple", 7);
+        System.out.println("9 == "+ msp.sum("ap")); // return 9 (apple + app = 7 + 2 =  5)
+    }
+
+    public void removeAllOccurrencesOfASubstring() {
+        RemoveAllOccureencesOfASubstring raooas = new RemoveAllOccureencesOfASubstring();
+
+        System.out.println("dab == " + raooas.removeOccurrences2("daabcbaabcbc", "abc"));
+        System.out.println("ab == " + raooas.removeOccurrences2("axxxxyyyyb", "xy"));
+    }
 }
