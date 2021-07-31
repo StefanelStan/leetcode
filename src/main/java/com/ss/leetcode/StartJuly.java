@@ -4,6 +4,7 @@ import com.ss.leetcode.july.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import com.ss.leetcode.shared.Utils;
+import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 
@@ -77,7 +78,10 @@ public class StartJuly {
 //        start.balanceABST();
 //        start.allElementsInTwoBinarySearchTrees();
 //        start.mapSumPairs();
-        start.removeAllOccurrencesOfASubstring();
+//        start.removeAllOccurrencesOfASubstring();
+//        start.groupThePeopleGivenGroupSize();
+//        start.trappingRainWater();
+        start.maximumDepthOfBinaryTree();
     }
 
     public void buildArrayFromPermutation() {
@@ -797,5 +801,34 @@ public class StartJuly {
 
         System.out.println("dab == " + raooas.removeOccurrences2("daabcbaabcbc", "abc"));
         System.out.println("ab == " + raooas.removeOccurrences2("axxxxyyyyb", "xy"));
+    }
+
+    public void groupThePeopleGivenGroupSize() {
+        GroupThePeopleGivenGroupSize gtpggs = new GroupThePeopleGivenGroupSize();
+
+        System.out.println("[[5],[0,1,2],[3,4,6]] == " + gtpggs.groupThePeople(new int[]{3,3,3,3,3,1,3}));
+        System.out.println("[[1],[0,5],[2,3,4]] == " + gtpggs.groupThePeople(new int[]{2,1,3,3,3,2}));
+    }
+
+    public void trappingRainWater() {
+        TrappingRainWater trw = new TrappingRainWater();
+
+        System.out.println("83 == " + trw.trap(new int[]{6,4,2,0,3,2,0,3,1,4,5,3,2,7,5,3,0,1,2,1,3,4,6,8,1,3}));
+//        System.out.println("6 == " + trw.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
+//        System.out.println("9 == " + trw.trap(new int[]{4,2,0,3,2,5}));
+    }
+
+    public void maximumDepthOfBinaryTree() {
+        MaximumDepthOfBinaryTree mdobt = new MaximumDepthOfBinaryTree();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1, null, new TreeNode(2));
+        TreeNode root3 = null;
+        TreeNode root4 = new TreeNode(0);
+
+        System.out.println("3 == " + mdobt.maxDepth(root1));
+        System.out.println("2 == " + mdobt.maxDepth(root2));
+        System.out.println("0 == " + mdobt.maxDepth(root3));
+        System.out.println("1 == " + mdobt.maxDepth(root4));
     }
 }
