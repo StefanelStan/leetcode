@@ -1,12 +1,12 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.august.AddStrings;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
 import com.ss.leetcode.august.PlusOne;
 import com.ss.leetcode.august.SumRootToLeaf;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 
@@ -19,7 +19,8 @@ public class StartAugust {
 //        start.plusOne();
 //        start.makeTwoArraysEqual();
 //        start.sumRootToLeaf();
-        start.mergeTwoBinaryTrees();
+//        start.mergeTwoBinaryTrees();
+        start.addStrings();
     }
 
     public void makingALargeIsland() {
@@ -82,5 +83,15 @@ public class StartAugust {
         System.out.println("2 == " + mtbt.mergeTrees(root3, root4).val);
         System.out.println("1 == " + mtbt.mergeTrees(root3, root5).val);
 
+    }
+
+    public void addStrings() {
+        AddStrings as = new AddStrings();
+
+        System.out.println("108 == " + as.addStrings("9" , "99"));
+        System.out.println("134 == " + as.addStrings("11" , "123"));
+        System.out.println("103 == " + as.addStrings("55" , "48"));
+        System.out.println("533 == " + as.addStrings("456" , "77"));
+        System.out.println("0 == " + as.addStrings("0" , "0"));
     }
 }
