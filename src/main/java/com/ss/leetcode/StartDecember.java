@@ -25,8 +25,8 @@ import java.util.List;
 public class StartDecember {
     public static void main(String[] args) {
         StartDecember start = new StartDecember();
-//        start.twoSum();
-        start.threeSum();
+        start.twoSum();
+//        start.threeSum();
 //        start.remvoveElement();
 //        start.removeDuplicates();
 //        start.handOfStraights();
@@ -47,9 +47,10 @@ public class StartDecember {
     }
 
     public void twoSum() {
-        TwoSum twoSum = new TwoSum();
-        int[] nums = { 2, 7, 11, 15 };
-        System.out.println("TwoSum of " + Arrays.toString(nums) + " = " + Arrays.toString(twoSum.twoSum(nums, 9)));
+        TwoSum ts = new TwoSum();
+        System.out.println("[0,1] == " + Arrays.toString(ts.twoSum(new int[]{2,7,11,15}, 9)));
+        System.out.println("[1,2] == " + Arrays.toString(ts.twoSum(new int[]{3,2,4}, 6)));
+        System.out.println("[0,1] == " + Arrays.toString(ts.twoSum(new int[]{3,3}, 6)));
     }
 
     public void threeSum() {
