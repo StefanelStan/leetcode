@@ -5,11 +5,14 @@ import com.ss.leetcode.august.IncreasingOrderSearchTree;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
+import com.ss.leetcode.august.PathSum;
+import com.ss.leetcode.august.PathSumII;
 import com.ss.leetcode.august.PlusOne;
 import com.ss.leetcode.august.ReverseWordsInAStringIII;
 import com.ss.leetcode.august.SortArrayByParity;
 import com.ss.leetcode.august.Subsets;
 import com.ss.leetcode.august.SubsetsII;
+import com.ss.leetcode.august.SumOfLeftLeaves;
 import com.ss.leetcode.august.SumRootToLeaf;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -30,7 +33,10 @@ public class StartAugust {
 //        start.subsetsII();
 //        start.sortArrayByParity();
 //        start.increasingOrderSearchTree();
-        start.reverseWordsInAStringIII();
+//        start.reverseWordsInAStringIII();
+//        start.pathSumII();
+//        start.sumOfLeftLeaves();
+        start.pathSum();
     }
 
     public void makingALargeIsland() {
@@ -139,5 +145,43 @@ public class StartAugust {
         System.out.println("s'teL ekat edoCteeL tsetnoc == [" + rwias.reverseWords("Let's take LeetCode contest") + "]");
         System.out.println("doG gniD == [" + rwias.reverseWords("God Ding") + "]");
         System.out.println("ehhhhhheh == [" + rwias.reverseWords("hehhhhhhe") + "]");
+    }
+
+    public void pathSumII() {
+        PathSumII psII = new PathSumII();
+
+        TreeNode root1 = new TreeNode(5, new TreeNode(4, new TreeNode(11, new TreeNode(7), new TreeNode(2)), null),
+                                      new TreeNode(8, new TreeNode(13), new TreeNode(4, new TreeNode(5), new TreeNode(1))));
+
+        TreeNode root2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root3 = new TreeNode(1, null, new TreeNode(2));
+
+        System.out.println("[[5,4,11,2],[5,8,4,5]] == " + psII.pathSum(root1, 22));
+        System.out.println("[] == " + psII.pathSum(root2, 5));
+        System.out.println("[] == " + psII.pathSum(root3, 0));
+
+    }
+
+    public void sumOfLeftLeaves() {
+        SumOfLeftLeaves soll = new SumOfLeftLeaves();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1);
+
+        System.out.println("24 == " + soll.sumOfLeftLeaves(root1));
+        System.out.println("0 == " + soll.sumOfLeftLeaves(root2));
+    }
+
+    public void pathSum() {
+        PathSum ps = new PathSum();
+
+        TreeNode root1 = new TreeNode(5, new TreeNode(4,new TreeNode(11, new TreeNode(7), new TreeNode(2)),null),
+                                     new TreeNode(8, new TreeNode(13), new TreeNode(4, null, new TreeNode(1))));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root3 = new TreeNode(1, null, new TreeNode(2));
+
+        System.out.println("true == " + ps.hasPathSum(root1, 22));
+        System.out.println("false == " + ps.hasPathSum(root2, 5));
+        System.out.println("false == " + ps.hasPathSum(root1, 0));
     }
 }
