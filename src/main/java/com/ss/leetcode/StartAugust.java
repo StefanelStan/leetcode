@@ -1,10 +1,15 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.august.AddStrings;
+import com.ss.leetcode.august.IncreasingOrderSearchTree;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
 import com.ss.leetcode.august.PlusOne;
+import com.ss.leetcode.august.ReverseWordsInAStringIII;
+import com.ss.leetcode.august.SortArrayByParity;
+import com.ss.leetcode.august.Subsets;
+import com.ss.leetcode.august.SubsetsII;
 import com.ss.leetcode.august.SumRootToLeaf;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -20,7 +25,12 @@ public class StartAugust {
 //        start.makeTwoArraysEqual();
 //        start.sumRootToLeaf();
 //        start.mergeTwoBinaryTrees();
-        start.addStrings();
+//        start.addStrings();
+//        start.subsets();
+//        start.subsetsII();
+//        start.sortArrayByParity();
+//        start.increasingOrderSearchTree();
+        start.reverseWordsInAStringIII();
     }
 
     public void makingALargeIsland() {
@@ -93,5 +103,41 @@ public class StartAugust {
         System.out.println("103 == " + as.addStrings("55" , "48"));
         System.out.println("533 == " + as.addStrings("456" , "77"));
         System.out.println("0 == " + as.addStrings("0" , "0"));
+    }
+
+    public void subsets() {
+        Subsets s = new Subsets();
+
+        System.out.println("[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]] == " + s.subsets(new int[]{1,2,3,4}));
+    }
+
+    public void subsetsII() {
+        SubsetsII s = new SubsetsII();
+
+        System.out.println("[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]] == " + s.subsetsWithDup(new int[]{1,2,3}));
+    }
+
+    public void sortArrayByParity() {
+        SortArrayByParity sobp = new SortArrayByParity();
+
+        System.out.println("[4,2,3,1] == " + Arrays.toString(sobp.sortArrayByParity(new int[]{3,1,2,4})));
+    }
+
+    public void increasingOrderSearchTree() {
+        IncreasingOrderSearchTree iost = new IncreasingOrderSearchTree();
+        TreeNode root1 = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4)),
+                                      new TreeNode(6, null, new TreeNode(8, new TreeNode(7), new TreeNode(9))));
+        TreeNode root2 = new TreeNode(5, new TreeNode(1), new TreeNode(7));
+
+        System.out.println("1 == " + iost.increasingBST(root1).val);
+        System.out.println("1 == " + iost.increasingBST(root2).val);
+    }
+
+    public void reverseWordsInAStringIII() {
+        ReverseWordsInAStringIII rwias = new ReverseWordsInAStringIII();
+
+        System.out.println("s'teL ekat edoCteeL tsetnoc == [" + rwias.reverseWords("Let's take LeetCode contest") + "]");
+        System.out.println("doG gniD == [" + rwias.reverseWords("God Ding") + "]");
+        System.out.println("ehhhhhheh == [" + rwias.reverseWords("hehhhhhhe") + "]");
     }
 }
