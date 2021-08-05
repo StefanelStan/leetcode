@@ -1,7 +1,9 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.august.AddBinary;
 import com.ss.leetcode.august.AddStrings;
 import com.ss.leetcode.august.IncreasingOrderSearchTree;
+import com.ss.leetcode.august.LengthOfLastWord;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
@@ -10,6 +12,7 @@ import com.ss.leetcode.august.PathSumII;
 import com.ss.leetcode.august.PlusOne;
 import com.ss.leetcode.august.ReverseWordsInAStringIII;
 import com.ss.leetcode.august.SortArrayByParity;
+import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.august.Subsets;
 import com.ss.leetcode.august.SubsetsII;
 import com.ss.leetcode.august.SumOfLeftLeaves;
@@ -17,7 +20,6 @@ import com.ss.leetcode.august.SumRootToLeaf;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
-
 
 public class StartAugust {
     public static void main(String[] args) {
@@ -36,7 +38,10 @@ public class StartAugust {
 //        start.reverseWordsInAStringIII();
 //        start.pathSumII();
 //        start.sumOfLeftLeaves();
-        start.pathSum();
+//        start.pathSum();
+//        start.stoneGame();
+//        start.lengthOfLastWord();
+        start.addBinary();
     }
 
     public void makingALargeIsland() {
@@ -183,5 +188,26 @@ public class StartAugust {
         System.out.println("true == " + ps.hasPathSum(root1, 22));
         System.out.println("false == " + ps.hasPathSum(root2, 5));
         System.out.println("false == " + ps.hasPathSum(root1, 0));
+    }
+
+    public void stoneGame() {
+        StoneGame sg = new StoneGame();
+
+        System.out.println("true == " + sg.stoneGame(new int[]{5,3,4,5}));
+    }
+
+    public void lengthOfLastWord() {
+        LengthOfLastWord lolw = new LengthOfLastWord();
+
+        System.out.println("5 == " + lolw.lengthOfLastWord("Hello World"));
+        System.out.println("4 == " + lolw.lengthOfLastWord("   fly me   to  the moon  "));
+        System.out.println("6 == " + lolw.lengthOfLastWord("luffy is still joyboy"));
+    }
+
+    public void addBinary() {
+        AddBinary ab = new AddBinary();
+
+        System.out.println("100 == " + ab.addBinary("11", "1"));
+        System.out.println("10101 == " + ab.addBinary("1010", "1011"));
     }
 }
