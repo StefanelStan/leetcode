@@ -7,6 +7,8 @@ import com.ss.leetcode.august.LengthOfLastWord;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
+import com.ss.leetcode.august.MinOperationsToMakeArrayEqual;
+import com.ss.leetcode.august.NaryTreeLevelOrderTraversal;
 import com.ss.leetcode.august.PathSum;
 import com.ss.leetcode.august.PathSumII;
 import com.ss.leetcode.august.PlusOne;
@@ -17,9 +19,11 @@ import com.ss.leetcode.august.Subsets;
 import com.ss.leetcode.august.SubsetsII;
 import com.ss.leetcode.august.SumOfLeftLeaves;
 import com.ss.leetcode.august.SumRootToLeaf;
+import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StartAugust {
     public static void main(String[] args) {
@@ -41,7 +45,9 @@ public class StartAugust {
 //        start.pathSum();
 //        start.stoneGame();
 //        start.lengthOfLastWord();
-        start.addBinary();
+//        start.addBinary();
+//        start.minOperationsToMakeArrayEqual();
+        start.naryTreeLevelOrderTraversal();
     }
 
     public void makingALargeIsland() {
@@ -209,5 +215,29 @@ public class StartAugust {
 
         System.out.println("100 == " + ab.addBinary("11", "1"));
         System.out.println("10101 == " + ab.addBinary("1010", "1011"));
+    }
+
+    public void minOperationsToMakeArrayEqual() {
+        MinOperationsToMakeArrayEqual motmae = new MinOperationsToMakeArrayEqual();
+
+        System.out.println("2 == " + motmae.minOperations(3));
+        System.out.println("9 == " + motmae.minOperations(6));
+        System.out.println("20 == " + motmae.minOperations(7));
+        System.out.println("36 == " + motmae.minOperations(9));
+    }
+
+    public void naryTreeLevelOrderTraversal() {
+        NaryTreeLevelOrderTraversal ntlot = new NaryTreeLevelOrderTraversal();
+
+        Node root1 = new Node(1, List.of(new Node(3, List.of(new Node(5), new Node(6))), new Node(2), new Node(4)));
+        Node root2 = new Node(1, List.of(
+            new Node(2),
+            new Node(2, List.of(new Node(6), new Node(7, List.of(new Node(11, List.of(new Node(14))))))),
+            new Node(4, List.of(new Node(8, List.of(new Node(12))))),
+            new Node(5, List.of(new Node(9, List.of(new Node(13))), new Node(10)))
+        ));
+
+        System.out.println("[[1],[3,2,4],[5,6]] == " + ntlot.levelOrder(root1));
+        System.out.println("[[1],[2,3,4,5],[6,7,8,9,10],[11,12,13],[14]] == " + ntlot.levelOrder(root2));
     }
 }
