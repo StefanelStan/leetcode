@@ -17,7 +17,6 @@ public class Subsets {
             current.add(nums[i]);
             genSubsets(i + 1, nums, current, subsets);
             current.remove(current.size() - 1);
-
         }
     }
 }

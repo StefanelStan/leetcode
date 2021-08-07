@@ -2,6 +2,8 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.august.AddBinary;
 import com.ss.leetcode.august.AddStrings;
+import com.ss.leetcode.august.DeleteCharsFancyString;
+import com.ss.leetcode.august.DetermineColorChessboardSquare;
 import com.ss.leetcode.august.IncreasingOrderSearchTree;
 import com.ss.leetcode.august.LengthOfLastWord;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
@@ -9,6 +11,7 @@ import com.ss.leetcode.august.MakingALargeIsland;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
 import com.ss.leetcode.august.MinOperationsToMakeArrayEqual;
 import com.ss.leetcode.august.NaryTreeLevelOrderTraversal;
+import com.ss.leetcode.august.PalindromePartitioningII;
 import com.ss.leetcode.august.PathSum;
 import com.ss.leetcode.august.PathSumII;
 import com.ss.leetcode.august.PlusOne;
@@ -47,7 +50,10 @@ public class StartAugust {
 //        start.lengthOfLastWord();
 //        start.addBinary();
 //        start.minOperationsToMakeArrayEqual();
-        start.naryTreeLevelOrderTraversal();
+//        start.naryTreeLevelOrderTraversal();
+//        start.deleteCharactersToMakeFancyString();
+//        start.palindromePartitioningII();
+        start.determineColorChessboardSquare();
     }
 
     public void makingALargeIsland() {
@@ -239,5 +245,31 @@ public class StartAugust {
 
         System.out.println("[[1],[3,2,4],[5,6]] == " + ntlot.levelOrder(root1));
         System.out.println("[[1],[2,3,4,5],[6,7,8,9,10],[11,12,13],[14]] == " + ntlot.levelOrder(root2));
+    }
+
+    public void deleteCharactersToMakeFancyString() {
+        DeleteCharsFancyString dcfs = new DeleteCharsFancyString();
+
+        System.out.println("leetcode == " + dcfs.makeFancyString("leeetcode"));
+        System.out.println("aabaa == " + dcfs.makeFancyString("aaabaaaa"));
+        System.out.println("aab == " + dcfs.makeFancyString("aab"));
+        System.out.println("aax == " + dcfs.makeFancyString("aaax"));
+    }
+
+    public void palindromePartitioningII() {
+        PalindromePartitioningII ppii = new PalindromePartitioningII();
+
+        System.out.println("3 == " + ppii.minCut("aabacd"));
+        System.out.println("1 == " + ppii.minCut("aab"));
+        System.out.println("0 == " + ppii.minCut("a"));
+        System.out.println("1 == " + ppii.minCut("ab"));
+    }
+
+    public void determineColorChessboardSquare() {
+        DetermineColorChessboardSquare dccs = new DetermineColorChessboardSquare();
+
+        System.out.println("false == " + dccs.squareIsWhite("a1"));
+        System.out.println("true == " + dccs.squareIsWhite("h3"));
+        System.out.println("false == " + dccs.squareIsWhite("c7"));
     }
 }
