@@ -4,8 +4,12 @@ import com.ss.leetcode.august.AddBinary;
 import com.ss.leetcode.august.AddStrings;
 import com.ss.leetcode.august.DeleteCharsFancyString;
 import com.ss.leetcode.august.DetermineColorChessboardSquare;
+import com.ss.leetcode.august.FindLuckyIntegerInAnArray;
+import com.ss.leetcode.august.GameOfLife;
 import com.ss.leetcode.august.IncreasingOrderSearchTree;
+import com.ss.leetcode.august.LargestTriangleArea;
 import com.ss.leetcode.august.LengthOfLastWord;
+import com.ss.leetcode.august.LongestContinuousIncSubs;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
@@ -16,6 +20,8 @@ import com.ss.leetcode.august.PathSum;
 import com.ss.leetcode.august.PathSumII;
 import com.ss.leetcode.august.PlusOne;
 import com.ss.leetcode.august.ReverseWordsInAStringIII;
+import com.ss.leetcode.august.SetMatrixZeroes;
+import com.ss.leetcode.august.SmallestStringStartingFromLeaf;
 import com.ss.leetcode.august.SortArrayByParity;
 import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.august.Subsets;
@@ -53,7 +59,13 @@ public class StartAugust {
 //        start.naryTreeLevelOrderTraversal();
 //        start.deleteCharactersToMakeFancyString();
 //        start.palindromePartitioningII();
-        start.determineColorChessboardSquare();
+//        start.determineColorChessboardSquare();
+//        start.longestContinuousIncreasingSubsequence();
+//        start.findLuckyIntegerInAnArray();
+//        start.largestTriangleArea();
+//        start.gameOfLife();
+//        start.setMatrixZeroes();
+        start.smallestStringStartingFromLeaf();
     }
 
     public void makingALargeIsland() {
@@ -271,5 +283,62 @@ public class StartAugust {
         System.out.println("false == " + dccs.squareIsWhite("a1"));
         System.out.println("true == " + dccs.squareIsWhite("h3"));
         System.out.println("false == " + dccs.squareIsWhite("c7"));
+    }
+
+    public void longestContinuousIncreasingSubsequence() {
+        LongestContinuousIncSubs lcis = new LongestContinuousIncSubs();
+
+        System.out.println(("3 == " + lcis.findLengthOfLCIS(new int[]{1,3,5,4,7})));
+        System.out.println(("1 == " + lcis.findLengthOfLCIS(new int[]{2,2,2,2,2})));
+    }
+
+    public void findLuckyIntegerInAnArray() {
+        FindLuckyIntegerInAnArray fliiaa = new FindLuckyIntegerInAnArray();
+
+        System.out.println("2 == " +fliiaa.findLucky(new int[]{2,2,3,4}));
+        System.out.println("3 == " +fliiaa.findLucky(new int[]{1,2,2,3,3,3}));
+        System.out.println("-1 == " +fliiaa.findLucky(new int[]{2,2,2,3,3}));
+        System.out.println("-1 == " +fliiaa.findLucky(new int[]{5}));
+    }
+
+    public void largestTriangleArea() {
+        LargestTriangleArea lta = new LargestTriangleArea();
+
+        System.out.println("2.00000 == " + lta.largestTriangleArea(new int[][]{{0,0},{0,1},{1,0},{0,2},{2,0}}));
+        System.out.println("0.50000 == " + lta.largestTriangleArea(new int[][]{{1,0},{0,0},{0,1}}));
+    }
+
+    public void gameOfLife() {
+        GameOfLife gof = new GameOfLife();
+
+        int[][] board1 = {{0,1,0}, {0,0,1}, {1,1,1}, {0,0,0}};
+        int[][] board2 = {{1,1}, {1,0}};
+        gof.gameOfLife(board1);
+        gof.gameOfLife(board2);
+        System.out.println("[[0,0,0],[1,0,1],[0,1,1],[0,1,0]] == " + Arrays.deepToString(board1));
+        System.out.println("[[1,1],[1,1]] == " + Arrays.deepToString(board2));
+    }
+
+    public void setMatrixZeroes() {
+        SetMatrixZeroes smz = new SetMatrixZeroes();
+
+        int[][] matrix1 = {{1,1,1},{1,0,1},{1,1,1}};
+        int[][] matrix2 = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+        smz.setZeroes(matrix1);
+        smz.setZeroes(matrix2);
+        System.out.println("[[1,0,1],[0,0,0],[1,0,1]] == " + Arrays.deepToString(matrix1));
+        System.out.println("[[0,0,0,0],[0,4,5,0],[0,3,1,0]] == " + Arrays.deepToString(matrix2));
+    }
+
+    public void smallestStringStartingFromLeaf() {
+        SmallestStringStartingFromLeaf sssfl = new SmallestStringStartingFromLeaf();
+
+        TreeNode root1 = new TreeNode(0, new TreeNode(1, new TreeNode(3), new TreeNode(4)), new TreeNode(2, new TreeNode(3), new TreeNode(4)));
+        TreeNode root2 = new TreeNode(25, new TreeNode(1, new TreeNode(1),new TreeNode(3)), new TreeNode(3, new TreeNode(0), new TreeNode(2)));
+        TreeNode root3 = new TreeNode(2, new TreeNode(2, null, new TreeNode(1, new TreeNode(0), null)), new TreeNode(1, new TreeNode(0), null));
+
+        System.out.println("dba == " + sssfl.smallestFromLeaf(root1));
+        System.out.println("adz == " + sssfl.smallestFromLeaf(root2));
+        System.out.println("abc == " + sssfl.smallestFromLeaf(root3));
     }
 }
