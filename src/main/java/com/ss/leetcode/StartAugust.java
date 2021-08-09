@@ -2,9 +2,11 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.august.AddBinary;
 import com.ss.leetcode.august.AddStrings;
+import com.ss.leetcode.august.ArrayPartitionI;
 import com.ss.leetcode.august.DeleteCharsFancyString;
 import com.ss.leetcode.august.DetermineColorChessboardSquare;
 import com.ss.leetcode.august.FindLuckyIntegerInAnArray;
+import com.ss.leetcode.august.FrequencyOfMostFreqElem;
 import com.ss.leetcode.august.GameOfLife;
 import com.ss.leetcode.august.IncreasingOrderSearchTree;
 import com.ss.leetcode.august.LargestTriangleArea;
@@ -12,8 +14,11 @@ import com.ss.leetcode.august.LengthOfLastWord;
 import com.ss.leetcode.august.LongestContinuousIncSubs;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
+import com.ss.leetcode.august.MaximumUnitsOnATruck;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
 import com.ss.leetcode.august.MinOperationsToMakeArrayEqual;
+import com.ss.leetcode.august.MinimumDistanceTargetElement;
+import com.ss.leetcode.august.NRepeatedElementIn2NArray;
 import com.ss.leetcode.august.NaryTreeLevelOrderTraversal;
 import com.ss.leetcode.august.PalindromePartitioningII;
 import com.ss.leetcode.august.PathSum;
@@ -27,7 +32,9 @@ import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.august.Subsets;
 import com.ss.leetcode.august.SubsetsII;
 import com.ss.leetcode.august.SumOfLeftLeaves;
+import com.ss.leetcode.august.SumOfUniqueElements;
 import com.ss.leetcode.august.SumRootToLeaf;
+import com.ss.leetcode.august.TheKWeakestRowsMatrix;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -65,7 +72,14 @@ public class StartAugust {
 //        start.largestTriangleArea();
 //        start.gameOfLife();
 //        start.setMatrixZeroes();
-        start.smallestStringStartingFromLeaf();
+//        start.smallestStringStartingFromLeaf();
+//        start.maximumUnitsOnATruck();
+//        start.sumOfUniqueElements();
+//        start.frequencyOfMostFrequentElement();
+//        start.minimumDistanceTargetElement();
+//        start.nRepeatedElementInSize2NArray();
+//        start.theKWeakestRowsMatrix();
+        start.arrayPartitionI();
     }
 
     public void makingALargeIsland() {
@@ -340,5 +354,62 @@ public class StartAugust {
         System.out.println("dba == " + sssfl.smallestFromLeaf(root1));
         System.out.println("adz == " + sssfl.smallestFromLeaf(root2));
         System.out.println("abc == " + sssfl.smallestFromLeaf(root3));
+    }
+
+    public void maximumUnitsOnATruck() {
+        MaximumUnitsOnATruck muoat = new MaximumUnitsOnATruck();
+
+        System.out.println("8 == " + muoat.maximumUnits(new int[][]{{1,3}, {2,2}, {3,1}}, 4));
+        System.out.println("91 == " + muoat.maximumUnits(new int[][]{{5,10}, {2,5}, {4,7}, {3,9}}, 10));
+    }
+
+    public void sumOfUniqueElements() {
+        SumOfUniqueElements soue = new SumOfUniqueElements();
+
+        System.out.println("4 == " + soue.sumOfUnique(new int[]{1,2,3,2}));
+        System.out.println("0 == " + soue.sumOfUnique(new int[]{1,1,1,1,1}));
+        System.out.println("15 == " + soue.sumOfUnique(new int[]{1,2,3,4,5}));
+    }
+
+    public void frequencyOfMostFrequentElement() {
+        // not solved yet
+        FrequencyOfMostFreqElem fomfe = new FrequencyOfMostFreqElem();
+
+        System.out.println("3 == " + fomfe.maxFrequency(new int[]{1,2,4}, 5));
+        System.out.println("2 == " + fomfe.maxFrequency(new int[]{1,4,8,13}, 5));
+        System.out.println("1 == " + fomfe.maxFrequency(new int[]{3,9,6}, 2));
+    }
+
+    public void minimumDistanceTargetElement() {
+        MinimumDistanceTargetElement mdte = new MinimumDistanceTargetElement();
+
+        System.out.println("1 == " + mdte.getMinDistance(new int[]{1,2,3,4,5}, 5, 3));
+        System.out.println("0 == " + mdte.getMinDistance(new int[]{1}, 1, 0));
+        System.out.println("0 == " + mdte.getMinDistance(new int[]{1,1,1,1,1,1,1,1,1,1}, 1, 0));
+        System.out.println("2 == " + mdte.getMinDistance(new int[]{5,4,3,1,8,9,6,3,1,9,4}, 1, 5));
+    }
+
+    public void nRepeatedElementInSize2NArray() {
+        NRepeatedElementIn2NArray nreitna = new NRepeatedElementIn2NArray();
+
+        System.out.println("3 == " + nreitna.repeatedNTimes(new int[]{1,2,3,3}));
+        System.out.println("2 == " + nreitna.repeatedNTimes(new int[]{2,1,2,5,3,2}));
+        System.out.println("3 == " + nreitna.repeatedNTimes(new int[]{5,1,5,2,5,3,5,4}));
+    }
+
+    public void theKWeakestRowsMatrix() {
+        TheKWeakestRowsMatrix tkwrm = new TheKWeakestRowsMatrix();
+
+        System.out.println("[2,0,3] == " + Arrays.toString(tkwrm.kWeakestRows(new int[][]{{1,1,0,0,0}, {1,1,1,1,0},
+                                                            {1,0,0,0,0}, {1,1,0,0,0}, {1,1,1,1,1}}, 3)));
+        System.out.println("[0, 2] == " + Arrays.toString(tkwrm.kWeakestRows(new int[][]{{1,0,0,0}, {1,1,1,1}, {1,0,0,0}, {1,0,0,0}}, 2)));
+        System.out.println("[0, 2] == " + Arrays.toString(tkwrm.kWeakestRows(new int[][]{{1,1,1,1,1,1}, {1,1,1,1,1,1}, {1,1,1,1,1,1}}, 1)));
+    }
+
+    public void arrayPartitionI() {
+        ArrayPartitionI api = new ArrayPartitionI();
+
+        System.out.println("4 == " + api.arrayPairSum(new int[]{1,4,3,2}));
+        System.out.println("9 == " + api.arrayPairSum(new int[]{6,2,6,5,1,2}));
     }
 }
