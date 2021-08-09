@@ -23,6 +23,7 @@ import com.ss.leetcode.august.NaryTreeLevelOrderTraversal;
 import com.ss.leetcode.august.PalindromePartitioningII;
 import com.ss.leetcode.august.PathSum;
 import com.ss.leetcode.august.PathSumII;
+import com.ss.leetcode.august.PeakIndexInAMountainArray;
 import com.ss.leetcode.august.PlusOne;
 import com.ss.leetcode.august.ReverseWordsInAStringIII;
 import com.ss.leetcode.august.SetMatrixZeroes;
@@ -79,7 +80,8 @@ public class StartAugust {
 //        start.minimumDistanceTargetElement();
 //        start.nRepeatedElementInSize2NArray();
 //        start.theKWeakestRowsMatrix();
-        start.arrayPartitionI();
+//        start.arrayPartitionI();
+        start.peakIndexInAMountainArray();
     }
 
     public void makingALargeIsland() {
@@ -411,5 +413,15 @@ public class StartAugust {
 
         System.out.println("4 == " + api.arrayPairSum(new int[]{1,4,3,2}));
         System.out.println("9 == " + api.arrayPairSum(new int[]{6,2,6,5,1,2}));
+    }
+
+    public void peakIndexInAMountainArray() {
+        PeakIndexInAMountainArray piiama = new PeakIndexInAMountainArray();
+
+        System.out.println("1 == " + piiama.peakIndexInMountainArray(new int[]{0,1,0}));
+        System.out.println("1 == " + piiama.peakIndexInMountainArray(new int[]{0,2,1,0}));
+        System.out.println("1 == " + piiama.peakIndexInMountainArray(new int[]{0,10,5,2}));
+        System.out.println("2 == " + piiama.peakIndexInMountainArray(new int[]{3,4,5,1}));
+        System.out.println("2 == " + piiama.peakIndexInMountainArray(new int[]{24,69,100,99,79,78,67,36,26,19}));
     }
 }
