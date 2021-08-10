@@ -3,7 +3,9 @@ package com.ss.leetcode;
 import com.ss.leetcode.august.AddBinary;
 import com.ss.leetcode.august.AddStrings;
 import com.ss.leetcode.august.ArrayPartitionI;
+import com.ss.leetcode.august.CountGoodNodesInBinaryTree;
 import com.ss.leetcode.august.DeleteCharsFancyString;
+import com.ss.leetcode.august.DeleteNodeInALinkedList;
 import com.ss.leetcode.august.DetermineColorChessboardSquare;
 import com.ss.leetcode.august.FindLuckyIntegerInAnArray;
 import com.ss.leetcode.august.FrequencyOfMostFreqElem;
@@ -14,6 +16,7 @@ import com.ss.leetcode.august.LengthOfLastWord;
 import com.ss.leetcode.august.LongestContinuousIncSubs;
 import com.ss.leetcode.august.MakeTwoArraysEqual;
 import com.ss.leetcode.august.MakingALargeIsland;
+import com.ss.leetcode.august.MaximumNumberWordsYouCanType;
 import com.ss.leetcode.august.MaximumUnitsOnATruck;
 import com.ss.leetcode.august.MergeTwoBinaryTrees;
 import com.ss.leetcode.august.MinOperationsToMakeArrayEqual;
@@ -25,10 +28,13 @@ import com.ss.leetcode.august.PathSum;
 import com.ss.leetcode.august.PathSumII;
 import com.ss.leetcode.august.PeakIndexInAMountainArray;
 import com.ss.leetcode.august.PlusOne;
+import com.ss.leetcode.august.ReplaceElementsGreatestRightSide;
 import com.ss.leetcode.august.ReverseWordsInAStringIII;
+import com.ss.leetcode.august.SearchInABST;
 import com.ss.leetcode.august.SetMatrixZeroes;
 import com.ss.leetcode.august.SmallestStringStartingFromLeaf;
 import com.ss.leetcode.august.SortArrayByParity;
+import com.ss.leetcode.august.SquaresOfASortedArray;
 import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.august.Subsets;
 import com.ss.leetcode.august.SubsetsII;
@@ -36,6 +42,7 @@ import com.ss.leetcode.august.SumOfLeftLeaves;
 import com.ss.leetcode.august.SumOfUniqueElements;
 import com.ss.leetcode.august.SumRootToLeaf;
 import com.ss.leetcode.august.TheKWeakestRowsMatrix;
+import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -81,8 +88,15 @@ public class StartAugust {
 //        start.nRepeatedElementInSize2NArray();
 //        start.theKWeakestRowsMatrix();
 //        start.arrayPartitionI();
-        start.peakIndexInAMountainArray();
+//        start.peakIndexInAMountainArray();
+//        start.maximumNumberWordsYouCanType();
+//        start.squaresOfASortedArray();
+//        start.countGoodNodesInBinaryTree();
+//        start.searchInABST();
+//        start.replaceElementsWithGreatestRightSide();
+        start.deleteNodeInALinkedList();
     }
+
 
     public void makingALargeIsland() {
 
@@ -423,5 +437,70 @@ public class StartAugust {
         System.out.println("1 == " + piiama.peakIndexInMountainArray(new int[]{0,10,5,2}));
         System.out.println("2 == " + piiama.peakIndexInMountainArray(new int[]{3,4,5,1}));
         System.out.println("2 == " + piiama.peakIndexInMountainArray(new int[]{24,69,100,99,79,78,67,36,26,19}));
+    }
+
+    public void maximumNumberWordsYouCanType() {
+        MaximumNumberWordsYouCanType mnwyct = new MaximumNumberWordsYouCanType();
+
+        System.out.println("1 == " + mnwyct.canBeTypedWords("hello world", "ad"));
+        System.out.println("1 == " + mnwyct.canBeTypedWords("leet code", "lt"));
+        System.out.println("0 == " + mnwyct.canBeTypedWords("leet code", "e"));
+    }
+
+    public void squaresOfASortedArray() {
+        SquaresOfASortedArray soasa = new SquaresOfASortedArray();
+
+        System.out.println("[0,1,9,16,100] == " + Arrays.toString(soasa.sortedSquares(new int[]{-4,-1,0,3,10})));
+        System.out.println("[4,9,9,49,121] == " + Arrays.toString(soasa.sortedSquares(new int[]{-7,-3,2,3,11})));
+    }
+
+    public void countGoodNodesInBinaryTree() {
+        CountGoodNodesInBinaryTree cgnibt = new CountGoodNodesInBinaryTree();
+        TreeNode root1 = new TreeNode(3, new TreeNode(1, new TreeNode(3), null), new TreeNode(4, new TreeNode(1), new TreeNode(5)));
+        TreeNode root2 = new TreeNode(3, new TreeNode(3, new TreeNode(4), new TreeNode(2)), null);
+        TreeNode root3 = new TreeNode(1);
+
+        System.out.println("4 == " + cgnibt.goodNodes(root1));
+        System.out.println("3 == " + cgnibt.goodNodes(root2));
+        System.out.println("1 == " + cgnibt.goodNodes(root3));
+
+    }
+
+    public void searchInABST() {
+        SearchInABST siabst = new SearchInABST();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7));
+
+        System.out.println("[2,1,3] == " + siabst.searchBST(root1, 2));
+        System.out.println("[] == " + siabst.searchBST(root1, 5));
+    }
+
+    public void replaceElementsWithGreatestRightSide() {
+        ReplaceElementsGreatestRightSide regrs = new ReplaceElementsGreatestRightSide();
+
+        System.out.println("[18,6,6,6,1,-1] == " + Arrays.toString(regrs.replaceElements(new int[]{17,18,5,4,6,1})));
+        System.out.println("[-1] == " + Arrays.toString(regrs.replaceElements(new int[]{400})));
+
+
+    }
+
+    public void deleteNodeInALinkedList() {
+        DeleteNodeInALinkedList dniall = new DeleteNodeInALinkedList();
+
+        ListNode node11 = new ListNode(5, new ListNode(1, new ListNode(9)));
+        ListNode head11 = new ListNode(4, node11);
+
+        ListNode node21 = new ListNode(1, new ListNode(9));
+        ListNode head21 = new ListNode(4, new ListNode(5, node21));
+
+        ListNode node31 = new ListNode(3, new ListNode(4));
+        ListNode head31 = new ListNode(1, new ListNode(2, node31));
+
+        dniall.deleteNode(node11);
+        dniall.deleteNode(node21);
+        dniall.deleteNode(node31);
+        System.out.println("[4,1,9] == " + head11.getAsList());
+        System.out.println("[4,5,9] == " + head21.getAsList());
+        System.out.println("[1,2,4] == " + head31.getAsList());
     }
 }
