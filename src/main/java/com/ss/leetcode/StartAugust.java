@@ -2,11 +2,14 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.august.AddBinary;
 import com.ss.leetcode.august.AddStrings;
+import com.ss.leetcode.august.ArrayOfDoubledPairs;
 import com.ss.leetcode.august.ArrayPartitionI;
 import com.ss.leetcode.august.CountGoodNodesInBinaryTree;
+import com.ss.leetcode.august.CountNegativeNumbersSortedMatrix;
 import com.ss.leetcode.august.DeleteCharsFancyString;
 import com.ss.leetcode.august.DeleteNodeInALinkedList;
 import com.ss.leetcode.august.DetermineColorChessboardSquare;
+import com.ss.leetcode.august.FinalPricesWithSpecialDiscount;
 import com.ss.leetcode.august.FindLuckyIntegerInAnArray;
 import com.ss.leetcode.august.FrequencyOfMostFreqElem;
 import com.ss.leetcode.august.GameOfLife;
@@ -39,6 +42,7 @@ import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.august.Subsets;
 import com.ss.leetcode.august.SubsetsII;
 import com.ss.leetcode.august.SumOfLeftLeaves;
+import com.ss.leetcode.august.SumOfNodesEvenValuedGrandparent;
 import com.ss.leetcode.august.SumOfUniqueElements;
 import com.ss.leetcode.august.SumRootToLeaf;
 import com.ss.leetcode.august.TheKWeakestRowsMatrix;
@@ -94,7 +98,11 @@ public class StartAugust {
 //        start.countGoodNodesInBinaryTree();
 //        start.searchInABST();
 //        start.replaceElementsWithGreatestRightSide();
-        start.deleteNodeInALinkedList();
+//        start.deleteNodeInALinkedList();
+//        start.arrayOfDoubledPairs();
+//        start.sumOfNodesEvenValuedGrandparent();
+//        start.finalPricesWithSpecialDiscount();
+        start.countNegativeNumbersSortedMatrix();
     }
 
 
@@ -502,5 +510,46 @@ public class StartAugust {
         System.out.println("[4,1,9] == " + head11.getAsList());
         System.out.println("[4,5,9] == " + head21.getAsList());
         System.out.println("[1,2,4] == " + head31.getAsList());
+    }
+
+    public void arrayOfDoubledPairs() {
+        ArrayOfDoubledPairs aodp = new ArrayOfDoubledPairs();
+
+        System.out.println(("false == " + aodp.canReorderDoubled(new int[]{3,1,3,6})));
+        System.out.println(("false == " + aodp.canReorderDoubled(new int[]{3,1,3,6})));
+        System.out.println(("true == " + aodp.canReorderDoubled(new int[]{4,-2,2,-4})));
+        System.out.println(("false == " + aodp.canReorderDoubled(new int[]{1,2,4,16,8,4})));
+
+    }
+
+    public void sumOfNodesEvenValuedGrandparent() {
+        SumOfNodesEvenValuedGrandparent sofevg = new SumOfNodesEvenValuedGrandparent();
+
+        TreeNode root1 = new TreeNode(6, new TreeNode(7, new TreeNode(2, new TreeNode(9), null), new TreeNode(7, new TreeNode(1), new TreeNode(4))),
+                                      new TreeNode(8, new TreeNode(1), new TreeNode(3, null, new TreeNode(5))));
+        TreeNode root2 = new TreeNode(1);
+
+        System.out.println("18 == " + sofevg.sumEvenGrandparent(root1));
+        System.out.println("0 == " + sofevg.sumEvenGrandparent(root2));
+
+
+    }
+
+    public void finalPricesWithSpecialDiscount() {
+        FinalPricesWithSpecialDiscount fpwsd = new FinalPricesWithSpecialDiscount();
+
+        System.out.println("[4,2,4,2,3] == " + Arrays.toString(fpwsd.finalPrices(new int[] { 8, 4, 6, 2, 3 })));
+        System.out.println("[1,2,3,4,5] == " + Arrays.toString(fpwsd.finalPrices(new int[] { 1, 2, 3, 4, 5 })));
+        System.out.println("[9,0,1,6] == " + Arrays.toString(fpwsd.finalPrices(new int[] { 10, 1, 1, 6 })));
+    }
+
+    public void countNegativeNumbersSortedMatrix() {
+        CountNegativeNumbersSortedMatrix cnnsm = new CountNegativeNumbersSortedMatrix();
+
+        System.out.println("8 == " +  cnnsm.countNegatives(new int[][]{{4,3,2,-1}, {3,2,1,-1}, {1,1,-1,-2}, {-1,-1,-2,-3}}));
+        System.out.println("0 == " +  cnnsm.countNegatives(new int[][]{{3, 2}, {1, 0}}));
+        System.out.println("3 == " +  cnnsm.countNegatives(new int[][]{{1, -1}, {-1, -1}}));
+        System.out.println("1 == " +  cnnsm.countNegatives(new int[][]{{-1}}));
+
     }
 }
