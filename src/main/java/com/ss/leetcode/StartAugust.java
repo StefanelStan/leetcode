@@ -1,51 +1,6 @@
 package com.ss.leetcode;
 
-import com.ss.leetcode.august.AddBinary;
-import com.ss.leetcode.august.AddStrings;
-import com.ss.leetcode.august.ArrayOfDoubledPairs;
-import com.ss.leetcode.august.ArrayPartitionI;
-import com.ss.leetcode.august.CountGoodNodesInBinaryTree;
-import com.ss.leetcode.august.CountNegativeNumbersSortedMatrix;
-import com.ss.leetcode.august.DeleteCharsFancyString;
-import com.ss.leetcode.august.DeleteNodeInALinkedList;
-import com.ss.leetcode.august.DetermineColorChessboardSquare;
-import com.ss.leetcode.august.FinalPricesWithSpecialDiscount;
-import com.ss.leetcode.august.FindLuckyIntegerInAnArray;
-import com.ss.leetcode.august.FrequencyOfMostFreqElem;
-import com.ss.leetcode.august.GameOfLife;
-import com.ss.leetcode.august.IncreasingOrderSearchTree;
-import com.ss.leetcode.august.LargestTriangleArea;
-import com.ss.leetcode.august.LengthOfLastWord;
-import com.ss.leetcode.august.LongestContinuousIncSubs;
-import com.ss.leetcode.august.MakeTwoArraysEqual;
-import com.ss.leetcode.august.MakingALargeIsland;
-import com.ss.leetcode.august.MaximumNumberWordsYouCanType;
-import com.ss.leetcode.august.MaximumUnitsOnATruck;
-import com.ss.leetcode.august.MergeTwoBinaryTrees;
-import com.ss.leetcode.august.MinOperationsToMakeArrayEqual;
-import com.ss.leetcode.august.MinimumDistanceTargetElement;
-import com.ss.leetcode.august.NRepeatedElementIn2NArray;
-import com.ss.leetcode.august.NaryTreeLevelOrderTraversal;
-import com.ss.leetcode.august.PalindromePartitioningII;
-import com.ss.leetcode.august.PathSum;
-import com.ss.leetcode.august.PathSumII;
-import com.ss.leetcode.august.PeakIndexInAMountainArray;
-import com.ss.leetcode.august.PlusOne;
-import com.ss.leetcode.august.ReplaceElementsGreatestRightSide;
-import com.ss.leetcode.august.ReverseWordsInAStringIII;
-import com.ss.leetcode.august.SearchInABST;
-import com.ss.leetcode.august.SetMatrixZeroes;
-import com.ss.leetcode.august.SmallestStringStartingFromLeaf;
-import com.ss.leetcode.august.SortArrayByParity;
-import com.ss.leetcode.august.SquaresOfASortedArray;
-import com.ss.leetcode.august.StoneGame;
-import com.ss.leetcode.august.Subsets;
-import com.ss.leetcode.august.SubsetsII;
-import com.ss.leetcode.august.SumOfLeftLeaves;
-import com.ss.leetcode.august.SumOfNodesEvenValuedGrandparent;
-import com.ss.leetcode.august.SumOfUniqueElements;
-import com.ss.leetcode.august.SumRootToLeaf;
-import com.ss.leetcode.august.TheKWeakestRowsMatrix;
+import com.ss.leetcode.august.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
@@ -102,9 +57,13 @@ public class StartAugust {
 //        start.arrayOfDoubledPairs();
 //        start.sumOfNodesEvenValuedGrandparent();
 //        start.finalPricesWithSpecialDiscount();
-        start.countNegativeNumbersSortedMatrix();
+//        start.countNegativeNumbersSortedMatrix();
+//        start.groupAnagrams();
+//        start.partitionLabels();
+//        start.minimumNumberOpsMoveBallsEachBox();
+//        start.deleteColumnsToMakeSorted();
+        start.canMakeAritProgressionFromSeq();
     }
-
 
     public void makingALargeIsland() {
 
@@ -552,4 +511,45 @@ public class StartAugust {
         System.out.println("1 == " +  cnnsm.countNegatives(new int[][]{{-1}}));
 
     }
+
+    public void groupAnagrams() {
+        GroupAnagrams ga = new GroupAnagrams();
+
+        System.out.println("[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]] == " +
+                                            ga.groupAnagrams(new String[] {"eat","tea","tan","ate","nat","bat"}));
+
+        System.out.println("[[]] == " + ga.groupAnagrams(new String[]{""}));
+        System.out.println("[[a]] == " + ga.groupAnagrams(new String[]{"a"}));
+    }
+
+    public void partitionLabels() {
+        PartitionLabels pl = new PartitionLabels();
+
+        System.out.println("[9,7,8] == " + pl.partitionLabels("ababcbacadefegdehijhklij"));
+        System.out.println("[10] == " + pl.partitionLabels("eccbbbbdec"));
+
+    }
+
+    public void minimumNumberOpsMoveBallsEachBox() {
+        MinimumNumberOpsMoveBallsEachBox mnombeb = new MinimumNumberOpsMoveBallsEachBox();
+
+        System.out.println(("[1,1,3] == " + Arrays.toString(mnombeb.minOperations("110"))));
+        System.out.println(("[11,8,5,4,3,4] == " + Arrays.toString(mnombeb.minOperations("001011"))));
+    }
+
+    public void deleteColumnsToMakeSorted() {
+        DeleteColumnsToMakeSorted dctms = new DeleteColumnsToMakeSorted();
+
+        System.out.println("1 == " + dctms.minDeletionSize(new String[]{"cba","daf","ghi"}));
+        System.out.println("0 == " + dctms.minDeletionSize(new String[]{"a","b"}));
+        System.out.println("3 == " + dctms.minDeletionSize(new String[]{"zyx","wvu","tsr"}));
+    }
+
+    public void canMakeAritProgressionFromSeq() {
+        CanMakeAritProgressionFromSeq cmapfs = new CanMakeAritProgressionFromSeq();
+
+        System.out.println("true == " + cmapfs.canMakeArithmeticProgression(new int[]{3,5,1}));
+        System.out.println("false == " + cmapfs.canMakeArithmeticProgression(new int[]{1,2,4}));
+    }
+
 }
