@@ -5,6 +5,7 @@ import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -62,7 +63,13 @@ public class StartAugust {
 //        start.partitionLabels();
 //        start.minimumNumberOpsMoveBallsEachBox();
 //        start.deleteColumnsToMakeSorted();
-        start.canMakeAritProgressionFromSeq();
+//        start.canMakeAritProgressionFromSeq();
+//        start.sortIntegersByNumberOf1Bits();
+//        start.sumOfDigitsInBaseK();
+//        start.naryTreePreorderTraversal();
+//        start.diStringMatch();
+//        start.deleteLeavesWithGivenValue();
+        start.insertIntoABST();
     }
 
     public void makingALargeIsland() {
@@ -490,8 +497,6 @@ public class StartAugust {
 
         System.out.println("18 == " + sofevg.sumEvenGrandparent(root1));
         System.out.println("0 == " + sofevg.sumEvenGrandparent(root2));
-
-
     }
 
     public void finalPricesWithSpecialDiscount() {
@@ -509,7 +514,6 @@ public class StartAugust {
         System.out.println("0 == " +  cnnsm.countNegatives(new int[][]{{3, 2}, {1, 0}}));
         System.out.println("3 == " +  cnnsm.countNegatives(new int[][]{{1, -1}, {-1, -1}}));
         System.out.println("1 == " +  cnnsm.countNegatives(new int[][]{{-1}}));
-
     }
 
     public void groupAnagrams() {
@@ -527,7 +531,6 @@ public class StartAugust {
 
         System.out.println("[9,7,8] == " + pl.partitionLabels("ababcbacadefegdehijhklij"));
         System.out.println("[10] == " + pl.partitionLabels("eccbbbbdec"));
-
     }
 
     public void minimumNumberOpsMoveBallsEachBox() {
@@ -552,4 +555,58 @@ public class StartAugust {
         System.out.println("false == " + cmapfs.canMakeArithmeticProgression(new int[]{1,2,4}));
     }
 
+    public void sortIntegersByNumberOf1Bits() {
+        SortIntegersByNumberOf1Bits sibnoob = new SortIntegersByNumberOf1Bits();
+
+        System.out.println("[0,1,2,4,8,3,5,6,7] == " + Arrays.toString(sibnoob.sortByBits(new int[]{0,1,2,3,4,5,6,7,8})));
+        System.out.println("[1,2,4,8,16,32,64,128,256,512,1024] == " + Arrays.toString(sibnoob.sortByBits(new int[]{1024,512,256,128,64,32,16,8,4,2,1})));
+        System.out.println("[10000,10000] == " + Arrays.toString(sibnoob.sortByBits(new int[]{10000,10000})));
+        System.out.println("[2,3,5,17,7,11,13,19] == " + Arrays.toString(sibnoob.sortByBits(new int[]{2,3,5,7,11,13,17,19})));
+        System.out.println("[10,100,10000,1000] == " + Arrays.toString(sibnoob.sortByBits(new int[]{10,100,1000,10000})));
+    }
+
+    public void sumOfDigitsInBaseK() {
+        SumOfDigitsInBaseK sodibk = new SumOfDigitsInBaseK();
+
+        System.out.println("9 == " + sodibk.sumBase(34, 6));
+        System.out.println("1 == " + sodibk.sumBase(10, 10));
+    }
+
+    public void naryTreePreorderTraversal() {
+        NaryTreePreorderTraversal ntpt = new NaryTreePreorderTraversal();
+
+        Node root1 = new Node(1, List.of(new Node(3, List.of(new Node(5), new Node(6))), new Node(2), new Node(4)));
+
+        System.out.println("[1,3,5,6,2,4] == " + ntpt.preorder(root1));
+    }
+
+    public void diStringMatch() {
+        DIStringMatch dism = new DIStringMatch();
+
+        System.out.println("[0,4,1,3,2] == " + Arrays.toString(dism.diStringMatch("IDID")));
+        System.out.println("[0,1,2,3] == " + Arrays.toString(dism.diStringMatch("III")));
+        System.out.println("[3,2,0,1] == " + Arrays.toString(dism.diStringMatch("DDI")));
+
+    }
+
+    public void deleteLeavesWithGivenValue() {
+        DeleteLeavesWithGivenValue dlwgv = new DeleteLeavesWithGivenValue();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(2), null), new TreeNode(3, new TreeNode(2), new TreeNode(4)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(3, new TreeNode(3), new TreeNode(2)), new TreeNode(3));
+        TreeNode root3 = new TreeNode(1, new TreeNode(2, new TreeNode(2, new TreeNode(2), null), null), null);
+
+        System.out.println("[1,3,4] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root1, 2)));
+        System.out.println("[1,3,2] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root2, 3)));
+        System.out.println("[1] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root3, 2)));
+
+    }
+
+    public void insertIntoABST() {
+        InsertIntoABST iiabst = new InsertIntoABST();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7));
+
+        System.out.println("[4,2,7,1,3,5] == " + TreeNode.extractValues(iiabst.insertIntoBST(root1, 5)));
+    }
 }
