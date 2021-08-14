@@ -69,7 +69,9 @@ public class StartAugust {
 //        start.naryTreePreorderTraversal();
 //        start.diStringMatch();
 //        start.deleteLeavesWithGivenValue();
-        start.insertIntoABST();
+//        start.insertIntoABST();
+//        start.shortestDistanceToACharacter();
+        start.naryTreePostorderTraversal();
     }
 
     public void makingALargeIsland() {
@@ -131,7 +133,6 @@ public class StartAugust {
         System.out.println("3 == " + mtbt.mergeTrees(root1, root2).val);
         System.out.println("2 == " + mtbt.mergeTrees(root3, root4).val);
         System.out.println("1 == " + mtbt.mergeTrees(root3, root5).val);
-
     }
 
     public void addStrings() {
@@ -437,7 +438,6 @@ public class StartAugust {
         System.out.println("4 == " + cgnibt.goodNodes(root1));
         System.out.println("3 == " + cgnibt.goodNodes(root2));
         System.out.println("1 == " + cgnibt.goodNodes(root3));
-
     }
 
     public void searchInABST() {
@@ -454,8 +454,6 @@ public class StartAugust {
 
         System.out.println("[18,6,6,6,1,-1] == " + Arrays.toString(regrs.replaceElements(new int[]{17,18,5,4,6,1})));
         System.out.println("[-1] == " + Arrays.toString(regrs.replaceElements(new int[]{400})));
-
-
     }
 
     public void deleteNodeInALinkedList() {
@@ -485,7 +483,6 @@ public class StartAugust {
         System.out.println(("false == " + aodp.canReorderDoubled(new int[]{3,1,3,6})));
         System.out.println(("true == " + aodp.canReorderDoubled(new int[]{4,-2,2,-4})));
         System.out.println(("false == " + aodp.canReorderDoubled(new int[]{1,2,4,16,8,4})));
-
     }
 
     public void sumOfNodesEvenValuedGrandparent() {
@@ -599,7 +596,6 @@ public class StartAugust {
         System.out.println("[1,3,4] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root1, 2)));
         System.out.println("[1,3,2] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root2, 3)));
         System.out.println("[1] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root3, 2)));
-
     }
 
     public void insertIntoABST() {
@@ -608,5 +604,27 @@ public class StartAugust {
         TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7));
 
         System.out.println("[4,2,7,1,3,5] == " + TreeNode.extractValues(iiabst.insertIntoBST(root1, 5)));
+    }
+
+    public void shortestDistanceToACharacter() {
+        ShortestDistanceToACharacter sdtac = new ShortestDistanceToACharacter();
+
+        System.out.println("[3,2,1,0,1,0,0,1,2,2,1,0] == " +  Arrays.toString(sdtac.shortestToChar("loveleetcode", 'e')));
+        System.out.println("[3,2,1,0] == " +  Arrays.toString(sdtac.shortestToChar("aaab", 'b')));
+    }
+
+    public void naryTreePostorderTraversal() {
+        NaryTreePostorderTraversal ntpr = new NaryTreePostorderTraversal();
+
+        Node node1 = new Node(1, List.of(new Node(3, List.of(new Node(5), new Node(6))), new Node(2), new Node(4)));
+        Node node2 = new Node(1, List.of(
+            new Node(2),
+            new Node(3, List.of(new Node(6), new Node(7, List.of(new Node(11, List.of(new Node(14))))))),
+            new Node(4, List.of(new Node(8, List.of(new Node(12))))),
+            new Node(5, List.of(new Node(9, List.of(new Node(13))), new Node(10))
+        )));
+
+        System.out.println("[5,6,3,2,4,1] == " + ntpr.postorder(node1));
+        System.out.println("[2,6,14,11,7,3,12,8,4,13,9,10,5,1] == " + ntpr.postorder(node2));
     }
 }
