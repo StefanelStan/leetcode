@@ -16,6 +16,7 @@ import com.ss.leetcode.june.SortingTheSentence;
 import com.ss.leetcode.june.ToLowerCase;
 import com.ss.leetcode.june.TruncateSentence;
 import com.ss.leetcode.june.XOROperationInAnArray;
+import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
 
@@ -68,11 +69,11 @@ public class StartJune {
     public void convertBinaryNumberInALinkedLisToInteger() {
         ConvertBinaryNumber cbn = new ConvertBinaryNumber();
 
-        System.out.println("5 == " + cbn.getDecimalValue(ConvertBinaryNumber.ListNode.makeChain(new int[]{1,0,1})));
-        System.out.println("0 == " + cbn.getDecimalValue(ConvertBinaryNumber.ListNode.makeChain(new int[]{0})));
-        System.out.println("1 == " + cbn.getDecimalValue(ConvertBinaryNumber.ListNode.makeChain(new int[]{1})));
-        System.out.println("18880 == " + cbn.getDecimalValue(ConvertBinaryNumber.ListNode.makeChain(new int[]{1,0,0,1,0,0,1,1,1,0,0,0,0,0,0})));
-        System.out.println("0 == " + cbn.getDecimalValue(ConvertBinaryNumber.ListNode.makeChain(new int[]{0,0})));
+        System.out.println("5 == " + cbn.getDecimalValue(ListNode.makeChain(new int[]{1,0,1})));
+        System.out.println("0 == " + cbn.getDecimalValue(ListNode.makeChain(new int[]{0})));
+        System.out.println("1 == " + cbn.getDecimalValue(ListNode.makeChain(new int[]{1})));
+        System.out.println("18880 == " + cbn.getDecimalValue(ListNode.makeChain(new int[]{1,0,0,1,0,0,1,1,1,0,0,0,0,0,0})));
+        System.out.println("0 == " + cbn.getDecimalValue(ListNode.makeChain(new int[]{0,0})));
     }
 
     public void removeOutermostParentheses() {

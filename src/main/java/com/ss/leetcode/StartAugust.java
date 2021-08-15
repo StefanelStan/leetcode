@@ -71,7 +71,13 @@ public class StartAugust {
 //        start.deleteLeavesWithGivenValue();
 //        start.insertIntoABST();
 //        start.shortestDistanceToACharacter();
-        start.naryTreePostorderTraversal();
+//        start.naryTreePostorderTraversal();
+//        start.maximumDifferenceNodeAncestor();
+//        start.maximumDepthOfNaryTree();
+//        start.findAllDuplicatesInInArray();
+//        start.mergeInBetweenLinkedLists();
+//        start.univaluedBinaryTree();
+        start.incrementalMemoryLeak();
     }
 
     public void makingALargeIsland() {
@@ -626,5 +632,71 @@ public class StartAugust {
 
         System.out.println("[5,6,3,2,4,1] == " + ntpr.postorder(node1));
         System.out.println("[2,6,14,11,7,3,12,8,4,13,9,10,5,1] == " + ntpr.postorder(node2));
+    }
+
+    public void maximumDifferenceNodeAncestor() {
+        MaximumDifferenceNodeAncestor mdna = new MaximumDifferenceNodeAncestor();
+
+        TreeNode root1 = new TreeNode(8, new TreeNode(3, new TreeNode(1), new TreeNode(6, new TreeNode(4), new TreeNode(7))),
+                                      new TreeNode(10, null, new TreeNode(14, new TreeNode(13), null)));
+        TreeNode root2 = new TreeNode(1, null, new TreeNode(2, null, new TreeNode(0, new TreeNode(3), null)));
+
+        System.out.println("7 == " + mdna.maxAncestorDiff(root1));
+        System.out.println("3 == " + mdna.maxAncestorDiff(root2));
+    }
+
+    public void maximumDepthOfNaryTree() {
+        MaximumDepthOfNaryTree mdont = new MaximumDepthOfNaryTree();
+
+        Node node1 = new Node(1, List.of(new Node(3, List.of(new Node(5), new Node(6))), new Node(2), new Node(4)));
+        Node node2 = new Node(1, List.of(
+            new Node(2),
+            new Node(3, List.of(new Node(6), new Node(7, List.of(new Node(11, List.of(new Node(14))))))),
+            new Node(4, List.of(new Node(8, List.of(new Node(12))))),
+            new Node(5, List.of(new Node(9, List.of(new Node(13))), new Node(10)))
+        ));
+
+        System.out.println("3 == " + mdont.maxDepth(node1));
+        System.out.println("5 == " + mdont.maxDepth(node2));
+    }
+
+    public void findAllDuplicatesInInArray() {
+        FindAllDuplicatesInanArray fadiaa = new FindAllDuplicatesInanArray();
+
+        System.out.println("[2,3] == " + fadiaa.findDuplicates(new int[]{4,3,2,7,8,2,3,1}));
+        System.out.println("[1] == " + fadiaa.findDuplicates(new int[]{1,1,2}));
+        System.out.println("[] == " + fadiaa.findDuplicates(new int[]{1}));
+    }
+
+    public void mergeInBetweenLinkedLists() {
+        MergeInBetweenLinkedLists mibll = new MergeInBetweenLinkedLists();
+
+        ListNode head1 = ListNode.makeChain(new int[]{0,1,2,3,4,5});
+        ListNode head2 = ListNode.makeChain(new int[]{1000000,1000001,1000002});
+        ListNode head3 = ListNode.makeChain(new int[]{0,1,2,3,4,5,6});
+        ListNode head4 = ListNode.makeChain(new int[]{1000000,1000001,1000002,1000003,1000004});
+        ListNode head5 = ListNode.makeChain(new int[]{0,3,2,1,4,5});
+        ListNode head6 = ListNode.makeChain(new int[]{1000000,1000001,1000002});
+
+        System.out.println("[0,1,2,1000000,1000001,1000002,5] == " + mibll.mergeInBetween(head1, 3, 4, head2).getAsList());
+        System.out.println("[0,1,1000000,1000001,1000002,1000003,1000004,6] == " + mibll.mergeInBetween(head3, 2, 5, head4).getAsList());
+        System.out.println("[0,3,2,1000000,1000001,1000002,5] == " + mibll.mergeInBetween(head5, 3, 4, head6).getAsList());
+    }
+
+    public void univaluedBinaryTree() {
+        UnivaluedBinaryTree ubt = new UnivaluedBinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(1, new TreeNode(1), new TreeNode(1)), new TreeNode(1, null, new TreeNode(1)));
+        TreeNode root2 = new TreeNode(2, new TreeNode(2, new TreeNode(5), new TreeNode(2)), new TreeNode(2));
+
+        System.out.println("true == " + ubt.isUnivalTree(root1));
+        System.out.println("false == " + ubt.isUnivalTree(root2));
+    }
+
+    public void incrementalMemoryLeak() {
+        IncrementalMemoryLeak iml = new IncrementalMemoryLeak();
+
+        System.out.println("[3,1,0] == " + Arrays.toString(iml.memLeak(2, 2)));
+        System.out.println("[6,0,4] == " + Arrays.toString(iml.memLeak(8, 11)));
     }
 }
