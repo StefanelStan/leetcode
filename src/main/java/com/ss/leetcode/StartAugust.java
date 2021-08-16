@@ -77,7 +77,10 @@ public class StartAugust {
 //        start.findAllDuplicatesInInArray();
 //        start.mergeInBetweenLinkedLists();
 //        start.univaluedBinaryTree();
-        start.incrementalMemoryLeak();
+//        start.incrementalMemoryLeak();
+//        start.invertBinaryTree();
+//        start.baseballGame();
+        start.rangeSumQueryImmutable();
     }
 
     public void makingALargeIsland() {
@@ -699,4 +702,33 @@ public class StartAugust {
         System.out.println("[3,1,0] == " + Arrays.toString(iml.memLeak(2, 2)));
         System.out.println("[6,0,4] == " + Arrays.toString(iml.memLeak(8, 11)));
     }
+
+    public void invertBinaryTree() {
+        InvertBinaryTree ibt = new InvertBinaryTree();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1),new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        TreeNode root2 = new TreeNode(2,new TreeNode(1), new TreeNode(3));
+        TreeNode root3 = null;
+
+        System.out.println("[9,6,7,3,1,2,4] == " + TreeNode.extractValues(ibt.invertTree(root1)));
+        System.out.println("[3,1,2] == " + TreeNode.extractValues(ibt.invertTree(root2)));
+        System.out.println("[] == " + TreeNode.extractValues(ibt.invertTree(root3)));
+    }
+
+    public void baseballGame() {
+        BaseballGame bg = new BaseballGame();
+
+        System.out.println("30 == " + bg.calPoints(new String[]{"5","2","C","D","+"}));
+        System.out.println("27 == " + bg.calPoints(new String[]{"5","-2","4","C","D","9","+","+"}));
+        System.out.println("1 == " + bg.calPoints(new String[]{"1"}));
+    }
+
+    public void rangeSumQueryImmutable() {
+        RangeSumQueryImmutable rsqi = new RangeSumQueryImmutable(new int[]{-2, 0, 3, -5, 2, -1});
+
+        System.out.println("1 == " + rsqi.sumRange(0, 2));
+        System.out.println("-1 == " + rsqi.sumRange(2, 5));
+        System.out.println("-3 == " + rsqi.sumRange(0, 5));
+    }
+
 }

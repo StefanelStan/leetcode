@@ -19,16 +19,15 @@ public class TreeNode {
 
     public static List<Integer> extractValues(TreeNode n) {
         List<Integer> result = new ArrayList<>();
-        if (n.left != null) {
-            result.addAll(extractValues(n.left));
-        }
-
-        if (n.right != null) {
-            result.addAll(extractValues(n.right));
-        }
-
-        result.add(n.val);
-
+        traverseAndGetNodes(n, result);
         return result;
+    }
+
+    private static void traverseAndGetNodes(TreeNode node, List<Integer> values) {
+        if (node != null) {
+            traverseAndGetNodes(node.left, values);
+            traverseAndGetNodes(node.right, values);
+            values.add(node.val);
+        }
     }
 }
