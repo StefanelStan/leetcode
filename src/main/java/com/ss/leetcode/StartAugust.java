@@ -4,8 +4,8 @@ import com.ss.leetcode.august.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -80,7 +80,10 @@ public class StartAugust {
 //        start.incrementalMemoryLeak();
 //        start.invertBinaryTree();
 //        start.baseballGame();
-        start.rangeSumQueryImmutable();
+//        start.rangeSumQueryImmutable();
+//        start.maximumLevelSumOfABinaryTree();
+//        start.findModeInBinarySearchTree();
+        start.binaryTreeInorderTraversal();
     }
 
     public void makingALargeIsland() {
@@ -731,4 +734,39 @@ public class StartAugust {
         System.out.println("-3 == " + rsqi.sumRange(0, 5));
     }
 
+    public void maximumLevelSumOfABinaryTree() {
+        MaximumLevelSumOfABinaryTree mlsofbt = new MaximumLevelSumOfABinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(7, new TreeNode(7), new TreeNode(-8)), new TreeNode(0));
+        TreeNode root2 = new TreeNode(989, null, new TreeNode(10250, new TreeNode(98693), new TreeNode(-89388,null, new TreeNode(-32127))));
+
+        System.out.println("2 == " + mlsofbt.maxLevelSum(root1));
+        System.out.println("2 == " + mlsofbt.maxLevelSum(root2));
+    }
+
+    public void findModeInBinarySearchTree() {
+        FindModeInBST fmibst = new FindModeInBST();
+
+        TreeNode root1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(2), null));
+        TreeNode root2 = new TreeNode(0);
+
+        System.out.println("[2] == " + Arrays.toString(fmibst.findMode(root1)));
+        System.out.println("[0] == " + Arrays.toString(fmibst.findMode(root2)));
+    }
+
+    public void binaryTreeInorderTraversal() {
+        BinaryTreeInorderTraversal btit = new BinaryTreeInorderTraversal();
+
+        TreeNode root1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+        TreeNode root2 = null;
+        TreeNode root3 = new TreeNode(1);
+        TreeNode root4 = new TreeNode(1, new TreeNode(2), null);
+        TreeNode root5 = new TreeNode(1, null, new TreeNode(2));
+
+        System.out.println("[1,3,2] == " + btit.inorderTraversal(root1));
+        System.out.println("[] == " + btit.inorderTraversal(root2));
+        System.out.println("[1] == " + btit.inorderTraversal(root3));
+        System.out.println("[1,2] == " + btit.inorderTraversal(root4));
+        System.out.println("[1,2] == " + btit.inorderTraversal(root5));
+    }
 }
