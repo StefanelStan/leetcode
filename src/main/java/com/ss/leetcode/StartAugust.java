@@ -83,7 +83,11 @@ public class StartAugust {
 //        start.rangeSumQueryImmutable();
 //        start.maximumLevelSumOfABinaryTree();
 //        start.findModeInBinarySearchTree();
-        start.binaryTreeInorderTraversal();
+//        start.binaryTreeInorderTraversal();
+//        start.averageOfLevelsInBT();
+//        start.signOfTheProductOfAnArray();
+//        start.numberOfLinesToWriteString();
+        start.dailyTemperatures();
     }
 
     public void makingALargeIsland() {
@@ -768,5 +772,42 @@ public class StartAugust {
         System.out.println("[1] == " + btit.inorderTraversal(root3));
         System.out.println("[1,2] == " + btit.inorderTraversal(root4));
         System.out.println("[1,2] == " + btit.inorderTraversal(root5));
+    }
+
+    public void averageOfLevelsInBT() {
+        AverageOfLevelsInBT aofibt = new AverageOfLevelsInBT();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(9, new TreeNode(9, new TreeNode(15), new TreeNode(7)), new TreeNode(20));
+
+        System.out.println("[3.00000,14.50000,11.00000] == " + aofibt.averageOfLevels(root1));
+        System.out.println("[3.00000,14.50000,11.00000] == " + aofibt.averageOfLevels(root2));
+    }
+
+    public void signOfTheProductOfAnArray() {
+        SignOfTheProductOfAnArray sotpoaa = new SignOfTheProductOfAnArray();
+
+        System.out.println("1 == " + sotpoaa.arraySign(new int[]{-1,-2,-3,-4,3,2,1}));
+        System.out.println("0 == " + sotpoaa.arraySign(new int[]{1,5,0,2,-3}));
+        System.out.println("-1 == " + sotpoaa.arraySign(new int[]{-1,1,-1,1,-1}));
+    }
+
+    public void numberOfLinesToWriteString() {
+        NumberOfLinesToWriteString noltws = new NumberOfLinesToWriteString();
+
+        int[] widths1 = {10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10};
+        int[] widths2 = {4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10};
+
+        System.out.println("[3,60] == " + Arrays.toString(noltws.numberOfLines(widths1, "abcdefghijklmnopqrstuvwxyz")));
+        System.out.println("[2,4] == " + Arrays.toString(noltws.numberOfLines(widths2, "bbbcccdddaaa")));
+
+    }
+
+    public void dailyTemperatures() {
+        DailyTemperatures dt = new DailyTemperatures();
+
+        System.out.println("[1,1,4,2,1,1,0,0] == " + Arrays.toString(dt.dailyTemperatures(new int[]{73,74,75,71,69,72,76,73})));
+        System.out.println("[1,1,1,0] == " + Arrays.toString(dt.dailyTemperatures(new int[]{30,40,50,60})));
+        System.out.println("[1,1,0] == " + Arrays.toString(dt.dailyTemperatures(new int[]{30,60,90})));
     }
 }
