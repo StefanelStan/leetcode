@@ -87,7 +87,10 @@ public class StartAugust {
 //        start.averageOfLevelsInBT();
 //        start.signOfTheProductOfAnArray();
 //        start.numberOfLinesToWriteString();
-        start.dailyTemperatures();
+//        start.dailyTemperatures();
+//        start.relativeSortArray();
+//        start.maximumProductOfSplittedBT();
+        start.findWordsFormedByCharacters();
     }
 
     public void makingALargeIsland() {
@@ -809,5 +812,41 @@ public class StartAugust {
         System.out.println("[1,1,4,2,1,1,0,0] == " + Arrays.toString(dt.dailyTemperatures(new int[]{73,74,75,71,69,72,76,73})));
         System.out.println("[1,1,1,0] == " + Arrays.toString(dt.dailyTemperatures(new int[]{30,40,50,60})));
         System.out.println("[1,1,0] == " + Arrays.toString(dt.dailyTemperatures(new int[]{30,60,90})));
+    }
+
+    public void relativeSortArray() {
+        RelativeSortArray rsa = new RelativeSortArray();
+
+        System.out.println("[2,2,2,1,4,3,3,9,6,7,19] == " + Arrays.toString(rsa.relativeSortArray(new int[]{2,3,1,3,2,4,6,7,9,2,19}, new int[]{2,1,4,3,9,6})));
+        System.out.println("[22,28,8,6,17,44] == " + Arrays.toString(rsa.relativeSortArray(new int[]{28,6,22,8,44,17}, new int[]{22,28,8,6})));
+    }
+
+    public void maximumProductOfSplittedBT() {
+        MaximumProductOfSplittedBT mposbt = new MaximumProductOfSplittedBT();
+
+        TreeNode root1 = new TreeNode(1,new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), null));
+        TreeNode root2 = new TreeNode(1, null, new TreeNode(2,new TreeNode(3), new TreeNode(4, new TreeNode(5), new TreeNode(6))));
+        TreeNode root3 = new TreeNode(2,
+            new TreeNode(3, new TreeNode(10, new TreeNode(5), new TreeNode(4)), new TreeNode(7, new TreeNode(11),new TreeNode(1))),
+            new TreeNode(9, new TreeNode(8),new TreeNode(6)));
+        TreeNode root4 = new TreeNode(1, new TreeNode(1), new TreeNode(2));
+        TreeNode root5 = new TreeNode(1, new TreeNode(1), null);
+        TreeNode root6 = new TreeNode(10, new TreeNode(7, null, new TreeNode(10)), new TreeNode(6, null, new TreeNode(10)));
+        TreeNode root7 = new TreeNode(6, new TreeNode(10, null, new TreeNode(6, new TreeNode(1, new TreeNode(1), null),null)), null);
+
+        System.out.println("110 == " + mposbt.maxProduct(root1));
+        System.out.println("90 == " + mposbt.maxProduct(root2));
+        System.out.println("1025 == " + mposbt.maxProduct(root3));
+        System.out.println("4 == " + mposbt.maxProduct(root4));
+        System.out.println("1 == " + mposbt.maxProduct(root5));
+        System.out.println("442 == " + mposbt.maxProduct(root6));
+        System.out.println("128 == " + mposbt.maxProduct(root7));
+    }
+
+    public void findWordsFormedByCharacters() {
+        FindWordsFormedByCharacters fwfbc = new FindWordsFormedByCharacters();
+
+        System.out.println("6 == " + fwfbc.countCharacters(new String[]{"cat","bt","hat","tree"}, "atach"));
+        System.out.println("10 == " + fwfbc.countCharacters(new String[]{"hello","world","leetcode"}, "welldonehoneyr"));
     }
 }
