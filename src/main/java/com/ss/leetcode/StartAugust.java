@@ -4,8 +4,8 @@ import com.ss.leetcode.august.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -90,7 +90,13 @@ public class StartAugust {
 //        start.dailyTemperatures();
 //        start.relativeSortArray();
 //        start.maximumProductOfSplittedBT();
-        start.findWordsFormedByCharacters();
+//        start.findWordsFormedByCharacters();
+//        start.flipEquivalentBinaryTrees();
+//        start.validSudoku();
+//        start.averageSalaryExcludingMinMax();
+//        start.printInOrder();
+//        start.availableCapturesForRook();
+        start.islandPerimeter();
     }
 
     public void makingALargeIsland() {
@@ -848,5 +854,125 @@ public class StartAugust {
 
         System.out.println("6 == " + fwfbc.countCharacters(new String[]{"cat","bt","hat","tree"}, "atach"));
         System.out.println("10 == " + fwfbc.countCharacters(new String[]{"hello","world","leetcode"}, "welldonehoneyr"));
+    }
+
+    public void flipEquivalentBinaryTrees() {
+        FlipEquivalentBinaryTrees febt = new FlipEquivalentBinaryTrees();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5, new TreeNode(7), new TreeNode(8))),
+                                      new TreeNode(3, new TreeNode(6), null));
+        TreeNode root2 = new TreeNode(1, new TreeNode(3, null, new TreeNode(6)),
+                                      new TreeNode(2, new TreeNode(4), new TreeNode(5, new TreeNode(8), new TreeNode(7))));
+        TreeNode root3 = null, root4 = null, root5 = new TreeNode(1);
+        TreeNode root6 = new TreeNode(0, null, new TreeNode(1));
+        TreeNode root7 = new TreeNode(0, new TreeNode(1),null);
+        TreeNode root8 = new TreeNode(0, new TreeNode(3), new TreeNode(1, null, new TreeNode(2)));
+        TreeNode root9 = new TreeNode(0, new TreeNode(3, new TreeNode(2), null), new TreeNode(1));
+        TreeNode root10 = new TreeNode(0, null, new TreeNode(1));
+
+        System.out.println("true == " + febt.flipEquiv(root1, root2));
+        System.out.println("true == " + febt.flipEquiv(root3, root4));
+        System.out.println("false == " + febt.flipEquiv(root3, root5));
+        System.out.println("false == " + febt.flipEquiv(root6, root3));
+        System.out.println("true == " + febt.flipEquiv(root6, root7));
+        System.out.println("true == " + febt.flipEquiv(root6, root10));
+        System.out.println("false == " + febt.flipEquiv(root8, root9));
+    }
+
+    public void validSudoku() {
+        ValidSudoku vs = new ValidSudoku();
+        char[][] board1 =  {{'5','3','.','.','7','.','.','.','.'},
+                            {'6','.','.','1','9','5','.','.','.'},
+                            {'.','9','8','.','.','.','.','6','.'},
+                            {'8','.','.','.','6','.','.','.','3'},
+                            {'4','.','.','8','.','3','.','.','1'},
+                            {'7','.','.','.','2','.','.','.','6'},
+                            {'.','6','.','.','.','.','2','8','.'},
+                            {'.','.','.','4','1','9','.','.','5'},
+                            {'.','.','.','.','8','.','.','7','9'}};
+        char[][] board2 =  {{'8','3','.','.','7','.','.','.','.'},
+                            {'6','.','.','1','9','5','.','.','.'},
+                            {'.','9','8','.','.','.','.','6','.'},
+                            {'8','.','.','.','6','.','.','.','3'},
+                            {'4','.','.','8','.','3','.','.','1'},
+                            {'7','.','.','.','2','.','.','.','6'},
+                            {'.','6','.','.','.','.','2','8','.'},
+                            {'.','.','.','4','1','9','.','.','5'},
+                            {'.','.','.','.','8','.','.','7','9'}};
+
+        System.out.println("true == " + vs.isValidSudoku(board1));
+        System.out.println("false == " + vs.isValidSudoku(board2));
+    }
+
+    public void averageSalaryExcludingMinMax() {
+        AverageSalaryExcludingMinMax asemm = new AverageSalaryExcludingMinMax();
+
+        System.out.println("2500.0 == " + asemm.average(new int[]{4000,3000,1000,2000}));
+        System.out.println("2000.0 == " + asemm.average(new int[]{1000,2000,3000}));
+        System.out.println("3500.0 == " + asemm.average(new int[]{6000,5000,4000,3000,2000,1000}));
+        System.out.println("4750.0 == " + asemm.average(new int[]{8000,9000,2000,3000,6000,1000}));
+    }
+
+    public void printInOrder(){
+        PrintInOrder pio = new PrintInOrder();
+        final List<String> myList = new ArrayList<>();
+        Thread t1 = new Thread(() -> pio.third(() -> {
+            myList.add("Third");
+            System.out.println("Third");
+        }));
+        Thread t2 = new Thread(() -> pio.first(() -> {
+            myList.add("First");
+            System.out.println("First");
+        }));
+        Thread t3 = new Thread(() -> pio.second(() -> {
+            myList.add("Second");
+            System.out.println("Second");
+        }));
+
+        t2.start();
+        t3.start();
+        t1.start();
+
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+            System.out.println("[First, Second, Third] == " + myList);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void availableCapturesForRook() {
+        AvailableCapturesForRook acfr = new AvailableCapturesForRook();
+
+        char[][] board1 =   {{'.','.','.','.','.','.','.','.'},
+                            {'.','.','.','p','.','.','.','.'},
+                            {'.','.','.','R','.','.','.','p'},
+                            {'.','.','.','.','.','.','.','.'},
+                            {'.','.','.','.','.','.','.','.'},
+                            {'.','.','.','p','.','.','.','.'},
+                            {'.','.','.','.','.','.','.','.'},
+                            {'.','.','.','.','.','.','.','.'}};
+        char[][] board2 =   {{'.','.','.','.','.','.','.','.'},
+                            {'.','p','p','p','p','p','.','.'},
+                            {'.','p','p','B','p','p','.','.'},
+                            {'.','p','B','R','B','p','.','.'},
+                            {'.','p','p','B','p','p','.','.'},
+                            {'.','p','p','p','p','p','.','.'},
+                            {'.','.','.','.','.','.','.','.'},
+                            {'.','.','.','.','.','.','.','.'}};
+
+        System.out.println("3 == " + acfr.numRookCaptures(board1));
+        System.out.println("0 == " + acfr.numRookCaptures(board2));
+    }
+
+    public void islandPerimeter() {
+        IslandPerimeter ip = new IslandPerimeter();
+
+        System.out.println("16 == " + ip.islandPerimeter(new int[][]{{0,1,0,0}, {1,1,1,0}, {0,1,0,0}, {1,1,0,0}}));
+        System.out.println("4 == " + ip.islandPerimeter(new int[][]{{1}}));
+        System.out.println("4 == " + ip.islandPerimeter(new int[][]{{1, 0}}));
     }
 }
