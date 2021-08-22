@@ -96,7 +96,10 @@ public class StartAugust {
 //        start.averageSalaryExcludingMinMax();
 //        start.printInOrder();
 //        start.availableCapturesForRook();
-        start.islandPerimeter();
+//        start.islandPerimeter();
+        start.sudokuSolver();
+//        start.minimumTimeToTypeWordUsingSpecialTypewriter();
+//        start.maximumMatrixSum();
     }
 
     public void makingALargeIsland() {
@@ -974,5 +977,51 @@ public class StartAugust {
         System.out.println("16 == " + ip.islandPerimeter(new int[][]{{0,1,0,0}, {1,1,1,0}, {0,1,0,0}, {1,1,0,0}}));
         System.out.println("4 == " + ip.islandPerimeter(new int[][]{{1}}));
         System.out.println("4 == " + ip.islandPerimeter(new int[][]{{1, 0}}));
+    }
+
+    public void sudokuSolver() {
+        SudokuSolver ss = new SudokuSolver();
+        SudokuSolver2 ss2 = new SudokuSolver2();
+
+        char[][] board1 =  {{'5','3','.','.','7','.','.','.','.'},
+                            {'6','.','.','1','9','5','.','.','.'},
+                            {'.','9','8','.','.','.','.','6','.'},
+                            {'8','.','.','.','6','.','.','.','3'},
+                            {'4','.','.','8','.','3','.','.','1'},
+                            {'7','.','.','.','2','.','.','.','6'},
+                            {'.','6','.','.','.','.','2','8','.'},
+                            {'.','.','.','4','1','9','.','.','5'},
+                            {'.','.','.','.','8','.','.','7','9'}};
+
+        char[][] board2 =  {{'.','.','9','7','4','8','.','.','.'},
+                            {'7','.','.','.','.','.','.','.','.'},
+                            {'.','2','.','1','.','9','.','.','.'},
+                            {'.','.','7','.','.','.','2','4','.'},
+                            {'.','6','4','.','1','.','5','9','.'},
+                            {'.','9','8','.','.','.','3','.','.'},
+                            {'.','.','.','8','.','3','.','2','.'},
+                            {'.','.','.','.','.','.','.','.','6'},
+                            {'.','.','.','2','7','5','9','.','.'}};
+
+        ss.solveSudoku(board1);
+        System.out.println(ss.toString(board2));
+    }
+
+    public void minimumTimeToTypeWordUsingSpecialTypewriter() {
+        MinTimeTypeWordSpecialTypewriter mttst = new MinTimeTypeWordSpecialTypewriter();
+
+        System.out.println("5 == "+ mttst.minTimeToType("abc"));
+        System.out.println("7 == "+ mttst.minTimeToType("bza"));
+        System.out.println("34 == "+ mttst.minTimeToType("zjpc"));
+    }
+
+    public void maximumMatrixSum() {
+        MaximumMatrixSum mms = new MaximumMatrixSum();
+
+        System.out.println("4 == " + mms.maxMatrixSum(new int[][]{{-1, -1}, {-1,-1}}));
+        System.out.println("16 == " + mms.maxMatrixSum(new int[][]{{1,2,3}, {-1,-2,-3}, {1,2,3}}));
+        System.out.println("15 == " + mms.maxMatrixSum(new int[][]{{-1, 0, -1}, {-2,1,3}, {3,2,2}}));
+        System.out.println("34 == " + mms.maxMatrixSum(new int[][]{{2,9,3}, {5,4,-4}, {1,7,1}}));
+        System.out.println("114 == " + mms.maxMatrixSum(new int[][]{{-9,9,9,-9}, {-10,10,7,5}, {4,-8,-9,6}, {10,2,-6,1}}));
     }
 }
