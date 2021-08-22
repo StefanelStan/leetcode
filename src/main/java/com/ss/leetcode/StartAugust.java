@@ -97,9 +97,12 @@ public class StartAugust {
 //        start.printInOrder();
 //        start.availableCapturesForRook();
 //        start.islandPerimeter();
-        start.sudokuSolver();
+//        start.sudokuSolver();
 //        start.minimumTimeToTypeWordUsingSpecialTypewriter();
 //        start.maximumMatrixSum();
+//        start.rectangleAreaII();
+//        start.mergeIntervals();
+        start.removePalindromicSubseq();
     }
 
     public void makingALargeIsland() {
@@ -1023,5 +1026,29 @@ public class StartAugust {
         System.out.println("15 == " + mms.maxMatrixSum(new int[][]{{-1, 0, -1}, {-2,1,3}, {3,2,2}}));
         System.out.println("34 == " + mms.maxMatrixSum(new int[][]{{2,9,3}, {5,4,-4}, {1,7,1}}));
         System.out.println("114 == " + mms.maxMatrixSum(new int[][]{{-9,9,9,-9}, {-10,10,7,5}, {4,-8,-9,6}, {10,2,-6,1}}));
+    }
+
+    public void rectangleAreaII() {
+        RectangleAreaII raii = new RectangleAreaII();
+
+        System.out.println("7 == " + raii.rectangleArea(new int[][]{{0,2,1,4}, {0,0,2,2}, {3,1,4,2}}));
+//        System.out.println("6 == " + raii.rectangleArea(new int[][]{{0,0,2,2}, {1,0,2,3}, {1,0,3,1}}));
+//        System.out.println("49 == " + raii.rectangleArea(new int[][]{{0,0,1000000000,1000000000}}));
+    }
+
+    public void mergeIntervals() {
+        MergeIntervals mi = new MergeIntervals();
+
+        System.out.println("[[0,9],[10,14],[15,18]] == " + Arrays.deepToString(mi.merge(new int[][]{{2,5}, {0,2}, {4,9}, {15,18}, {10, 14}})));
+        System.out.println("[[1,6],[8,10],[15,18]] == " + Arrays.deepToString(mi.merge(new int[][]{{1,3}, {2,6}, {8,10}, {15,18}})));
+        System.out.println("[[1,4],[4,5]] == " + Arrays.deepToString(mi.merge(new int[][]{{1,4}, {4,5}})));
+    }
+
+    public void removePalindromicSubseq() {
+        RemovePalindromicSubseq rps = new RemovePalindromicSubseq();
+
+        System.out.println("1 == " + rps.removePalindromeSub("ababa"));
+        System.out.println("2 == " + rps.removePalindromeSub("abb"));
+        System.out.println("2 == " + rps.removePalindromeSub("baabb"));
     }
 }
