@@ -1,6 +1,7 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.august.*;
+import com.ss.leetcode.july.TrappingRainWater;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
@@ -102,8 +103,11 @@ public class StartAugust {
 //        start.maximumMatrixSum();
 //        start.rectangleAreaII();
 //        start.mergeIntervals();
-        start.removePalindromicSubseq();
+//        start.removePalindromicSubseq();
+//        start.twoSumIVInputIsABST();
+        start.twoSumIIInputArrayIsSorted();
     }
+
 
     public void makingALargeIsland() {
 
@@ -1050,5 +1054,28 @@ public class StartAugust {
         System.out.println("1 == " + rps.removePalindromeSub("ababa"));
         System.out.println("2 == " + rps.removePalindromeSub("abb"));
         System.out.println("2 == " + rps.removePalindromeSub("baabb"));
+    }
+
+    public void twoSumIVInputIsABST() {
+        TwoSumIVInputIsABST tsiviiabst = new TwoSumIVInputIsABST();
+
+        TreeNode root1 = new TreeNode(5, new TreeNode(3, new TreeNode(2), new TreeNode(4)), new TreeNode(6,null, new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1);
+        TreeNode root3 = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+
+        System.out.println("true == " + tsiviiabst.findTarget(root1, 9));
+        System.out.println("false == " + tsiviiabst.findTarget(root1, 28));
+        System.out.println("false == " + tsiviiabst.findTarget(root2, 2));
+        System.out.println("true == " + tsiviiabst.findTarget(root3, 4));
+        System.out.println("false == " + tsiviiabst.findTarget(root2, 1));
+        System.out.println("true == " + tsiviiabst.findTarget(root3, 3));
+    }
+
+    public void twoSumIIInputArrayIsSorted() {
+        TwoSumIIInputArrayIsSorted tsiiiais = new TwoSumIIInputArrayIsSorted();
+
+        System.out.println("[1,2] == " + Arrays.toString(tsiiiais.twoSum(new int[]{2,7,11,15}, 9)));
+        System.out.println("[1,3] == " + Arrays.toString(tsiiiais.twoSum(new int[]{2,3,4}, 6)));
+        System.out.println("[1,2] == " + Arrays.toString(tsiiiais.twoSum(new int[]{-1,0}, -1)));
     }
 }
