@@ -105,7 +105,9 @@ public class StartAugust {
 //        start.mergeIntervals();
 //        start.removePalindromicSubseq();
 //        start.twoSumIVInputIsABST();
-        start.twoSumIIInputArrayIsSorted();
+//        start.twoSumIIInputArrayIsSorted();
+//        start.complexNumberMultiplication();
+        start.findCommonCharacters();
     }
 
 
@@ -1077,5 +1079,19 @@ public class StartAugust {
         System.out.println("[1,2] == " + Arrays.toString(tsiiiais.twoSum(new int[]{2,7,11,15}, 9)));
         System.out.println("[1,3] == " + Arrays.toString(tsiiiais.twoSum(new int[]{2,3,4}, 6)));
         System.out.println("[1,2] == " + Arrays.toString(tsiiiais.twoSum(new int[]{-1,0}, -1)));
+    }
+
+    public void complexNumberMultiplication() {
+        ComplexNumberMultiplication cnm = new ComplexNumberMultiplication();
+
+        System.out.println("0+2i == " + cnm.complexNumberMultiply("1+1i", "1+1i"));
+        System.out.println("0+-2i == " + cnm.complexNumberMultiply("1+-1i", "1+-1i"));
+    }
+
+    public void findCommonCharacters() {
+        FindCommonCharacters fcc = new FindCommonCharacters();
+
+        System.out.println("[e, l, l] ==" + fcc.commonChars(new String[]{"bella","label","roller"}));
+        System.out.println("[c, o] ==" + fcc.commonChars(new String[]{"cool","lock","cook"}));
     }
 }
