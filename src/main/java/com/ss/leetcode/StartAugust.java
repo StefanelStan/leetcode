@@ -107,9 +107,14 @@ public class StartAugust {
 //        start.twoSumIVInputIsABST();
 //        start.twoSumIIInputArrayIsSorted();
 //        start.complexNumberMultiplication();
-        start.findCommonCharacters();
+//        start.findCommonCharacters();
+//        start.sumOfSquareNumbers();
+//        start.findGCDOfArray();
+//        start.decodeXORedArray();
+//        start.numberOfStringAsSubstringsInWord();
+//        start.ransomNote();
+        start.dayOfTheYear();
     }
-
 
     public void makingALargeIsland() {
 
@@ -1093,5 +1098,55 @@ public class StartAugust {
 
         System.out.println("[e, l, l] ==" + fcc.commonChars(new String[]{"bella","label","roller"}));
         System.out.println("[c, o] ==" + fcc.commonChars(new String[]{"cool","lock","cook"}));
+    }
+
+    public void sumOfSquareNumbers() {
+        SumOfSquareNumbers sosn = new  SumOfSquareNumbers();
+
+        System.out.println("true == " + sosn.judgeSquareSum(5));
+        System.out.println("false == " + sosn.judgeSquareSum(3));
+        System.out.println("true == " + sosn.judgeSquareSum(4));
+        System.out.println("true == " + sosn.judgeSquareSum(2));
+        System.out.println("true == " + sosn.judgeSquareSum(1));
+    }
+
+    public void findGCDOfArray() {
+        FindGCDOfArray fgcdoa = new FindGCDOfArray();
+
+        System.out.println("2 == " + fgcdoa.findGCD(new int[]{2,5,6,9,10}));
+        System.out.println("1 == " + fgcdoa.findGCD(new int[]{7,5,6,8,3}));
+        System.out.println("3 == " + fgcdoa.findGCD(new int[]{3,3}));
+    }
+
+    public void decodeXORedArray() {
+        DecodeXORedArray dxora = new DecodeXORedArray();
+
+        System.out.println("[1,0,2,1] == " + Arrays.toString(dxora.decode(new int[]{1,2,3}, 1)));
+        System.out.println("[4,2,0,7,4] == " + Arrays.toString(dxora.decode(new int[]{6,2,7, 3}, 4)));
+    }
+
+    public void numberOfStringAsSubstringsInWord() {
+        NumberOfStringAsSubstringsInWord nosasiw = new NumberOfStringAsSubstringsInWord();
+
+        System.out.println("3 == " + nosasiw.numOfStrings(new String[]{"a","abc","bc","d"}, "abc"));
+        System.out.println("2 == " + nosasiw.numOfStrings(new String[]{"a","b","c"}, "aaaaabbbbb"));
+        System.out.println("3 == " + nosasiw.numOfStrings(new String[]{"a","a","a"}, "ab"));
+    }
+
+    public void ransomNote() {
+        RansomNote rn = new RansomNote();
+
+        System.out.println("false == " + rn.canConstruct("a", "b"));
+        System.out.println("false == " + rn.canConstruct("aa", "ab"));
+        System.out.println("true == " + rn.canConstruct("aa", "aab"));
+    }
+
+    public void dayOfTheYear() {
+        DayOfTheYear doty = new DayOfTheYear();
+
+        System.out.println("9 == " + doty.dayOfYear("2019-01-09"));
+        System.out.println("41 == " + doty.dayOfYear("2019-02-10"));
+        System.out.println("60 == " + doty.dayOfYear("2003-03-01"));
+        System.out.println("61 == " + doty.dayOfYear("2004-03-01"));
     }
 }
