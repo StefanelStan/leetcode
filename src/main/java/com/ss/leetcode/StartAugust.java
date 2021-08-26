@@ -113,7 +113,11 @@ public class StartAugust {
 //        start.decodeXORedArray();
 //        start.numberOfStringAsSubstringsInWord();
 //        start.ransomNote();
-        start.dayOfTheYear();
+//        start.dayOfTheYear();
+//        start.findElementsContaminatedBT();
+//        start.maximumScoreWordsFormedByLetters();
+//        start.verifyPreorderSerializationBT();
+        start.reverseLinkedList();
     }
 
     public void makingALargeIsland() {
@@ -1148,5 +1152,60 @@ public class StartAugust {
         System.out.println("41 == " + doty.dayOfYear("2019-02-10"));
         System.out.println("60 == " + doty.dayOfYear("2003-03-01"));
         System.out.println("61 == " + doty.dayOfYear("2004-03-01"));
+    }
+
+    public void findElementsContaminatedBT() {
+        TreeNode root1 = new TreeNode(-1, null, new TreeNode(-1));
+        TreeNode root2 = new TreeNode(-1, new TreeNode(-1, new TreeNode(-1), new TreeNode(-1)), new TreeNode(-1));
+        TreeNode root3 = new TreeNode(-1, null, new TreeNode(-1, new TreeNode(-1, new TreeNode(-1), null), null));
+
+        FindElementsContaminatedBT fecbt1 = new FindElementsContaminatedBT(root1);
+        FindElementsContaminatedBT fecbt2 = new FindElementsContaminatedBT(root2);
+        FindElementsContaminatedBT fecbt3 = new FindElementsContaminatedBT(root3);
+
+        System.out.println("false == " + fecbt1.find(1));
+        System.out.println("true == " + fecbt1.find(2));
+
+        System.out.println("true == " + fecbt2.find(1));
+        System.out.println("true == " + fecbt2.find(3));
+        System.out.println("false == " + fecbt2.find(5));
+
+        System.out.println("true == " + fecbt3.find(2));
+        System.out.println("false == " + fecbt3.find(3));
+        System.out.println("false == " + fecbt3.find(4));
+        System.out.println("true == " + fecbt3.find(5));
+    }
+
+    public void maximumScoreWordsFormedByLetters() {
+        MaximumScoreWordsFormedByLetters mswfbl = new MaximumScoreWordsFormedByLetters();
+
+        System.out.println("23 == " + mswfbl.maxScoreWords(new String[]{"dog","cat","dad","good"},
+            new char[]{'a','a','c','d','d','d','g','o','o'}, new int[]{1,0,9,5,0,0,3,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0}));
+
+        System.out.println("27 == " + mswfbl.maxScoreWords(new String[]{"xxxz","ax","bx","cx"},
+            new char[]{'z','a','b','c','x','x','x'}, new int[]{4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,10}));
+
+        System.out.println("0 == " + mswfbl.maxScoreWords(new String[]{"leetcode"},
+            new char[]{'l','e','t','c','o','d'}, new int[]{0,0,1,1,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0}));
+    }
+
+    public void verifyPreorderSerializationBT() {
+        VerifyPreorderSerializationBT vpsbt = new VerifyPreorderSerializationBT();
+
+        System.out.println("true == " + vpsbt.isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
+        System.out.println("false == " + vpsbt.isValidSerialization("9,#,#,1"));
+        System.out.println("false == " + vpsbt.isValidSerialization("9,#,#,1"));
+    }
+
+    public void reverseLinkedList() {
+        ReverseLinkedList rll = new ReverseLinkedList();
+
+        ListNode node1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        ListNode node2 = new ListNode(1, new ListNode(2));
+        ListNode node3 = null;
+
+        System.out.println("[5,4,3,2,1] == " + rll.reverseList(node1).getAsList());
+        System.out.println("[2,1] == " + rll.reverseList(node2).getAsList());
+        System.out.println("null == " + rll.reverseList(node3));
     }
 }

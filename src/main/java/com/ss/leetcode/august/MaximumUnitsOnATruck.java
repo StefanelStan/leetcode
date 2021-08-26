@@ -1,12 +1,13 @@
 package com.ss.leetcode.august;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class MaximumUnitsOnATruck {
     // https://leetcode.com/problems/maximum-units-on-a-truck/
     public int maximumUnits(int[][] boxTypes, int truckSize) {
-        // ordee the boxes by their maximum size/capacity. We want them first
-        Arrays.sort(boxTypes, (a, b) -> Integer.compare(b[1], a[1]));
+        // order the boxes by their maximum size/capacity. We want them first
+        Arrays.sort(boxTypes, Comparator.comparingInt(a -> a[0]));
         int remainingTruckCapacity = truckSize;
         int maxUnits = 0;
         // If truck is not full, load boxes, starting with the biggest ones first
