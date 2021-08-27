@@ -117,7 +117,10 @@ public class StartAugust {
 //        start.findElementsContaminatedBT();
 //        start.maximumScoreWordsFormedByLetters();
 //        start.verifyPreorderSerializationBT();
-        start.reverseLinkedList();
+//        start.reverseLinkedList();
+//        start.longestUncommonSubsequenceII();
+//        start.longestUncommonSubsequenceI();
+        start.recoverATreeFromPreorderTraversal();
     }
 
     public void makingALargeIsland() {
@@ -1200,12 +1203,35 @@ public class StartAugust {
     public void reverseLinkedList() {
         ReverseLinkedList rll = new ReverseLinkedList();
 
-        ListNode node1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-        ListNode node2 = new ListNode(1, new ListNode(2));
+        ListNode node1 = ListNode.makeChain(new int[]{1,2,3,4,5});
+        ListNode node2 = ListNode.makeChain(new int[]{1,2});
         ListNode node3 = null;
 
         System.out.println("[5,4,3,2,1] == " + rll.reverseList(node1).getAsList());
         System.out.println("[2,1] == " + rll.reverseList(node2).getAsList());
         System.out.println("null == " + rll.reverseList(node3));
+    }
+
+    public void longestUncommonSubsequenceII() {
+        LongestUncommonSubsequenceII lusii = new LongestUncommonSubsequenceII();
+
+        System.out.println("3 == " + lusii.findLUSlength(new String[]{"aba","cdc","eae"}));
+        System.out.println("-1 == " + lusii.findLUSlength(new String[]{"aaa","aaa","aa"}));
+    }
+
+    public void longestUncommonSubsequenceI() {
+        LongestUncommonSubsequenceI lusi = new LongestUncommonSubsequenceI();
+
+        System.out.println("3 == " + lusi.findLUSlength("aba", "cdc"));
+        System.out.println("-1 == " + lusi.findLUSlength("aaa", "bbb"));
+        System.out.println("3 == " + lusi.findLUSlength("aaa", "aa"));
+    }
+
+    public void recoverATreeFromPreorderTraversal() {
+        RecoverATreeFromPreorderTraversal ratfpt = new RecoverATreeFromPreorderTraversal();
+
+        System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-2--3--4-5--6--7")));
+        System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-2--3---4-5--6---7")));
+        System.out.println("[1,401, 349, 90, 88] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-401--349---90--88")));
     }
 }

@@ -1,7 +1,5 @@
 package com.ss.leetcode.shared;
 
-import com.ss.leetcode.june.ConvertBinaryNumber;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,12 +17,13 @@ public class ListNode {
     }
 
     public static ListNode makeChain(int[] args) {
-        ListNode[] chain = new ListNode[args.length];
-        chain[args.length -1] = new ListNode(args[args.length-1]);
-        for (int i= args.length -2; i >=0; i--) {
-            chain[i] = new ListNode(args[i], chain[i+1]);
+        ListNode head = new ListNode(args[0]);
+        ListNode currentNode = head;
+        for (int i = 1; i < args.length; i++) {
+            currentNode.next = new ListNode(args[i]);
+            currentNode = currentNode.next;
         }
-        return chain[0];
+        return head;
     }
 
     public List<Integer> getAsList() {
