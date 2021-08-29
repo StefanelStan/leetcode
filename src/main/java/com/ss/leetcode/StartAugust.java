@@ -1316,13 +1316,13 @@ public class StartAugust {
         int[] array2 = {0};
         int[] array3 = {1,0};
         int[] array4 = {2,8,3,0,1,0,2,7,0,0,2,9,0,1,1,0,0};
-//        mz.moveZeroes(array1);
-//        mz.moveZeroes(array2);
-//        mz.moveZeroes(array3);
+        mz.moveZeroes(array1);
+        mz.moveZeroes(array2);
+        mz.moveZeroes(array3);
         mz.moveZeroes(array4);
-//        System.out.println("[1,3,12,0,0] == " + Arrays.toString(array1));
-//        System.out.println("[0] == " + Arrays.toString(array2));
-//        System.out.println("[1,0] == " + Arrays.toString(array3));
+        System.out.println("[1,3,12,0,0] == " + Arrays.toString(array1));
+        System.out.println("[0] == " + Arrays.toString(array2));
+        System.out.println("[1,0] == " + Arrays.toString(array3));
         System.out.println("[2,8,3,1,2,7,2,9,1,1,0,0,0,0,0,0,0] == " + Arrays.toString(array4));
     }
 }

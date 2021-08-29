@@ -5,6 +5,19 @@ import java.util.Arrays;
 public class MoveZeroes {
     // https://leetcode.com/problems/move-zeroes/
     public void moveZeroes(int[] nums) {
+        int j = 0, nrOfZero = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[j] = nums[i];
+                j++;
+            } else {
+                nrOfZero++;
+            }
+        }
+        Arrays.fill(nums, nums.length - nrOfZero, nums.length, 0);
+    }
+
+   public void moveZeroes2(int[] nums) {
         if (nums.length == 1) {
             return;
         }
