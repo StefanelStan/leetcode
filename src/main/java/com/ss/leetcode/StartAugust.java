@@ -1,10 +1,12 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.august.*;
-import com.ss.leetcode.july.TrappingRainWater;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
 import com.ss.leetcode.shared.TreeNode;
+import com.ss.leetcode.august.BinarySearch;
+import com.ss.leetcode.august.FirstBadVersion;
+import com.ss.leetcode.august.RotateArray;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -120,7 +122,14 @@ public class StartAugust {
 //        start.reverseLinkedList();
 //        start.longestUncommonSubsequenceII();
 //        start.longestUncommonSubsequenceI();
-        start.recoverATreeFromPreorderTraversal();
+//        start.recoverATreeFromPreorderTraversal();
+//        start.maximumProfitInJobScheduling();
+//        start.uniqueEmailAddresses();
+//        start.nextGreaterElementI();
+//        start.binarySearch();
+//        start.firstBadVersion();
+//        start.rotateArray();
+        start.moveZeroes();
     }
 
     public void makingALargeIsland() {
@@ -1233,5 +1242,87 @@ public class StartAugust {
         System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-2--3--4-5--6--7")));
         System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-2--3---4-5--6---7")));
         System.out.println("[1,401, 349, 90, 88] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-401--349---90--88")));
+    }
+
+    public void maximumProfitInJobScheduling() {
+        MaximumProfitInJobScheduling mpijs = new MaximumProfitInJobScheduling();
+
+        System.out.println("18 == " + mpijs.jobScheduling(new int[]{4,2,4,8,2}, new int[]{5,5,5,10,8}, new int[]{1,2,8,10,4}));
+        System.out.println("25 == " + mpijs.jobScheduling(new int[]{7,4,4,2,1}, new int[]{14,11,6,5,3}, new int[]{2,15,12,5,10}));
+        System.out.println("120 == " + mpijs.jobScheduling(new int[]{1,2,3,3}, new int[]{3,4,5,6}, new int[]{50,10,40,70}));
+        System.out.println("150 == " + mpijs.jobScheduling(new int[]{1,2,3,4,6}, new int[]{3,5,10,6,9}, new int[]{20,20,100,70,60}));
+        System.out.println("6 == " + mpijs.jobScheduling(new int[]{1,1,1}, new int[]{2,3,4}, new int[]{5,6,4}));
+    }
+
+    public void uniqueEmailAddresses() {
+        UniqueEmailAddresses uea = new UniqueEmailAddresses();
+
+        System.out.println("2 == " + uea.numUniqueEmails(new String[]{"test.email+alex@leetcode.com",
+                                            "test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"}));
+        System.out.println("2 == " + uea.numUniqueEmails(new String[]{"a@leetcode.com","b@leetcode.com","c@leetcode.com"}));
+    }
+
+    public void nextGreaterElementI() {
+        NextGreaterElementI ngei = new NextGreaterElementI();
+
+//        System.out.println("[-1,3,-1] == " + Arrays.toString(ngei.nextGreaterElement(new int[]{4,1,2}, new int[]{1,3,4,2})));
+//        System.out.println("[3,-1] == " + Arrays.toString(ngei.nextGreaterElement(new int[]{2,4}, new int[]{1,2,3,4})));
+        System.out.println("[-1,13,27,27] == " + Arrays.toString(ngei.nextGreaterElement(new int[]{27,9,11,6}, new int[]{9,13,72,11,6,27,16})));
+    }
+
+    public void binarySearch() {
+        BinarySearch bs = new BinarySearch();
+
+        System.out.println("4 == " + bs.search(new int[]{-1,0,3,5,9,12}, 9));
+        System.out.println("1 == " + bs.search(new int[]{1,4}, 4));
+        System.out.println("-1 == " + bs.search(new int[]{-1,0,3,5,9,12}, 2));
+        System.out.println("6 == " + bs.search(new int[]{-23, -12, -5, 0, 2,6,9,12,34,78,123,11225}, 9));
+    }
+
+    public void firstBadVersion() {
+        FirstBadVersion fbv = new FirstBadVersion();
+
+        fbv.setBadVersion(4);
+        System.out.println("4 == " + fbv.firstBadVersion(5));
+
+        fbv.setBadVersion(1);
+        System.out.println("1 == " + fbv.firstBadVersion(1));
+
+        fbv.setBadVersion(54);
+        System.out.println("54 == " + fbv.firstBadVersion(100));
+
+        fbv.setBadVersion(2);
+        System.out.println("2 == " + fbv.firstBadVersion(3));
+    }
+
+    public void rotateArray() {
+        RotateArray ra = new RotateArray();
+
+        int[] array1 = new int[]{1,2,3,4,5,6,7};
+        int[] array2 = new int[]{-1,-100,3,99};
+        int[] array3 = new int[]{-1};
+        ra.rotate(array1, 3);
+        ra.rotate(array2, 2);
+        ra.rotate(array3, 2);
+        System.out.println("[5,6,7,1,2,3,4] == " + Arrays.toString(array1));
+        System.out.println("[3,99,-1,-100] == " + Arrays.toString(array2));
+        System.out.println("[-1] == " + Arrays.toString(array3));
+    }
+
+    public void moveZeroes() {
+        MoveZeroes mz = new MoveZeroes();
+
+        int[] array1 = {0,1,0,3,12};
+        int[] array2 = {0};
+        int[] array3 = {1,0};
+        int[] array4 = {2,8,3,0,1,0,2,7,0,0,2,9,0,1,1,0,0};
+//        mz.moveZeroes(array1);
+//        mz.moveZeroes(array2);
+//        mz.moveZeroes(array3);
+        mz.moveZeroes(array4);
+//        System.out.println("[1,3,12,0,0] == " + Arrays.toString(array1));
+//        System.out.println("[0] == " + Arrays.toString(array2));
+//        System.out.println("[1,0] == " + Arrays.toString(array3));
+        System.out.println("[2,8,3,1,2,7,2,9,1,1,0,0,0,0,0,0,0] == " + Arrays.toString(array4));
     }
 }

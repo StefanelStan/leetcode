@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class DailyTemperatures {
     // https://leetcode.com/problems/daily-temperatures/
+    // Aka NextGreaterElement
     public int[] dailyTemperatures(int[] temperatures) {
         int[] waiting = new int[temperatures.length];
         waiting[waiting.length -1] = 0;
