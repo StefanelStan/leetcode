@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LongestSubstringWithoutRepeating {
+    // https://leetcode.com/problems/longest-substring-without-repeating-characters/
     public int lengthOfLongestSubstring(String string) {
         if (string.isEmpty()) {
             return 0;
@@ -31,6 +32,5 @@ public class LongestSubstringWithoutRepeating {
             tempSet.clear();
         }
         return longest;
-        // https://leetcode.com/problems/longest-substring-without-repeating-characters/
     }
 }

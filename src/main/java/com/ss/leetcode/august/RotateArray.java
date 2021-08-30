@@ -2,7 +2,7 @@ package com.ss.leetcode.august;
 
 public class RotateArray {
     // https://leetcode.com/problems/rotate-array/
-    public void rotate2(int[] nums, int k) {
+    public void rotate(int[] nums, int k) {
         if (k == nums.length) {
             return;
         }
@@ -14,8 +14,7 @@ public class RotateArray {
         System.arraycopy(answer, 0, nums, 0, nums.length);
     }
 
-
-    public void rotate(int[] nums, int k) {
+    public void rotate2(int[] nums, int k) {
         k = k % nums.length;
 
         rotateInPlace(nums, 0, nums.length-1);

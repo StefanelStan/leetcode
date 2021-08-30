@@ -129,7 +129,10 @@ public class StartAugust {
 //        start.binarySearch();
 //        start.firstBadVersion();
 //        start.rotateArray();
-        start.moveZeroes();
+//        start.moveZeroes();
+//        start.removeNthNodeFromEndOfList();
+//        start.rangeAdditionII();
+        start.permutationInString();
     }
 
     public void makingALargeIsland() {
@@ -1324,5 +1327,33 @@ public class StartAugust {
         System.out.println("[0] == " + Arrays.toString(array2));
         System.out.println("[1,0] == " + Arrays.toString(array3));
         System.out.println("[2,8,3,1,2,7,2,9,1,1,0,0,0,0,0,0,0] == " + Arrays.toString(array4));
+    }
+
+    public void removeNthNodeFromEndOfList() {
+        RemoveNthNodeFromEndOfList rnnfeol = new RemoveNthNodeFromEndOfList();
+
+        ListNode node1 = ListNode.makeChain(new int[]{1,2,3,4,5});
+        ListNode node2 = new ListNode(1);
+        ListNode node3 = ListNode.makeChain(new int[]{1,2});
+        System.out.println("[1,2,3,5] == " + rnnfeol.removeNthFromEnd(node1, 2).getAsList());
+        System.out.println("[] == " + rnnfeol.removeNthFromEnd(node2, 1));
+        System.out.println("[1] == " + rnnfeol.removeNthFromEnd(node3, 1).getAsList());
+    }
+
+    public void rangeAdditionII() {
+        RangeAdditionII raii = new RangeAdditionII();
+
+        System.out.println("4 == " + raii.maxCount(3,3, new int[][]{{2,2}, {3,3}}));
+        System.out.println("4 == " + raii.maxCount(3,3, new int[][]{{2,2}, {3,3},{3,3},{3,3},{2,2},{3,3},{3,3},{3,3},{2,2},{3,3},{3,3},{3,3}}));
+        System.out.println("9 == " + raii.maxCount(3,3, new int[0][0]));
+    }
+
+    public void permutationInString() {
+        PermutationInString pis = new PermutationInString();
+
+        System.out.println("true == " + pis.checkInclusion("ab", "eidbaooo"));
+        System.out.println("false == " + pis.checkInclusion("ab", "eidboaoo"));
+        System.out.println("true == " + pis.checkInclusion("ab", "ab"));
+        System.out.println("true == " + pis.checkInclusion("adc", "dcda"));
     }
 }

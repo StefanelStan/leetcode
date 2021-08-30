@@ -25,13 +25,13 @@ import java.util.List;
 public class StartDecember {
     public static void main(String[] args) {
         StartDecember start = new StartDecember();
-        start.twoSum();
+//        start.twoSum();
 //        start.threeSum();
 //        start.remvoveElement();
 //        start.removeDuplicates();
 //        start.handOfStraights();
 //        start.addTwoNumbers();
-//        start.longestSubstringWithoutRepeating();
+        start.longestSubstringWithoutRepeating();
 //        start.riverRecords();
 //        start.mergeSortList();
 //        start.filterRestaurants();
@@ -43,7 +43,7 @@ public class StartDecember {
 
 //        start.countingBits();
 //        start.bestBreak();
-        //        start.splitTwoStringsToMakePalindrome();
+//        start.splitTwoStringsToMakePalindrome();
     }
 
     public void twoSum() {
@@ -59,7 +59,7 @@ public class StartDecember {
         System.out.println("[[-2,0,2],[-2,1,1]] = " + threeSum.threeSum(new int[]{-2,0,1,1,2}));
     }
 
-    private void remvoveElement() {
+    private void removeElement() {
         int[] nums = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
         RemoveElement re = new RemoveElement();
         System.out.println("RemoveElement  of " + Arrays.toString(nums) + " = " + re.removeElement(nums, 2));
@@ -126,12 +126,18 @@ public class StartDecember {
 
     private void longestSubstringWithoutRepeating() {
         LongestSubstringWithoutRepeating lswr = new LongestSubstringWithoutRepeating();
-        String s1 = "abcabcbb";
-        String s2 = "bbbbb";
-        String s3 = "pwwkew";
-//        System.out.println("Longest substring of " + s1 + " should be 3 :" + lswr.lengthOfLongestSubstring(s1));
-//        System.out.println("Longest substring of " + s2 + " should be 1 :" + lswr.lengthOfLongestSubstring(s2));
-//        System.out.println("Longest substring of " + s3 + " should be 3 :" + lswr.lengthOfLongestSubstring(s3));
+
+        System.out.println("3 == " + lswr.lengthOfLongestSubstring("ohomm"));
+        System.out.println("4 == " + lswr.lengthOfLongestSubstring("abcbxa"));
+        System.out.println("2 == " + lswr.lengthOfLongestSubstring("abba"));
+        System.out.println("3 == " + lswr.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println("1 == " + lswr.lengthOfLongestSubstring("bbbbb"));
+        System.out.println("3 == " + lswr.lengthOfLongestSubstring("pwwkew"));
+        System.out.println("5 == " + lswr.lengthOfLongestSubstring("ertertyu"));
+        System.out.println("8 == " + lswr.lengthOfLongestSubstring("abcdefgh"));
+        System.out.println("2 == " + lswr.lengthOfLongestSubstring("cdd"));
+        System.out.println("0 == " + lswr.lengthOfLongestSubstring(""));
+        System.out.println("1 == " + lswr.lengthOfLongestSubstring(" "));
     }
 
     private void riverRecords() {
