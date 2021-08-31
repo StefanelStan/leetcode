@@ -132,7 +132,10 @@ public class StartAugust {
 //        start.moveZeroes();
 //        start.removeNthNodeFromEndOfList();
 //        start.rangeAdditionII();
-        start.permutationInString();
+//        start.permutationInString();
+//        start.floodFill();
+//        start.findMinInRotatedSortedArray();
+        start.maxAreaOfIsland();
     }
 
     public void makingALargeIsland() {
@@ -1355,5 +1358,33 @@ public class StartAugust {
         System.out.println("false == " + pis.checkInclusion("ab", "eidboaoo"));
         System.out.println("true == " + pis.checkInclusion("ab", "ab"));
         System.out.println("true == " + pis.checkInclusion("adc", "dcda"));
+    }
+
+    public void floodFill() {
+        FloodFill ff = new FloodFill();
+
+        System.out.println("[[2,2,2],[2,2,0],[2,0,1]] == " + Arrays.deepToString(ff.floodFill(new int[][]{{1,1,1}, {1,1,0}, {1,0,1}}, 1,1,2)));
+        System.out.println("[[2,2,2],[2,2,2]] == " + Arrays.deepToString(ff.floodFill(new int[][]{{0,0,0}, {0,0,0}}, 0,0,2)));
+        System.out.println("[[,0,0,0],[0,1,1]] == " + Arrays.deepToString(ff.floodFill(new int[][]{{0,0,0}, {0,1,1}}, 1,1,1)));
+    }
+
+    public void findMinInRotatedSortedArray() {
+        FindMinInRotatedSortedArray fmrsa = new FindMinInRotatedSortedArray();
+
+        System.out.println("1 == " + fmrsa.findMin(new int[]{3,4,5,1,2}));
+        System.out.println("0 == " + fmrsa.findMin(new int[]{4,5,6,7,0,1,2}));
+        System.out.println("11 == " + fmrsa.findMin(new int[]{11,13,15,17}));
+    }
+
+    public void maxAreaOfIsland() {
+        MaxAreaOfIsland maoi = new MaxAreaOfIsland();
+
+        int[][] area1 = {{0,0,1,0,0,0,0,1,0,0,0,0,0}, {0,0,0,0,0,0,0,1,1,1,0,0,0}, {0,1,1,0,1,0,0,0,0,0,0,0,0},
+                        {0,1,0,0,1,1,0,0,1,0,1,0,0}, {0,1,0,0,1,1,0,0,1,1,1,0,0}, {0,0,0,0,0,0,0,0,0,0,1,0,0},
+                        {0,0,0,0,0,0,0,1,1,1,0,0,0}, {0,0,0,0,0,0,0,1,1,0,0,0,0}};
+        int[][] area2 = {{0,0,0,0,0,0,0,0}};
+
+        System.out.println("6 == " + maoi.maxAreaOfIsland(area1));
+        System.out.println("0 == " + maoi.maxAreaOfIsland(area2));
     }
 }
