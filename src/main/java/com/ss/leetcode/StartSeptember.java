@@ -2,14 +2,22 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.september.ArrayNesting;
 import com.ss.leetcode.september.DeleteNodesAndReturnForest;
+import com.ss.leetcode.september.ErectTheFence;
+import com.ss.leetcode.september.LetterCasePermutation;
+import com.ss.leetcode.september.LowestCommonAncestor;
+import com.ss.leetcode.september.MaximumSubarray;
 import com.ss.leetcode.september.MinimumCostToMoveChips;
 import com.ss.leetcode.september.PopulatingNextRightPointers;
 import com.ss.leetcode.september.ReverseBits;
+import com.ss.leetcode.september.SameTree;
 import com.ss.leetcode.september.SingleNumber;
 import com.ss.leetcode.september.UniqueBinarySearchTreesII;
+import com.ss.leetcode.september.WordSearch;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 
-import java.util.List;
+import java.util.Arrays;
+
 
 public class StartSeptember {
 
@@ -21,7 +29,13 @@ public class StartSeptember {
 //        start.reverseBits();
 //        start.minimumCostToMoveChips();
 //        start.uniqueBinarySearchTreesII();
-        start.deleteNodesAndReturnForest();
+//        start.deleteNodesAndReturnForest();
+//        start.maximumSubarray();
+//        start.letterCasePermutation();
+//        start.lowestCommonAncestor();
+//        start.wordSearch();
+//        start.erectTheFence();
+        start.sameTree();
     }
 
     public void arrayNesting() {
@@ -95,5 +109,69 @@ public class StartSeptember {
         System.out.println("[[1,2,4],[6],[7]] == " + stb);
         System.out.println("[[1,2,4]] == " + stb2);
         System.out.println("[[3,4]] == " + stb3);
+    }
+
+    public void maximumSubarray() {
+        MaximumSubarray ms = new MaximumSubarray();
+
+        System.out.println("6 == " + ms.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        System.out.println("1 == " + ms.maxSubArray(new int[]{1}));
+        System.out.println("23 == " + ms.maxSubArray(new int[]{5,4,-1,7,8}));
+        System.out.println("-1 == " + ms.maxSubArray(new int[]{-2, -3, -1}));
+    }
+
+    public void letterCasePermutation() {
+        LetterCasePermutation lcp = new LetterCasePermutation();
+
+        System.out.println("[a1b2, a1B2 , A1b2, A1B2] == " + lcp.letterCasePermutation("a1b2"));
+        System.out.println("[3z4, 3Z4] == " + lcp.letterCasePermutation("3z4"));
+        System.out.println("[12345] == " + lcp.letterCasePermutation("12345"));
+        System.out.println("[0] == " + lcp.letterCasePermutation("0"));
+    }
+
+    public void lowestCommonAncestor() {
+        LowestCommonAncestor lca = new LowestCommonAncestor();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4))),
+                                      new TreeNode(1, new TreeNode(0), new TreeNode(8)));
+        TreeNode root2 = new TreeNode(1);
+        TreeNode root3 = new TreeNode(0, new TreeNode(1, null, new TreeNode(2)),new TreeNode(3));
+
+        System.out.println("[2,7,4] == " + TreeNode.extractValues(lca.lcaDeepestLeaves(root1)));
+        System.out.println("[1] == " + TreeNode.extractValues(lca.lcaDeepestLeaves(root2)));
+        System.out.println("[2] == " + TreeNode.extractValues(lca.lcaDeepestLeaves(root3)));
+
+    }
+
+    public void wordSearch() {
+        WordSearch ws = new WordSearch();
+
+        char[][] board = {{'A','B','C','E'}, {'S','F','C','S'}, {'A','D','E','E'}};
+
+        System.out.println("true == " + ws.exist(board, "ABCCED"));
+        System.out.println("true == " + ws.exist(board, "SEE"));
+        System.out.println("false == " + ws.exist(board, "ABCB"));
+    }
+
+    public void erectTheFence() {
+        ErectTheFence etf = new ErectTheFence();
+
+        System.out.println("[[1,1],[2,0],[3,3],[2,4],[4,2]] == " + Arrays.deepToString(etf.outerTrees(new int[][]{{1,1}, {2,2}, {2,0}, {2,4}, {3,3}, {4,2}})));
+        System.out.println("[[4,2],[2,2],[1,2]] == " + Arrays.deepToString(etf.outerTrees(new int[][]{{1,2}, {2,2}, {4,2}})));
+    }
+
+    public void sameTree() {
+        SameTree st = new SameTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root3 = new TreeNode(1, new TreeNode(2), null);
+        TreeNode root4 = new TreeNode(1, null, new TreeNode(2));
+        TreeNode root5 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root6 = new TreeNode(1, new TreeNode(1), new TreeNode(2));
+
+        System.out.println("true == " + st.isSameTree(root1, root2));
+        System.out.println("false == " + st.isSameTree(root3, root4));
+        System.out.println("false == " + st.isSameTree(root5, root6));
     }
 }
