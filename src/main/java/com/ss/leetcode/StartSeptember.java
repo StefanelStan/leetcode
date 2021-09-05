@@ -3,7 +3,11 @@ package com.ss.leetcode;
 import com.ss.leetcode.september.ArrayNesting;
 import com.ss.leetcode.september.DeleteNodesAndReturnForest;
 import com.ss.leetcode.september.ErectTheFence;
+import com.ss.leetcode.september.FindAllGroupsOfFarmland;
+import com.ss.leetcode.september.FindNearestPoint;
+import com.ss.leetcode.september.FindTheMiddleIndexInArray;
 import com.ss.leetcode.september.LetterCasePermutation;
+import com.ss.leetcode.september.LockingTree;
 import com.ss.leetcode.september.LowestCommonAncestor;
 import com.ss.leetcode.september.MaximumSubarray;
 import com.ss.leetcode.september.MinimumCostToMoveChips;
@@ -14,7 +18,6 @@ import com.ss.leetcode.september.SingleNumber;
 import com.ss.leetcode.september.UniqueBinarySearchTreesII;
 import com.ss.leetcode.september.WordSearch;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 
@@ -35,7 +38,11 @@ public class StartSeptember {
 //        start.lowestCommonAncestor();
 //        start.wordSearch();
 //        start.erectTheFence();
-        start.sameTree();
+//        start.sameTree();
+//        start.findNearestPoint();
+//        start.findTheMiddleIndexInArray();
+//        start.findAllGroupsOfFarmland();
+        start.operationsOnTree();
     }
 
     public void arrayNesting() {
@@ -174,4 +181,58 @@ public class StartSeptember {
         System.out.println("false == " + st.isSameTree(root3, root4));
         System.out.println("false == " + st.isSameTree(root5, root6));
     }
+
+    public void findNearestPoint() {
+        FindNearestPoint fnp = new FindNearestPoint();
+
+        System.out.println("2 == " +  fnp.nearestValidPoint(3,4, new int[][]{{1,2}, {3,1}, {2,4}, {2,3}, {4,4}}));
+        System.out.println("0 == " +  fnp.nearestValidPoint(3,4, new int[][]{{3,4}}));
+        System.out.println("-1 == " +  fnp.nearestValidPoint(3,4, new int[][]{{2,3}}));
+    }
+
+    public void findTheMiddleIndexInArray() {
+        FindTheMiddleIndexInArray ftmiia = new FindTheMiddleIndexInArray();
+
+        System.out.println("3 == " + ftmiia.findMiddleIndex(new int[]{2,3,-1,8,4}));
+        System.out.println("2 == " + ftmiia.findMiddleIndex(new int[]{1,-1,4}));
+        System.out.println("2 == " + ftmiia.findMiddleIndex(new int[]{1,-1,4}));
+        System.out.println("-1 == " + ftmiia.findMiddleIndex(new int[]{2,5}));
+        System.out.println("0 == " + ftmiia.findMiddleIndex(new int[]{1}));
+        System.out.println("0 == " + ftmiia.findMiddleIndex(new int[]{4,0}));
+        System.out.println("1 == " + ftmiia.findMiddleIndex(new int[]{3,2,-1,-4,8}));
+    }
+
+    public void findAllGroupsOfFarmland() {
+        FindAllGroupsOfFarmland fagof = new FindAllGroupsOfFarmland();
+
+        int[][] land1 = {{1,0,0}, {0,1,1}, {0,1,1}};
+        int[][] land2 = {{1,1}, {1,1}};
+        int[][] land3 = {{0}};
+
+        System.out.println("[[0,0,0,0],[1,1,2,2]] == " + Arrays.deepToString(fagof.findFarmland(land1)));
+        System.out.println("[[0,0,1,1]] == " + Arrays.deepToString(fagof.findFarmland(land2)));
+        System.out.println("[[]] == " + Arrays.deepToString(fagof.findFarmland(land3)));
+    }
+
+    public void operationsOnTree() {
+        LockingTree lt = new LockingTree(new int[]{-1, 0, 0, 1, 1, 2, 2});
+
+        System.out.println("true == " + lt.lock(2,2));
+        System.out.println("false == " + lt.unlock(2,3));
+        System.out.println("true == " + lt.unlock(2,2));
+        System.out.println("true == " + lt.lock(4,5));
+        System.out.println("true == " + lt.upgrade(0,1));
+        System.out.println("false == " + lt.lock(0,1));
+
+
+        LockingTree lt2 = new LockingTree(new int[]{-1,0,3,1,0});
+        System.out.println("false == " + lt2.upgrade(4,5));
+        System.out.println("false == " + lt2.upgrade(3,8));
+        System.out.println("false == " + lt2.unlock(0,7));
+        System.out.println("true == " + lt2.lock(2,7));
+        System.out.println("false == " + lt2.upgrade(4,6));
+
+    }
+
+
 }
