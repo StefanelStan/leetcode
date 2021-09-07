@@ -2,10 +2,15 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.september.ArrayNesting;
 import com.ss.leetcode.september.DeleteNodesAndReturnForest;
+import com.ss.leetcode.september.DistributeCandies;
 import com.ss.leetcode.september.ErectTheFence;
 import com.ss.leetcode.september.FindAllGroupsOfFarmland;
 import com.ss.leetcode.september.FindNearestPoint;
 import com.ss.leetcode.september.FindTheMiddleIndexInArray;
+import com.ss.leetcode.september.FizzBuzz;
+import com.ss.leetcode.september.GoatLatin;
+import com.ss.leetcode.september.IntersectionOfTwoArrays;
+import com.ss.leetcode.september.KeysAndRooms;
 import com.ss.leetcode.september.LetterCasePermutation;
 import com.ss.leetcode.september.LockingTree;
 import com.ss.leetcode.september.LowestCommonAncestor;
@@ -15,11 +20,14 @@ import com.ss.leetcode.september.PopulatingNextRightPointers;
 import com.ss.leetcode.september.ReverseBits;
 import com.ss.leetcode.september.SameTree;
 import com.ss.leetcode.september.SingleNumber;
+import com.ss.leetcode.september.SlowestKey;
 import com.ss.leetcode.september.UniqueBinarySearchTreesII;
 import com.ss.leetcode.september.WordSearch;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
 public class StartSeptember {
@@ -42,7 +50,13 @@ public class StartSeptember {
 //        start.findNearestPoint();
 //        start.findTheMiddleIndexInArray();
 //        start.findAllGroupsOfFarmland();
-        start.operationsOnTree();
+//        start.operationsOnTree();
+//        start.goatLatin();
+//        start.slowestKey();
+//        start.fizzBuzz();
+//        start.intersectionOfTwoArrays();
+        start.keysAndRooms();
+//        start.distributeCandies();
     }
 
     public void arrayNesting() {
@@ -231,8 +245,51 @@ public class StartSeptember {
         System.out.println("false == " + lt2.unlock(0,7));
         System.out.println("true == " + lt2.lock(2,7));
         System.out.println("false == " + lt2.upgrade(4,6));
-
     }
 
+    public void goatLatin() {
+        GoatLatin gl = new GoatLatin();
 
+        System.out.println("Imaa peaksmaa oatGmaaaa atinLmaaaaa == " + gl.toGoatLatin("I speak Goat Latin"));
+        System.out.println("heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa == "
+                                            + gl.toGoatLatin("The quick brown fox jumped over the lazy dog"));
+    }
+
+    public void slowestKey() {
+        SlowestKey sl = new SlowestKey();
+
+        System.out.println("c == " + sl.slowestKey(new int[]{9,29,49,50}, "cbcd"));
+        System.out.println("a == " + sl.slowestKey(new int[]{12,23,36,46,62}, "spuda"));
+    }
+
+    public void fizzBuzz() {
+        FizzBuzz fb = new FizzBuzz();
+
+        System.out.println("[1,2,Fizz] == " + fb.fizzBuzz(3));
+        System.out.println("[1,2,Fizz,4,Buzz] == " + fb.fizzBuzz(5));
+        System.out.println("[1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz] == " + fb.fizzBuzz(15));
+    }
+
+    public void intersectionOfTwoArrays() {
+        IntersectionOfTwoArrays iota = new IntersectionOfTwoArrays();
+
+        System.out.println("[2] == " + Arrays.toString(iota.intersection(new int[]{1,2,2,1}, new int[]{2,2})));
+        System.out.println("[9,4] == " + Arrays.toString(iota.intersection(new int[]{4,9,5}, new int[]{9,4,9,8,4})));
+    }
+
+    public void keysAndRooms() {
+        KeysAndRooms kar = new KeysAndRooms();
+
+        System.out.println("true == " + kar.canVisitAllRooms(List.of(List.of(1), List.of(2), List.of(3), Collections.emptyList())));
+        System.out.println("false == " + kar.canVisitAllRooms(List.of(List.of(1,3), List.of(3,0,1), List.of(2), List.of(0))));
+        System.out.println("true == " + kar.canVisitAllRooms(List.of(List.of(2), Collections.emptyList(), List.of(1))));
+    }
+
+    public void distributeCandies() {
+        DistributeCandies dc = new DistributeCandies();
+
+        System.out.println("3 == " + dc.distributeCandies(new int[]{1,1,2,2,3,3}));
+        System.out.println("2 == " + dc.distributeCandies(new int[]{1,1,2,3}));
+        System.out.println("1 == " + dc.distributeCandies(new int[]{6,6,6,6}));
+    }
 }
