@@ -6,6 +6,7 @@ import com.ss.leetcode.september.DistributeCandies;
 import com.ss.leetcode.september.ErectTheFence;
 import com.ss.leetcode.september.FindAllGroupsOfFarmland;
 import com.ss.leetcode.september.FindNearestPoint;
+import com.ss.leetcode.september.FindTheDistanceBetweenTwoArrays;
 import com.ss.leetcode.september.FindTheMiddleIndexInArray;
 import com.ss.leetcode.september.FizzBuzz;
 import com.ss.leetcode.september.GoatLatin;
@@ -34,6 +35,7 @@ public class StartSeptember {
 
     public static void main(String[] args) {
         StartSeptember start = new StartSeptember();
+
 //        start.arrayNesting();
 //        start.populatingNextRightPointers();
 //        start.singleNumber();
@@ -55,8 +57,10 @@ public class StartSeptember {
 //        start.slowestKey();
 //        start.fizzBuzz();
 //        start.intersectionOfTwoArrays();
-        start.keysAndRooms();
+//        start.keysAndRooms();
 //        start.distributeCandies();
+//        start.findTheDistanceBetweenTwoArrays();
+        start.combinations();
     }
 
     public void arrayNesting() {
@@ -291,5 +295,26 @@ public class StartSeptember {
         System.out.println("3 == " + dc.distributeCandies(new int[]{1,1,2,2,3,3}));
         System.out.println("2 == " + dc.distributeCandies(new int[]{1,1,2,3}));
         System.out.println("1 == " + dc.distributeCandies(new int[]{6,6,6,6}));
+    }
+
+    public void findTheDistanceBetweenTwoArrays() {
+        FindTheDistanceBetweenTwoArrays ftdbta = new FindTheDistanceBetweenTwoArrays();
+
+        System.out.println("2 == " + ftdbta.findTheDistanceValue(new int[]{4,5,8}, new int[]{10,9,1,8}, 2));
+        System.out.println("2 == " + ftdbta.findTheDistanceValue(new int[]{1,4,2,3}, new int[]{1-4,-3,6,10,20,30}, 3));
+        System.out.println("1 == " + ftdbta.findTheDistanceValue(new int[]{2,1,100,3}, new int[]{-5,-2,10,-3,7}, 6));
+        System.out.println("1 == " + ftdbta.findTheDistanceValue(new int[]{-3,-3,4,-1,-10}, new int[]{7,10}, 12));
+        System.out.println("4 == " + ftdbta.findTheDistanceValue(
+            new int[]{199,551,-487,704,399,-86,620,763,656,751,993,-656,116, -269,5,-140,752,-751,575,-573,168,800,-216,
+                -581,-419,660,-779,851,653,-951,-759,165,530,-973,116,-393,976, 380,558,483,993,329,-721,-847},
+            new int[]{24,-235,172,649,-363,-105,30,387,-270,553,82,-338,-999,-747,-95,470,-80,-283,-376,104,-183,-305,
+                603,497,399,170,8,-769,326,879,-227,-217,-583,140,-993,-432,301,225,479,805,512,698,491,46,-593,890,-55,230,709},
+            66));
+    }
+
+    public void combinations() {
+        Combinations c = new Combinations();
+
+        System.out.println("[[2,4],[3,4],,[2,3],[1,2],[1,3],[1,4]] == " + Arrays.deepToString(c.combine(4, 2)));
     }
 }
