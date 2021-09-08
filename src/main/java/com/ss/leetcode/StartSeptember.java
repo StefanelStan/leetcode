@@ -1,6 +1,7 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.september.ArrayNesting;
+import com.ss.leetcode.september.Combinations;
 import com.ss.leetcode.september.DeleteNodesAndReturnForest;
 import com.ss.leetcode.september.DistributeCandies;
 import com.ss.leetcode.september.ErectTheFence;
@@ -11,12 +12,14 @@ import com.ss.leetcode.september.FindTheMiddleIndexInArray;
 import com.ss.leetcode.september.FizzBuzz;
 import com.ss.leetcode.september.GoatLatin;
 import com.ss.leetcode.september.IntersectionOfTwoArrays;
+import com.ss.leetcode.september.KeyboardRow;
 import com.ss.leetcode.september.KeysAndRooms;
 import com.ss.leetcode.september.LetterCasePermutation;
 import com.ss.leetcode.september.LockingTree;
 import com.ss.leetcode.september.LowestCommonAncestor;
 import com.ss.leetcode.september.MaximumSubarray;
 import com.ss.leetcode.september.MinimumCostToMoveChips;
+import com.ss.leetcode.september.Permutations;
 import com.ss.leetcode.september.PopulatingNextRightPointers;
 import com.ss.leetcode.september.ReverseBits;
 import com.ss.leetcode.september.SameTree;
@@ -60,7 +63,9 @@ public class StartSeptember {
 //        start.keysAndRooms();
 //        start.distributeCandies();
 //        start.findTheDistanceBetweenTwoArrays();
-        start.combinations();
+//        start.combinations();
+//        start.permutations();
+        start.keyboardRow();
     }
 
     public void arrayNesting() {
@@ -315,6 +320,23 @@ public class StartSeptember {
     public void combinations() {
         Combinations c = new Combinations();
 
-        System.out.println("[[2,4],[3,4],,[2,3],[1,2],[1,3],[1,4]] == " + Arrays.deepToString(c.combine(4, 2)));
+        System.out.println("[[2,4],[3,4],[2,3],[1,2],[1,3],[1,4]] == " + c.combine(4, 2));
+        System.out.println("[[1]] == " + c.combine(1, 1));
+    }
+
+    public void permutations() {
+        Permutations p = new Permutations();
+
+        System.out.println("[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] == " + p.permute(new int[]{1,2,3}));
+        System.out.println("[[1,0],[0,1]] == " + p.permute(new int[]{0,1}));
+        System.out.println("[[1]] == " + p.permute(new int[]{1}));
+    }
+
+    public void keyboardRow() {
+        KeyboardRow kr = new KeyboardRow();
+
+        System.out.println("[Alaska, Dad] == " + Arrays.toString(kr.findWords(new String[]{"Hello","Alaska","Dad","Peace"})));
+        System.out.println("[] == " + Arrays.toString(kr.findWords(new String[]{"omk"})));
+        System.out.println("[adsdf, sfd] == " + Arrays.toString(kr.findWords(new String[]{"adsdf","sfd"})));
     }
 }
