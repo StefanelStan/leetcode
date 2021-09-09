@@ -1,6 +1,7 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.september.ArrayNesting;
+import com.ss.leetcode.september.ClimbingStairs;
 import com.ss.leetcode.september.Combinations;
 import com.ss.leetcode.september.DeleteNodesAndReturnForest;
 import com.ss.leetcode.september.DistributeCandies;
@@ -11,9 +12,11 @@ import com.ss.leetcode.september.FindTheDistanceBetweenTwoArrays;
 import com.ss.leetcode.september.FindTheMiddleIndexInArray;
 import com.ss.leetcode.september.FizzBuzz;
 import com.ss.leetcode.september.GoatLatin;
+import com.ss.leetcode.september.HouseRobber;
 import com.ss.leetcode.september.IntersectionOfTwoArrays;
 import com.ss.leetcode.september.KeyboardRow;
 import com.ss.leetcode.september.KeysAndRooms;
+import com.ss.leetcode.september.LargestPlusSign;
 import com.ss.leetcode.september.LetterCasePermutation;
 import com.ss.leetcode.september.LockingTree;
 import com.ss.leetcode.september.LowestCommonAncestor;
@@ -21,10 +24,14 @@ import com.ss.leetcode.september.MaximumSubarray;
 import com.ss.leetcode.september.MinimumCostToMoveChips;
 import com.ss.leetcode.september.Permutations;
 import com.ss.leetcode.september.PopulatingNextRightPointers;
+import com.ss.leetcode.september.PowerOfTwo;
 import com.ss.leetcode.september.ReverseBits;
 import com.ss.leetcode.september.SameTree;
 import com.ss.leetcode.september.SingleNumber;
 import com.ss.leetcode.september.SlowestKey;
+import com.ss.leetcode.september.SmallestRangeI;
+import com.ss.leetcode.september.SortCharactersByFrequency;
+import com.ss.leetcode.september.ToeplitzMatrix;
 import com.ss.leetcode.september.UniqueBinarySearchTreesII;
 import com.ss.leetcode.september.WordSearch;
 import com.ss.leetcode.shared.TreeNode;
@@ -65,7 +72,14 @@ public class StartSeptember {
 //        start.findTheDistanceBetweenTwoArrays();
 //        start.combinations();
 //        start.permutations();
-        start.keyboardRow();
+//        start.keyboardRow();
+//        start.largestPlusSign();
+//        start.climbingStairs();
+//        start.houseRobber();
+//        start.sortCharactersByFrequency();
+//        start.powerOfTwo();
+//        start.smallestRangeI();
+        start.toeplitzMatrix();
     }
 
     public void arrayNesting() {
@@ -338,5 +352,65 @@ public class StartSeptember {
         System.out.println("[Alaska, Dad] == " + Arrays.toString(kr.findWords(new String[]{"Hello","Alaska","Dad","Peace"})));
         System.out.println("[] == " + Arrays.toString(kr.findWords(new String[]{"omk"})));
         System.out.println("[adsdf, sfd] == " + Arrays.toString(kr.findWords(new String[]{"adsdf","sfd"})));
+    }
+
+    public void largestPlusSign() {
+        LargestPlusSign lps = new LargestPlusSign();
+
+        System.out.println("2 == " + lps.orderOfLargestPlusSign(5, new int[][]{{4,2}}));
+        System.out.println("1 == " + lps.orderOfLargestPlusSign(1, new int[][]{{0,0}}));
+        System.out.println("2 == " + lps.orderOfLargestPlusSign(3, new int[][]{{0,0}}));
+        System.out.println("1 == " + lps.orderOfLargestPlusSign(3, new int[][]{{0,0}, {0,1}, {1,0}}));
+        System.out.println("4 == " + lps.orderOfLargestPlusSign(10, new int[][]{{1,2}, {1,8}, {2,4}, {4,7}, {5,0}, {5,6}, {6,4}, {6,9}}));
+    }
+
+    public void climbingStairs() {
+        ClimbingStairs cs = new ClimbingStairs();
+
+        System.out.println("2 == " + cs.climbStairs(2));
+        System.out.println("3 == " + cs.climbStairs(3));
+        System.out.println("5 == " + cs.climbStairs(4));
+        System.out.println("8 == " + cs.climbStairs(5));
+    }
+
+    public void houseRobber() {
+        HouseRobber hr = new HouseRobber();
+
+        System.out.println("4 == " + hr.rob(new int[]{1,2,3,1}));
+        System.out.println("12 == " + hr.rob(new int[]{2,7,9,3,1}));
+        System.out.println("4 == " + hr.rob(new int[]{2,1,1,2}));
+    }
+
+    public void sortCharactersByFrequency() {
+        SortCharactersByFrequency scbf = new SortCharactersByFrequency();
+
+        System.out.println("eert == " + scbf.frequencySort("tree"));
+        System.out.println("aaaccc == " + scbf.frequencySort("cccaaa"));
+        System.out.println("bbAa == " + scbf.frequencySort("Aabb"));
+    }
+
+    public void powerOfTwo() {
+        PowerOfTwo pot = new PowerOfTwo();
+
+        System.out.println("true == " + pot.isPowerOfTwo(1));
+        System.out.println("true == " + pot.isPowerOfTwo(16));
+        System.out.println("false == " + pot.isPowerOfTwo(3));
+        System.out.println("true == " + pot.isPowerOfTwo(4));
+        System.out.println("false == " + pot.isPowerOfTwo(5));
+    }
+
+    public void smallestRangeI() {
+        SmallestRangeI sri = new SmallestRangeI();
+
+        System.out.println("0 == " + sri.smallestRangeI(new int[]{1}, 0));
+        System.out.println("6 == " + sri.smallestRangeI(new int[]{0,10}, 2));
+        System.out.println("0 == " + sri.smallestRangeI(new int[]{1,3,6}, 3));
+    }
+
+    public void toeplitzMatrix() {
+        ToeplitzMatrix tm = new ToeplitzMatrix();
+
+        System.out.println("true == " + tm.isToeplitzMatrix(new int[][]{{1,2,3,4},{5,1,2,3},{9,5,1,2}}));
+        System.out.println("false == " + tm.isToeplitzMatrix(new int[][]{{1,2},{2,2}}));
     }
 }
