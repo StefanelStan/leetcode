@@ -3,6 +3,16 @@ package com.ss.leetcode.september;
 public class MaximumSubarray {
     // https://leetcode.com/problems/maximum-subarray/
     public int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
+        int tempSum = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            tempSum = Math.max(tempSum + nums[i], nums[i]);
+            maxSum = Math.max(tempSum, maxSum);
+        }
+        return maxSum;
+    }
+
+    public int maxSubArray2(int[] nums) {
         int[] sums = new int[nums.length + 1];
         sums[0] = nums[0];
         int max = sums[0];
@@ -14,7 +24,7 @@ public class MaximumSubarray {
     }
 
 
-    public int maxSubArray2(int[] nums) {
+    public int maxSubArray3(int[] nums) {
         if (nums.length == 1) {
             return nums[0];
         }

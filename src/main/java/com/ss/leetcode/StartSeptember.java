@@ -2,8 +2,10 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.september.ArithmeticSlicesIISubsequence;
 import com.ss.leetcode.september.ArrayNesting;
+import com.ss.leetcode.september.BestTimeBuySellStock;
 import com.ss.leetcode.september.ClimbingStairs;
 import com.ss.leetcode.september.Combinations;
+import com.ss.leetcode.september.ContainsDuplicate;
 import com.ss.leetcode.september.CountSquareSumTriples;
 import com.ss.leetcode.september.DeleteNodesAndReturnForest;
 import com.ss.leetcode.september.DistributeCandies;
@@ -24,22 +26,25 @@ import com.ss.leetcode.september.LockingTree;
 import com.ss.leetcode.september.LowestCommonAncestor;
 import com.ss.leetcode.september.MaximumSubarray;
 import com.ss.leetcode.september.MinimumCostToMoveChips;
+import com.ss.leetcode.september.PascalsTriangle;
 import com.ss.leetcode.september.Permutations;
 import com.ss.leetcode.september.PopulatingNextRightPointers;
 import com.ss.leetcode.september.PowerOfTwo;
 import com.ss.leetcode.september.PseudoPalindromicPathsBT;
+import com.ss.leetcode.september.ReshapeTheMatrix;
 import com.ss.leetcode.september.ReverseBits;
 import com.ss.leetcode.september.SameTree;
+import com.ss.leetcode.september.SearchA2DMatrix;
 import com.ss.leetcode.september.SingleNumber;
 import com.ss.leetcode.september.SlowestKey;
 import com.ss.leetcode.september.SmallestRangeI;
 import com.ss.leetcode.september.SortCharactersByFrequency;
 import com.ss.leetcode.september.ToeplitzMatrix;
 import com.ss.leetcode.september.UniqueBinarySearchTreesII;
+import com.ss.leetcode.september.ValidAnagram;
 import com.ss.leetcode.september.WordSearch;
 import com.ss.leetcode.shared.TreeNode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -87,14 +92,20 @@ public class StartSeptember {
 //        start.arithmeticSlicesIISubsequence();
 //        start.countSquareSumTriples();
 //        start.leafSimilarTrees();
-        start.pseudoPalindromicPathsBT();
+//        start.pseudoPalindromicPathsBT();
+//        start.bestTimeBuySellStock();
+//        start.containsDuplicate();
+//        start.reshapeTheMatrix();
+//        start.pascalsTriangle();
+//        start.searchA2DMatrix();
+        start.validAnagram();
     }
 
     public void arrayNesting() {
         ArrayNesting an = new ArrayNesting();
 
         System.out.println("4 == " + an.arrayNesting(new int[]{5,4,0,3,1,6,2}));
-        System.out.println("1 == " + an.arrayNesting(new int[]{0,1,2}));
+//        System.out.println("1 == " + an.arrayNesting(new int[]{0,1,2}));
     }
 
     public void populatingNextRightPointers() {
@@ -481,6 +492,58 @@ public class StartSeptember {
         TreeNode root2 = new TreeNode(2, new TreeNode(1, new TreeNode(1), new TreeNode(3, null, new TreeNode(1))), new TreeNode(1));
         TreeNode root3 = new TreeNode(9);
 
+        System.out.println("2 == " + pppbt.pseudoPalindromicPaths(root1));
+        System.out.println("1 == " + pppbt.pseudoPalindromicPaths(root2));
+        System.out.println("1 == " + pppbt.pseudoPalindromicPaths(root3));
+    }
 
+    public void bestTimeBuySellStock() {
+        BestTimeBuySellStock btbss = new BestTimeBuySellStock();
+
+        System.out.println("5 == " + btbss.maxProfit(new int[]{7,1,5,3,6,4}));
+        System.out.println("0 == " + btbss.maxProfit(new int[]{7,6,4,3,1}));
+    }
+
+    public void containsDuplicate() {
+        ContainsDuplicate cd = new ContainsDuplicate();
+
+        System.out.println("true == " + cd.containsDuplicate(new int[]{1,2,3,1}));
+        System.out.println("false == " + cd.containsDuplicate(new int[]{1,2,3,4}));
+        System.out.println("true == " + cd.containsDuplicate(new int[]{1,1,1,3,3,4,3,2,4,2}));
+    }
+
+    public void reshapeTheMatrix() {
+        ReshapeTheMatrix rtm = new ReshapeTheMatrix();
+
+        System.out.println("[[1,2,3,4]] == " + Arrays.deepToString(rtm.matrixReshape(new int[][]{{1,2},{3,4}}, 1, 4)));
+        System.out.println("[[1,2],[3,4]] == " + Arrays.deepToString(rtm.matrixReshape(new int[][]{{1,2},{3,4}}, 2, 4)));
+        System.out.println("[[1,2,3],[4,5,6],[7,8,9]] == " + Arrays.deepToString(rtm.matrixReshape(new int[][]{{1,2,3,4,5,6,7,8,9}}, 3, 3)));
+    }
+
+    public void pascalsTriangle() {
+        PascalsTriangle pt = new PascalsTriangle();
+
+        System.out.println("[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]] == " + pt.generate(5));
+        System.out.println("[[1]] == " + pt.generate(1));
+    }
+
+    public void searchA2DMatrix() {
+        SearchA2DMatrix sa2dm = new SearchA2DMatrix();
+
+        System.out.println("true == " + sa2dm.searchMatrix(new int[][]{{1,3,5,7}, {10,11,16,20}, {23,30,34,60}}, 3));
+        System.out.println("false == " + sa2dm.searchMatrix(new int[][]{{1,3,5,7}, {10,11,16,20}, {23,30,34,60}}, 13));
+        System.out.println("true == " + sa2dm.searchMatrix(new int[][]{{1,3,5,7}, {10,11,16,20}}, 20));
+        System.out.println("false == " + sa2dm.searchMatrix(new int[][]{{1,3,5,7}, {10,11,16,20}}, 17));
+        System.out.println("false == " + sa2dm.searchMatrix(new int[][]{{1,3,5,7}, {10,11,16,20}}, 24));
+        System.out.println("true == " + sa2dm.searchMatrix(new int[][]{{1,3,5,7}}, 3));
+        System.out.println("false == " + sa2dm.searchMatrix(new int[][]{{1,3,5,7}}, 12));
+    }
+
+    public void validAnagram() {
+        ValidAnagram va = new ValidAnagram();
+
+        System.out.println("true == " + va.isAnagram("anagram", "nagaram"));
+        System.out.println("false == " + va.isAnagram("rat", "car"));
+        System.out.println("false == " + va.isAnagram("ratc", "car"));
     }
 }

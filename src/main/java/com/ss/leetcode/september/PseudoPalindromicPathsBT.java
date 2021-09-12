@@ -14,7 +14,7 @@ public class PseudoPalindromicPathsBT {
      *  3. If leaf (no left/right), verify if the array of nodevals is palindromatic using the theory above.
      *     If Yes, increase the counter of palindromes;
      */
-    public int pseudoPalindromicPaths (TreeNode root) {
+    public int pseudoPalindromicPaths(TreeNode root) {
         int[] nrOfPalindromes = new int[1];
         int[] nodeVal = new int[10];
         traverseTree(root, nodeVal, nrOfPalindromes);
@@ -25,7 +25,7 @@ public class PseudoPalindromicPathsBT {
         if (node != null) {
             nodeVals[node.val]++;
             if (node.left == null && node.right == null) {
-                if(isPalindrome(nodeVals)) {
+                if (isPalindrome(nodeVals)) {
                     nrOfPalindromes[0]++;
                 }
             } else {
