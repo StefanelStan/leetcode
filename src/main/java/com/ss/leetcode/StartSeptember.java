@@ -5,6 +5,7 @@ import com.ss.leetcode.september.ArrayNesting;
 import com.ss.leetcode.september.BestTimeBuySellStock;
 import com.ss.leetcode.september.ClimbingStairs;
 import com.ss.leetcode.september.Combinations;
+import com.ss.leetcode.september.ComplementOfBase10Integer;
 import com.ss.leetcode.september.ContainsDuplicate;
 import com.ss.leetcode.september.CountSquareSumTriples;
 import com.ss.leetcode.september.DeleteNodesAndReturnForest;
@@ -27,14 +28,17 @@ import com.ss.leetcode.september.LowestCommonAncestor;
 import com.ss.leetcode.september.MaximumNumberOfBalloons;
 import com.ss.leetcode.september.MaximumSubarray;
 import com.ss.leetcode.september.MinimumCostToMoveChips;
+import com.ss.leetcode.september.NumberComplement;
 import com.ss.leetcode.september.NumberOfSubarraysSizeKAndAvg;
 import com.ss.leetcode.september.PascalsTriangle;
 import com.ss.leetcode.september.Permutations;
 import com.ss.leetcode.september.PopulatingNextRightPointers;
 import com.ss.leetcode.september.PowerOfTwo;
 import com.ss.leetcode.september.PseudoPalindromicPathsBT;
+import com.ss.leetcode.september.ReformatPhoneNumber;
 import com.ss.leetcode.september.ReshapeTheMatrix;
 import com.ss.leetcode.september.ReverseBits;
+import com.ss.leetcode.september.ReverseOnlyLetters;
 import com.ss.leetcode.september.SameTree;
 import com.ss.leetcode.september.SearchA2DMatrix;
 import com.ss.leetcode.september.SingleNumber;
@@ -102,7 +106,11 @@ public class StartSeptember {
 //        start.searchA2DMatrix();
 //        start.validAnagram();
 //        start.maximumNumberOfBalloons();
-        start.numberOfSubarraysSizeKAndAvg();
+//        start.numberOfSubarraysSizeKAndAvg();
+//        start.reverseOnlyLetters();
+//        start.numberComplement();
+//        start.complementOfBase10Integer();
+        start.reformatPhoneNumber();
     }
 
     public void arrayNesting() {
@@ -567,6 +575,36 @@ public class StartSeptember {
         System.out.println("6 == " + nosska.numOfSubarrays(new int[]{11,13,17,23,29,31,7,5,2,3}, 3, 5));
         System.out.println("1 == " + nosska.numOfSubarrays(new int[]{7,7,7,7,7,7,7}, 7, 7));
         System.out.println("1 == " + nosska.numOfSubarrays(new int[]{4,4,4,4}, 4, 1));
+    }
 
+    public void reverseOnlyLetters() {
+        ReverseOnlyLetters rol = new ReverseOnlyLetters();
+
+        System.out.println("dc-ba == " + rol.reverseOnlyLetters("ab-cd"));
+        System.out.println("j-Ih-gfE-dCba == " + rol.reverseOnlyLetters("a-bC-dEf-ghIj"));
+        System.out.println("Qedo1ct-eeLg=ntse-T! == " + rol.reverseOnlyLetters("Test1ng-Leet=code-Q!"));
+    }
+
+    public void numberComplement() {
+        NumberComplement nc = new NumberComplement();
+
+        System.out.println("2 == " + nc.findComplement(5));
+        System.out.println("0 == " + nc.findComplement(1));
+    }
+
+    public void complementOfBase10Integer() {
+        ComplementOfBase10Integer cob10i = new ComplementOfBase10Integer();
+
+        System.out.println("2 == " + cob10i.bitwiseComplement(5));
+        System.out.println("0 == " + cob10i.bitwiseComplement(7));
+        System.out.println("5 == " + cob10i.bitwiseComplement(10));
+    }
+
+    public void reformatPhoneNumber() {
+        ReformatPhoneNumber rpn = new ReformatPhoneNumber();
+        System.out.println("123-45-67 == " + rpn.reformatNumber("123 4-567"));
+        System.out.println("123-456-78 == " + rpn.reformatNumber("123 4-5678"));
+        System.out.println("12 == " + rpn.reformatNumber("12"));
+        System.out.println("175-229-353-94-75 == " + rpn.reformatNumber("--17-5 229 35-39475 "));
     }
 }
