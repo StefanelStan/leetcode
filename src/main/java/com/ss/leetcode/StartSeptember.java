@@ -24,8 +24,10 @@ import com.ss.leetcode.september.LargestPlusSign;
 import com.ss.leetcode.september.LetterCasePermutation;
 import com.ss.leetcode.september.LockingTree;
 import com.ss.leetcode.september.LowestCommonAncestor;
+import com.ss.leetcode.september.MaximumNumberOfBalloons;
 import com.ss.leetcode.september.MaximumSubarray;
 import com.ss.leetcode.september.MinimumCostToMoveChips;
+import com.ss.leetcode.september.NumberOfSubarraysSizeKAndAvg;
 import com.ss.leetcode.september.PascalsTriangle;
 import com.ss.leetcode.september.Permutations;
 import com.ss.leetcode.september.PopulatingNextRightPointers;
@@ -98,7 +100,9 @@ public class StartSeptember {
 //        start.reshapeTheMatrix();
 //        start.pascalsTriangle();
 //        start.searchA2DMatrix();
-        start.validAnagram();
+//        start.validAnagram();
+//        start.maximumNumberOfBalloons();
+        start.numberOfSubarraysSizeKAndAvg();
     }
 
     public void arrayNesting() {
@@ -545,5 +549,24 @@ public class StartSeptember {
         System.out.println("true == " + va.isAnagram("anagram", "nagaram"));
         System.out.println("false == " + va.isAnagram("rat", "car"));
         System.out.println("false == " + va.isAnagram("ratc", "car"));
+    }
+
+    public void maximumNumberOfBalloons() {
+        MaximumNumberOfBalloons mnob = new MaximumNumberOfBalloons();
+
+        System.out.println("1 == " + mnob.maxNumberOfBalloons("nlaebolko"));
+        System.out.println("2 == " + mnob.maxNumberOfBalloons("loonbalxballpoon"));
+        System.out.println("0 == " + mnob.maxNumberOfBalloons("leetcode"));
+    }
+
+    public void numberOfSubarraysSizeKAndAvg() {
+        NumberOfSubarraysSizeKAndAvg nosska = new NumberOfSubarraysSizeKAndAvg();
+
+        System.out.println("3 == " + nosska.numOfSubarrays(new int[]{2,2,2,2,5,5,5,8}, 3, 4));
+        System.out.println("5 == " + nosska.numOfSubarrays(new int[]{1,1,1,1,1}, 1, 0));
+        System.out.println("6 == " + nosska.numOfSubarrays(new int[]{11,13,17,23,29,31,7,5,2,3}, 3, 5));
+        System.out.println("1 == " + nosska.numOfSubarrays(new int[]{7,7,7,7,7,7,7}, 7, 7));
+        System.out.println("1 == " + nosska.numOfSubarrays(new int[]{4,4,4,4}, 4, 1));
+
     }
 }
