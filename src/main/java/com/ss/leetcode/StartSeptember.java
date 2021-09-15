@@ -1,54 +1,6 @@
 package com.ss.leetcode;
 
-import com.ss.leetcode.september.ArithmeticSlicesIISubsequence;
-import com.ss.leetcode.september.ArrayNesting;
-import com.ss.leetcode.september.BestTimeBuySellStock;
-import com.ss.leetcode.september.ClimbingStairs;
-import com.ss.leetcode.september.Combinations;
-import com.ss.leetcode.september.ComplementOfBase10Integer;
-import com.ss.leetcode.september.ContainsDuplicate;
-import com.ss.leetcode.september.CountSquareSumTriples;
-import com.ss.leetcode.september.DeleteNodesAndReturnForest;
-import com.ss.leetcode.september.DistributeCandies;
-import com.ss.leetcode.september.ErectTheFence;
-import com.ss.leetcode.september.FindAllGroupsOfFarmland;
-import com.ss.leetcode.september.FindNearestPoint;
-import com.ss.leetcode.september.FindTheDistanceBetweenTwoArrays;
-import com.ss.leetcode.september.FindTheMiddleIndexInArray;
-import com.ss.leetcode.september.FizzBuzz;
-import com.ss.leetcode.september.GoatLatin;
-import com.ss.leetcode.september.HouseRobber;
-import com.ss.leetcode.september.IntersectionOfTwoArrays;
-import com.ss.leetcode.september.KeyboardRow;
-import com.ss.leetcode.september.KeysAndRooms;
-import com.ss.leetcode.september.LargestPlusSign;
-import com.ss.leetcode.september.LetterCasePermutation;
-import com.ss.leetcode.september.LockingTree;
-import com.ss.leetcode.september.LowestCommonAncestor;
-import com.ss.leetcode.september.MaximumNumberOfBalloons;
-import com.ss.leetcode.september.MaximumSubarray;
-import com.ss.leetcode.september.MinimumCostToMoveChips;
-import com.ss.leetcode.september.NumberComplement;
-import com.ss.leetcode.september.NumberOfSubarraysSizeKAndAvg;
-import com.ss.leetcode.september.PascalsTriangle;
-import com.ss.leetcode.september.Permutations;
-import com.ss.leetcode.september.PopulatingNextRightPointers;
-import com.ss.leetcode.september.PowerOfTwo;
-import com.ss.leetcode.september.PseudoPalindromicPathsBT;
-import com.ss.leetcode.september.ReformatPhoneNumber;
-import com.ss.leetcode.september.ReshapeTheMatrix;
-import com.ss.leetcode.september.ReverseBits;
-import com.ss.leetcode.september.ReverseOnlyLetters;
-import com.ss.leetcode.september.SameTree;
-import com.ss.leetcode.september.SearchA2DMatrix;
-import com.ss.leetcode.september.SingleNumber;
-import com.ss.leetcode.september.SlowestKey;
-import com.ss.leetcode.september.SmallestRangeI;
-import com.ss.leetcode.september.SortCharactersByFrequency;
-import com.ss.leetcode.september.ToeplitzMatrix;
-import com.ss.leetcode.september.UniqueBinarySearchTreesII;
-import com.ss.leetcode.september.ValidAnagram;
-import com.ss.leetcode.september.WordSearch;
+import com.ss.leetcode.september.*;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
@@ -110,7 +62,12 @@ public class StartSeptember {
 //        start.reverseOnlyLetters();
 //        start.numberComplement();
 //        start.complementOfBase10Integer();
-        start.reformatPhoneNumber();
+//        start.reformatPhoneNumber();
+//        start.meanOfArrayRemoveElem();
+//        start.reverseSubstringsBetweenParentheses();
+//        start.uncommonWordsFromTwoSentences();
+//        start.kthSmallestElementInABST();
+        start.occurrencesAfterBigram();
     }
 
     public void arrayNesting() {
@@ -606,5 +563,57 @@ public class StartSeptember {
         System.out.println("123-456-78 == " + rpn.reformatNumber("123 4-5678"));
         System.out.println("12 == " + rpn.reformatNumber("12"));
         System.out.println("175-229-353-94-75 == " + rpn.reformatNumber("--17-5 229 35-39475 "));
+    }
+
+    public void meanOfArrayRemoveElem() {
+        MeanOfArrayRemoveElem moare = new MeanOfArrayRemoveElem();
+
+        System.out.println("2.0 == " + moare.trimMean(new int[]{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3}));
+        System.out.println("4.0 == " + moare.trimMean(new int[]{6,2,7,5,1,2,0,3,10,2,5,0,5,5,0,8,7,6,8,0}));
+        System.out.println("4.77778 == " + moare.trimMean(new int[]{6,0,7,0,7,5,7,8,3,4,0,7,8,1,6,8,1,1,2,4,8,1,9,5,4,3,8,5,10,8,6,6,1,0,6,10,8,2,3,4}));
+        System.out.println("5.27778 == " + moare.trimMean(new int[]{9,7,8,7,7,8,4,4,6,8,8,7,6,8,8,9,2,6,0,0,1,10,8,6,3,3,5,1,10,9,0,7,10,0,10,4,1,
+                                                            10,6,9,3,6,0,0,2,7,0,6,7,2,9,7,7,3,0,1,6,1,10,3}));
+        System.out.println("5.29167 == " + moare.trimMean(new int[]{4,8,4,10,0,7,1,3,7,8,8,3,4,1,6,2,1,1,8,0,9,8,0,3,9,10,
+            3,10,1,10,7,3,2,1,4,9,10,7,6,4,0,8,5,1,2,1,6,2,5,0,7,10,9,10,3,7,10,5,8,5,7,6,7,6,10,9,5,10,5,5,7,2,10,7,7,8,2,0,1,1}));
+    }
+
+    public void reverseSubstringsBetweenParentheses() {
+        ReverseSubstringsBetweenParentheses rsbp = new ReverseSubstringsBetweenParentheses();
+
+        System.out.println("dcba == " + rsbp.reverseParentheses("(abcd)"));
+        System.out.println("iloveu == " + rsbp.reverseParentheses("(u(love)i)"));
+        System.out.println("leetcode == " + rsbp.reverseParentheses("(ed(et(oc))el)"));
+        System.out.println("apmnolkjihgfedcbq == " + rsbp.reverseParentheses("a(bcdefghijkl(mno)p)q"));
+    }
+
+    public void uncommonWordsFromTwoSentences() {
+        UncommonWordsFromTwoSentences uwfts = new UncommonWordsFromTwoSentences();
+
+        System.out.println("[sweet, sour] == " + Arrays.toString(uwfts.uncommonFromSentences("this apple is sweet", "this apple is sour")));
+        System.out.println("[banana] == " + Arrays.toString(uwfts.uncommonFromSentences("apple apple", "banana")));
+    }
+
+    public void kthSmallestElementInABST() {
+        KthSmallestElementInABST kseiabst = new KthSmallestElementInABST();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4));
+        TreeNode root2 = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4)), new TreeNode(6));
+        TreeNode root3 = new TreeNode(1);
+        TreeNode root4 = new TreeNode(1, null, new TreeNode(2));
+        TreeNode root5 = new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), new TreeNode(4));
+
+        System.out.println("1 == " + kseiabst.kthSmallest(root1, 1));
+        System.out.println("3 == " + kseiabst.kthSmallest(root2, 3));
+        System.out.println("1 == " + kseiabst.kthSmallest(root3, 1));
+        System.out.println("2 == " + kseiabst.kthSmallest(root4, 2));
+        System.out.println("3 == " + kseiabst.kthSmallest(root5, 3));
+    }
+
+    public void occurrencesAfterBigram() {
+        OccurrencesAfterBigram oab = new OccurrencesAfterBigram();
+
+        System.out.println("[girl, student] == " + Arrays.toString(oab.findOcurrences("alice is a good girl she is a good student", "a", "good")));
+        System.out.println("[we, rock] == " + Arrays.toString(oab.findOcurrences("we will we will rock you", "we", "will")));
+        System.out.println("[we, we, will] == " + Arrays.toString(oab.findOcurrences("we we we we will rock yo", "we", "we")));
     }
 }
