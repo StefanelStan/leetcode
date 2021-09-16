@@ -67,7 +67,9 @@ public class StartSeptember {
 //        start.reverseSubstringsBetweenParentheses();
 //        start.uncommonWordsFromTwoSentences();
 //        start.kthSmallestElementInABST();
-        start.occurrencesAfterBigram();
+//        start.occurrencesAfterBigram();
+//        start.spiralMatrix();
+        start.specialPositionsInABinaryMatrix();
     }
 
     public void arrayNesting() {
@@ -615,5 +617,21 @@ public class StartSeptember {
         System.out.println("[girl, student] == " + Arrays.toString(oab.findOcurrences("alice is a good girl she is a good student", "a", "good")));
         System.out.println("[we, rock] == " + Arrays.toString(oab.findOcurrences("we will we will rock you", "we", "will")));
         System.out.println("[we, we, will] == " + Arrays.toString(oab.findOcurrences("we we we we will rock yo", "we", "we")));
+    }
+
+    public void spiralMatrix() {
+        SpiralMatrix sm = new SpiralMatrix();
+
+        System.out.println("[1,2,3,6,9,8,7,4,5] == " + sm.spiralOrder(new int[][]{{1,2,3}, {4,5,6},{7,8,9}}));
+        System.out.println("[1,2,3,4,8,12,11,10,9,5,6,7] == " + sm.spiralOrder(new int[][]{{1,2,3,4}, {5,6,7,8},{9,10,11,12}}));
+    }
+
+    public void specialPositionsInABinaryMatrix() {
+        SpecialPositionsInABinaryMatrix spiabm = new SpecialPositionsInABinaryMatrix();
+
+        System.out.println("1 == " + spiabm.numSpecial(new int[][]{{1,0,0},{0,0,1},{1,0,0}}));
+        System.out.println("3 == " + spiabm.numSpecial(new int[][]{{1,0,0},{0,1,0},{0,0,1}}));
+        System.out.println("2 == " + spiabm.numSpecial(new int[][]{{0,0,0,1},{1,0,0,0},{0,1,1,0},{0,0,0,0}}));
+        System.out.println("3 == " + spiabm.numSpecial(new int[][]{{0,0,0,0,0},{1,0,0,0,0},{0,1,0,0,0},{0,0,1,0,0},{0,0,0,1,1}}));
     }
 }
