@@ -1,6 +1,7 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.september.*;
+import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
@@ -69,7 +70,15 @@ public class StartSeptember {
 //        start.kthSmallestElementInABST();
 //        start.occurrencesAfterBigram();
 //        start.spiralMatrix();
-        start.specialPositionsInABinaryMatrix();
+//        start.specialPositionsInABinaryMatrix();
+//        start.intersectionOfTwoArraysII();
+//        start.linkedListCycle();
+//        start.removeLinkedListElements();
+//        start.maximumAscendingSubarraySum();
+//        start.validateBST();
+//        start.threeConsecutiveOdds();
+//        start.lastStoneWeight();
+        start.firstUniqueCharacterInAString();
     }
 
     public void arrayNesting() {
@@ -633,5 +642,87 @@ public class StartSeptember {
         System.out.println("3 == " + spiabm.numSpecial(new int[][]{{1,0,0},{0,1,0},{0,0,1}}));
         System.out.println("2 == " + spiabm.numSpecial(new int[][]{{0,0,0,1},{1,0,0,0},{0,1,1,0},{0,0,0,0}}));
         System.out.println("3 == " + spiabm.numSpecial(new int[][]{{0,0,0,0,0},{1,0,0,0,0},{0,1,0,0,0},{0,0,1,0,0},{0,0,0,1,1}}));
+    }
+
+    public void intersectionOfTwoArraysII() {
+        IntersectionOfTwoArraysII iotaii = new IntersectionOfTwoArraysII();
+
+        System.out.println("[2,2] == " + Arrays.toString(iotaii.intersect(new int[]{1,2,2,1}, new int[]{2,2})));
+        System.out.println("[9,4] == " + Arrays.toString(iotaii.intersect(new int[]{4,9,5}, new int[]{9,4,9,8,4})));
+    }
+
+    public void linkedListCycle() {
+        LinkedListCycle llc = new LinkedListCycle();
+
+        ListNode two = new ListNode(2);
+        ListNode zero = new ListNode(0);
+        ListNode four = new ListNode(4);
+        two.next = zero;
+        zero.next = four;
+        four.next = two;
+        ListNode head1 = new ListNode(3, two);
+
+        ListNode one = new ListNode(1);
+        ListNode two2 = new ListNode(2);
+        one.next = two2;
+        two2.next = one;
+
+        System.out.println("true == " + llc.hasCycle(head1));
+        System.out.println("true == " + llc.hasCycle(one));
+        System.out.println("false == " + llc.hasCycle(new ListNode(1)));
+    }
+
+    public void removeLinkedListElements() {
+        RemoveLinkedListElements rlle = new RemoveLinkedListElements();
+
+        ListNode head1 = ListNode.makeChain(new int[]{1,2,6,3,4,5,6});
+        ListNode head2 = null;
+        ListNode head3 = ListNode.makeChain(new int[]{7,7,7,7});
+
+        System.out.println("[1,2,3,4,5] == " +rlle.removeElements(head1, 6).getAsList());
+        System.out.println("[] == " + rlle.removeElements(head2, 1));
+        System.out.println("[] == " + rlle.removeElements(head3, 7));
+
+    }
+
+    public void maximumAscendingSubarraySum() {
+        MaximumAscendingSubarraySum mass = new MaximumAscendingSubarraySum();
+
+        System.out.println("65 == " + mass.maxAscendingSum(new int[]{10,20,30,5,10,50}));
+        System.out.println("150 == " + mass.maxAscendingSum(new int[]{10,20,30,40,50}));
+        System.out.println("33 == " + mass.maxAscendingSum(new int[]{12,17,15,13,10,11,12}));
+        System.out.println("100 == " + mass.maxAscendingSum(new int[]{100,10,1}));
+    }
+
+    public void validateBST() {
+        ValidateBST vbst = new ValidateBST();
+
+        TreeNode root1 = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        TreeNode root2 = new TreeNode(5, new TreeNode(1), new TreeNode(4, new TreeNode(3), new TreeNode(6)));
+
+        System.out.println("true == " + vbst.isValidBST(root1));
+        System.out.println("false == " + vbst.isValidBST(root2));
+    }
+
+    public void threeConsecutiveOdds() {
+        ThreeConsecutiveOdds tco = new ThreeConsecutiveOdds();
+
+        System.out.println("false == " + tco.threeConsecutiveOdds(new int[]{2,6,4,1}));
+        System.out.println("true == " + tco.threeConsecutiveOdds(new int[]{1,2,34,3,4,5,7,23,12}));
+    }
+
+    public void lastStoneWeight() {
+        LastStoneWeight lsw = new LastStoneWeight();
+
+        System.out.println("1 == " + lsw.lastStoneWeight(new int[]{2,7,4,1,8,1}));
+        System.out.println("1 == " + lsw.lastStoneWeight(new int[]{1}));
+    }
+
+    public void firstUniqueCharacterInAString() {
+        FirstUniqueCharacterInAString fucias = new FirstUniqueCharacterInAString();
+
+        System.out.println("0 == " + fucias.firstUniqChar("leetcode"));
+        System.out.println("2 == " + fucias.firstUniqChar("loveleetcode"));
+        System.out.println("-1 == " + fucias.firstUniqChar("aabb"));
     }
 }
