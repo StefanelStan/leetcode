@@ -78,7 +78,10 @@ public class StartSeptember {
 //        start.validateBST();
 //        start.threeConsecutiveOdds();
 //        start.lastStoneWeight();
-        start.firstUniqueCharacterInAString();
+//        start.firstUniqueCharacterInAString();
+//        start.countPairsAbsoluteDifferenceK();
+//        start.findOriginalArrayFromDoubledArray();
+        start.maximumEarningsFromTaxi();
     }
 
     public void arrayNesting() {
@@ -724,5 +727,30 @@ public class StartSeptember {
         System.out.println("0 == " + fucias.firstUniqChar("leetcode"));
         System.out.println("2 == " + fucias.firstUniqChar("loveleetcode"));
         System.out.println("-1 == " + fucias.firstUniqChar("aabb"));
+    }
+
+    public void countPairsAbsoluteDifferenceK() {
+        CountPairsAbsoluteDifferenceK cpadk = new CountPairsAbsoluteDifferenceK();
+
+        System.out.println("4 == " + cpadk.countKDifference(new int[]{1,2,2,1}, 1));
+        System.out.println("0 == " + cpadk.countKDifference(new int[]{1,3}, 3));
+        System.out.println("3 == " + cpadk.countKDifference(new int[]{3,2,1,5,4}, 2));
+    }
+
+    public void findOriginalArrayFromDoubledArray() {
+        FindOriginalArrayFromDoubledArray foafda = new FindOriginalArrayFromDoubledArray();
+
+        System.out.println("[1,1,2,2,3,5,5,6,10] == " + Arrays.toString(foafda.findOriginalArray(new int[]{20,12,10,10,6,4,4,2,2,10,6,5,5,3,2,2,1,1})));
+        System.out.println("[1,3,4] == " + Arrays.toString(foafda.findOriginalArray(new int[]{1,3,4,2,6,8})));
+        System.out.println("[] == " + Arrays.toString(foafda.findOriginalArray(new int[]{6,3,0,1})));
+        System.out.println("[] == " + Arrays.toString(foafda.findOriginalArray(new int[]{1})));
+        System.out.println("[0,0,1] == " + Arrays.toString(foafda.findOriginalArray(new int[]{0,0,2,1,0,0})));
+    }
+
+    public void maximumEarningsFromTaxi() {
+        MaximumEarningsFromTaxi meft = new MaximumEarningsFromTaxi();
+
+        System.out.println("7 == " + meft.maxTaxiEarnings(5, new int[][]{{2,5,4}, {1,5,1}}));
+        System.out.println("20 == " + meft.maxTaxiEarnings(5, new int[][]{{1,6,1}, {3,10,2},{10,12,3}, {11,12,2}, {12,15,2},{13,18,1}}));
     }
 }
