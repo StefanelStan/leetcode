@@ -81,7 +81,10 @@ public class StartSeptember {
 //        start.firstUniqueCharacterInAString();
 //        start.countPairsAbsoluteDifferenceK();
 //        start.findOriginalArrayFromDoubledArray();
-        start.maximumEarningsFromTaxi();
+//        start.maximumEarningsFromTaxi();
+//        start.validPalindrome();
+//        start.validPalindromeII();
+        start.removeDuplicatesFromSortedListII();
     }
 
     public void arrayNesting() {
@@ -752,5 +755,34 @@ public class StartSeptember {
 
         System.out.println("7 == " + meft.maxTaxiEarnings(5, new int[][]{{2,5,4}, {1,5,1}}));
         System.out.println("20 == " + meft.maxTaxiEarnings(5, new int[][]{{1,6,1}, {3,10,2},{10,12,3}, {11,12,2}, {12,15,2},{13,18,1}}));
+    }
+
+    public void validPalindrome() {
+        ValidPalindrome vp = new ValidPalindrome();
+
+        System.out.println("true == " + vp.isPalindrome("A man, a plan, a canal: Panama"));
+        System.out.println("false == " + vp.isPalindrome("race a car"));
+    }
+
+    public void validPalindromeII() {
+        ValidPalindromeII vpii = new ValidPalindromeII();
+
+        System.out.println("true == " + vpii.validPalindrome("aba"));
+        System.out.println("true == " + vpii.validPalindrome("abca"));
+        System.out.println("false == " + vpii.validPalindrome("abc"));
+    }
+
+    public void removeDuplicatesFromSortedListII() {
+        RemoveDuplicatesFromSortedListII rdfslii = new RemoveDuplicatesFromSortedListII();
+
+        ListNode head1 = ListNode.makeChain(new int[]{1,2,3,3,3,4,4,5});
+        ListNode head2 = ListNode.makeChain(new int[]{1,1,1,2,3});
+        ListNode head3 = ListNode.makeChain(new int[]{1});
+        ListNode head4 = ListNode.makeChain(new int[]{1,1,1});
+
+//        System.out.println("[1,2,5] == " + rdfslii.deleteDuplicates(head1).getAsList());
+//        System.out.println("[2,3] == " + rdfslii.deleteDuplicates(head2).getAsList());
+//        System.out.println("[1] == " + rdfslii.deleteDuplicates(head3).getAsList());
+        System.out.println("[] == " + rdfslii.deleteDuplicates(head4));
     }
 }
