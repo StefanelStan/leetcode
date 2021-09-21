@@ -1,6 +1,5 @@
 package com.ss.leetcode;
 
-import com.ss.leetcode.july.MaximumDepthOfBinaryTree;
 import com.ss.leetcode.september.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
@@ -93,7 +92,14 @@ public class StartSeptember {
 //        start.symmetricTree();
 //        start.binaryTreeLevelOrderTraversal();
 //        start.checkIfAWordPrefixInASentence();
-        start.calculateMoneyInLeetcodeBank();
+//        start.calculateMoneyInLeetcodeBank();
+//        start.maxConsecutiveOnes();
+//        start.distributeCandiesToPeople();
+//        start.stringMatchingInAnArray();
+//        start.palindromicSubstrings();
+//        start.nonDecreasingArray();
+//        start.binaryGap();
+        start.majorityElement();
     }
 
     public void arrayNesting() {
@@ -878,5 +884,60 @@ public class StartSeptember {
         System.out.println("10 == " + cmilb.totalMoney(4));
         System.out.println("37 == " + cmilb.totalMoney(10));
         System.out.println("96 == " + cmilb.totalMoney(20));
+    }
+
+    public void maxConsecutiveOnes() {
+        MaxConsecutiveOnes mco = new MaxConsecutiveOnes();
+
+        System.out.println("3 == " + mco.findMaxConsecutiveOnes(new int[]{1,1,0,1,1,1}));
+        System.out.println("2 == " + mco.findMaxConsecutiveOnes(new int[]{1,0,1,1,0,1}));
+    }
+
+    public void distributeCandiesToPeople() {
+        DistributeCandiesToPeople dctp = new DistributeCandiesToPeople();
+
+        System.out.println("[1,2,3,1] == " + Arrays.toString(dctp.distributeCandies(7, 4)));
+        System.out.println("[5,2,3] == " + Arrays.toString(dctp.distributeCandies(10, 3)));
+    }
+
+    public void stringMatchingInAnArray() {
+        StringMatchingInAnArray smiaa = new StringMatchingInAnArray();
+
+        System.out.println("[as, hero] == " + smiaa.stringMatching(new String[]{"mass","as","hero","superhero"}));
+        System.out.println("[et, code] == " + smiaa.stringMatching(new String[]{"leetcode","et","code"}));
+        System.out.println("[] == " + smiaa.stringMatching(new String[]{"blue","green","bu"}));
+    }
+
+    public void palindromicSubstrings() {
+        PalindromicSubstrings ps = new PalindromicSubstrings();
+
+        System.out.println("3 == " + ps.countSubstrings("abc"));
+        System.out.println("6 == " + ps.countSubstrings("aaa"));
+    }
+
+    public void nonDecreasingArray() {
+        NonDecreasingArray nda = new NonDecreasingArray();
+
+        System.out.println("true == " + nda.checkPossibility(new int[]{4,2,3}));
+        System.out.println("false == " + nda.checkPossibility(new int[]{4,2,1}));
+        System.out.println("false == " + nda.checkPossibility(new int[]{3,4,2,3}));
+
+    }
+
+    public void binaryGap() {
+        BinaryGap bg = new BinaryGap();
+
+        System.out.println("2 == " + bg.binaryGap(22));
+        System.out.println("2 == " + bg.binaryGap(5));
+        System.out.println("1 == " + bg.binaryGap(6));
+        System.out.println("0 == " + bg.binaryGap(8));
+        System.out.println("0 == " + bg.binaryGap(1));
+    }
+
+    public void majorityElement() {
+        MajorityElement me = new MajorityElement();
+
+        System.out.println("3 == " + me.majorityElement(new int[]{3,2,3}));
+        System.out.println("2 == " + me.majorityElement(new int[]{2,2,1,1,1,2,2}));
     }
 }
