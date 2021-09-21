@@ -1,8 +1,39 @@
 package com.ss.leetcode.july;
 
+import java.util.LinkedList;
+
 public class ValidParentheses {
     // https://leetcode.com/problems/valid-parentheses/
     public boolean isValid(String s) {
+        if (s.length() % 2 == 1) {
+            return false;
+        }
+        LinkedList<Character> chars = new LinkedList<>();
+
+        for (char c : s.toCharArray()) {
+            if(c == '}' || c == ')' || c == ']') {
+                if (chars.isEmpty()) {
+                    return false;
+                } else if (!areComplementary(chars.removeLast(), c)) {
+                    return false;
+                }
+            } else {
+                chars.add(c);
+            }
+        }
+        return chars.isEmpty();
+    }
+
+    private boolean areComplementary(char left, char right) {
+        return switch (left) {
+            case '(' -> right == ')';
+            case '[' -> right == ']';
+            default -> right == '}';
+        };
+    }
+
+
+    public boolean isValid2(String s) {
         if (s.length() == 1 || s.charAt(0) == (')') || s.charAt(0) == ']' || s.charAt(0) == '}') {
             return false;
         }

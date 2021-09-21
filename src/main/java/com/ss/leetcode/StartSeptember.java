@@ -1,5 +1,6 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.july.MaximumDepthOfBinaryTree;
 import com.ss.leetcode.september.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
@@ -84,7 +85,15 @@ public class StartSeptember {
 //        start.maximumEarningsFromTaxi();
 //        start.validPalindrome();
 //        start.validPalindromeII();
-        start.removeDuplicatesFromSortedListII();
+//        start.removeDuplicatesFromSortedListII();
+//        start.findWinnerOnATicTacToeGame();
+//        start.implementQueueUsingStacks();
+//        start.binaryTreePreorderTraversal();
+//        start.binaryTreePostorderTraversal();
+//        start.symmetricTree();
+//        start.binaryTreeLevelOrderTraversal();
+//        start.checkIfAWordPrefixInASentence();
+        start.calculateMoneyInLeetcodeBank();
     }
 
     public void arrayNesting() {
@@ -780,9 +789,94 @@ public class StartSeptember {
         ListNode head3 = ListNode.makeChain(new int[]{1});
         ListNode head4 = ListNode.makeChain(new int[]{1,1,1});
 
-//        System.out.println("[1,2,5] == " + rdfslii.deleteDuplicates(head1).getAsList());
-//        System.out.println("[2,3] == " + rdfslii.deleteDuplicates(head2).getAsList());
-//        System.out.println("[1] == " + rdfslii.deleteDuplicates(head3).getAsList());
+        System.out.println("[1,2,5] == " + rdfslii.deleteDuplicates(head1).getAsList());
+        System.out.println("[2,3] == " + rdfslii.deleteDuplicates(head2).getAsList());
+        System.out.println("[1] == " + rdfslii.deleteDuplicates(head3).getAsList());
         System.out.println("[] == " + rdfslii.deleteDuplicates(head4));
+    }
+
+    public void findWinnerOnATicTacToeGame() {
+        FindWinnerOnATicTacToeGame fwoatttg = new FindWinnerOnATicTacToeGame();
+
+        System.out.println("A == " + fwoatttg.tictactoe(new int[][]{{0,0},{2,0},{1,1},{2,1},{2,2}}));
+        System.out.println("B == " + fwoatttg.tictactoe(new int[][]{{0,0},{1,1},{0,1},{0,2},{1,0},{2,0}}));
+        System.out.println("Draw == " + fwoatttg.tictactoe(new int[][]{{0,0},{1,1},{2,0},{1,0},{1,2},{2,1},{0,1},{0,2},{2,2}}));
+        System.out.println("Pending == " + fwoatttg.tictactoe(new int[][]{{0,0},{1,1}}));
+    }
+
+    public void implementQueueUsingStacks() {
+        ImplementQueueUsingStacks iqus = new ImplementQueueUsingStacks();
+
+        iqus.push(1);
+        iqus.push(2);
+        System.out.println("1 == " + iqus.peek());
+        System.out.println("1 == " + iqus.pop());
+        System.out.println("false == " + iqus.empty());
+    }
+
+    public void binaryTreePreorderTraversal() {
+        BinaryTreePreorderTraversal btpt = new BinaryTreePreorderTraversal();
+
+        TreeNode root1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+        TreeNode root2 =  new TreeNode(1, new TreeNode(2), null);
+        TreeNode root3 =  new TreeNode(1, null, new TreeNode(2));
+
+        System.out.println("[1,2,3] == " + btpt.preorderTraversal(root1));
+        System.out.println("[] == " + btpt.preorderTraversal(null));
+        System.out.println("[1] == " + btpt.preorderTraversal(new TreeNode(1)));
+        System.out.println("[1,2] == " + btpt.preorderTraversal(root2));
+        System.out.println("[1,2] == " + btpt.preorderTraversal(root3));
+    }
+
+    public void binaryTreePostorderTraversal() {
+        BinaryTreePostorderTraversal btpt = new BinaryTreePostorderTraversal();
+
+        TreeNode root1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+        TreeNode root2 =  new TreeNode(1, new TreeNode(2), null);
+        TreeNode root3 =  new TreeNode(1, null, new TreeNode(2));
+
+        System.out.println("[3,2,1] == " + btpt.postorderTraversal(root1));
+        System.out.println("[] == " + btpt.postorderTraversal(null));
+        System.out.println("[1] == " + btpt.postorderTraversal(new TreeNode(1)));
+        System.out.println("[2,1] == " + btpt.postorderTraversal(root2));
+        System.out.println("[2,1] == " + btpt.postorderTraversal(root3));
+    }
+
+    public void symmetricTree() {
+        SymmetricTree st = new SymmetricTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(4)), new TreeNode(2, new TreeNode(4), new TreeNode(3)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, null, new TreeNode(3)), new TreeNode(2, null, new TreeNode(3)));
+
+        System.out.println("true == " + st.isSymmetric(root1));
+        System.out.println("false == " + st.isSymmetric(root2));
+    }
+
+    public void binaryTreeLevelOrderTraversal() {
+        BinaryTreeLevelOrderTraversal btlot = new BinaryTreeLevelOrderTraversal();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+
+        System.out.println("[[3],[9,20],[15,7]] == " + btlot.levelOrder(root1));
+        System.out.println("[[1]] == " + btlot.levelOrder(new TreeNode(1)));
+        System.out.println("[[]] == " + btlot.levelOrder(null));
+    }
+
+    public void checkIfAWordPrefixInASentence() {
+        CheckIfAWordPrefixInASentence ciawpias = new CheckIfAWordPrefixInASentence();
+
+        System.out.println("4 == " + ciawpias.isPrefixOfWord("i love eating burger", "burg"));
+        System.out.println("2 == " + ciawpias.isPrefixOfWord("this problem is an easy problem", "pro"));
+        System.out.println("-1 == " + ciawpias.isPrefixOfWord("i am tired", "you"));
+        System.out.println("4 == " + ciawpias.isPrefixOfWord("i use triple pillow", "pill"));
+        System.out.println("-1 == " + ciawpias.isPrefixOfWord("hello from the other side", "they"));
+    }
+
+    public void calculateMoneyInLeetcodeBank() {
+        CalculateMoneyInLeetcodeBank cmilb = new CalculateMoneyInLeetcodeBank();
+
+        System.out.println("10 == " + cmilb.totalMoney(4));
+        System.out.println("37 == " + cmilb.totalMoney(10));
+        System.out.println("96 == " + cmilb.totalMoney(20));
     }
 }
