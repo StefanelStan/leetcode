@@ -99,7 +99,9 @@ public class StartSeptember {
 //        start.palindromicSubstrings();
 //        start.nonDecreasingArray();
 //        start.binaryGap();
-        start.majorityElement();
+//        start.majorityElement();
+//        start.balancedBinaryTree();
+        start.findMinFibonacciNumbersToSumK();
     }
 
     public void arrayNesting() {
@@ -939,5 +941,25 @@ public class StartSeptember {
 
         System.out.println("3 == " + me.majorityElement(new int[]{3,2,3}));
         System.out.println("2 == " + me.majorityElement(new int[]{2,2,1,1,1,2,2}));
+    }
+
+    public void balancedBinaryTree() {
+        BalancedBinaryTree bbt = new BalancedBinaryTree();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20,new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, new TreeNode(3, new TreeNode(4), new TreeNode(4)), new TreeNode(3)), new TreeNode(2));
+
+        System.out.println("true == " + bbt.isBalanced(root1));
+        System.out.println("false == " + bbt.isBalanced(root2));
+        System.out.println("true == " + bbt.isBalanced(null));
+    }
+
+    public void findMinFibonacciNumbersToSumK() {
+        FindMinFibonacciNumbersToSumK fmfntsk = new FindMinFibonacciNumbersToSumK();
+
+        System.out.println("2 == " + fmfntsk.findMinFibonacciNumbers(7));
+        System.out.println("2 == " + fmfntsk.findMinFibonacciNumbers(10));
+        System.out.println("3 == " + fmfntsk.findMinFibonacciNumbers(19));
+        System.out.println("11 == " + fmfntsk.findMinFibonacciNumbers(342198471));
     }
 }
