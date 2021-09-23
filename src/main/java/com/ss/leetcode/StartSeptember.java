@@ -101,7 +101,8 @@ public class StartSeptember {
 //        start.binaryGap();
 //        start.majorityElement();
 //        start.balancedBinaryTree();
-        start.findMinFibonacciNumbersToSumK();
+//        start.findMinFibonacciNumbersToSumK();
+        start.sumRootToLeafNumbers();
     }
 
     public void arrayNesting() {
@@ -961,5 +962,15 @@ public class StartSeptember {
         System.out.println("2 == " + fmfntsk.findMinFibonacciNumbers(10));
         System.out.println("3 == " + fmfntsk.findMinFibonacciNumbers(19));
         System.out.println("11 == " + fmfntsk.findMinFibonacciNumbers(342198471));
+    }
+
+    public void sumRootToLeafNumbers() {
+        SumRootToLeafNumbers srtln = new SumRootToLeafNumbers();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root2 = new TreeNode(4, new TreeNode(9, new TreeNode(5), new TreeNode(1)), new TreeNode(0));
+
+        System.out.println("25 == " + srtln.sumNumbers(root1));
+        System.out.println("1026 == " + srtln.sumNumbers(root2));
     }
 }
