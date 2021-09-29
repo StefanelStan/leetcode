@@ -3,6 +3,7 @@ package com.ss.leetcode;
 import com.ss.leetcode.september.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.jdi.connect.spi.TransportService;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -103,7 +104,8 @@ public class StartSeptember {
 //        start.balancedBinaryTree();
 //        start.findMinFibonacciNumbersToSumK();
 //        start.sumRootToLeafNumbers();
-        start.finalValueAfterPerformingOperatios();
+//        start.finalValueAfterPerformingOperatios();
+        start.splitLinkedListInParts();
     }
 
     public void arrayNesting() {
@@ -980,5 +982,18 @@ public class StartSeptember {
 
         System.out.println("3 == " + fvapo.finalValueAfterOperations(new String[]{"++X","++X","X++"}));
         System.out.println("0 == " + fvapo.finalValueAfterOperations(new String[]{"X++","++X","--X","X--"}));
+    }
+
+    public void splitLinkedListInParts() {
+        SplitLinkedListInParts sllip = new SplitLinkedListInParts();
+
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3)));
+        ListNode head2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5,
+            new ListNode(6, new ListNode(7, new ListNode(8, new ListNode(9, new ListNode(10))))))))));
+
+        System.out.println("[[1],[2],[3],[],[]] == " + Arrays.deepToString(sllip.splitListToParts(head1, 5)));
+        System.out.println("[[1,2,3,4],[5,6,7],[8,9,10]] == " + Arrays.deepToString(sllip.splitListToParts(head2, 3)));
+        System.out.println("[[1,2,3,4],[5,6,7],[8,9,10]] == " + Arrays.deepToString(sllip.splitListToParts(head2, 2)));
+        System.out.println("[[1,2,3,4],[5,6,7],[8,9,10]] == " + Arrays.deepToString(sllip.splitListToParts(head2, 4)));
     }
 }
