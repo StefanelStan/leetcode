@@ -3,7 +3,6 @@ package com.ss.leetcode;
 import com.ss.leetcode.september.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.jdi.connect.spi.TransportService;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -104,7 +103,7 @@ public class StartSeptember {
 //        start.balancedBinaryTree();
 //        start.findMinFibonacciNumbersToSumK();
 //        start.sumRootToLeafNumbers();
-//        start.finalValueAfterPerformingOperatios();
+//        start.finalValueAfterPerformingOperations();
         start.splitLinkedListInParts();
     }
 
@@ -977,8 +976,8 @@ public class StartSeptember {
         System.out.println("1026 == " + srtln.sumNumbers(root2));
     }
 
-    public void finalValueAfterPerformingOperatios() {
-        FinalValueAfterPerformingOperatios fvapo = new FinalValueAfterPerformingOperatios();
+    public void finalValueAfterPerformingOperations() {
+        FinalValueAfterPerformingOperations fvapo = new FinalValueAfterPerformingOperations();
 
         System.out.println("3 == " + fvapo.finalValueAfterOperations(new String[]{"++X","++X","X++"}));
         System.out.println("0 == " + fvapo.finalValueAfterOperations(new String[]{"X++","++X","--X","X--"}));

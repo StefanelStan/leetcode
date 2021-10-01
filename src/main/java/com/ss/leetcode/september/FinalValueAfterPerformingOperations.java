@@ -1,6 +1,6 @@
 package com.ss.leetcode.september;
 
-public class FinalValueAfterPerformingOperatios {
+public class FinalValueAfterPerformingOperations {
     // https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
     public int finalValueAfterOperations(String[] operations) {
         int xValue = 0;
