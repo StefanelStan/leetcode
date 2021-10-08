@@ -4,6 +4,7 @@ import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.october.AddDigits;
 import com.ss.leetcode.october.Convert1DArrayInto2DArray;
 import com.ss.leetcode.october.FindMissingObservations;
+import com.ss.leetcode.october.ImplementPrefixTrie;
 import com.ss.leetcode.october.JumpGame;
 import com.ss.leetcode.october.MaximumNumberOfWaysToPartitionAnArray;
 import com.ss.leetcode.october.MinimumMovesToConvertString;
@@ -25,7 +26,8 @@ public class StartOctober {
 //        start.minimumMovesToConvertString();
 //        start.findMissingObservations();
 //        start.stoneGameIX();
-        start.jumpGame();
+//        start.jumpGame();
+        start.implementPrefixTrie();
     }
 
     public void reversePrefixOfWord() {
@@ -108,5 +110,22 @@ public class StartOctober {
         System.out.println("false == " + jg.canJump(new int[]{3,2,1,0,4}));
         System.out.println("true == " + jg.canJump(new int[]{0}));
         System.out.println("true == " + jg.canJump(new int[]{2,0,0}));
+    }
+
+    public void implementPrefixTrie() {
+        ImplementPrefixTrie ipt = new ImplementPrefixTrie();
+
+        ipt.insert("apple");
+        System.out.println("True == " + ipt.search("apple"));   // return True
+        System.out.println("False == " + ipt.search("app"));     // return False
+        System.out.println("True == " + ipt.startsWith("app")); // return True
+        ipt.insert("app");
+        System.out.println("True == " + ipt.search("app"));    // return True
+
+        ImplementPrefixTrie ipt2 = new ImplementPrefixTrie();
+
+        ipt2.insert("a");
+        System.out.println("True == " + ipt2.search("a"));   // return True
+        System.out.println("True == " + ipt2.startsWith("a")); // return True
     }
 }
