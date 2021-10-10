@@ -2,6 +2,7 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.october.AddDigits;
+import com.ss.leetcode.october.BitwiseANDOfNumbersRange;
 import com.ss.leetcode.october.Convert1DArrayInto2DArray;
 import com.ss.leetcode.october.FindMissingObservations;
 import com.ss.leetcode.october.ImplementPrefixTrie;
@@ -27,7 +28,8 @@ public class StartOctober {
 //        start.findMissingObservations();
 //        start.stoneGameIX();
 //        start.jumpGame();
-        start.implementPrefixTrie();
+//        start.implementPrefixTrie();
+        start.bitwiseANDOfNumbersRange();
     }
 
     public void reversePrefixOfWord() {
@@ -127,5 +129,14 @@ public class StartOctober {
         ipt2.insert("a");
         System.out.println("True == " + ipt2.search("a"));   // return True
         System.out.println("True == " + ipt2.startsWith("a")); // return True
+    }
+
+    public void bitwiseANDOfNumbersRange() {
+        BitwiseANDOfNumbersRange baonr = new BitwiseANDOfNumbersRange();
+
+        System.out.println("4 == " + baonr.rangeBitwiseAnd(5, 7));
+        System.out.println("0 == " + baonr.rangeBitwiseAnd(0, 0));
+        System.out.println("0 == " + baonr.rangeBitwiseAnd(1, 2147483647));
+        System.out.println("2147483646 == " + baonr.rangeBitwiseAnd(2147483646, 2147483647));
     }
 }
