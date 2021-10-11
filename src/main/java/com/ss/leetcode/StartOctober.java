@@ -4,6 +4,7 @@ import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.october.AddDigits;
 import com.ss.leetcode.october.BitwiseANDOfNumbersRange;
 import com.ss.leetcode.october.Convert1DArrayInto2DArray;
+import com.ss.leetcode.october.DiameterOfABinaryTree;
 import com.ss.leetcode.october.FindMissingObservations;
 import com.ss.leetcode.october.ImplementPrefixTrie;
 import com.ss.leetcode.october.JumpGame;
@@ -12,6 +13,7 @@ import com.ss.leetcode.october.MinimumMovesToConvertString;
 import com.ss.leetcode.october.NumberOfPairsConcatenationTarget;
 import com.ss.leetcode.october.ReversePrefixOfWord;
 import com.ss.leetcode.october.StoneGameIX;
+import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
 
@@ -29,7 +31,8 @@ public class StartOctober {
 //        start.stoneGameIX();
 //        start.jumpGame();
 //        start.implementPrefixTrie();
-        start.bitwiseANDOfNumbersRange();
+//        start.bitwiseANDOfNumbersRange();
+        start.diameterOfABinaryTree();
     }
 
     public void reversePrefixOfWord() {
@@ -138,5 +141,17 @@ public class StartOctober {
         System.out.println("0 == " + baonr.rangeBitwiseAnd(0, 0));
         System.out.println("0 == " + baonr.rangeBitwiseAnd(1, 2147483647));
         System.out.println("2147483646 == " + baonr.rangeBitwiseAnd(2147483646, 2147483647));
+    }
+
+    public void diameterOfABinaryTree() {
+        DiameterOfABinaryTree doabt = new DiameterOfABinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2), null);
+        TreeNode root3 = new TreeNode(3, new TreeNode(1, null, new TreeNode(2)), null);
+
+        System.out.println("3 == " + doabt.diameterOfBinaryTree(root1));
+        System.out.println("1 == " + doabt.diameterOfBinaryTree(root2));
+        System.out.println("2 == " + doabt.diameterOfBinaryTree(root3));
     }
 }
