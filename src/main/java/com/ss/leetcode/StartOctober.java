@@ -6,6 +6,7 @@ import com.ss.leetcode.october.BitwiseANDOfNumbersRange;
 import com.ss.leetcode.october.Convert1DArrayInto2DArray;
 import com.ss.leetcode.october.DiameterOfABinaryTree;
 import com.ss.leetcode.october.FindMissingObservations;
+import com.ss.leetcode.october.GuessNumberHigherOrLower;
 import com.ss.leetcode.october.ImplementPrefixTrie;
 import com.ss.leetcode.october.JumpGame;
 import com.ss.leetcode.october.MaximumNumberOfWaysToPartitionAnArray;
@@ -32,7 +33,8 @@ public class StartOctober {
 //        start.jumpGame();
 //        start.implementPrefixTrie();
 //        start.bitwiseANDOfNumbersRange();
-        start.diameterOfABinaryTree();
+//        start.diameterOfABinaryTree();
+        start.guessNumberHigherOrLower();
     }
 
     public void reversePrefixOfWord() {
@@ -154,4 +156,11 @@ public class StartOctober {
         System.out.println("1 == " + doabt.diameterOfBinaryTree(root2));
         System.out.println("2 == " + doabt.diameterOfBinaryTree(root3));
     }
+
+    public void guessNumberHigherOrLower() {
+        GuessNumberHigherOrLower gnhol = new GuessNumberHigherOrLower();
+
+        System.out.println("2 == " + gnhol.guessNumber(10));
+    }
+
 }
