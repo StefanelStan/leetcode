@@ -4,6 +4,7 @@ import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.october.AddDigits;
 import com.ss.leetcode.october.BitwiseANDOfNumbersRange;
 import com.ss.leetcode.october.Convert1DArrayInto2DArray;
+import com.ss.leetcode.october.CousinsInBinaryTree;
 import com.ss.leetcode.october.DiameterOfABinaryTree;
 import com.ss.leetcode.october.FindMissingObservations;
 import com.ss.leetcode.october.GuessNumberHigherOrLower;
@@ -15,6 +16,9 @@ import com.ss.leetcode.october.NumberOfPairsConcatenationTarget;
 import com.ss.leetcode.october.ReversePrefixOfWord;
 import com.ss.leetcode.october.StoneGameIX;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
+import com.sun.source.tree.YieldTree;
+import jdk.jfr.TransitionTo;
 
 import java.util.Arrays;
 
@@ -34,7 +38,8 @@ public class StartOctober {
 //        start.implementPrefixTrie();
 //        start.bitwiseANDOfNumbersRange();
 //        start.diameterOfABinaryTree();
-        start.guessNumberHigherOrLower();
+//        start.guessNumberHigherOrLower();
+        start.cousinsInBinaryTree();
     }
 
     public void reversePrefixOfWord() {
@@ -163,4 +168,15 @@ public class StartOctober {
         System.out.println("2 == " + gnhol.guessNumber(10));
     }
 
+    public void cousinsInBinaryTree() {
+        CousinsInBinaryTree cibt = new CousinsInBinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, null, new TreeNode(4)), new TreeNode(3, null, new TreeNode(5)));
+        TreeNode root3 = new TreeNode(1, new TreeNode(2, null, new TreeNode(4)), new TreeNode(3));
+
+        System.out.println("false == " + cibt.isCousins(root1, 4, 3));
+        System.out.println("true == " + cibt.isCousins(root2, 5, 4));
+        System.out.println("false == " + cibt.isCousins(root3, 2, 3));
+    }
 }
