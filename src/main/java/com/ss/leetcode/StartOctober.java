@@ -14,6 +14,7 @@ import com.ss.leetcode.october.MaximumNumberOfWaysToPartitionAnArray;
 import com.ss.leetcode.october.MinimumMovesToConvertString;
 import com.ss.leetcode.october.NumberOfPairsConcatenationTarget;
 import com.ss.leetcode.october.ReversePrefixOfWord;
+import com.ss.leetcode.october.ReverseWordsInAString;
 import com.ss.leetcode.october.StoneGameIX;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.Tree;
@@ -39,7 +40,8 @@ public class StartOctober {
 //        start.bitwiseANDOfNumbersRange();
 //        start.diameterOfABinaryTree();
 //        start.guessNumberHigherOrLower();
-        start.cousinsInBinaryTree();
+//        start.cousinsInBinaryTree();
+        start.reverseWordsInAString();
     }
 
     public void reversePrefixOfWord() {
@@ -178,5 +180,16 @@ public class StartOctober {
         System.out.println("false == " + cibt.isCousins(root1, 4, 3));
         System.out.println("true == " + cibt.isCousins(root2, 5, 4));
         System.out.println("false == " + cibt.isCousins(root3, 2, 3));
+    }
+
+    public void reverseWordsInAString() {
+        ReverseWordsInAString rwias = new ReverseWordsInAString();
+
+        System.out.println("blue is sky the == " + rwias.reverseWords("the sky is blue"));
+        System.out.println("blue == " + rwias.reverseWords("blue"));
+        System.out.println("world hello == " + rwias.reverseWords("  hello world  "));
+        System.out.println("example good a == " + rwias.reverseWords("a good   example"));
+        System.out.println("Alice Loves Bob == " + rwias.reverseWords("  Bob    Loves  Alice   "));
+        System.out.println("bob like even not does Alice == " + rwias.reverseWords("Alice does not even like bob"));
     }
 }
