@@ -9,6 +9,7 @@ import com.ss.leetcode.october.DiameterOfABinaryTree;
 import com.ss.leetcode.october.FindMissingObservations;
 import com.ss.leetcode.october.GuessNumberHigherOrLower;
 import com.ss.leetcode.october.ImplementPrefixTrie;
+import com.ss.leetcode.october.InsertDeleteGetRandomO1;
 import com.ss.leetcode.october.JumpGame;
 import com.ss.leetcode.october.MaximumNumberOfWaysToPartitionAnArray;
 import com.ss.leetcode.october.MinimumMovesToConvertString;
@@ -41,7 +42,8 @@ public class StartOctober {
 //        start.diameterOfABinaryTree();
 //        start.guessNumberHigherOrLower();
 //        start.cousinsInBinaryTree();
-        start.reverseWordsInAString();
+//        start.reverseWordsInAString();
+        start.insertDeleteGetRandomO1();
     }
 
     public void reversePrefixOfWord() {
@@ -191,5 +193,17 @@ public class StartOctober {
         System.out.println("example good a == " + rwias.reverseWords("a good   example"));
         System.out.println("Alice Loves Bob == " + rwias.reverseWords("  Bob    Loves  Alice   "));
         System.out.println("bob like even not does Alice == " + rwias.reverseWords("Alice does not even like bob"));
+    }
+
+    public void insertDeleteGetRandomO1() {
+        InsertDeleteGetRandomO1 idgro1 = new InsertDeleteGetRandomO1();
+
+        System.out.println("true == " + idgro1.insert(1));
+        System.out.println("false == " + idgro1.remove(2));
+        System.out.println("true == " + idgro1.insert(2));
+        System.out.println("1 or 2 == " + idgro1.getRandom());
+        System.out.println("true == " + idgro1.remove(1));
+        System.out.println("false == " + idgro1.insert(2));
+        System.out.println("2 == " + idgro1.getRandom());
     }
 }
