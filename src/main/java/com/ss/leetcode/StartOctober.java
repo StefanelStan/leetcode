@@ -4,6 +4,7 @@ import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.october.AddDigits;
 import com.ss.leetcode.october.BitwiseANDOfNumbersRange;
 import com.ss.leetcode.october.Convert1DArrayInto2DArray;
+import com.ss.leetcode.october.CountCompleteTreeNodes;
 import com.ss.leetcode.october.CousinsInBinaryTree;
 import com.ss.leetcode.october.DiameterOfABinaryTree;
 import com.ss.leetcode.october.FindMissingObservations;
@@ -43,7 +44,8 @@ public class StartOctober {
 //        start.guessNumberHigherOrLower();
 //        start.cousinsInBinaryTree();
 //        start.reverseWordsInAString();
-        start.insertDeleteGetRandomO1();
+//        start.insertDeleteGetRandomO1();
+        start.countCompleteTreeNodes();
     }
 
     public void reversePrefixOfWord() {
@@ -205,5 +207,16 @@ public class StartOctober {
         System.out.println("true == " + idgro1.remove(1));
         System.out.println("false == " + idgro1.insert(2));
         System.out.println("2 == " + idgro1.getRandom());
+    }
+
+    public void countCompleteTreeNodes() {
+        CountCompleteTreeNodes cctn = new CountCompleteTreeNodes();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), null));
+        TreeNode root2 = new TreeNode(1);
+
+        System.out.println("6 == " + cctn.countNodes(root1));
+        System.out.println("0 == " + cctn.countNodes(null));
+        System.out.println("1 == " + cctn.countNodes(root2));
     }
 }
