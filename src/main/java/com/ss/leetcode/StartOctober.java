@@ -13,6 +13,7 @@ import com.ss.leetcode.october.ImplementPrefixTrie;
 import com.ss.leetcode.october.InsertDeleteGetRandomO1;
 import com.ss.leetcode.october.JumpGame;
 import com.ss.leetcode.october.MaximumNumberOfWaysToPartitionAnArray;
+import com.ss.leetcode.october.MinStack;
 import com.ss.leetcode.october.MinimumMovesToConvertString;
 import com.ss.leetcode.october.NumberOfPairsConcatenationTarget;
 import com.ss.leetcode.october.ReversePrefixOfWord;
@@ -45,7 +46,8 @@ public class StartOctober {
 //        start.cousinsInBinaryTree();
 //        start.reverseWordsInAString();
 //        start.insertDeleteGetRandomO1();
-        start.countCompleteTreeNodes();
+//        start.countCompleteTreeNodes();
+        start.minStack();
     }
 
     public void reversePrefixOfWord() {
@@ -218,5 +220,17 @@ public class StartOctober {
         System.out.println("6 == " + cctn.countNodes(root1));
         System.out.println("0 == " + cctn.countNodes(null));
         System.out.println("1 == " + cctn.countNodes(root2));
+    }
+
+    public void minStack() {
+        MinStack ms = new MinStack();
+
+        ms.push(-2);
+        ms.push(0);
+        ms.push(-3);
+        System.out.println("3 == " + ms.getMin());
+        ms.pop();
+        System.out.println("0 == " + ms.top());
+        System.out.println("-2 == " + ms.getMin());
     }
 }
