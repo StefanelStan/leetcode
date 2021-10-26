@@ -2,10 +2,13 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.august.StoneGame;
 import com.ss.leetcode.october.AddDigits;
+import com.ss.leetcode.october.BinarySearchTreeIterator;
 import com.ss.leetcode.october.BitwiseANDOfNumbersRange;
+import com.ss.leetcode.october.CheckNumbersAreAscendingSentence;
 import com.ss.leetcode.october.Convert1DArrayInto2DArray;
 import com.ss.leetcode.october.CountCompleteTreeNodes;
 import com.ss.leetcode.october.CousinsInBinaryTree;
+import com.ss.leetcode.october.DefuseTheBomb;
 import com.ss.leetcode.october.DiameterOfABinaryTree;
 import com.ss.leetcode.october.FindMissingObservations;
 import com.ss.leetcode.october.GuessNumberHigherOrLower;
@@ -19,6 +22,7 @@ import com.ss.leetcode.october.NumberOfPairsConcatenationTarget;
 import com.ss.leetcode.october.ReversePrefixOfWord;
 import com.ss.leetcode.october.ReverseWordsInAString;
 import com.ss.leetcode.october.StoneGameIX;
+import com.ss.leetcode.october.TwoOutOfThree;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.Tree;
 import com.sun.source.tree.YieldTree;
@@ -47,7 +51,11 @@ public class StartOctober {
 //        start.reverseWordsInAString();
 //        start.insertDeleteGetRandomO1();
 //        start.countCompleteTreeNodes();
-        start.minStack();
+//        start.minStack();
+        start.checkNumbersAreAscendingSentence();
+        start.twoOutOfThree();
+        start.binarySearchTreeIterator();
+        start.defuseTheBomb();
     }
 
     public void reversePrefixOfWord() {
@@ -232,5 +240,45 @@ public class StartOctober {
         ms.pop();
         System.out.println("0 == " + ms.top());
         System.out.println("-2 == " + ms.getMin());
+    }
+
+    public void checkNumbersAreAscendingSentence() {
+        CheckNumbersAreAscendingSentence cnaas = new CheckNumbersAreAscendingSentence();
+
+        System.out.println("true == " + cnaas.areNumbersAscending("1 box has 3 blue 4 red 6 green and 12 yellow marbles"));
+        System.out.println("false == " + cnaas.areNumbersAscending("hello world 5 x 5"));
+        System.out.println("false == " + cnaas.areNumbersAscending("sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"));
+        System.out.println("true == " + cnaas.areNumbersAscending("4 5 11 26"));
+    }
+
+    public void twoOutOfThree() {
+        TwoOutOfThree toof = new TwoOutOfThree();
+
+        System.out.println("[3,2] == " + toof.twoOutOfThree(new int[]{1,1,3,2}, new int[]{2,3}, new int[]{3}));
+        System.out.println("[2,3,1] == " + toof.twoOutOfThree(new int[]{3,1}, new int[]{2,3}, new int[]{1,2}));
+        System.out.println("[] == " + toof.twoOutOfThree(new int[]{1,2,2}, new int[]{4,4,3}, new int[]{5}));
+    }
+
+    public void binarySearchTreeIterator() {
+        TreeNode root1 = new TreeNode(7, new TreeNode(3), new TreeNode(15, new TreeNode(9), new TreeNode(20)));
+        BinarySearchTreeIterator bsti = new BinarySearchTreeIterator(root1);
+
+        System.out.println("3 == " + bsti.next());
+        System.out.println("7 == " + bsti.next());
+        System.out.println("true == " + bsti.hasNext());
+        System.out.println("9 == " + bsti.next());
+        System.out.println("true == " + bsti.hasNext());
+        System.out.println("15 == " + bsti.next());
+        System.out.println("true == " + bsti.hasNext());
+        System.out.println("20 == " + bsti.next());
+        System.out.println("false == " + bsti.hasNext());
+    }
+
+    public void defuseTheBomb() {
+        DefuseTheBomb dtb = new DefuseTheBomb();
+
+        System.out.println("[12,10,16,13] == " + Arrays.toString(dtb.decrypt(new int[]{5,7,1,4}, 3)));
+        System.out.println("[0,0,0,0] == " + Arrays.toString(dtb.decrypt(new int[]{1,2,3,4}, 0)));
+        System.out.println("[12,5,6,13] == " + Arrays.toString(dtb.decrypt(new int[]{2,4,9,3}, -2)));
     }
 }
