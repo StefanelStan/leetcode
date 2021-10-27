@@ -18,4 +18,18 @@ public class SortColors {
             startingIndex[0] += value;
         });
     }
+
+    public void sortColors2(int[] nums) {
+        int[] color = new int[3];
+        for (int num : nums) {
+            color[num]++;
+        }
+        int pos = 0;
+        for (int i = 0; i < color.length; i++) {
+            for (int j = pos; j < pos + color[i]; j++) {
+                nums[j] = i;
+            }
+            pos += color[i];
+        }
+    }
 }

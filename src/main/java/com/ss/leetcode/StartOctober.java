@@ -10,6 +10,7 @@ import com.ss.leetcode.october.CountCompleteTreeNodes;
 import com.ss.leetcode.october.CousinsInBinaryTree;
 import com.ss.leetcode.october.DefuseTheBomb;
 import com.ss.leetcode.october.DiameterOfABinaryTree;
+import com.ss.leetcode.october.EmployeeImportance;
 import com.ss.leetcode.october.FindMissingObservations;
 import com.ss.leetcode.october.GuessNumberHigherOrLower;
 import com.ss.leetcode.october.ImplementPrefixTrie;
@@ -22,6 +23,7 @@ import com.ss.leetcode.october.NumberOfPairsConcatenationTarget;
 import com.ss.leetcode.october.ReversePrefixOfWord;
 import com.ss.leetcode.october.ReverseWordsInAString;
 import com.ss.leetcode.october.StoneGameIX;
+import com.ss.leetcode.october.TransposeMatrix;
 import com.ss.leetcode.october.TwoOutOfThree;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.Tree;
@@ -29,6 +31,7 @@ import com.sun.source.tree.YieldTree;
 import jdk.jfr.TransitionTo;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -52,10 +55,12 @@ public class StartOctober {
 //        start.insertDeleteGetRandomO1();
 //        start.countCompleteTreeNodes();
 //        start.minStack();
-        start.checkNumbersAreAscendingSentence();
-        start.twoOutOfThree();
-        start.binarySearchTreeIterator();
-        start.defuseTheBomb();
+//        start.checkNumbersAreAscendingSentence();
+//        start.twoOutOfThree();
+//        start.binarySearchTreeIterator();
+//        start.defuseTheBomb();
+//        start.transposeMatrix();
+        start.employeeImportance();
     }
 
     public void reversePrefixOfWord() {
@@ -280,5 +285,23 @@ public class StartOctober {
         System.out.println("[12,10,16,13] == " + Arrays.toString(dtb.decrypt(new int[]{5,7,1,4}, 3)));
         System.out.println("[0,0,0,0] == " + Arrays.toString(dtb.decrypt(new int[]{1,2,3,4}, 0)));
         System.out.println("[12,5,6,13] == " + Arrays.toString(dtb.decrypt(new int[]{2,4,9,3}, -2)));
+    }
+
+    public void transposeMatrix() {
+        TransposeMatrix tm = new TransposeMatrix();
+
+        System.out.println("[[1,4,7],[2,5,8],[3,6,9]] == " + Arrays.deepToString(tm.transpose(new int[][]{{1,2,3}, {4,5,6},{7,8,9}})));
+        System.out.println("[[1,4],[2,5],[3,6]] == " + Arrays.deepToString(tm.transpose(new int[][]{{1,2,3}, {4,5,6}})));
+    }
+
+    public void employeeImportance() {
+        EmployeeImportance ei = new EmployeeImportance();
+
+        List<EmployeeImportance.Employee> list1 = List.of(new EmployeeImportance.Employee(1, 5, List.of(2,3)),
+            new EmployeeImportance.Employee(2,3), new EmployeeImportance.Employee(3,3));
+        List<EmployeeImportance.Employee> list2 = List.of(new EmployeeImportance.Employee(1,2, List.of(5)), new EmployeeImportance.Employee(5, -3));
+
+        System.out.println("11 == " + ei.getImportance(list1, 1));
+        System.out.println("-3 == " + ei.getImportance(list2, 5));
     }
 }
