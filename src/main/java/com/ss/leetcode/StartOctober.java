@@ -12,6 +12,7 @@ import com.ss.leetcode.october.DefuseTheBomb;
 import com.ss.leetcode.october.DiameterOfABinaryTree;
 import com.ss.leetcode.october.EmployeeImportance;
 import com.ss.leetcode.october.FindMissingObservations;
+import com.ss.leetcode.october.FlattenAMultilevelDoublyLL;
 import com.ss.leetcode.october.GuessNumberHigherOrLower;
 import com.ss.leetcode.october.ImplementPrefixTrie;
 import com.ss.leetcode.october.InsertDeleteGetRandomO1;
@@ -26,9 +27,7 @@ import com.ss.leetcode.october.StoneGameIX;
 import com.ss.leetcode.october.TransposeMatrix;
 import com.ss.leetcode.october.TwoOutOfThree;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
-import com.sun.source.tree.YieldTree;
-import jdk.jfr.TransitionTo;
+import com.ss.leetcode.october.FlattenAMultilevelDoublyLL.Node;
 
 import java.util.Arrays;
 import java.util.List;
@@ -60,7 +59,8 @@ public class StartOctober {
 //        start.binarySearchTreeIterator();
 //        start.defuseTheBomb();
 //        start.transposeMatrix();
-        start.employeeImportance();
+//        start.employeeImportance();
+        start.flattenAMultilevelDoublyLL();
     }
 
     public void reversePrefixOfWord() {
@@ -303,5 +303,38 @@ public class StartOctober {
 
         System.out.println("11 == " + ei.getImportance(list1, 1));
         System.out.println("-3 == " + ei.getImportance(list2, 5));
+    }
+
+    public void flattenAMultilevelDoublyLL() {
+        FlattenAMultilevelDoublyLL famldll = new FlattenAMultilevelDoublyLL();
+
+        Node[] nodes = new Node[13];
+        for (int i = 1; i < nodes.length; i++) {
+            nodes[i] = new Node(i);
+        }
+        for (int i = 1; i < 6; i++) Node.connect(nodes[i], nodes[i+1]);
+        for (int i = 7; i < 10; i++) Node.connect(nodes[i], nodes[i+1]);
+        for (int i = 11; i < 12; i++) Node.connect(nodes[i], nodes[i+1]);
+        nodes[3].child = nodes[7];
+        nodes[8].child = nodes[11];
+
+        Node[] nodes2 = new Node[4];
+        for (int i = 1; i < nodes2.length; i++) {
+            nodes2[i] = new Node(i);
+        }
+        Node.connect(nodes2[1], nodes2[2]);
+        nodes2[1].child = nodes2[3];
+
+        Node[] nodes3 = new Node[4];
+        for (int i = 1; i < nodes3.length; i++) {
+            nodes3[i] = new Node(i);
+        }
+        nodes3[1].child = nodes3[2];
+        nodes3[2].child = nodes3[3];
+
+//        System.out.println("[1,2,3,7,8,11,12,9,10,4,5,6] == " + Node.toList(famldll.flatten(nodes[1])));
+//        System.out.println("[1,3,2] == " + Node.toList(famldll.flatten(nodes2[1])));
+//        System.out.println("[] == " + Node.toList(famldll.flatten(null)));
+        System.out.println("[1,2,3] == " + Node.toList(famldll.flatten(nodes3[1])));
     }
 }
