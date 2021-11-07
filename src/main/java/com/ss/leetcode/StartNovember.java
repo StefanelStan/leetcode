@@ -8,6 +8,7 @@ import com.ss.leetcode.november.DeleteNodeInABST;
 import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
+import com.ss.leetcode.november.MultiplyStrings;
 import com.ss.leetcode.november.NumberValidWordsSentence;
 import com.ss.leetcode.november.SingleNumberIII;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
@@ -31,7 +32,8 @@ public class StartNovember {
 //        start.arrangingCoins();
 //        start.consecutiveCharacters();
 //        start.numberValidWordsSentence();
-        start.singleNumberIII();
+//        start.singleNumberIII();
+        start.multiplyStrings();
     }
 
     public void surroundedRegions() {
@@ -158,6 +160,16 @@ public class StartNovember {
         System.out.println("[3,5] == " + Arrays.toString(sniii.singleNumber(new int[]{1,2,1,3,2,5})));
         System.out.println("[-1, 0] == " + Arrays.toString(sniii.singleNumber(new int[]{-1,0})));
         System.out.println("[0,1] == " + Arrays.toString(sniii.singleNumber(new int[]{0,1})));
+    }
+
+    public void multiplyStrings() {
+        MultiplyStrings ms = new MultiplyStrings();
+
+        System.out.println("6 == " + ms.multiply("2", "3"));
+        System.out.println("56008 == " + ms.multiply("123", "456"));
+        System.out.println("998001 == " + ms.multiply("999", "999"));
+        System.out.println("5796 == " + ms.multiply("23", "252"));
+        System.out.println("0 == " + ms.multiply("0", "351"));
     }
 }
 
