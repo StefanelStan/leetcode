@@ -2,6 +2,9 @@ package com.ss.leetcode;
 
 import com.ss.leetcode.november.BinaryTreePaths;
 import com.ss.leetcode.november.DeleteNodeInABST;
+import com.ss.leetcode.november.KClosestPointsToOrigin;
+import com.ss.leetcode.november.KthDistinctStringOnAnArray;
+import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -13,7 +16,10 @@ public class StartNovember {
 
 //        start.surroundedRegions();
 //        start.binaryTreePaths();
-        start.deleteNodeInABST();
+//        start.deleteNodeInABST();
+//        start.kthDistinctStringOnAnArray();
+//        start.kClosestPointsToOrigin();
+        start.sumOfAbsoluteDiffSortedArray();
     }
 
     public void surroundedRegions() {
@@ -59,6 +65,28 @@ public class StartNovember {
 //        System.out.println("[6,3,7,2,4] == " + TreeNode.extractValues(dniabst.deleteNode(root1, 5)));
 //        System.out.println("[3,2,7,4,10,8,15] == " + TreeNode.extractValues(dniabst.deleteNode(root4, 5)));
         System.out.println("[3,1,4] == " + TreeNode.extractValues(dniabst.deleteNode(root5, 2)));
+    }
+
+    public void kthDistinctStringOnAnArray() {
+        KthDistinctStringOnAnArray kdsoaa = new KthDistinctStringOnAnArray();
+
+        System.out.println("a == " + kdsoaa.kthDistinct(new String[]{"d","b","c","b","c","a"}, 2));
+        System.out.println("aaa == " + kdsoaa.kthDistinct(new String[]{"aaa","aa","a"}, 1));
+        System.out.println(" == " + kdsoaa.kthDistinct(new String[]{"a","b","a"}, 1));
+    }
+
+    public void kClosestPointsToOrigin() {
+        KClosestPointsToOrigin kcpto = new KClosestPointsToOrigin();
+
+        System.out.println("[[-2,2]] == " + Arrays.deepToString(kcpto.kClosest(new int[][]{{1,3}, {-2, 2}}, 1)));
+        System.out.println("[[3,3],[-2,4]] == " + Arrays.deepToString(kcpto.kClosest(new int[][]{{3,3}, {5, -1},{-2, 4}}, 2)));
+    }
+
+    public void sumOfAbsoluteDiffSortedArray() {
+        SumOfAbsoluteDiffSortedArray soadsa = new SumOfAbsoluteDiffSortedArray();
+
+        System.out.println("[4,3,5] == " + Arrays.toString(soadsa.getSumAbsoluteDifferences(new int[]{2,3,5})));
+        System.out.println("[24,15,13,15,21] == " + Arrays.toString(soadsa.getSumAbsoluteDifferences(new int[]{1,4,6,8,10})));
     }
 }
 
