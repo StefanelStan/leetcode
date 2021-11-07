@@ -1,11 +1,14 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.november.ArrangingCoins;
 import com.ss.leetcode.november.BinaryTreePaths;
 import com.ss.leetcode.november.BinaryTreeRightSideView;
+import com.ss.leetcode.november.ConsecutiveCharacters;
 import com.ss.leetcode.november.DeleteNodeInABST;
 import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
+import com.ss.leetcode.november.NumberValidWordsSentence;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.shared.TreeNode;
@@ -23,7 +26,10 @@ public class StartNovember {
 //        start.kClosestPointsToOrigin();
 //        start.sumOfAbsoluteDiffSortedArray();
 //        start.binaryTreeRightSideView();
-        start.insufficientNodesInRootToLeafPaths();
+//        start.insufficientNodesInRootToLeafPaths();
+//        start.arrangingCoins();
+//        start.consecutiveCharacters();
+        start.numberValidWordsSentence();
     }
 
     public void surroundedRegions() {
@@ -116,6 +122,32 @@ public class StartNovember {
         System.out.println("[1,2,3,4,7,8,9,14] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root1, 1)));
         System.out.println("[5,4,8,11,17,4,7,5] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root2, 22)));
         System.out.println("[1,-3,4] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root3, -1)));
+    }
+
+    public void arrangingCoins() {
+        ArrangingCoins ac = new ArrangingCoins();
+
+        System.out.println("2 == " + ac.arrangeCoins(5));
+        System.out.println("3 == " + ac.arrangeCoins(8));
+    }
+
+    public void consecutiveCharacters() {
+        ConsecutiveCharacters cc = new ConsecutiveCharacters();
+
+        System.out.println("2 == " + cc.maxPower("leetcode"));
+        System.out.println("5 == " + cc.maxPower("abbcccddddeeeeedcba"));
+        System.out.println("5 == " + cc.maxPower("triplepillooooow"));
+        System.out.println("11 == " + cc.maxPower("hooraaaaaaaaaaay"));
+        System.out.println("1 == " + cc.maxPower("tourist"));
+    }
+
+    public void numberValidWordsSentence() {
+        NumberValidWordsSentence nvws = new NumberValidWordsSentence();
+
+        System.out.println("3 == " + nvws.countValidWords("cat and  dog"));
+        System.out.println("0 == " + nvws.countValidWords("!this  1-s b8d!"));
+        System.out.println("5 == " + nvws.countValidWords("alice and  bob are playing stone-game10"));
+        System.out.println("6 == " + nvws.countValidWords( "he bought 2 pencils, 3 erasers, and 1  pencil-sharpener."));
     }
 }
 
