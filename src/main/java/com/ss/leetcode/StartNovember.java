@@ -1,7 +1,9 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.november.BinaryTreePaths;
+import com.ss.leetcode.november.BinaryTreeRightSideView;
 import com.ss.leetcode.november.DeleteNodeInABST;
+import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
@@ -19,7 +21,9 @@ public class StartNovember {
 //        start.deleteNodeInABST();
 //        start.kthDistinctStringOnAnArray();
 //        start.kClosestPointsToOrigin();
-        start.sumOfAbsoluteDiffSortedArray();
+//        start.sumOfAbsoluteDiffSortedArray();
+//        start.binaryTreeRightSideView();
+        start.insufficientNodesInRootToLeafPaths();
     }
 
     public void surroundedRegions() {
@@ -87,6 +91,31 @@ public class StartNovember {
 
         System.out.println("[4,3,5] == " + Arrays.toString(soadsa.getSumAbsoluteDifferences(new int[]{2,3,5})));
         System.out.println("[24,15,13,15,21] == " + Arrays.toString(soadsa.getSumAbsoluteDifferences(new int[]{1,4,6,8,10})));
+    }
+
+    public void binaryTreeRightSideView() {
+        BinaryTreeRightSideView btrsw = new BinaryTreeRightSideView();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3, null, new TreeNode(4)));
+        TreeNode root2 = new TreeNode(1, null, new TreeNode(3));
+
+        System.out.println("[1,3,4] == " + btrsw.rightSideView(root1));
+        System.out.println("[1,3] == " + btrsw.rightSideView(root2));
+        System.out.println("[] == " + btrsw.rightSideView(null));
+    }
+
+    public void insufficientNodesInRootToLeafPaths() {
+        InsufficientNodesInRootToLeafPaths inirtlp = new InsufficientNodesInRootToLeafPaths();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4, new TreeNode(8), new TreeNode(9)), new TreeNode(-99, new TreeNode(-99), new TreeNode(-99))),
+            new TreeNode(3, new TreeNode(-99, new TreeNode(12), new TreeNode(13)), new TreeNode(7, new TreeNode(-99), new TreeNode(14))));
+        TreeNode root2 = new TreeNode(5, new TreeNode(4, new TreeNode(11, new TreeNode(7), new TreeNode(1)), null),
+            new TreeNode(8, new TreeNode(17), new TreeNode(4, new TreeNode(5), new TreeNode(3))));
+        TreeNode root3 = new TreeNode(1, new TreeNode(2, new TreeNode(-5), null), new TreeNode(-3, new TreeNode(4), null));
+
+        System.out.println("[1,2,3,4,7,8,9,14] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root1, 1)));
+        System.out.println("[5,4,8,11,17,4,7,5] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root2, 22)));
+        System.out.println("[1,-3,4] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root3, -1)));
     }
 }
 
