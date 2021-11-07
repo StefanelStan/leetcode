@@ -9,6 +9,7 @@ import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
 import com.ss.leetcode.november.NumberValidWordsSentence;
+import com.ss.leetcode.november.SingleNumberIII;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.shared.TreeNode;
@@ -29,7 +30,8 @@ public class StartNovember {
 //        start.insufficientNodesInRootToLeafPaths();
 //        start.arrangingCoins();
 //        start.consecutiveCharacters();
-        start.numberValidWordsSentence();
+//        start.numberValidWordsSentence();
+        start.singleNumberIII();
     }
 
     public void surroundedRegions() {
@@ -148,6 +150,14 @@ public class StartNovember {
         System.out.println("0 == " + nvws.countValidWords("!this  1-s b8d!"));
         System.out.println("5 == " + nvws.countValidWords("alice and  bob are playing stone-game10"));
         System.out.println("6 == " + nvws.countValidWords( "he bought 2 pencils, 3 erasers, and 1  pencil-sharpener."));
+    }
+
+    public void singleNumberIII() {
+        SingleNumberIII sniii = new SingleNumberIII();
+
+        System.out.println("[3,5] == " + Arrays.toString(sniii.singleNumber(new int[]{1,2,1,3,2,5})));
+        System.out.println("[-1, 0] == " + Arrays.toString(sniii.singleNumber(new int[]{-1,0})));
+        System.out.println("[0,1] == " + Arrays.toString(sniii.singleNumber(new int[]{0,1})));
     }
 }
 
