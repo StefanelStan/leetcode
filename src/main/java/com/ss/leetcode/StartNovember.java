@@ -13,6 +13,7 @@ import com.ss.leetcode.november.NumberValidWordsSentence;
 import com.ss.leetcode.november.SingleNumberIII;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
+import com.ss.leetcode.november.UniqueBinarySearchTrees;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
@@ -33,7 +34,8 @@ public class StartNovember {
 //        start.consecutiveCharacters();
 //        start.numberValidWordsSentence();
 //        start.singleNumberIII();
-        start.multiplyStrings();
+//        start.multiplyStrings();
+        start.uniqueBinarySearchTrees();
     }
 
     public void surroundedRegions() {
@@ -170,6 +172,14 @@ public class StartNovember {
         System.out.println("998001 == " + ms.multiply("999", "999"));
         System.out.println("5796 == " + ms.multiply("23", "252"));
         System.out.println("0 == " + ms.multiply("0", "351"));
+    }
+
+    public void uniqueBinarySearchTrees() {
+        UniqueBinarySearchTrees ubst = new UniqueBinarySearchTrees();
+
+        System.out.println("5 == " + ubst.numTrees(3));
+        System.out.println("1430 == " + ubst.numTrees(8));
+        System.out.println("1767263190 == " + ubst.numTrees(19));
     }
 }
 
