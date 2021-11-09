@@ -3,11 +3,13 @@ package com.ss.leetcode;
 import com.ss.leetcode.november.ArrangingCoins;
 import com.ss.leetcode.november.BinaryTreePaths;
 import com.ss.leetcode.november.BinaryTreeRightSideView;
+import com.ss.leetcode.november.CheckNumberIsSumPowersOfThree;
 import com.ss.leetcode.november.ConsecutiveCharacters;
 import com.ss.leetcode.november.DeleteNodeInABST;
 import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
+import com.ss.leetcode.november.LongestNiceSubstring;
 import com.ss.leetcode.november.MultiplyStrings;
 import com.ss.leetcode.november.NumberValidWordsSentence;
 import com.ss.leetcode.november.SingleNumberIII;
@@ -35,7 +37,9 @@ public class StartNovember {
 //        start.numberValidWordsSentence();
 //        start.singleNumberIII();
 //        start.multiplyStrings();
-        start.uniqueBinarySearchTrees();
+//        start.uniqueBinarySearchTrees();
+//        start.checkIfNumberIsASumOfPowersOfThree();
+        start.longestNiceSubstring();
     }
 
     public void surroundedRegions() {
@@ -180,6 +184,23 @@ public class StartNovember {
         System.out.println("5 == " + ubst.numTrees(3));
         System.out.println("1430 == " + ubst.numTrees(8));
         System.out.println("1767263190 == " + ubst.numTrees(19));
+    }
+
+    public void checkIfNumberIsASumOfPowersOfThree() {
+        CheckNumberIsSumPowersOfThree cnispot = new CheckNumberIsSumPowersOfThree();
+
+        System.out.println("true == " + cnispot.checkPowersOfThree(12));
+        System.out.println("true == " + cnispot.checkPowersOfThree(91));
+        System.out.println("false == " + cnispot.checkPowersOfThree(21));
+    }
+
+    public void longestNiceSubstring() {
+        LongestNiceSubstring lns = new LongestNiceSubstring();
+
+        System.out.println("aAa == " + lns.longestNiceSubstring("YazaAay"));
+        System.out.println("Bb == " + lns.longestNiceSubstring("Bb"));
+        System.out.println(" == " + lns.longestNiceSubstring("c"));
+        System.out.println("dD == " + lns.longestNiceSubstring("dDzeE"));
     }
 }
 
