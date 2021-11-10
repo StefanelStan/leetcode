@@ -1,7 +1,6 @@
 package com.ss.leetcode.december;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class FilterRestaurants {
@@ -12,14 +11,11 @@ public class FilterRestaurants {
         } else if (veganFriendly == 1) {
             list = getListOfVeganOnlyRestaurants(restaurants, maxPrice, maxDistance);
         }
-        list.sort(new Comparator<int[]>() {
-            @Override
-            public int compare(int[] restaurant1, int[] restaurant2) {
-                if (restaurant1[1] == restaurant2[1]) {
-                    return restaurant1[0] < restaurant2[0] ? 1 : -1;
-                } else {
-                    return restaurant1[1] < restaurant2[1] ? 1 : -1;
-                }
+        list.sort((restaurant1, restaurant2) -> {
+            if (restaurant1[1] == restaurant2[1]) {
+                return restaurant1[0] < restaurant2[0] ? 1 : -1;
+            } else {
+                return restaurant1[1] < restaurant2[1] ? 1 : -1;
             }
         });
         List<Integer> ids = new ArrayList<>();

@@ -5,13 +5,23 @@ import com.ss.leetcode.november.BinaryTreePaths;
 import com.ss.leetcode.november.BinaryTreeRightSideView;
 import com.ss.leetcode.november.CheckNumberIsSumPowersOfThree;
 import com.ss.leetcode.november.ConsecutiveCharacters;
+import com.ss.leetcode.november.ContainsDuplicateII;
 import com.ss.leetcode.november.DeleteNodeInABST;
+import com.ss.leetcode.november.ElementMore25InSortedArray;
+import com.ss.leetcode.november.FindDuplicateFileInSystem;
+import com.ss.leetcode.november.FindLargestValueInEachTreeRow;
 import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
 import com.ss.leetcode.november.LongestNiceSubstring;
+import com.ss.leetcode.november.MinimumDistanceBetweenBSTNodes;
+import com.ss.leetcode.november.MinimumIndexSumOfTwoLists;
+import com.ss.leetcode.november.MostFrequentSubtreeSum;
 import com.ss.leetcode.november.MultiplyStrings;
 import com.ss.leetcode.november.NumberValidWordsSentence;
+import com.ss.leetcode.november.RankTransformOfAnArray;
+import com.ss.leetcode.november.ReformatDate;
+import com.ss.leetcode.november.SimpleBankSystem;
 import com.ss.leetcode.november.SingleNumberIII;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
@@ -39,7 +49,17 @@ public class StartNovember {
 //        start.multiplyStrings();
 //        start.uniqueBinarySearchTrees();
 //        start.checkIfNumberIsASumOfPowersOfThree();
-        start.longestNiceSubstring();
+//        start.longestNiceSubstring();
+//        start.minimumIndexSumOfTwoLists();
+//        start.containsDuplicateII();
+//        start.simpleBankSystem();
+//        start.findDuplicateFileInSystem();
+//        start.reformatDate();
+//        start.findLargestValueInEachTreeRow();
+//        start.mostFrequentSubtreeSum();
+//        start.minimumDistanceBetweenBSTNodes();
+//        start.elementMore25InSortedArray();
+        start.rankTransformOfAnArray();
     }
 
     public void surroundedRegions() {
@@ -201,6 +221,110 @@ public class StartNovember {
         System.out.println("Bb == " + lns.longestNiceSubstring("Bb"));
         System.out.println(" == " + lns.longestNiceSubstring("c"));
         System.out.println("dD == " + lns.longestNiceSubstring("dDzeE"));
+    }
+
+    public void minimumIndexSumOfTwoLists() {
+        MinimumIndexSumOfTwoLists misotl = new MinimumIndexSumOfTwoLists();
+
+        String[] list1 = new String[]{"Shogun","Tapioca Express","Burger King","KFC"};
+        String[] list2 = new String[]{"Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"};
+        String[] list3 = new String[]{"KFC","Shogun","Burger King"};
+        String[] list4 = new String[]{"KFC","Burger King","Tapioca Express","Shogun"};
+        String[] list5 = new String[]{"KNN","KFC","Burger King","Tapioca Express","Shogun"};
+
+        System.out.println("[Shogun] == " + Arrays.toString(misotl.findRestaurant(list1, list2)));
+        System.out.println("[Shogun] == " + Arrays.toString(misotl.findRestaurant(list1, list3)));
+        System.out.println("[KFC,Burger King, Tapioca Express,Shogun] == " + Arrays.toString(misotl.findRestaurant(list1, list4)));
+        System.out.println("[KFC,Burger King, Tapioca Express,Shogun] == " + Arrays.toString(misotl.findRestaurant(list1, list5)));
+        System.out.println("[KFC] == " + Arrays.toString(misotl.findRestaurant(new String[]{"KFC"}, new String[]{"KFC"})));
+    }
+
+    public void containsDuplicateII() {
+        ContainsDuplicateII cdii = new ContainsDuplicateII();
+
+        System.out.println("true == " + cdii.containsNearbyDuplicate(new int[]{1,2,3,1}, 3));
+        System.out.println("true == " + cdii.containsNearbyDuplicate(new int[]{1,0,1,1}, 1));
+        System.out.println("false == " + cdii.containsNearbyDuplicate(new int[]{1,2,3,1,2,3}, 2));
+        System.out.println("true == " + cdii.containsNearbyDuplicate(new int[]{0,1,2,3,4,0,0,7,8,9,10,11,12,0}, 1));
+
+    }
+
+    public void simpleBankSystem() {
+        SimpleBankSystem sbs = new SimpleBankSystem(new long[]{10, 100, 20, 50, 30});
+
+        System.out.println("true == " + sbs.withdraw(3,10));
+        System.out.println("true == " + sbs.transfer(5,1,20));
+        System.out.println("true == " + sbs.deposit(5,20));
+        System.out.println("false == " + sbs.transfer(3,4,15));
+        System.out.println("false == " + sbs.withdraw(10,50));
+    }
+
+    public void findDuplicateFileInSystem() {
+        FindDuplicateFileInSystem fdfis = new FindDuplicateFileInSystem();
+
+        System.out.println("[[root/a/2.txt, root/c/d/4.txt, root/4.txt],[root/a/1.txt,root/c/3.txt]] == "
+            + fdfis.findDuplicate(new String[]{"root/a 1.txt(abcd) 2.txt(efgh)","root/c 3.txt(abcd)","root/c/d 4.txt(efgh)","root 4.txt(efgh)"}));
+
+        System.out.println("[[root/a/2.txt,root/c/d/4.txt],[root/a/1.txt,root/c/3.txt]] == "
+            + fdfis.findDuplicate(new String[]{"root/a 1.txt(abcd) 2.txt(efgh)","root/c 3.txt(abcd)","root/c/d 4.txt(efgh)"}));
+    }
+
+    public void reformatDate() {
+        ReformatDate rd = new ReformatDate();
+
+        System.out.println("2052-10-20 == "+ rd.reformatDate("20th Oct 2052"));
+        System.out.println("1933-06-06 == "+ rd.reformatDate("6th Jun 1933"));
+        System.out.println("1960-05-26 == "+ rd.reformatDate("26th May 1960"));
+    }
+
+    public void findLargestValueInEachTreeRow() {
+        FindLargestValueInEachTreeRow flvier = new FindLargestValueInEachTreeRow();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(3, new TreeNode(5), new TreeNode(3)), new TreeNode(2, null, new TreeNode(9)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root3 = new TreeNode(1);
+        TreeNode root4 = new TreeNode(1, null, new TreeNode(2));
+
+        System.out.println("[1,3,9] == " + flvier.largestValues(root1));
+        System.out.println("[1,3] == " + flvier.largestValues(root2));
+        System.out.println("[1] == " + flvier.largestValues(root3));
+        System.out.println("[1,2] == " + flvier.largestValues(root4));
+        System.out.println("[] == " + flvier.largestValues(null));
+    }
+
+    public void mostFrequentSubtreeSum() {
+        MostFrequentSubtreeSum mfss = new MostFrequentSubtreeSum();
+
+        TreeNode root1 = new TreeNode(5, new TreeNode(2), new TreeNode(-3));
+        TreeNode root2 = new TreeNode(5, new TreeNode(2), new TreeNode(-5));
+
+        System.out.println("[2,-3,4] == " + Arrays.toString(mfss.findFrequentTreeSum(root1)));
+        System.out.println("[2] == " + Arrays.toString(mfss.findFrequentTreeSum(root2)));
+    }
+
+    public void minimumDistanceBetweenBSTNodes() {
+        MinimumDistanceBetweenBSTNodes mdbbstn = new MinimumDistanceBetweenBSTNodes();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(6));
+        TreeNode root2 = new TreeNode(1, new TreeNode(0), new TreeNode(48, new TreeNode(12), new TreeNode(49)));
+
+        System.out.println("1 == " + mdbbstn.minDiffInBST(root1));
+        System.out.println("1 == " + mdbbstn.minDiffInBST(root2));
+    }
+
+    public void elementMore25InSortedArray() {
+        ElementMore25InSortedArray em25isa = new ElementMore25InSortedArray();
+
+        System.out.println("6 == " + em25isa.findSpecialInteger(new int[]{1,2,2,6,6,6,6,7,10}));
+        System.out.println("1 == " + em25isa.findSpecialInteger(new int[]{1,1}));
+    }
+
+    public void rankTransformOfAnArray() {
+        RankTransformOfAnArray rtoaa = new RankTransformOfAnArray();
+
+        System.out.println("[4,1,2,3] == " + Arrays.toString(rtoaa.arrayRankTransform(new int[]{40,10,20,30})));
+        System.out.println("[1,1,1] == " + Arrays.toString(rtoaa.arrayRankTransform(new int[]{100,100,100})));
+        System.out.println("[5,3,4,2,8,6,7,1,3] == " + Arrays.toString(rtoaa.arrayRankTransform(new int[]{37,12,28,9,100,56,80,5,12})));
     }
 }
 
