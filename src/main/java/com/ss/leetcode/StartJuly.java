@@ -4,7 +4,6 @@ import com.ss.leetcode.july.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import com.ss.leetcode.shared.Utils;
-import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 
@@ -384,9 +383,9 @@ public class StartJuly {
         root3.left = node34;
         root3.right = node37;
 
-        System.out.println("[1, null, 0, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root1)));
-        System.out.println("[1, null, 1, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root2)));
-        System.out.println("[1, null, 0, null, 1] == " + TreeNode.extractValues(btp.pruneTree(root3)));
+        System.out.println("[1, null, 0, null, 1] == " + TreeNode.preOrder(btp.pruneTree(root1)));
+        System.out.println("[1, null, 1, null, 1] == " + TreeNode.preOrder(btp.pruneTree(root2)));
+        System.out.println("[1, null, 0, null, 1] == " + TreeNode.preOrder(btp.pruneTree(root3)));
     }
 
     public void longestCommonPrefix() {

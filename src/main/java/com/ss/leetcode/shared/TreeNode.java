@@ -17,10 +17,24 @@ public class TreeNode {
         this.right = right;
     }
 
-    public static List<Integer> extractValues(TreeNode n) {
+    public static List<Integer> inOrder(TreeNode node) {
+        List<Integer> result = new ArrayList<>();
+        traverseInorder(node, result);
+        return result;
+    }
+
+    public static List<Integer> preOrder(TreeNode n) {
         List<Integer> result = new ArrayList<>();
         traversePreorder(n, result);
         return result;
+    }
+
+    private static void traverseInorder(TreeNode node, List<Integer> values) {
+        if(node != null) {
+            traverseInorder(node.left, values);
+            values.add(node.val);
+            traverseInorder(node.right, values);
+        }
     }
 
     private static void traversePreorder(TreeNode node, List<Integer> values) {
@@ -30,4 +44,5 @@ public class TreeNode {
             traversePreorder(node.right, values);
         }
     }
+
 }

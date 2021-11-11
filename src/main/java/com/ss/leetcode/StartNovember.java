@@ -3,6 +3,7 @@ package com.ss.leetcode;
 import com.ss.leetcode.november.ArrangingCoins;
 import com.ss.leetcode.november.BinaryTreePaths;
 import com.ss.leetcode.november.BinaryTreeRightSideView;
+import com.ss.leetcode.november.BinaryTreeTilt;
 import com.ss.leetcode.november.CheckNumberIsSumPowersOfThree;
 import com.ss.leetcode.november.ConsecutiveCharacters;
 import com.ss.leetcode.november.ContainsDuplicateII;
@@ -16,10 +17,12 @@ import com.ss.leetcode.november.KthDistinctStringOnAnArray;
 import com.ss.leetcode.november.LongestNiceSubstring;
 import com.ss.leetcode.november.MinimumDistanceBetweenBSTNodes;
 import com.ss.leetcode.november.MinimumIndexSumOfTwoLists;
+import com.ss.leetcode.november.MinimumValueToGetPositiveStepSum;
 import com.ss.leetcode.november.MostFrequentSubtreeSum;
 import com.ss.leetcode.november.MultiplyStrings;
 import com.ss.leetcode.november.NumberValidWordsSentence;
 import com.ss.leetcode.november.RankTransformOfAnArray;
+import com.ss.leetcode.november.RecoverBinarySearchTree;
 import com.ss.leetcode.november.ReformatDate;
 import com.ss.leetcode.november.SimpleBankSystem;
 import com.ss.leetcode.november.SingleNumberIII;
@@ -27,6 +30,7 @@ import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.november.UniqueBinarySearchTrees;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.YieldTree;
 
 import java.util.Arrays;
 
@@ -59,7 +63,10 @@ public class StartNovember {
 //        start.mostFrequentSubtreeSum();
 //        start.minimumDistanceBetweenBSTNodes();
 //        start.elementMore25InSortedArray();
-        start.rankTransformOfAnArray();
+//        start.rankTransformOfAnArray();
+        // to be continued -> start.recoverBinarySearchTree();
+//        start.minimumValueToGetPositiveStepSum();
+        start.binaryTreeTilt();
     }
 
     public void surroundedRegions() {
@@ -104,7 +111,7 @@ public class StartNovember {
 //        System.out.println("[] == " + TreeNode.extractValues(dniabst.deleteNode(root3, 0)));
 //        System.out.println("[6,3,7,2,4] == " + TreeNode.extractValues(dniabst.deleteNode(root1, 5)));
 //        System.out.println("[3,2,7,4,10,8,15] == " + TreeNode.extractValues(dniabst.deleteNode(root4, 5)));
-        System.out.println("[3,1,4] == " + TreeNode.extractValues(dniabst.deleteNode(root5, 2)));
+        System.out.println("[3,1,4] == " + TreeNode.preOrder(dniabst.deleteNode(root5, 2)));
     }
 
     public void kthDistinctStringOnAnArray() {
@@ -149,9 +156,9 @@ public class StartNovember {
             new TreeNode(8, new TreeNode(17), new TreeNode(4, new TreeNode(5), new TreeNode(3))));
         TreeNode root3 = new TreeNode(1, new TreeNode(2, new TreeNode(-5), null), new TreeNode(-3, new TreeNode(4), null));
 
-        System.out.println("[1,2,3,4,7,8,9,14] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root1, 1)));
-        System.out.println("[5,4,8,11,17,4,7,5] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root2, 22)));
-        System.out.println("[1,-3,4] == " + TreeNode.extractValues(inirtlp.sufficientSubset(root3, -1)));
+        System.out.println("[1,2,3,4,7,8,9,14] == " + TreeNode.preOrder(inirtlp.sufficientSubset(root1, 1)));
+        System.out.println("[5,4,8,11,17,4,7,5] == " + TreeNode.preOrder(inirtlp.sufficientSubset(root2, 22)));
+        System.out.println("[1,-3,4] == " + TreeNode.preOrder(inirtlp.sufficientSubset(root3, -1)));
     }
 
     public void arrangingCoins() {
@@ -326,5 +333,39 @@ public class StartNovember {
         System.out.println("[1,1,1] == " + Arrays.toString(rtoaa.arrayRankTransform(new int[]{100,100,100})));
         System.out.println("[5,3,4,2,8,6,7,1,3] == " + Arrays.toString(rtoaa.arrayRankTransform(new int[]{37,12,28,9,100,56,80,5,12})));
     }
+
+    public void recoverBinarySearchTree() {
+        RecoverBinarySearchTree rbst = new RecoverBinarySearchTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(3, null, new TreeNode(2)), null);
+        TreeNode root2 = new TreeNode(3, new TreeNode(1), new TreeNode(4, new TreeNode(2), null));
+
+        rbst.recoverTree(root1);
+        rbst.recoverTree(root2);
+        System.out.println("[3,1,2] == " + TreeNode.preOrder(root1));
+        System.out.println("[2,1,4,3] == " + TreeNode.preOrder(root2));
+    }
+
+    public void minimumValueToGetPositiveStepSum() {
+        MinimumValueToGetPositiveStepSum mvtgpss = new MinimumValueToGetPositiveStepSum();
+
+        System.out.println("5 == " + mvtgpss.minStartValue(new int[]{-3,2,-3,4,2}));
+        System.out.println("1 == " + mvtgpss.minStartValue(new int[]{1,2}));
+        System.out.println("5 == " + mvtgpss.minStartValue(new int[]{1,-2,-3}));
+    }
+
+    public void binaryTreeTilt() {
+        BinaryTreeTilt btt = new BinaryTreeTilt();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        TreeNode root2 = new TreeNode(4, new TreeNode(2, new TreeNode(3), new TreeNode(5)), new TreeNode(9, null, new TreeNode(7)));
+        TreeNode root3 = new TreeNode(21, new TreeNode(7, new TreeNode(1, new TreeNode(3), new TreeNode(3)), new TreeNode(1)),
+            new TreeNode(14, new TreeNode(2), new TreeNode(2)));
+
+        System.out.println("1 == " + btt.findTilt(root1));
+        System.out.println("15 == " + btt.findTilt(root2));
+        System.out.println("9 == " + btt.findTilt(root3));
+    }
+
 }
 

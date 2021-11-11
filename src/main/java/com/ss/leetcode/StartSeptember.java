@@ -171,9 +171,9 @@ public class StartSeptember {
         StringBuilder stb = new StringBuilder();
         StringBuilder stb2 = new StringBuilder();
         StringBuilder stb3 = new StringBuilder();
-        dnarf.delNodes(root1, new int[]{3,5}).forEach(head -> stb.append(TreeNode.extractValues(head)));
-        dnarf.delNodes(root2, new int[]{3}).forEach(head -> stb2.append(TreeNode.extractValues(head)));
-        dnarf.delNodes(root3, new int[]{2,1}).forEach(head -> stb3.append(TreeNode.extractValues(head)));
+        dnarf.delNodes(root1, new int[]{3,5}).forEach(head -> stb.append(TreeNode.preOrder(head)));
+        dnarf.delNodes(root2, new int[]{3}).forEach(head -> stb2.append(TreeNode.preOrder(head)));
+        dnarf.delNodes(root3, new int[]{2,1}).forEach(head -> stb3.append(TreeNode.preOrder(head)));
 
         System.out.println("[[1,2,4],[6],[7]] == " + stb);
         System.out.println("[[1,2,4]] == " + stb2);
@@ -206,9 +206,9 @@ public class StartSeptember {
         TreeNode root2 = new TreeNode(1);
         TreeNode root3 = new TreeNode(0, new TreeNode(1, null, new TreeNode(2)),new TreeNode(3));
 
-        System.out.println("[2,7,4] == " + TreeNode.extractValues(lca.lcaDeepestLeaves(root1)));
-        System.out.println("[1] == " + TreeNode.extractValues(lca.lcaDeepestLeaves(root2)));
-        System.out.println("[2] == " + TreeNode.extractValues(lca.lcaDeepestLeaves(root3)));
+        System.out.println("[2,7,4] == " + TreeNode.preOrder(lca.lcaDeepestLeaves(root1)));
+        System.out.println("[1] == " + TreeNode.preOrder(lca.lcaDeepestLeaves(root2)));
+        System.out.println("[2] == " + TreeNode.preOrder(lca.lcaDeepestLeaves(root3)));
 
     }
 

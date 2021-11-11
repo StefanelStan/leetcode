@@ -657,9 +657,9 @@ public class StartAugust {
         TreeNode root2 = new TreeNode(1, new TreeNode(3, new TreeNode(3), new TreeNode(2)), new TreeNode(3));
         TreeNode root3 = new TreeNode(1, new TreeNode(2, new TreeNode(2, new TreeNode(2), null), null), null);
 
-        System.out.println("[1,3,4] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root1, 2)));
-        System.out.println("[1,3,2] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root2, 3)));
-        System.out.println("[1] == " + TreeNode.extractValues(dlwgv.removeLeafNodes(root3, 2)));
+        System.out.println("[1,3,4] == " + TreeNode.preOrder(dlwgv.removeLeafNodes(root1, 2)));
+        System.out.println("[1,3,2] == " + TreeNode.preOrder(dlwgv.removeLeafNodes(root2, 3)));
+        System.out.println("[1] == " + TreeNode.preOrder(dlwgv.removeLeafNodes(root3, 2)));
     }
 
     public void insertIntoABST() {
@@ -667,7 +667,7 @@ public class StartAugust {
 
         TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7));
 
-        System.out.println("[4,2,7,1,3,5] == " + TreeNode.extractValues(iiabst.insertIntoBST(root1, 5)));
+        System.out.println("[4,2,7,1,3,5] == " + TreeNode.preOrder(iiabst.insertIntoBST(root1, 5)));
     }
 
     public void shortestDistanceToACharacter() {
@@ -765,9 +765,9 @@ public class StartAugust {
         TreeNode root2 = new TreeNode(2,new TreeNode(1), new TreeNode(3));
         TreeNode root3 = null;
 
-        System.out.println("[9,6,7,3,1,2,4] == " + TreeNode.extractValues(ibt.invertTree(root1)));
-        System.out.println("[3,1,2] == " + TreeNode.extractValues(ibt.invertTree(root2)));
-        System.out.println("[] == " + TreeNode.extractValues(ibt.invertTree(root3)));
+        System.out.println("[9,6,7,3,1,2,4] == " + TreeNode.preOrder(ibt.invertTree(root1)));
+        System.out.println("[3,1,2] == " + TreeNode.preOrder(ibt.invertTree(root2)));
+        System.out.println("[] == " + TreeNode.preOrder(ibt.invertTree(root3)));
     }
 
     public void baseballGame() {
@@ -1245,9 +1245,9 @@ public class StartAugust {
     public void recoverATreeFromPreorderTraversal() {
         RecoverATreeFromPreorderTraversal ratfpt = new RecoverATreeFromPreorderTraversal();
 
-        System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-2--3--4-5--6--7")));
-        System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-2--3---4-5--6---7")));
-        System.out.println("[1,401, 349, 90, 88] == " + TreeNode.extractValues(ratfpt.recoverFromPreorder("1-401--349---90--88")));
+        System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.preOrder(ratfpt.recoverFromPreorder("1-2--3--4-5--6--7")));
+        System.out.println("[1,2,3,4,5,6,7] == " + TreeNode.preOrder(ratfpt.recoverFromPreorder("1-2--3---4-5--6---7")));
+        System.out.println("[1,401, 349, 90, 88] == " + TreeNode.preOrder(ratfpt.recoverFromPreorder("1-401--349---90--88")));
     }
 
     public void maximumProfitInJobScheduling() {
