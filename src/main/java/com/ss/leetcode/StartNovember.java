@@ -5,6 +5,7 @@ import com.ss.leetcode.november.BinaryTreePaths;
 import com.ss.leetcode.november.BinaryTreeRightSideView;
 import com.ss.leetcode.november.BinaryTreeTilt;
 import com.ss.leetcode.november.CheckNumberIsSumPowersOfThree;
+import com.ss.leetcode.november.CheckTwoStringsAreAlmostEquivalent;
 import com.ss.leetcode.november.ConsecutiveCharacters;
 import com.ss.leetcode.november.ContainsDuplicateII;
 import com.ss.leetcode.november.DeleteNodeInABST;
@@ -19,6 +20,7 @@ import com.ss.leetcode.november.MinimumAbsoluteDifferenceInBST;
 import com.ss.leetcode.november.MinimumDistanceBetweenBSTNodes;
 import com.ss.leetcode.november.MinimumIndexSumOfTwoLists;
 import com.ss.leetcode.november.MinimumValueToGetPositiveStepSum;
+import com.ss.leetcode.november.MostBeautifulItemForEachQuery;
 import com.ss.leetcode.november.MostFrequentSubtreeSum;
 import com.ss.leetcode.november.MultiplyStrings;
 import com.ss.leetcode.november.NumberValidWordsSentence;
@@ -72,7 +74,9 @@ public class StartNovember {
 //        start.binaryTreeTilt();
 //        start.minimumAbsoluteDifferenceInBST();
 //        start.subtreeOfAnotherTree();
-        start.secondMinimumNodeInABinaryTree();
+//        start.secondMinimumNodeInABinaryTree();
+//        start.checkTwoStringsAreAlmostEquivalent();
+        start.mostBeautifulItemForEachQuery();
     }
 
     public void surroundedRegions() {
@@ -403,6 +407,23 @@ public class StartNovember {
 
         System.out.println("5 == " + smniabt.findSecondMinimumValue(root1));
         System.out.println("-1 == " + smniabt.findSecondMinimumValue(root2));
+    }
+
+    public void checkTwoStringsAreAlmostEquivalent() {
+        CheckTwoStringsAreAlmostEquivalent ctsaae = new CheckTwoStringsAreAlmostEquivalent();
+
+        System.out.println("false == " + ctsaae.checkAlmostEquivalent("aaaa", "bccb"));
+        System.out.println("true == " + ctsaae.checkAlmostEquivalent("abcdeef", "abaaacc"));
+        System.out.println("true == " + ctsaae.checkAlmostEquivalent("cccddabba", "babababab"));
+    }
+
+    public void mostBeautifulItemForEachQuery() {
+        MostBeautifulItemForEachQuery mbifeq = new MostBeautifulItemForEachQuery();
+
+        System.out.println("[2,4,5,5,6,6] == " + Arrays.toString(mbifeq.maximumBeauty(new int[][]{{1,2}, {3,2},{2,4},{5,6},{3,5}},
+                                            new int[]{1,2,3,4,5,6})));
+        System.out.println("[4] == " + Arrays.toString(mbifeq.maximumBeauty(new int[][]{{1,2}, {1,2},{1,3},{1,4}}, new int[]{1})));
+        System.out.println("[0] == " + Arrays.toString(mbifeq.maximumBeauty(new int[][]{{10,10000}}, new int[]{5})));
     }
 }
 
