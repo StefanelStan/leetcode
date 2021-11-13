@@ -15,6 +15,7 @@ import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
 import com.ss.leetcode.november.LongestNiceSubstring;
+import com.ss.leetcode.november.MinimumAbsoluteDifferenceInBST;
 import com.ss.leetcode.november.MinimumDistanceBetweenBSTNodes;
 import com.ss.leetcode.november.MinimumIndexSumOfTwoLists;
 import com.ss.leetcode.november.MinimumValueToGetPositiveStepSum;
@@ -24,8 +25,10 @@ import com.ss.leetcode.november.NumberValidWordsSentence;
 import com.ss.leetcode.november.RankTransformOfAnArray;
 import com.ss.leetcode.november.RecoverBinarySearchTree;
 import com.ss.leetcode.november.ReformatDate;
+import com.ss.leetcode.november.SecondMinimumNodeInABinaryTree;
 import com.ss.leetcode.november.SimpleBankSystem;
 import com.ss.leetcode.november.SingleNumberIII;
+import com.ss.leetcode.november.SubtreeOfAnotherTree;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.november.UniqueBinarySearchTrees;
@@ -66,7 +69,10 @@ public class StartNovember {
 //        start.rankTransformOfAnArray();
         // to be continued -> start.recoverBinarySearchTree();
 //        start.minimumValueToGetPositiveStepSum();
-        start.binaryTreeTilt();
+//        start.binaryTreeTilt();
+//        start.minimumAbsoluteDifferenceInBST();
+//        start.subtreeOfAnotherTree();
+        start.secondMinimumNodeInABinaryTree();
     }
 
     public void surroundedRegions() {
@@ -367,5 +373,36 @@ public class StartNovember {
         System.out.println("9 == " + btt.findTilt(root3));
     }
 
+    public void minimumAbsoluteDifferenceInBST() {
+        MinimumAbsoluteDifferenceInBST madibst = new MinimumAbsoluteDifferenceInBST();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(6));
+        TreeNode root2 = new TreeNode(1, new TreeNode(0), new TreeNode(48, new TreeNode(12), new TreeNode(49)));
+
+        System.out.println("1 == " + madibst.getMinimumDifference(root1));
+        System.out.println("1 == " + madibst.getMinimumDifference(root2));
+    }
+
+    public void subtreeOfAnotherTree() {
+        SubtreeOfAnotherTree soat = new SubtreeOfAnotherTree();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(4, new TreeNode(1), new TreeNode(2)), new TreeNode(5));
+        TreeNode root2= new TreeNode(4, new TreeNode(1), new TreeNode(2));
+        TreeNode root3 = new TreeNode(3, new TreeNode(4, new TreeNode(1), new TreeNode(2, new TreeNode(0), null)), new TreeNode(5));
+        TreeNode root4 = new TreeNode(4, new TreeNode(1), new TreeNode(2));
+
+        System.out.println("true == " + soat.isSubtree(root1, root2));
+        System.out.println("false == " + soat.isSubtree(root3, root4));
+    }
+
+    public void secondMinimumNodeInABinaryTree() {
+        SecondMinimumNodeInABinaryTree smniabt = new SecondMinimumNodeInABinaryTree();
+
+        TreeNode root1 = new TreeNode(2, new TreeNode(2), new TreeNode(5, new TreeNode(5), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(2, new TreeNode(2), new TreeNode(2));
+
+        System.out.println("5 == " + smniabt.findSecondMinimumValue(root1));
+        System.out.println("-1 == " + smniabt.findSecondMinimumValue(root2));
+    }
 }
 
