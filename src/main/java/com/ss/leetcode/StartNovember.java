@@ -10,9 +10,11 @@ import com.ss.leetcode.november.ConsecutiveCharacters;
 import com.ss.leetcode.november.ContainsDuplicateII;
 import com.ss.leetcode.november.DeleteNodeInABST;
 import com.ss.leetcode.november.ElementMore25InSortedArray;
+import com.ss.leetcode.november.FindBottomLeftTreeValue;
 import com.ss.leetcode.november.FindDuplicateFileInSystem;
 import com.ss.leetcode.november.FindLargestValueInEachTreeRow;
 import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
+import com.ss.leetcode.november.IteratorForCombination;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
 import com.ss.leetcode.november.LongestNiceSubstring;
@@ -76,7 +78,9 @@ public class StartNovember {
 //        start.subtreeOfAnotherTree();
 //        start.secondMinimumNodeInABinaryTree();
 //        start.checkTwoStringsAreAlmostEquivalent();
-        start.mostBeautifulItemForEachQuery();
+//        start.mostBeautifulItemForEachQuery();
+//        start.iteratorForCombination();
+        start.findBottomLeftTreeValue();
     }
 
     public void surroundedRegions() {
@@ -424,6 +428,30 @@ public class StartNovember {
                                             new int[]{1,2,3,4,5,6})));
         System.out.println("[4] == " + Arrays.toString(mbifeq.maximumBeauty(new int[][]{{1,2}, {1,2},{1,3},{1,4}}, new int[]{1})));
         System.out.println("[0] == " + Arrays.toString(mbifeq.maximumBeauty(new int[][]{{10,10000}}, new int[]{5})));
+    }
+
+    public void iteratorForCombination() {
+        IteratorForCombination ifc = new IteratorForCombination("abc", 2);
+
+        System.out.println("ab == " + ifc.next());
+        System.out.println("true == " + ifc.hasNext());
+        System.out.println("ac == " + ifc.next());
+        System.out.println("true == " + ifc.hasNext());
+        System.out.println("bc == " + ifc.next());
+        System.out.println("false == " + ifc.hasNext());
+    }
+
+    public void findBottomLeftTreeValue() {
+        FindBottomLeftTreeValue fbltv = new FindBottomLeftTreeValue();
+
+        TreeNode root1 = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), null),
+                                      new TreeNode(3, new TreeNode(5, new TreeNode(7), null), new TreeNode(6)));
+        TreeNode root3 = new TreeNode(0, null, new TreeNode(-1));
+
+        System.out.println("1 == " + fbltv.findBottomLeftValue(root1));
+        System.out.println("7 == " + fbltv.findBottomLeftValue(root2));
+        System.out.println("-1 == " + fbltv.findBottomLeftValue(root3));
     }
 }
 
