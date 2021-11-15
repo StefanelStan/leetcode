@@ -9,6 +9,7 @@ import com.ss.leetcode.november.CheckTwoStringsAreAlmostEquivalent;
 import com.ss.leetcode.november.ConsecutiveCharacters;
 import com.ss.leetcode.november.ContainsDuplicateII;
 import com.ss.leetcode.november.DeleteNodeInABST;
+import com.ss.leetcode.november.DetectCapital;
 import com.ss.leetcode.november.ElementMore25InSortedArray;
 import com.ss.leetcode.november.FindBottomLeftTreeValue;
 import com.ss.leetcode.november.FindDuplicateFileInSystem;
@@ -17,6 +18,7 @@ import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
 import com.ss.leetcode.november.IteratorForCombination;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
+import com.ss.leetcode.november.LargestDivisibleSubset;
 import com.ss.leetcode.november.LongestNiceSubstring;
 import com.ss.leetcode.november.MinimumAbsoluteDifferenceInBST;
 import com.ss.leetcode.november.MinimumDistanceBetweenBSTNodes;
@@ -80,7 +82,9 @@ public class StartNovember {
 //        start.checkTwoStringsAreAlmostEquivalent();
 //        start.mostBeautifulItemForEachQuery();
 //        start.iteratorForCombination();
-        start.findBottomLeftTreeValue();
+//        start.findBottomLeftTreeValue();
+//        start.detectCapital();
+        start.largestDivisibleSubset();
     }
 
     public void surroundedRegions() {
@@ -452,6 +456,21 @@ public class StartNovember {
         System.out.println("1 == " + fbltv.findBottomLeftValue(root1));
         System.out.println("7 == " + fbltv.findBottomLeftValue(root2));
         System.out.println("-1 == " + fbltv.findBottomLeftValue(root3));
+    }
+
+    public void detectCapital() {
+        DetectCapital dc = new DetectCapital();
+
+        System.out.println("true == " + dc.detectCapitalUse("USA"));
+        System.out.println("false == " + dc.detectCapitalUse("FlaG"));
+    }
+
+    public void largestDivisibleSubset() {
+        LargestDivisibleSubset lds = new LargestDivisibleSubset();
+
+        System.out.println("[1,2] == " + lds.largestDivisibleSubset(new int[]{3,2,1}));
+        System.out.println("[1,2,4,8] == " + lds.largestDivisibleSubset(new int[]{8,4,2,1}));
+        System.out.println("[2,4,8] == " + lds.largestDivisibleSubset(new int[]{8,4,2,3,9}));
     }
 }
 
