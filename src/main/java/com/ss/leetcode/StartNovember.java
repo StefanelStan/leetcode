@@ -11,6 +11,7 @@ import com.ss.leetcode.november.ContainsDuplicateII;
 import com.ss.leetcode.november.DeleteNodeInABST;
 import com.ss.leetcode.november.DetectCapital;
 import com.ss.leetcode.november.ElementMore25InSortedArray;
+import com.ss.leetcode.november.EvenOddTree;
 import com.ss.leetcode.november.FindBottomLeftTreeValue;
 import com.ss.leetcode.november.FindDuplicateFileInSystem;
 import com.ss.leetcode.november.FindLargestValueInEachTreeRow;
@@ -34,14 +35,17 @@ import com.ss.leetcode.november.ReformatDate;
 import com.ss.leetcode.november.SecondMinimumNodeInABinaryTree;
 import com.ss.leetcode.november.SimpleBankSystem;
 import com.ss.leetcode.november.SingleNumberIII;
+import com.ss.leetcode.november.SortList;
 import com.ss.leetcode.november.SubtreeOfAnotherTree;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.november.UniqueBinarySearchTrees;
+import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.YieldTree;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -84,7 +88,9 @@ public class StartNovember {
 //        start.iteratorForCombination();
 //        start.findBottomLeftTreeValue();
 //        start.detectCapital();
-        start.largestDivisibleSubset();
+//        start.largestDivisibleSubset();
+//        start.evenOddTree();
+        start.sortList();
     }
 
     public void surroundedRegions() {
@@ -471,6 +477,37 @@ public class StartNovember {
         System.out.println("[1,2] == " + lds.largestDivisibleSubset(new int[]{3,2,1}));
         System.out.println("[1,2,4,8] == " + lds.largestDivisibleSubset(new int[]{8,4,2,1}));
         System.out.println("[2,4,8] == " + lds.largestDivisibleSubset(new int[]{8,4,2,3,9}));
+    }
+
+    public void evenOddTree() {
+        EvenOddTree eot = new EvenOddTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(10, new TreeNode(3, new TreeNode(12), new TreeNode(8)), null),
+            new TreeNode(4, new TreeNode(7, new TreeNode(6), null), new TreeNode(9, null, new TreeNode(2))));
+        TreeNode root2 = new TreeNode(5, new TreeNode(4, new TreeNode(3), new TreeNode(3)), new TreeNode(2, new TreeNode(7), null));
+        TreeNode root3 = new TreeNode(5, new TreeNode(9, new TreeNode(3), new TreeNode(5)), new TreeNode(1, new TreeNode(7), null));
+        TreeNode root4 = new TreeNode(11, new TreeNode(8, new TreeNode(1, new TreeNode(30, new TreeNode(17), null), new TreeNode(20)), new TreeNode(3, new TreeNode(18), new TreeNode(16))),
+            new TreeNode(6, new TreeNode(9, new TreeNode(12), new TreeNode(10)), new TreeNode(11, new TreeNode(4), new TreeNode(2))));
+
+        System.out.println("true == " + eot.isEvenOddTree(root1));
+        System.out.println("false == " + eot.isEvenOddTree(root2));
+        System.out.println("false == " + eot.isEvenOddTree(root3));
+        System.out.println("true == " + eot.isEvenOddTree(new TreeNode(1)));
+        System.out.println("true == " + eot.isEvenOddTree(root4));
+    }
+
+    public void sortList() {
+        SortList sl = new SortList();
+
+        ListNode head1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
+        ListNode head2 = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
+        ListNode head3 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+
+//        System.out.println("[1,2,3,4] == " + sl.sortList(head1).getAsList());
+//        System.out.println("[-1,0,3,4,5] == " + sl.sortList(head2).getAsList());
+//        System.out.println("[] == " + sl.sortList(null));
+//        System.out.println("[1] == " + sl.sortList(new ListNode(1)));
+        System.out.println("[1,2,3,4] == " + sl.sortList(head3).getAsList());
     }
 }
 
