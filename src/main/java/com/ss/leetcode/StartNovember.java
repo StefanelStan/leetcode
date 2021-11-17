@@ -12,6 +12,7 @@ import com.ss.leetcode.november.DeleteNodeInABST;
 import com.ss.leetcode.november.DetectCapital;
 import com.ss.leetcode.november.ElementMore25InSortedArray;
 import com.ss.leetcode.november.EvenOddTree;
+import com.ss.leetcode.november.FindAllNumbersDisappearedInAnArray;
 import com.ss.leetcode.november.FindBottomLeftTreeValue;
 import com.ss.leetcode.november.FindDuplicateFileInSystem;
 import com.ss.leetcode.november.FindLargestValueInEachTreeRow;
@@ -25,21 +26,26 @@ import com.ss.leetcode.november.MinimumAbsoluteDifferenceInBST;
 import com.ss.leetcode.november.MinimumDistanceBetweenBSTNodes;
 import com.ss.leetcode.november.MinimumIndexSumOfTwoLists;
 import com.ss.leetcode.november.MinimumValueToGetPositiveStepSum;
+import com.ss.leetcode.november.MissingNumber;
 import com.ss.leetcode.november.MostBeautifulItemForEachQuery;
 import com.ss.leetcode.november.MostFrequentSubtreeSum;
 import com.ss.leetcode.november.MultiplyStrings;
+import com.ss.leetcode.november.NimGame;
 import com.ss.leetcode.november.NumberValidWordsSentence;
 import com.ss.leetcode.november.RankTransformOfAnArray;
 import com.ss.leetcode.november.RecoverBinarySearchTree;
 import com.ss.leetcode.november.ReformatDate;
+import com.ss.leetcode.november.ReverseVowelsOfAString;
 import com.ss.leetcode.november.SecondMinimumNodeInABinaryTree;
 import com.ss.leetcode.november.SimpleBankSystem;
 import com.ss.leetcode.november.SingleNumberIII;
 import com.ss.leetcode.november.SortList;
 import com.ss.leetcode.november.SubtreeOfAnotherTree;
 import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
+import com.ss.leetcode.november.SummaryRanges;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.november.UniqueBinarySearchTrees;
+import com.ss.leetcode.november.UniquePaths;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.YieldTree;
@@ -90,7 +96,13 @@ public class StartNovember {
 //        start.detectCapital();
 //        start.largestDivisibleSubset();
 //        start.evenOddTree();
-        start.sortList();
+//        start.sortList();
+//        start.uniquePaths();
+//        start.summaryRanges();
+//        start.nimGame();
+//        start.reverseVowelsOfAString();
+//        start.findAllNumbersDisappearedInAnArray();
+        start.missingNumber();
     }
 
     public void surroundedRegions() {
@@ -508,6 +520,55 @@ public class StartNovember {
 //        System.out.println("[] == " + sl.sortList(null));
 //        System.out.println("[1] == " + sl.sortList(new ListNode(1)));
         System.out.println("[1,2,3,4] == " + sl.sortList(head3).getAsList());
+    }
+
+    public void uniquePaths() {
+        UniquePaths up = new UniquePaths();
+
+        System.out.println("28 == " + up.uniquePaths(3,7));
+        System.out.println("3 == " + up.uniquePaths(3,2));
+        System.out.println("28 == " + up.uniquePaths(7,3));
+        System.out.println("6 == " + up.uniquePaths(3,3));
+    }
+
+    public void summaryRanges() {
+        SummaryRanges sr = new SummaryRanges();
+
+        System.out.println("[0->2, 4->5, 7] == " + sr.summaryRanges(new int[]{0,1,2,4,5,7}));
+        System.out.println("[0, 2->4, 6, 8->9] == " + sr.summaryRanges(new int[]{0,2,3,4,6,8,9}));
+        System.out.println("[] == " + sr.summaryRanges(new int[0]));
+        System.out.println("[-1] == " + sr.summaryRanges(new int[]{-1}));
+    }
+
+    public void nimGame() {
+        NimGame ng = new NimGame();
+
+        System.out.println("false == " + ng.canWinNim(4));
+        System.out.println("true == " + ng.canWinNim(1));
+        System.out.println("true == " + ng.canWinNim(2));
+    }
+
+    public void reverseVowelsOfAString() {
+        ReverseVowelsOfAString rvoas = new ReverseVowelsOfAString();
+
+        System.out.println("holle == " + rvoas.reverseVowels("hello"));
+        System.out.println("leotcede == " + rvoas.reverseVowels("leetcode"));
+    }
+
+    public void findAllNumbersDisappearedInAnArray() {
+        FindAllNumbersDisappearedInAnArray fandiaa = new FindAllNumbersDisappearedInAnArray();
+
+        System.out.println("[5,6] == " + fandiaa.findDisappearedNumbers(new int[]{4,3,2,7,8,2,3,1}));
+        System.out.println("[2] == " + fandiaa.findDisappearedNumbers(new int[]{1,1}));
+    }
+
+    public void missingNumber() {
+        MissingNumber mn = new MissingNumber();
+
+        System.out.println("2 == " + mn.missingNumber(new int[]{3,0,1}));
+        System.out.println("2 == " + mn.missingNumber(new int[]{0,1}));
+        System.out.println("8 == " + mn.missingNumber(new int[]{9,6,4,2,3,5,7,0,1}));
+        System.out.println("1 == " + mn.missingNumber(new int[]{0}));
     }
 }
 
