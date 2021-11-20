@@ -109,6 +109,7 @@ public class StartNovember {
 //        start.missingNumber();
 //        start.wordPattern();
 //        start.powerOfThree();
+        start.isSubsequence();
     }
 
     public void surroundedRegions() {
@@ -594,6 +595,13 @@ public class StartNovember {
         System.out.println("true == " + pot.isPowerOfThree(9));
         System.out.println("false == " + pot.isPowerOfThree(45));
         System.out.println("false == " + pot.isPowerOfThree(19684));
+    }
+
+    public void isSubsequence() {
+        IsSubsequence is = new IsSubsequence();
+
+        System.out.println("true == " + is.isSubsequence("abc", "ahbgdc"));
+        System.out.println("false == " + is.isSubsequence("axc", "ahbgdc"));
     }
 }
 
