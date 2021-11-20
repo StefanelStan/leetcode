@@ -1,5 +1,6 @@
 package com.ss.leetcode;
 
+import com.ss.leetcode.august.MoveZeroes;
 import com.ss.leetcode.november.ArrangingCoins;
 import com.ss.leetcode.november.BinaryTreePaths;
 import com.ss.leetcode.november.BinaryTreeRightSideView;
@@ -17,6 +18,7 @@ import com.ss.leetcode.november.FindBottomLeftTreeValue;
 import com.ss.leetcode.november.FindDuplicateFileInSystem;
 import com.ss.leetcode.november.FindLargestValueInEachTreeRow;
 import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
+import com.ss.leetcode.november.IsSubsequence;
 import com.ss.leetcode.november.IteratorForCombination;
 import com.ss.leetcode.november.KClosestPointsToOrigin;
 import com.ss.leetcode.november.KthDistinctStringOnAnArray;
@@ -32,6 +34,7 @@ import com.ss.leetcode.november.MostFrequentSubtreeSum;
 import com.ss.leetcode.november.MultiplyStrings;
 import com.ss.leetcode.november.NimGame;
 import com.ss.leetcode.november.NumberValidWordsSentence;
+import com.ss.leetcode.november.PowerOfThree;
 import com.ss.leetcode.november.RankTransformOfAnArray;
 import com.ss.leetcode.november.RecoverBinarySearchTree;
 import com.ss.leetcode.november.ReformatDate;
@@ -46,6 +49,7 @@ import com.ss.leetcode.november.SummaryRanges;
 import com.ss.leetcode.november.SurroundedRegions;
 import com.ss.leetcode.november.UniqueBinarySearchTrees;
 import com.ss.leetcode.november.UniquePaths;
+import com.ss.leetcode.november.WordPattern;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.YieldTree;
@@ -102,7 +106,9 @@ public class StartNovember {
 //        start.nimGame();
 //        start.reverseVowelsOfAString();
 //        start.findAllNumbersDisappearedInAnArray();
-        start.missingNumber();
+//        start.missingNumber();
+//        start.wordPattern();
+//        start.powerOfThree();
     }
 
     public void surroundedRegions() {
@@ -569,6 +575,25 @@ public class StartNovember {
         System.out.println("2 == " + mn.missingNumber(new int[]{0,1}));
         System.out.println("8 == " + mn.missingNumber(new int[]{9,6,4,2,3,5,7,0,1}));
         System.out.println("1 == " + mn.missingNumber(new int[]{0}));
+    }
+
+    public void wordPattern() {
+        WordPattern wp = new WordPattern();
+
+        System.out.println("true == " + wp.wordPattern("abba", "dog cat cat dog"));
+        System.out.println("false == " + wp.wordPattern("abba", "dog cat cat fish"));
+        System.out.println("false == " + wp.wordPattern("aaaa", "dog cat cat dog"));
+        System.out.println("false == " + wp.wordPattern("abba", "dog dog dog dog"));
+    }
+
+    public void powerOfThree() {
+        PowerOfThree pot = new PowerOfThree();
+
+        System.out.println("true == " + pot.isPowerOfThree(27));
+        System.out.println("false == " + pot.isPowerOfThree(0));
+        System.out.println("true == " + pot.isPowerOfThree(9));
+        System.out.println("false == " + pot.isPowerOfThree(45));
+        System.out.println("false == " + pot.isPowerOfThree(19684));
     }
 }
 

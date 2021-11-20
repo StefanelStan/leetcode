@@ -3,6 +3,10 @@ package com.ss.leetcode.may;
 public class HammingDistance {
     // https://leetcode.com/problems/hamming-distance/
     public int hammingDistance(int x, int y) {
+        return Integer.bitCount(x ^ y);
+    }
+
+    public int hammingDistance2(int x, int y) {
         String min = Integer.toBinaryString(Math.min(x, y));
         String max = Integer.toBinaryString(Math.max(x, y));
         int distance = 0;
