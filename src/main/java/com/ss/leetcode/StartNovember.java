@@ -1,55 +1,7 @@
 package com.ss.leetcode;
 
 import com.ss.leetcode.august.MoveZeroes;
-import com.ss.leetcode.november.ArrangingCoins;
-import com.ss.leetcode.november.BinaryTreePaths;
-import com.ss.leetcode.november.BinaryTreeRightSideView;
-import com.ss.leetcode.november.BinaryTreeTilt;
-import com.ss.leetcode.november.CheckNumberIsSumPowersOfThree;
-import com.ss.leetcode.november.CheckTwoStringsAreAlmostEquivalent;
-import com.ss.leetcode.november.ConsecutiveCharacters;
-import com.ss.leetcode.november.ContainsDuplicateII;
-import com.ss.leetcode.november.DeleteNodeInABST;
-import com.ss.leetcode.november.DetectCapital;
-import com.ss.leetcode.november.ElementMore25InSortedArray;
-import com.ss.leetcode.november.EvenOddTree;
-import com.ss.leetcode.november.FindAllNumbersDisappearedInAnArray;
-import com.ss.leetcode.november.FindBottomLeftTreeValue;
-import com.ss.leetcode.november.FindDuplicateFileInSystem;
-import com.ss.leetcode.november.FindLargestValueInEachTreeRow;
-import com.ss.leetcode.november.InsufficientNodesInRootToLeafPaths;
-import com.ss.leetcode.november.IsSubsequence;
-import com.ss.leetcode.november.IteratorForCombination;
-import com.ss.leetcode.november.KClosestPointsToOrigin;
-import com.ss.leetcode.november.KthDistinctStringOnAnArray;
-import com.ss.leetcode.november.LargestDivisibleSubset;
-import com.ss.leetcode.november.LongestNiceSubstring;
-import com.ss.leetcode.november.MinimumAbsoluteDifferenceInBST;
-import com.ss.leetcode.november.MinimumDistanceBetweenBSTNodes;
-import com.ss.leetcode.november.MinimumIndexSumOfTwoLists;
-import com.ss.leetcode.november.MinimumValueToGetPositiveStepSum;
-import com.ss.leetcode.november.MissingNumber;
-import com.ss.leetcode.november.MostBeautifulItemForEachQuery;
-import com.ss.leetcode.november.MostFrequentSubtreeSum;
-import com.ss.leetcode.november.MultiplyStrings;
-import com.ss.leetcode.november.NimGame;
-import com.ss.leetcode.november.NumberValidWordsSentence;
-import com.ss.leetcode.november.PowerOfThree;
-import com.ss.leetcode.november.RankTransformOfAnArray;
-import com.ss.leetcode.november.RecoverBinarySearchTree;
-import com.ss.leetcode.november.ReformatDate;
-import com.ss.leetcode.november.ReverseVowelsOfAString;
-import com.ss.leetcode.november.SecondMinimumNodeInABinaryTree;
-import com.ss.leetcode.november.SimpleBankSystem;
-import com.ss.leetcode.november.SingleNumberIII;
-import com.ss.leetcode.november.SortList;
-import com.ss.leetcode.november.SubtreeOfAnotherTree;
-import com.ss.leetcode.november.SumOfAbsoluteDiffSortedArray;
-import com.ss.leetcode.november.SummaryRanges;
-import com.ss.leetcode.november.SurroundedRegions;
-import com.ss.leetcode.november.UniqueBinarySearchTrees;
-import com.ss.leetcode.november.UniquePaths;
-import com.ss.leetcode.november.WordPattern;
+import com.ss.leetcode.november.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.YieldTree;
@@ -109,7 +61,8 @@ public class StartNovember {
 //        start.missingNumber();
 //        start.wordPattern();
 //        start.powerOfThree();
-        start.isSubsequence();
+//        start.isSubsequence();
+        start.singleElementInASortedArray();
     }
 
     public void surroundedRegions() {
@@ -602,6 +555,16 @@ public class StartNovember {
 
         System.out.println("true == " + is.isSubsequence("abc", "ahbgdc"));
         System.out.println("false == " + is.isSubsequence("axc", "ahbgdc"));
+    }
+
+    public void singleElementInASortedArray() {
+        SingleElementInASortedArray seiasa = new SingleElementInASortedArray();
+
+        System.out.println("2 == " + seiasa.singleNonDuplicate(new int[]{1,1,2,3,3,4,4,8,8}));
+        System.out.println("10 == " + seiasa.singleNonDuplicate(new int[]{3,3,7,7,10,11,11}));
+        System.out.println("12 == " + seiasa.singleNonDuplicate(new int[]{0,0,1,1,3,3,8,8,9,9,11,11,12,13,13,14,14}));
+        System.out.println("0 == " + seiasa.singleNonDuplicate(new int[]{0,1,1,3,3,8,8,9,9,11,11,12,12,13,13,14,14}));
+        System.out.println("14 == " + seiasa.singleNonDuplicate(new int[]{0,0,1,1,3,3,8,8,9,9,11,11,12,12,13,13,14}));
     }
 }
 
