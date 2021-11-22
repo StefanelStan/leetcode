@@ -62,8 +62,14 @@ public class StartNovember {
 //        start.wordPattern();
 //        start.powerOfThree();
 //        start.isSubsequence();
-        start.singleElementInASortedArray();
+//        start.singleElementInASortedArray();
+//        start.assignCookies();
+//        start.numberOfSegmentsInAString();
+//        start.longerContiguousSegmentsOf1Than0();
+//        start.repeatedSubstringPattern();
+        start.thirdMaximumNumber();
     }
+
 
     public void surroundedRegions() {
         SurroundedRegions sr = new SurroundedRegions();
@@ -565,6 +571,51 @@ public class StartNovember {
         System.out.println("12 == " + seiasa.singleNonDuplicate(new int[]{0,0,1,1,3,3,8,8,9,9,11,11,12,13,13,14,14}));
         System.out.println("0 == " + seiasa.singleNonDuplicate(new int[]{0,1,1,3,3,8,8,9,9,11,11,12,12,13,13,14,14}));
         System.out.println("14 == " + seiasa.singleNonDuplicate(new int[]{0,0,1,1,3,3,8,8,9,9,11,11,12,12,13,13,14}));
+    }
+
+    public void assignCookies() {
+        AssignCookies ac = new AssignCookies();
+
+        System.out.println("1 == " + ac.findContentChildren(new int[]{1,2,3}, new int[]{1,1}));
+        System.out.println("2 == " + ac.findContentChildren(new int[]{1,2}, new int[]{1,2,3}));
+    }
+
+    public void numberOfSegmentsInAString() {
+        NumberOfSegmentsInAString nosias = new NumberOfSegmentsInAString();
+
+        System.out.println("5 == " + nosias.countSegments("Hello, my name is John"));
+        System.out.println("1 == " + nosias.countSegments("Hello"));
+        System.out.println("4 == " + nosias.countSegments("love live! mu'sic forever"));
+        System.out.println("1 == " + nosias.countSegments("0"));
+        System.out.println("0 == " + nosias.countSegments(""));
+    }
+
+    public void longerContiguousSegmentsOf1Than0() {
+        LongerContiguousSegmentsOf1Than0 lcso1t0 = new LongerContiguousSegmentsOf1Than0();
+
+        System.out.println("true == " + lcso1t0.checkZeroOnes("1101"));
+        System.out.println("false == " + lcso1t0.checkZeroOnes("111000"));
+        System.out.println("false == " + lcso1t0.checkZeroOnes("110100010"));
+    }
+
+    public void repeatedSubstringPattern() {
+        RepeatedSubstringPattern rsp = new RepeatedSubstringPattern();
+
+        System.out.println("true == " + rsp.repeatedSubstringPattern("abab"));
+        System.out.println("false == " + rsp.repeatedSubstringPattern("aba"));
+        System.out.println("true == " + rsp.repeatedSubstringPattern("abcabcabcabc"));
+        System.out.println("false == " + rsp.repeatedSubstringPattern("a"));
+        System.out.println("true == " + rsp.repeatedSubstringPattern("babbabbabbabbab"));
+        System.out.println("false == " + rsp.repeatedSubstringPattern("aabaaba"));
+    }
+
+    public void thirdMaximumNumber() {
+        ThirdMaximumNumber tmm = new ThirdMaximumNumber();
+
+        System.out.println("1 == " + tmm.thirdMax(new int[]{3,2,1}));
+        System.out.println("2 == " + tmm.thirdMax(new int[]{1,2}));
+        System.out.println("1 == " + tmm.thirdMax(new int[]{2,2,3,1}));
+        System.out.println("5 == " + tmm.thirdMax(new int[]{5,2,2}));
     }
 }
 
