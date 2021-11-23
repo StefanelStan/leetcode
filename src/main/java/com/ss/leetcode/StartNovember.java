@@ -67,7 +67,11 @@ public class StartNovember {
 //        start.numberOfSegmentsInAString();
 //        start.longerContiguousSegmentsOf1Than0();
 //        start.repeatedSubstringPattern();
-        start.thirdMaximumNumber();
+//        start.thirdMaximumNumber();
+//        start.longestPalindrome();
+//        start.licenseKeyFormatting();
+//        start.studentAttendanceRecordI();
+        start.reverseStringII();
     }
 
 
@@ -616,6 +620,35 @@ public class StartNovember {
         System.out.println("2 == " + tmm.thirdMax(new int[]{1,2}));
         System.out.println("1 == " + tmm.thirdMax(new int[]{2,2,3,1}));
         System.out.println("5 == " + tmm.thirdMax(new int[]{5,2,2}));
+    }
+
+    public void longestPalindrome() {
+        LongestPalindrome lp = new LongestPalindrome();
+
+        System.out.println("7 == " + lp.longestPalindrome("abccccdd"));
+        System.out.println("1 == " + lp.longestPalindrome("a"));
+        System.out.println("2 == " + lp.longestPalindrome("bb"));
+    }
+
+    public void licenseKeyFormatting() {
+        LicenseKeyFormatting lkf = new LicenseKeyFormatting();
+
+        System.out.println("5F3Z-2E9W == " + lkf.licenseKeyFormatting("5F3Z-2e-9-w", 4));
+        System.out.println("2-5G-3J == " + lkf.licenseKeyFormatting("2-5g-3-J", 2));
+    }
+
+    public void studentAttendanceRecordI() {
+        StudentAttendanceRecordI sari = new StudentAttendanceRecordI();
+
+        System.out.println("true == " + sari.checkRecord("PPALLP"));
+        System.out.println("false == " + sari.checkRecord("PPALLL"));
+    }
+
+    public void reverseStringII() {
+        ReverseStringII rsii = new ReverseStringII();
+
+        System.out.println("bacdfeg == " + rsii.reverseStr("abcdefg", 2));
+        System.out.println("bacd == " + rsii.reverseStr("abcd", 2));
     }
 }
 
