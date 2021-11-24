@@ -71,7 +71,12 @@ public class StartNovember {
 //        start.longestPalindrome();
 //        start.licenseKeyFormatting();
 //        start.studentAttendanceRecordI();
-        start.reverseStringII();
+//        start.reverseStringII();
+//        start.intervalListIntersections();
+//        start.powerOfFour();
+//        start.maximumProductOfThreeNumbers();
+//        start.monotonicArray();
+        start.relativeRanks();
     }
 
 
@@ -649,6 +654,49 @@ public class StartNovember {
 
         System.out.println("bacdfeg == " + rsii.reverseStr("abcdefg", 2));
         System.out.println("bacd == " + rsii.reverseStr("abcd", 2));
+    }
+
+    public void intervalListIntersections() {
+        IntervalListIntersections ili = new IntervalListIntersections();
+
+        System.out.println("[[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]] == " + Arrays.deepToString(
+            ili.intervalIntersection(new int[][]{{0,2},{5,10},{13,23},{24,25}}, new int[][]{{1,5},{8,12},{15,24},{25,26}})));
+        System.out.println("[] == " + Arrays.deepToString(ili.intervalIntersection(new int[][]{{1,3},{5,9}}, new int[0][0])));
+        System.out.println("[] == " + Arrays.deepToString(ili.intervalIntersection(new int[0][0], new int[][]{{1,3},{5,9}})));
+        System.out.println("[3,7] == " + Arrays.deepToString(ili.intervalIntersection(new int[][]{{1,7}}, new int[][]{{3,10}})));
+    }
+
+    public void powerOfFour() {
+        PowerOfFour pof = new PowerOfFour();
+
+        System.out.println("true == " + pof.isPowerOfFour(16));
+        System.out.println("false == " + pof.isPowerOfFour(5));
+        System.out.println("true == " + pof.isPowerOfFour(1));
+    }
+
+    public void maximumProductOfThreeNumbers() {
+        MaximumProductOfThreeNumbers mpotn = new MaximumProductOfThreeNumbers();
+
+        System.out.println("6 == " + mpotn.maximumProduct(new int[]{1,2,3}));
+        System.out.println("24 == " + mpotn.maximumProduct(new int[]{1,2,3,4}));
+        System.out.println("-6 == " + mpotn.maximumProduct(new int[]{-1,-2,-3}));
+    }
+
+    public void monotonicArray() {
+        MonotonicArray ma = new MonotonicArray();
+
+        System.out.println("true == " + ma.isMonotonic(new int[]{1,2,2,3}));
+        System.out.println("true == " + ma.isMonotonic(new int[]{6,5,4,4}));
+        System.out.println("false == " + ma.isMonotonic(new int[]{1,3,2}));
+        System.out.println("true == " + ma.isMonotonic(new int[]{1,2,4,5}));
+        System.out.println("true == " + ma.isMonotonic(new int[]{1,1,1}));
+    }
+
+    public void relativeRanks() {
+        RelativeRanks rr = new RelativeRanks();
+
+        System.out.println("[Gold Medal,Silver Medal,Bronze Medal,4,5] == " + Arrays.toString(rr.findRelativeRanks(new int[]{5,4,3,2,1})));
+        System.out.println("[Gold Medal,5,Bronze Medal,Silver Medal,4] == " + Arrays.toString(rr.findRelativeRanks(new int[]{10,3,8,9,4})));
     }
 }
 

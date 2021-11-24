@@ -36,3 +36,8 @@ SELECT Salary AS SecondHighestSalary FROM Employee
 WHERE Salary < (SELECT MAX(Salary) FROM Employee)
 ORDER BY SALARY DESC
 LIMIT 1;
+
+-- Customers Who Never Order
+-- https://leetcode.com/problems/customers-who-never-order/
+SELECT c.name as Customers from Customers c
+WHERE c.id NOT IN (SELECT customerId FROM Orders);
