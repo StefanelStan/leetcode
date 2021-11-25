@@ -76,7 +76,8 @@ public class StartNovember {
 //        start.powerOfFour();
 //        start.maximumProductOfThreeNumbers();
 //        start.monotonicArray();
-        start.relativeRanks();
+//        start.relativeRanks();
+        start.happyNumber();
     }
 
 
@@ -697,6 +698,13 @@ public class StartNovember {
 
         System.out.println("[Gold Medal,Silver Medal,Bronze Medal,4,5] == " + Arrays.toString(rr.findRelativeRanks(new int[]{5,4,3,2,1})));
         System.out.println("[Gold Medal,5,Bronze Medal,Silver Medal,4] == " + Arrays.toString(rr.findRelativeRanks(new int[]{10,3,8,9,4})));
+    }
+
+    public void happyNumber() {
+        HappyNumber hn = new HappyNumber();
+
+        System.out.println("true == " + hn.isHappy(19));
+        System.out.println("false == " + hn.isHappy(2));
     }
 }
 
