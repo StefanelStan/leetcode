@@ -1,13 +1,10 @@
 package com.ss.leetcode;
 
-import com.ss.leetcode.august.MoveZeroes;
 import com.ss.leetcode.november.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.YieldTree;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -77,7 +74,10 @@ public class StartNovember {
 //        start.maximumProductOfThreeNumbers();
 //        start.monotonicArray();
 //        start.relativeRanks();
-        start.happyNumber();
+//        start.happyNumber();
+//        start.countCommonWordsWithOneOccurrence();
+//        start.minimumCostHomeComingOfARobotInAGrid();
+        start.minimumNumberOfBucketsCollectRainwaterHouses();
     }
 
 
@@ -705,6 +705,36 @@ public class StartNovember {
 
         System.out.println("true == " + hn.isHappy(19));
         System.out.println("false == " + hn.isHappy(2));
+    }
+
+    public void countCommonWordsWithOneOccurrence() {
+        CountCommonWordsWithOneOccurrence ccwwoo = new CountCommonWordsWithOneOccurrence();
+
+        System.out.println("2 == " + ccwwoo.countWords(new String[]{"leetcode","is","amazing","as","is"}, new String[]{"amazing","leetcode","is"}));
+        System.out.println("0 == " + ccwwoo.countWords(new String[]{"b","bb","bbb"}, new String[]{"a","aa","aaa"}));
+        System.out.println("1 == " + ccwwoo.countWords(new String[]{"a","ab"}, new String[]{"a","a","a","ab"}));
+    }
+
+    public void minimumCostHomeComingOfARobotInAGrid() {
+        MinimumCostHomeComingOfARobotInAGrid mchmcoariag = new MinimumCostHomeComingOfARobotInAGrid();
+
+        System.out.println("18 == " + mchmcoariag.minCost(new int[]{1,0}, new int[]{2,3}, new int[]{5,4,3}, new int[]{8,2,6,7}));
+        System.out.println("0 == " + mchmcoariag.minCost(new int[]{0,0}, new int[]{0,0}, new int[]{5}, new int[]{26}));
+    }
+
+    public void minimumNumberOfBucketsCollectRainwaterHouses() {
+        MinimumNumberOfBucketsCollectRainwaterHouses mnobcrh = new MinimumNumberOfBucketsCollectRainwaterHouses();
+
+        System.out.println("2 == " + mnobcrh.minimumBuckets("H..H"));
+        System.out.println("2 == " + mnobcrh.minimumBuckets("..H.H..H.H"));
+        System.out.println("1 == " + mnobcrh.minimumBuckets(".H.H."));
+        System.out.println("-1 == " + mnobcrh.minimumBuckets(".HHH."));
+        System.out.println("-1 == " + mnobcrh.minimumBuckets("H"));
+        System.out.println("3 == " + mnobcrh.minimumBuckets(".HH.H.H.H.."));
+        System.out.println("3 == " + mnobcrh.minimumBuckets("...HH...H."));
+        System.out.println("3 == " + mnobcrh.minimumBuckets("...HH...H.."));
+        System.out.println("3 == " + mnobcrh.minimumBuckets("...HH...H.."));
+        System.out.println("2 == " + mnobcrh.minimumBuckets(".H..H"));
     }
 }
 
