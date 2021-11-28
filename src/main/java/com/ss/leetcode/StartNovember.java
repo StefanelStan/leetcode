@@ -3,6 +3,7 @@ package com.ss.leetcode;
 import com.ss.leetcode.november.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 
@@ -77,7 +78,11 @@ public class StartNovember {
 //        start.happyNumber();
 //        start.countCommonWordsWithOneOccurrence();
 //        start.minimumCostHomeComingOfARobotInAGrid();
-        start.minimumNumberOfBucketsCollectRainwaterHouses();
+//        start.minimumNumberOfBucketsCollectRainwaterHouses();
+        // missing or hidden description and requirements
+//        start.checkCompletenessOfABinaryTree();
+//        start.minimumMovesToEqualArrayElementsII(); // not working
+        start.heaters();
     }
 
 
@@ -735,6 +740,41 @@ public class StartNovember {
         System.out.println("3 == " + mnobcrh.minimumBuckets("...HH...H.."));
         System.out.println("3 == " + mnobcrh.minimumBuckets("...HH...H.."));
         System.out.println("2 == " + mnobcrh.minimumBuckets(".H..H"));
+    }
+
+    public void checkCompletenessOfABinaryTree() {
+        CheckCompletenessOfABinaryTree ccoabt = new CheckCompletenessOfABinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), null));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, null, new TreeNode(7)));
+        TreeNode root3 = new TreeNode(1, new TreeNode(2, new TreeNode(5), null), new TreeNode(3, new TreeNode(7), new TreeNode(8)));
+        TreeNode root4 = new TreeNode(1, null, new TreeNode(2));
+        TreeNode root5 = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(7), new TreeNode(8)));
+
+        System.out.println("true == " + ccoabt.isCompleteTree(root1));
+        System.out.println("false == " + ccoabt.isCompleteTree(root2));
+        System.out.println("false == " + ccoabt.isCompleteTree(root3));
+        System.out.println("false == " + ccoabt.isCompleteTree(root4));
+        System.out.println("false == " + ccoabt.isCompleteTree(root5));
+    }
+
+    public void minimumMovesToEqualArrayElementsII() {
+        MinimumMovesToEqualArrayElementsII mmteaeii = new MinimumMovesToEqualArrayElementsII();
+
+        System.out.println("2 == " + mmteaeii.minMoves2(new int[]{1,2,3}));
+        System.out.println("16 == " + mmteaeii.minMoves2(new int[]{1,10,2,9}));
+        System.out.println("44 == " + mmteaeii.minMoves2(new int[]{10,11,-10,-11, -12}));
+    }
+
+    public void heaters() {
+        Heaters h = new Heaters();
+
+//        System.out.println("1 == " + h.findRadius(new int[]{1,2,3}, new int[]{2}));
+//        System.out.println("1 == " + h.findRadius(new int[]{1,2,3,4}, new int[]{1,4}));
+//        System.out.println("3 == " + h.findRadius(new int[]{1,5}, new int[]{2}));
+//        System.out.println("14 == " + h.findRadius(new int[]{6,3,9,1,2,12,14,18,5,44}, new int[]{23,17,21,19,8,30}));
+        System.out.println("0 == " + h.findRadius(new int[]{1,2,3,4,5,6,7,8,9,10,4}, new int[]{1,2,3,4,5,6,7,8,9,10,4}));
+
     }
 }
 
