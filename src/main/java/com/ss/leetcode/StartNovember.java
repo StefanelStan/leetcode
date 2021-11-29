@@ -6,6 +6,7 @@ import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -82,9 +83,10 @@ public class StartNovember {
         // missing or hidden description and requirements
 //        start.checkCompletenessOfABinaryTree();
 //        start.minimumMovesToEqualArrayElementsII(); // not working
-        start.heaters();
+//        start.heaters();
+//        start.accountsMerge();
+        start.findTargetIndicesAfterSortingArray();
     }
-
 
     public void surroundedRegions() {
         SurroundedRegions sr = new SurroundedRegions();
@@ -769,12 +771,35 @@ public class StartNovember {
     public void heaters() {
         Heaters h = new Heaters();
 
-//        System.out.println("1 == " + h.findRadius(new int[]{1,2,3}, new int[]{2}));
-//        System.out.println("1 == " + h.findRadius(new int[]{1,2,3,4}, new int[]{1,4}));
-//        System.out.println("3 == " + h.findRadius(new int[]{1,5}, new int[]{2}));
-//        System.out.println("14 == " + h.findRadius(new int[]{6,3,9,1,2,12,14,18,5,44}, new int[]{23,17,21,19,8,30}));
+        System.out.println("1 == " + h.findRadius(new int[]{1,2,3}, new int[]{2}));
+        System.out.println("1 == " + h.findRadius(new int[]{1,2,3,4}, new int[]{1,4}));
+        System.out.println("3 == " + h.findRadius(new int[]{1,5}, new int[]{2}));
+        System.out.println("14 == " + h.findRadius(new int[]{6,3,9,1,2,12,14,18,5,44}, new int[]{23,17,21,19,8,30}));
         System.out.println("0 == " + h.findRadius(new int[]{1,2,3,4,5,6,7,8,9,10,4}, new int[]{1,2,3,4,5,6,7,8,9,10,4}));
 
+    }
+
+    public void accountsMerge() {
+        AccountsMerge am = new AccountsMerge();
+
+        System.out.println("[[John, john00@mail.com, john_newyork@mail.com, johnsmith@mail.com],[Mary, mary@mail.com ],[ John , johnnybravo@mail.com]] == " +
+            am.accountsMerge(List.of(List.of("John","johnsmith@mail.com","john_newyork@mail.com"), List.of("John","johnsmith@mail.com","john00@mail.com"),
+                List.of("Mary","mary@mail.com"), List.of("John","johnnybravo@mail.com"))));
+
+        System.out.println("[[Ethan, Ethan0@m.co, Ethan4@m.co , Ethan5@m.co ],[Gabe, Gabe0@m.co , Gabe1@m.co , Gabe3@m.co ]," +
+            "[Hanzo, Hanzo0@m.co, Hanzo1@m.co, Hanzo3@m.co],[Kevin, Kevin0@m.co, Kevin3@m.co, Kevin5@m.co],[Fern,Fern0@m.co,Fern1@m.co,Fern5@m.co]] == " +
+            am.accountsMerge(List.of(List.of("Gabe","Gabe0@m.co","Gabe3@m.co","Gabe1@m.co"), List.of("Kevin","Kevin3@m.co","Kevin5@m.co","Kevin0@m.co"),
+                List.of("Ethan","Ethan5@m.co","Ethan4@m.co","Ethan0@m.co"), List.of("Hanzo","Hanzo3@m.co","Hanzo1@m.co","Hanzo0@m.co"),
+                List.of("Fern","Fern5@m.co","Fern1@m.co","Fern0@m.co"))));
+    }
+
+    public void findTargetIndicesAfterSortingArray() {
+        FindTargetIndicesAfterSortingArray ftiasa = new FindTargetIndicesAfterSortingArray();
+
+        System.out.println("[1,2] == " + ftiasa.targetIndices(new int[]{1,2,5,2,3}, 2));
+        System.out.println("[3] == " + ftiasa.targetIndices(new int[]{1,2,5,2,3}, 3));
+        System.out.println("[4] == " + ftiasa.targetIndices(new int[]{1,2,5,2,3}, 5));
+        System.out.println("[] == " + ftiasa.targetIndices(new int[]{1,2,5,2,3}, 4));
     }
 }
 
