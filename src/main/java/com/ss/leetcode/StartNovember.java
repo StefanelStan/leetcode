@@ -3,7 +3,6 @@ package com.ss.leetcode;
 import com.ss.leetcode.november.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 import java.util.List;
@@ -85,7 +84,11 @@ public class StartNovember {
 //        start.minimumMovesToEqualArrayElementsII(); // not working
 //        start.heaters();
 //        start.accountsMerge();
-        start.findTargetIndicesAfterSortingArray();
+//        start.findTargetIndicesAfterSortingArray();
+//        start.completeBinaryTreeInserter();
+//        start.findTheDifference();
+//        start.findAllAnagramsInAString();
+        start.pascalsTriangleII();
     }
 
     public void surroundedRegions() {
@@ -801,5 +804,37 @@ public class StartNovember {
         System.out.println("[4] == " + ftiasa.targetIndices(new int[]{1,2,5,2,3}, 5));
         System.out.println("[] == " + ftiasa.targetIndices(new int[]{1,2,5,2,3}, 4));
     }
-}
 
+    public void completeBinaryTreeInserter() {
+        CompleteBinaryTreeInserter cbti = new CompleteBinaryTreeInserter(new TreeNode(1, new TreeNode(2), null));
+
+        System.out.println("1 == " + cbti.insert(3));
+        System.out.println("2 == " + cbti.insert(4));
+        System.out.println("[1,2,4,3] == " + TreeNode.preOrder(cbti.get_root()));
+
+    }
+
+    public void findTheDifference() {
+        FindTheDifference ftd = new FindTheDifference();
+
+        System.out.println("e == " + ftd.findTheDifference("abcd", "abcde"));
+        System.out.println("y == " + ftd.findTheDifference("", "y"));
+        System.out.println("a == " + ftd.findTheDifference("a", "aa"));
+        System.out.println("a == " + ftd.findTheDifference("ae", "aea"));
+    }
+
+    public void findAllAnagramsInAString() {
+        FindAllAnagramsInAString faaias = new FindAllAnagramsInAString();
+
+        System.out.println("[0,6] == " + faaias.findAnagrams("cbaebabacd", "abc"));
+        System.out.println("[0,1,2] == " + faaias.findAnagrams("abab", "ab"));
+    }
+
+    public void pascalsTriangleII() {
+        PascalsTriangleII ptii = new PascalsTriangleII();
+
+        System.out.println("[1,3,3,1] == " + ptii.getRow(3));
+        System.out.println("[1] == " + ptii.getRow(0));
+        System.out.println("[1,1] == " + ptii.getRow(1));
+    }
+}
