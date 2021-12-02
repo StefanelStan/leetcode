@@ -41,3 +41,8 @@ LIMIT 1;
 -- https://leetcode.com/problems/customers-who-never-order/
 SELECT c.name as Customers from Customers c
 WHERE c.id NOT IN (SELECT customerId FROM Orders);
+
+-- Delete Duplicate Emails
+-- https://leetcode.com/problems/delete-duplicate-emails/
+WITH minId AS (SELECT MIN(id) as id FROM Person GROUP BY email)
+DELETE FROM Person WHERE id NOT IN ( SELECT id from minId);
