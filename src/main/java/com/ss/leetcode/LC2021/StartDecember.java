@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2021;
 
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
+import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
 import com.ss.leetcode.LC2021.december.TeemoAttacking;
 import com.ss.leetcode.LC2021.december.WateringPlants;
@@ -14,8 +15,9 @@ public class StartDecember {
 
 //        start.wateringPlants();
 //        start.oddEvenLinkedList();
-        start.constructTheRectangle();
+//        start.constructTheRectangle();
 //        start.teemoAttacking();
+        start.maximumProductSubarray();
     }
 
     public void wateringPlants() {
@@ -46,5 +48,13 @@ public class StartDecember {
 
         System.out.println("4 == " + ta.findPoisonedDuration(new int[]{1,4}, 2));
         System.out.println("3 == " + ta.findPoisonedDuration(new int[]{1,2}, 2));
+    }
+
+    public void maximumProductSubarray() {
+        MaximumProductSubarray mps = new MaximumProductSubarray();
+
+//        System.out.println("6 == " + mps.maxProduct(new int[]{2,3,-2,4}));
+//        System.out.println("0 == " + mps.maxProduct(new int[]{-2,0,-1}));
+        System.out.println("0 == " + mps.maxProduct(new int[]{-2,0}));
     }
 }
