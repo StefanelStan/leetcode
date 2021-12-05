@@ -1,9 +1,13 @@
 package com.ss.leetcode.LC2021;
 
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
+import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
+import com.ss.leetcode.LC2021.december.PerfectNumber;
+import com.ss.leetcode.LC2021.december.SetMismatch;
 import com.ss.leetcode.LC2021.december.TeemoAttacking;
+import com.ss.leetcode.LC2021.december.TwoFurthestHousesWithDifferentColors;
 import com.ss.leetcode.LC2021.december.WateringPlants;
 import com.ss.leetcode.shared.ListNode;
 
@@ -17,7 +21,11 @@ public class StartDecember {
 //        start.oddEvenLinkedList();
 //        start.constructTheRectangle();
 //        start.teemoAttacking();
-        start.maximumProductSubarray();
+//        start.maximumProductSubarray();
+//        start.twoFurthestHousesWithDifferentColors();
+//        start.perfectNumber();
+//        start.continuousSubarraySum();
+        start.setMismatch();
     }
 
     public void wateringPlants() {
@@ -56,5 +64,41 @@ public class StartDecember {
 //        System.out.println("6 == " + mps.maxProduct(new int[]{2,3,-2,4}));
 //        System.out.println("0 == " + mps.maxProduct(new int[]{-2,0,-1}));
         System.out.println("0 == " + mps.maxProduct(new int[]{-2,0}));
+    }
+
+    public void twoFurthestHousesWithDifferentColors() {
+        TwoFurthestHousesWithDifferentColors tfhwdc = new TwoFurthestHousesWithDifferentColors();
+
+        System.out.println("3 == " + tfhwdc.maxDistance(new int[]{1,1,1,6,1,1,1}));
+        System.out.println("4 == " + tfhwdc.maxDistance(new int[]{1,8,3,8,3}));
+        System.out.println("1 == " + tfhwdc.maxDistance(new int[]{0,1}));
+    }
+
+    public void perfectNumber() {
+        PerfectNumber pn = new PerfectNumber();
+
+        System.out.println("true == " + pn.checkPerfectNumber(28));
+        System.out.println("true == " + pn.checkPerfectNumber(6));
+        System.out.println("true == " + pn.checkPerfectNumber(496));
+        System.out.println("true == " + pn.checkPerfectNumber(8128));
+        System.out.println("false == " + pn.checkPerfectNumber(2));
+    }
+
+    public void continuousSubarraySum() {
+        ContinuousSubarraySum css = new ContinuousSubarraySum();
+
+        System.out.println("false == " + css.checkSubarraySum(new int[]{0}, 1));
+        System.out.println("true == " + css.checkSubarraySum(new int[]{4,5}, 3));
+        System.out.println("true == " + css.checkSubarraySum(new int[]{23,2,4,6,7}, 6));
+        System.out.println("true == " + css.checkSubarraySum(new int[]{23,2,6,4,7}, 6));
+        System.out.println("false == " + css.checkSubarraySum(new int[]{23,2,6,4,7}, 13));
+        System.out.println("true == " + css.checkSubarraySum(new int[]{0,1,2,3,4,5,6,7,8,9,10}, 19));
+    }
+
+    public void setMismatch() {
+        SetMismatch sm = new SetMismatch();
+
+        System.out.println("[2,3] == " + Arrays.toString(sm.findErrorNums(new int[]{4,1,2,2})));
+        System.out.println("[1,2] == " + Arrays.toString(sm.findErrorNums(new int[]{1,1})));
     }
 }
