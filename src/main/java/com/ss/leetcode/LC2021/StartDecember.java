@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
 import com.ss.leetcode.LC2021.december.PerfectNumber;
+import com.ss.leetcode.LC2021.december.RomanToInteger;
 import com.ss.leetcode.LC2021.december.SetMismatch;
 import com.ss.leetcode.LC2021.december.TeemoAttacking;
 import com.ss.leetcode.LC2021.december.TwoFurthestHousesWithDifferentColors;
@@ -25,7 +26,8 @@ public class StartDecember {
 //        start.twoFurthestHousesWithDifferentColors();
 //        start.perfectNumber();
 //        start.continuousSubarraySum();
-        start.setMismatch();
+//        start.setMismatch();
+        start.romanToInteger();
     }
 
     public void wateringPlants() {
@@ -100,5 +102,16 @@ public class StartDecember {
 
         System.out.println("[2,3] == " + Arrays.toString(sm.findErrorNums(new int[]{4,1,2,2})));
         System.out.println("[1,2] == " + Arrays.toString(sm.findErrorNums(new int[]{1,1})));
+    }
+
+    public void romanToInteger() {
+        RomanToInteger rti = new RomanToInteger();
+
+//        System.out.println("3 == " + rti.romanToInt("III"));
+//        System.out.println("4 == " + rti.romanToInt("IV"));
+//        System.out.println("9 == " + rti.romanToInt("IX"));
+//        System.out.println("58 == " + rti.romanToInt("LVIII"));
+//        System.out.println("1994 == " + rti.romanToInt("MCMXCIV"));
+        System.out.println("3899 == " + rti.romanToInt("MMMDCCCXCIX"));
     }
 }
