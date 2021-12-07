@@ -1,7 +1,11 @@
 package com.ss.leetcode.LC2021;
 
+import com.ss.leetcode.LC2021.december.CheckIfAStringCanBreakAnotherString;
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
 import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
+import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
+import com.ss.leetcode.LC2021.december.IntegerToRoman;
+import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
 import com.ss.leetcode.LC2021.december.PerfectNumber;
@@ -11,6 +15,7 @@ import com.ss.leetcode.LC2021.december.TeemoAttacking;
 import com.ss.leetcode.LC2021.december.TwoFurthestHousesWithDifferentColors;
 import com.ss.leetcode.LC2021.december.WateringPlants;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
 
@@ -27,7 +32,11 @@ public class StartDecember {
 //        start.perfectNumber();
 //        start.continuousSubarraySum();
 //        start.setMismatch();
-        start.romanToInteger();
+//        start.romanToInteger();
+//        start.integerToRoman();
+//        start.flattenBinaryTreeToLinkedList();
+//        start.maximumAverageSubarrayI();
+        start.checkIfAStringCanBreakAnotherString();
     }
 
     public void wateringPlants() {
@@ -113,5 +122,71 @@ public class StartDecember {
 //        System.out.println("58 == " + rti.romanToInt("LVIII"));
 //        System.out.println("1994 == " + rti.romanToInt("MCMXCIV"));
         System.out.println("3899 == " + rti.romanToInt("MMMDCCCXCIX"));
+    }
+
+    public void integerToRoman() {
+        IntegerToRoman itr = new IntegerToRoman();
+
+        System.out.println("III == " + itr.intToRoman(3));
+        System.out.println("IV == " + itr.intToRoman(4));
+        System.out.println("IX == " + itr.intToRoman(9));
+        System.out.println("MMMDCCCXCIX == " + itr.intToRoman(3899));
+        System.out.println("IX == " + itr.intToRoman(9));
+        System.out.println("LVIII == " + itr.intToRoman(58));
+        System.out.println("LXXVII == " + itr.intToRoman(77));
+        System.out.println("XCIX == " + itr.intToRoman(99));
+        System.out.println("CXXI == " + itr.intToRoman(121));
+        System.out.println("MI == " + itr.intToRoman(1001));
+        System.out.println("MCMXCIV == " + itr.intToRoman(1994));
+        System.out.println("CMXCIX == " + itr.intToRoman(999));
+        System.out.println("MMMCMXCVII == " + itr.intToRoman(3997));
+    }
+
+    public void flattenBinaryTreeToLinkedList() {
+        FlattenBinaryTreeToLinkedList fbttll = new FlattenBinaryTreeToLinkedList();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(4)), new TreeNode(5, null, new TreeNode(6)));
+        TreeNode root2 = null;
+        TreeNode root3 = new TreeNode(0);
+        TreeNode root4 = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4)),
+            new TreeNode(6, null, new TreeNode(8, new TreeNode(7), new TreeNode(9))));
+        TreeNode root5 = new TreeNode(5, new TreeNode(1), new TreeNode(7));
+        TreeNode root6 = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4)),
+            new TreeNode(6, null, new TreeNode(8, new TreeNode(7), null)));
+        TreeNode root7 = new TreeNode(1, new TreeNode(2, new TreeNode(3), null), null);
+        TreeNode root8 =  new TreeNode(2, new TreeNode(1), new TreeNode(4, new TreeNode(3), null));
+
+//        fbttll.flatten(root1);
+//        fbttll.flatten(root2);
+//        fbttll.flatten(root3);
+//        fbttll.flatten(root4);
+//        fbttll.flatten(root5);
+//        fbttll.flatten(root6);
+//        fbttll.flatten(root7);
+        fbttll.flatten(root8);
+
+//        System.out.println("[1,2,3,4,5,6] == " + TreeNode.preOrder(root1));
+//        System.out.println("[] == " + TreeNode.preOrder(root2));
+//        System.out.println("[0] == " + TreeNode.preOrder(root3));
+//        System.out.println("[5,3,2,1,4,6,8,7,9] == " + TreeNode.preOrder(root4));
+//        System.out.println("[5,1,7] == " + TreeNode.preOrder(root5));
+//        System.out.println("[1,2,3] == " + TreeNode.preOrder(root7));
+        System.out.println("[2,1,4,3] == " + TreeNode.preOrder(root8));
+    }
+
+    public void maximumAverageSubarrayI() {
+        MaximumAverageSubarrayI masi = new MaximumAverageSubarrayI();
+
+        System.out.println("12.75 ==" + masi.findMaxAverage(new int[]{1,12,-5,-6,50,3}, 4));
+        System.out.println("5.0 ==" + masi.findMaxAverage(new int[]{5}, 1));
+        System.out.println("955.0 ==" + masi.findMaxAverage(new int[]{3,34,34,43,54,34,666,3000,49,67,76,75,43,342,123,213,3142}, 4));
+    }
+
+    public void checkIfAStringCanBreakAnotherString() {
+        CheckIfAStringCanBreakAnotherString ciascbas = new CheckIfAStringCanBreakAnotherString();
+
+        System.out.println("true == " + ciascbas.checkIfCanBreak("abc", "xya"));
+        System.out.println("false == " + ciascbas.checkIfCanBreak("abe", "acd"));
+        System.out.println("true == " + ciascbas.checkIfCanBreak("leetcode", "interview"));
     }
 }
