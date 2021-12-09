@@ -3,8 +3,11 @@ package com.ss.leetcode.LC2021;
 import com.ss.leetcode.LC2021.december.CheckIfAStringCanBreakAnotherString;
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
 import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
+import com.ss.leetcode.LC2021.december.DuplicateZeros;
+import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
 import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
 import com.ss.leetcode.LC2021.december.IntegerToRoman;
+import com.ss.leetcode.LC2021.december.JumpGameIII;
 import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
@@ -14,10 +17,13 @@ import com.ss.leetcode.LC2021.december.SetMismatch;
 import com.ss.leetcode.LC2021.december.TeemoAttacking;
 import com.ss.leetcode.LC2021.december.TwoFurthestHousesWithDifferentColors;
 import com.ss.leetcode.LC2021.december.WateringPlants;
+import com.ss.leetcode.LC2021.september.Permutations;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class StartDecember {
     public static void main(String[] args) {
@@ -36,7 +42,10 @@ public class StartDecember {
 //        start.integerToRoman();
 //        start.flattenBinaryTreeToLinkedList();
 //        start.maximumAverageSubarrayI();
-        start.checkIfAStringCanBreakAnotherString();
+//        start.checkIfAStringCanBreakAnotherString();
+//        start.jumpGameIII();
+//        start.finding3DigitEvenNumbers();
+        start.duplicateZeros();
     }
 
     public void wateringPlants() {
@@ -188,5 +197,39 @@ public class StartDecember {
         System.out.println("true == " + ciascbas.checkIfCanBreak("abc", "xya"));
         System.out.println("false == " + ciascbas.checkIfCanBreak("abe", "acd"));
         System.out.println("true == " + ciascbas.checkIfCanBreak("leetcode", "interview"));
+    }
+
+    public void jumpGameIII() {
+        JumpGameIII jgiii = new JumpGameIII();
+
+        System.out.println("true == " + jgiii.canReach(new int[]{4,2,3,0,3,1,2}, 5));
+        System.out.println("true == " + jgiii.canReach(new int[]{4,2,3,0,3,1,2}, 0));
+        System.out.println("false == " + jgiii.canReach(new int[]{3,0,2,1,2}, 2));
+    }
+
+    public void finding3DigitEvenNumbers() {
+        Finding3DigitEvenNumbers f3dev = new Finding3DigitEvenNumbers();
+
+        System.out.println("[102,120,130,132,210,230,302,310,312,320] == " + Arrays.toString(f3dev.findEvenNumbers(new int[]{2,1,3,0})));
+        System.out.println("[222,228,282,288,822,828,882] == " + Arrays.toString(f3dev.findEvenNumbers(new int[]{2,2,8,8,2})));
+        System.out.println("[] == " + Arrays.toString(f3dev.findEvenNumbers(new int[]{3,7,5})));
+    }
+
+    public void duplicateZeros() {
+        DuplicateZeros dz = new DuplicateZeros();
+
+        int[] array1 = {1,0,2,3,0,4,5,0};
+        int[] array2 = {1,0,2,3,0,4,5,0};
+        int[] array3 = {1,0,2,3,0,4,5,0};
+        int[] array4 = {1,0,2,3,0,4,5,0};
+        dz.duplicateZeros(array1);
+        dz.duplicateZeros(array2);
+        dz.duplicateZeros(array3);
+        dz.duplicateZeros(array4);
+
+        System.out.println("[1,0,0,2,3,0,0,4] == " + Arrays.toString(array1));
+        System.out.println("[1,2,3] == " + Arrays.toString(array2));
+        System.out.println("[1,0,0,2,3,0,0,4] == " + Arrays.toString(array3));
+        System.out.println("[1,0,0,2,3,0,0] == " + Arrays.toString(array4));
     }
 }
