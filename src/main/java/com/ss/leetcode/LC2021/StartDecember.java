@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2021;
 
+import com.ss.leetcode.LC2021.december.CheckAll1AreAtLeastKDistance;
 import com.ss.leetcode.LC2021.december.CheckIfAStringCanBreakAnotherString;
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
 import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
+import com.ss.leetcode.LC2021.december.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2021.december.DuplicateZeros;
 import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
 import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
@@ -12,6 +14,7 @@ import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
 import com.ss.leetcode.LC2021.december.PerfectNumber;
+import com.ss.leetcode.LC2021.december.RingsAndRods;
 import com.ss.leetcode.LC2021.december.RomanToInteger;
 import com.ss.leetcode.LC2021.december.SetMismatch;
 import com.ss.leetcode.LC2021.december.TeemoAttacking;
@@ -45,7 +48,11 @@ public class StartDecember {
 //        start.checkIfAStringCanBreakAnotherString();
 //        start.jumpGameIII();
 //        start.finding3DigitEvenNumbers();
-        start.duplicateZeros();
+//        start.duplicateZeros();
+        // NOT DONE YET
+//        start.countVowelSubstringsOfAString();
+//        start.ringsAndRods();
+        start.checkAll1AreAtLeastKDistance();
     }
 
     public void wateringPlants() {
@@ -231,5 +238,31 @@ public class StartDecember {
         System.out.println("[1,2,3] == " + Arrays.toString(array2));
         System.out.println("[1,0,0,2,3,0,0,4] == " + Arrays.toString(array3));
         System.out.println("[1,0,0,2,3,0,0] == " + Arrays.toString(array4));
+    }
+
+    public void countVowelSubstringsOfAString() {
+        CountVowelSubstringsOfAString cvsoas = new CountVowelSubstringsOfAString();
+
+//        System.out.println("2 == " + cvsoas.countVowelSubstrings("aeiouu"));
+//        System.out.println("0 == " + cvsoas.countVowelSubstrings("unicornarihan"));
+        System.out.println("7 == " + cvsoas.countVowelSubstrings("cuaieuouac"));
+//        System.out.println("0 == " + cvsoas.countVowelSubstrings("bbaeixoubb"));
+    }
+
+    public void ringsAndRods() {
+        RingsAndRods rar = new RingsAndRods();
+
+        System.out.println("1 == " + rar.countPoints("B0B6G0R6R0R6G9"));
+        System.out.println("1 == " + rar.countPoints("B0R0G0R9R0B0G0"));
+        System.out.println("0 == " + rar.countPoints("G4"));
+    }
+
+    public void checkAll1AreAtLeastKDistance() {
+        CheckAll1AreAtLeastKDistance ca1aalkd = new CheckAll1AreAtLeastKDistance();
+
+        System.out.println("false == " + ca1aalkd.kLengthApart(new int[]{1,0,0,0,1,0,0,1}, 2));
+        System.out.println("true == " + ca1aalkd.kLengthApart(new int[]{1,0,0,1,0,1}, 2));
+        System.out.println("true == " + ca1aalkd.kLengthApart(new int[]{1,1,1,1,1}, 0));
+        System.out.println("false == " + ca1aalkd.kLengthApart(new int[]{1,0,0,1,0,1}, 2));
     }
 }
