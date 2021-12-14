@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2021.december.CheckAll1AreAtLeastKDistance;
 import com.ss.leetcode.LC2021.december.CheckIfAStringCanBreakAnotherString;
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
 import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
+import com.ss.leetcode.LC2021.december.CountLargestGroup;
 import com.ss.leetcode.LC2021.december.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2021.december.DuplicateZeros;
 import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
@@ -52,7 +53,8 @@ public class StartDecember {
         // NOT DONE YET
 //        start.countVowelSubstringsOfAString();
 //        start.ringsAndRods();
-        start.checkAll1AreAtLeastKDistance();
+//        start.checkAll1AreAtLeastKDistance();
+        start.countLargestGroup();
     }
 
     public void wateringPlants() {
@@ -264,5 +266,14 @@ public class StartDecember {
         System.out.println("true == " + ca1aalkd.kLengthApart(new int[]{1,0,0,1,0,1}, 2));
         System.out.println("true == " + ca1aalkd.kLengthApart(new int[]{1,1,1,1,1}, 0));
         System.out.println("false == " + ca1aalkd.kLengthApart(new int[]{1,0,0,1,0,1}, 2));
+    }
+
+    public void countLargestGroup() {
+        CountLargestGroup clg = new CountLargestGroup();
+
+        System.out.println("4 == " + clg.countLargestGroup(13));
+        System.out.println("2 == " + clg.countLargestGroup(2));
+        System.out.println("6 == " + clg.countLargestGroup(15));
+        System.out.println("5 == " + clg.countLargestGroup(24));
     }
 }
