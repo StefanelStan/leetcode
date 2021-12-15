@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2021.december.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2021.december.DuplicateZeros;
 import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
 import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
+import com.ss.leetcode.LC2021.december.InsertionSortList;
 import com.ss.leetcode.LC2021.december.IntegerToRoman;
 import com.ss.leetcode.LC2021.december.JumpGameIII;
 import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
@@ -54,7 +55,8 @@ public class StartDecember {
 //        start.countVowelSubstringsOfAString();
 //        start.ringsAndRods();
 //        start.checkAll1AreAtLeastKDistance();
-        start.countLargestGroup();
+//        start.countLargestGroup();
+        start.insertionSortList();
     }
 
     public void wateringPlants() {
@@ -275,5 +277,12 @@ public class StartDecember {
         System.out.println("2 == " + clg.countLargestGroup(2));
         System.out.println("6 == " + clg.countLargestGroup(15));
         System.out.println("5 == " + clg.countLargestGroup(24));
+    }
+
+    public void insertionSortList() {
+        InsertionSortList isl = new InsertionSortList();
+
+        System.out.println("[1,2,3,4] == " + isl.insertionSortList(ListNode.makeChain(new int[]{4,2,1,3})));
+        System.out.println("[-1,0,3,4,5] == " + isl.insertionSortList(ListNode.makeChain(new int[]{-1,5,3,4,0})));
     }
 }
