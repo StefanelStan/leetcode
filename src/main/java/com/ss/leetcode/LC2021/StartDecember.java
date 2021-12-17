@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2021;
 
+import com.ss.leetcode.LC2021.december.Base7;
 import com.ss.leetcode.LC2021.december.CheckAll1AreAtLeastKDistance;
 import com.ss.leetcode.LC2021.december.CheckIfAStringCanBreakAnotherString;
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
@@ -12,6 +13,7 @@ import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
 import com.ss.leetcode.LC2021.december.InsertionSortList;
 import com.ss.leetcode.LC2021.december.IntegerToRoman;
 import com.ss.leetcode.LC2021.december.JumpGameIII;
+import com.ss.leetcode.LC2021.december.MaximalSquare;
 import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
@@ -56,7 +58,9 @@ public class StartDecember {
 //        start.ringsAndRods();
 //        start.checkAll1AreAtLeastKDistance();
 //        start.countLargestGroup();
-        start.insertionSortList();
+//        start.insertionSortList();
+        start.maximalSquare();
+//        start.base7();
     }
 
     public void wateringPlants() {
@@ -284,5 +288,21 @@ public class StartDecember {
 
         System.out.println("[1,2,3,4] == " + isl.insertionSortList(ListNode.makeChain(new int[]{4,2,1,3})));
         System.out.println("[-1,0,3,4,5] == " + isl.insertionSortList(ListNode.makeChain(new int[]{-1,5,3,4,0})));
+    }
+
+    public void maximalSquare() {
+        MaximalSquare ms = new MaximalSquare();
+
+        System.out.println("4 == " + ms.maximalSquare(new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},
+                                                                   {'1','1','1','1','1'},{'1','0','0','1','0'}}));
+        System.out.println("1 == " + ms.maximalSquare(new char[][]{{'0','1'},{'1','0'}}));
+        System.out.println("0 == " + ms.maximalSquare(new char[][]{{'0'}}));
+    }
+
+    public void base7() {
+        Base7 b7 = new Base7();
+
+        System.out.println("202 == " + b7.convertToBase7(100));
+        System.out.println("-10 == " + b7.convertToBase7(-7));
     }
 }
