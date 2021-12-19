@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
 import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
 import com.ss.leetcode.LC2021.december.CountLargestGroup;
 import com.ss.leetcode.LC2021.december.CountVowelSubstringsOfAString;
+import com.ss.leetcode.LC2021.december.DecodeString;
 import com.ss.leetcode.LC2021.december.DuplicateZeros;
 import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
 import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
@@ -59,8 +60,9 @@ public class StartDecember {
 //        start.checkAll1AreAtLeastKDistance();
 //        start.countLargestGroup();
 //        start.insertionSortList();
-        start.maximalSquare();
+//        start.maximalSquare();
 //        start.base7();
+        start.decodeString();
     }
 
     public void wateringPlants() {
@@ -304,5 +306,14 @@ public class StartDecember {
 
         System.out.println("202 == " + b7.convertToBase7(100));
         System.out.println("-10 == " + b7.convertToBase7(-7));
+    }
+
+    public void decodeString() {
+        DecodeString ds = new DecodeString();
+
+        System.out.println("aaabcbc == " + ds.decodeString("3[a]2[bc]"));
+        System.out.println("accaccacc == " + ds.decodeString("3[a2[c]]"));
+        System.out.println("abcabccdcdcdef == " + ds.decodeString("2[abc]3[cd]ef"));
+        System.out.println("abccdcdcdxyz == " + ds.decodeString("abc3[cd]xyz"));
     }
 }
