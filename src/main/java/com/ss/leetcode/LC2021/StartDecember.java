@@ -14,6 +14,7 @@ import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
 import com.ss.leetcode.LC2021.december.InsertionSortList;
 import com.ss.leetcode.LC2021.december.IntegerToRoman;
 import com.ss.leetcode.LC2021.december.JumpGameIII;
+import com.ss.leetcode.LC2021.december.LongestPalindromicSubstring;
 import com.ss.leetcode.LC2021.december.MaximalSquare;
 import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
@@ -62,7 +63,8 @@ public class StartDecember {
 //        start.insertionSortList();
 //        start.maximalSquare();
 //        start.base7();
-        start.decodeString();
+//        start.decodeString();
+        start.longestPalindromicSubstring();
     }
 
     public void wateringPlants() {
@@ -315,5 +317,17 @@ public class StartDecember {
         System.out.println("accaccacc == " + ds.decodeString("3[a2[c]]"));
         System.out.println("abcabccdcdcdef == " + ds.decodeString("2[abc]3[cd]ef"));
         System.out.println("abccdcdcdxyz == " + ds.decodeString("abc3[cd]xyz"));
+    }
+
+    public void longestPalindromicSubstring() {
+        LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
+
+        System.out.println("bab == " + lps.longestPalindrome("babad"));
+        System.out.println("bb == " + lps.longestPalindrome("cbbd"));
+        System.out.println("sknks == " + lps.longestPalindrome("jglknendplocymmvwtoxvebkekzfdhykknufqdkntnqvgfbahsljko"
+            + "bhbxkvyictzkqjqydczuxjkgecdyhixdttxfqmgksrkyvopwprsgoszftuhawflzjyuyrujrxluhzjvbflxgcovilthvuihzttzithn"
+            + "qbdxtafxrfrblulsakrahulwthhbjcslceewxfxtavljpimaqqlcbrdgtgjryjytgxljxtravwdlnrrauxplempnbfeusgtqzjtzshw"
+            + "ieutxdytlrrqvyemlyzolhbkzhyfyttevqnfvmpqjngcnazmaagwihxrhmcibyfkccyrqwnzlzqeuenhwlzhbxqxerfifzncimwqsfa"
+            + "tudjihtumrtjtggzleovihifxufvwqeimbxvzlxwcsknksogsbwwdlwulnetdysvsfkonggeedtshxqkgbhoscjgpiel"));
     }
 }
