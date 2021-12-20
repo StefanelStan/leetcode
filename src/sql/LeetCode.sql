@@ -46,3 +46,7 @@ WHERE c.id NOT IN (SELECT customerId FROM Orders);
 -- https://leetcode.com/problems/delete-duplicate-emails/
 WITH minId AS (SELECT MIN(id) as id FROM Person GROUP BY email)
 DELETE FROM Person WHERE id NOT IN ( SELECT id from minId);
+
+-- Classes More Than 5 Students
+-- https://leetcode.com/problems/classes-more-than-5-students/
+SELECT class FROM Courses GROUP BY (class) HAVING count(*) > 4;
