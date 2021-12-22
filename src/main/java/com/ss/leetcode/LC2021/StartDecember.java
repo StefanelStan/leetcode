@@ -20,6 +20,7 @@ import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
 import com.ss.leetcode.LC2021.december.PerfectNumber;
+import com.ss.leetcode.LC2021.december.ReorderList;
 import com.ss.leetcode.LC2021.december.RingsAndRods;
 import com.ss.leetcode.LC2021.december.RomanToInteger;
 import com.ss.leetcode.LC2021.december.SetMismatch;
@@ -64,7 +65,8 @@ public class StartDecember {
 //        start.maximalSquare();
 //        start.base7();
 //        start.decodeString();
-        start.longestPalindromicSubstring();
+//        start.longestPalindromicSubstring();
+        start.reorderList();
     }
 
     public void wateringPlants() {
@@ -329,5 +331,16 @@ public class StartDecember {
             + "qbdxtafxrfrblulsakrahulwthhbjcslceewxfxtavljpimaqqlcbrdgtgjryjytgxljxtravwdlnrrauxplempnbfeusgtqzjtzshw"
             + "ieutxdytlrrqvyemlyzolhbkzhyfyttevqnfvmpqjngcnazmaagwihxrhmcibyfkccyrqwnzlzqeuenhwlzhbxqxerfifzncimwqsfa"
             + "tudjihtumrtjtggzleovihifxufvwqeimbxvzlxwcsknksogsbwwdlwulnetdysvsfkonggeedtshxqkgbhoscjgpiel"));
+    }
+
+    public void reorderList() {
+        ReorderList rl = new ReorderList();
+
+        ListNode head1 = ListNode.makeChain(new int[]{1,2,3,4});
+        ListNode head2 = ListNode.makeChain(new int[]{1,2,3,4,5});
+        rl.reorderList(head1);
+        rl.reorderList(head2);
+        System.out.println("[1,4,2,3] == " + head1.getAsList());
+        System.out.println("[1,5,2,4,3] == " + head2.getAsList());
     }
 }
