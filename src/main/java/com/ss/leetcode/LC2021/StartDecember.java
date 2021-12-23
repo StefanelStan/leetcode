@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
 import com.ss.leetcode.LC2021.december.ContinuousSubarraySum;
 import com.ss.leetcode.LC2021.december.CountLargestGroup;
 import com.ss.leetcode.LC2021.december.CountVowelSubstringsOfAString;
+import com.ss.leetcode.LC2021.december.CourseScheduleII;
 import com.ss.leetcode.LC2021.december.DecodeString;
 import com.ss.leetcode.LC2021.december.DuplicateZeros;
 import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
@@ -66,7 +67,8 @@ public class StartDecember {
 //        start.base7();
 //        start.decodeString();
 //        start.longestPalindromicSubstring();
-        start.reorderList();
+//        start.reorderList();
+        start.courseScheduleII();
     }
 
     public void wateringPlants() {
@@ -342,5 +344,13 @@ public class StartDecember {
         rl.reorderList(head2);
         System.out.println("[1,4,2,3] == " + head1.getAsList());
         System.out.println("[1,5,2,4,3] == " + head2.getAsList());
+    }
+
+    public void courseScheduleII() {
+        CourseScheduleII csii = new CourseScheduleII();
+
+        System.out.println("[0,1] == " + Arrays.toString(csii.findOrder(2, new int[][]{{1,0}})));
+        System.out.println("[0,2,1,3] == " + Arrays.toString(csii.findOrder(4, new int[][]{{1,0},{2,0},{3,1},{3,2}})));
+        System.out.println("[0] == " + Arrays.toString(csii.findOrder(1, new int[0][0])));
     }
 }
