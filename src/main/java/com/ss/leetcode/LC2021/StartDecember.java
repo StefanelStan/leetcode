@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2021.december.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2021.december.CourseScheduleII;
 import com.ss.leetcode.LC2021.december.DecodeString;
 import com.ss.leetcode.LC2021.december.DuplicateZeros;
+import com.ss.leetcode.LC2021.december.FindFirstPalindromeInTheArray;
 import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
 import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
 import com.ss.leetcode.LC2021.december.InsertionSortList;
@@ -68,7 +69,8 @@ public class StartDecember {
 //        start.decodeString();
 //        start.longestPalindromicSubstring();
 //        start.reorderList();
-        start.courseScheduleII();
+//        start.courseScheduleII();
+        start.findFirstPalindromeInTheArray();
     }
 
     public void wateringPlants() {
@@ -352,5 +354,13 @@ public class StartDecember {
         System.out.println("[0,1] == " + Arrays.toString(csii.findOrder(2, new int[][]{{1,0}})));
         System.out.println("[0,2,1,3] == " + Arrays.toString(csii.findOrder(4, new int[][]{{1,0},{2,0},{3,1},{3,2}})));
         System.out.println("[0] == " + Arrays.toString(csii.findOrder(1, new int[0][0])));
+    }
+
+    public void findFirstPalindromeInTheArray() {
+        FindFirstPalindromeInTheArray ffpita = new FindFirstPalindromeInTheArray();
+
+        System.out.println("ada == " + ffpita.firstPalindrome(new String[]{"abc","car","ada","racecar","cool"}));
+        System.out.println("racecar == " + ffpita.firstPalindrome(new String[]{"notapalindrome","racecar"}));
+        System.out.println(" == " + ffpita.firstPalindrome(new String[]{"def","ghi"}));
     }
 }
