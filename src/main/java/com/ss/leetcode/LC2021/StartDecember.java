@@ -19,6 +19,7 @@ import com.ss.leetcode.LC2021.december.JumpGameIII;
 import com.ss.leetcode.LC2021.december.LongestPalindromicSubstring;
 import com.ss.leetcode.LC2021.december.MaximalSquare;
 import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
+import com.ss.leetcode.LC2021.december.MaximumNumberOfWordsFoundInSentences;
 import com.ss.leetcode.LC2021.december.MaximumProductSubarray;
 import com.ss.leetcode.LC2021.december.OddEvenLinkedList;
 import com.ss.leetcode.LC2021.december.PerfectNumber;
@@ -70,7 +71,8 @@ public class StartDecember {
 //        start.longestPalindromicSubstring();
 //        start.reorderList();
 //        start.courseScheduleII();
-        start.findFirstPalindromeInTheArray();
+//        start.findFirstPalindromeInTheArray();
+        start.maximumNumberOfWordsFoundInSentences();
     }
 
     public void wateringPlants() {
@@ -362,5 +364,12 @@ public class StartDecember {
         System.out.println("ada == " + ffpita.firstPalindrome(new String[]{"abc","car","ada","racecar","cool"}));
         System.out.println("racecar == " + ffpita.firstPalindrome(new String[]{"notapalindrome","racecar"}));
         System.out.println(" == " + ffpita.firstPalindrome(new String[]{"def","ghi"}));
+    }
+
+    public void maximumNumberOfWordsFoundInSentences() {
+        MaximumNumberOfWordsFoundInSentences mnowfis = new MaximumNumberOfWordsFoundInSentences();
+
+        System.out.println("6 == " + mnowfis.mostWordsFound(new String[]{"alice and bob love leetcode", "i think so too", "this is great thanks very much"}));
+        System.out.println("3 == " + mnowfis.mostWordsFound(new String[]{"please wait", "continue to fight", "continue to win"}));
     }
 }

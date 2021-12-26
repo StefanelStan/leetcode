@@ -6,6 +6,20 @@ import java.util.Comparator;
 public class KClosestPointsToOrigin {
     // https://leetcode.com/problems/k-closest-points-to-origin/
     public int[][] kClosest(int[][] points, int k) {
+        double[][] dPoints = new double[points.length][2];
+        int[][] kClosest = new int[k][2];
+        for (int i = 0; i < points.length; i++) {
+            dPoints[i][0] = Math.sqrt(points[i][0] * points[i][0] + points[i][1] * points[i][1]);
+            dPoints[i][1] = i;
+        }
+        Arrays.sort(dPoints, Comparator.comparingDouble(a -> a[0]));
+        for (int i = 0; i < k; i++) {
+            kClosest[i] = points[(int)dPoints[i][1]];
+        }
+        return kClosest;
+    }
+
+    public int[][] kClosest2(int[][] points, int k) {
         DistancePoint[] distances = new DistancePoint[points.length];
         int[][] kClosest = new int[k][2];
         double distance = 0;
