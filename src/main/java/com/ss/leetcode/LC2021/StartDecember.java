@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2021.december.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2021.december.CourseScheduleII;
 import com.ss.leetcode.LC2021.december.DecodeString;
 import com.ss.leetcode.LC2021.december.DuplicateZeros;
+import com.ss.leetcode.LC2021.december.ExecutionOfAllSuffixInstructionsGrid;
 import com.ss.leetcode.LC2021.december.FindFirstPalindromeInTheArray;
 import com.ss.leetcode.LC2021.december.Finding3DigitEvenNumbers;
 import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
@@ -72,7 +73,8 @@ public class StartDecember {
 //        start.reorderList();
 //        start.courseScheduleII();
 //        start.findFirstPalindromeInTheArray();
-        start.maximumNumberOfWordsFoundInSentences();
+//        start.maximumNumberOfWordsFoundInSentences();
+        start.executionOfAllSuffixInstructionsGrid();
     }
 
     public void wateringPlants() {
@@ -371,5 +373,13 @@ public class StartDecember {
 
         System.out.println("6 == " + mnowfis.mostWordsFound(new String[]{"alice and bob love leetcode", "i think so too", "this is great thanks very much"}));
         System.out.println("3 == " + mnowfis.mostWordsFound(new String[]{"please wait", "continue to fight", "continue to win"}));
+    }
+
+    public void executionOfAllSuffixInstructionsGrid() {
+        ExecutionOfAllSuffixInstructionsGrid eoasig = new ExecutionOfAllSuffixInstructionsGrid();
+
+        System.out.println("[1,5,4,3,1,0] == " + Arrays.toString(eoasig.executeInstructions(3, new int[]{0,1}, "RRDDLU")));
+        System.out.println("[4,1,0,0] == " + Arrays.toString(eoasig.executeInstructions(2, new int[]{1,1}, "LURD")));
+        System.out.println("[0,0,0,0] == " + Arrays.toString(eoasig.executeInstructions(1, new int[]{0,0}, "LRUD")));
     }
 }
