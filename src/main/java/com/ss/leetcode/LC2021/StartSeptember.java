@@ -15,7 +15,7 @@ public class StartSeptember {
         StartSeptember start = new StartSeptember();
 
 //        start.arrayNesting();
-//        start.populatingNextRightPointers();
+        start.populatingNextRightPointers();
 //        start.singleNumber();
 //        start.reverseBits();
 //        start.minimumCostToMoveChips();
@@ -104,7 +104,7 @@ public class StartSeptember {
 //        start.findMinFibonacciNumbersToSumK();
 //        start.sumRootToLeafNumbers();
 //        start.finalValueAfterPerformingOperations();
-        start.splitLinkedListInParts();
+//        start.splitLinkedListInParts();
     }
 
     public void arrayNesting() {

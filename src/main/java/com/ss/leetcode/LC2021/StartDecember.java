@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2021;
 
+import com.ss.leetcode.LC2021.december.ANumberAfterADoubleReversal;
 import com.ss.leetcode.LC2021.december.Base7;
 import com.ss.leetcode.LC2021.december.CheckAll1AreAtLeastKDistance;
 import com.ss.leetcode.LC2021.december.CheckIfAStringCanBreakAnotherString;
@@ -74,7 +75,8 @@ public class StartDecember {
 //        start.courseScheduleII();
 //        start.findFirstPalindromeInTheArray();
 //        start.maximumNumberOfWordsFoundInSentences();
-        start.executionOfAllSuffixInstructionsGrid();
+//        start.executionOfAllSuffixInstructionsGrid();
+        start.aNumberAfterADoubleReversal();
     }
 
     public void wateringPlants() {
@@ -381,5 +383,13 @@ public class StartDecember {
         System.out.println("[1,5,4,3,1,0] == " + Arrays.toString(eoasig.executeInstructions(3, new int[]{0,1}, "RRDDLU")));
         System.out.println("[4,1,0,0] == " + Arrays.toString(eoasig.executeInstructions(2, new int[]{1,1}, "LURD")));
         System.out.println("[0,0,0,0] == " + Arrays.toString(eoasig.executeInstructions(1, new int[]{0,0}, "LRUD")));
+    }
+
+    public void aNumberAfterADoubleReversal() {
+        ANumberAfterADoubleReversal anaadr = new ANumberAfterADoubleReversal();
+
+        System.out.println("true == " + anaadr.isSameAfterReversals(526));
+        System.out.println("false == " + anaadr.isSameAfterReversals(1800));
+        System.out.println("true == " + anaadr.isSameAfterReversals(0));
     }
 }
