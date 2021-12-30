@@ -18,6 +18,8 @@ import com.ss.leetcode.LC2021.december.FlattenBinaryTreeToLinkedList;
 import com.ss.leetcode.LC2021.december.InsertionSortList;
 import com.ss.leetcode.LC2021.december.IntegerToRoman;
 import com.ss.leetcode.LC2021.december.JumpGameIII;
+import com.ss.leetcode.LC2021.december.KthLargestElementInAnArray;
+import com.ss.leetcode.LC2021.december.LargestValuesFromLabels;
 import com.ss.leetcode.LC2021.december.LongestPalindromicSubstring;
 import com.ss.leetcode.LC2021.december.MaximalSquare;
 import com.ss.leetcode.LC2021.december.MaximumAverageSubarrayI;
@@ -39,6 +41,8 @@ import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.TreeSet;
 
 public class StartDecember {
     public static void main(String[] args) {
@@ -76,7 +80,9 @@ public class StartDecember {
 //        start.findFirstPalindromeInTheArray();
 //        start.maximumNumberOfWordsFoundInSentences();
 //        start.executionOfAllSuffixInstructionsGrid();
-        start.aNumberAfterADoubleReversal();
+//        start.aNumberAfterADoubleReversal();
+//        start.kthLargestElementInAnArray();
+        start.largestValuesFromLabels();
     }
 
     public void wateringPlants() {
@@ -391,5 +397,20 @@ public class StartDecember {
         System.out.println("true == " + anaadr.isSameAfterReversals(526));
         System.out.println("false == " + anaadr.isSameAfterReversals(1800));
         System.out.println("true == " + anaadr.isSameAfterReversals(0));
+    }
+
+    public void kthLargestElementInAnArray() {
+        KthLargestElementInAnArray kleiaa = new KthLargestElementInAnArray();
+
+        System.out.println("5 == " + kleiaa.findKthLargest(new int[]{3,2,1,5,6,4}, 2));
+        System.out.println("4 == " + kleiaa.findKthLargest(new int[]{3,2,3,1,2,4,5,5,6}, 4));
+    }
+
+    public void largestValuesFromLabels() {
+        LargestValuesFromLabels lvfl = new LargestValuesFromLabels();
+
+        System.out.println("9 == " + lvfl.largestValsFromLabels(new int[]{5,4,3,2,1}, new int[]{1,1,2,2,3}, 3, 1));
+        System.out.println("12 == " + lvfl.largestValsFromLabels(new int[]{5,4,3,2,1}, new int[]{1,3,3,3,2}, 3, 2));
+        System.out.println("16 == " + lvfl.largestValsFromLabels(new int[]{9,8,8,7,6}, new int[]{0,0,0,1,1}, 3, 1));
     }
 }
