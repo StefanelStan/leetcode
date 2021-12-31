@@ -33,6 +33,7 @@ import com.ss.leetcode.LC2021.december.RomanToInteger;
 import com.ss.leetcode.LC2021.december.SetMismatch;
 import com.ss.leetcode.LC2021.december.TeemoAttacking;
 import com.ss.leetcode.LC2021.december.TwoFurthestHousesWithDifferentColors;
+import com.ss.leetcode.LC2021.december.ValidMountainArray;
 import com.ss.leetcode.LC2021.december.WateringPlants;
 import com.ss.leetcode.LC2021.september.Permutations;
 import com.ss.leetcode.shared.ListNode;
@@ -82,7 +83,8 @@ public class StartDecember {
 //        start.executionOfAllSuffixInstructionsGrid();
 //        start.aNumberAfterADoubleReversal();
 //        start.kthLargestElementInAnArray();
-        start.largestValuesFromLabels();
+//        start.largestValuesFromLabels();
+        start.validMountainArray();
     }
 
     public void wateringPlants() {
@@ -412,5 +414,15 @@ public class StartDecember {
         System.out.println("9 == " + lvfl.largestValsFromLabels(new int[]{5,4,3,2,1}, new int[]{1,1,2,2,3}, 3, 1));
         System.out.println("12 == " + lvfl.largestValsFromLabels(new int[]{5,4,3,2,1}, new int[]{1,3,3,3,2}, 3, 2));
         System.out.println("16 == " + lvfl.largestValsFromLabels(new int[]{9,8,8,7,6}, new int[]{0,0,0,1,1}, 3, 1));
+    }
+
+    public void validMountainArray() {
+        ValidMountainArray vma = new ValidMountainArray();
+
+        System.out.println("false == " + vma.validMountainArray(new int[]{2,1}));
+        System.out.println("false == " + vma.validMountainArray(new int[]{3,5,5}));
+        System.out.println("true == " + vma.validMountainArray(new int[]{0,3,2,1}));
+        System.out.println("false == " + vma.validMountainArray(new int[]{0,1,2,3,4,5,6,7,8,9}));
+        System.out.println("false == " + vma.validMountainArray(new int[]{9,8,7,6,5,4,3,2,1,0}));
     }
 }
