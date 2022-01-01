@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2021;
 
 import com.ss.leetcode.LC2021.december.ANumberAfterADoubleReversal;
 import com.ss.leetcode.LC2021.december.Base7;
+import com.ss.leetcode.LC2021.december.CanPlaceFlowers;
 import com.ss.leetcode.LC2021.december.CheckAll1AreAtLeastKDistance;
 import com.ss.leetcode.LC2021.december.CheckIfAStringCanBreakAnotherString;
 import com.ss.leetcode.LC2021.december.ConstructTheRectangle;
@@ -84,7 +85,8 @@ public class StartDecember {
 //        start.aNumberAfterADoubleReversal();
 //        start.kthLargestElementInAnArray();
 //        start.largestValuesFromLabels();
-        start.validMountainArray();
+//        start.validMountainArray();
+        start.canPlaceFlowers();
     }
 
     public void wateringPlants() {
@@ -424,5 +426,16 @@ public class StartDecember {
         System.out.println("true == " + vma.validMountainArray(new int[]{0,3,2,1}));
         System.out.println("false == " + vma.validMountainArray(new int[]{0,1,2,3,4,5,6,7,8,9}));
         System.out.println("false == " + vma.validMountainArray(new int[]{9,8,7,6,5,4,3,2,1,0}));
+    }
+
+    public void canPlaceFlowers() {
+        CanPlaceFlowers cpf = new CanPlaceFlowers();
+
+        System.out.println("true == " + cpf.canPlaceFlowers(new int[]{1,0,0,0,1}, 1));
+        System.out.println("false == " + cpf.canPlaceFlowers(new int[]{1,0,0,0,1}, 2));
+        System.out.println("true == " + cpf.canPlaceFlowers(new int[]{0,0,1,0,0,1,0,0,0}, 2));
+        System.out.println("false == " + cpf.canPlaceFlowers(new int[]{0,0,1,0,0,1,0,0,0}, 3));
+        System.out.println("true == " + cpf.canPlaceFlowers(new int[]{0,0,1,0,0,1,0,0,0,0}, 3));
+        System.out.println("true == " + cpf.canPlaceFlowers(new int[]{0,0,0}, 2));
     }
 }
