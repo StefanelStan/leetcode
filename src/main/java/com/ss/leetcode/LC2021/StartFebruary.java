@@ -47,7 +47,7 @@ public class StartFebruary {
 //        start.longestSubarrayOf1AfterDeletingOneElement();
 //        start.shift2DGrid();
 //        start.largestMergeOfTwoStrings();
-//        start.pairsOfSongsWithTotalDurationsDivisibleBy60();
+        start.pairsOfSongsWithTotalDurationsDivisibleBy60();
 //        start.maximumOfAbsoluteValueExpression();
 //        start.dota2Senate();
 //        start.largestRectangleInHistogram();
@@ -63,8 +63,7 @@ public class StartFebruary {
 //        start.reverseInteger();
 //        start.stringToIntegerAtoi();
 //        start.findNumbersWithEvenNumberOfDigits();
-//        start.arithmeticSubarrays();
-
+        start.arithmeticSubarrays();
     }
 
     private void fourDivisors() {
@@ -444,5 +443,4 @@ public class StartFebruary {
         System.out.println("[false,true,false,false,true,true] == " + as.checkArithmeticSubarrays(nums2, l2, r2));
 
     }
-
 }

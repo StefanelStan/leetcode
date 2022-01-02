@@ -8,6 +8,28 @@ import java.util.Set;
 public class PairsOfSongsWithTotalDurations {
     // https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/
     public int numPairsDivisibleBy60(int[] time) {
+        int[] modulo = new int[60];
+        int numOfPairs = 0;
+        for (int t : time) {
+            modulo[t % 60]++;
+        }
+
+        for (int i = 1; i <= 29; i++) {
+            numOfPairs += (modulo[i] * modulo[modulo.length - i]);
+        }
+        numOfPairs += getNumOfPairs(modulo[0]) + getNumOfPairs(modulo[30]);
+        return numOfPairs;
+    }
+
+    private int getNumOfPairs(int count) {
+        if (count < 2) {
+            return 0;
+        }
+        // no need to use factorials due to high numbers: 24. Use the simplified formula (n(n-1)) / 2
+        return (count * (count -1)) / 2;
+    }
+
+    public int numPairsDivisibleBy60_2(int[] time) {
         Map<Integer, Integer> timesMap = new HashMap<>();
         Set<Integer> usedKeys = new HashSet<>();
         for(int t : time) {
