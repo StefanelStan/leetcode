@@ -1,9 +1,11 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
+import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -12,7 +14,9 @@ public class StartJanuary {
 //        start.longPressedName();
 //        start.findTheTownJudge();
 //        start.removeOneElementArrayStrictlyIncreasing();
-        start.palindromePartitioning();
+//        start.palindromePartitioning();
+//        start.carPooling();
+        start.timeNeededToBuyTickets();
     }
 
     public void longPressedName() {
@@ -69,5 +73,21 @@ public class StartJanuary {
 
         System.out.println("[[a,a,b],[aa,b]] == " + pp.partition("aab"));
         System.out.println("[[a]] == " + pp.partition("a"));
+    }
+
+    public void carPooling() {
+        CarPooling cp = new CarPooling();
+
+        System.out.println("false == " + cp.carPooling(new int[][]{{2,1,5},{3,3,7}}, 4));
+        System.out.println("true == " + cp.carPooling(new int[][]{{2,1,5},{3,3,7}}, 5));
+    }
+
+    public void timeNeededToBuyTickets() {
+        TimeNeededToBuyTickets tntbt = new TimeNeededToBuyTickets();
+
+        System.out.println("6 == " + tntbt.timeRequiredToBuy(new int[]{2,3,2}, 2));
+        System.out.println("8 == " + tntbt.timeRequiredToBuy(new int[]{5,1,1,1}, 0));
+        System.out.println("11 == " + tntbt.timeRequiredToBuy(new int[]{7,2,1,3,2,4,5}, 4));
+        System.out.println("22 == " + tntbt.timeRequiredToBuy(new int[]{7,2,1,3,2,4,5}, 6));
     }
 }
