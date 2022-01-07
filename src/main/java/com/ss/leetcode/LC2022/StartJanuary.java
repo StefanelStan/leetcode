@@ -2,10 +2,13 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
+import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
+import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
 import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
+import com.ss.leetcode.shared.ListNode;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -16,7 +19,9 @@ public class StartJanuary {
 //        start.removeOneElementArrayStrictlyIncreasing();
 //        start.palindromePartitioning();
 //        start.carPooling();
-        start.timeNeededToBuyTickets();
+//        start.timeNeededToBuyTickets();
+//        start.linkedListRandomNode();
+        start.largestOddNumberInString();
     }
 
     public void longPressedName() {
@@ -89,5 +94,25 @@ public class StartJanuary {
         System.out.println("8 == " + tntbt.timeRequiredToBuy(new int[]{5,1,1,1}, 0));
         System.out.println("11 == " + tntbt.timeRequiredToBuy(new int[]{7,2,1,3,2,4,5}, 4));
         System.out.println("22 == " + tntbt.timeRequiredToBuy(new int[]{7,2,1,3,2,4,5}, 6));
+    }
+
+    public void linkedListRandomNode() {
+
+        LinkedListRandomNode llrn = new LinkedListRandomNode(ListNode.makeChain(new int[]{1,2,3}));
+
+        System.out.println("1 | 2 | 3 == " + llrn.getRandom());
+        System.out.println("1 | 2 | 3 == " + llrn.getRandom());
+        System.out.println("1 | 2 | 3 == " + llrn.getRandom());
+    }
+
+    public void largestOddNumberInString() {
+        LargestOddNumberInString lonis = new LargestOddNumberInString();
+
+        System.out.println("5 == " + lonis.largestOddNumber("52"));
+        System.out.println("[] == " + lonis.largestOddNumber("22"));
+        System.out.println("35427 == " + lonis.largestOddNumber("35427"));
+        System.out.println("1 == " + lonis.largestOddNumber("1"));
+        System.out.println("423432424545353541 == " + lonis.largestOddNumber("423432424545353541"));
+        System.out.println("122223 == " + lonis.largestOddNumber("122223222224680"));
     }
 }
