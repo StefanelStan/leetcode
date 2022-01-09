@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.january.CarPooling;
+import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
@@ -21,7 +22,8 @@ public class StartJanuary {
 //        start.carPooling();
 //        start.timeNeededToBuyTickets();
 //        start.linkedListRandomNode();
-        start.largestOddNumberInString();
+//        start.largestOddNumberInString();
+        start.checkIfAllAAppearsBeforeAllB();
     }
 
     public void longPressedName() {
@@ -114,5 +116,14 @@ public class StartJanuary {
         System.out.println("1 == " + lonis.largestOddNumber("1"));
         System.out.println("423432424545353541 == " + lonis.largestOddNumber("423432424545353541"));
         System.out.println("122223 == " + lonis.largestOddNumber("122223222224680"));
+    }
+
+    public void checkIfAllAAppearsBeforeAllB() {
+        CheckIfAllAAppearsBeforeAllB ciaaabab = new CheckIfAllAAppearsBeforeAllB();
+
+        System.out.println("true == " + ciaaabab.checkString("aaabbb"));
+        System.out.println("false == " + ciaaabab.checkString("abab"));
+        System.out.println("true == " + ciaaabab.checkString("bbb"));
+        System.out.println("true == " + ciaaabab.checkString("aaa"));
     }
 }
