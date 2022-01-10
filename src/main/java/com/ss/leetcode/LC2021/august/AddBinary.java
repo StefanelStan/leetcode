@@ -3,6 +3,36 @@ package com.ss.leetcode.LC2021.august;
 public class AddBinary {
     // https://leetcode.com/problems/add-binary/
     public String addBinary(String a, String b) {
+        String longest = a.length() >= b.length() ? a : b;
+        String shortest = a.length() < b.length() ? a : b;
+        char[] result = new char[longest.length()];
+        int carryOver = 0;
+        int longIndex = longest.length() -1;
+        int temp;
+        for (int i = shortest.length() -1; i>= 0; i--, longIndex --) {
+            temp = shortest.charAt(i) - '0' + longest.charAt(longIndex) - '0' + carryOver;
+            if (temp > 1) {
+                temp -= 2;
+                carryOver = 1;
+            } else {
+                carryOver = 0;
+            }
+            result[longIndex] = (char)(temp + '0');
+        }
+        while(longIndex >= 0) {
+            temp = longest.charAt(longIndex) - '0' + carryOver;
+            if (temp > 1) {
+                carryOver = 1;
+                temp = 0;
+            } else {
+                carryOver = 0;
+            }
+            result[longIndex--] = (char)(temp + '0');
+        }
+        return carryOver == 1 ? '1' + new String(result) : new String(result);
+    }
+
+    public String addBinary2(String a, String b) {
         String strMin = a.length() < b.length() ? a : b;
         String strMax = a.length() < b.length() ? b : a;
         StringBuilder stb = new StringBuilder();
