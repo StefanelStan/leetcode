@@ -5,9 +5,31 @@ import com.ss.leetcode.shared.TreeNode;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SumRootToLeaf {
+public class SumOfRootToLeafBinaryNumbers {
     // https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
     public int sumRootToLeaf(TreeNode root) {
+        int[] sumRootToLeaf = {0};
+        traverseTree(root, new StringBuilder(), sumRootToLeaf);
+        return sumRootToLeaf[0];
+    }
+
+    public void traverseTree(TreeNode node, StringBuilder stb, int[] sumRootToLeaf) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            stb.append(node.val);
+            sumRootToLeaf[0] += Integer.parseInt(stb.toString(), 2);
+            stb.setLength(stb.length() -1);
+        } else {
+            stb.append(node.val);
+            traverseTree(node.left, stb, sumRootToLeaf);
+            traverseTree(node.right, stb, sumRootToLeaf);
+            stb.setLength(stb.length() -1);
+        }
+    }
+
+    public int sumRootToLeaf2(TreeNode root) {
         List<String> numbers =  new LinkedList<>();
         sumRootToLeaf(root, new StringBuilder(), numbers);
         int[] sum = {0};

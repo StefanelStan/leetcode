@@ -3,11 +3,15 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
+import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
+import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
+import com.ss.leetcode.LC2022.january.RotateString;
+import com.ss.leetcode.LC2022.january.ShortestCompletingWord;
 import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
 import com.ss.leetcode.shared.ListNode;
 
@@ -23,7 +27,11 @@ public class StartJanuary {
 //        start.timeNeededToBuyTickets();
 //        start.linkedListRandomNode();
 //        start.largestOddNumberInString();
-        start.checkIfAllAAppearsBeforeAllB();
+//        start.checkIfAllAAppearsBeforeAllB();
+//        start.maximumTwinSumOfALinkedList();
+//        start.rotateString();
+//        start.largestNumberAtLeastTwiceOfOthers();
+        start.shortestCompletingWord();
     }
 
     public void longPressedName() {
@@ -125,5 +133,35 @@ public class StartJanuary {
         System.out.println("false == " + ciaaabab.checkString("abab"));
         System.out.println("true == " + ciaaabab.checkString("bbb"));
         System.out.println("true == " + ciaaabab.checkString("aaa"));
+    }
+
+    public void maximumTwinSumOfALinkedList() {
+        MaximumTwinSumOfALinkedList mtsoall = new MaximumTwinSumOfALinkedList();
+
+        System.out.println("6 == " + mtsoall.pairSum(ListNode.makeChain(new int[]{5,4,2,1})));
+        System.out.println("7 == " + mtsoall.pairSum(ListNode.makeChain(new int[]{4,2,2,3})));
+        System.out.println("100001 == " + mtsoall.pairSum(ListNode.makeChain(new int[]{1,100000})));
+    }
+
+    public void rotateString() {
+        RotateString rs = new RotateString();
+
+        System.out.println("true == " + rs.rotateString("abcde", "cdeab"));
+        System.out.println("false == " + rs.rotateString("abcde", "abced"));
+    }
+
+    public void largestNumberAtLeastTwiceOfOthers() {
+        LargestNumberAtLeastTwiceOfOthers lnaltoo = new LargestNumberAtLeastTwiceOfOthers();
+
+        System.out.println("1 == " + lnaltoo.dominantIndex(new int[]{3,6,1,0}));
+        System.out.println("-1 == " + lnaltoo.dominantIndex(new int[]{1,2,3,4}));
+        System.out.println("0 == " + lnaltoo.dominantIndex(new int[]{1}));
+    }
+
+    public void shortestCompletingWord() {
+        ShortestCompletingWord scw = new ShortestCompletingWord();
+
+        System.out.println("steps == " + scw.shortestCompletingWord("1s3 PSt", new String[]{"step","steps","stripe","stepple"}));
+        System.out.println("pest == " + scw.shortestCompletingWord("1s3 456", new String[]{"looks","pest","stew","show"}));
     }
 }

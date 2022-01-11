@@ -169,7 +169,7 @@ public class StartAugust {
     }
 
     public void sumRootToLeaf() {
-        SumRootToLeaf srtf = new SumRootToLeaf();
+        SumOfRootToLeafBinaryNumbers srtf = new SumOfRootToLeafBinaryNumbers();
 
         TreeNode root1 = new TreeNode(1, new TreeNode(0, new TreeNode(0), new TreeNode(1)), new TreeNode(1, new TreeNode(0), new TreeNode(1)));
         TreeNode root2 = new TreeNode(1, null,  new TreeNode(1));
