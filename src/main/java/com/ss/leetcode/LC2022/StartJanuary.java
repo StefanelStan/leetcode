@@ -8,12 +8,15 @@ import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
+import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
 import com.ss.leetcode.LC2022.january.RotateString;
 import com.ss.leetcode.LC2022.january.ShortestCompletingWord;
 import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
 import com.ss.leetcode.shared.ListNode;
+
+import java.util.List;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -31,7 +34,8 @@ public class StartJanuary {
 //        start.maximumTwinSumOfALinkedList();
 //        start.rotateString();
 //        start.largestNumberAtLeastTwiceOfOthers();
-        start.shortestCompletingWord();
+//        start.shortestCompletingWord();
+        start.minimumTimeDifference();
     }
 
     public void longPressedName() {
@@ -163,5 +167,13 @@ public class StartJanuary {
 
         System.out.println("steps == " + scw.shortestCompletingWord("1s3 PSt", new String[]{"step","steps","stripe","stepple"}));
         System.out.println("pest == " + scw.shortestCompletingWord("1s3 456", new String[]{"looks","pest","stew","show"}));
+    }
+
+    public void minimumTimeDifference() {
+        MinimumTimeDifference mtd = new MinimumTimeDifference();
+
+        System.out.println("1 == " + mtd.findMinDifference(List.of("23:59","00:00")));
+        System.out.println("0 == " + mtd.findMinDifference(List.of("00:00","23:59","00:00")));
+        System.out.println("147 == " + mtd.findMinDifference(List.of("05:31","22:08","00:35")));
     }
 }
