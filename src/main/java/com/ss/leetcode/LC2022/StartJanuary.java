@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
+import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
 import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
@@ -35,7 +36,8 @@ public class StartJanuary {
 //        start.rotateString();
 //        start.largestNumberAtLeastTwiceOfOthers();
 //        start.shortestCompletingWord();
-        start.minimumTimeDifference();
+//        start.minimumTimeDifference();
+        start.longestWordInDictionaryThroughDeleting();
     }
 
     public void longPressedName() {
@@ -175,5 +177,14 @@ public class StartJanuary {
         System.out.println("1 == " + mtd.findMinDifference(List.of("23:59","00:00")));
         System.out.println("0 == " + mtd.findMinDifference(List.of("00:00","23:59","00:00")));
         System.out.println("147 == " + mtd.findMinDifference(List.of("05:31","22:08","00:35")));
+    }
+
+    public void longestWordInDictionaryThroughDeleting() {
+        LongestWordInDictionaryThroughDeleting lwidtd = new LongestWordInDictionaryThroughDeleting();
+
+        System.out.println("apple == " + lwidtd.findLongestWord("abpcplea", List.of("ale","apple","monkey","plea")));
+        System.out.println("a == " + lwidtd.findLongestWord("abpcplea", List.of("a","b","c")));
+        System.out.println("ewaf == " + lwidtd.findLongestWord("aewfafwafjlwajflwajflwafj", List.of("apple","ewaf","awefawfwaf","awef","awefe","ewafeffewafewf")));
+        System.out.println("apple == " + lwidtd.findLongestWord("abpcplea", List.of("ale","apple","monkey","plea", "abpcplaaa","abpcllllll","abccclllpppeeaaaa")));
     }
 }
