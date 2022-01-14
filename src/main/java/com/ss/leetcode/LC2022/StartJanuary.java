@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
+import com.ss.leetcode.LC2022.january.LargestSubstringBetweenTwoEqualCharacters;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
@@ -37,7 +38,8 @@ public class StartJanuary {
 //        start.largestNumberAtLeastTwiceOfOthers();
 //        start.shortestCompletingWord();
 //        start.minimumTimeDifference();
-        start.longestWordInDictionaryThroughDeleting();
+//        start.longestWordInDictionaryThroughDeleting();
+        start.largestSubstringBetweenTwoEqualCharacters();
     }
 
     public void longPressedName() {
@@ -186,5 +188,14 @@ public class StartJanuary {
         System.out.println("a == " + lwidtd.findLongestWord("abpcplea", List.of("a","b","c")));
         System.out.println("ewaf == " + lwidtd.findLongestWord("aewfafwafjlwajflwajflwafj", List.of("apple","ewaf","awefawfwaf","awef","awefe","ewafeffewafewf")));
         System.out.println("apple == " + lwidtd.findLongestWord("abpcplea", List.of("ale","apple","monkey","plea", "abpcplaaa","abpcllllll","abccclllpppeeaaaa")));
+    }
+
+    public void largestSubstringBetweenTwoEqualCharacters() {
+        LargestSubstringBetweenTwoEqualCharacters lsbtec = new LargestSubstringBetweenTwoEqualCharacters();
+
+        System.out.println("0 == " + lsbtec.maxLengthBetweenEqualCharacters("aa"));
+        System.out.println("2 == " + lsbtec.maxLengthBetweenEqualCharacters("abca"));
+        System.out.println("-1 == " + lsbtec.maxLengthBetweenEqualCharacters("cbzxy"));
+        System.out.println("18 == " + lsbtec.maxLengthBetweenEqualCharacters("mgntdygtxrvxjnwksqhxuxtrv"));
     }
 }
