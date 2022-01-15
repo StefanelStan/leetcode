@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
+import com.ss.leetcode.LC2022.january.LargestPerimeterTriangle;
 import com.ss.leetcode.LC2022.january.LargestSubstringBetweenTwoEqualCharacters;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
@@ -39,7 +40,8 @@ public class StartJanuary {
 //        start.shortestCompletingWord();
 //        start.minimumTimeDifference();
 //        start.longestWordInDictionaryThroughDeleting();
-        start.largestSubstringBetweenTwoEqualCharacters();
+//        start.largestSubstringBetweenTwoEqualCharacters();
+        start.largestPerimeterTriangle();
     }
 
     public void longPressedName() {
@@ -197,5 +199,13 @@ public class StartJanuary {
         System.out.println("2 == " + lsbtec.maxLengthBetweenEqualCharacters("abca"));
         System.out.println("-1 == " + lsbtec.maxLengthBetweenEqualCharacters("cbzxy"));
         System.out.println("18 == " + lsbtec.maxLengthBetweenEqualCharacters("mgntdygtxrvxjnwksqhxuxtrv"));
+    }
+
+    public void largestPerimeterTriangle() {
+        LargestPerimeterTriangle lpt = new LargestPerimeterTriangle();
+
+        System.out.println("5 == " + lpt.largestPerimeter(new int[]{2,1,2}));
+        System.out.println("0 == " + lpt.largestPerimeter(new int[]{1,2,1}));
+        System.out.println("221 == " + lpt.largestPerimeter(new int[]{33,23,45,14,78,23,67,76,34,9}));
     }
 }
