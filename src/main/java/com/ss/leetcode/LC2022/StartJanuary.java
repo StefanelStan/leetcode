@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
 import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
@@ -10,6 +11,7 @@ import com.ss.leetcode.LC2022.january.LargestSubstringBetweenTwoEqualCharacters;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
+import com.ss.leetcode.LC2022.january.MaximizeDistanceToClosestPerson;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
 import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
@@ -41,7 +43,9 @@ public class StartJanuary {
 //        start.minimumTimeDifference();
 //        start.longestWordInDictionaryThroughDeleting();
 //        start.largestSubstringBetweenTwoEqualCharacters();
-        start.largestPerimeterTriangle();
+//        start.largestPerimeterTriangle();
+//        start.maximizeDistanceToClosestPerson();
+        start.capitalizeTheTitle();
     }
 
     public void longPressedName() {
@@ -207,5 +211,23 @@ public class StartJanuary {
         System.out.println("5 == " + lpt.largestPerimeter(new int[]{2,1,2}));
         System.out.println("0 == " + lpt.largestPerimeter(new int[]{1,2,1}));
         System.out.println("221 == " + lpt.largestPerimeter(new int[]{33,23,45,14,78,23,67,76,34,9}));
+    }
+
+    public void maximizeDistanceToClosestPerson() {
+        MaximizeDistanceToClosestPerson mdtcp = new MaximizeDistanceToClosestPerson();
+
+        System.out.println("2 == " + mdtcp.maxDistToClosest(new int[]{1,0,0,0,1,0,1}));
+        System.out.println("3 == " + mdtcp.maxDistToClosest(new int[]{1,0,0,0}));
+        System.out.println("1 == " + mdtcp.maxDistToClosest(new int[]{0,1}));
+    }
+
+    public void capitalizeTheTitle() {
+        CapitalizeTheTitle ctt = new CapitalizeTheTitle();
+
+        System.out.println("Capitalize The Title == " + ctt.capitalizeTitle("capiTalIze tHe titLe"));
+        System.out.println("First Letter of Each Word == " + ctt.capitalizeTitle("First leTTeR of EACH Word"));
+        System.out.println("i Love Leetcode == " + ctt.capitalizeTitle("i lOve leetcode"));
+        System.out.println("a b c d ab Abc == " + ctt.capitalizeTitle("a b c d ab aBC"));
+        System.out.println("a == " + ctt.capitalizeTitle("a"));
     }
 }
