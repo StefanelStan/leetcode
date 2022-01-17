@@ -1,8 +1,11 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.january.BinaryTreeLevelOrderTraversalII;
 import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
 import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
+import com.ss.leetcode.LC2022.january.DivideAStringIntoGroupsOfSizeK;
+import com.ss.leetcode.LC2022.january.FindSmallestLetterGreaterThanTarget;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
@@ -13,14 +16,19 @@ import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
 import com.ss.leetcode.LC2022.january.MaximizeDistanceToClosestPerson;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
+import com.ss.leetcode.LC2022.january.MinimumPathSum;
 import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
+import com.ss.leetcode.LC2022.january.MostCommonWord;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
+import com.ss.leetcode.LC2022.january.RangeSumQueryMutable;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
 import com.ss.leetcode.LC2022.january.RotateString;
 import com.ss.leetcode.LC2022.january.ShortestCompletingWord;
 import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.TreeNode;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class StartJanuary {
@@ -45,7 +53,14 @@ public class StartJanuary {
 //        start.largestSubstringBetweenTwoEqualCharacters();
 //        start.largestPerimeterTriangle();
 //        start.maximizeDistanceToClosestPerson();
-        start.capitalizeTheTitle();
+//        start.capitalizeTheTitle();
+//        start.divideAStringIntoGroupsOfSizeK();
+
+//        start.minimumPathSum(); TLE
+//        start.binaryTreeLevelOrderTraversalII();
+//        start.rangeSumQueryMutable(); TLE
+//        start.findSmallestLetterGreaterThanTarget();
+        start.mostCommonWord();
     }
 
     public void longPressedName() {
@@ -229,5 +244,52 @@ public class StartJanuary {
         System.out.println("i Love Leetcode == " + ctt.capitalizeTitle("i lOve leetcode"));
         System.out.println("a b c d ab Abc == " + ctt.capitalizeTitle("a b c d ab aBC"));
         System.out.println("a == " + ctt.capitalizeTitle("a"));
+    }
+
+    public void divideAStringIntoGroupsOfSizeK() {
+        DivideAStringIntoGroupsOfSizeK dasigosk = new DivideAStringIntoGroupsOfSizeK();
+
+        System.out.println("[abc, def, ghi] == " + Arrays.toString(dasigosk.divideString("abcdefghi", 3, 'x')));
+        System.out.println("[abc, def, ghi, jxx] == " + Arrays.toString(dasigosk.divideString("abcdefghij", 3, 'x')));
+    }
+
+    public void minimumPathSum() {
+        MinimumPathSum mps = new MinimumPathSum();
+
+        System.out.println("7 == " + mps.minPathSum(new int[][]{{1,3,1},{1,5,1},{4,2,1}}));
+        System.out.println("12 == " + mps.minPathSum(new int[][]{{1,2,3},{4,5,6}}));
+    }
+
+    public void binaryTreeLevelOrderTraversalII() {
+        BinaryTreeLevelOrderTraversalII btlotii = new BinaryTreeLevelOrderTraversalII();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+
+        System.out.println("[[15,7],[9,20],[3]] == " + btlotii.levelOrderBottom(root1));
+        System.out.println("[[1]] == " + btlotii.levelOrderBottom(new TreeNode(1)));
+        System.out.println("[] == " + btlotii.levelOrderBottom(null));
+    }
+
+    public void rangeSumQueryMutable() {
+        RangeSumQueryMutable rsqm = new RangeSumQueryMutable(new int[]{1,3,5});
+
+        System.out.println("9 == " + rsqm.sumRange(0,2));
+        rsqm.update(1,2);
+        System.out.println("8 == " + rsqm.sumRange(0,2));
+    }
+
+    public void findSmallestLetterGreaterThanTarget() {
+        FindSmallestLetterGreaterThanTarget fslgtt = new FindSmallestLetterGreaterThanTarget();
+
+        System.out.println("c == " + fslgtt.nextGreatestLetter(new char[]{'c','f','j'}, 'a'));
+        System.out.println("f == " + fslgtt.nextGreatestLetter(new char[]{'c','f','j'}, 'c'));
+        System.out.println("f == " + fslgtt.nextGreatestLetter(new char[]{'c','f','j'}, 'd'));
+    }
+
+    public void mostCommonWord() {
+        MostCommonWord mcw = new MostCommonWord();
+
+        System.out.println("ball == " + mcw.mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new String[]{"hit"}));
+        System.out.println("a == " + mcw.mostCommonWord("a", new String[]{}));
     }
 }
