@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.january.BinaryTreeColoringGame;
 import com.ss.leetcode.LC2022.january.BinaryTreeLevelOrderTraversalII;
 import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
 import com.ss.leetcode.LC2022.january.CarPooling;
@@ -11,6 +12,7 @@ import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LargestPerimeterTriangle;
 import com.ss.leetcode.LC2022.january.LargestSubstringBetweenTwoEqualCharacters;
+import com.ss.leetcode.LC2022.january.LinkedListInBinaryTree;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
@@ -24,6 +26,7 @@ import com.ss.leetcode.LC2022.january.RangeSumQueryMutable;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
 import com.ss.leetcode.LC2022.january.RotateString;
 import com.ss.leetcode.LC2022.january.ShortestCompletingWord;
+import com.ss.leetcode.LC2022.january.StepByStepDirectionsFromBTNodeToAnother;
 import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
@@ -55,12 +58,14 @@ public class StartJanuary {
 //        start.maximizeDistanceToClosestPerson();
 //        start.capitalizeTheTitle();
 //        start.divideAStringIntoGroupsOfSizeK();
-
 //        start.minimumPathSum(); TLE
 //        start.binaryTreeLevelOrderTraversalII();
 //        start.rangeSumQueryMutable(); TLE
 //        start.findSmallestLetterGreaterThanTarget();
-        start.mostCommonWord();
+//        start.mostCommonWord();
+//        start.linkedListInBinaryTree();
+//        start.binaryTreeColoringGame();
+        start.stepByStepDirectionsFromBTNodeToAnother();
     }
 
     public void longPressedName() {
@@ -291,5 +296,39 @@ public class StartJanuary {
 
         System.out.println("ball == " + mcw.mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new String[]{"hit"}));
         System.out.println("a == " + mcw.mostCommonWord("a", new String[]{}));
+    }
+
+    public void linkedListInBinaryTree() {
+        LinkedListInBinaryTree llibt = new LinkedListInBinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(4, null, new TreeNode(2, new TreeNode(1), null)),
+            new TreeNode(4, new TreeNode(2, new TreeNode(6), new TreeNode(8, new TreeNode(1), new TreeNode(3))), null));
+
+        System.out.println("true == " + llibt.isSubPath(ListNode.makeChain(new int[]{4,2,8}), root1));
+        System.out.println("true == " + llibt.isSubPath(ListNode.makeChain(new int[]{1,4,2,6}), root1));
+        System.out.println("false == " + llibt.isSubPath(ListNode.makeChain(new int[]{1,4,2,6,8}), root1));
+    }
+
+    public void binaryTreeColoringGame() {
+        BinaryTreeColoringGame btcg = new BinaryTreeColoringGame();
+
+        TreeNode root1 = new TreeNode(1,
+            new TreeNode(2, new TreeNode(4, new TreeNode(8), new TreeNode(9)),
+                            new TreeNode(5, new TreeNode(10), new TreeNode(11))),
+            new TreeNode(3, new TreeNode(6), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+
+        System.out.println("true == " + btcg.btreeGameWinningMove(root1, 11, 3));
+        System.out.println("false == " + btcg.btreeGameWinningMove(root2, 3, 1));
+    }
+
+    public void stepByStepDirectionsFromBTNodeToAnother() {
+        StepByStepDirectionsFromBTNodeToAnother sbsdfbtta = new StepByStepDirectionsFromBTNodeToAnother();
+
+        TreeNode root1 = new TreeNode(5, new TreeNode(1, new TreeNode(3), null), new TreeNode(2, new TreeNode(6), new TreeNode(4)));
+        TreeNode root2 = new TreeNode(2, new TreeNode(1), null);
+
+        System.out.println("UURL == " + sbsdfbtta.getDirections(root1, 3, 6));
+        System.out.println("L == " + sbsdfbtta.getDirections(root2, 2, 1));
     }
 }
