@@ -6,12 +6,14 @@ import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
 import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.DivideAStringIntoGroupsOfSizeK;
+import com.ss.leetcode.LC2022.january.EscapeTheGhosts;
 import com.ss.leetcode.LC2022.january.FindSmallestLetterGreaterThanTarget;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LargestPerimeterTriangle;
 import com.ss.leetcode.LC2022.january.LargestSubstringBetweenTwoEqualCharacters;
+import com.ss.leetcode.LC2022.january.LinkedListCycleII;
 import com.ss.leetcode.LC2022.january.LinkedListInBinaryTree;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
@@ -23,6 +25,7 @@ import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
 import com.ss.leetcode.LC2022.january.MostCommonWord;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
 import com.ss.leetcode.LC2022.january.RangeSumQueryMutable;
+import com.ss.leetcode.LC2022.january.RedistributeCharactersToMakeAllStringsEqual;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
 import com.ss.leetcode.LC2022.january.RotateString;
 import com.ss.leetcode.LC2022.january.ShortestCompletingWord;
@@ -65,7 +68,10 @@ public class StartJanuary {
 //        start.mostCommonWord();
 //        start.linkedListInBinaryTree();
 //        start.binaryTreeColoringGame();
-        start.stepByStepDirectionsFromBTNodeToAnother();
+//        start.stepByStepDirectionsFromBTNodeToAnother();
+//        start.linkedListCycleII();
+//        start.redistributeCharactersToMakeAllStringsEqual();
+        start.escapeTheGhosts();
     }
 
     public void longPressedName() {
@@ -330,5 +336,36 @@ public class StartJanuary {
 
         System.out.println("UURL == " + sbsdfbtta.getDirections(root1, 3, 6));
         System.out.println("L == " + sbsdfbtta.getDirections(root2, 2, 1));
+    }
+
+    public void linkedListCycleII() {
+        LinkedListCycleII llcii = new LinkedListCycleII();
+
+        ListNode head1 = ListNode.makeChain(new int[]{3,2,0,4});
+        head1.next.next.next.next = head1.next;
+        ListNode head2 = new ListNode(1, new ListNode(2));
+        head2.next.next = head2;
+
+        System.out.println("2 == " + llcii.detectCycle(head1).val);
+        System.out.println("1 == " + llcii.detectCycle(head2).val);
+        System.out.println("null == " + llcii.detectCycle(ListNode.makeChain(new int[]{1,2,3})));
+    }
+
+    public void redistributeCharactersToMakeAllStringsEqual() {
+        RedistributeCharactersToMakeAllStringsEqual rctmase = new RedistributeCharactersToMakeAllStringsEqual();
+
+        System.out.println("true == " + rctmase.makeEqual(new String[]{"abc","aabc","bc"}));
+        System.out.println("false == " + rctmase.makeEqual(new String[]{"ab","a"}));
+    }
+
+    public void escapeTheGhosts() {
+        EscapeTheGhosts etg = new EscapeTheGhosts();
+
+        System.out.println("true == " + etg.escapeGhosts(new int[][]{{1,0},{0,3}}, new int[]{0,1}));
+        System.out.println("false == " + etg.escapeGhosts(new int[][]{{1,0}}, new int[]{2,0}));
+        System.out.println("false == " + etg.escapeGhosts(new int[][]{{2,0}}, new int[]{1,0}));
+        System.out.println("false == " + etg.escapeGhosts(new int[][]{{5,0},{-10,-2},{0,-5},{-2,-2},{-7,1}}, new int[]{7,7}));
+        System.out.println("true == " + etg.escapeGhosts(new int[][]{{1,0},{0,3}}, new int[]{0,1}));
+        System.out.println("false == " + etg.escapeGhosts(new int[][]{{1,9},{2,-5},{3,8},{9,8},{-1,3}}, new int[]{8,-10}));
     }
 }
