@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2022.january.DivideAStringIntoGroupsOfSizeK;
 import com.ss.leetcode.LC2022.january.EscapeTheGhosts;
 import com.ss.leetcode.LC2022.january.FindSmallestLetterGreaterThanTarget;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
+import com.ss.leetcode.LC2022.january.GasStation;
 import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LargestPerimeterTriangle;
@@ -19,6 +20,7 @@ import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
 import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
 import com.ss.leetcode.LC2022.january.MaximizeDistanceToClosestPerson;
+import com.ss.leetcode.LC2022.january.MaximumDifferenceBetweenIncreasingElements;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
 import com.ss.leetcode.LC2022.january.MinimumPathSum;
 import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
@@ -71,7 +73,9 @@ public class StartJanuary {
 //        start.stepByStepDirectionsFromBTNodeToAnother();
 //        start.linkedListCycleII();
 //        start.redistributeCharactersToMakeAllStringsEqual();
-        start.escapeTheGhosts();
+//        start.escapeTheGhosts();
+//        start.gasStation();
+        start.maximumDifferenceBetweenIncreasingElements();
     }
 
     public void longPressedName() {
@@ -204,7 +208,6 @@ public class StartJanuary {
         System.out.println("steps == " + scw.shortestCompletingWord("1s3 PSt", new String[]{"step","steps","stripe","stepple"}));
         System.out.println("pest == " + scw.shortestCompletingWord("1s3 456", new String[]{"looks","pest","stew","show"}));
     }
-
     public void minimumTimeDifference() {
         MinimumTimeDifference mtd = new MinimumTimeDifference();
 
@@ -367,5 +370,20 @@ public class StartJanuary {
         System.out.println("false == " + etg.escapeGhosts(new int[][]{{5,0},{-10,-2},{0,-5},{-2,-2},{-7,1}}, new int[]{7,7}));
         System.out.println("true == " + etg.escapeGhosts(new int[][]{{1,0},{0,3}}, new int[]{0,1}));
         System.out.println("false == " + etg.escapeGhosts(new int[][]{{1,9},{2,-5},{3,8},{9,8},{-1,3}}, new int[]{8,-10}));
+    }
+
+    public void gasStation() {
+        GasStation gs = new GasStation();
+
+        System.out.println("3 == " + gs.canCompleteCircuit(new int[]{1,2,3,4,5}, new int[]{3,4,5,1,2})) ;
+        System.out.println("-1 == " + gs.canCompleteCircuit(new int[]{2,3,4}, new int[]{3,4,3})) ;
+    }
+
+    public void maximumDifferenceBetweenIncreasingElements() {
+        MaximumDifferenceBetweenIncreasingElements mdbie = new MaximumDifferenceBetweenIncreasingElements();
+
+        System.out.println("4 == " + mdbie.maximumDifference(new int[]{7,1,5,4}));
+        System.out.println("-1 == " + mdbie.maximumDifference(new int[]{9,4,3,2}));
+        System.out.println("9 == " + mdbie.maximumDifference(new int[]{1,5,2,10}));
     }
 }
