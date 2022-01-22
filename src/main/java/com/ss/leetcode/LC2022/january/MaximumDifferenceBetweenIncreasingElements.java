@@ -6,6 +6,19 @@ import java.util.Comparator;
 public class MaximumDifferenceBetweenIncreasingElements {
     // https://leetcode.com/problems/maximum-difference-between-increasing-elements/
     public int maximumDifference(int[] nums) {
+        int min = Integer.MAX_VALUE;
+        int maxDiff = 0;
+        for (int num : nums) {
+            if (num < min) {
+                min = num;
+            } else {
+                maxDiff = Math.max(maxDiff, num - min);
+            }
+        }
+        return maxDiff == 0 ? -1 : maxDiff;
+    }
+
+    public int maximumDifference2(int[] nums) {
         int[][] numsAndPos = new int[nums.length][2];
         int maxDiff = 0;
         for (int i = 0; i < nums.length; i++) {

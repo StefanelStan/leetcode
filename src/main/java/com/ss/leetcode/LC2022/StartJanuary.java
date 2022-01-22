@@ -5,11 +5,13 @@ import com.ss.leetcode.LC2022.january.BinaryTreeLevelOrderTraversalII;
 import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
 import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
+import com.ss.leetcode.LC2022.january.CountTheHiddenSequences;
 import com.ss.leetcode.LC2022.january.DivideAStringIntoGroupsOfSizeK;
 import com.ss.leetcode.LC2022.january.EscapeTheGhosts;
 import com.ss.leetcode.LC2022.january.FindSmallestLetterGreaterThanTarget;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.GasStation;
+import com.ss.leetcode.LC2022.january.KHighestRankedItemsWithinAPriceRange;
 import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
 import com.ss.leetcode.LC2022.january.LargestPerimeterTriangle;
@@ -22,6 +24,7 @@ import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
 import com.ss.leetcode.LC2022.january.MaximizeDistanceToClosestPerson;
 import com.ss.leetcode.LC2022.january.MaximumDifferenceBetweenIncreasingElements;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
+import com.ss.leetcode.LC2022.january.MinimumCostOfBuyingCandiesWithDiscount;
 import com.ss.leetcode.LC2022.january.MinimumPathSum;
 import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
 import com.ss.leetcode.LC2022.january.MostCommonWord;
@@ -75,7 +78,10 @@ public class StartJanuary {
 //        start.redistributeCharactersToMakeAllStringsEqual();
 //        start.escapeTheGhosts();
 //        start.gasStation();
-        start.maximumDifferenceBetweenIncreasingElements();
+//        start.maximumDifferenceBetweenIncreasingElements();
+//        start.minimumCostOfBuyingCandiesWithDiscount();
+//        start.countTheHiddenSequences();
+        start.kHighestRankedItemsWithinAPriceRange();
     }
 
     public void longPressedName() {
@@ -385,5 +391,28 @@ public class StartJanuary {
         System.out.println("4 == " + mdbie.maximumDifference(new int[]{7,1,5,4}));
         System.out.println("-1 == " + mdbie.maximumDifference(new int[]{9,4,3,2}));
         System.out.println("9 == " + mdbie.maximumDifference(new int[]{1,5,2,10}));
+    }
+
+    public void minimumCostOfBuyingCandiesWithDiscount() {
+        MinimumCostOfBuyingCandiesWithDiscount mcobcwd = new MinimumCostOfBuyingCandiesWithDiscount();
+
+        System.out.println("5 == " + mcobcwd.minimumCost(new int[]{1,2,3}));
+        System.out.println("23 == " + mcobcwd.minimumCost(new int[]{6,5,7,9,2,2}));
+        System.out.println("10 == " + mcobcwd.minimumCost(new int[]{5,5}));
+    }
+
+    public void countTheHiddenSequences() {
+        CountTheHiddenSequences cths = new CountTheHiddenSequences();
+
+        System.out.println("2 == " + cths.numberOfArrays(new int[]{1,-3,4}, 1, 6));
+        System.out.println("4 == " + cths.numberOfArrays(new int[]{3,-4,5,1,-2}, -4, 5));
+        System.out.println("0 == " + cths.numberOfArrays(new int[]{4,-7,2}, 3, 6));
+        System.out.println("60 == " + cths.numberOfArrays(new int[]{-40}, -46, 53));
+    }
+
+    public void kHighestRankedItemsWithinAPriceRange() {
+        KHighestRankedItemsWithinAPriceRange khriwapr = new KHighestRankedItemsWithinAPriceRange();
+
+        System.out.println("2 == " + khriwapr.highestRankedKItems(new int[][]{{1,2,0,1},{1,3,0,1},{0,2,5,1}}, new int[]{2,5}, new int[]{0,0}, 3));
     }
 }
