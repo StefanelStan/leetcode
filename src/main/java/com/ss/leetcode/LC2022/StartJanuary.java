@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
 import com.ss.leetcode.LC2022.january.CarPooling;
 import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.CountTheHiddenSequences;
+import com.ss.leetcode.LC2022.january.DayOfTheWeek;
 import com.ss.leetcode.LC2022.january.DivideAStringIntoGroupsOfSizeK;
 import com.ss.leetcode.LC2022.january.EscapeTheGhosts;
 import com.ss.leetcode.LC2022.january.FindSmallestLetterGreaterThanTarget;
@@ -81,7 +82,8 @@ public class StartJanuary {
 //        start.maximumDifferenceBetweenIncreasingElements();
 //        start.minimumCostOfBuyingCandiesWithDiscount();
 //        start.countTheHiddenSequences();
-        start.kHighestRankedItemsWithinAPriceRange();
+//        start.kHighestRankedItemsWithinAPriceRange();
+        start.dayOfTheWeek();
     }
 
     public void longPressedName() {
@@ -214,6 +216,7 @@ public class StartJanuary {
         System.out.println("steps == " + scw.shortestCompletingWord("1s3 PSt", new String[]{"step","steps","stripe","stepple"}));
         System.out.println("pest == " + scw.shortestCompletingWord("1s3 456", new String[]{"looks","pest","stew","show"}));
     }
+
     public void minimumTimeDifference() {
         MinimumTimeDifference mtd = new MinimumTimeDifference();
 
@@ -414,5 +417,14 @@ public class StartJanuary {
         KHighestRankedItemsWithinAPriceRange khriwapr = new KHighestRankedItemsWithinAPriceRange();
 
         System.out.println("2 == " + khriwapr.highestRankedKItems(new int[][]{{1,2,0,1},{1,3,0,1},{0,2,5,1}}, new int[]{2,5}, new int[]{0,0}, 3));
+    }
+
+    public void dayOfTheWeek() {
+        DayOfTheWeek dotw = new DayOfTheWeek();
+
+        System.out.println("Saturday == " + dotw.dayOfTheWeek(31, 8, 2019));
+        System.out.println("Sunday == " + dotw.dayOfTheWeek(18, 7, 1999));
+        System.out.println("Sunday == " + dotw.dayOfTheWeek(15, 8, 1993));
+        System.out.println("Wednesday == " + dotw.dayOfTheWeek(17, 12, 1986));
     }
 }
