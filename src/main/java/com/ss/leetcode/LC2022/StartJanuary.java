@@ -21,9 +21,12 @@ import com.ss.leetcode.LC2022.january.LinkedListCycleII;
 import com.ss.leetcode.LC2022.january.LinkedListInBinaryTree;
 import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
 import com.ss.leetcode.LC2022.january.LongPressedName;
+import com.ss.leetcode.LC2022.january.LongestHarmoniousSubsequence;
+import com.ss.leetcode.LC2022.january.LongestWordInDictionary;
 import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
 import com.ss.leetcode.LC2022.january.MaximizeDistanceToClosestPerson;
 import com.ss.leetcode.LC2022.january.MaximumDifferenceBetweenIncreasingElements;
+import com.ss.leetcode.LC2022.january.MaximumScoreAfterSplittingAString;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
 import com.ss.leetcode.LC2022.january.MinimumCostOfBuyingCandiesWithDiscount;
 import com.ss.leetcode.LC2022.january.MinimumPathSum;
@@ -83,7 +86,10 @@ public class StartJanuary {
 //        start.minimumCostOfBuyingCandiesWithDiscount();
 //        start.countTheHiddenSequences();
 //        start.kHighestRankedItemsWithinAPriceRange();
-        start.dayOfTheWeek();
+//        start.dayOfTheWeek();
+//        start.maximumScoreAfterSplittingAString();
+//        start.longestWordInDictionary();
+        start.longestHarmoniousSubsequence();
     }
 
     public void longPressedName() {
@@ -426,5 +432,35 @@ public class StartJanuary {
         System.out.println("Sunday == " + dotw.dayOfTheWeek(18, 7, 1999));
         System.out.println("Sunday == " + dotw.dayOfTheWeek(15, 8, 1993));
         System.out.println("Wednesday == " + dotw.dayOfTheWeek(17, 12, 1986));
+    }
+
+    public void maximumScoreAfterSplittingAString() {
+        MaximumScoreAfterSplittingAString msasas = new MaximumScoreAfterSplittingAString();
+
+        System.out.println("5 == " + msasas.maxScore("011101"));
+        System.out.println("5 == " + msasas.maxScore("00111"));
+        System.out.println("3 == " + msasas.maxScore("1111"));
+        System.out.println("1 == " + msasas.maxScore("00"));
+        System.out.println("2 == " + msasas.maxScore("000"));
+    }
+
+    public void longestWordInDictionary() {
+        LongestWordInDictionary lwid = new LongestWordInDictionary();
+
+        System.out.println("world == " + lwid.longestWord(new String[]{"w","wo","wor","worl","world"}));
+        System.out.println("apple == " + lwid.longestWord(new String[]{"a","banana","app","appl","ap","apply","apple"}));
+        System.out.println("d == " + lwid.longestWord(new String[]{"d"}));
+        System.out.println("x == " + lwid.longestWord(new String[]{"x","z"}));
+    }
+
+    public void longestHarmoniousSubsequence() {
+        LongestHarmoniousSubsequence lhs = new LongestHarmoniousSubsequence();
+
+        System.out.println("5 == " + lhs.findLHS(new int[]{1,3,2,2,5,2,3,7}));
+        System.out.println("2 == " + lhs.findLHS(new int[]{1,2,3,4}));
+        System.out.println("0 == " + lhs.findLHS(new int[]{1,1,1,1}));
+        System.out.println("0 == " + lhs.findLHS(new int[]{1}));
+        System.out.println("1 == " + lhs.findLHS(new int[]{2,1}));
+        System.out.println("0 == " + lhs.findLHS(new int[]{3,1}));
     }
 }
