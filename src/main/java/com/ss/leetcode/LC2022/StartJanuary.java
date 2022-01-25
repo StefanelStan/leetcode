@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2022.january.EscapeTheGhosts;
 import com.ss.leetcode.LC2022.january.FindSmallestLetterGreaterThanTarget;
 import com.ss.leetcode.LC2022.january.FindTheTownJudge;
 import com.ss.leetcode.LC2022.january.GasStation;
+import com.ss.leetcode.LC2022.january.KDiffPairsInAnArray;
 import com.ss.leetcode.LC2022.january.KHighestRankedItemsWithinAPriceRange;
 import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
 import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
@@ -36,10 +37,13 @@ import com.ss.leetcode.LC2022.january.PalindromePartitioning;
 import com.ss.leetcode.LC2022.january.RangeSumQueryMutable;
 import com.ss.leetcode.LC2022.january.RedistributeCharactersToMakeAllStringsEqual;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
+import com.ss.leetcode.LC2022.january.RemoveZeroSumConsecutiveNodesFromLL;
 import com.ss.leetcode.LC2022.january.RotateString;
 import com.ss.leetcode.LC2022.january.ShortestCompletingWord;
 import com.ss.leetcode.LC2022.january.StepByStepDirectionsFromBTNodeToAnother;
 import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
+import com.ss.leetcode.LC2022.january.ValidBoomerang;
+import com.ss.leetcode.LC2022.january.XOfAKindInADeckOfCards;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -89,7 +93,11 @@ public class StartJanuary {
 //        start.dayOfTheWeek();
 //        start.maximumScoreAfterSplittingAString();
 //        start.longestWordInDictionary();
-        start.longestHarmoniousSubsequence();
+//        start.longestHarmoniousSubsequence();
+//        start.kDiffPairsInAnArray();
+//        start.validBoomerang();
+//        start.removeZeroSumConsecutiveNodesFromLL(); // NOTE: Multiple nodes an form up 0 eg: -3,-4,1,6 (-7 + 7);
+        start.xOfAKindInADeckOfCards();
     }
 
     public void longPressedName() {
@@ -462,5 +470,41 @@ public class StartJanuary {
         System.out.println("0 == " + lhs.findLHS(new int[]{1}));
         System.out.println("1 == " + lhs.findLHS(new int[]{2,1}));
         System.out.println("0 == " + lhs.findLHS(new int[]{3,1}));
+    }
+
+    public void kDiffPairsInAnArray() {
+        KDiffPairsInAnArray kdpiaa = new KDiffPairsInAnArray();
+
+        System.out.println("2 == " + kdpiaa.findPairs(new int[]{3,1,4,1,5}, 2));
+        System.out.println("4 == " + kdpiaa.findPairs(new int[]{1,2,3,4,5}, 1));
+        System.out.println("1 == " + kdpiaa.findPairs(new int[]{1,3,1,5,4}, 0));
+    }
+
+    public void validBoomerang() {
+        ValidBoomerang vb = new ValidBoomerang();
+
+        System.out.println("true == " + vb.isBoomerang(new int[][]{{1,1},{2,3},{3,2}}));
+        System.out.println("false == " + vb.isBoomerang(new int[][]{{1,1},{2,2},{3,3}}));
+        System.out.println("false == " + vb.isBoomerang(new int[][]{{1,1},{2,2},{1,1}}));
+        System.out.println("true == " + vb.isBoomerang(new int[][]{{0,0},{1,0},{2,2}}));
+        System.out.println("false == " + vb.isBoomerang(new int[][]{{1,1},{2,2},{7,7}}));
+    }
+
+    public void removeZeroSumConsecutiveNodesFromLL() {
+        RemoveZeroSumConsecutiveNodesFromLL rzscnfll = new RemoveZeroSumConsecutiveNodesFromLL();
+
+        System.out.println("[1,2,1] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,-3,3,1})).getAsList());
+        System.out.println("[1,2,4] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,3,-3,4})).getAsList());
+        System.out.println("[1] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,3,-3,-2})).getAsList());
+        System.out.println("[] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,3,-3,-2,-1})));
+        System.out.println("[5,-2,-5] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{5,-3,-4,1,6,-2,-5})));
+    }
+
+    public void xOfAKindInADeckOfCards() {
+        XOfAKindInADeckOfCards xoakiadoc = new XOfAKindInADeckOfCards();
+
+        System.out.println("true == " + xoakiadoc.hasGroupsSizeX(new int[]{1,2,3,4,4,3,2,1}));
+        System.out.println("false == " + xoakiadoc.hasGroupsSizeX(new int[]{1,1,1,2,2,2,3,3}));
+        System.out.println("true == " + xoakiadoc.hasGroupsSizeX(new int[]{1,1,1,1,2,2,2,2,2,2}));
     }
 }
