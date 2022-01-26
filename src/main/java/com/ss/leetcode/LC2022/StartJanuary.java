@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.january.BinaryTreeColoringGame;
 import com.ss.leetcode.LC2022.january.BinaryTreeLevelOrderTraversalII;
 import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
 import com.ss.leetcode.LC2022.january.CarPooling;
+import com.ss.leetcode.LC2022.january.CheckArrayFormationThroughConcatenation;
 import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
 import com.ss.leetcode.LC2022.january.CountTheHiddenSequences;
 import com.ss.leetcode.LC2022.january.DayOfTheWeek;
@@ -97,7 +98,8 @@ public class StartJanuary {
 //        start.kDiffPairsInAnArray();
 //        start.validBoomerang();
 //        start.removeZeroSumConsecutiveNodesFromLL(); // NOTE: Multiple nodes an form up 0 eg: -3,-4,1,6 (-7 + 7);
-        start.xOfAKindInADeckOfCards();
+//        start.xOfAKindInADeckOfCards();
+        start.checkArrayFormationThroughConcatenation();
     }
 
     public void longPressedName() {
@@ -506,5 +508,13 @@ public class StartJanuary {
         System.out.println("true == " + xoakiadoc.hasGroupsSizeX(new int[]{1,2,3,4,4,3,2,1}));
         System.out.println("false == " + xoakiadoc.hasGroupsSizeX(new int[]{1,1,1,2,2,2,3,3}));
         System.out.println("true == " + xoakiadoc.hasGroupsSizeX(new int[]{1,1,1,1,2,2,2,2,2,2}));
+    }
+
+    public void checkArrayFormationThroughConcatenation() {
+        CheckArrayFormationThroughConcatenation caftc = new CheckArrayFormationThroughConcatenation();
+
+        System.out.println("true == " + caftc.canFormArray(new int[]{15,88}, new int[][]{{88},{15}}));
+        System.out.println("false == " + caftc.canFormArray(new int[]{49,18,16}, new int[][]{{16,18,49}}));
+        System.out.println("true == " + caftc.canFormArray(new int[]{91,4,64,78}, new int[][]{{78},{4,64},{91}}));
     }
 }
