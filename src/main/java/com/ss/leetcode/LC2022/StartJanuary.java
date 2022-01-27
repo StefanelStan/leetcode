@@ -30,12 +30,16 @@ import com.ss.leetcode.LC2022.january.MaximizeDistanceToClosestPerson;
 import com.ss.leetcode.LC2022.january.MaximumDifferenceBetweenIncreasingElements;
 import com.ss.leetcode.LC2022.january.MaximumScoreAfterSplittingAString;
 import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
+import com.ss.leetcode.LC2022.january.MaximumXOROfTwoNumbersInAnArray;
 import com.ss.leetcode.LC2022.january.MinimumCostOfBuyingCandiesWithDiscount;
+import com.ss.leetcode.LC2022.january.MinimumFallingPathSum;
 import com.ss.leetcode.LC2022.january.MinimumPathSum;
 import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
 import com.ss.leetcode.LC2022.january.MostCommonWord;
 import com.ss.leetcode.LC2022.january.PalindromePartitioning;
+import com.ss.leetcode.LC2022.january.PositionsOfLargeGroups;
 import com.ss.leetcode.LC2022.january.RangeSumQueryMutable;
+import com.ss.leetcode.LC2022.january.RearrangeArrayElementsBySign;
 import com.ss.leetcode.LC2022.january.RedistributeCharactersToMakeAllStringsEqual;
 import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
 import com.ss.leetcode.LC2022.january.RemoveZeroSumConsecutiveNodesFromLL;
@@ -99,7 +103,11 @@ public class StartJanuary {
 //        start.validBoomerang();
 //        start.removeZeroSumConsecutiveNodesFromLL(); // NOTE: Multiple nodes an form up 0 eg: -3,-4,1,6 (-7 + 7);
 //        start.xOfAKindInADeckOfCards();
-        start.checkArrayFormationThroughConcatenation();
+//        start.checkArrayFormationThroughConcatenation();
+//        start.maximumXOROfTwoNumbersInAnArray();
+//        start.positionsOfLargeGroups();
+//        start.minimumFallingPathSum();
+        start.rearrangeArrayElementsBySign();
     }
 
     public void longPressedName() {
@@ -516,5 +524,38 @@ public class StartJanuary {
         System.out.println("true == " + caftc.canFormArray(new int[]{15,88}, new int[][]{{88},{15}}));
         System.out.println("false == " + caftc.canFormArray(new int[]{49,18,16}, new int[][]{{16,18,49}}));
         System.out.println("true == " + caftc.canFormArray(new int[]{91,4,64,78}, new int[][]{{78},{4,64},{91}}));
+    }
+
+    public void maximumXOROfTwoNumbersInAnArray() {
+        MaximumXOROfTwoNumbersInAnArray mxorotniaa = new MaximumXOROfTwoNumbersInAnArray();
+
+        System.out.println("28 == " +  mxorotniaa.findMaximumXOR(new int[]{3,10,5,25,2,8}));
+        System.out.println("127 == " +  mxorotniaa.findMaximumXOR(new int[]{14,70,53,83,49,91,36,80,92,51,66,70}));
+        System.out.println("0 == " +  mxorotniaa.findMaximumXOR(new int[]{0}));
+        System.out.println("0 == " +  mxorotniaa.findMaximumXOR(new int[]{1}));
+    }
+
+    public void positionsOfLargeGroups() {
+        PositionsOfLargeGroups polg = new PositionsOfLargeGroups();
+
+        System.out.println("[[3,6]] == " + polg.largeGroupPositions("abbxxxxzzy"));
+        System.out.println("[] == " + polg.largeGroupPositions("abc"));
+        System.out.println("[[3,5],[6,9],[12,14]] == " + polg.largeGroupPositions("abcdddeeeeaabbbcd"));
+        System.out.println("[] == " + polg.largeGroupPositions("a"));
+        System.out.println("[] == " + polg.largeGroupPositions("aa"));
+    }
+
+    public void minimumFallingPathSum() {
+        MinimumFallingPathSum mfps = new MinimumFallingPathSum();
+
+        System.out.println("13 == " + mfps.minFallingPathSum(new int[][]{{2,1,3},{6,5,4},{7,8,9}}));
+        System.out.println("-59 == " + mfps.minFallingPathSum(new int[][]{{-19, 57},{-40,-5}}));
+    }
+
+    public void rearrangeArrayElementsBySign() {
+        RearrangeArrayElementsBySign raebs = new RearrangeArrayElementsBySign();
+
+        System.out.println("[3,-2,1,-5,2,-4] == " + raebs.rearrangeArray(new int[]{3,1,-2,-5,2,-4}));
+        System.out.println("[1,-1] == " + raebs.rearrangeArray(new int[]{-1,1}));
     }
 }
