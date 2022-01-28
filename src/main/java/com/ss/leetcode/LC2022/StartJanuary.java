@@ -1,54 +1,6 @@
 package com.ss.leetcode.LC2022;
 
-import com.ss.leetcode.LC2022.january.BinaryTreeColoringGame;
-import com.ss.leetcode.LC2022.january.BinaryTreeLevelOrderTraversalII;
-import com.ss.leetcode.LC2022.january.CapitalizeTheTitle;
-import com.ss.leetcode.LC2022.january.CarPooling;
-import com.ss.leetcode.LC2022.january.CheckArrayFormationThroughConcatenation;
-import com.ss.leetcode.LC2022.january.CheckIfAllAAppearsBeforeAllB;
-import com.ss.leetcode.LC2022.january.CountTheHiddenSequences;
-import com.ss.leetcode.LC2022.january.DayOfTheWeek;
-import com.ss.leetcode.LC2022.january.DivideAStringIntoGroupsOfSizeK;
-import com.ss.leetcode.LC2022.january.EscapeTheGhosts;
-import com.ss.leetcode.LC2022.january.FindSmallestLetterGreaterThanTarget;
-import com.ss.leetcode.LC2022.january.FindTheTownJudge;
-import com.ss.leetcode.LC2022.january.GasStation;
-import com.ss.leetcode.LC2022.january.KDiffPairsInAnArray;
-import com.ss.leetcode.LC2022.january.KHighestRankedItemsWithinAPriceRange;
-import com.ss.leetcode.LC2022.january.LargestNumberAtLeastTwiceOfOthers;
-import com.ss.leetcode.LC2022.january.LargestOddNumberInString;
-import com.ss.leetcode.LC2022.january.LargestPerimeterTriangle;
-import com.ss.leetcode.LC2022.january.LargestSubstringBetweenTwoEqualCharacters;
-import com.ss.leetcode.LC2022.january.LinkedListCycleII;
-import com.ss.leetcode.LC2022.january.LinkedListInBinaryTree;
-import com.ss.leetcode.LC2022.january.LinkedListRandomNode;
-import com.ss.leetcode.LC2022.january.LongPressedName;
-import com.ss.leetcode.LC2022.january.LongestHarmoniousSubsequence;
-import com.ss.leetcode.LC2022.january.LongestWordInDictionary;
-import com.ss.leetcode.LC2022.january.LongestWordInDictionaryThroughDeleting;
-import com.ss.leetcode.LC2022.january.MaximizeDistanceToClosestPerson;
-import com.ss.leetcode.LC2022.january.MaximumDifferenceBetweenIncreasingElements;
-import com.ss.leetcode.LC2022.january.MaximumScoreAfterSplittingAString;
-import com.ss.leetcode.LC2022.january.MaximumTwinSumOfALinkedList;
-import com.ss.leetcode.LC2022.january.MaximumXOROfTwoNumbersInAnArray;
-import com.ss.leetcode.LC2022.january.MinimumCostOfBuyingCandiesWithDiscount;
-import com.ss.leetcode.LC2022.january.MinimumFallingPathSum;
-import com.ss.leetcode.LC2022.january.MinimumPathSum;
-import com.ss.leetcode.LC2022.january.MinimumTimeDifference;
-import com.ss.leetcode.LC2022.january.MostCommonWord;
-import com.ss.leetcode.LC2022.january.PalindromePartitioning;
-import com.ss.leetcode.LC2022.january.PositionsOfLargeGroups;
-import com.ss.leetcode.LC2022.january.RangeSumQueryMutable;
-import com.ss.leetcode.LC2022.january.RearrangeArrayElementsBySign;
-import com.ss.leetcode.LC2022.january.RedistributeCharactersToMakeAllStringsEqual;
-import com.ss.leetcode.LC2022.january.RemoveOneElementArrayStrictlyIncreasing;
-import com.ss.leetcode.LC2022.january.RemoveZeroSumConsecutiveNodesFromLL;
-import com.ss.leetcode.LC2022.january.RotateString;
-import com.ss.leetcode.LC2022.january.ShortestCompletingWord;
-import com.ss.leetcode.LC2022.january.StepByStepDirectionsFromBTNodeToAnother;
-import com.ss.leetcode.LC2022.january.TimeNeededToBuyTickets;
-import com.ss.leetcode.LC2022.january.ValidBoomerang;
-import com.ss.leetcode.LC2022.january.XOfAKindInADeckOfCards;
+import com.ss.leetcode.LC2022.january.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -107,7 +59,8 @@ public class StartJanuary {
 //        start.maximumXOROfTwoNumbersInAnArray();
 //        start.positionsOfLargeGroups();
 //        start.minimumFallingPathSum();
-        start.rearrangeArrayElementsBySign();
+//        start.rearrangeArrayElementsBySign();
+        start.lemonadeChange();
     }
 
     public void longPressedName() {
@@ -557,5 +510,12 @@ public class StartJanuary {
 
         System.out.println("[3,-2,1,-5,2,-4] == " + raebs.rearrangeArray(new int[]{3,1,-2,-5,2,-4}));
         System.out.println("[1,-1] == " + raebs.rearrangeArray(new int[]{-1,1}));
+    }
+
+    public void lemonadeChange() {
+        LemonadeChange lc = new LemonadeChange();
+
+        System.out.println("true == " + lc.lemonadeChange(new int[]{5,5,5,10,20}));
+        System.out.println("false == " + lc.lemonadeChange(new int[]{5,5,10,10,20}));
     }
 }
