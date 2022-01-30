@@ -27,6 +27,7 @@ import com.ss.leetcode.LC2021.october.TransposeMatrix;
 import com.ss.leetcode.LC2021.october.TwoOutOfThree;
 import com.ss.leetcode.shared.TreeNode;
 import com.ss.leetcode.LC2021.october.FlattenAMultilevelDoublyLL.Node;
+import com.ss.leetcode.shared.Trie;
 
 import java.util.Arrays;
 import java.util.List;
@@ -44,7 +45,7 @@ public class StartOctober {
 //        start.findMissingObservations();
 //        start.stoneGameIX();
 //        start.jumpGame();
-//        start.implementPrefixTrie();
+        start.implementPrefixTrie();
 //        start.bitwiseANDOfNumbersRange();
 //        start.diameterOfABinaryTree();
 //        start.guessNumberHigherOrLower();
@@ -59,7 +60,7 @@ public class StartOctober {
 //        start.defuseTheBomb();
 //        start.transposeMatrix();
 //        start.employeeImportance();
-        start.flattenAMultilevelDoublyLL();
+//        start.flattenAMultilevelDoublyLL();
     }
 
     public void reversePrefixOfWord() {
@@ -145,20 +146,20 @@ public class StartOctober {
     }
 
     public void implementPrefixTrie() {
-        ImplementPrefixTrie ipt = new ImplementPrefixTrie();
-
+//        ImplementPrefixTrie ipt = new ImplementPrefixTrie();
+        Trie ipt = new Trie();
         ipt.insert("apple");
-        System.out.println("True == " + ipt.search("apple"));   // return True
-        System.out.println("False == " + ipt.search("app"));     // return False
-        System.out.println("True == " + ipt.startsWith("app")); // return True
+        System.out.println("true == " + ipt.search("apple"));   // return True
+        System.out.println("false == " + ipt.search("app"));     // return False
+        System.out.println("true == " + ipt.startsWith("app")); // return True
         ipt.insert("app");
-        System.out.println("True == " + ipt.search("app"));    // return True
+        System.out.println("true == " + ipt.search("app"));    // return True
 
         ImplementPrefixTrie ipt2 = new ImplementPrefixTrie();
 
         ipt2.insert("a");
-        System.out.println("True == " + ipt2.search("a"));   // return True
-        System.out.println("True == " + ipt2.startsWith("a")); // return True
+        System.out.println("true == " + ipt2.search("a"));   // return True
+        System.out.println("true == " + ipt2.startsWith("a")); // return True
     }
 
     public void bitwiseANDOfNumbersRange() {

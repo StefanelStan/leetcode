@@ -60,7 +60,8 @@ public class StartJanuary {
 //        start.positionsOfLargeGroups();
 //        start.minimumFallingPathSum();
 //        start.rearrangeArrayElementsBySign();
-        start.lemonadeChange();
+//        start.lemonadeChange();
+        start.designAddAndSearchWordsDataStructure();
     }
 
     public void longPressedName() {
@@ -517,5 +518,23 @@ public class StartJanuary {
 
         System.out.println("true == " + lc.lemonadeChange(new int[]{5,5,5,10,20}));
         System.out.println("false == " + lc.lemonadeChange(new int[]{5,5,10,10,20}));
+    }
+
+    public void designAddAndSearchWordsDataStructure() {
+        DesignAddAndSearchWordsDataStructure daaswds = new DesignAddAndSearchWordsDataStructure();
+
+        daaswds.addWord("bad");
+        daaswds.addWord("dad");
+        daaswds.addWord("mad");
+        daaswds.addWord("max");
+        daaswds.addWord("mdx");
+        System.out.println("false == " + daaswds.search("pad"));
+        System.out.println("true == " + daaswds.search("bad"));
+        System.out.println("true == " + daaswds.search(".ad"));
+        System.out.println("true == " + daaswds.search("b.."));
+        System.out.println("true == " + daaswds.search("..x"));
+        System.out.println("true == " + daaswds.search(".ax"));
+        System.out.println("true == " + daaswds.search("m.x"));
+        System.out.println("false == " + daaswds.search("mex"));
     }
 }
