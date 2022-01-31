@@ -61,7 +61,8 @@ public class StartJanuary {
 //        start.minimumFallingPathSum();
 //        start.rearrangeArrayElementsBySign();
 //        start.lemonadeChange();
-        start.designAddAndSearchWordsDataStructure();
+//        start.designAddAndSearchWordsDataStructure();
+        start.numberOfLaserBeamsInABank();
     }
 
     public void longPressedName() {
@@ -536,5 +537,13 @@ public class StartJanuary {
         System.out.println("true == " + daaswds.search(".ax"));
         System.out.println("true == " + daaswds.search("m.x"));
         System.out.println("false == " + daaswds.search("mex"));
+    }
+
+    public void numberOfLaserBeamsInABank() {
+        NumberOfLaserBeamsInABank nolbiab = new NumberOfLaserBeamsInABank();
+
+        System.out.println("8 == " + nolbiab.numberOfBeams(new String[]{"011001","000000","010100","001000"}));
+        System.out.println("0 == " + nolbiab.numberOfBeams(new String[]{"000","111","000"}));
+        System.out.println("6 == " + nolbiab.numberOfBeams(new String[]{"101","000","111"}));
     }
 }
