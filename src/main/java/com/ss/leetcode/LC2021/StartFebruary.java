@@ -32,7 +32,7 @@ import com.ss.leetcode.LC2021.february.StringToIntegerAtoi;
 import java.util.Arrays;
 
 public class StartFebruary {
-    private static void main(String[] args) {
+    public static void main(String[] args) {
         StartFebruary start = new StartFebruary();
 
 //        start.fourDivisors();
@@ -40,14 +40,14 @@ public class StartFebruary {
 //        start.selfDividingNumbers();
 //        start.restoreTheArrayFromAdjacentPairs();
 //        start.applyDiscountEveryNOrders();
-//        start.contiguousArray();
+        start.contiguousArray();
 //        start.shiftingLetters();
 //        start.countUnhappyFriends();
 //        start.minimumChangesToMakeAlternatingBinaryString();
 //        start.longestSubarrayOf1AfterDeletingOneElement();
 //        start.shift2DGrid();
 //        start.largestMergeOfTwoStrings();
-        start.pairsOfSongsWithTotalDurationsDivisibleBy60();
+//        start.pairsOfSongsWithTotalDurationsDivisibleBy60();
 //        start.maximumOfAbsoluteValueExpression();
 //        start.dota2Senate();
 //        start.largestRectangleInHistogram();
@@ -63,7 +63,7 @@ public class StartFebruary {
 //        start.reverseInteger();
 //        start.stringToIntegerAtoi();
 //        start.findNumbersWithEvenNumberOfDigits();
-        start.arithmeticSubarrays();
+//        start.arithmeticSubarrays();
     }
 
     private void fourDivisors() {
