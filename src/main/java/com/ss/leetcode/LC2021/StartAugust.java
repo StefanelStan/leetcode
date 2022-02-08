@@ -116,7 +116,7 @@ public class StartAugust {
 //        start.findElementsContaminatedBT();
 //        start.maximumScoreWordsFormedByLetters();
 //        start.verifyPreorderSerializationBT();
-//        start.reverseLinkedList();
+        start.reverseLinkedList();
 //        start.longestUncommonSubsequenceII();
 //        start.longestUncommonSubsequenceI();
 //        start.recoverATreeFromPreorderTraversal();
@@ -132,7 +132,7 @@ public class StartAugust {
 //        start.permutationInString();
 //        start.floodFill();
 //        start.findMinInRotatedSortedArray();
-        start.maxAreaOfIsland();
+//        start.maxAreaOfIsland();
     }
 
     public void makingALargeIsland() {

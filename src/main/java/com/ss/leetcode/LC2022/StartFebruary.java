@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
 import com.ss.leetcode.LC2022.february.DesignBitset;
 import com.ss.leetcode.LC2022.february.FourSumII;
@@ -9,6 +10,7 @@ import com.ss.leetcode.LC2022.february.MinimumSumOfFourDigitNumberAfterSplitting
 import com.ss.leetcode.LC2022.february.PartitionArrayAccordingToGivenPivot;
 import com.ss.leetcode.LC2022.february.SmallestValueOfTheRearrangedNumber;
 import com.ss.leetcode.LC2022.february.SortEvenAndOddIndicesIndependently;
+import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
 
@@ -24,7 +26,8 @@ public class StartFebruary {
 //        start.sortEvenAndOddIndicesIndependently();
 //        start.smallestValueOfTheRearrangedNumber();
 //        start.designBitset();
-        start.countElementsWithStrictlySmallerAndGreaterElements();
+//        start.countElementsWithStrictlySmallerAndGreaterElements();
+        start.addTwoNumbersII();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -104,5 +107,18 @@ public class StartFebruary {
         System.out.println("2 == " + cewssage.countElements(new int[]{-3,3,3,90}));
         System.out.println("0 == " + cewssage.countElements(new int[]{-3,3}));
         System.out.println("0 == " + cewssage.countElements(new int[]{-3,3,3}));
+    }
+
+    public void addTwoNumbersII() {
+        AddTwoNumbersII atnii = new AddTwoNumbersII();
+
+        ListNode head1 = ListNode.makeChain(new int[]{7,2,4,3});
+        ListNode head2 = ListNode.makeChain(new int[]{5,6,4});
+        ListNode head3 = ListNode.makeChain(new int[]{2,4,3});
+        ListNode head4 = ListNode.makeChain(new int[]{5,6,4});
+
+        System.out.println("[7,8,0,7] == " + atnii.addTwoNumbers(head1, head2).getAsList());
+        System.out.println("[8,0,7] == " + atnii.addTwoNumbers(head3, head4).getAsList());
+        System.out.println("[0] == " + atnii.addTwoNumbers(ListNode.makeChain(new int[]{0}), ListNode.makeChain(new int[]{0})).getAsList());
     }
 }
