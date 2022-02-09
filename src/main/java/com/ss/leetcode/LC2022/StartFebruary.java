@@ -8,8 +8,10 @@ import com.ss.leetcode.LC2022.february.KeepMultiplyingFoundValuesByTwo;
 import com.ss.leetcode.LC2022.february.MinimumCostToSetCookingTime;
 import com.ss.leetcode.LC2022.february.MinimumSumOfFourDigitNumberAfterSplittingDigits;
 import com.ss.leetcode.LC2022.february.PartitionArrayAccordingToGivenPivot;
+import com.ss.leetcode.LC2022.february.PathCrossing;
 import com.ss.leetcode.LC2022.february.SmallestValueOfTheRearrangedNumber;
 import com.ss.leetcode.LC2022.february.SortEvenAndOddIndicesIndependently;
+import com.ss.leetcode.LC2022.february.SumOfEvenNumbersAfterQueries;
 import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
@@ -27,7 +29,9 @@ public class StartFebruary {
 //        start.smallestValueOfTheRearrangedNumber();
 //        start.designBitset();
 //        start.countElementsWithStrictlySmallerAndGreaterElements();
-        start.addTwoNumbersII();
+//        start.addTwoNumbersII();
+//        start.sumOfEvenNumbersAfterQueries();
+        start.pathCrossing();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -120,5 +124,19 @@ public class StartFebruary {
         System.out.println("[7,8,0,7] == " + atnii.addTwoNumbers(head1, head2).getAsList());
         System.out.println("[8,0,7] == " + atnii.addTwoNumbers(head3, head4).getAsList());
         System.out.println("[0] == " + atnii.addTwoNumbers(ListNode.makeChain(new int[]{0}), ListNode.makeChain(new int[]{0})).getAsList());
+    }
+
+    public void sumOfEvenNumbersAfterQueries() {
+        SumOfEvenNumbersAfterQueries soenaq = new SumOfEvenNumbersAfterQueries();
+
+        System.out.println("[8,6,2,4] == " + Arrays.toString(soenaq.sumEvenAfterQueries(new int[]{1,2,3,4}, new int[][]{{1,0},{-3,1},{-4,0},{2,3}})));
+        System.out.println("[0] == " + Arrays.toString(soenaq.sumEvenAfterQueries(new int[]{1,}, new int[][]{{4,0}})));
+    }
+
+    public void pathCrossing() {
+        PathCrossing pc = new PathCrossing();
+
+        System.out.println("false == " + pc.isPathCrossing("NES"));
+        System.out.println("true == " + pc.isPathCrossing("NESWW"));
     }
 }
