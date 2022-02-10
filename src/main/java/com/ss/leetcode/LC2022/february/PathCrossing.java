@@ -28,23 +28,3 @@ public class PathCrossing {
         }
     }
 }
-
-    private static class VisitedPoint {
-        int[] point;
-
-        public VisitedPoint(int x, int y) {
-            this.point = new int[]{x,y};
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            VisitedPoint vp = (VisitedPoint) obj;
-            return this.point[0] == vp.point[0] && this.point[1] == vp.point[1];
-        }
-
-        @Override
-        public int hashCode() {
-            return Arrays.hashCode(point);
-        }
-    }
-}

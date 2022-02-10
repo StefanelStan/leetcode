@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2021.september.PopulatingNextRightPointers;
 import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
 import com.ss.leetcode.LC2022.february.DesignBitset;
@@ -9,8 +10,10 @@ import com.ss.leetcode.LC2022.february.MinimumCostToSetCookingTime;
 import com.ss.leetcode.LC2022.february.MinimumSumOfFourDigitNumberAfterSplittingDigits;
 import com.ss.leetcode.LC2022.february.PartitionArrayAccordingToGivenPivot;
 import com.ss.leetcode.LC2022.february.PathCrossing;
+import com.ss.leetcode.LC2022.february.PopulatingNextRightPointersInEachNodeII;
 import com.ss.leetcode.LC2022.february.SmallestValueOfTheRearrangedNumber;
 import com.ss.leetcode.LC2022.february.SortEvenAndOddIndicesIndependently;
+import com.ss.leetcode.LC2022.february.SubarraySumEqualsK;
 import com.ss.leetcode.LC2022.february.SumOfEvenNumbersAfterQueries;
 import com.ss.leetcode.shared.ListNode;
 
@@ -31,7 +34,9 @@ public class StartFebruary {
 //        start.countElementsWithStrictlySmallerAndGreaterElements();
 //        start.addTwoNumbersII();
 //        start.sumOfEvenNumbersAfterQueries();
-        start.pathCrossing();
+//        start.pathCrossing();
+//        start.subarraySumEqualsK();
+        start.populatingNextRightPointersInEachNodeII();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -138,5 +143,28 @@ public class StartFebruary {
 
         System.out.println("false == " + pc.isPathCrossing("NES"));
         System.out.println("true == " + pc.isPathCrossing("NESWW"));
+    }
+
+    public void subarraySumEqualsK() {
+        SubarraySumEqualsK ssek = new SubarraySumEqualsK();
+
+        System.out.println("2 == " + ssek.subarraySum(new int[]{1,1,1}, 2));
+        System.out.println("2 == " + ssek.subarraySum(new int[]{1,2,3}, 3));
+    }
+
+    public void populatingNextRightPointersInEachNodeII() {
+        PopulatingNextRightPointersInEachNodeII pnrpienii = new PopulatingNextRightPointersInEachNodeII();
+
+        PopulatingNextRightPointers.Node root1 = new PopulatingNextRightPointers.Node(1,
+            new PopulatingNextRightPointers.Node(2, new PopulatingNextRightPointers.Node(4), new PopulatingNextRightPointers.Node(5)),
+            new PopulatingNextRightPointers.Node(3, null, new PopulatingNextRightPointers.Node(7)));
+
+        PopulatingNextRightPointers.Node root2 = null;
+
+        pnrpienii.connect(root1);
+        pnrpienii.connect(root2);
+
+        System.out.println("true == " + (root1.left.next == root1.right));
+        System.out.println("null == " + root2);
     }
 }
