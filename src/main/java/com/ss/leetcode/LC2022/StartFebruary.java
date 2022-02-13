@@ -2,8 +2,11 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2021.september.PopulatingNextRightPointers;
 import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
+import com.ss.leetcode.LC2022.february.ArithmeticSlices;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
 import com.ss.leetcode.LC2022.february.DesignBitset;
+import com.ss.leetcode.LC2022.february.FindPivotIndex;
+import com.ss.leetcode.LC2022.february.FindTheClosestPalindrome;
 import com.ss.leetcode.LC2022.february.FourSumII;
 import com.ss.leetcode.LC2022.february.KeepMultiplyingFoundValuesByTwo;
 import com.ss.leetcode.LC2022.february.MinimumCostToSetCookingTime;
@@ -36,7 +39,10 @@ public class StartFebruary {
 //        start.sumOfEvenNumbersAfterQueries();
 //        start.pathCrossing();
 //        start.subarraySumEqualsK();
-        start.populatingNextRightPointersInEachNodeII();
+//        start.populatingNextRightPointersInEachNodeII();
+//        start.findTheClosestPalindrome();
+//        start.findPivotIndex();
+        start.arithmeticSlices();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -166,5 +172,37 @@ public class StartFebruary {
 
         System.out.println("true == " + (root1.left.next == root1.right));
         System.out.println("null == " + root2);
+    }
+
+    public void findTheClosestPalindrome() {
+        FindTheClosestPalindrome ftcp = new FindTheClosestPalindrome();
+
+        System.out.println("121 == " + ftcp.nearestPalindromic("123"));
+        System.out.println("0 == " + ftcp.nearestPalindromic("1"));
+        System.out.println("9 == " + ftcp.nearestPalindromic("11"));
+        System.out.println("11 == " + ftcp.nearestPalindromic("22"));
+        System.out.println("111 == " + ftcp.nearestPalindromic("121"));
+        System.out.println("101 == " + ftcp.nearestPalindromic("99"));
+        System.out.println("77 == " + ftcp.nearestPalindromic("88"));
+        System.out.println("9 == " + ftcp.nearestPalindromic("11"));
+        System.out.println("1111 == " + ftcp.nearestPalindromic("1221"));
+        System.out.println("1001 == " + ftcp.nearestPalindromic("999"));
+    }
+
+    public void findPivotIndex() {
+        FindPivotIndex fpi = new FindPivotIndex();
+
+        System.out.println("3 == " + fpi.pivotIndex(new int[]{1,7,3,6,5,6}));
+        System.out.println("-1 == " + fpi.pivotIndex(new int[]{1,2,3}));
+        System.out.println("0 == " + fpi.pivotIndex(new int[]{2,1,-1}));
+        System.out.println("4 == " + fpi.pivotIndex(new int[]{8,2,7,1,9, 10,8}));
+    }
+
+    public void arithmeticSlices() {
+        ArithmeticSlices as = new ArithmeticSlices();
+
+        System.out.println("3 == " + as.numberOfArithmeticSlices(new int[]{1,2,3,4}));
+        System.out.println("0 == " + as.numberOfArithmeticSlices(new int[]{1}));
+        System.out.println("36 == " + as.numberOfArithmeticSlices(new int[]{1,3,5,7,9,12,15,18,21,24,27,31,35,39,43,47,51}));
     }
 }
