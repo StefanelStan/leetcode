@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2022.february.FourSumII;
 import com.ss.leetcode.LC2022.february.KeepMultiplyingFoundValuesByTwo;
 import com.ss.leetcode.LC2022.february.MinimumCostToSetCookingTime;
 import com.ss.leetcode.LC2022.february.MinimumSumOfFourDigitNumberAfterSplittingDigits;
+import com.ss.leetcode.LC2022.february.NumberOfStudentsUnableToEatLunch;
 import com.ss.leetcode.LC2022.february.PartitionArrayAccordingToGivenPivot;
 import com.ss.leetcode.LC2022.february.PathCrossing;
 import com.ss.leetcode.LC2022.february.PopulatingNextRightPointersInEachNodeII;
@@ -42,7 +43,8 @@ public class StartFebruary {
 //        start.populatingNextRightPointersInEachNodeII();
 //        start.findTheClosestPalindrome();
 //        start.findPivotIndex();
-        start.arithmeticSlices();
+//        start.arithmeticSlices();
+        start.numberOfStudentsUnableToEatLunch();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -204,5 +206,12 @@ public class StartFebruary {
         System.out.println("3 == " + as.numberOfArithmeticSlices(new int[]{1,2,3,4}));
         System.out.println("0 == " + as.numberOfArithmeticSlices(new int[]{1}));
         System.out.println("36 == " + as.numberOfArithmeticSlices(new int[]{1,3,5,7,9,12,15,18,21,24,27,31,35,39,43,47,51}));
+    }
+
+    public void numberOfStudentsUnableToEatLunch() {
+        NumberOfStudentsUnableToEatLunch nosutel = new NumberOfStudentsUnableToEatLunch();
+
+        System.out.println("0 == " + nosutel.countStudents(new int[]{1,1,0,0}, new int[]{0,1,0,1}));
+        System.out.println("3 == " + nosutel.countStudents(new int[]{1,1,1,0,0,1}, new int[]{1,0,0,0,1,1}));
     }
 }
