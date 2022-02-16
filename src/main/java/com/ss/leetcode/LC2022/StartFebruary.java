@@ -19,9 +19,11 @@ import com.ss.leetcode.LC2022.february.SmallestValueOfTheRearrangedNumber;
 import com.ss.leetcode.LC2022.february.SortEvenAndOddIndicesIndependently;
 import com.ss.leetcode.LC2022.february.SubarraySumEqualsK;
 import com.ss.leetcode.LC2022.february.SumOfEvenNumbersAfterQueries;
+import com.ss.leetcode.LC2022.february.SwapNodesInPairs;
 import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StartFebruary {
     public static void main(String[] args) {
@@ -44,7 +46,8 @@ public class StartFebruary {
 //        start.findTheClosestPalindrome();
 //        start.findPivotIndex();
 //        start.arithmeticSlices();
-        start.numberOfStudentsUnableToEatLunch();
+//        start.numberOfStudentsUnableToEatLunch();
+        start.swapNodesInPairs();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -213,5 +216,14 @@ public class StartFebruary {
 
         System.out.println("0 == " + nosutel.countStudents(new int[]{1,1,0,0}, new int[]{0,1,0,1}));
         System.out.println("3 == " + nosutel.countStudents(new int[]{1,1,1,0,0,1}, new int[]{1,0,0,0,1,1}));
+    }
+
+    public void swapNodesInPairs() {
+        SwapNodesInPairs snip = new SwapNodesInPairs();
+
+        System.out.println("[2,1,4,3] == " + snip.swapPairs(ListNode.makeChain(new int[]{1,2,3,4})).getAsList());
+        System.out.println("null == " + snip.swapPairs(null));
+        System.out.println("[1] == " + snip.swapPairs(ListNode.makeChain(new int[]{1})).getAsList());
+        System.out.println("[2,1,3] == " + snip.swapPairs(ListNode.makeChain(new int[]{1,2,3})).getAsList());
     }
 }
