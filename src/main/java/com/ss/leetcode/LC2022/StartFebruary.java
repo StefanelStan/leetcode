@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2021.september.PopulatingNextRightPointers;
 import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
 import com.ss.leetcode.LC2022.february.ArithmeticSlices;
+import com.ss.leetcode.LC2022.february.CombinationSum;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
 import com.ss.leetcode.LC2022.february.DesignBitset;
 import com.ss.leetcode.LC2022.february.FindPivotIndex;
@@ -47,7 +48,8 @@ public class StartFebruary {
 //        start.findPivotIndex();
 //        start.arithmeticSlices();
 //        start.numberOfStudentsUnableToEatLunch();
-        start.swapNodesInPairs();
+//        start.swapNodesInPairs();
+        start.combinationSum();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -225,5 +227,13 @@ public class StartFebruary {
         System.out.println("null == " + snip.swapPairs(null));
         System.out.println("[1] == " + snip.swapPairs(ListNode.makeChain(new int[]{1})).getAsList());
         System.out.println("[2,1,3] == " + snip.swapPairs(ListNode.makeChain(new int[]{1,2,3})).getAsList());
+    }
+
+    public void combinationSum() {
+        CombinationSum cs = new CombinationSum();
+
+        System.out.println("[[2,2,3],[7]] == " + cs.combinationSum(new int[]{2,3,6,7}, 7));
+        System.out.println("[[2,2,2,2],[2,3,3],[3,5]] == " + cs.combinationSum(new int[]{2,3,5}, 8));
+        System.out.println("[] == " + cs.combinationSum(new int[]{2}, 1));
     }
 }
