@@ -5,11 +5,15 @@ import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
 import com.ss.leetcode.LC2022.february.ArithmeticSlices;
 import com.ss.leetcode.LC2022.february.CombinationSum;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
+import com.ss.leetcode.LC2022.february.CountEqualAndDivisiblePairsInAnArray;
+import com.ss.leetcode.LC2022.february.CountGoodTripletsInAnArray;
 import com.ss.leetcode.LC2022.february.DesignBitset;
 import com.ss.leetcode.LC2022.february.FindPivotIndex;
 import com.ss.leetcode.LC2022.february.FindTheClosestPalindrome;
+import com.ss.leetcode.LC2022.february.FindThreeConsecutiveIntegersThatSumToAGivenNumber;
 import com.ss.leetcode.LC2022.february.FourSumII;
 import com.ss.leetcode.LC2022.february.KeepMultiplyingFoundValuesByTwo;
+import com.ss.leetcode.LC2022.february.MaximumSplitOfPositiveEvenIntegers;
 import com.ss.leetcode.LC2022.february.MinimumCostToSetCookingTime;
 import com.ss.leetcode.LC2022.february.MinimumSumOfFourDigitNumberAfterSplittingDigits;
 import com.ss.leetcode.LC2022.february.NumberOfStudentsUnableToEatLunch;
@@ -49,7 +53,11 @@ public class StartFebruary {
 //        start.arithmeticSlices();
 //        start.numberOfStudentsUnableToEatLunch();
 //        start.swapNodesInPairs();
-        start.combinationSum();
+//        start.combinationSum();
+//        start.countEqualAndDivisiblePairsInAnArray();
+//        start.maximumSplitOfPositiveEvenIntegers();
+//        start.findThreeConsecutiveIntegersThatSumToAGivenNumber();
+        start.countGoodTripletsInAnArray();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -235,5 +243,41 @@ public class StartFebruary {
         System.out.println("[[2,2,3],[7]] == " + cs.combinationSum(new int[]{2,3,6,7}, 7));
         System.out.println("[[2,2,2,2],[2,3,3],[3,5]] == " + cs.combinationSum(new int[]{2,3,5}, 8));
         System.out.println("[] == " + cs.combinationSum(new int[]{2}, 1));
+    }
+
+    public void countEqualAndDivisiblePairsInAnArray() {
+        CountEqualAndDivisiblePairsInAnArray ceadpiaa = new CountEqualAndDivisiblePairsInAnArray();
+
+        System.out.println("4 == " + ceadpiaa.countPairs(new int[]{3,1,2,2,2,1,3}, 2));
+        System.out.println("0 == " + ceadpiaa.countPairs(new int[]{1,2,3,4}, 1));
+        System.out.println("0 == " + ceadpiaa.countPairs(new int[]{1}, 1));
+    }
+
+    public void maximumSplitOfPositiveEvenIntegers() {
+        MaximumSplitOfPositiveEvenIntegers msopei = new MaximumSplitOfPositiveEvenIntegers();
+
+        System.out.println("[2,4,6] == " + msopei.maximumEvenSplit(12));
+        System.out.println("[] == " + msopei.maximumEvenSplit(7));
+        System.out.println("[2,4,6,16] == " + msopei.maximumEvenSplit(28));
+        System.out.println("[2,4,6,16] == " + msopei.maximumEvenSplit(10000000000L));
+        System.out.println("[2] == " + msopei.maximumEvenSplit(2));
+        System.out.println("[4] == " + msopei.maximumEvenSplit(4));
+        System.out.println("[2,4] == " + msopei.maximumEvenSplit(6));
+        System.out.println("[2,6] == " + msopei.maximumEvenSplit(8));
+    }
+
+    public void findThreeConsecutiveIntegersThatSumToAGivenNumber() {
+        FindThreeConsecutiveIntegersThatSumToAGivenNumber ftcitstagn = new FindThreeConsecutiveIntegersThatSumToAGivenNumber();
+
+        System.out.println("[10,11,12] == " + Arrays.toString(ftcitstagn.sumOfThree(33)));
+        System.out.println("[] == " + Arrays.toString(ftcitstagn.sumOfThree(4)));
+        System.out.println("[] == " + Arrays.toString(ftcitstagn.sumOfThree(4)));
+    }
+
+    public void countGoodTripletsInAnArray() {
+        CountGoodTripletsInAnArray cgtiaa = new CountGoodTripletsInAnArray();
+
+        System.out.println("1 == " + cgtiaa.goodTriplets(new int[]{2,0,1,3}, new int[]{0,1,2,3}));
+        System.out.println("4 == " + cgtiaa.goodTriplets(new int[]{4,0,1,3,2}, new int[]{4,1,0,2,3}));
     }
 }
