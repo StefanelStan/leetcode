@@ -20,6 +20,7 @@ import com.ss.leetcode.LC2022.february.NumberOfStudentsUnableToEatLunch;
 import com.ss.leetcode.LC2022.february.PartitionArrayAccordingToGivenPivot;
 import com.ss.leetcode.LC2022.february.PathCrossing;
 import com.ss.leetcode.LC2022.february.PopulatingNextRightPointersInEachNodeII;
+import com.ss.leetcode.LC2022.february.RemoveCoveredIntervals;
 import com.ss.leetcode.LC2022.february.SmallestValueOfTheRearrangedNumber;
 import com.ss.leetcode.LC2022.february.SortEvenAndOddIndicesIndependently;
 import com.ss.leetcode.LC2022.february.SubarraySumEqualsK;
@@ -57,7 +58,8 @@ public class StartFebruary {
 //        start.countEqualAndDivisiblePairsInAnArray();
 //        start.maximumSplitOfPositiveEvenIntegers();
 //        start.findThreeConsecutiveIntegersThatSumToAGivenNumber();
-        start.countGoodTripletsInAnArray();
+//        start.countGoodTripletsInAnArray();
+        start.removeCoveredIntervals();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -279,5 +281,14 @@ public class StartFebruary {
 
         System.out.println("1 == " + cgtiaa.goodTriplets(new int[]{2,0,1,3}, new int[]{0,1,2,3}));
         System.out.println("4 == " + cgtiaa.goodTriplets(new int[]{4,0,1,3,2}, new int[]{4,1,0,2,3}));
+    }
+
+    public void removeCoveredIntervals() {
+        RemoveCoveredIntervals rci = new RemoveCoveredIntervals();
+
+        System.out.println("2 == " + rci.removeCoveredIntervals(new int[][]{{1,4},{3,6},{2,8}}));
+        System.out.println("1 == " + rci.removeCoveredIntervals(new int[][]{{1,4},{2,3}}));
+        System.out.println("2 == " + rci.removeCoveredIntervals(new int[][]{{1,7},{1,6},{2,3},{3,6},{4,5},{4,10}}));
+        System.out.println("1 == " + rci.removeCoveredIntervals(new int[][]{{1,2},{1,4},{3,4}}));
     }
 }
