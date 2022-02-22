@@ -14,6 +14,7 @@ import com.ss.leetcode.LC2022.february.FindThreeConsecutiveIntegersThatSumToAGiv
 import com.ss.leetcode.LC2022.february.FourSumII;
 import com.ss.leetcode.LC2022.february.KeepMultiplyingFoundValuesByTwo;
 import com.ss.leetcode.LC2022.february.MaximumSplitOfPositiveEvenIntegers;
+import com.ss.leetcode.LC2022.february.MergeNodesInBetweenZeros;
 import com.ss.leetcode.LC2022.february.MinimumCostToSetCookingTime;
 import com.ss.leetcode.LC2022.february.MinimumSumOfFourDigitNumberAfterSplittingDigits;
 import com.ss.leetcode.LC2022.february.NumberOfStudentsUnableToEatLunch;
@@ -59,7 +60,8 @@ public class StartFebruary {
 //        start.maximumSplitOfPositiveEvenIntegers();
 //        start.findThreeConsecutiveIntegersThatSumToAGivenNumber();
 //        start.countGoodTripletsInAnArray();
-        start.removeCoveredIntervals();
+//        start.removeCoveredIntervals();
+        start.mergeNodesInBetweenZeros();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -290,5 +292,14 @@ public class StartFebruary {
         System.out.println("1 == " + rci.removeCoveredIntervals(new int[][]{{1,4},{2,3}}));
         System.out.println("2 == " + rci.removeCoveredIntervals(new int[][]{{1,7},{1,6},{2,3},{3,6},{4,5},{4,10}}));
         System.out.println("1 == " + rci.removeCoveredIntervals(new int[][]{{1,2},{1,4},{3,4}}));
+    }
+
+    public void mergeNodesInBetweenZeros() {
+        MergeNodesInBetweenZeros mnibz = new MergeNodesInBetweenZeros();
+
+        System.out.println("[4,1] == " + mnibz.mergeNodes(ListNode.makeChain(new int[]{0,3,1,0,4,5,2,0})).getAsList());
+        System.out.println("[1,3,4] == " + mnibz.mergeNodes(ListNode.makeChain(new int[]{0,1,0,3,0,2,2,0})).getAsList());
+        System.out.println("[1] == " + mnibz.mergeNodes(ListNode.makeChain(new int[]{0,1,0})).getAsList());
+        System.out.println("[3,2,4] == " + mnibz.mergeNodes(ListNode.makeChain(new int[]{0,1,1,1,0,1,1,0,4,0})).getAsList());
     }
 }
