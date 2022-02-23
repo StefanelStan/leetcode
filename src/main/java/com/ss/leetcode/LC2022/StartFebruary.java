@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2021.september.PopulatingNextRightPointers;
 import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
 import com.ss.leetcode.LC2022.february.ArithmeticSlices;
+import com.ss.leetcode.LC2022.february.CloneGraph;
 import com.ss.leetcode.LC2022.february.CombinationSum;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
 import com.ss.leetcode.LC2022.february.CountEqualAndDivisiblePairsInAnArray;
@@ -27,7 +28,9 @@ import com.ss.leetcode.LC2022.february.SortEvenAndOddIndicesIndependently;
 import com.ss.leetcode.LC2022.february.SubarraySumEqualsK;
 import com.ss.leetcode.LC2022.february.SumOfEvenNumbersAfterQueries;
 import com.ss.leetcode.LC2022.february.SwapNodesInPairs;
+import com.ss.leetcode.LC2022.february.WhereWillTheBallFall;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.Node;
 
 import java.util.Arrays;
 import java.util.List;
@@ -61,7 +64,9 @@ public class StartFebruary {
 //        start.findThreeConsecutiveIntegersThatSumToAGivenNumber();
 //        start.countGoodTripletsInAnArray();
 //        start.removeCoveredIntervals();
-        start.mergeNodesInBetweenZeros();
+//        start.mergeNodesInBetweenZeros();
+//        start.cloneGraph();
+        start.whereWillTheBallFall();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -301,5 +306,31 @@ public class StartFebruary {
         System.out.println("[1,3,4] == " + mnibz.mergeNodes(ListNode.makeChain(new int[]{0,1,0,3,0,2,2,0})).getAsList());
         System.out.println("[1] == " + mnibz.mergeNodes(ListNode.makeChain(new int[]{0,1,0})).getAsList());
         System.out.println("[3,2,4] == " + mnibz.mergeNodes(ListNode.makeChain(new int[]{0,1,1,1,0,1,1,0,4,0})).getAsList());
+    }
+
+    public void cloneGraph() {
+        CloneGraph cg = new CloneGraph();
+
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        n1.children = List.of(n2, n3);
+        n3.children = List.of(n2, n4);
+        n2.children = List.of(n1, n3);
+        n4.children = List.of(n1, n3);
+
+        Node newN1 = cg.cloneGraph(n1);
+        System.out.println("false == " + (n1 == newN1) + ", true == " + (n1.val == newN1.val));
+    }
+
+    public void whereWillTheBallFall() {
+        WhereWillTheBallFall wwtbf = new WhereWillTheBallFall();
+
+        System.out.println("[1,-1,-1,-1,-1] == " + Arrays.toString(wwtbf.findBall(new int[][]{{1,1,1,-1,-1},{1,1,1,-1,-1},
+            {-1,-1,-1,1,1}, {1,1,1,1,-1}, {-1,-1,-1,-1,-1}})));
+        System.out.println("[-1] == " + Arrays.toString(wwtbf.findBall(new int[][]{{-1}})));
+        System.out.println("[0,1,2,3,4,-1] == " + Arrays.toString(wwtbf.findBall(new int[][]{{1,1,1,1,1,1},{-1,-1,-1,-1,-1,-1},
+            {1,1,1,1,1,1}, {-1,-1,-1,-1,-1,-1}})));
     }
 }
