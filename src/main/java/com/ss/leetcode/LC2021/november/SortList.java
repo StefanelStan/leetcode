@@ -2,11 +2,30 @@ package com.ss.leetcode.LC2021.november;
 
 import com.ss.leetcode.shared.ListNode;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class SortList {
     // https://leetcode.com/problems/sort-list/
     public ListNode sortList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        List<ListNode> nodes = new ArrayList<>();
+        while(head != null) {
+            nodes.add(head);
+            head = head.next;
+        }
+        nodes.sort(Comparator.comparingInt(n -> n.val));
+        for(int i = 1; i < nodes.size(); i++) {
+            nodes.get(i-1).next = nodes.get(i);
+        }
+        nodes.get(nodes.size() -1).next = null;
+        return nodes.get(0);
+    }
+
+    public ListNode sortList2(ListNode head) {
         if (head == null) {
             return null;
         }
