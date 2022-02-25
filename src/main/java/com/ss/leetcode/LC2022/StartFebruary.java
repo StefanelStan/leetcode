@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
 import com.ss.leetcode.LC2022.february.ArithmeticSlices;
 import com.ss.leetcode.LC2022.february.CloneGraph;
 import com.ss.leetcode.LC2022.february.CombinationSum;
+import com.ss.leetcode.LC2022.february.CompareVersionNumbers;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
 import com.ss.leetcode.LC2022.february.CountEqualAndDivisiblePairsInAnArray;
 import com.ss.leetcode.LC2022.february.CountGoodTripletsInAnArray;
@@ -66,7 +67,8 @@ public class StartFebruary {
 //        start.removeCoveredIntervals();
 //        start.mergeNodesInBetweenZeros();
 //        start.cloneGraph();
-        start.whereWillTheBallFall();
+//        start.whereWillTheBallFall();
+        start.compareVersionNumbers();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -332,5 +334,13 @@ public class StartFebruary {
         System.out.println("[-1] == " + Arrays.toString(wwtbf.findBall(new int[][]{{-1}})));
         System.out.println("[0,1,2,3,4,-1] == " + Arrays.toString(wwtbf.findBall(new int[][]{{1,1,1,1,1,1},{-1,-1,-1,-1,-1,-1},
             {1,1,1,1,1,1}, {-1,-1,-1,-1,-1,-1}})));
+    }
+
+    public void compareVersionNumbers() {
+        CompareVersionNumbers cvn = new CompareVersionNumbers();
+
+        System.out.println("0 == " + cvn.compareVersion("1.01", "1.001"));
+        System.out.println("0 == " + cvn.compareVersion("1.0", "1.0.0"));
+        System.out.println("-1 == " + cvn.compareVersion("0.1", "1.1"));
     }
 }
