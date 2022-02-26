@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2021.september.PopulatingNextRightPointers;
 import com.ss.leetcode.LC2022.february.AddTwoNumbersII;
 import com.ss.leetcode.LC2022.february.ArithmeticSlices;
+import com.ss.leetcode.LC2022.february.CheckIfAllTheIntegersInARangeAreCovered;
 import com.ss.leetcode.LC2022.february.CloneGraph;
 import com.ss.leetcode.LC2022.february.CombinationSum;
 import com.ss.leetcode.LC2022.february.CompareVersionNumbers;
@@ -27,6 +28,7 @@ import com.ss.leetcode.LC2022.february.RemoveCoveredIntervals;
 import com.ss.leetcode.LC2022.february.SmallestValueOfTheRearrangedNumber;
 import com.ss.leetcode.LC2022.february.SortEvenAndOddIndicesIndependently;
 import com.ss.leetcode.LC2022.february.SubarraySumEqualsK;
+import com.ss.leetcode.LC2022.february.SubdomainVisitCount;
 import com.ss.leetcode.LC2022.february.SumOfEvenNumbersAfterQueries;
 import com.ss.leetcode.LC2022.february.SwapNodesInPairs;
 import com.ss.leetcode.LC2022.february.WhereWillTheBallFall;
@@ -68,7 +70,9 @@ public class StartFebruary {
 //        start.mergeNodesInBetweenZeros();
 //        start.cloneGraph();
 //        start.whereWillTheBallFall();
-        start.compareVersionNumbers();
+//        start.compareVersionNumbers();
+//        start.subdomainVisitCount();
+        start.checkIfAllTheIntegersInARangeAreCovered();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -342,5 +346,26 @@ public class StartFebruary {
         System.out.println("0 == " + cvn.compareVersion("1.01", "1.001"));
         System.out.println("0 == " + cvn.compareVersion("1.0", "1.0.0"));
         System.out.println("-1 == " + cvn.compareVersion("0.1", "1.1"));
+    }
+
+    public void subdomainVisitCount() {
+        SubdomainVisitCount svc = new SubdomainVisitCount();
+
+        System.out.println("[9001 com, 9001 leetcode.com, 9001 discuss.leetcode.com] == " +
+            svc.subdomainVisits(new String[]{"9001 discuss.leetcode.com"}));
+
+        System.out.println("[951 com, 900 google.mail.com, 5 org, 1 intel.mail.com, 5 wiki.org, 901 mail.com, 50 yahoo.com] == " +
+            svc.subdomainVisits(new String[]{"900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"}));
+
+        System.out.println("[1 com, 1 mail.yahoo.com, 1 yahoo.com] == " + svc.subdomainVisits(new String[]{"1 mail.yahoo.com"}));
+    }
+
+    public void checkIfAllTheIntegersInARangeAreCovered() {
+        CheckIfAllTheIntegersInARangeAreCovered ciatiiarac = new CheckIfAllTheIntegersInARangeAreCovered();
+
+        System.out.println("true == " + ciatiiarac.isCovered(new int[][]{{1,2},{3,4},{5,6}}, 5, 6));
+        System.out.println("false == " + ciatiiarac.isCovered(new int[][]{{1,10},{10,20}}, 21, 21));
+        System.out.println("true == " + ciatiiarac.isCovered(new int[][]{{1,10},{10,20}}, 1, 1));
+        System.out.println("false == " + ciatiiarac.isCovered(new int[][]{{1,7},{9,10},{11,24}}, 7, 23));
     }
 }
