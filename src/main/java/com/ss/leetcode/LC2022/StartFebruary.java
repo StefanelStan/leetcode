@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2022.february.CompareVersionNumbers;
 import com.ss.leetcode.LC2022.february.CountElementsWithStrictlySmallerAndGreaterElements;
 import com.ss.leetcode.LC2022.february.CountEqualAndDivisiblePairsInAnArray;
 import com.ss.leetcode.LC2022.february.CountGoodTripletsInAnArray;
+import com.ss.leetcode.LC2022.february.CountWordsObtainedAfterAddingALetter;
 import com.ss.leetcode.LC2022.february.DesignBitset;
 import com.ss.leetcode.LC2022.february.FindPivotIndex;
 import com.ss.leetcode.LC2022.february.FindTheClosestPalindrome;
@@ -17,6 +18,7 @@ import com.ss.leetcode.LC2022.february.FindThreeConsecutiveIntegersThatSumToAGiv
 import com.ss.leetcode.LC2022.february.FourSumII;
 import com.ss.leetcode.LC2022.february.KeepMultiplyingFoundValuesByTwo;
 import com.ss.leetcode.LC2022.february.MaximumSplitOfPositiveEvenIntegers;
+import com.ss.leetcode.LC2022.february.MaximumWidthOfBinaryTree;
 import com.ss.leetcode.LC2022.february.MergeNodesInBetweenZeros;
 import com.ss.leetcode.LC2022.february.MinimumCostToSetCookingTime;
 import com.ss.leetcode.LC2022.february.MinimumSumOfFourDigitNumberAfterSplittingDigits;
@@ -34,6 +36,7 @@ import com.ss.leetcode.LC2022.february.SwapNodesInPairs;
 import com.ss.leetcode.LC2022.february.WhereWillTheBallFall;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.Node;
+import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
 import java.util.List;
@@ -72,7 +75,9 @@ public class StartFebruary {
 //        start.whereWillTheBallFall();
 //        start.compareVersionNumbers();
 //        start.subdomainVisitCount();
-        start.checkIfAllTheIntegersInARangeAreCovered();
+//        start.checkIfAllTheIntegersInARangeAreCovered();
+//        start.maximumWidthOfBinaryTree();
+        start.countWordsObtainedAfterAddingALetter();
     }
 
     public void keepMultiplyingFoundValuesByTwo() {
@@ -367,5 +372,26 @@ public class StartFebruary {
         System.out.println("false == " + ciatiiarac.isCovered(new int[][]{{1,10},{10,20}}, 21, 21));
         System.out.println("true == " + ciatiiarac.isCovered(new int[][]{{1,10},{10,20}}, 1, 1));
         System.out.println("false == " + ciatiiarac.isCovered(new int[][]{{1,7},{9,10},{11,24}}, 7, 23));
+    }
+
+    public void maximumWidthOfBinaryTree() {
+        MaximumWidthOfBinaryTree mwobt = new MaximumWidthOfBinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(3, new TreeNode(5), new TreeNode(3)), new TreeNode(2, null, new TreeNode(9)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(3, new TreeNode(5), new TreeNode(3)), null);
+        TreeNode root3 = new TreeNode(1, new TreeNode(3, new TreeNode(5), null), new TreeNode(2));
+
+        System.out.println("4 == " + mwobt.widthOfBinaryTree(root1));
+        System.out.println("2 == " + mwobt.widthOfBinaryTree(root2));
+        System.out.println("2 == " + mwobt.widthOfBinaryTree(root3));
+    }
+
+    public void countWordsObtainedAfterAddingALetter() {
+        CountWordsObtainedAfterAddingALetter cwoaaal = new CountWordsObtainedAfterAddingALetter();
+
+        System.out.println("2 == " + cwoaaal.wordCount(new String[]{"ant","act","tack"}, new String[]{"tack","act","acti"}));
+        System.out.println("1 == " + cwoaaal.wordCount(new String[]{"ab","a"}, new String[]{"abc","abcd"}));
+        System.out.println("0 == " + cwoaaal.wordCount(new String[]{"a","b", "c"}, new String[]{"c","d","a"}));
+        System.out.println("3 == " + cwoaaal.wordCount(new String[]{"abcd", "efghij"}, new String[]{"abdco", "efghijz", "jihgfex"}));
     }
 }
