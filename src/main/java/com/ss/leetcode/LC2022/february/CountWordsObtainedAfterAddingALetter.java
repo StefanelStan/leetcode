@@ -69,7 +69,7 @@ public class CountWordsObtainedAfterAddingALetter {
 
         public SortedTrie() {
             root = new TrieNode();
-            wordLengths = new boolean[27];
+            wordLengths = new boolean[26];
         }
 
         private void insert(boolean[] word, int size) {
