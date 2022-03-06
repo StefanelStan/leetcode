@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
+import com.ss.leetcode.LC2022.march.CountIntegersWithEvenDigitSum;
 import com.ss.leetcode.LC2022.march.CountOperationsToObtainZero;
 import com.ss.leetcode.LC2022.march.CountingWordsWithAGivenPrefix;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
@@ -20,7 +21,8 @@ public class StartMarch {
 //        start.mostFrequentNumberFollowingKeyInAnArray();
 //        start.sortTheJumbledNumbers();
 //        start.allAncestorsOfANodeInADirectedAcyclicGraph();
-        start.deleteAndEarn();
+//        start.deleteAndEarn();
+        start.countIntegersWithEvenDigitSum();
     }
 
     public void countOperationsToObtainZero() {
@@ -69,6 +71,9 @@ public class StartMarch {
 
         System.out.println("[[],[0],[0,1],[0,1,2],[0,1,2,3]] == " +
             aaoaniadac.getAncestors(5, new int[][]{{0,1},{0,2},{0,3},{0,4},{1,2},{1,3},{1,4},{2,3},{2,4},{3,4}}));
+
+        System.out.println("[[],[0,6],[],[],[2],[0,2,3,7],[],[0],[]] == " +
+            aaoaniadac.getAncestors(9, new int[][]{{7,5},{2,5},{0,7},{0,1},{6,1},{2,4},{3,5}}));
     }
 
     public void deleteAndEarn() {
@@ -78,5 +83,12 @@ public class StartMarch {
         System.out.println("9 == " + dae.deleteAndEarn(new int[]{2,2,3,3,3,4}));
         System.out.println("10689 == " + dae.deleteAndEarn(new int[]{5,2,8,4,1,8,99,100,4,1,8,4,2,8,4,7,6,3,2,5,6,3,21,6,8,
             54,3,4,2,1,4,66,22,11,33,44,44,55,66,77,78,79,80,10000}));
+    }
+
+    public void countIntegersWithEvenDigitSum() {
+        CountIntegersWithEvenDigitSum ciweds = new CountIntegersWithEvenDigitSum();
+
+        System.out.println("2 == " + ciweds.countEven(4));
+        System.out.println("14 == " + ciweds.countEven(30));
     }
 }

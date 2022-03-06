@@ -9,29 +9,42 @@ import java.util.TreeSet;
 
 public class AllAncestorsOfANodeInADirectedAcyclicGraph {
     // https://leetcode.com/contest/biweekly-contest-73/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/
-    public List<List<Integer>> getAncestors(int n, int[][] edges) {
+    // TLE
+    public List<List<Integer>> getAncestors(final int n, int[][] edges) {
         Map<Integer, List<Integer>> leadingTo = new TreeMap<>();
-        Set<Integer> nodes = new TreeSet<>();
+        boolean[] nodes = new boolean[n];
         for (int[] edge : edges) {
             leadingTo.computeIfAbsent(edge[1], k -> new ArrayList<>()).add(edge[0]);
-            nodes.add(edge[0]);
-            nodes.add(edge[1]);
+            nodes[edge[0]] = true;
+            nodes[edge[1]] = true;
         }
 
         final List<List<Integer>> answer = new ArrayList<>();
-        nodes.forEach(node -> answer.add(getListOfAncestors(node, leadingTo, answer)));
+        int[] index = {0};
+        while(index[0] < n) {
+            if (!nodes[index[0]]) {
+                answer.add(new ArrayList<>());
+            } else {
+                Set<Integer> ancestors = new TreeSet<>();
+                getListOfAncestors(index[0], ancestors, leadingTo, index, answer);
+                answer.add(new ArrayList<>(ancestors));
+            }
+            index[0]++;
+        }
         return answer;
     }
 
-    private List<Integer> getListOfAncestors(Integer node, Map<Integer, List<Integer>> leadingTo, List<List<Integer>> answer) {
-        Set<Integer> ancestors = new TreeSet<>();
+    private void getListOfAncestors(Integer node, Set<Integer> ancestors, Map<Integer, List<Integer>> leadingTo, int[] index, List<List<Integer>> answer) {
         if (!leadingTo.containsKey(node)) {
-            return new ArrayList<>();
+            return;
         }
-
-        // now just play with maps to finish it :)
-
-        return new ArrayList<>(ancestors);
+        if (index[0] < answer.size()) {
+            ancestors.addAll(answer.get(index[0]));
+            return;
+        }
+        leadingTo.get(node).forEach(ancestor -> {
+            ancestors.add(ancestor);
+            getListOfAncestors(ancestor, ancestors, leadingTo, index, answer);
+        });
     }
-
 }
