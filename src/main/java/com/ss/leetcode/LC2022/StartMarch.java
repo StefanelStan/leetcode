@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
+import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
 import com.ss.leetcode.LC2022.march.CountIntegersWithEvenDigitSum;
 import com.ss.leetcode.LC2022.march.CountOperationsToObtainZero;
@@ -22,7 +23,8 @@ public class StartMarch {
 //        start.sortTheJumbledNumbers();
 //        start.allAncestorsOfANodeInADirectedAcyclicGraph();
 //        start.deleteAndEarn();
-        start.countIntegersWithEvenDigitSum();
+//        start.countIntegersWithEvenDigitSum();
+        start.cellsInARangeOnAnExcelSheet();
     }
 
     public void countOperationsToObtainZero() {
@@ -90,5 +92,12 @@ public class StartMarch {
 
         System.out.println("2 == " + ciweds.countEven(4));
         System.out.println("14 == " + ciweds.countEven(30));
+    }
+
+    public void cellsInARangeOnAnExcelSheet() {
+        CellsInARangeOnAnExcelSheet ciaroaes = new CellsInARangeOnAnExcelSheet();
+
+        System.out.println("[K1, K2, L1, L2] == " + ciaroaes.cellsInRange("K1:L2"));
+        System.out.println("[A1, B1, C1, D1, E1, F1] == " + ciaroaes.cellsInRange("A1:F1"));
     }
 }
