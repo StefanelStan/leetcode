@@ -30,8 +30,8 @@ public class StartDecember {
 //        start.remvoveElement();
 //        start.removeDuplicates();
 //        start.handOfStraights();
-//        start.addTwoNumbers();
-        start.longestSubstringWithoutRepeating();
+        start.addTwoNumbers();
+//        start.longestSubstringWithoutRepeating();
 //        start.riverRecords();
 //        start.mergeSortList();
 //        start.filterRestaurants();
@@ -120,8 +120,7 @@ public class StartDecember {
         l21.next = l22;
         l22.next = l23;
         l23.next = l24;
-        atn.addTwoNumbers(l11, l21);
-
+        System.out.println("[[8, 9, 9, 9, 0, 0, 0, 0, 1]]" +  atn.addTwoNumbers(l11, l21).getAsList());
     }
 
     private void longestSubstringWithoutRepeating() {
