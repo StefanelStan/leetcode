@@ -5,10 +5,13 @@ import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
 import com.ss.leetcode.LC2022.march.CountIntegersWithEvenDigitSum;
 import com.ss.leetcode.LC2022.march.CountOperationsToObtainZero;
+import com.ss.leetcode.LC2022.march.CountSpecialQuadruplets;
 import com.ss.leetcode.LC2022.march.CountingWordsWithAGivenPrefix;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
+import com.ss.leetcode.LC2022.march.RotateList;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
+import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
 
@@ -24,7 +27,9 @@ public class StartMarch {
 //        start.allAncestorsOfANodeInADirectedAcyclicGraph();
 //        start.deleteAndEarn();
 //        start.countIntegersWithEvenDigitSum();
-        start.cellsInARangeOnAnExcelSheet();
+//        start.cellsInARangeOnAnExcelSheet();
+//        start.countSpecialQuadruplets();
+        start.rotateList();
     }
 
     public void countOperationsToObtainZero() {
@@ -99,5 +104,25 @@ public class StartMarch {
 
         System.out.println("[K1, K2, L1, L2] == " + ciaroaes.cellsInRange("K1:L2"));
         System.out.println("[A1, B1, C1, D1, E1, F1] == " + ciaroaes.cellsInRange("A1:F1"));
+    }
+
+    public void countSpecialQuadruplets() {
+        CountSpecialQuadruplets csq = new CountSpecialQuadruplets();
+
+        System.out.println("1 == " + csq.countQuadruplets(new int[]{1,2,3,6}));
+        System.out.println("0 == " + csq.countQuadruplets(new int[]{3,3,6,4,5}));
+        System.out.println("4 == " + csq.countQuadruplets(new int[]{1,1,1,3,5}));
+    }
+
+    public void rotateList() {
+        RotateList rl = new RotateList();
+
+        ListNode head1 = ListNode.makeChain(new int[]{1,2,3,4,5});
+        ListNode head2 = ListNode.makeChain(new int[]{0,1,2});
+        ListNode head3 = ListNode.makeChain(new int[]{1,2,3,4,5,1,2,3,4,5,7,3,2,9,7,5,2,1,0});
+
+        System.out.println("[4,5,1,2,3] == " + rl.rotateRight(head1, 2).getAsList());
+        System.out.println("[2,0,1] == " + rl.rotateRight(head2, 4).getAsList());
+        System.out.println("[5,1,2,3,4,5,7,3,2,9,7,5,2,1,0,1,2,3,4] == " + rl.rotateRight(head3, 1978265119).getAsList());
     }
 }
