@@ -3,15 +3,18 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
 import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
+import com.ss.leetcode.LC2022.march.CopyListWithRandomPointer;
 import com.ss.leetcode.LC2022.march.CountIntegersWithEvenDigitSum;
 import com.ss.leetcode.LC2022.march.CountOperationsToObtainZero;
 import com.ss.leetcode.LC2022.march.CountSpecialQuadruplets;
 import com.ss.leetcode.LC2022.march.CountingWordsWithAGivenPrefix;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
+import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.NodeWithRandom;
 
 import java.util.Arrays;
 
@@ -29,7 +32,9 @@ public class StartMarch {
 //        start.countIntegersWithEvenDigitSum();
 //        start.cellsInARangeOnAnExcelSheet();
 //        start.countSpecialQuadruplets();
-        start.rotateList();
+//        start.rotateList();
+//        start.copyListWithRandomPointer();
+        start.randomPickIndex();
     }
 
     public void countOperationsToObtainZero() {
@@ -124,5 +129,25 @@ public class StartMarch {
         System.out.println("[4,5,1,2,3] == " + rl.rotateRight(head1, 2).getAsList());
         System.out.println("[2,0,1] == " + rl.rotateRight(head2, 4).getAsList());
         System.out.println("[5,1,2,3,4,5,7,3,2,9,7,5,2,1,0,1,2,3,4] == " + rl.rotateRight(head3, 1978265119).getAsList());
+    }
+
+    public void copyListWithRandomPointer() {
+        CopyListWithRandomPointer clwrp = new CopyListWithRandomPointer();
+
+        NodeWithRandom head1 = NodeWithRandom.makeChain(new Integer[][]{{7, null},{13,0},{11,4},{10,2},{1,0}});
+        NodeWithRandom head2 = NodeWithRandom.makeChain(new Integer[][]{{1,1},{2,1}});
+        NodeWithRandom head3 = NodeWithRandom.makeChain(new Integer[][]{{3, null},{3,0},{3,null}});
+
+        System.out.println("[[7,null],[13,0],[11,4],[10,2],[1,0]] == " + clwrp.copyRandomList(head1).asList());
+        System.out.println("[[1,1],[2,1]] == " + clwrp.copyRandomList(head2).asList());
+        System.out.println("[[3,null],[3,0],[3,null]] == " + clwrp.copyRandomList(head3).asList());
+    }
+
+    public void randomPickIndex() {
+        RandomPickIndex rpi = new RandomPickIndex(new int[]{1,2,3,3,3});
+
+        System.out.println("2||3||4 == " + rpi.pick(3));
+        System.out.println("0 == " + rpi.pick(1));
+        System.out.println("2||3||4 == " + rpi.pick(3));
     }
 }
