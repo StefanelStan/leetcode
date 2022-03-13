@@ -1,10 +1,38 @@
 package com.ss.leetcode.LC2021.july;
 
+import java.util.Deque;
 import java.util.LinkedList;
 
 public class ValidParentheses {
     // https://leetcode.com/problems/valid-parentheses/
     public boolean isValid(String s) {
+        if (s.length() % 2 == 1) {
+            return false;
+        }
+        Deque<Character> opening = new LinkedList<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (isOpeningParenthesis(s.charAt(i))) {
+                opening.add(s.charAt(i));
+            } else if(opening.isEmpty() || opening.pollLast() != getEnclosingOf(s.charAt(i))) {
+                return false;
+            }
+        }
+        return opening.isEmpty();
+    }
+
+    private boolean isOpeningParenthesis(char ch) {
+        return ch == '(' || ch == '[' || ch == '{';
+    }
+
+    private char getEnclosingOf(char ch) {
+        return switch (ch) {
+            case '}' -> '{';
+            case ']' -> '[';
+            default -> '(';
+        };
+    }
+
+    public boolean isValid2(String s) {
         if (s.length() % 2 == 1) {
             return false;
         }
@@ -33,12 +61,12 @@ public class ValidParentheses {
     }
 
 
-    public boolean isValid2(String s) {
+    public boolean isValid3(String s) {
         if (s.length() == 1 || s.charAt(0) == (')') || s.charAt(0) == ']' || s.charAt(0) == '}') {
             return false;
         }
         boolean[] marked = new boolean[s.length()];
-        int previousPosition = 0;
+        int previousPosition;
         int moves = 0;
         for (int i = 0; i < s.length(); i++) {
             if (isClosingParentheses(s.charAt(i))) {
