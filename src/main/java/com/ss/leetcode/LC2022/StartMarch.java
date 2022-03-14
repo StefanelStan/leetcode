@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2022.march.CountIntegersWithEvenDigitSum;
 import com.ss.leetcode.LC2022.march.CountOperationsToObtainZero;
 import com.ss.leetcode.LC2022.march.CountSpecialQuadruplets;
 import com.ss.leetcode.LC2022.march.CountingWordsWithAGivenPrefix;
+import com.ss.leetcode.LC2022.march.CreateBinaryTreeFromDescriptions;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
@@ -15,6 +16,7 @@ import com.ss.leetcode.LC2022.march.RotateList;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.NodeWithRandom;
+import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
 
@@ -34,7 +36,8 @@ public class StartMarch {
 //        start.countSpecialQuadruplets();
 //        start.rotateList();
 //        start.copyListWithRandomPointer();
-        start.randomPickIndex();
+//        start.randomPickIndex();
+        start.createBinaryTreeFromDescriptions();
     }
 
     public void countOperationsToObtainZero() {
@@ -149,5 +152,14 @@ public class StartMarch {
         System.out.println("2||3||4 == " + rpi.pick(3));
         System.out.println("0 == " + rpi.pick(1));
         System.out.println("2||3||4 == " + rpi.pick(3));
+    }
+
+    public void createBinaryTreeFromDescriptions() {
+        CreateBinaryTreeFromDescriptions cbtfd = new CreateBinaryTreeFromDescriptions();
+
+        System.out.println("[50,2015,17,80,19] == " + TreeNode.preOrder(cbtfd.createBinaryTree(new int[][]{{20,15,1},{20,17,0},{50,20,1},
+            {50,80,0},{80,19,1}})));
+
+        System.out.println("[1,2,3,4] == " + TreeNode.preOrder(cbtfd.createBinaryTree(new int[][]{{1,2,1},{2,3,0},{3,4,1}})));
     }
 }

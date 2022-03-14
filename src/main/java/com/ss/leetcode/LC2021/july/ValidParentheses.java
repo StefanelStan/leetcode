@@ -37,12 +37,11 @@ public class ValidParentheses {
             return false;
         }
         LinkedList<Character> chars = new LinkedList<>();
-
+        Character inQueue= null;
         for (char c : s.toCharArray()) {
             if(c == '}' || c == ')' || c == ']') {
-                if (chars.isEmpty()) {
-                    return false;
-                } else if (!areComplementary(chars.removeLast(), c)) {
+                inQueue = chars.removeLast();
+                if (inQueue == null || !areComplementary(inQueue, c)) {
                     return false;
                 }
             } else {
