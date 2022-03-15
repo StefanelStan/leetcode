@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2022.march.CountSpecialQuadruplets;
 import com.ss.leetcode.LC2022.march.CountingWordsWithAGivenPrefix;
 import com.ss.leetcode.LC2022.march.CreateBinaryTreeFromDescriptions;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
+import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
@@ -37,7 +38,8 @@ public class StartMarch {
 //        start.rotateList();
 //        start.copyListWithRandomPointer();
 //        start.randomPickIndex();
-        start.createBinaryTreeFromDescriptions();
+//        start.createBinaryTreeFromDescriptions();
+        start.minimumRemoveToMakeValidParentheses();
     }
 
     public void countOperationsToObtainZero() {
@@ -161,5 +163,16 @@ public class StartMarch {
             {50,80,0},{80,19,1}})));
 
         System.out.println("[1,2,3,4] == " + TreeNode.preOrder(cbtfd.createBinaryTree(new int[][]{{1,2,1},{2,3,0},{3,4,1}})));
+    }
+
+    public void minimumRemoveToMakeValidParentheses() {
+        MinimumRemoveToMakeValidParentheses mrtmvp = new MinimumRemoveToMakeValidParentheses();
+
+        System.out.println("lee(t(c)o)de == " + mrtmvp.minRemoveToMakeValid("lee(t(c)o)de)"));
+        System.out.println("l()ee(t(c)o)de == " + mrtmvp.minRemoveToMakeValid("l())ee(t(c)o)de)"));
+        System.out.println("ab(c)d == " + mrtmvp.minRemoveToMakeValid("a)b(c)d"));
+        System.out.println(" == " + mrtmvp.minRemoveToMakeValid("))(("));
+        System.out.println("a == " + mrtmvp.minRemoveToMakeValid("a"));
+        System.out.println("a == " + mrtmvp.minRemoveToMakeValid("a("));
     }
 }

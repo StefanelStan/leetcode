@@ -7,6 +7,13 @@ import java.util.Map;
 
 public class CreateBinaryTreeFromDescriptions {
     // https://leetcode.com/problems/create-binary-tree-from-descriptions/
+    /** Algorithm
+         1. Use a nopeMap to store val -> Node mapping and also a boolean[] children to mark if that node is a child.
+         2. Loop over descriptions and add the parent and child node to/ from map.
+         Also mark in children[] as true the index of the child value.
+         3. The root is the only node inside mapping for which children[val] is false (it is the child of no node).
+         Loop over mapping and return this specific node.
+     */
     public TreeNode createBinaryTree(int[][] descriptions) {
         Map<Integer, TreeNode> nodeMap = new HashMap<>();
         boolean[] children = new boolean[100_001];
