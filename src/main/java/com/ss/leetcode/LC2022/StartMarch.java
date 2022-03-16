@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.march.AddingSpacesToAString;
 import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
 import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
@@ -10,6 +11,7 @@ import com.ss.leetcode.LC2022.march.CountSpecialQuadruplets;
 import com.ss.leetcode.LC2022.march.CountingWordsWithAGivenPrefix;
 import com.ss.leetcode.LC2022.march.CreateBinaryTreeFromDescriptions;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
+import com.ss.leetcode.LC2022.march.FindAllKDistantIndicesInAnArray;
 import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
@@ -39,7 +41,9 @@ public class StartMarch {
 //        start.copyListWithRandomPointer();
 //        start.randomPickIndex();
 //        start.createBinaryTreeFromDescriptions();
-        start.minimumRemoveToMakeValidParentheses();
+//        start.minimumRemoveToMakeValidParentheses();
+//        start.findAllKDistantIndicesInAnArray();
+        start.addingSpacesToAString();
     }
 
     public void countOperationsToObtainZero() {
@@ -174,5 +178,21 @@ public class StartMarch {
         System.out.println(" == " + mrtmvp.minRemoveToMakeValid("))(("));
         System.out.println("a == " + mrtmvp.minRemoveToMakeValid("a"));
         System.out.println("a == " + mrtmvp.minRemoveToMakeValid("a("));
+    }
+
+    public void findAllKDistantIndicesInAnArray() {
+        FindAllKDistantIndicesInAnArray fakdiaaa = new FindAllKDistantIndicesInAnArray();
+
+        System.out.println("[1,2,3,4,5,6] == " + fakdiaaa.findKDistantIndices(new int[]{3,4,9,1,3,9,5}, 9, 1));
+        System.out.println("[0,1,2,3,4] == " + fakdiaaa.findKDistantIndices(new int[]{2,2,2,2,2}, 2, 2));
+    }
+
+    public void addingSpacesToAString() {
+        AddingSpacesToAString astas = new AddingSpacesToAString();
+
+        System.out.println("Leetcode Helps Me Learn == " + astas.addSpaces("LeetcodeHelpsMeLearn", new int[]{8,13,15}));
+        System.out.println("i code in py thon == " + astas.addSpaces("icodeinpython", new int[]{1,5,7,9}));
+        System.out.println(" s p a c i n g == " + astas.addSpaces("spacing", new int[]{0,1,2,3,4,5,6}));
+        System.out.println(" ab  == " + astas.addSpaces("ab", new int[]{0}));
     }
 }
