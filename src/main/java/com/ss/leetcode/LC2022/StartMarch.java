@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.march.AddingSpacesToAString;
 import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
+import com.ss.leetcode.LC2022.march.BackspaceStringCompare;
 import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
 import com.ss.leetcode.LC2022.march.CopyListWithRandomPointer;
@@ -14,8 +15,10 @@ import com.ss.leetcode.LC2022.march.DeleteAndEarn;
 import com.ss.leetcode.LC2022.march.FindAllKDistantIndicesInAnArray;
 import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
+import com.ss.leetcode.LC2022.march.NextGreaterNodeInLinkedList;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
+import com.ss.leetcode.LC2022.march.ScoreOfParentheses;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.NodeWithRandom;
@@ -43,7 +46,10 @@ public class StartMarch {
 //        start.createBinaryTreeFromDescriptions();
 //        start.minimumRemoveToMakeValidParentheses();
 //        start.findAllKDistantIndicesInAnArray();
-        start.addingSpacesToAString();
+//        start.addingSpacesToAString();
+//        start.nextGreaterNodeInLinkedList();
+//        start.scoreOfParentheses();
+        start.backspaceStringCompare();
     }
 
     public void countOperationsToObtainZero() {
@@ -194,5 +200,32 @@ public class StartMarch {
         System.out.println("i code in py thon == " + astas.addSpaces("icodeinpython", new int[]{1,5,7,9}));
         System.out.println(" s p a c i n g == " + astas.addSpaces("spacing", new int[]{0,1,2,3,4,5,6}));
         System.out.println(" ab  == " + astas.addSpaces("ab", new int[]{0}));
+    }
+
+    public void nextGreaterNodeInLinkedList() {
+        NextGreaterNodeInLinkedList ngnill = new NextGreaterNodeInLinkedList();
+
+        System.out.println("[5,5,0] == " + Arrays.toString(ngnill.nextLargerNodes(ListNode.makeChain(new int[]{2,1,5}))));
+        System.out.println("[7,0,5,5,0] == " + Arrays.toString(ngnill.nextLargerNodes(ListNode.makeChain(new int[]{2,7,4,3,5}))));
+        System.out.println("[0] == " + Arrays.toString(ngnill.nextLargerNodes(ListNode.makeChain(new int[]{1}))));
+        System.out.println("[2,3,0] == " + Arrays.toString(ngnill.nextLargerNodes(ListNode.makeChain(new int[]{1,2,3}))));
+        System.out.println("[0,0,0] == " + Arrays.toString(ngnill.nextLargerNodes(ListNode.makeChain(new int[]{3,2,1}))));
+    }
+
+    public void scoreOfParentheses() {
+        ScoreOfParentheses sop = new ScoreOfParentheses();
+
+        System.out.println("1 == " + sop.scoreOfParentheses("()"));
+        System.out.println("2 == " + sop.scoreOfParentheses("(())"));
+        System.out.println("2 == " + sop.scoreOfParentheses("()()"));
+        System.out.println("12 == " + sop.scoreOfParentheses("((()())()())"));
+    }
+
+    public void backspaceStringCompare() {
+        BackspaceStringCompare bsc = new BackspaceStringCompare();
+
+        System.out.println("true == " + bsc.backspaceCompare("ab#c", "ad#c"));
+        System.out.println("true == " + bsc.backspaceCompare("ab##", "c#d#"));
+        System.out.println("false == " + bsc.backspaceCompare("a#c", "b"));
     }
 }
