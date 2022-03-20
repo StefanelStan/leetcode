@@ -12,13 +12,17 @@ import com.ss.leetcode.LC2022.march.CountSpecialQuadruplets;
 import com.ss.leetcode.LC2022.march.CountingWordsWithAGivenPrefix;
 import com.ss.leetcode.LC2022.march.CreateBinaryTreeFromDescriptions;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
+import com.ss.leetcode.LC2022.march.DivideArrayIntoEqualPairs;
 import com.ss.leetcode.LC2022.march.FindAllKDistantIndicesInAnArray;
+import com.ss.leetcode.LC2022.march.MaximumFrequencyStack;
+import com.ss.leetcode.LC2022.march.MinimumDominoRotationsForEqualRow;
 import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
 import com.ss.leetcode.LC2022.march.NextGreaterNodeInLinkedList;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
 import com.ss.leetcode.LC2022.march.ScoreOfParentheses;
+import com.ss.leetcode.LC2022.march.SmallestSubsequenceOfDistinctCharacters;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.NodeWithRandom;
@@ -49,7 +53,11 @@ public class StartMarch {
 //        start.addingSpacesToAString();
 //        start.nextGreaterNodeInLinkedList();
 //        start.scoreOfParentheses();
-        start.backspaceStringCompare();
+//        start.backspaceStringCompare();
+//        start.smallestSubsequenceOfDistinctCharacters();
+//        start.minimumDominoRotationsForEqualRow();
+//        start.divideArrayIntoEqualPairs();
+        start.maximumFrequencyStack();
     }
 
     public void countOperationsToObtainZero() {
@@ -227,5 +235,44 @@ public class StartMarch {
         System.out.println("true == " + bsc.backspaceCompare("ab#c", "ad#c"));
         System.out.println("true == " + bsc.backspaceCompare("ab##", "c#d#"));
         System.out.println("false == " + bsc.backspaceCompare("a#c", "b"));
+    }
+
+    public void smallestSubsequenceOfDistinctCharacters() {
+        // NOT WORKING
+        SmallestSubsequenceOfDistinctCharacters ssodc = new SmallestSubsequenceOfDistinctCharacters();
+
+        System.out.println("abc == " + ssodc.smallestSubsequence("bcabc"));
+        System.out.println("acdb == " + ssodc.smallestSubsequence("cbacdcbc"));
+        System.out.println("abcdehofgiujlxmwtnrvks == " + ssodc.smallestSubsequence("cbacdcbchifdusghdfihiguehofimwscfn"
+            + "idmghiuvhceujfsdilhgcxmiwhdtvlcnrhvdsclmisfldkghcjskj"));
+    }
+
+    public void minimumDominoRotationsForEqualRow() {
+        MinimumDominoRotationsForEqualRow mdrfer = new MinimumDominoRotationsForEqualRow();
+
+        System.out.println("2 == " + mdrfer.minDominoRotations(new int[]{2,1,2,4,2,2}, new int[]{5,2,6,2,3,2}));
+        System.out.println("-1 == " + mdrfer.minDominoRotations(new int[]{3,5,1,2,3}, new int[]{3,6,3,3,4}));
+    }
+
+    public void divideArrayIntoEqualPairs() {
+        DivideArrayIntoEqualPairs daiep = new DivideArrayIntoEqualPairs();
+
+        System.out.println("true == " + daiep.divideArray(new int[]{3,2,3,2,2,2}));
+        System.out.println("false == " + daiep.divideArray(new int[]{1,2,2,2}));
+    }
+
+    public void maximumFrequencyStack() {
+        MaximumFrequencyStack mfs = new MaximumFrequencyStack();
+
+        mfs.push(5); // The stack is [5]
+        mfs.push(7); // The stack is [5,7]
+        mfs.push(5); // The stack is [5,7,5]
+        mfs.push(7); // The stack is [5,7,5,7]
+        mfs.push(4); // The stack is [5,7,5,7,4]
+        mfs.push(5); // The stack is [5,7,5,7,4,5]
+        System.out.println("5 == " + mfs.pop());   // return 5, as 5 is the most frequent. The stack becomes [5,7,5,7,4].
+        System.out.println("7 == " + mfs.pop());   // return 7, as 5 and 7 is the most frequent, but 7 is closest to the top. The stack becomes [5,7,5,4].
+        System.out.println("5 == " + mfs.pop());   // return 5, as 5 is the most frequent. The stack becomes [5,7,4].
+        System.out.println("4 == " + mfs.pop());   // return 4, as 4, 5 and 7 is the most frequent, but 4 is closest to the top. The stack becomes [5,7].
     }
 }
