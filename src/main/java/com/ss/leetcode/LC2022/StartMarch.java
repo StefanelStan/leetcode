@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
 import com.ss.leetcode.LC2022.march.BackspaceStringCompare;
 import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
+import com.ss.leetcode.LC2022.march.ConvertIntegerToTheSumOfTwoNoZeroIntegers;
 import com.ss.leetcode.LC2022.march.CopyListWithRandomPointer;
 import com.ss.leetcode.LC2022.march.CountIntegersWithEvenDigitSum;
 import com.ss.leetcode.LC2022.march.CountOperationsToObtainZero;
@@ -22,6 +23,7 @@ import com.ss.leetcode.LC2022.march.NextGreaterNodeInLinkedList;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
 import com.ss.leetcode.LC2022.march.ScoreOfParentheses;
+import com.ss.leetcode.LC2022.march.SmallestStringWithAGivenNumericValue;
 import com.ss.leetcode.LC2022.march.SmallestSubsequenceOfDistinctCharacters;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
 import com.ss.leetcode.shared.ListNode;
@@ -57,7 +59,9 @@ public class StartMarch {
 //        start.smallestSubsequenceOfDistinctCharacters();
 //        start.minimumDominoRotationsForEqualRow();
 //        start.divideArrayIntoEqualPairs();
-        start.maximumFrequencyStack();
+//        start.maximumFrequencyStack();
+//        start.smallestStringWithAGivenNumericValue();
+        start.convertIntegerToTheSumOfTwoNoZeroIntegers();
     }
 
     public void countOperationsToObtainZero() {
@@ -274,5 +278,21 @@ public class StartMarch {
         System.out.println("7 == " + mfs.pop());   // return 7, as 5 and 7 is the most frequent, but 7 is closest to the top. The stack becomes [5,7,5,4].
         System.out.println("5 == " + mfs.pop());   // return 5, as 5 is the most frequent. The stack becomes [5,7,4].
         System.out.println("4 == " + mfs.pop());   // return 4, as 4, 5 and 7 is the most frequent, but 4 is closest to the top. The stack becomes [5,7].
+    }
+
+    public void smallestStringWithAGivenNumericValue() {
+        SmallestStringWithAGivenNumericValue sswagnv = new SmallestStringWithAGivenNumericValue();
+
+        System.out.println("aay == " + sswagnv.getSmallestString(3, 27));
+        System.out.println("aaszz == " + sswagnv.getSmallestString(5, 73));
+    }
+
+    public void convertIntegerToTheSumOfTwoNoZeroIntegers() {
+        ConvertIntegerToTheSumOfTwoNoZeroIntegers cittsotnzi = new ConvertIntegerToTheSumOfTwoNoZeroIntegers();
+
+        System.out.println("[1,1] == " + Arrays.toString(cittsotnzi.getNoZeroIntegers(2)));
+        System.out.println("[2,9] == " + Arrays.toString(cittsotnzi.getNoZeroIntegers(11)));
+        System.out.println("[2,8999] == " + Arrays.toString(cittsotnzi.getNoZeroIntegers(9001)));
+        System.out.println("[1,6] == " + Arrays.toString(cittsotnzi.getNoZeroIntegers(7)));
     }
 }
