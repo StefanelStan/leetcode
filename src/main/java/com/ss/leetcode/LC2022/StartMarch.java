@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.march.AddingSpacesToAString;
 import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
 import com.ss.leetcode.LC2022.march.BackspaceStringCompare;
+import com.ss.leetcode.LC2022.march.BrokenCalculator;
 import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
 import com.ss.leetcode.LC2022.march.ConvertIntegerToTheSumOfTwoNoZeroIntegers;
@@ -61,7 +62,8 @@ public class StartMarch {
 //        start.divideArrayIntoEqualPairs();
 //        start.maximumFrequencyStack();
 //        start.smallestStringWithAGivenNumericValue();
-        start.convertIntegerToTheSumOfTwoNoZeroIntegers();
+//        start.convertIntegerToTheSumOfTwoNoZeroIntegers();
+        start.brokenCalculator();
     }
 
     public void countOperationsToObtainZero() {
@@ -294,5 +296,14 @@ public class StartMarch {
         System.out.println("[2,9] == " + Arrays.toString(cittsotnzi.getNoZeroIntegers(11)));
         System.out.println("[2,8999] == " + Arrays.toString(cittsotnzi.getNoZeroIntegers(9001)));
         System.out.println("[1,6] == " + Arrays.toString(cittsotnzi.getNoZeroIntegers(7)));
+    }
+
+    public void brokenCalculator() {
+        BrokenCalculator bc = new BrokenCalculator();
+
+        System.out.println("2 == " + bc.brokenCalc(2,3));
+        System.out.println("2 == " + bc.brokenCalc(5,8));
+        System.out.println("3 == " + bc.brokenCalc(3,10));
+        System.out.println("5 == " + bc.brokenCalc(8,3));
     }
 }
