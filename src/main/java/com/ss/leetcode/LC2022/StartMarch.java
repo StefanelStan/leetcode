@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.march.AddingSpacesToAString;
 import com.ss.leetcode.LC2022.march.AllAncestorsOfANodeInADirectedAcyclicGraph;
 import com.ss.leetcode.LC2022.march.BackspaceStringCompare;
+import com.ss.leetcode.LC2022.march.BoatsToSavePeople;
 import com.ss.leetcode.LC2022.march.BrokenCalculator;
 import com.ss.leetcode.LC2022.march.CellsInARangeOnAnExcelSheet;
 import com.ss.leetcode.LC2022.march.ChampagneTower;
@@ -27,6 +28,7 @@ import com.ss.leetcode.LC2022.march.ScoreOfParentheses;
 import com.ss.leetcode.LC2022.march.SmallestStringWithAGivenNumericValue;
 import com.ss.leetcode.LC2022.march.SmallestSubsequenceOfDistinctCharacters;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
+import com.ss.leetcode.LC2022.march.VerifyingAnAlienDictionary;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.NodeWithRandom;
 import com.ss.leetcode.shared.TreeNode;
@@ -63,7 +65,9 @@ public class StartMarch {
 //        start.maximumFrequencyStack();
 //        start.smallestStringWithAGivenNumericValue();
 //        start.convertIntegerToTheSumOfTwoNoZeroIntegers();
-        start.brokenCalculator();
+//        start.brokenCalculator();
+//        start.verifyingAnAlienDictionary();
+        start.boatsToSavePeople();
     }
 
     public void countOperationsToObtainZero() {
@@ -305,5 +309,22 @@ public class StartMarch {
         System.out.println("2 == " + bc.brokenCalc(5,8));
         System.out.println("3 == " + bc.brokenCalc(3,10));
         System.out.println("5 == " + bc.brokenCalc(8,3));
+    }
+
+    public void verifyingAnAlienDictionary() {
+        VerifyingAnAlienDictionary vaad = new VerifyingAnAlienDictionary();
+
+        System.out.println("true == " + vaad.isAlienSorted(new String[]{"hello","leetcode"}, "hlabcdefgijkmnopqrstuvwxyz"));
+        System.out.println("false == " + vaad.isAlienSorted(new String[]{"word","world","row"}, "worldabcefghijkmnpqstuvxyz"));
+        System.out.println("false == " + vaad.isAlienSorted(new String[]{"word","world","row"}, "worldabcefghijkmnpqstuvxyz"));
+    }
+
+    public void boatsToSavePeople() {
+        BoatsToSavePeople btsp = new BoatsToSavePeople();
+
+        System.out.println("1 == " + btsp.numRescueBoats(new int[]{1,2}, 3));
+        System.out.println("3 == " + btsp.numRescueBoats(new int[]{3,2,2,1}, 3));
+        System.out.println("4 == " + btsp.numRescueBoats(new int[]{3,5,3,4}, 5));
+        System.out.println("11 == " + btsp.numRescueBoats(new int[]{4,3,2,7,8,9,4,5,7,2,3,5,8,5,3,2,8,5,9,1,8}, 11));
     }
 }
