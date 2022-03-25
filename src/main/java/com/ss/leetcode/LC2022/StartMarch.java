@@ -22,12 +22,14 @@ import com.ss.leetcode.LC2022.march.MinimumDominoRotationsForEqualRow;
 import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
 import com.ss.leetcode.LC2022.march.NextGreaterNodeInLinkedList;
+import com.ss.leetcode.LC2022.march.PartitionArrayIntoThreePartsWithEqualSum;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
 import com.ss.leetcode.LC2022.march.ScoreOfParentheses;
 import com.ss.leetcode.LC2022.march.SmallestStringWithAGivenNumericValue;
 import com.ss.leetcode.LC2022.march.SmallestSubsequenceOfDistinctCharacters;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
+import com.ss.leetcode.LC2022.march.TwoCityScheduling;
 import com.ss.leetcode.LC2022.march.VerifyingAnAlienDictionary;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.NodeWithRandom;
@@ -67,7 +69,9 @@ public class StartMarch {
 //        start.convertIntegerToTheSumOfTwoNoZeroIntegers();
 //        start.brokenCalculator();
 //        start.verifyingAnAlienDictionary();
-        start.boatsToSavePeople();
+//        start.boatsToSavePeople();
+//        start.twoCityScheduling();
+        start.partitionArrayIntoThreePartsWithEqualSum();
     }
 
     public void countOperationsToObtainZero() {
@@ -326,5 +330,24 @@ public class StartMarch {
         System.out.println("3 == " + btsp.numRescueBoats(new int[]{3,2,2,1}, 3));
         System.out.println("4 == " + btsp.numRescueBoats(new int[]{3,5,3,4}, 5));
         System.out.println("11 == " + btsp.numRescueBoats(new int[]{4,3,2,7,8,9,4,5,7,2,3,5,8,5,3,2,8,5,9,1,8}, 11));
+    }
+
+    public void twoCityScheduling() {
+        TwoCityScheduling tcs = new TwoCityScheduling();
+
+        System.out.println("110 == " + tcs.twoCitySchedCost(new int[][]{{10,20},{30,200},{400,50},{30,32}}));
+        System.out.println("1859 == " + tcs.twoCitySchedCost(new int[][]{{259,770},{448,54},{926,667},{184,139},{840,118},{577,469}}));
+        System.out.println("3086 == " + tcs.twoCitySchedCost(new int[][]{{515,563},{451,713},{537,709},{343,819},{855,779},
+                                                            {457,60},{650,359},{631,42}}));
+    }
+
+    public void partitionArrayIntoThreePartsWithEqualSum() {
+        PartitionArrayIntoThreePartsWithEqualSum paitpwes = new PartitionArrayIntoThreePartsWithEqualSum();
+
+        System.out.println("true == " + paitpwes.canThreePartsEqualSum(new int[]{0,2,1,-6,6,-7,9,1,2,0,1}));
+        System.out.println("false == " + paitpwes.canThreePartsEqualSum(new int[]{0,2,1,-6,6,7,9,-1,2,0,1}));
+        System.out.println("true == " + paitpwes.canThreePartsEqualSum(new int[]{3,3,6,5,-2,2,5,1,-9,4}));
+        System.out.println("true == " + paitpwes.canThreePartsEqualSum(new int[]{0,0,0,0}));
+        System.out.println("false == " + paitpwes.canThreePartsEqualSum(new int[]{1,-1,1,-1}));
     }
 }
