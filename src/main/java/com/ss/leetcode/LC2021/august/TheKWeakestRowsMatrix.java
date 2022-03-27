@@ -1,12 +1,36 @@
 package com.ss.leetcode.LC2021.august;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class TheKWeakestRowsMatrix {
     // https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
     public int[] kWeakestRows(int[][] mat, int k) {
+        int[][] rows = new int[mat.length][2];
+        for (int i = 0; i < mat.length; i++) {
+            int count  = 0;
+            for (int j = 0; j < mat[i].length; j++) {
+                if(mat[i][j] == 1) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+            rows[i][0] = i;
+            rows[i][1] = count;
+        }
+
+        Arrays.sort(rows, (a, b) -> a[1] == b[1] ? a[0] - b[0] : a[1] - b[1]);
+        int[] order = new int[k];
+        for (int i = 0; i < k; i++) {
+            order[i] = rows[i][0];
+        }
+        return order;
+    }
+
+    public int[] kWeakestRows2(int[][] mat, int k) {
         List<Row> rows = new ArrayList<>(mat.length);
         int nrOfSoldiers = 0;
         for (int i = 0; i < mat.length; i++) {

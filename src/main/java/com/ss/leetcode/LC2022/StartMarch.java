@@ -22,6 +22,7 @@ import com.ss.leetcode.LC2022.march.MinimumDominoRotationsForEqualRow;
 import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
 import com.ss.leetcode.LC2022.march.MostFrequentNumberFollowingKeyInAnArray;
 import com.ss.leetcode.LC2022.march.NextGreaterNodeInLinkedList;
+import com.ss.leetcode.LC2022.march.OneBitAndTwoBitCharacters;
 import com.ss.leetcode.LC2022.march.PartitionArrayIntoThreePartsWithEqualSum;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
@@ -71,7 +72,8 @@ public class StartMarch {
 //        start.verifyingAnAlienDictionary();
 //        start.boatsToSavePeople();
 //        start.twoCityScheduling();
-        start.partitionArrayIntoThreePartsWithEqualSum();
+//        start.partitionArrayIntoThreePartsWithEqualSum();
+        start.oneBitAndTwoBitCharacters();
     }
 
     public void countOperationsToObtainZero() {
@@ -349,5 +351,12 @@ public class StartMarch {
         System.out.println("true == " + paitpwes.canThreePartsEqualSum(new int[]{3,3,6,5,-2,2,5,1,-9,4}));
         System.out.println("true == " + paitpwes.canThreePartsEqualSum(new int[]{0,0,0,0}));
         System.out.println("false == " + paitpwes.canThreePartsEqualSum(new int[]{1,-1,1,-1}));
+    }
+
+    public void oneBitAndTwoBitCharacters() {
+        OneBitAndTwoBitCharacters obatbc = new OneBitAndTwoBitCharacters();
+
+        System.out.println("true == " + obatbc.isOneBitCharacter(new int[]{1,0,0}));
+        System.out.println("false == " + obatbc.isOneBitCharacter(new int[]{1,1,1,0}));
     }
 }

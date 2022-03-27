@@ -50,3 +50,13 @@ DELETE FROM Person WHERE id NOT IN ( SELECT id from minId);
 -- Classes More Than 5 Students
 -- https://leetcode.com/problems/classes-more-than-5-students/
 SELECT class FROM Courses GROUP BY (class) HAVING count(*) > 4;
+
+-- Customer Placing the Largest Number of Orders
+-- https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/
+SELECT customer_number FROM Orders
+GROUP BY customer_number ORDER BY count(customer_number) DESC LIMIT 1;
+
+-- Game Play Analysis I
+-- https://leetcode.com/problems/game-play-analysis-i/
+SELECT player_id, MIN(event_date) AS first_login FROM Activity
+GROUP BY player_id;
