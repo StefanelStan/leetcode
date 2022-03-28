@@ -27,6 +27,7 @@ import com.ss.leetcode.LC2022.march.PartitionArrayIntoThreePartsWithEqualSum;
 import com.ss.leetcode.LC2022.march.RandomPickIndex;
 import com.ss.leetcode.LC2022.march.RotateList;
 import com.ss.leetcode.LC2022.march.ScoreOfParentheses;
+import com.ss.leetcode.LC2022.march.SearchInRotatedSortedArrayII;
 import com.ss.leetcode.LC2022.march.SmallestStringWithAGivenNumericValue;
 import com.ss.leetcode.LC2022.march.SmallestSubsequenceOfDistinctCharacters;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
@@ -73,7 +74,8 @@ public class StartMarch {
 //        start.boatsToSavePeople();
 //        start.twoCityScheduling();
 //        start.partitionArrayIntoThreePartsWithEqualSum();
-        start.oneBitAndTwoBitCharacters();
+//        start.oneBitAndTwoBitCharacters();
+        start.searchInRotatedSortedArrayII();
     }
 
     public void countOperationsToObtainZero() {
@@ -358,5 +360,30 @@ public class StartMarch {
 
         System.out.println("true == " + obatbc.isOneBitCharacter(new int[]{1,0,0}));
         System.out.println("false == " + obatbc.isOneBitCharacter(new int[]{1,1,1,0}));
+    }
+
+    public void searchInRotatedSortedArrayII() {
+        SearchInRotatedSortedArrayII siarsaii = new SearchInRotatedSortedArrayII();
+
+        System.out.println("true == " + siarsaii.search(new int[]{2,5,6,0,0,1,2}, 0));
+        System.out.println("false == " + siarsaii.search(new int[]{2,5,6,0,0,1,2}, 3));
+        System.out.println("true == " + siarsaii.search(new int[]{1,2,3,3,4,5,6,6,7,8,9,10,10,10,11,12,13,13,14,14,15,16}, 3));
+        System.out.println("true == " + siarsaii.search(new int[]{8,9,10,10,10,11,12,13,13,14,14,15,16,1,2,3,3,4,5,6,6,7}, 3));
+        System.out.println("true == " + siarsaii.search(new int[]{16,1,2,3,3,4,5,6,6,7,8,9,10,10,10,11,12,13,13,14,14,15}, 3));
+        System.out.println("false == " + siarsaii.search(new int[]{16,1,2,3,3,4,5,6,6,7,8,9,10,10,10,11,12,13,13,14,14,15}, 33));
+        System.out.println("true == " + siarsaii.search(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, 2));
+
+//        int[] nrs = new int[5000];
+//        for(int i=3999, nr = 0; nr <= 1000; nr++, i++) {
+//            nrs[i] = nr;
+//        }
+//        for (int nr = 1001, i = 0; nr <= 4999; i++, nr++) {
+//            nrs[i] = nr;
+//        }
+//        System.out.println("true ==" + siarsaii.search(nrs, 3713));
+//        System.out.println("true ==" + siarsaii.search(nrs, 0));
+//        System.out.println("true ==" + siarsaii.search(nrs, 4999));
+//        System.out.println("false ==" + siarsaii.search(nrs, -1));
+//        System.out.println("false ==" + siarsaii.search(nrs, 5000));
     }
 }
