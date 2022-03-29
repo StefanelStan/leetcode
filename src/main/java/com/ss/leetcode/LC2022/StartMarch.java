@@ -17,6 +17,8 @@ import com.ss.leetcode.LC2022.march.CreateBinaryTreeFromDescriptions;
 import com.ss.leetcode.LC2022.march.DeleteAndEarn;
 import com.ss.leetcode.LC2022.march.DivideArrayIntoEqualPairs;
 import com.ss.leetcode.LC2022.march.FindAllKDistantIndicesInAnArray;
+import com.ss.leetcode.LC2022.march.FindTheDuplicateNumber;
+import com.ss.leetcode.LC2022.march.LowestCommonAncestorOfABinaryTree;
 import com.ss.leetcode.LC2022.march.MaximumFrequencyStack;
 import com.ss.leetcode.LC2022.march.MinimumDominoRotationsForEqualRow;
 import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
@@ -75,7 +77,9 @@ public class StartMarch {
 //        start.twoCityScheduling();
 //        start.partitionArrayIntoThreePartsWithEqualSum();
 //        start.oneBitAndTwoBitCharacters();
-        start.searchInRotatedSortedArrayII();
+//        start.searchInRotatedSortedArrayII();
+//        start.findTheDuplicateNumber();
+        start.lowestCommonAncestorOfABinaryTree();
     }
 
     public void countOperationsToObtainZero() {
@@ -371,19 +375,27 @@ public class StartMarch {
         System.out.println("true == " + siarsaii.search(new int[]{8,9,10,10,10,11,12,13,13,14,14,15,16,1,2,3,3,4,5,6,6,7}, 3));
         System.out.println("true == " + siarsaii.search(new int[]{16,1,2,3,3,4,5,6,6,7,8,9,10,10,10,11,12,13,13,14,14,15}, 3));
         System.out.println("false == " + siarsaii.search(new int[]{16,1,2,3,3,4,5,6,6,7,8,9,10,10,10,11,12,13,13,14,14,15}, 33));
-        System.out.println("true == " + siarsaii.search(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, 2));
+        System.out.println("true == " + siarsaii.search(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+            ,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1}, 2));
+    }
 
-//        int[] nrs = new int[5000];
-//        for(int i=3999, nr = 0; nr <= 1000; nr++, i++) {
-//            nrs[i] = nr;
-//        }
-//        for (int nr = 1001, i = 0; nr <= 4999; i++, nr++) {
-//            nrs[i] = nr;
-//        }
-//        System.out.println("true ==" + siarsaii.search(nrs, 3713));
-//        System.out.println("true ==" + siarsaii.search(nrs, 0));
-//        System.out.println("true ==" + siarsaii.search(nrs, 4999));
-//        System.out.println("false ==" + siarsaii.search(nrs, -1));
-//        System.out.println("false ==" + siarsaii.search(nrs, 5000));
+    public void findTheDuplicateNumber() {
+        FindTheDuplicateNumber ftdn = new FindTheDuplicateNumber();
+
+        System.out.println("2 == " + ftdn.findDuplicate(new int[]{1,3,4,2,2}));
+        System.out.println("3 == " + ftdn.findDuplicate(new int[]{3,1,3,4,2}));
+    }
+
+    public void lowestCommonAncestorOfABinaryTree() {
+        LowestCommonAncestorOfABinaryTree lcaoabt = new LowestCommonAncestorOfABinaryTree();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4))),
+                                      new TreeNode(1, new TreeNode(0), new TreeNode(8)));
+
+        TreeNode root2 = new TreeNode(1, null, new TreeNode(2));
+
+        System.out.println("3 == " + lcaoabt.lowestCommonAncestor(root1, new TreeNode(5), new TreeNode(1)).val);
+        System.out.println("5 == " + lcaoabt.lowestCommonAncestor(root1, new TreeNode(5), new TreeNode(4)).val);
+        System.out.println("1 == " + lcaoabt.lowestCommonAncestor(root2, new TreeNode(1), new TreeNode(2)).val);
     }
 }
