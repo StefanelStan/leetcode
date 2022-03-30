@@ -19,6 +19,7 @@ import com.ss.leetcode.LC2022.march.DivideArrayIntoEqualPairs;
 import com.ss.leetcode.LC2022.march.FindAllKDistantIndicesInAnArray;
 import com.ss.leetcode.LC2022.march.FindTheDuplicateNumber;
 import com.ss.leetcode.LC2022.march.LowestCommonAncestorOfABinaryTree;
+import com.ss.leetcode.LC2022.march.MagicSquaresInGrid;
 import com.ss.leetcode.LC2022.march.MaximumFrequencyStack;
 import com.ss.leetcode.LC2022.march.MinimumDominoRotationsForEqualRow;
 import com.ss.leetcode.LC2022.march.MinimumRemoveToMakeValidParentheses;
@@ -79,7 +80,8 @@ public class StartMarch {
 //        start.oneBitAndTwoBitCharacters();
 //        start.searchInRotatedSortedArrayII();
 //        start.findTheDuplicateNumber();
-        start.lowestCommonAncestorOfABinaryTree();
+//        start.lowestCommonAncestorOfABinaryTree();
+        start.magicSquaresInGrid();
     }
 
     public void countOperationsToObtainZero() {
@@ -397,5 +399,16 @@ public class StartMarch {
         System.out.println("3 == " + lcaoabt.lowestCommonAncestor(root1, new TreeNode(5), new TreeNode(1)).val);
         System.out.println("5 == " + lcaoabt.lowestCommonAncestor(root1, new TreeNode(5), new TreeNode(4)).val);
         System.out.println("1 == " + lcaoabt.lowestCommonAncestor(root2, new TreeNode(1), new TreeNode(2)).val);
+    }
+
+    public void magicSquaresInGrid() {
+        MagicSquaresInGrid msig = new MagicSquaresInGrid();
+
+        System.out.println("1 == " + msig.numMagicSquaresInside(new int[][]{{4,3,8,4},{9,5,1,9},{2,7,6,2}}));
+        System.out.println("0 == " + msig.numMagicSquaresInside(new int[][]{{8}}));
+        System.out.println("1 == " + msig.numMagicSquaresInside(new int[][]{{8,1,6},{3,5,7},{4,9,2}}));
+        System.out.println("0 == " + msig.numMagicSquaresInside(new int[][]{{5,5,5},{5,5,5},{5,5,5}}));
+        System.out.println("0 == " + msig.numMagicSquaresInside(new int[][]{{10,3,5},{1,6,11},{7,9,2}}));
+        System.out.println("0 == " + msig.numMagicSquaresInside(new int[][]{{7,0,5},{2,4,6},{3,8,1}}));
     }
 }
