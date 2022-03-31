@@ -34,6 +34,7 @@ import com.ss.leetcode.LC2022.march.SearchInRotatedSortedArrayII;
 import com.ss.leetcode.LC2022.march.SmallestStringWithAGivenNumericValue;
 import com.ss.leetcode.LC2022.march.SmallestSubsequenceOfDistinctCharacters;
 import com.ss.leetcode.LC2022.march.SortTheJumbledNumbers;
+import com.ss.leetcode.LC2022.march.SplitArrayLargestSum;
 import com.ss.leetcode.LC2022.march.TwoCityScheduling;
 import com.ss.leetcode.LC2022.march.VerifyingAnAlienDictionary;
 import com.ss.leetcode.shared.ListNode;
@@ -81,7 +82,8 @@ public class StartMarch {
 //        start.searchInRotatedSortedArrayII();
 //        start.findTheDuplicateNumber();
 //        start.lowestCommonAncestorOfABinaryTree();
-        start.magicSquaresInGrid();
+//        start.magicSquaresInGrid();
+        start.splitArrayLargestSum();
     }
 
     public void countOperationsToObtainZero() {
@@ -410,5 +412,13 @@ public class StartMarch {
         System.out.println("0 == " + msig.numMagicSquaresInside(new int[][]{{5,5,5},{5,5,5},{5,5,5}}));
         System.out.println("0 == " + msig.numMagicSquaresInside(new int[][]{{10,3,5},{1,6,11},{7,9,2}}));
         System.out.println("0 == " + msig.numMagicSquaresInside(new int[][]{{7,0,5},{2,4,6},{3,8,1}}));
+    }
+
+    public void splitArrayLargestSum() {
+        SplitArrayLargestSum sals = new SplitArrayLargestSum();
+
+        System.out.println("18 == " + sals.splitArray(new int[]{7,2,5,10,8}, 2));
+        System.out.println("9 == " + sals.splitArray(new int[]{1,2,3,4,5}, 2));
+        System.out.println("4 == " + sals.splitArray(new int[]{1,4,4}, 3));
     }
 }
