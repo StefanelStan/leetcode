@@ -83,7 +83,7 @@ public class StartMarch {
 //        start.findTheDuplicateNumber();
 //        start.lowestCommonAncestorOfABinaryTree();
 //        start.magicSquaresInGrid();
-        start.splitArrayLargestSum();
+//        start.splitArrayLargestSum();
     }
 
     public void countOperationsToObtainZero() {
