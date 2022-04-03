@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2021.february.LongestSubarrayOf1AfterDeletingOneElement
 import com.ss.leetcode.LC2021.february.MaximumOfAbsoluteValueExpression;
 import com.ss.leetcode.LC2021.february.MergeSortedArray;
 import com.ss.leetcode.LC2021.february.MinimumChangesToMakeAlternatingBinaryString;
+import com.ss.leetcode.LC2021.february.NumberOf1Bits;
 import com.ss.leetcode.LC2021.february.PairsOfSongsWithTotalDurations;
 import com.ss.leetcode.LC2021.february.ProductOfTheLastKNumbers;
 import com.ss.leetcode.LC2021.february.RemoveAllAdjacentDuplicatesInStringII;
@@ -40,7 +41,7 @@ public class StartFebruary {
 //        start.selfDividingNumbers();
 //        start.restoreTheArrayFromAdjacentPairs();
 //        start.applyDiscountEveryNOrders();
-        start.contiguousArray();
+//        start.contiguousArray();
 //        start.shiftingLetters();
 //        start.countUnhappyFriends();
 //        start.minimumChangesToMakeAlternatingBinaryString();
@@ -56,7 +57,7 @@ public class StartFebruary {
 //        start.sequentialDigits();
 //        start.concatenationOfConsecutiveBinaryNumbers();
 //        start.binaryNumberWithAlternatingBits();
-//        start.numberOf1Bits();
+        start.numberOf1Bits();
 //        start.checkIfItIsAStraightLine();
 //        start.findRightInterval();
 //        start.removeAllAdjacentDuplicatesInStringII();
@@ -371,7 +372,13 @@ public class StartFebruary {
     }
 
     private void numberOf1Bits() {
-        // workds OK
+        NumberOf1Bits no1b = new NumberOf1Bits();
+
+        System.out.println("3 == " + no1b.hammingWeight(11));
+        System.out.println("1 == " + no1b.hammingWeight(128));
+        System.out.println("31 == " + no1b.hammingWeight(-3));
+        System.out.println("31 == " + no1b.hammingWeight(-7));
+        System.out.println("31 == " + no1b.hammingWeight(-218127315));
     }
 
     private void checkIfItIsAStraightLine() {

@@ -4,7 +4,10 @@ import com.ss.leetcode.LC2022.april.CountOddNumbersInAnIntervalRange;
 import com.ss.leetcode.LC2022.april.FindTriangularSumOfAnArray;
 import com.ss.leetcode.LC2022.april.FindUniqueBinaryString;
 import com.ss.leetcode.LC2022.april.MinimumBitFlipsToConvertNumber;
+import com.ss.leetcode.LC2022.april.NextPermutation;
 import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
+
+import java.util.Arrays;
 
 public class StartApril {
     public static void main(String[] args) {
@@ -14,7 +17,8 @@ public class StartApril {
 //        start.minimumBitFlipsToConvertNumber();
 //        start.findTriangularSumOfAnArray();
 //        start.sumOfScoresOfBuiltStrings();
-        start.countOddNumbersInAnIntervalRange();
+//        start.countOddNumbersInAnIntervalRange();
+        start.nextPermutation();
     }
 
     public void findUniqueBinaryString() {
@@ -58,5 +62,24 @@ public class StartApril {
 
         System.out.println("3 == " + coniair.countOdds(3,7));
         System.out.println("1 == " + coniair.countOdds(8,10));
+    }
+
+    public void nextPermutation() {
+        NextPermutation np = new NextPermutation();
+
+        int[] arr1 = new int[]{1,2,3};
+        int[] arr2 = new int[]{3,2,1};
+        int[] arr3 = new int[]{1,5,1};
+        int[] arr4 = new int[]{1,5,2,7,4,2,8,5,1,7,3,2,8,9,1,3,2,1,1,1,1};
+
+        np.nextPermutation(arr1);
+        np.nextPermutation(arr2);
+        np.nextPermutation(arr3);
+        np.nextPermutation(arr4);
+
+        System.out.println("[1,3,2] == " + Arrays.toString(arr1));
+        System.out.println("[1,2,3] == " + Arrays.toString(arr2));
+        System.out.println("[1,1,5] == " + Arrays.toString(arr3));
+        System.out.println("[1,5,2,7,4,2,8,5,1,7,3,2,8,9,2,1,1,1,1,1,3] == " + Arrays.toString(arr4));
     }
 }
