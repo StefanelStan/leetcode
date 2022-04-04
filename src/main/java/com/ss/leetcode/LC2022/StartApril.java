@@ -6,6 +6,8 @@ import com.ss.leetcode.LC2022.april.FindUniqueBinaryString;
 import com.ss.leetcode.LC2022.april.MinimumBitFlipsToConvertNumber;
 import com.ss.leetcode.LC2022.april.NextPermutation;
 import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
+import com.ss.leetcode.LC2022.april.SwappingNodesInALinkedList;
+import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
 
@@ -18,7 +20,8 @@ public class StartApril {
 //        start.findTriangularSumOfAnArray();
 //        start.sumOfScoresOfBuiltStrings();
 //        start.countOddNumbersInAnIntervalRange();
-        start.nextPermutation();
+//        start.nextPermutation();
+        start.swappingNodesInALinkedList();
     }
 
     public void findUniqueBinaryString() {
@@ -81,5 +84,16 @@ public class StartApril {
         System.out.println("[1,2,3] == " + Arrays.toString(arr2));
         System.out.println("[1,1,5] == " + Arrays.toString(arr3));
         System.out.println("[1,5,2,7,4,2,8,5,1,7,3,2,8,9,2,1,1,1,1,1,3] == " + Arrays.toString(arr4));
+    }
+
+    public void swappingNodesInALinkedList() {
+        SwappingNodesInALinkedList sniall = new SwappingNodesInALinkedList();
+
+        System.out.println("[1,4,3,2,5] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2,3,4,5}), 2).getAsList());
+        System.out.println("[1,3,2,4] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2,3,4}), 2).getAsList());
+        System.out.println("[7,9,6,6,8,7,3,0,9,5] == " + sniall.swapNodes(ListNode.makeChain(new int[]{7,9,6,6,7,8,3,0,9,5}), 5).getAsList());
+        System.out.println("[2,1] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2}), 2).getAsList());
+        System.out.println("[3,2,1] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2,3}), 1).getAsList());
+        System.out.println("[2,1] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2}), 1).getAsList());
     }
 }
