@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.april.ContainerWithMostWater;
 import com.ss.leetcode.LC2022.april.CountOddNumbersInAnIntervalRange;
 import com.ss.leetcode.LC2022.april.FindTriangularSumOfAnArray;
 import com.ss.leetcode.LC2022.april.FindUniqueBinaryString;
@@ -21,7 +22,8 @@ public class StartApril {
 //        start.sumOfScoresOfBuiltStrings();
 //        start.countOddNumbersInAnIntervalRange();
 //        start.nextPermutation();
-        start.swappingNodesInALinkedList();
+//        start.swappingNodesInALinkedList();
+        start.containerWithMostWater();
     }
 
     public void findUniqueBinaryString() {
@@ -95,5 +97,13 @@ public class StartApril {
         System.out.println("[2,1] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2}), 2).getAsList());
         System.out.println("[3,2,1] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2,3}), 1).getAsList());
         System.out.println("[2,1] == " + sniall.swapNodes(ListNode.makeChain(new int[]{1,2}), 1).getAsList());
+    }
+
+    public void containerWithMostWater() {
+        ContainerWithMostWater cwmw = new ContainerWithMostWater();
+
+        System.out.println("49 == " + cwmw.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+        System.out.println("1 == " + cwmw.maxArea(new int[]{1,1}));
+        System.out.println("264 == " + cwmw.maxArea(new int[]{5,2,8,5,3,89,2,1,6,8,5,2,1,5,8,6,3,22,8,1,7,4,2,3,4,5,6,7,8,9,7,6,5,4,3,2,1}));
     }
 }
