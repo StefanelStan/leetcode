@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2022.april.MinimumBitFlipsToConvertNumber;
 import com.ss.leetcode.LC2022.april.NextPermutation;
 import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
 import com.ss.leetcode.LC2022.april.SwappingNodesInALinkedList;
+import com.ss.leetcode.LC2022.april.ThreeSumWithMultiplicity;
 import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
@@ -23,7 +24,8 @@ public class StartApril {
 //        start.countOddNumbersInAnIntervalRange();
 //        start.nextPermutation();
 //        start.swappingNodesInALinkedList();
-        start.containerWithMostWater();
+//        start.containerWithMostWater();
+        start.threeSumWithMultiplicity();
     }
 
     public void findUniqueBinaryString() {
@@ -105,5 +107,12 @@ public class StartApril {
         System.out.println("49 == " + cwmw.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
         System.out.println("1 == " + cwmw.maxArea(new int[]{1,1}));
         System.out.println("264 == " + cwmw.maxArea(new int[]{5,2,8,5,3,89,2,1,6,8,5,2,1,5,8,6,3,22,8,1,7,4,2,3,4,5,6,7,8,9,7,6,5,4,3,2,1}));
+    }
+
+    public void threeSumWithMultiplicity() {
+        ThreeSumWithMultiplicity tswm = new ThreeSumWithMultiplicity();
+
+        System.out.println("20 == " + tswm.threeSumMulti(new int[]{1,1,2,2,3,3,4,4,5,5}, 8));
+        System.out.println("12 == " + tswm.threeSumMulti(new int[]{1,1,2,2,2,2}, 5));
     }
 }

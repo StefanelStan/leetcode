@@ -60,3 +60,8 @@ GROUP BY customer_number ORDER BY count(customer_number) DESC LIMIT 1;
 -- https://leetcode.com/problems/game-play-analysis-i/
 SELECT player_id, MIN(event_date) AS first_login FROM Activity
 GROUP BY player_id;
+
+-- Recyclable and Low Fat Products
+-- https://leetcode.com/problems/recyclable-and-low-fat-products/
+SELECT product_id FROM Products
+WHERE low_fats = 'Y' AND recyclable = 'Y';
