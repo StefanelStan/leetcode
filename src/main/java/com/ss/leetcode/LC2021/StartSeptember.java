@@ -15,7 +15,7 @@ public class StartSeptember {
         StartSeptember start = new StartSeptember();
 
 //        start.arrayNesting();
-        start.populatingNextRightPointers();
+//        start.populatingNextRightPointers();
 //        start.singleNumber();
 //        start.reverseBits();
 //        start.minimumCostToMoveChips();
@@ -77,7 +77,7 @@ public class StartSeptember {
 //        start.maximumAscendingSubarraySum();
 //        start.validateBST();
 //        start.threeConsecutiveOdds();
-//        start.lastStoneWeight();
+        start.lastStoneWeight();
 //        start.firstUniqueCharacterInAString();
 //        start.countPairsAbsoluteDifferenceK();
 //        start.findOriginalArrayFromDoubledArray();
@@ -741,7 +741,9 @@ public class StartSeptember {
         LastStoneWeight lsw = new LastStoneWeight();
 
         System.out.println("1 == " + lsw.lastStoneWeight(new int[]{2,7,4,1,8,1}));
+        System.out.println("1 == " + lsw.lastStoneWeight(new int[]{1,5,2,7,3,1,8,8,3,2,1,6,7,8,9,3,2,7}));
         System.out.println("1 == " + lsw.lastStoneWeight(new int[]{1}));
+        System.out.println("2 == " + lsw.lastStoneWeight(new int[]{1,3}));
     }
 
     public void firstUniqueCharacterInAString() {
