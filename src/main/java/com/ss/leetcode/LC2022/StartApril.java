@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.april.ContainerWithMostWater;
 import com.ss.leetcode.LC2022.april.CountOddNumbersInAnIntervalRange;
 import com.ss.leetcode.LC2022.april.FindTriangularSumOfAnArray;
 import com.ss.leetcode.LC2022.april.FindUniqueBinaryString;
+import com.ss.leetcode.LC2022.april.KthLargestElementInAStream;
 import com.ss.leetcode.LC2022.april.MinimumBitFlipsToConvertNumber;
 import com.ss.leetcode.LC2022.april.NextPermutation;
 import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
@@ -25,7 +26,8 @@ public class StartApril {
 //        start.nextPermutation();
 //        start.swappingNodesInALinkedList();
 //        start.containerWithMostWater();
-        start.threeSumWithMultiplicity();
+//        start.threeSumWithMultiplicity();
+        start.kthLargestElementInAStream();
     }
 
     public void findUniqueBinaryString() {
@@ -114,5 +116,23 @@ public class StartApril {
 
         System.out.println("20 == " + tswm.threeSumMulti(new int[]{1,1,2,2,3,3,4,4,5,5}, 8));
         System.out.println("12 == " + tswm.threeSumMulti(new int[]{1,1,2,2,2,2}, 5));
+    }
+
+    public void kthLargestElementInAStream() {
+        KthLargestElementInAStream kleias = new KthLargestElementInAStream(3, new int[]{4,5,8,2});
+
+        System.out.println("4 == " + kleias.add(3));
+        System.out.println("5 == " + kleias.add(5));
+        System.out.println("5 == " + kleias.add(10));
+        System.out.println("8 == " + kleias.add(9));
+        System.out.println("8 == " + kleias.add(4));
+
+        kleias = new KthLargestElementInAStream(1, new int[]{});
+
+        System.out.println("-3 == " + kleias.add(-3));
+        System.out.println("-2 == " + kleias.add(-2));
+        System.out.println("-2 == " + kleias.add(-4));
+        System.out.println("0 == " + kleias.add(0));
+        System.out.println("4 == " + kleias.add(4));
     }
 }
