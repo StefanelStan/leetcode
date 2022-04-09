@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2022.april.NextPermutation;
 import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
 import com.ss.leetcode.LC2022.april.SwappingNodesInALinkedList;
 import com.ss.leetcode.LC2022.april.ThreeSumWithMultiplicity;
+import com.ss.leetcode.LC2022.april.TopKFrequentElements;
 import com.ss.leetcode.shared.ListNode;
 
 import java.util.Arrays;
@@ -27,7 +28,8 @@ public class StartApril {
 //        start.swappingNodesInALinkedList();
 //        start.containerWithMostWater();
 //        start.threeSumWithMultiplicity();
-        start.kthLargestElementInAStream();
+//        start.kthLargestElementInAStream();
+        start.topKFrequentElements();
     }
 
     public void findUniqueBinaryString() {
@@ -134,5 +136,14 @@ public class StartApril {
         System.out.println("-2 == " + kleias.add(-4));
         System.out.println("0 == " + kleias.add(0));
         System.out.println("4 == " + kleias.add(4));
+    }
+
+    public void topKFrequentElements() {
+        TopKFrequentElements tkfe = new TopKFrequentElements();
+
+        System.out.println("[1,2] == " + Arrays.toString(tkfe.topKFrequent(new int[]{1,1,1,2,2,3}, 2)));
+        System.out.println("[1] == " + Arrays.toString(tkfe.topKFrequent(new int[]{1}, 1)));
+        System.out.println("[1,2,3,4] == " + Arrays.toString(tkfe.topKFrequent(new int[]{1,1,1,2,2,2,3,3,3,4,4,5}, 4)));
+        System.out.println("[5] == " + Arrays.toString(tkfe.topKFrequent(new int[]{1,2,3,4,5,5}, 1)));
     }
 }
