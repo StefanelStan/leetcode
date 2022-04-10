@@ -4,6 +4,25 @@ public class DecryptStringFromAlphabet {
     // https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/
     public String freqAlphabets(String s) {
         StringBuilder stb = new StringBuilder();
+        char[] sChars = s.toCharArray();
+        int minusThree = sChars.length -3;
+        for (int i = 0; i < sChars.length; i++) {
+            if (i <= minusThree && sChars[i + 2] == '#') {
+                stb.append((char)('a' + getDiff(sChars[i], sChars[i+1])));
+                i += 2;
+            } else {
+                stb.append((char)(48 + sChars[i]));
+            }
+        }
+        return stb.toString();
+    }
+
+    private int getDiff(char a, char b) {
+        return 10 * (a - '0') + (b - '1');
+    }
+
+    public String freqAlphabets2(String s) {
+        StringBuilder stb = new StringBuilder();
         String[] chunks = s.split("#");
         for(int i = 0; i < chunks.length - 1; i++) {
             stb.append(extractLetters(chunks[i], chunks[i].length() - 3));

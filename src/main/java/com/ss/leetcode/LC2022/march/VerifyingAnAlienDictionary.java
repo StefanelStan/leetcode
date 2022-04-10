@@ -3,6 +3,30 @@ package com.ss.leetcode.LC2022.march;
 public class VerifyingAnAlienDictionary {
     // https://leetcode.com/problems/verifying-an-alien-dictionary/
     public boolean isAlienSorted(String[] words, String order) {
+        int[] alienPriority = new int['z' + 1];
+        for (int i = 0; i < order.length(); i++) {
+            alienPriority[order.charAt(i)] = i;
+        }
+        boolean areInOrder = true;
+        for (int i = 0; i < words.length -1 && areInOrder; i++) {
+            areInOrder = areInOrder(words[i], words[i+1], alienPriority);
+        }
+        return areInOrder;
+    }
+
+    private boolean areInOrder(String word1, String word2, int[] alienPriority) {
+        int minLength = Math.min(word1.length(), word2.length());
+        for(int i = 0; i < minLength; i++) {
+            if (alienPriority[word1.charAt(i)] < alienPriority[word2.charAt(i)]) {
+                return true;
+            } else if (alienPriority[word1.charAt(i)] > alienPriority[word2.charAt(i)]) {
+                return false;
+            }
+        }
+        return word1.length() <= word2.length();
+    }
+
+    public boolean isAlienSorted2(String[] words, String order) {
         if (words.length == 1) {
             return true;
         }

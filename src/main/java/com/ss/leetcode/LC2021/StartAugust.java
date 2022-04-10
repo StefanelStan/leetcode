@@ -79,7 +79,7 @@ public class StartAugust {
 //        start.univaluedBinaryTree();
 //        start.incrementalMemoryLeak();
 //        start.invertBinaryTree();
-//        start.baseballGame();
+        start.baseballGame();
 //        start.rangeSumQueryImmutable();
 //        start.maximumLevelSumOfABinaryTree();
 //        start.findModeInBinarySearchTree();
@@ -116,7 +116,7 @@ public class StartAugust {
 //        start.findElementsContaminatedBT();
 //        start.maximumScoreWordsFormedByLetters();
 //        start.verifyPreorderSerializationBT();
-        start.reverseLinkedList();
+//        start.reverseLinkedList();
 //        start.longestUncommonSubsequenceII();
 //        start.longestUncommonSubsequenceI();
 //        start.recoverATreeFromPreorderTraversal();
@@ -773,6 +773,7 @@ public class StartAugust {
         System.out.println("30 == " + bg.calPoints(new String[]{"5","2","C","D","+"}));
         System.out.println("27 == " + bg.calPoints(new String[]{"5","-2","4","C","D","9","+","+"}));
         System.out.println("1 == " + bg.calPoints(new String[]{"1"}));
+        System.out.println("219 == " + bg.calPoints(new String[]{"36","28","70","65","C","+","33","-46","84","C"}));
     }
 
     public void rangeSumQueryImmutable() {

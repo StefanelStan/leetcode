@@ -173,6 +173,7 @@ public class StartJune {
         System.out.println("jkl == " + dsfa.freqAlphabets("10#11#12#"));
         System.out.println("acz == " + dsfa.freqAlphabets("1326#"));
         System.out.println("y == " + dsfa.freqAlphabets("25#"));
+        System.out.println("y == " + dsfa.freqAlphabets("25#"));
 
         // https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/
     }
