@@ -5,6 +5,24 @@ import com.ss.leetcode.shared.TreeNode;
 public class SumOfLeftLeaves {
     // https://leetcode.com/problems/sum-of-left-leaves/
     public int sumOfLeftLeaves(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int sum = 0;
+        if(root.left != null) {
+            if (root.left.left == null && root.left.right == null) {
+                sum += root.left.val;
+            } else {
+                sum += sumOfLeftLeaves(root.left);
+            }
+        }
+        if(root.right != null) {
+            sum+= sumOfLeftLeaves(root.right);
+        }
+        return sum;
+    }
+
+    public int sumOfLeftLeaves2(TreeNode root) {
         int[] sumOfLeftLeaves = new int[]{0};
         getSumOfLeftLeaves(root, root, sumOfLeftLeaves);
         return sumOfLeftLeaves[0];

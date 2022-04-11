@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.april.CheckIfEveryRowAndColumnContainsAllNumbers;
 import com.ss.leetcode.LC2022.april.ContainerWithMostWater;
 import com.ss.leetcode.LC2022.april.CountOddNumbersInAnIntervalRange;
 import com.ss.leetcode.LC2022.april.FindTriangularSumOfAnArray;
@@ -29,7 +30,8 @@ public class StartApril {
 //        start.containerWithMostWater();
 //        start.threeSumWithMultiplicity();
 //        start.kthLargestElementInAStream();
-        start.topKFrequentElements();
+//        start.topKFrequentElements();
+        start.checkIfEveryRowAndColumnContainsAllNumbers();
     }
 
     public void findUniqueBinaryString() {
@@ -145,5 +147,12 @@ public class StartApril {
         System.out.println("[1] == " + Arrays.toString(tkfe.topKFrequent(new int[]{1}, 1)));
         System.out.println("[1,2,3,4] == " + Arrays.toString(tkfe.topKFrequent(new int[]{1,1,1,2,2,2,3,3,3,4,4,5}, 4)));
         System.out.println("[5] == " + Arrays.toString(tkfe.topKFrequent(new int[]{1,2,3,4,5,5}, 1)));
+    }
+
+    public void checkIfEveryRowAndColumnContainsAllNumbers() {
+        CheckIfEveryRowAndColumnContainsAllNumbers cieraccan = new CheckIfEveryRowAndColumnContainsAllNumbers();
+
+        System.out.println("true == " + cieraccan.checkValid(new int[][]{{1,2,3},{3,2,1},{2,3,1}}));
+        System.out.println("false == " + cieraccan.checkValid(new int[][]{{1,1,1},{1,2,3},{1,2,3}}));
     }
 }
