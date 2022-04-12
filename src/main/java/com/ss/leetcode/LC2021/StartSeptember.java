@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2021;
 import com.ss.leetcode.LC2021.september.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -77,7 +78,7 @@ public class StartSeptember {
 //        start.maximumAscendingSubarraySum();
 //        start.validateBST();
 //        start.threeConsecutiveOdds();
-        start.lastStoneWeight();
+//        start.lastStoneWeight();
 //        start.firstUniqueCharacterInAString();
 //        start.countPairsAbsoluteDifferenceK();
 //        start.findOriginalArrayFromDoubledArray();
@@ -105,6 +106,7 @@ public class StartSeptember {
 //        start.sumRootToLeafNumbers();
 //        start.finalValueAfterPerformingOperations();
 //        start.splitLinkedListInParts();
+        start.verticalOrderTraversalOfABinaryTree();
     }
 
     public void arrayNesting() {
@@ -996,5 +998,17 @@ public class StartSeptember {
         System.out.println("[[1,2,3,4],[5,6,7],[8,9,10]] == " + Arrays.deepToString(sllip.splitListToParts(head2, 3)));
         System.out.println("[[1,2,3,4],[5,6,7],[8,9,10]] == " + Arrays.deepToString(sllip.splitListToParts(head2, 2)));
         System.out.println("[[1,2,3,4],[5,6,7],[8,9,10]] == " + Arrays.deepToString(sllip.splitListToParts(head2, 4)));
+    }
+
+    public void verticalOrderTraversalOfABinaryTree() {
+        VerticalOrderTraversalOfABinaryTree votiabt = new VerticalOrderTraversalOfABinaryTree();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), new TreeNode(7)));
+        TreeNode root3 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(6)), new TreeNode(3, new TreeNode(5), new TreeNode(7)));
+
+        System.out.println("[[9],[3,15],[20],[7]] == " + votiabt.verticalTraversal(root1));
+        System.out.println("[[4],[2],[1,5,6],[3],[7]] == " + votiabt.verticalTraversal(root2));
+        System.out.println("[[4],[2],[1,5,6],[3],[7]] == " + votiabt.verticalTraversal(root3));
     }
 }

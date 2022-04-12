@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.april.AddTwoIntegers;
 import com.ss.leetcode.LC2022.april.CheckIfEveryRowAndColumnContainsAllNumbers;
 import com.ss.leetcode.LC2022.april.ContainerWithMostWater;
 import com.ss.leetcode.LC2022.april.CountOddNumbersInAnIntervalRange;
@@ -8,11 +9,13 @@ import com.ss.leetcode.LC2022.april.FindUniqueBinaryString;
 import com.ss.leetcode.LC2022.april.KthLargestElementInAStream;
 import com.ss.leetcode.LC2022.april.MinimumBitFlipsToConvertNumber;
 import com.ss.leetcode.LC2022.april.NextPermutation;
+import com.ss.leetcode.LC2022.april.RootEqualsSumOfChildren;
 import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
 import com.ss.leetcode.LC2022.april.SwappingNodesInALinkedList;
 import com.ss.leetcode.LC2022.april.ThreeSumWithMultiplicity;
 import com.ss.leetcode.LC2022.april.TopKFrequentElements;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
 
@@ -31,7 +34,9 @@ public class StartApril {
 //        start.threeSumWithMultiplicity();
 //        start.kthLargestElementInAStream();
 //        start.topKFrequentElements();
-        start.checkIfEveryRowAndColumnContainsAllNumbers();
+//        start.checkIfEveryRowAndColumnContainsAllNumbers();
+//        start.addTwoIntegers();
+        start.rootEqualsSumOfChildren();
     }
 
     public void findUniqueBinaryString() {
@@ -154,5 +159,19 @@ public class StartApril {
 
         System.out.println("true == " + cieraccan.checkValid(new int[][]{{1,2,3},{3,2,1},{2,3,1}}));
         System.out.println("false == " + cieraccan.checkValid(new int[][]{{1,1,1},{1,2,3},{1,2,3}}));
+    }
+
+    public void addTwoIntegers() {
+        AddTwoIntegers adi = new AddTwoIntegers();
+
+        System.out.println("17 == " + adi.sum(12, 5));
+        System.out.println("-6 == " + adi.sum(-10, 4));
+    }
+
+    public void rootEqualsSumOfChildren() {
+        RootEqualsSumOfChildren resoc = new RootEqualsSumOfChildren();
+
+        System.out.println("true == " + resoc.checkTree(new TreeNode(10, new TreeNode(4), new TreeNode(6))));
+        System.out.println("false == " + resoc.checkTree(new TreeNode(5, new TreeNode(3), new TreeNode(1))));
     }
 }

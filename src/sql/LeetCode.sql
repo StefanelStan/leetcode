@@ -65,3 +65,9 @@ GROUP BY player_id;
 -- https://leetcode.com/problems/recyclable-and-low-fat-products/
 SELECT product_id FROM Products
 WHERE low_fats = 'Y' AND recyclable = 'Y';
+
+-- Bank Account Summary II
+-- https://leetcode.com/problems/bank-account-summary-ii/
+SELECT u.name AS name, SUM(amount) AS balance FROM Users u
+JOIN Transactions t ON u.account = t.account
+GROUP BY t.account HAVING balance > 10000;
