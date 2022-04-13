@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.april.AddOneRowToTree;
 import com.ss.leetcode.LC2022.april.AddTwoIntegers;
 import com.ss.leetcode.LC2022.april.CheckIfEveryRowAndColumnContainsAllNumbers;
 import com.ss.leetcode.LC2022.april.ContainerWithMostWater;
@@ -10,6 +11,7 @@ import com.ss.leetcode.LC2022.april.KthLargestElementInAStream;
 import com.ss.leetcode.LC2022.april.MinimumBitFlipsToConvertNumber;
 import com.ss.leetcode.LC2022.april.NextPermutation;
 import com.ss.leetcode.LC2022.april.RootEqualsSumOfChildren;
+import com.ss.leetcode.LC2022.april.SpiralMatrixII;
 import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
 import com.ss.leetcode.LC2022.april.SwappingNodesInALinkedList;
 import com.ss.leetcode.LC2022.april.ThreeSumWithMultiplicity;
@@ -36,7 +38,9 @@ public class StartApril {
 //        start.topKFrequentElements();
 //        start.checkIfEveryRowAndColumnContainsAllNumbers();
 //        start.addTwoIntegers();
-        start.rootEqualsSumOfChildren();
+//        start.rootEqualsSumOfChildren();
+//        start.spiralMatrixII();
+        start.addOneRowToTree();
     }
 
     public void findUniqueBinaryString() {
@@ -173,5 +177,22 @@ public class StartApril {
 
         System.out.println("true == " + resoc.checkTree(new TreeNode(10, new TreeNode(4), new TreeNode(6))));
         System.out.println("false == " + resoc.checkTree(new TreeNode(5, new TreeNode(3), new TreeNode(1))));
+    }
+
+    public void spiralMatrixII() {
+        SpiralMatrixII smii = new SpiralMatrixII();
+
+        System.out.println("[[1,2,3],[8,9,4],[7,6,5]] == " + Arrays.deepToString(smii.generateMatrix(3)));
+        System.out.println("[[1]] == " + Arrays.deepToString(smii.generateMatrix(1)));
+    }
+
+    public void addOneRowToTree() {
+        AddOneRowToTree aortt = new AddOneRowToTree();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(3), new TreeNode(1)), new TreeNode(6, new TreeNode(5), null));
+        TreeNode root2 = new TreeNode(4, new TreeNode(2, new TreeNode(3), new TreeNode(1)), null);
+
+        System.out.println("[4,1,2,3,1,1,6,5] == " + TreeNode.preOrder(aortt.addOneRow(root1, 1, 2)));
+        System.out.println("[4,2,1,3,1,1] == " + TreeNode.preOrder(aortt.addOneRow(root2, 1, 3)));
     }
 }
