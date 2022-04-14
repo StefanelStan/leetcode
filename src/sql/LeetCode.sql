@@ -1,3 +1,7 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
+-- noinspection SqlDialectInspectionForFile
+
 -- Employees Earning More Than Their Managers
 -- https://leetcode.com/problems/employees-earning-more-than-their-managers/
 SELECT e.Name as Employee from Employee e
@@ -71,3 +75,16 @@ WHERE low_fats = 'Y' AND recyclable = 'Y';
 SELECT u.name AS name, SUM(amount) AS balance FROM Users u
 JOIN Transactions t ON u.account = t.account
 GROUP BY t.account HAVING balance > 10000;
+
+-- Find Customer Referee
+-- https://leetcode.com/problems/find-customer-referee/
+SELECT name FROM Customer
+WHERE referee_id IS NULL OR referee_id <> 2
+
+-- Daily Leads and Partners
+-- https://leetcode.com/problems/daily-leads-and-partners/
+SELECT date_id, make_name,
+       COUNT(DISTINCT lead_id) AS unique_leads,
+       COUNT(DISTINCT partner_id) AS unique_partners
+FROM DailySales ds
+GROUP BY date_id, make_name;
