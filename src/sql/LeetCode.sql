@@ -88,3 +88,10 @@ SELECT date_id, make_name,
        COUNT(DISTINCT partner_id) AS unique_partners
 FROM DailySales ds
 GROUP BY date_id, make_name;
+
+-- Employees With Missing Information
+-- https://leetcode.com/problems/employees-with-missing-information/
+SELECT e.employee_id FROM Employees e LEFT JOIN Salaries s ON (e.employee_id = s.employee_id) WHERE s.salary IS NULL
+UNION
+SELECT s.employee_id FROM Employees e RIGHT JOIN Salaries s ON (e.employee_id = s.employee_id) WHERE e.name IS NULL
+ORDER by employee_id;

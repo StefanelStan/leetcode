@@ -1,21 +1,6 @@
 package com.ss.leetcode.LC2022;
 
-import com.ss.leetcode.LC2022.april.AddOneRowToTree;
-import com.ss.leetcode.LC2022.april.AddTwoIntegers;
-import com.ss.leetcode.LC2022.april.CheckIfEveryRowAndColumnContainsAllNumbers;
-import com.ss.leetcode.LC2022.april.ContainerWithMostWater;
-import com.ss.leetcode.LC2022.april.CountOddNumbersInAnIntervalRange;
-import com.ss.leetcode.LC2022.april.FindTriangularSumOfAnArray;
-import com.ss.leetcode.LC2022.april.FindUniqueBinaryString;
-import com.ss.leetcode.LC2022.april.KthLargestElementInAStream;
-import com.ss.leetcode.LC2022.april.MinimumBitFlipsToConvertNumber;
-import com.ss.leetcode.LC2022.april.NextPermutation;
-import com.ss.leetcode.LC2022.april.RootEqualsSumOfChildren;
-import com.ss.leetcode.LC2022.april.SpiralMatrixII;
-import com.ss.leetcode.LC2022.april.SumOfScoresOfBuiltStrings;
-import com.ss.leetcode.LC2022.april.SwappingNodesInALinkedList;
-import com.ss.leetcode.LC2022.april.ThreeSumWithMultiplicity;
-import com.ss.leetcode.LC2022.april.TopKFrequentElements;
+import com.ss.leetcode.LC2022.april.*;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -40,7 +25,8 @@ public class StartApril {
 //        start.addTwoIntegers();
 //        start.rootEqualsSumOfChildren();
 //        start.spiralMatrixII();
-        start.addOneRowToTree();
+//        start.addOneRowToTree();
+        start.intersectionOfTwoLinkedLists();
     }
 
     public void findUniqueBinaryString() {
@@ -194,5 +180,20 @@ public class StartApril {
 
         System.out.println("[4,1,2,3,1,1,6,5] == " + TreeNode.preOrder(aortt.addOneRow(root1, 1, 2)));
         System.out.println("[4,2,1,3,1,1] == " + TreeNode.preOrder(aortt.addOneRow(root2, 1, 3)));
+    }
+
+    public void intersectionOfTwoLinkedLists() {
+        IntersectionOfTwoLinkedLists iotll = new IntersectionOfTwoLinkedLists();
+
+        ListNode common1 = new ListNode(8, new ListNode(4, new ListNode(5)));
+        ListNode head1 = new ListNode(4, new ListNode(1, common1));
+        ListNode head2 = new ListNode(5, new ListNode(6, new ListNode(1, common1)));
+
+        ListNode common2 = new ListNode(2, new ListNode(4));
+        ListNode head3 = new ListNode(1, new ListNode(9, new ListNode(1, common2)));
+        ListNode head4 = new ListNode(3, common2);
+
+        System.out.println("[8,4,5] == " + iotll.getIntersectionNode(head1, head2).getAsList());
+        System.out.println("[2,4] == " + iotll.getIntersectionNode(head3, head4).getAsList());
     }
 }
