@@ -11,6 +11,24 @@ import java.util.Map;
 public class ConvertBSTToGreaterTree {
     // https://leetcode.com/problems/convert-bst-to-greater-tree/
     public TreeNode convertBST(TreeNode root) {
+        if (root != null) {
+            traverseAndChange(root, new int[1]);
+        }
+        return root;
+    }
+
+    private void traverseAndChange(TreeNode node, int[] biggerNodesSum) {
+        if (node == null) {
+            return;
+        }
+
+        traverseAndChange(node.right, biggerNodesSum);
+        biggerNodesSum[0] += node.val;
+        node.val = biggerNodesSum[0];
+        traverseAndChange(node.left, biggerNodesSum);
+    }
+
+    public TreeNode convertBST2(TreeNode root) {
         if (root == null) {
             return root;
         }

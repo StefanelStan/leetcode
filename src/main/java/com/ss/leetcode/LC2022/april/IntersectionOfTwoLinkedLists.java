@@ -21,7 +21,7 @@ public class IntersectionOfTwoLinkedLists {
 
     private int getLengthOf(ListNode head) {
         int length = 0;
-        while(head != null) {
+        while (head != null) {
             length++;
             head = head.next;
         }
@@ -29,7 +29,7 @@ public class IntersectionOfTwoLinkedLists {
     }
 
     private ListNode getKthNode(ListNode head, int k) {
-        while(k > 0) {
+        while (k > 0) {
             head = head.next;
             k--;
         }
@@ -37,7 +37,7 @@ public class IntersectionOfTwoLinkedLists {
     }
 
     private ListNode getFirstCommonNode(ListNode headA, ListNode headB) {
-        while(headA != null) {
+        while (headA != null) {
             if (headA == headB) {
                 return headA;
             }
@@ -49,12 +49,12 @@ public class IntersectionOfTwoLinkedLists {
 
     public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
         Set<ListNode> headANodes = new HashSet<>();
-        while(headA != null) {
+        while (headA != null) {
             headANodes.add(headA);
             headA = headA.next;
         }
         ListNode prev = headB;
-        while(headB != null) {
+        while (headB != null) {
             if (headANodes.contains(headB)) {
                 return headB;
             }

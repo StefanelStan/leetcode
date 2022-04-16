@@ -26,7 +26,10 @@ public class StartApril {
 //        start.rootEqualsSumOfChildren();
 //        start.spiralMatrixII();
 //        start.addOneRowToTree();
-        start.intersectionOfTwoLinkedLists();
+//        start.intersectionOfTwoLinkedLists();
+//        start.findClosestNumberToZero();
+//        start.numberOfWaysToBuyPensAndPencils();
+//        start.designAnATMMachine();
     }
 
     public void findUniqueBinaryString() {
@@ -195,5 +198,49 @@ public class StartApril {
 
         System.out.println("[8,4,5] == " + iotll.getIntersectionNode(head1, head2).getAsList());
         System.out.println("[2,4] == " + iotll.getIntersectionNode(head3, head4).getAsList());
+    }
+
+    public void findClosestNumberToZero() {
+        FindClosestNumberToZero fcntz = new FindClosestNumberToZero();
+
+        System.out.println("1 == " + fcntz.findClosestNumber(new int[]{-4,-2,1,4,8}));
+        System.out.println("1 == " + fcntz.findClosestNumber(new int[]{2,-1,1}));
+    }
+
+    public void numberOfWaysToBuyPensAndPencils() {
+        NumberOfWaysToBuyPensAndPencils nowtbpap = new NumberOfWaysToBuyPensAndPencils();
+
+        System.out.println("9 == " + nowtbpap.waysToBuyPensPencils(20, 10, 5));
+        System.out.println("1 == " + nowtbpap.waysToBuyPensPencils(5, 10, 10));
+    }
+
+    public void designAnATMMachine() {
+        DesignAnATMMachine daatmm = new DesignAnATMMachine();
+
+//        daatmm.deposit(new int[]{0,0,1,2,1});
+//        System.out.println("[0,0,1,0,1] == " + Arrays.toString(daatmm.withdraw(600)));
+//        daatmm.deposit(new int[]{0,1,0,1,1});
+//        System.out.println("[-1] == " + Arrays.toString(daatmm.withdraw(600)));
+//        System.out.println("[0,1,0,0,1] == " + Arrays.toString(daatmm.withdraw(550)));
+
+//        for(int i = 0; i < 4000; i++) {
+//            daatmm.deposit(new int[]{100000,100000,100000,100000,100000});
+//        }
+//        System.out.println("2000000 == " + Arrays.toString(daatmm.withdraw(1000000000)));
+
+        daatmm.deposit(new int[]{226094735,393965432,637421322,948644288,831564545});
+        daatmm.deposit(new int[]{46552724,433649668,171823159,857494741,710787090});
+        daatmm.deposit(new int[]{935259214,495389631,745491587,619918730,53636060});
+        daatmm.withdraw(892448980);
+        daatmm.deposit(new int[]{897956273,638917478,895068048,700860525,472696905});
+        daatmm.withdraw(748725445);
+        daatmm.deposit(new int[]{855772627,899627874,370102367,328216522,563737450});
+        daatmm.withdraw(230192275);
+        daatmm.withdraw(901174015);
+        daatmm.deposit(new int[]{630750355,525959450,96652997,399933566,191101825});
+        daatmm.deposit(new int[]{757564362,403459275,788390370,187081434,77572739});
+        daatmm.deposit(new int[]{123522257,48419930,489703077,151691306,938262923});
+        daatmm.deposit(new int[]{195174028,591248143,835060612,836343810,298963554});
+        System.out.println("[0,1,0,1,64274] == " + Arrays.toString(daatmm.withdraw(32137250)));
     }
 }

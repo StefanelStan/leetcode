@@ -9,6 +9,26 @@ public class MonotonicArray {
              preset rule, return false immediately.
      */
     public boolean isMonotonic(int[] nums) {
+        if (nums.length < 3) {
+            return true;
+        }
+        if (nums[0] <= nums[nums.length -1]) {
+            return areInIncreasingOrder(nums, 0, nums.length-1, 1);
+        }  else {
+            return areInIncreasingOrder(nums, nums.length-1, 0, -1);
+        }
+    }
+
+    private boolean areInIncreasingOrder(int[] nums, int start, int stop, int direction) {
+        for (int i = start; i != stop; i+= direction) {
+            if (nums[i] > nums[i + direction]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isMonotonic2(int[] nums) {
         if (nums.length == 1) {
             return true;
         }

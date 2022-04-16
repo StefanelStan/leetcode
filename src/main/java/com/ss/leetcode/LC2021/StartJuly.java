@@ -62,7 +62,7 @@ public class StartJuly {
 //        start.designAStackWithIncrementOperation();
 //        start.findNUniqueIntegersSumUpToZero();
 //        start.binarySearchTreeToGreaterSumTree();
-//        start.convertBSTToGreaterTree();
+        start.convertBSTToGreaterTree();
 //        start.fibonacciNumber();
 //        start.substringsOfSizeThreeDistinct();
 //        start.threeSumClosest();
@@ -80,7 +80,7 @@ public class StartJuly {
 //        start.removeAllOccurrencesOfASubstring();
 //        start.groupThePeopleGivenGroupSize();
 //        start.trappingRainWater();
-        start.maximumDepthOfBinaryTree();
+//        start.maximumDepthOfBinaryTree();
     }
 
     public void buildArrayFromPermutation() {
@@ -662,9 +662,9 @@ public class StartJuly {
         TreeNode root4 = new TreeNode(3, new TreeNode(2, new TreeNode(1), null), new TreeNode(4));
 
         System.out.println("30 == " + cbsttgt.convertBST(root1).val);
-        System.out.println("1 == " + cbsttgt.convertBST(root2).val);
-        System.out.println("3 == " + cbsttgt.convertBST(root3).val);
-        System.out.println("7 == " + cbsttgt.convertBST(root4).val);
+//        System.out.println("1 == " + cbsttgt.convertBST(root2).val);
+//        System.out.println("3 == " + cbsttgt.convertBST(root3).val);
+//        System.out.println("7 == " + cbsttgt.convertBST(root4).val);
     }
 
     public void fibonacciNumber() {

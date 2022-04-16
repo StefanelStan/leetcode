@@ -73,7 +73,7 @@ public class StartNovember {
 //        start.intervalListIntersections();
 //        start.powerOfFour();
 //        start.maximumProductOfThreeNumbers();
-//        start.monotonicArray();
+        start.monotonicArray();
 //        start.relativeRanks();
 //        start.happyNumber();
 //        start.countCommonWordsWithOneOccurrence();
@@ -88,7 +88,7 @@ public class StartNovember {
 //        start.completeBinaryTreeInserter();
 //        start.findTheDifference();
 //        start.findAllAnagramsInAString();
-        start.pascalsTriangleII();
+//        start.pascalsTriangleII();
     }
 
     public void surroundedRegions() {
@@ -696,11 +696,13 @@ public class StartNovember {
     public void monotonicArray() {
         MonotonicArray ma = new MonotonicArray();
 
-        System.out.println("true == " + ma.isMonotonic(new int[]{1,2,2,3}));
-        System.out.println("true == " + ma.isMonotonic(new int[]{6,5,4,4}));
-        System.out.println("false == " + ma.isMonotonic(new int[]{1,3,2}));
-        System.out.println("true == " + ma.isMonotonic(new int[]{1,2,4,5}));
-        System.out.println("true == " + ma.isMonotonic(new int[]{1,1,1}));
+//        System.out.println("true == " + ma.isMonotonic(new int[]{1,2,2,3}));
+//        System.out.println("true == " + ma.isMonotonic(new int[]{6,5,4,4}));
+//        System.out.println("false == " + ma.isMonotonic(new int[]{1,3,2}));
+//        System.out.println("true == " + ma.isMonotonic(new int[]{1,2,4,5}));
+//        System.out.println("true == " + ma.isMonotonic(new int[]{1,1,1}));
+        System.out.println("false == " + ma.isMonotonic(new int[]{5,3,2,4,1}));
+
     }
 
     public void relativeRanks() {

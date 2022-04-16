@@ -3,6 +3,29 @@ package com.ss.leetcode.LC2021.july;
 public class ImplementStrStr {
     // https://leetcode.com/problems/implement-strstr/
     public int strStr(String haystack, String needle) {
+        if (needle.length() > haystack.length()) {
+            return -1;
+        }
+        char[] haystackC = haystack.toCharArray();
+        char[] needleC = needle.toCharArray();
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+            if (haystackC[i] == needleC[0] && isFound(haystackC, needleC, i)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private boolean isFound (char[] haystack, char[] needle, int start) {
+        for (int i = 0; i < needle.length; i++) {
+            if (haystack[start + i] != needle[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int strStr2(String haystack, String needle) {
         if (needle.length() == 0) {
             return 0;
         }
