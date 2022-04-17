@@ -11,8 +11,8 @@ public class NumberOfWaysToBuyPensAndPencils {
         int maxCost = Math.max(cost1, cost2);
         int partialCost = 0;
         while(partialCost <= total) {
-            ways += ((total - partialCost) / maxCost) + 1;
-            partialCost += minCost;
+            ways += ((total - partialCost) / minCost) + 1;
+            partialCost += maxCost;
         }
         return ways;
     }

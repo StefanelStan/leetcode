@@ -30,6 +30,8 @@ public class StartApril {
 //        start.findClosestNumberToZero();
 //        start.numberOfWaysToBuyPensAndPencils();
 //        start.designAnATMMachine();
+//        start.evaluateReversePolishNotation();
+        start.numberOfDifferentIntegersInAString();
     }
 
     public void findUniqueBinaryString() {
@@ -242,5 +244,23 @@ public class StartApril {
         daatmm.deposit(new int[]{123522257,48419930,489703077,151691306,938262923});
         daatmm.deposit(new int[]{195174028,591248143,835060612,836343810,298963554});
         System.out.println("[0,1,0,1,64274] == " + Arrays.toString(daatmm.withdraw(32137250)));
+    }
+
+    public void evaluateReversePolishNotation() {
+        EvaluateReversePolishNotation erpn = new EvaluateReversePolishNotation();
+
+        System.out.println("9 == " + erpn.evalRPN(new String[]{"2","1","+","3","*"}));
+        System.out.println("6 == " + erpn.evalRPN(new String[]{"4","13","5","/","+"}));
+        System.out.println("22 == " + erpn.evalRPN(new String[]{"10","6","9","3","+","-11","*","/","*","17","+","5","+"}));
+        System.out.println("-1 == " + erpn.evalRPN(new String[]{"3","-4","+"}));
+    }
+
+    public void numberOfDifferentIntegersInAString() {
+        NumberOfDifferentIntegersInAString nodiias = new NumberOfDifferentIntegersInAString();
+
+        System.out.println("3 == " + nodiias.numDifferentIntegers("a123bc34d8ef34"));
+        System.out.println("2 == " + nodiias.numDifferentIntegers("leet1234code234"));
+        System.out.println("1 == " + nodiias.numDifferentIntegers("a1b01c001"));
+        System.out.println("2 == " + nodiias.numDifferentIntegers("035985750011523523129774573439111590559325a1554234973"));
     }
 }
