@@ -31,7 +31,8 @@ public class StartApril {
 //        start.numberOfWaysToBuyPensAndPencils();
 //        start.designAnATMMachine();
 //        start.evaluateReversePolishNotation();
-        start.numberOfDifferentIntegersInAString();
+//        start.numberOfDifferentIntegersInAString();
+        start.insertInterval();
     }
 
     public void findUniqueBinaryString() {
@@ -262,5 +263,12 @@ public class StartApril {
         System.out.println("2 == " + nodiias.numDifferentIntegers("leet1234code234"));
         System.out.println("1 == " + nodiias.numDifferentIntegers("a1b01c001"));
         System.out.println("2 == " + nodiias.numDifferentIntegers("035985750011523523129774573439111590559325a1554234973"));
+    }
+
+    public void insertInterval() {
+        InsertInterval ii = new InsertInterval();
+
+        System.out.println("[[1,5],[6,9]] == " + Arrays.deepToString(ii.insert(new int[][]{{1,3},{6,9}}, new int[]{2,5})));
+        System.out.println("[[1,2],[3,10],[12,16]] == " + Arrays.deepToString(ii.insert(new int[][]{{1,2},{3,5},{6,7},{8,10},{12,16}}, new int[]{4,8})));
     }
 }
