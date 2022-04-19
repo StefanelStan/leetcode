@@ -95,3 +95,8 @@ SELECT e.employee_id FROM Employees e LEFT JOIN Salaries s ON (e.employee_id = s
 UNION
 SELECT s.employee_id FROM Employees e RIGHT JOIN Salaries s ON (e.employee_id = s.employee_id) WHERE e.name IS NULL
 ORDER by employee_id;
+
+-- Find Followers Count
+-- https://leetcode.com/problems/find-followers-count/
+SELECT user_id, COUNT(follower_id) AS followers_count FROM Followers
+GROUP BY user_id ORDER BY user_id;
