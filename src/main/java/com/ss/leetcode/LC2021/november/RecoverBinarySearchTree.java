@@ -3,82 +3,59 @@ package com.ss.leetcode.LC2021.november;
 import com.ss.leetcode.shared.TreeNode;
 
 public class RecoverBinarySearchTree {
+
     // https://leetcode.com/problems/recover-binary-search-tree/
-
+    // Still not working!
     public void recoverTree(TreeNode root) {
-        TreeNode preHead = new TreeNode(0, root, null);
-        BadNode[] badNodes = new BadNode[2];
-        traverseTree(preHead, root, true, badNodes);
-        swapNodes(badNodes[0], badNodes[1]);
-        root.val = preHead.left.val;
-        root.left = preHead.left.left;
-        root.right = preHead.left.right;
+        TreeNode[][] nodes = new TreeNode[2][2];
+        int[] line = {0};
+        traverseTree(root, nodes, line);
+        swapNodes(nodes, line);
     }
 
-    private void traverseTree(TreeNode preHead, TreeNode root, boolean isLeft, BadNode[] badNodes) {
-
-    }
-
-
-    private void swapNodes(BadNode badNode1, BadNode badNode2) {
-        // treat the case when parent and child need to be swapped together!
-        if (badNode1.node == badNode2.parent) {
-            swapRelatedNodes(badNode1, badNode2);
-        } else if (badNode2.node == badNode1.parent) {
-            swapRelatedNodes(badNode2, badNode1);
-        } else {
-            swapDistinctNodes(badNode1, badNode2);
+    private void traverseTree(TreeNode node, TreeNode[][] nodes, int[] line) {
+        if (node == null || line[0] == 2) {
+            return;
+        }
+        if (node.left != null && node.val < node.left.val) {
+            nodes[line[0]][0] = node;
+            nodes[line[0]][1] = node.left;
+            line[0]++;
+            if (line[0] == 2) {
+                return;
+            }
+        }
+        if (node.right != null && node.val > node.right.val) {
+            nodes[line[0]][0] = node;
+            nodes[line[0]][1] = node.right;
+            line[0]++;
+            if (line[0] == 2) {
+                return;
+            }
+        }
+        traverseTree(node.left, nodes, line);
+        if (line[0] < 2) {
+            nodes[line[0]][0] = nodes[line[0]][1];
+            nodes[line[0]][1] = node;
+            if (nodes[line[0]][0] != null && nodes[line[0]][0].val > nodes[line[0]][1].val) {
+                line[0]++;
+            } else {
+                traverseTree(node.right, nodes, line);
+            }
         }
     }
 
-    private void swapRelatedNodes(BadNode upper, BadNode lower) {
-        TreeNode upperClone = new TreeNode(upper.node.val);
-        TreeNode lowerClone = new TreeNode(lower.node.val);
-
-        // set LEFT and RIGHT
-        upperClone.left = lower.node.left;
-        upperClone.right = lower.node.right;
-
-        if (lower.isLeft) {
-            lowerClone.right = upper.node.right;
-            lowerClone.left = upperClone;
+    private void swapNodes(TreeNode[][] nodes, int[] line) {
+        if (line[0] == 1) {
+            swapTwoNodes(nodes[0][0], nodes[0][1]);
         } else {
-            lowerClone.left = upper.node.left;
-            lowerClone.right = upperClone;
-        }
-
-        // set parent of upper
-        if (upper.isLeft) {
-            upper.parent.left = lowerClone;
-        } else {
-            upper.parent.right = lowerClone;
+            if (nodes[0][0] == nodes[1][0]);
         }
     }
 
-    private void swapDistinctNodes(BadNode node1, BadNode node2) {
-        TreeNode node1Clone = new TreeNode(node1.node.val);
-        TreeNode node2Clone = new TreeNode(node2.node.val);
-
-        node1Clone.left = node2.node.left;
-        node1Clone.right = node2.node.right;
-        if (node2.isLeft) {
-            node2.parent.left = node1Clone;
-        } else {
-            node2.parent.right = node1Clone;
-        }
-
-        node2Clone.left = node1.node.left;
-        node2Clone.right = node1.node.right;
-        if (node1.isLeft) {
-            node1.parent.left = node2Clone;
-        } else {
-            node1.parent.right = node2Clone;
-        }
-    }
-
-    private static class BadNode {
-        TreeNode parent;
-        TreeNode node;
-        boolean isLeft;
+    private void swapTwoNodes(TreeNode node1, TreeNode node2) {
+        int temp = node1.val;
+        node1.val = node2.val;
+        node2.val = temp;
     }
 }

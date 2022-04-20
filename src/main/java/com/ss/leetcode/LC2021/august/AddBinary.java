@@ -2,34 +2,42 @@ package com.ss.leetcode.LC2021.august;
 
 public class AddBinary {
     // https://leetcode.com/problems/add-binary/
+    /** Algorithm
+         1. Determine which of the two strings is longer in order to use it to store the result.
+         2. Determine a view window between the length of the two strings. EG: a: 110110 b = 101.
+            First string has a length of 6 while second has a length of 3.
+            Thus, we will add second string to first string from position 2 -> 0 of 2nd string over positions 5->3 of 1st string
+         3. After doing this, continue adding the carryOver to the remamining chunk/view of the long string:
+            Eg: from position 2 -> 0 (6 - 3 - 1  -> 0). Also remember to carry the carryOver digit (if any).
+         4. If the final carryOver is 1, '1' needs to be added in front of longString.
+            If carryOver is 0, then return the longString
+     */
     public String addBinary(String a, String b) {
-        String longest = a.length() >= b.length() ? a : b;
-        String shortest = a.length() < b.length() ? a : b;
-        char[] result = new char[longest.length()];
-        int carryOver = 0;
-        int longIndex = longest.length() -1;
-        int temp;
-        for (int i = shortest.length() -1; i>= 0; i--, longIndex --) {
-            temp = shortest.charAt(i) - '0' + longest.charAt(longIndex) - '0' + carryOver;
-            if (temp > 1) {
-                temp -= 2;
+        char[] shortString = a.length() < b.length() ?  a.toCharArray() : b.toCharArray();
+        char[] longString = a.length() >= b.length() ? a.toCharArray() : b.toCharArray();
+        int carryOver = 0, result;
+        for (int i = shortString.length -1, j = longString.length -1; i >=0; i--, j--) {
+            result = (longString[j] - '0') + (shortString[i] - '0') + carryOver;
+            if (result > 1) {
+                longString[j] = (char)(result -2 + '0');
                 carryOver = 1;
             } else {
+                longString[j] = (char)(result + '0');
                 carryOver = 0;
             }
-            result[longIndex] = (char)(temp + '0');
         }
-        while(longIndex >= 0) {
-            temp = longest.charAt(longIndex) - '0' + carryOver;
-            if (temp > 1) {
+
+        for(int j = longString.length -1 - shortString.length; j >= 0; j--) {
+            result = (longString[j] - '0') + carryOver;
+            if (result > 1) {
+                longString[j] = (char)(result -2 + '0');
                 carryOver = 1;
-                temp = 0;
             } else {
+                longString[j] = (char)(result + '0');
                 carryOver = 0;
             }
-            result[longIndex--] = (char)(temp + '0');
         }
-        return carryOver == 1 ? '1' + new String(result) : new String(result);
+        return carryOver == 0 ? new String(longString) : "1" + new String(longString);
     }
 
     public String addBinary2(String a, String b) {

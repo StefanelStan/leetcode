@@ -37,7 +37,8 @@ public class StartNovember {
 //        start.minimumDistanceBetweenBSTNodes();
 //        start.elementMore25InSortedArray();
 //        start.rankTransformOfAnArray();
-        // to be continued -> start.recoverBinarySearchTree();
+            // to be continued ->
+        start.recoverBinarySearchTree();
 //        start.minimumValueToGetPositiveStepSum();
 //        start.binaryTreeTilt();
 //        start.minimumAbsoluteDifferenceInBST();
@@ -73,7 +74,7 @@ public class StartNovember {
 //        start.intervalListIntersections();
 //        start.powerOfFour();
 //        start.maximumProductOfThreeNumbers();
-        start.monotonicArray();
+//        start.monotonicArray();
 //        start.relativeRanks();
 //        start.happyNumber();
 //        start.countCommonWordsWithOneOccurrence();
@@ -361,11 +362,15 @@ public class StartNovember {
 
         TreeNode root1 = new TreeNode(1, new TreeNode(3, null, new TreeNode(2)), null);
         TreeNode root2 = new TreeNode(3, new TreeNode(1), new TreeNode(4, new TreeNode(2), null));
+        TreeNode root3 = new TreeNode(2, new TreeNode(3), new TreeNode(1));
 
-        rbst.recoverTree(root1);
-        rbst.recoverTree(root2);
-        System.out.println("[3,1,2] == " + TreeNode.preOrder(root1));
-        System.out.println("[2,1,4,3] == " + TreeNode.preOrder(root2));
+//        rbst.recoverTree(root1);
+//        rbst.recoverTree(root2);
+        rbst.recoverTree(root3);
+
+//        System.out.println("[1,2,3] == " + TreeNode.inOrder(root1));
+//        System.out.println("[1,2,3,4] == " + TreeNode.inOrder(root2));
+        System.out.println("[1,2,3] == " + TreeNode.inOrder(root3));
     }
 
     public void minimumValueToGetPositiveStepSum() {

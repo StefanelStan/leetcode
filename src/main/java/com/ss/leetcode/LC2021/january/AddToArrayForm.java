@@ -1,11 +1,45 @@
 package com.ss.leetcode.LC2021.january;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class AddToArrayForm {
     // https://leetcode.com/problems/add-to-array-form-of-integer/
-    public List<Integer> addToArrayForm(int[] digits, int K) {
+    public List<Integer> addToArrayForm(int[] num, int k) {
+        char[] kChar = String.valueOf(k).toCharArray();
+        // You could add a linkedList and add it in front, but this is slower and uses more memory in the end
+        int[] result = new int[Math.max(num.length, kChar.length)];
+        int carryOver = 0, temp;
+        for (int rI = result.length - 1, nI = num.length -1, kI = kChar.length -1; rI >= 0; rI--, nI--, kI--) {
+            result[rI] += carryOver;
+            if (nI >= 0) {
+                result[rI] += num[nI];
+            }
+            if(kI >= 0) {
+                result[rI] += (kChar[kI] - '0');
+            }
+            if (result[rI] > 9) {
+                result[rI] -= 10;
+                carryOver = 1;
+            } else {
+                carryOver =  0;
+            }
+            if (carryOver == 0 && nI < 0 && kI < 0) {
+                break;
+            }
+        }
+        List<Integer> sum = new ArrayList<>(result.length + carryOver);
+        if(carryOver == 1) {
+            sum.add(1);
+        }
+        for(int item : result) {
+            sum.add(item);
+        }
+        return sum;
+    }
+
+    public List<Integer> addToArrayForm2(int[] digits, int K) {
         List<Integer> result = new LinkedList<>();
         int[] kDigits = getKAsArray(K);
 
