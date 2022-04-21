@@ -32,7 +32,7 @@ public class StartApril {
 //        start.designAnATMMachine();
 //        start.evaluateReversePolishNotation();
 //        start.numberOfDifferentIntegersInAString();
-//        start.insertInterval();
+        start.insertInterval();
     }
 
     public void findUniqueBinaryString() {

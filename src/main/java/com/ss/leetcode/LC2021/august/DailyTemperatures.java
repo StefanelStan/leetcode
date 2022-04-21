@@ -6,6 +6,24 @@ public class DailyTemperatures {
     // https://leetcode.com/problems/daily-temperatures/
     // Aka NextGreaterElement
     public int[] dailyTemperatures(int[] temperatures) {
+        int[] dailyTemperatures = new int[temperatures.length];
+        LinkedList<Integer> biggerTemps = new LinkedList<>();
+        int temp;
+        for (int i = 0; i < temperatures.length -1; i++) {
+            if(temperatures[i] < temperatures[i + 1]) {
+                dailyTemperatures[i] = 1;
+                while(!biggerTemps.isEmpty() && temperatures[biggerTemps.peekLast()] < temperatures[i+1]) {
+                    temp = biggerTemps.pollLast();
+                    dailyTemperatures[temp] = i + 1 - temp;
+                }
+            } else {
+                biggerTemps.add(i);
+            }
+        }
+        return dailyTemperatures;
+    }
+
+    public int[] dailyTemperatures2(int[] temperatures) {
         int[] waiting = new int[temperatures.length];
         waiting[waiting.length -1] = 0;
         LinkedList<int[]> highers = new LinkedList<>(); // int[0] - store temp value, int[1] - store index
