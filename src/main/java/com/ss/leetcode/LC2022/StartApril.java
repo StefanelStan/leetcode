@@ -32,7 +32,9 @@ public class StartApril {
 //        start.designAnATMMachine();
 //        start.evaluateReversePolishNotation();
 //        start.numberOfDifferentIntegersInAString();
-        start.insertInterval();
+//        start.insertInterval();
+//        start.determineWhetherMatrixObtainedByRotation();
+        start.rotateImage();
     }
 
     public void findUniqueBinaryString() {
@@ -270,5 +272,26 @@ public class StartApril {
 
         System.out.println("[[1,5],[6,9]] == " + Arrays.deepToString(ii.insert(new int[][]{{1,3},{6,9}}, new int[]{2,5})));
         System.out.println("[[1,2],[3,10],[12,16]] == " + Arrays.deepToString(ii.insert(new int[][]{{1,2},{3,5},{6,7},{8,10},{12,16}}, new int[]{4,8})));
+    }
+
+    public void determineWhetherMatrixObtainedByRotation() {
+        DetermineWhetherMatrixObtainedByRotation dwmobr = new DetermineWhetherMatrixObtainedByRotation();
+
+        System.out.println("true == " + dwmobr.findRotation(new int[][]{{0,1},{1,0}}, new int[][]{{1,0},{0,1}}));
+        System.out.println("false == " + dwmobr.findRotation(new int[][]{{0,1},{1,1}}, new int[][]{{1,0},{0,1}}));
+        System.out.println("true == " + dwmobr.findRotation(new int[][]{{1,1},{0,0}}, new int[][]{{0,1},{0,1}}));
+        System.out.println("true == " + dwmobr.findRotation(new int[][]{{0,0,0},{0,1,0},{1,1,1}}, new int[][]{{1,1,1},{0,1,0},{0,0,0}}));
+    }
+
+    public void rotateImage() {
+        RotateImage ri = new RotateImage();
+
+        int[][] matrix1 = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+        int[][] matrix2 = new int[][]{{5,1,9,11},{2,4,8,10},{13,3,6,7},{15,14,12,16}};
+        ri.rotate(matrix1);
+        ri.rotate(matrix2);
+
+        System.out.println("[[7,4,1],[8,5,2],[9,6,3]] == " + Arrays.deepToString(matrix1));
+        System.out.println("[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]] == " + Arrays.deepToString(matrix2));
     }
 }
