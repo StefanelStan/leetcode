@@ -15,7 +15,7 @@ public class StartNovember {
 //        start.binaryTreePaths();
 //        start.deleteNodeInABST();
 //        start.kthDistinctStringOnAnArray();
-//        start.kClosestPointsToOrigin();
+        start.kClosestPointsToOrigin();
 //        start.sumOfAbsoluteDiffSortedArray();
 //        start.binaryTreeRightSideView();
 //        start.insufficientNodesInRootToLeafPaths();
@@ -38,7 +38,7 @@ public class StartNovember {
 //        start.elementMore25InSortedArray();
 //        start.rankTransformOfAnArray();
             // to be continued ->
-        start.recoverBinarySearchTree();
+//        start.recoverBinarySearchTree();
 //        start.minimumValueToGetPositiveStepSum();
 //        start.binaryTreeTilt();
 //        start.minimumAbsoluteDifferenceInBST();
@@ -148,8 +148,9 @@ public class StartNovember {
     public void kClosestPointsToOrigin() {
         KClosestPointsToOrigin kcpto = new KClosestPointsToOrigin();
 
-        System.out.println("[[-2,2]] == " + Arrays.deepToString(kcpto.kClosest(new int[][]{{1,3}, {-2, 2}}, 1)));
+//        System.out.println("[[-2,2]] == " + Arrays.deepToString(kcpto.kClosest(new int[][]{{1,3}, {-2, 2}}, 1)));
         System.out.println("[[3,3],[-2,4]] == " + Arrays.deepToString(kcpto.kClosest(new int[][]{{3,3}, {5, -1},{-2, 4}}, 2)));
+//        System.out.println("[[1,1],[3,3],[-2,4],[5,-1],[-6,3]] == " + Arrays.deepToString(kcpto.kClosest(new int[][]{{3,3}, {5, -1},{-2, 4},{1,1},{-6,3},{5,5},{1,9}}, 5)));
     }
 
     public void sumOfAbsoluteDiffSortedArray() {

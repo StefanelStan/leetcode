@@ -34,7 +34,8 @@ public class StartApril {
 //        start.numberOfDifferentIntegersInAString();
 //        start.insertInterval();
 //        start.determineWhetherMatrixObtainedByRotation();
-        start.rotateImage();
+//        start.rotateImage();
+        start.calculateDigitSumOfAString();
     }
 
     public void findUniqueBinaryString() {
@@ -293,5 +294,12 @@ public class StartApril {
 
         System.out.println("[[7,4,1],[8,5,2],[9,6,3]] == " + Arrays.deepToString(matrix1));
         System.out.println("[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]] == " + Arrays.deepToString(matrix2));
+    }
+
+    public void calculateDigitSumOfAString() {
+        CalculateDigitSumOfAString cdsoas = new CalculateDigitSumOfAString();
+
+        System.out.println("135 == " + cdsoas.digitSum("11111222223", 3));
+        System.out.println("000 == " + cdsoas.digitSum("00000000", 3));
     }
 }
