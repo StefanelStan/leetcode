@@ -35,7 +35,8 @@ public class StartApril {
 //        start.insertInterval();
 //        start.determineWhetherMatrixObtainedByRotation();
 //        start.rotateImage();
-        start.calculateDigitSumOfAString();
+//        start.calculateDigitSumOfAString();
+        start.findTheDifferenceOfTwoArrays();
     }
 
     public void findUniqueBinaryString() {
@@ -301,5 +302,12 @@ public class StartApril {
 
         System.out.println("135 == " + cdsoas.digitSum("11111222223", 3));
         System.out.println("000 == " + cdsoas.digitSum("00000000", 3));
+    }
+
+    public void findTheDifferenceOfTwoArrays() {
+        FindTheDifferenceOfTwoArrays ftdota = new FindTheDifferenceOfTwoArrays();
+
+        System.out.println("[[1,3],[4,6]] == " + ftdota.findDifference(new int[]{1,2,3}, new int[]{2,4,6}));
+        System.out.println("[[3],[]] == " + ftdota.findDifference(new int[]{1,2,3,3}, new int[]{1,1,2,2}));
     }
 }
