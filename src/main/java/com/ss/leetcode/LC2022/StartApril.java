@@ -5,6 +5,8 @@ import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class StartApril {
     public static void main(String[] args) {
@@ -36,7 +38,9 @@ public class StartApril {
 //        start.determineWhetherMatrixObtainedByRotation();
 //        start.rotateImage();
 //        start.calculateDigitSumOfAString();
-        start.findTheDifferenceOfTwoArrays();
+//        start.findTheDifferenceOfTwoArrays();
+//        start.nextGreaterElementIII();
+        start.peekingIterator();
     }
 
     public void findUniqueBinaryString() {
@@ -309,5 +313,25 @@ public class StartApril {
 
         System.out.println("[[1,3],[4,6]] == " + ftdota.findDifference(new int[]{1,2,3}, new int[]{2,4,6}));
         System.out.println("[[3],[]] == " + ftdota.findDifference(new int[]{1,2,3,3}, new int[]{1,1,2,2}));
+    }
+
+    public void nextGreaterElementIII() {
+        NextGreaterElementIII ngeiii = new NextGreaterElementIII();
+
+        System.out.println("21 == " + ngeiii.nextGreaterElement(12));
+        System.out.println("342423432 == " + ngeiii.nextGreaterElement(342423423));
+        System.out.println("-1 == " + ngeiii.nextGreaterElement(1));
+        System.out.println("230412 == " + ngeiii.nextGreaterElement(230241));
+    }
+
+    public void peekingIterator() {
+        Iterator<Integer> iterator = List.of(1,2,3).iterator();
+        PeekingIterator pi = new PeekingIterator(iterator);
+
+        System.out.println("1 == " + pi.next());
+        System.out.println("2 == " + pi.peek());
+        System.out.println("2 == " + pi.next());
+        System.out.println("3 == " + pi.next());
+        System.out.println("false == " + pi.hasNext());
     }
 }
