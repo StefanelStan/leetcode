@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class NextGreaterElementII {
-
     // https://leetcode.com/problems/next-greater-element-ii/
     public int[] nextGreaterElements(int[] nums) {
         int[] greaterElements = new int[nums.length];
@@ -14,8 +13,7 @@ public class NextGreaterElementII {
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] < nums[i + 1]) {
                 greaterElements[i] = nums[i + 1];
-                while (!greaterPositions.isEmpty() && nums[greaterPositions.peekLast()] < nums[i
-                    + 1]) {
+                while (!greaterPositions.isEmpty() && nums[greaterPositions.peekLast()] < nums[i + 1]) {
                     greaterElements[greaterPositions.removeLast()] = nums[i + 1];
                 }
             } else {

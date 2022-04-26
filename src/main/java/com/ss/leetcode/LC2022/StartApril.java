@@ -40,7 +40,9 @@ public class StartApril {
 //        start.calculateDigitSumOfAString();
 //        start.findTheDifferenceOfTwoArrays();
 //        start.nextGreaterElementIII();
-        start.peekingIterator();
+//        start.peekingIterator();
+//        start.minCostToConnectAllPoints();
+        start.timeNeededToInformAllEmployees();
     }
 
     public void findUniqueBinaryString() {
@@ -333,5 +335,21 @@ public class StartApril {
         System.out.println("2 == " + pi.next());
         System.out.println("3 == " + pi.next());
         System.out.println("false == " + pi.hasNext());
+    }
+
+    public void minCostToConnectAllPoints() {
+        MinCostToConnectAllPoints mctcap = new MinCostToConnectAllPoints();
+
+        System.out.println("20 == " + mctcap.minCostConnectPoints(new int[][]{{0,0},{2,2},{3,10},{5,2},{7,0}}));
+        System.out.println("18 == " + mctcap.minCostConnectPoints(new int[][]{{3,12},{-2,5},{-4,1}}));
+        System.out.println("0 == " + mctcap.minCostConnectPoints(new int[][]{{0,0}}));
+        System.out.println("53 == " + mctcap.minCostConnectPoints(new int[][]{{2,-3},{-17,-8},{13,8},{-17,-15}}));
+    }
+
+    public void timeNeededToInformAllEmployees() {
+        TimeNeededToInformAllEmployees tntiae = new TimeNeededToInformAllEmployees();
+
+        System.out.println("0 == " + tntiae.numOfMinutes(1, 0, new int[]{-1}, new int[]{0}));
+        System.out.println("1 == " + tntiae.numOfMinutes(6, 2, new int[]{2,2,-1,2,2,2}, new int[]{0,0,1,0,0,0}));
     }
 }
