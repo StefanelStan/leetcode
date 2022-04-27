@@ -42,7 +42,8 @@ public class StartApril {
 //        start.nextGreaterElementIII();
 //        start.peekingIterator();
 //        start.minCostToConnectAllPoints();
-        start.timeNeededToInformAllEmployees();
+//        start.timeNeededToInformAllEmployees();
+        start.subarrayProductLessThanK();
     }
 
     public void findUniqueBinaryString() {
@@ -351,5 +352,14 @@ public class StartApril {
 
         System.out.println("0 == " + tntiae.numOfMinutes(1, 0, new int[]{-1}, new int[]{0}));
         System.out.println("1 == " + tntiae.numOfMinutes(6, 2, new int[]{2,2,-1,2,2,2}, new int[]{0,0,1,0,0,0}));
+    }
+
+    public void subarrayProductLessThanK() {
+        SubarrayProductLessThanK spltk = new SubarrayProductLessThanK();
+
+        System.out.println("8 == " + spltk.numSubarrayProductLessThanK(new int[]{10,5,2,6}, 100));
+        System.out.println("0 == " + spltk.numSubarrayProductLessThanK(new int[]{1,2,3}, 0));
+        System.out.println("0 == " + spltk.numSubarrayProductLessThanK(new int[]{2,3,4}, 1));
+        System.out.println("55 == " + spltk.numSubarrayProductLessThanK(new int[]{3,4,3,2,7,5,6,2,3,1,4}, 9899));
     }
 }
