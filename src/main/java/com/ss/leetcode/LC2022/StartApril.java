@@ -43,7 +43,8 @@ public class StartApril {
 //        start.peekingIterator();
 //        start.minCostToConnectAllPoints();
 //        start.timeNeededToInformAllEmployees();
-        start.subarrayProductLessThanK();
+//        start.subarrayProductLessThanK();
+        start.rangeSumQuery2DImmutable();
     }
 
     public void findUniqueBinaryString() {
@@ -361,5 +362,15 @@ public class StartApril {
         System.out.println("0 == " + spltk.numSubarrayProductLessThanK(new int[]{1,2,3}, 0));
         System.out.println("0 == " + spltk.numSubarrayProductLessThanK(new int[]{2,3,4}, 1));
         System.out.println("55 == " + spltk.numSubarrayProductLessThanK(new int[]{3,4,3,2,7,5,6,2,3,1,4}, 9899));
+    }
+
+    public void rangeSumQuery2DImmutable() {
+        RangeSumQuery2DImmutable rsq2di = new RangeSumQuery2DImmutable(new int[][]{{3,0,1,4,2},
+            {5,6,3,2,1},{1,2,0,1,5},{4,1,0,1,7},{1,0,3,0,5}});
+
+        System.out.println("8 == " + rsq2di.sumRegion(2,1,4,3));
+        System.out.println("11 == " + rsq2di.sumRegion(1,1,2,2));
+        System.out.println("12 == " + rsq2di.sumRegion(1,2,2,4));
+
     }
 }
