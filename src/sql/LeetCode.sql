@@ -100,3 +100,8 @@ ORDER by employee_id;
 -- https://leetcode.com/problems/find-followers-count/
 SELECT user_id, COUNT(follower_id) AS followers_count FROM Followers
 GROUP BY user_id ORDER BY user_id;
+
+-- Fix Names in a Table
+-- https://leetcode.com/problems/fix-names-in-a-table/
+SELECT user_id, CONCAT(UPPER(SUBSTRING(name, 1,1)), LOWER(SUBSTRING(name, 2))) AS name
+FROM Users ORDER BY user_id;
