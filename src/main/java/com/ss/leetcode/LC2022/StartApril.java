@@ -44,7 +44,10 @@ public class StartApril {
 //        start.minCostToConnectAllPoints();
 //        start.timeNeededToInformAllEmployees();
 //        start.subarrayProductLessThanK();
-        start.rangeSumQuery2DImmutable();
+//        start.rangeSumQuery2DImmutable();
+        start.countPrefixesOfAGivenString();
+//        start.minimumAverageDifference();
+        start.countUnguardedCellsInTheGrid();
     }
 
     public void findUniqueBinaryString() {
@@ -372,5 +375,27 @@ public class StartApril {
         System.out.println("11 == " + rsq2di.sumRegion(1,1,2,2));
         System.out.println("12 == " + rsq2di.sumRegion(1,2,2,4));
 
+    }
+
+    public void countPrefixesOfAGivenString() {
+        CountPrefixesOfAGivenString cpoags = new CountPrefixesOfAGivenString();
+
+        System.out.println("3 == " + cpoags.countPrefixes(new String[]{"a","b","c","ab","bc","abc"}, "abc"));
+        System.out.println("2 == " + cpoags.countPrefixes(new String[]{"a", "a"}, "aa"));
+    }
+
+    public void minimumAverageDifference() {
+        MinimumAverageDifference mad = new MinimumAverageDifference();
+
+        System.out.println("3 == " + mad.minimumAverageDifference(new int[]{2,5,3,9,5,3}));
+        System.out.println("0 == " + mad.minimumAverageDifference(new int[]{0}));
+    }
+
+    public void countUnguardedCellsInTheGrid() {
+        CountUnguardedCellsInTheGrid cucitg = new CountUnguardedCellsInTheGrid();
+
+        System.out.println("7 == " + cucitg.countUnguarded(4, 6, new int[][]{{0,0},{1,1},{2,3}}, new int[][]{{0,1},{2,2},{1,4}}));
+        System.out.println("4 == " + cucitg.countUnguarded(3, 3, new int[][]{{1,1}}, new int[][]{{0,1},{1,0},{2,1},{1,2}}));
+        System.out.println("1 == " + cucitg.countUnguarded(2, 7, new int[][]{{1,5},{1,1},{1,6},{0,2}}, new int[][]{{0,6},{0,3},{0,5}}));
     }
 }
