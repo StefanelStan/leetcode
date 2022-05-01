@@ -45,9 +45,9 @@ public class StartApril {
 //        start.timeNeededToInformAllEmployees();
 //        start.subarrayProductLessThanK();
 //        start.rangeSumQuery2DImmutable();
-        start.countPrefixesOfAGivenString();
+//        start.countPrefixesOfAGivenString();
 //        start.minimumAverageDifference();
-        start.countUnguardedCellsInTheGrid();
+//        start.countUnguardedCellsInTheGrid();
     }
 
     public void findUniqueBinaryString() {
