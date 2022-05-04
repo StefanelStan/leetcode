@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
+import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 
@@ -10,7 +11,8 @@ public class StartMay {
 
 //        start.latestTimeByReplacingHiddenDigits();
 //        start.seatReservationManager();
-        start.shortestUnsortedContinuousSubarray();
+//        start.shortestUnsortedContinuousSubarray();
+        start.maxNumberOfKSumPairs();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -40,5 +42,12 @@ public class StartMay {
         System.out.println("5 == " + sucs.findUnsortedSubarray(new int[]{2,6,4,8,10,9,15}));
         System.out.println("0 == " + sucs.findUnsortedSubarray(new int[]{1,2,3,4}));
         System.out.println("0 == " + sucs.findUnsortedSubarray(new int[]{1}));
+    }
+
+    public void maxNumberOfKSumPairs() {
+        MaxNumberOfKSumPairs mnokps = new MaxNumberOfKSumPairs();
+
+        System.out.println("2 == " + mnokps.maxOperations(new int[]{1,2,3,4}, 5));
+        System.out.println("1 == " + mnokps.maxOperations(new int[]{3,1,3,4,3}, 6));
     }
 }
