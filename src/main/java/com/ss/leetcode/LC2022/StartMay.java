@@ -2,13 +2,15 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
+import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 
 public class StartMay {
     public static void main(String[] args) {
         StartMay start = new StartMay();
 
 //        start.latestTimeByReplacingHiddenDigits();
-        start.seatReservationManager();
+//        start.seatReservationManager();
+        start.shortestUnsortedContinuousSubarray();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -30,5 +32,13 @@ public class StartMay {
         System.out.println("4 == " + srm.reserve());
         System.out.println("5 == " + srm.reserve());
         srm.unreserve(5);
+    }
+
+    public void shortestUnsortedContinuousSubarray() {
+        ShortestUnsortedContinuousSubarray sucs = new ShortestUnsortedContinuousSubarray();
+
+        System.out.println("5 == " + sucs.findUnsortedSubarray(new int[]{2,6,4,8,10,9,15}));
+        System.out.println("0 == " + sucs.findUnsortedSubarray(new int[]{1,2,3,4}));
+        System.out.println("0 == " + sucs.findUnsortedSubarray(new int[]{1}));
     }
 }
