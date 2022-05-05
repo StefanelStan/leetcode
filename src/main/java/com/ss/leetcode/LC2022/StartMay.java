@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
@@ -12,7 +13,8 @@ public class StartMay {
 //        start.latestTimeByReplacingHiddenDigits();
 //        start.seatReservationManager();
 //        start.shortestUnsortedContinuousSubarray();
-        start.maxNumberOfKSumPairs();
+//        start.maxNumberOfKSumPairs();
+        start.implementStackUsingQueues();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -49,5 +51,15 @@ public class StartMay {
 
         System.out.println("2 == " + mnokps.maxOperations(new int[]{1,2,3,4}, 5));
         System.out.println("1 == " + mnokps.maxOperations(new int[]{3,1,3,4,3}, 6));
+    }
+
+    public void implementStackUsingQueues() {
+        ImplementStackUsingQueues isuq = new ImplementStackUsingQueues();
+
+        isuq.push(1);
+        isuq.push(2);
+        System.out.println("2 == " + isuq.top());
+        System.out.println("2 == " + isuq.pop());
+        System.out.println("false == " + isuq.empty());
     }
 }
