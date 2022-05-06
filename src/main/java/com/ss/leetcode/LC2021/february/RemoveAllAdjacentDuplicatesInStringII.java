@@ -1,9 +1,34 @@
 package com.ss.leetcode.LC2021.february;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class RemoveAllAdjacentDuplicatesInStringII {
+    // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
     public String removeDuplicates(String s, int k) {
+        StringBuilder stb = new StringBuilder(s.length() / 4);
+        LinkedList<int[]> count = new LinkedList<>();
+        for(char c : s.toCharArray()) {
+            stb.append(c);
+            int[] lastOne = count.peekLast();
+            if(lastOne == null) {
+                count.add(new int[]{c, 1});
+            } else {
+                if (c == (char)lastOne[0]) {
+                    lastOne[1]++;
+                    if (lastOne[1] == k) {
+                        stb.setLength(stb.length() - k);
+                        count.removeLast();
+                    }
+                } else {
+                    count.add(new int[]{c, 1});
+                }
+            }
+        }
+        return stb.toString();
+    }
+
+    public String removeDuplicates2(String s, int k) {
         boolean[] letters = new boolean[s.length()];
         Arrays.fill(letters, true);
         return removeDuplicates(letters, s, k);
