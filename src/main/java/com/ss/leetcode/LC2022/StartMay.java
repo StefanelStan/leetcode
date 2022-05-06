@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
+import com.ss.leetcode.LC2022.may.MyCalendarI;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 
@@ -14,7 +15,8 @@ public class StartMay {
 //        start.seatReservationManager();
 //        start.shortestUnsortedContinuousSubarray();
 //        start.maxNumberOfKSumPairs();
-        start.implementStackUsingQueues();
+//        start.implementStackUsingQueues();
+        start.myCalendarI();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -61,5 +63,24 @@ public class StartMay {
         System.out.println("2 == " + isuq.top());
         System.out.println("2 == " + isuq.pop());
         System.out.println("false == " + isuq.empty());
+    }
+
+    public void myCalendarI() {
+        MyCalendarI mci = new MyCalendarI();
+        System.out.println("true == " + mci.book(10, 20));
+        System.out.println("false == " + mci.book(15, 25));
+        System.out.println("true == " + mci.book(20, 30));
+
+        mci = new MyCalendarI();
+        System.out.println("true == " + mci.book(47, 50));
+        System.out.println("true == " + mci.book(33,41));
+        System.out.println("false == " + mci.book(39,45));
+        System.out.println("false == " + mci.book(33,42));
+        System.out.println("true == " + mci.book(25,32));
+        System.out.println("false == " + mci.book(26,35));
+        System.out.println("true == " + mci.book(19,25));
+        System.out.println("true == " + mci.book(3,8));
+        System.out.println("true == " + mci.book(8,13));
+        System.out.println("false == " + mci.book(18,27));
     }
 }
