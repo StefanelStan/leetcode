@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
+import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 
@@ -16,7 +17,8 @@ public class StartMay {
 //        start.shortestUnsortedContinuousSubarray();
 //        start.maxNumberOfKSumPairs();
 //        start.implementStackUsingQueues();
-        start.myCalendarI();
+//        start.myCalendarI();
+        start.oneThreeTwo132Pattern();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -82,5 +84,15 @@ public class StartMay {
         System.out.println("true == " + mci.book(3,8));
         System.out.println("true == " + mci.book(8,13));
         System.out.println("false == " + mci.book(18,27));
+    }
+
+    public void oneThreeTwo132Pattern() {
+        OneThreeTwo132Pattern ott132p = new OneThreeTwo132Pattern();
+
+        System.out.println("false == " + ott132p.find132pattern(new int[]{1,2,3,4}));
+        System.out.println("true == " + ott132p.find132pattern(new int[]{3,1,4,2}));
+        System.out.println("true == " + ott132p.find132pattern(new int[]{-1,3,2,0}));
+        System.out.println("true == " + ott132p.find132pattern(new int[]{1,3,2,4,5,6,7,8,9,10}));
+        System.out.println("true == " + ott132p.find132pattern(new int[]{3,5,0,3,4}));
     }
 }
