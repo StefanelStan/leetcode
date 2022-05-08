@@ -1,5 +1,7 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
+import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
@@ -7,6 +9,7 @@ import com.ss.leetcode.LC2022.may.MyCalendarI;
 import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
+import java.util.List;
 
 public class StartMay {
     public static void main(String[] args) {
@@ -18,7 +21,8 @@ public class StartMay {
 //        start.maxNumberOfKSumPairs();
 //        start.implementStackUsingQueues();
 //        start.myCalendarI();
-        start.oneThreeTwo132Pattern();
+//        start.oneThreeTwo132Pattern();
+        start.flattenNestedListIterator();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -94,5 +98,19 @@ public class StartMay {
         System.out.println("true == " + ott132p.find132pattern(new int[]{-1,3,2,0}));
         System.out.println("true == " + ott132p.find132pattern(new int[]{1,3,2,4,5,6,7,8,9,10}));
         System.out.println("true == " + ott132p.find132pattern(new int[]{3,5,0,3,4}));
+    }
+
+    public void flattenNestedListIterator() {
+        MyNestedInteger mn1 = new MyNestedInteger(List.of(new MyNestedInteger(1), new MyNestedInteger(1)));
+        MyNestedInteger mn2 = new MyNestedInteger(2);
+        MyNestedInteger mn3 = new MyNestedInteger(List.of(new MyNestedInteger(1), new MyNestedInteger(1)));
+        FlattenNestedListIterator fnli = new FlattenNestedListIterator(List.of(mn1, mn2, mn3));
+        System.out.println("[1,1,2,1,1] == " + List.of(fnli.next(), fnli.next(), fnli.next(), fnli.next(), fnli.next()));
+
+        mn1 = new MyNestedInteger(6);
+        mn2 = new MyNestedInteger(List.of(new MyNestedInteger(4), mn1));
+        mn3 = new MyNestedInteger(List.of(new MyNestedInteger(1), mn2));
+        fnli = new FlattenNestedListIterator(List.of(mn3, mn2, mn1));
+        System.out.println("[1,4,6] == " + List.of(fnli.next(), fnli.next(), fnli.next()));
     }
 }
