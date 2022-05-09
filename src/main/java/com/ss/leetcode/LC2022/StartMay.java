@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
+import com.ss.leetcode.LC2022.may.LetterCombinationsOfAPhoneNumber;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
 import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
@@ -22,7 +23,8 @@ public class StartMay {
 //        start.implementStackUsingQueues();
 //        start.myCalendarI();
 //        start.oneThreeTwo132Pattern();
-        start.flattenNestedListIterator();
+//        start.flattenNestedListIterator();
+        start.letterCombinationsOfAPhoneNumber();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -112,5 +114,13 @@ public class StartMay {
         mn3 = new MyNestedInteger(List.of(new MyNestedInteger(1), mn2));
         fnli = new FlattenNestedListIterator(List.of(mn3, mn2, mn1));
         System.out.println("[1,4,6] == " + List.of(fnli.next(), fnli.next(), fnli.next()));
+    }
+
+    public void letterCombinationsOfAPhoneNumber() {
+        LetterCombinationsOfAPhoneNumber lcoapn = new LetterCombinationsOfAPhoneNumber();
+
+        System.out.println("[ad,ae,af,bd,be,bf,cd,ce,cf] == " + lcoapn.letterCombinations("23"));
+        System.out.println("[] == " + lcoapn.letterCombinations(""));
+        System.out.println("[a,b,c] == " + lcoapn.letterCombinations("2"));
     }
 }
