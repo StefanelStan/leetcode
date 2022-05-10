@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.may.CombinationSumIII;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
@@ -24,7 +25,8 @@ public class StartMay {
 //        start.myCalendarI();
 //        start.oneThreeTwo132Pattern();
 //        start.flattenNestedListIterator();
-        start.letterCombinationsOfAPhoneNumber();
+//        start.letterCombinationsOfAPhoneNumber();
+        start.combinationSumIII();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -122,5 +124,13 @@ public class StartMay {
         System.out.println("[ad,ae,af,bd,be,bf,cd,ce,cf] == " + lcoapn.letterCombinations("23"));
         System.out.println("[] == " + lcoapn.letterCombinations(""));
         System.out.println("[a,b,c] == " + lcoapn.letterCombinations("2"));
+    }
+
+    public void combinationSumIII() {
+        CombinationSumIII csiii = new CombinationSumIII();
+
+        System.out.println("[[1,2,4]] == " + csiii.combinationSum3(3, 7));
+        System.out.println("[[1,2,6],[1,3,5],[2,3,4]] == " + csiii.combinationSum3(3, 9));
+        System.out.println("[] == " + csiii.combinationSum3(4, 1));
     }
 }
