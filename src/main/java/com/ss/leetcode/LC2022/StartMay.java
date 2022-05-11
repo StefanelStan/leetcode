@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
+import com.ss.leetcode.LC2022.may.CountSortedVowelStrings;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
@@ -26,7 +27,8 @@ public class StartMay {
 //        start.oneThreeTwo132Pattern();
 //        start.flattenNestedListIterator();
 //        start.letterCombinationsOfAPhoneNumber();
-        start.combinationSumIII();
+//        start.combinationSumIII();
+        start.countSortedVowelStrings();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -132,5 +134,12 @@ public class StartMay {
         System.out.println("[[1,2,4]] == " + csiii.combinationSum3(3, 7));
         System.out.println("[[1,2,6],[1,3,5],[2,3,4]] == " + csiii.combinationSum3(3, 9));
         System.out.println("[] == " + csiii.combinationSum3(4, 1));
+    }
+
+    public void countSortedVowelStrings() {
+        CountSortedVowelStrings csvs = new CountSortedVowelStrings();
+
+        System.out.println("1 == " + csvs.countVowelStrings(1));
+        System.out.println("15 == " + csvs.countVowelStrings(2));
     }
 }
