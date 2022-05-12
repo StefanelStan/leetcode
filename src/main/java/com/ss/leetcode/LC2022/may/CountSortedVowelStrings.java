@@ -44,10 +44,8 @@ public class CountSortedVowelStrings {
     }
 
     private void countAndPut(int n) {
-        for (int i = 1; i <= n; i++) {
-            if (!countMap.containsKey(i)) {
-                countAndAddToMap(i);
-            }
+        for (int i = countMap.size() + 1; i <= n; i++) {
+            countAndAddToMap(i);
         }
     }
 

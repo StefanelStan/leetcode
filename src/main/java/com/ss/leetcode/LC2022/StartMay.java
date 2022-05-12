@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2022.may.LetterCombinationsOfAPhoneNumber;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
 import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
+import com.ss.leetcode.LC2022.may.PermutationsII;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 import java.util.List;
@@ -28,7 +29,8 @@ public class StartMay {
 //        start.flattenNestedListIterator();
 //        start.letterCombinationsOfAPhoneNumber();
 //        start.combinationSumIII();
-        start.countSortedVowelStrings();
+//        start.countSortedVowelStrings();
+        start.permutationsII();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -141,5 +143,12 @@ public class StartMay {
 
         System.out.println("1 == " + csvs.countVowelStrings(1));
         System.out.println("15 == " + csvs.countVowelStrings(2));
+    }
+
+    public void permutationsII() {
+        PermutationsII pii = new PermutationsII();
+
+        System.out.println("[[1,1,2],[1,2,1],[2,1,1]] == " + pii.permuteUnique(new int[]{1,1,2}));
+        System.out.println("[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] == " + pii.permuteUnique(new int[]{1,2,3}));
     }
 }
