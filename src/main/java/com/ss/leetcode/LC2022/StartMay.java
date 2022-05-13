@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
+import com.ss.leetcode.LC2022.may.CountNodesEqualToAverageOfSubtree;
 import com.ss.leetcode.LC2022.may.CountSortedVowelStrings;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
@@ -13,6 +14,7 @@ import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
 import com.ss.leetcode.LC2022.may.PermutationsII;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
+import com.ss.leetcode.shared.TreeNode;
 import java.util.List;
 
 public class StartMay {
@@ -30,7 +32,8 @@ public class StartMay {
 //        start.letterCombinationsOfAPhoneNumber();
 //        start.combinationSumIII();
 //        start.countSortedVowelStrings();
-        start.permutationsII();
+//        start.permutationsII();
+        start.countNodesEqualToAverageOfSubtree();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -150,5 +153,15 @@ public class StartMay {
 
         System.out.println("[[1,1,2],[1,2,1],[2,1,1]] == " + pii.permuteUnique(new int[]{1,1,2}));
         System.out.println("[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] == " + pii.permuteUnique(new int[]{1,2,3}));
+    }
+
+    public void countNodesEqualToAverageOfSubtree() {
+        CountNodesEqualToAverageOfSubtree cnetaos = new CountNodesEqualToAverageOfSubtree();
+
+        TreeNode root1 = new TreeNode(4, new TreeNode(8, new TreeNode(0), new TreeNode(1)), new TreeNode(5, null, new TreeNode(6)));
+        TreeNode root2 = new TreeNode(1);
+
+        System.out.println("5 == " + cnetaos.averageOfSubtree(root1));
+        System.out.println("1 == " + cnetaos.averageOfSubtree(root2));
     }
 }
