@@ -3,13 +3,16 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
 import com.ss.leetcode.LC2022.may.CountNodesEqualToAverageOfSubtree;
 import com.ss.leetcode.LC2022.may.CountSortedVowelStrings;
+import com.ss.leetcode.LC2022.may.FindTheKBeautyOfANumber;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.LetterCombinationsOfAPhoneNumber;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
+import com.ss.leetcode.LC2022.may.MaximumWhiteTilesCoveredByACarpet;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
+import com.ss.leetcode.LC2022.may.NumberOfWaysToSplitArray;
 import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
 import com.ss.leetcode.LC2022.may.PermutationsII;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
@@ -33,7 +36,10 @@ public class StartMay {
 //        start.combinationSumIII();
 //        start.countSortedVowelStrings();
 //        start.permutationsII();
-        start.countNodesEqualToAverageOfSubtree();
+//        start.countNodesEqualToAverageOfSubtree();
+//        start.findTheKBeautyOfANumber();
+//        start.numberOfWaysToSplitArray();
+        start.maximumWhiteTilesCoveredByACarpet();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -163,5 +169,28 @@ public class StartMay {
 
         System.out.println("5 == " + cnetaos.averageOfSubtree(root1));
         System.out.println("1 == " + cnetaos.averageOfSubtree(root2));
+    }
+
+    public void findTheKBeautyOfANumber() {
+        FindTheKBeautyOfANumber ftkboan = new FindTheKBeautyOfANumber();
+
+        System.out.println("2 == " + ftkboan.divisorSubstrings(240, 2));
+        System.out.println("2 == " + ftkboan.divisorSubstrings(430043, 2));
+    }
+
+    public void numberOfWaysToSplitArray() {
+        NumberOfWaysToSplitArray nowtsa = new NumberOfWaysToSplitArray();
+
+        System.out.println("2 == " + nowtsa.waysToSplitArray(new int[]{10,4,-8,7}));
+        System.out.println("2 == " + nowtsa.waysToSplitArray(new int[]{2,3,1,0}));
+        System.out.println("1 == " + nowtsa.waysToSplitArray(new int[]{0,0}));
+    }
+
+    public void maximumWhiteTilesCoveredByACarpet() {
+        MaximumWhiteTilesCoveredByACarpet mwtcbac = new MaximumWhiteTilesCoveredByACarpet();
+
+//        System.out.println("8 == " + mwtcbac.maximumWhiteTiles(new int[][]{{1,5},{10,11},{12,18},{20,25},{30,32}}, 8));
+        System.out.println("9 == " + mwtcbac.maximumWhiteTiles(new int[][]{{1,5},{10,11},{12,18},{20,25},{30,32}}, 10));
+//        System.out.println("2 == " + mwtcbac.maximumWhiteTiles(new int[][]{{10,11},{1,1}}, 2));
     }
 }
