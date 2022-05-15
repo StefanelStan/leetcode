@@ -3,10 +3,13 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
 import com.ss.leetcode.LC2022.may.CountNodesEqualToAverageOfSubtree;
 import com.ss.leetcode.LC2022.may.CountSortedVowelStrings;
+import com.ss.leetcode.LC2022.may.DesignAuthenticationManager;
+import com.ss.leetcode.LC2022.may.DesignLinkedList;
 import com.ss.leetcode.LC2022.may.FindTheKBeautyOfANumber;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
+import com.ss.leetcode.LC2022.may.Largest3SameDigitNumberInString;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.LetterCombinationsOfAPhoneNumber;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
@@ -39,7 +42,10 @@ public class StartMay {
 //        start.countNodesEqualToAverageOfSubtree();
 //        start.findTheKBeautyOfANumber();
 //        start.numberOfWaysToSplitArray();
-        start.maximumWhiteTilesCoveredByACarpet();
+//        start.maximumWhiteTilesCoveredByACarpet();
+//        start.designLinkedList();
+//        start.designAuthenticationManager();
+        start.largest3SameDigitNumberInString();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -189,8 +195,82 @@ public class StartMay {
     public void maximumWhiteTilesCoveredByACarpet() {
         MaximumWhiteTilesCoveredByACarpet mwtcbac = new MaximumWhiteTilesCoveredByACarpet();
 
-//        System.out.println("8 == " + mwtcbac.maximumWhiteTiles(new int[][]{{1,5},{10,11},{12,18},{20,25},{30,32}}, 8));
+        System.out.println("8 == " + mwtcbac.maximumWhiteTiles(new int[][]{{1,5},{10,11},{12,18},{20,25},{30,32}}, 8));
         System.out.println("9 == " + mwtcbac.maximumWhiteTiles(new int[][]{{1,5},{10,11},{12,18},{20,25},{30,32}}, 10));
-//        System.out.println("2 == " + mwtcbac.maximumWhiteTiles(new int[][]{{10,11},{1,1}}, 2));
+        System.out.println("2 == " + mwtcbac.maximumWhiteTiles(new int[][]{{10,11},{1,1}}, 2));
+    }
+
+    public void designLinkedList() {
+        DesignLinkedList dll = new DesignLinkedList();
+        dll.addAtHead(1);
+        dll.addAtTail(3);
+        dll.addAtIndex(1,2);
+        System.out.println("2 == " + dll.get(1));
+        dll.deleteAtIndex(1);
+        System.out.println("3 == " + dll.get(1));
+
+        dll = new DesignLinkedList();
+        dll.addAtTail(3);
+        dll.addAtHead(1);
+        dll.addAtIndex(1,2);
+        System.out.println("2 == " + dll.get(1));
+        dll.deleteAtIndex(1);
+        System.out.println("3 == " + dll.get(1));
+        dll.deleteAtIndex(0);
+        System.out.println("3 == " + dll.get(0));
+
+        dll = new DesignLinkedList();
+        dll.addAtHead(1);
+        dll.deleteAtIndex(0);
+        dll.addAtHead(7);
+        dll.addAtHead(2);
+        dll.addAtHead(1);
+        dll.addAtIndex(3,0);
+        dll.deleteAtIndex(2);
+        dll.addAtHead(6);
+        dll.addAtTail(4);
+        System.out.println("4 == " + dll.get(4));
+        dll.addAtHead(4);
+        dll.addAtIndex(5,0);
+        dll.addAtHead(6);
+    }
+
+    public void designAuthenticationManager() {
+        DesignAuthenticationManager dam = new DesignAuthenticationManager(5);
+        dam.renew("aaa", 1);
+        dam.generate("aaa", 2);
+        System.out.println("1 == " + dam.countUnexpiredTokens(6));
+        dam.generate("bbb", 7);
+        dam.renew("aaa", 8);
+        dam.renew("bbb", 10);
+        System.out.println("0 == " + dam.countUnexpiredTokens(15));
+
+        dam = new DesignAuthenticationManager(13);
+        dam.renew("ajvy", 1);
+        System.out.println("0 == " + dam.countUnexpiredTokens(3));
+        System.out.println("0 == " + dam.countUnexpiredTokens(4));
+        dam.generate("fuzxq", 5);
+        dam.generate("izmry", 7);
+        dam.renew("puv", 12);
+        dam.generate("ybiqb", 13);
+        dam.generate("gm", 14);
+        System.out.println("4 == " + dam.countUnexpiredTokens(15));
+        System.out.println("3 == " + dam.countUnexpiredTokens(18));
+        System.out.println("3 == " + dam.countUnexpiredTokens(19));
+        dam.renew("ybiqb", 21);
+        System.out.println("2 == " + dam.countUnexpiredTokens(23));
+        System.out.println("2 == " + dam.countUnexpiredTokens(25));
+        System.out.println("2 == " + dam.countUnexpiredTokens(26));
+        dam.generate("aqdm", 28);
+        System.out.println("2 == " + dam.countUnexpiredTokens(29));
+        dam.renew("puv", 30);
+    }
+
+    public void largest3SameDigitNumberInString() {
+        Largest3SameDigitNumberInString l3sdnis = new Largest3SameDigitNumberInString();
+
+        System.out.println("777 == " + l3sdnis.largestGoodInteger("6777133339"));
+        System.out.println("000 == " + l3sdnis.largestGoodInteger("2300019"));
+        System.out.println(" == " + l3sdnis.largestGoodInteger("42352338"));
     }
 }
