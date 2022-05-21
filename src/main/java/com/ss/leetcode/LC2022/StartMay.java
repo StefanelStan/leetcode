@@ -16,6 +16,7 @@ import com.ss.leetcode.LC2022.may.LetterCombinationsOfAPhoneNumber;
 import com.ss.leetcode.LC2022.may.LongestIncreasingPathInAMatrix;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.MaximumWhiteTilesCoveredByACarpet;
+import com.ss.leetcode.LC2022.may.MinCostClimbingStairs;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
 import com.ss.leetcode.LC2022.may.NumberOfWaysToSplitArray;
 import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
@@ -51,7 +52,8 @@ public class StartMay {
 //        start.largest3SameDigitNumberInString();
 //        start.longestIncreasingPathInAMatrix();
 //        start.uniquePathsII();
-        start.intersectionOfMultipleArrays();
+//        start.intersectionOfMultipleArrays();
+        start.minCostClimbingStairs();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -309,5 +311,12 @@ public class StartMay {
 
         System.out.println("[3,4] == " + ioma.intersection(new int[][]{{3,1,2,4,5},{1,2,3,4},{3,4,5,6}}));
         System.out.println("[] == " + ioma.intersection(new int[][]{{1,2,3},{4,5,6}}));
+    }
+
+    public void minCostClimbingStairs() {
+        MinCostClimbingStairs mccs = new MinCostClimbingStairs();
+
+        System.out.println("15 == " + mccs.minCostClimbingStairs(new int[]{10,15,20}));
+        System.out.println("6 == " + mccs.minCostClimbingStairs(new int[]{1,100,1,1,1,100,1,1,100,1}));
     }
 }
