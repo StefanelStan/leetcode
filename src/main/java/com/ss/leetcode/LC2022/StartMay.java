@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
+import com.ss.leetcode.LC2022.may.CountHillsAndValleysInAnArray;
 import com.ss.leetcode.LC2022.may.CountNodesEqualToAverageOfSubtree;
 import com.ss.leetcode.LC2022.may.CountSortedVowelStrings;
 import com.ss.leetcode.LC2022.may.DesignAuthenticationManager;
@@ -53,7 +54,8 @@ public class StartMay {
 //        start.longestIncreasingPathInAMatrix();
 //        start.uniquePathsII();
 //        start.intersectionOfMultipleArrays();
-        start.minCostClimbingStairs();
+//        start.minCostClimbingStairs();
+        start.countHillsAndValleysInAnArray();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -318,5 +320,16 @@ public class StartMay {
 
         System.out.println("15 == " + mccs.minCostClimbingStairs(new int[]{10,15,20}));
         System.out.println("6 == " + mccs.minCostClimbingStairs(new int[]{1,100,1,1,1,100,1,1,100,1}));
+    }
+
+    public void countHillsAndValleysInAnArray() {
+        CountHillsAndValleysInAnArray chaviaa = new CountHillsAndValleysInAnArray();
+
+        System.out.println("3 == " + chaviaa.countHillValley(new int[]{2,4,1,1,6,5}));
+        System.out.println("0 == " + chaviaa.countHillValley(new int[]{6,6,5,5,4,1}));
+        System.out.println("56 == " + chaviaa.countHillValley(new int[]{87,82,19,65,26,66,83,68,94,
+            33,7,13,88,63,28,90,81,74,97,9,13,8,51,65,30,9,44,38,14,45,100,2,67,89,10,75,15,71,97,
+            41,18,53,58,56,36,41,88,49,42,82,82,81,22,4,50,87,40,91,7,81,76,51,41,19,22,66,92,24,44,
+            48,50,26,98,59,42,77,59,76,23,67,71,57,56,15,92,68,53,85,98,32,26,77,98,78,77}));
     }
 }
