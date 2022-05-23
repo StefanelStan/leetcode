@@ -16,6 +16,7 @@ import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.LetterCombinationsOfAPhoneNumber;
 import com.ss.leetcode.LC2022.may.LongestIncreasingPathInAMatrix;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
+import com.ss.leetcode.LC2022.may.MaximizeSumOfArrayAfterKNegations;
 import com.ss.leetcode.LC2022.may.MaximumWhiteTilesCoveredByACarpet;
 import com.ss.leetcode.LC2022.may.MinCostClimbingStairs;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
@@ -55,7 +56,8 @@ public class StartMay {
 //        start.uniquePathsII();
 //        start.intersectionOfMultipleArrays();
 //        start.minCostClimbingStairs();
-        start.countHillsAndValleysInAnArray();
+//        start.countHillsAndValleysInAnArray();
+        start.maximizeSumOfArrayAfterKNegations();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -331,5 +333,14 @@ public class StartMay {
             33,7,13,88,63,28,90,81,74,97,9,13,8,51,65,30,9,44,38,14,45,100,2,67,89,10,75,15,71,97,
             41,18,53,58,56,36,41,88,49,42,82,82,81,22,4,50,87,40,91,7,81,76,51,41,19,22,66,92,24,44,
             48,50,26,98,59,42,77,59,76,23,67,71,57,56,15,92,68,53,85,98,32,26,77,98,78,77}));
+    }
+
+    public void maximizeSumOfArrayAfterKNegations() {
+        MaximizeSumOfArrayAfterKNegations msoaakn = new MaximizeSumOfArrayAfterKNegations();
+
+        System.out.println("5 == " + msoaakn.largestSumAfterKNegations(new int[]{4,2,3}, 1));
+        System.out.println("6 == " + msoaakn.largestSumAfterKNegations(new int[]{3,-1,0,2}, 3));
+        System.out.println("13 == " + msoaakn.largestSumAfterKNegations(new int[]{2,-3,-1,5,-4}, 2));
+        System.out.println("22 == " + msoaakn.largestSumAfterKNegations(new int[]{-8,3,-5,-3,-5,-2}, 6));
     }
 }
