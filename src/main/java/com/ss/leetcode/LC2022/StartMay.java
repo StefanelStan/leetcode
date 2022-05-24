@@ -15,6 +15,7 @@ import com.ss.leetcode.LC2022.may.Largest3SameDigitNumberInString;
 import com.ss.leetcode.LC2022.may.LatestTimeByReplacingHiddenDigits;
 import com.ss.leetcode.LC2022.may.LetterCombinationsOfAPhoneNumber;
 import com.ss.leetcode.LC2022.may.LongestIncreasingPathInAMatrix;
+import com.ss.leetcode.LC2022.may.LongestValidParentheses;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.MaximizeSumOfArrayAfterKNegations;
 import com.ss.leetcode.LC2022.may.MaximumWhiteTilesCoveredByACarpet;
@@ -57,7 +58,8 @@ public class StartMay {
 //        start.intersectionOfMultipleArrays();
 //        start.minCostClimbingStairs();
 //        start.countHillsAndValleysInAnArray();
-        start.maximizeSumOfArrayAfterKNegations();
+//        start.maximizeSumOfArrayAfterKNegations();
+        start.longestValidParentheses();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -342,5 +344,14 @@ public class StartMay {
         System.out.println("6 == " + msoaakn.largestSumAfterKNegations(new int[]{3,-1,0,2}, 3));
         System.out.println("13 == " + msoaakn.largestSumAfterKNegations(new int[]{2,-3,-1,5,-4}, 2));
         System.out.println("22 == " + msoaakn.largestSumAfterKNegations(new int[]{-8,3,-5,-3,-5,-2}, 6));
+    }
+
+    public void longestValidParentheses() {
+        LongestValidParentheses lvp = new LongestValidParentheses();
+
+        System.out.println("2 == " + lvp.longestValidParentheses("(()"));
+        System.out.println("4 == " + lvp.longestValidParentheses(")()())"));
+        System.out.println("4 == " + lvp.longestValidParentheses("()(()"));
+        System.out.println("0 == " + lvp.longestValidParentheses(""));
     }
 }
