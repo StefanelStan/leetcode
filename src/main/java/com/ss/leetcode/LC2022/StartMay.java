@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.may.CountHillsAndValleysInAnArray;
 import com.ss.leetcode.LC2022.may.CountNodesEqualToAverageOfSubtree;
 import com.ss.leetcode.LC2022.may.CountSortedVowelStrings;
 import com.ss.leetcode.LC2022.may.DesignAuthenticationManager;
+import com.ss.leetcode.LC2022.may.DesignCircularQueue;
 import com.ss.leetcode.LC2022.may.DesignLinkedList;
 import com.ss.leetcode.LC2022.may.FindTheKBeautyOfANumber;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
@@ -59,7 +60,8 @@ public class StartMay {
 //        start.minCostClimbingStairs();
 //        start.countHillsAndValleysInAnArray();
 //        start.maximizeSumOfArrayAfterKNegations();
-        start.longestValidParentheses();
+//        start.longestValidParentheses();
+        start.designCircularQueue();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -353,5 +355,20 @@ public class StartMay {
         System.out.println("4 == " + lvp.longestValidParentheses(")()())"));
         System.out.println("4 == " + lvp.longestValidParentheses("()(()"));
         System.out.println("0 == " + lvp.longestValidParentheses(""));
+    }
+
+    public void designCircularQueue() {
+        DesignCircularQueue dcq = new DesignCircularQueue(3);
+
+        System.out.println("true == " + dcq.enQueue(1));
+        System.out.println("true == " + dcq.enQueue(2));
+        System.out.println("true == " + dcq.enQueue(3));
+        System.out.println("false == " + dcq.enQueue(4));
+        System.out.println("3 == " + dcq.rear());
+        System.out.println("1 == " + dcq.front());
+        System.out.println("true == " + dcq.isFull());
+        System.out.println("true == " + dcq.deQueue());
+        System.out.println("true == " + dcq.enQueue(4));
+        System.out.println("4 == " + dcq.rear());
     }
 }
