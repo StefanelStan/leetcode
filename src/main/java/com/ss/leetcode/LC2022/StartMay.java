@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.may.BinaryPrefixDivisibleBy5;
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
 import com.ss.leetcode.LC2022.may.CountHillsAndValleysInAnArray;
 import com.ss.leetcode.LC2022.may.CountNodesEqualToAverageOfSubtree;
@@ -7,6 +8,7 @@ import com.ss.leetcode.LC2022.may.CountSortedVowelStrings;
 import com.ss.leetcode.LC2022.may.DesignAuthenticationManager;
 import com.ss.leetcode.LC2022.may.DesignCircularQueue;
 import com.ss.leetcode.LC2022.may.DesignLinkedList;
+import com.ss.leetcode.LC2022.may.FindSubsequenceOfLengthKWithTheLargestSum;
 import com.ss.leetcode.LC2022.may.FindTheKBeautyOfANumber;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
@@ -29,6 +31,7 @@ import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 import com.ss.leetcode.LC2022.may.UniquePathsII;
 import com.ss.leetcode.shared.TreeNode;
+import java.util.Arrays;
 import java.util.List;
 
 public class StartMay {
@@ -61,7 +64,9 @@ public class StartMay {
 //        start.countHillsAndValleysInAnArray();
 //        start.maximizeSumOfArrayAfterKNegations();
 //        start.longestValidParentheses();
-        start.designCircularQueue();
+//        start.designCircularQueue();
+//        start.binaryPrefixDivisibleBy5();
+        start.findSubsequenceOfLengthKWithTheLargestSum();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -370,5 +375,20 @@ public class StartMay {
         System.out.println("true == " + dcq.deQueue());
         System.out.println("true == " + dcq.enQueue(4));
         System.out.println("4 == " + dcq.rear());
+    }
+
+    public void binaryPrefixDivisibleBy5() {
+        BinaryPrefixDivisibleBy5 bpdb5 = new BinaryPrefixDivisibleBy5();
+
+        System.out.println("[true,false,false] == " + bpdb5.prefixesDivBy5(new int[]{0,1,1}));
+        System.out.println("[false,false,false] == " + bpdb5.prefixesDivBy5(new int[]{1,1,1}));
+    }
+
+    public void findSubsequenceOfLengthKWithTheLargestSum() {
+        FindSubsequenceOfLengthKWithTheLargestSum fsolkwtls = new FindSubsequenceOfLengthKWithTheLargestSum();
+
+        System.out.println("[3,3] == " + Arrays.toString(fsolkwtls.maxSubsequence(new int[]{2,1,3,3}, 2)));
+        System.out.println("[-1,3,4] == " + Arrays.toString(fsolkwtls.maxSubsequence(new int[]{-1,-2,3,4}, 3)));
+        System.out.println("[3,4,3,3] == " + Arrays.toString(fsolkwtls.maxSubsequence(new int[]{3,4,3,3}, 2)));
     }
 }
