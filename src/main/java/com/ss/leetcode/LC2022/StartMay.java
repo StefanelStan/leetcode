@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.may.BinaryPrefixDivisibleBy5;
+import com.ss.leetcode.LC2022.may.CheckIfNumberHasEqualDigitCountAndDigitValue;
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
 import com.ss.leetcode.LC2022.may.CountHillsAndValleysInAnArray;
 import com.ss.leetcode.LC2022.may.CountNodesEqualToAverageOfSubtree;
@@ -12,6 +13,7 @@ import com.ss.leetcode.LC2022.may.FindSubsequenceOfLengthKWithTheLargestSum;
 import com.ss.leetcode.LC2022.may.FindTheKBeautyOfANumber;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator;
 import com.ss.leetcode.LC2022.may.FlattenNestedListIterator.MyNestedInteger;
+import com.ss.leetcode.LC2022.may.GreatestCommonDivisorOfStrings;
 import com.ss.leetcode.LC2022.may.ImplementStackUsingQueues;
 import com.ss.leetcode.LC2022.may.IntersectionOfMultipleArrays;
 import com.ss.leetcode.LC2022.may.Largest3SameDigitNumberInString;
@@ -21,6 +23,7 @@ import com.ss.leetcode.LC2022.may.LongestIncreasingPathInAMatrix;
 import com.ss.leetcode.LC2022.may.LongestValidParentheses;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.MaximizeSumOfArrayAfterKNegations;
+import com.ss.leetcode.LC2022.may.MaximumTotalImportanceOfRoads;
 import com.ss.leetcode.LC2022.may.MaximumWhiteTilesCoveredByACarpet;
 import com.ss.leetcode.LC2022.may.MinCostClimbingStairs;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
@@ -28,6 +31,7 @@ import com.ss.leetcode.LC2022.may.NumberOfWaysToSplitArray;
 import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
 import com.ss.leetcode.LC2022.may.PermutationsII;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
+import com.ss.leetcode.LC2022.may.SenderWithLargestWordCount;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 import com.ss.leetcode.LC2022.may.UniquePathsII;
 import com.ss.leetcode.shared.TreeNode;
@@ -66,7 +70,11 @@ public class StartMay {
 //        start.longestValidParentheses();
 //        start.designCircularQueue();
 //        start.binaryPrefixDivisibleBy5();
-        start.findSubsequenceOfLengthKWithTheLargestSum();
+//        start.findSubsequenceOfLengthKWithTheLargestSum();
+//        start.greatestCommonDivisorOfStrings();
+        start.checkIfNumberHasEqualDigitCountAndDigitValue();
+//        start.senderWithLargestWordCount();
+//        start.maximumTotalImportanceOfRoads();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -390,5 +398,41 @@ public class StartMay {
         System.out.println("[3,3] == " + Arrays.toString(fsolkwtls.maxSubsequence(new int[]{2,1,3,3}, 2)));
         System.out.println("[-1,3,4] == " + Arrays.toString(fsolkwtls.maxSubsequence(new int[]{-1,-2,3,4}, 3)));
         System.out.println("[3,4,3,3] == " + Arrays.toString(fsolkwtls.maxSubsequence(new int[]{3,4,3,3}, 2)));
+    }
+
+    public void greatestCommonDivisorOfStrings() {
+        GreatestCommonDivisorOfStrings gcdos = new GreatestCommonDivisorOfStrings();
+
+        System.out.println("ABC == " + gcdos.gcdOfStrings("ABCABC", "ABC"));
+        System.out.println("AB == " + gcdos.gcdOfStrings("ABABAB", "ABAB"));
+        System.out.println(" == " + gcdos.gcdOfStrings("LEET", "CODE"));
+        System.out.println(" == " + gcdos.gcdOfStrings("A", "B"));
+        System.out.println("A == " + gcdos.gcdOfStrings("AA", "AAA"));
+        System.out.println(" == " + gcdos.gcdOfStrings("ABCX", "ABCXABC"));
+    }
+
+    public void checkIfNumberHasEqualDigitCountAndDigitValue() {
+        CheckIfNumberHasEqualDigitCountAndDigitValue cinhedcadv = new CheckIfNumberHasEqualDigitCountAndDigitValue();
+
+        System.out.println("true == " + cinhedcadv.digitCount("1210"));
+        System.out.println("false == " + cinhedcadv.digitCount("030"));
+    }
+
+    public void senderWithLargestWordCount() {
+        SenderWithLargestWordCount swlwc = new SenderWithLargestWordCount();
+
+        System.out.println("Alice == " + swlwc.largestWordCount(
+            new String[]{"Hello userTwooo","Hi userThree","Wonderful day Alice","Nice day userThree"},
+            new String[]{"Alice","userTwo","userThree","Alice"}));
+        System.out.println("Charlie == " + swlwc.largestWordCount(
+            new String[]{"How is leetcode for everyone","Leetcode is useful for practice"},
+            new String[]{"Bob","Charlie"}));
+    }
+
+    public void maximumTotalImportanceOfRoads() {
+        MaximumTotalImportanceOfRoads mtior = new MaximumTotalImportanceOfRoads();
+
+        System.out.println("43 == " + mtior.maximumImportance(5, new int[][]{{0,1},{1,2},{2,3},{0,2},{1,3},{2,4}}));
+        System.out.println("20 == " + mtior.maximumImportance(5, new int[][]{{0,3},{2,4},{1,3}}));
     }
 }
