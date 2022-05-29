@@ -23,6 +23,7 @@ import com.ss.leetcode.LC2022.may.LongestIncreasingPathInAMatrix;
 import com.ss.leetcode.LC2022.may.LongestValidParentheses;
 import com.ss.leetcode.LC2022.may.MaxNumberOfKSumPairs;
 import com.ss.leetcode.LC2022.may.MaximizeSumOfArrayAfterKNegations;
+import com.ss.leetcode.LC2022.may.MaximumProductOfWordLengths;
 import com.ss.leetcode.LC2022.may.MaximumTotalImportanceOfRoads;
 import com.ss.leetcode.LC2022.may.MaximumWhiteTilesCoveredByACarpet;
 import com.ss.leetcode.LC2022.may.MinCostClimbingStairs;
@@ -72,9 +73,10 @@ public class StartMay {
 //        start.binaryPrefixDivisibleBy5();
 //        start.findSubsequenceOfLengthKWithTheLargestSum();
 //        start.greatestCommonDivisorOfStrings();
-        start.checkIfNumberHasEqualDigitCountAndDigitValue();
+//        start.checkIfNumberHasEqualDigitCountAndDigitValue();
 //        start.senderWithLargestWordCount();
 //        start.maximumTotalImportanceOfRoads();
+        start.maximumProductOfWordLengths();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -434,5 +436,14 @@ public class StartMay {
 
         System.out.println("43 == " + mtior.maximumImportance(5, new int[][]{{0,1},{1,2},{2,3},{0,2},{1,3},{2,4}}));
         System.out.println("20 == " + mtior.maximumImportance(5, new int[][]{{0,3},{2,4},{1,3}}));
+    }
+
+    public void maximumProductOfWordLengths() {
+        MaximumProductOfWordLengths mpowl = new MaximumProductOfWordLengths();
+
+        System.out.println("16 == " + mpowl.maxProduct(new String[]{"abcw","baz","foo","bar","xtfn","abcdef"}));
+        System.out.println("4 == " + mpowl.maxProduct(new String[]{"a","ab","abc","d","cd","bcd","abcd"}));
+        System.out.println("0 == " + mpowl.maxProduct(new String[]{"a","aa","aaa","aaaa"}));
+        System.out.println("15 == " + mpowl.maxProduct(new String[]{"eae","ea","aaf","bda","fcf","dc","ac","ce","cefde","dabae"}));
     }
 }
