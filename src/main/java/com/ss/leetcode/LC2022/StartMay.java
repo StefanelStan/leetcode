@@ -35,6 +35,7 @@ import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.SenderWithLargestWordCount;
 import com.ss.leetcode.LC2022.may.ShortestUnsortedContinuousSubarray;
 import com.ss.leetcode.LC2022.may.UniquePathsII;
+import com.ss.leetcode.LC2022.may.ValidPerfectSquare;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 import java.util.List;
@@ -76,7 +77,8 @@ public class StartMay {
 //        start.checkIfNumberHasEqualDigitCountAndDigitValue();
 //        start.senderWithLargestWordCount();
 //        start.maximumTotalImportanceOfRoads();
-        start.maximumProductOfWordLengths();
+//        start.maximumProductOfWordLengths();
+        start.validPerfectSquare();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -445,5 +447,18 @@ public class StartMay {
         System.out.println("4 == " + mpowl.maxProduct(new String[]{"a","ab","abc","d","cd","bcd","abcd"}));
         System.out.println("0 == " + mpowl.maxProduct(new String[]{"a","aa","aaa","aaaa"}));
         System.out.println("15 == " + mpowl.maxProduct(new String[]{"eae","ea","aaf","bda","fcf","dc","ac","ce","cefde","dabae"}));
+    }
+
+    public void validPerfectSquare() {
+        ValidPerfectSquare vps = new ValidPerfectSquare();
+
+        System.out.println("true == " + vps.isPerfectSquare(16));
+        System.out.println("true == " + vps.isPerfectSquare(25));
+        System.out.println("true == " + vps.isPerfectSquare(225));
+        System.out.println("true == " + vps.isPerfectSquare(225));
+        System.out.println("false == " + vps.isPerfectSquare(2100000000));
+        System.out.println("false == " + vps.isPerfectSquare(893129332));
+        System.out.println("true == " + vps.isPerfectSquare(1010159089));
+        System.out.println("true == " + vps.isPerfectSquare(1225000000));
     }
 }
