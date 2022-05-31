@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.may.BinaryPrefixDivisibleBy5;
+import com.ss.leetcode.LC2022.may.CheckIfAStringContainsAllBinaryCodesOfSizeK;
 import com.ss.leetcode.LC2022.may.CheckIfNumberHasEqualDigitCountAndDigitValue;
 import com.ss.leetcode.LC2022.may.CombinationSumIII;
 import com.ss.leetcode.LC2022.may.CountHillsAndValleysInAnArray;
@@ -30,6 +31,7 @@ import com.ss.leetcode.LC2022.may.MinCostClimbingStairs;
 import com.ss.leetcode.LC2022.may.MyCalendarI;
 import com.ss.leetcode.LC2022.may.NumberOfWaysToSplitArray;
 import com.ss.leetcode.LC2022.may.OneThreeTwo132Pattern;
+import com.ss.leetcode.LC2022.may.PercentageOfLetterInString;
 import com.ss.leetcode.LC2022.may.PermutationsII;
 import com.ss.leetcode.LC2022.may.SeatReservationManager;
 import com.ss.leetcode.LC2022.may.SenderWithLargestWordCount;
@@ -78,7 +80,9 @@ public class StartMay {
 //        start.senderWithLargestWordCount();
 //        start.maximumTotalImportanceOfRoads();
 //        start.maximumProductOfWordLengths();
-        start.validPerfectSquare();
+//        start.validPerfectSquare();
+//        start.percentageOfLetterInString();
+        start.checkIfAStringContainsAllBinaryCodesOfSizeK();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
@@ -460,5 +464,24 @@ public class StartMay {
         System.out.println("false == " + vps.isPerfectSquare(893129332));
         System.out.println("true == " + vps.isPerfectSquare(1010159089));
         System.out.println("true == " + vps.isPerfectSquare(1225000000));
+    }
+
+    public void percentageOfLetterInString() {
+        PercentageOfLetterInString polis = new PercentageOfLetterInString();
+
+        System.out.println("33 == " + polis.percentageLetter("foobar", 'o'));
+        System.out.println("0 == " + polis.percentageLetter("jjjj", 'k'));
+        System.out.println("100 == " + polis.percentageLetter("aa", 'a'));
+        System.out.println("50 == " + polis.percentageLetter("ab", 'a'));
+    }
+
+    public void checkIfAStringContainsAllBinaryCodesOfSizeK() {
+        CheckIfAStringContainsAllBinaryCodesOfSizeK ciascabcosk = new CheckIfAStringContainsAllBinaryCodesOfSizeK();
+
+        System.out.println("true == " + ciascabcosk.hasAllCodes("00110110", 2));
+        System.out.println("true == " + ciascabcosk.hasAllCodes("0110", 1));
+        System.out.println("false == " + ciascabcosk.hasAllCodes("0110", 2));
+        System.out.println("true == " + ciascabcosk.hasAllCodes("00110", 2));
+        System.out.println("false == " + ciascabcosk.hasAllCodes("00110", 3));
     }
 }
