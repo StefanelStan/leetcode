@@ -44,7 +44,7 @@ public class StartApril {
 //        start.minCostToConnectAllPoints();
 //        start.timeNeededToInformAllEmployees();
 //        start.subarrayProductLessThanK();
-//        start.rangeSumQuery2DImmutable();
+        start.rangeSumQuery2DImmutable();
 //        start.countPrefixesOfAGivenString();
 //        start.minimumAverageDifference();
 //        start.countUnguardedCellsInTheGrid();
@@ -374,7 +374,6 @@ public class StartApril {
         System.out.println("8 == " + rsq2di.sumRegion(2,1,4,3));
         System.out.println("11 == " + rsq2di.sumRegion(1,1,2,2));
         System.out.println("12 == " + rsq2di.sumRegion(1,2,2,4));
-
     }
 
     public void countPrefixesOfAGivenString() {
