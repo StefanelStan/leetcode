@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.june.MinMaxGame;
+import com.ss.leetcode.LC2022.june.NumberOfMatchingSubsequences;
 import com.ss.leetcode.LC2022.june.PartitionList;
 import com.ss.leetcode.LC2022.june.ReorderDataInLogFiles;
 import com.ss.leetcode.shared.ListNode;
@@ -12,7 +13,8 @@ public class StartJune {
 
 //        start.partitionList();
 //        start.minMaxGame();
-        start.reorderDataInLogFiles();
+//        start.reorderDataInLogFiles();
+        start.numberOfMatchingSubsequences();
     }
 
     public void partitionList() {
@@ -44,5 +46,12 @@ public class StartJune {
 
         System.out.println("[g1 act car, a8 act zoo, ab1 off key dog, a1 9 2 3 1, zo4 4 7] == " +
             Arrays.toString(rdilf.reorderLogFiles(new String[]{"a1 9 2 3 1","g1 act car","zo4 4 7","ab1 off key dog","a8 act zoo"})));
+    }
+
+    public void numberOfMatchingSubsequences() {
+        NumberOfMatchingSubsequences noms = new NumberOfMatchingSubsequences();
+
+        System.out.println("3 == " + noms.numMatchingSubseq("abcde", new String[]{"a","bb","acd","ace"}));
+        System.out.println("2 == " + noms.numMatchingSubseq("dsahjpjauf", new String[]{"ahjpjau","ja","ahbwzgqnuk","tnmlanowax"}));
     }
 }
