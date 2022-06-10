@@ -6,7 +6,67 @@ import java.util.Set;
 
 public class LongestSubstringWithoutRepeating {
     // https://leetcode.com/problems/longest-substring-without-repeating-characters/
-    public int lengthOfLongestSubstring(String string) {
+    public int lengthOfLongestSubstring(String s) {
+        if (s.length() <= 1) {
+            return s.length();
+        }
+
+        FlexibleWindow fw = new FlexibleWindow(s.toCharArray());
+        fw.process();
+        return fw.getMaxSize();
+    }
+
+    private static class FlexibleWindow {
+        int[] positions = new int[256];
+        char[] chars;
+        int maxSize;
+        private int size;
+        private int startPoint = -1;
+        public FlexibleWindow(char[] chrs) {
+            Arrays.fill(positions, -1);
+            this.chars = chrs;
+        }
+
+        public void process() {
+            for (int i = 0; i < chars.length; i++) {
+                if (positions[chars[i]] == -1) {
+                    positions[chars[i]] = i;
+                    size++;
+                    maxSize = Math.max(size, maxSize);
+                    if (startPoint == -1) {
+                        startPoint = i;
+                    }
+                } else {
+                    trimToSize(positions[chars[i]]);
+                    positions[chars[i]] = i;
+                    size++;
+                    maxSize = Math.max(size, maxSize);
+                    if (startPoint == -1) {
+                        startPoint = i;
+                    }
+                }
+            }
+        }
+
+        public int getMaxSize() {
+            return maxSize;
+        }
+
+        private void trimToSize(int point) {
+            for (int i = startPoint; i <= point; i++) {
+               positions[chars[i]] = -1;
+                size--;
+                startPoint++;
+            }
+            if (size == 0) {
+                startPoint = -1;
+            }
+        }
+
+    }
+
+
+    public int lengthOfLongestSubstring2(String string) {
         if (string.isEmpty()) {
             return 0;
         }
@@ -60,7 +120,7 @@ public class LongestSubstringWithoutRepeating {
 
 
 
-    public int lengthOfLongestSubstring2(String string) {
+    public int lengthOfLongestSubstring3(String string) {
         if (string.isEmpty()) {
             return 0;
         }
