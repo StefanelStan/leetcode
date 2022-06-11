@@ -1,9 +1,13 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.june.MatchSubstringAfterReplacement;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
+import com.ss.leetcode.LC2022.june.MinimumOperationsToReduceXToZero;
 import com.ss.leetcode.LC2022.june.NumberOfMatchingSubsequences;
 import com.ss.leetcode.LC2022.june.PartitionList;
 import com.ss.leetcode.LC2022.june.ReorderDataInLogFiles;
+import com.ss.leetcode.LC2022.june.StrongPasswordCheckerII;
+import com.ss.leetcode.LC2022.june.SuccessfulPairsOfSpellsAndPotions;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 
@@ -14,7 +18,11 @@ public class StartJune {
 //        start.partitionList();
 //        start.minMaxGame();
 //        start.reorderDataInLogFiles();
-        start.numberOfMatchingSubsequences();
+//        start.numberOfMatchingSubsequences();
+        start.minimumOperationsToReduceXToZero();
+//        start.strongPasswordCheckerII();
+//        start.successfulPairsOfSpellsAndPotions();
+//        start.matchSubstringAfterReplacement();
     }
 
     public void partitionList() {
@@ -53,5 +61,38 @@ public class StartJune {
 
         System.out.println("3 == " + noms.numMatchingSubseq("abcde", new String[]{"a","bb","acd","ace"}));
         System.out.println("2 == " + noms.numMatchingSubseq("dsahjpjauf", new String[]{"ahjpjau","ja","ahbwzgqnuk","tnmlanowax"}));
+    }
+
+    public void strongPasswordCheckerII() {
+        StrongPasswordCheckerII spcii = new StrongPasswordCheckerII();
+
+        System.out.println("true == " + spcii.strongPasswordCheckerII("IloveLe3tcode!"));
+        System.out.println("false == " + spcii.strongPasswordCheckerII("Me+You--IsMyDream"));
+        System.out.println("false == " + spcii.strongPasswordCheckerII("1aB!"));
+    }
+
+    public void successfulPairsOfSpellsAndPotions() {
+        SuccessfulPairsOfSpellsAndPotions sposap = new SuccessfulPairsOfSpellsAndPotions();
+
+        System.out.println("[4,0,3] == " + Arrays.toString(sposap.successfulPairs(new int[]{5,1,3}, new int[]{1,2,3,4,5}, 7)));
+        System.out.println("[2,0,2] == " + Arrays.toString(sposap.successfulPairs(new int[]{3,1,2}, new int[]{8,5,8}, 16)));
+        System.out.println("[2,0,2] == " + Arrays.toString(sposap.successfulPairs(new int[]{3,1,2}, new int[]{8,5,8}, 2986127332L)));
+    }
+
+    public void matchSubstringAfterReplacement() {
+        MatchSubstringAfterReplacement msar = new MatchSubstringAfterReplacement();
+
+        System.out.println("true == " + msar.matchReplacement("fool3e7bar","leet", new char[][]{{'e','3'},{'t','7'},{'t','8'}}));
+        System.out.println("false == " + msar.matchReplacement("fooleetbar","f00l", new char[][]{{'o','0'}}));
+        System.out.println("true == " + msar.matchReplacement("Fool33tbaR","leetd", new char[][]{{'e','3'},{'t','7'},{'t','8'},{'d','b'},{'p','b'}}));
+    }
+
+    public void minimumOperationsToReduceXToZero() {
+        MinimumOperationsToReduceXToZero motrxtz = new MinimumOperationsToReduceXToZero();
+
+        System.out.println("2 == " + motrxtz.minOperations(new int[]{1,1,4,2,3}, 5));
+        System.out.println("-1 == " + motrxtz.minOperations(new int[]{5,6,7,8,9}, 4));
+        System.out.println("5 == " + motrxtz.minOperations(new int[]{3,2,20,1,1,3}, 10));
+        System.out.println("1 == " + motrxtz.minOperations(new int[]{5,2,3,1,1}, 5));
     }
 }
