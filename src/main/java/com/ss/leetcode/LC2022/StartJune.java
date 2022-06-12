@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.june.MatchSubstringAfterReplacement;
+import com.ss.leetcode.LC2022.june.MaximumErasureValue;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
 import com.ss.leetcode.LC2022.june.MinimumOperationsToReduceXToZero;
 import com.ss.leetcode.LC2022.june.NumberOfMatchingSubsequences;
@@ -19,10 +20,11 @@ public class StartJune {
 //        start.minMaxGame();
 //        start.reorderDataInLogFiles();
 //        start.numberOfMatchingSubsequences();
-        start.minimumOperationsToReduceXToZero();
+//        start.minimumOperationsToReduceXToZero();
 //        start.strongPasswordCheckerII();
 //        start.successfulPairsOfSpellsAndPotions();
 //        start.matchSubstringAfterReplacement();
+        start.maximumErasureValue();
     }
 
     public void partitionList() {
@@ -94,5 +96,12 @@ public class StartJune {
         System.out.println("-1 == " + motrxtz.minOperations(new int[]{5,6,7,8,9}, 4));
         System.out.println("5 == " + motrxtz.minOperations(new int[]{3,2,20,1,1,3}, 10));
         System.out.println("1 == " + motrxtz.minOperations(new int[]{5,2,3,1,1}, 5));
+    }
+
+    public void maximumErasureValue() {
+        MaximumErasureValue mev = new MaximumErasureValue();
+
+        System.out.println("17 == " + mev.maximumUniqueSubarray(new int[]{4,2,4,5,6}));
+        System.out.println("8 == " + mev.maximumUniqueSubarray(new int[]{5,2,1,2,5,2,1,2,5}));
     }
 }
