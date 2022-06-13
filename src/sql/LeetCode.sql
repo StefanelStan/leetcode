@@ -110,3 +110,9 @@ FROM Users ORDER BY user_id;
 -- https://leetcode.com/problems/article-views-i/
 SELECT DISTINCT(author_id) AS id FROM Views
 WHERE author_id = viewer_id ORDER BY id;
+
+-- Top Travellers
+-- https://leetcode.com/problems/top-travellers/
+SELECT name, COALESCE(SUM(distance), 0) AS travelled_distance FROM Users u
+LEFT JOIN Rides r ON (u.id = r.user_id)
+GROUP BY u.id ORDER BY travelled_distance DESC, name ASC;

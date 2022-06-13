@@ -9,8 +9,10 @@ import com.ss.leetcode.LC2022.june.PartitionList;
 import com.ss.leetcode.LC2022.june.ReorderDataInLogFiles;
 import com.ss.leetcode.LC2022.june.StrongPasswordCheckerII;
 import com.ss.leetcode.LC2022.june.SuccessfulPairsOfSpellsAndPotions;
+import com.ss.leetcode.LC2022.june.Triangle;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartJune {
     public static void main(String[] args) {
@@ -24,7 +26,8 @@ public class StartJune {
 //        start.strongPasswordCheckerII();
 //        start.successfulPairsOfSpellsAndPotions();
 //        start.matchSubstringAfterReplacement();
-        start.maximumErasureValue();
+//        start.maximumErasureValue();
+        start.triangle();
     }
 
     public void partitionList() {
@@ -103,5 +106,12 @@ public class StartJune {
 
         System.out.println("17 == " + mev.maximumUniqueSubarray(new int[]{4,2,4,5,6}));
         System.out.println("8 == " + mev.maximumUniqueSubarray(new int[]{5,2,1,2,5,2,1,2,5}));
+    }
+
+    public void triangle() {
+        Triangle t = new Triangle();
+
+        System.out.println("11 == " + t.minimumTotal(List.of(List.of(2), List.of(3,4),List.of(6,5,7), List.of(4,1,8,3))));
+        System.out.println("-10 == " + t.minimumTotal(List.of(List.of(-10))));
     }
 }
