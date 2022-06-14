@@ -1,5 +1,7 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.june.CountSquareSubmatricesWithAllOnes;
+import com.ss.leetcode.LC2022.june.FindPlayersWithZeroOrOneLosses;
 import com.ss.leetcode.LC2022.june.MatchSubstringAfterReplacement;
 import com.ss.leetcode.LC2022.june.MaximumErasureValue;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
@@ -27,7 +29,9 @@ public class StartJune {
 //        start.successfulPairsOfSpellsAndPotions();
 //        start.matchSubstringAfterReplacement();
 //        start.maximumErasureValue();
-        start.triangle();
+//        start.triangle();
+//        start.findPlayersWithZeroOrOneLosses();
+        start.countSquareSubmatricesWithAllOnes();
     }
 
     public void partitionList() {
@@ -113,5 +117,20 @@ public class StartJune {
 
         System.out.println("11 == " + t.minimumTotal(List.of(List.of(2), List.of(3,4),List.of(6,5,7), List.of(4,1,8,3))));
         System.out.println("-10 == " + t.minimumTotal(List.of(List.of(-10))));
+    }
+
+    public void findPlayersWithZeroOrOneLosses() {
+        FindPlayersWithZeroOrOneLosses fpwzool = new FindPlayersWithZeroOrOneLosses();
+
+        System.out.println("[[1,2,10],[4,5,7,8]] == "
+            + fpwzool.findWinners(new int[][]{{1,3},{2,3},{3,6},{5,6},{5,7},{4,5},{4,8},{4,9},{10,4},{10,9}}));
+        System.out.println("[[1,2,5,6],[]] == " + fpwzool.findWinners(new int[][]{{2,3},{1,3},{5,4},{6,4}}));
+    }
+
+    public void countSquareSubmatricesWithAllOnes() {
+        CountSquareSubmatricesWithAllOnes csswao = new CountSquareSubmatricesWithAllOnes();
+
+        System.out.println("15 == " + csswao.countSquares(new int[][]{{0,1,1,1},{1,1,1,1},{0,1,1,1}}));
+        System.out.println("7 == " + csswao.countSquares(new int[][]{{1,0,1},{1,1,0},{1,1,0}}));
     }
 }
