@@ -1,5 +1,7 @@
 package com.ss.leetcode.LC2021.january;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,6 +12,63 @@ import java.util.TreeMap;
 public class LongestStringChain {
     // https://leetcode.com/problems/longest-string-chain/
     public int longestStrChain(String[] words) {
+        if (words.length == 1) {
+            return 1;
+        }
+        int[] lengthStart = new int[18];
+        Arrays.fill(lengthStart, -1);
+        Arrays.sort(words, Comparator.comparingInt(word -> word.length()));
+        int[] maxLengths = new int[words.length];
+        for (int i = 0; i < words.length; i++) {
+            if (lengthStart[words[i].length()] == -1) {
+                lengthStart[words[i].length()] = i;
+            }
+        }
+        for (int i = 0; i < lengthStart[words[words.length -1].length()]; i++) {
+            if (lengthStart[words[i].length() + 1] != -1) {
+                searchAndMakeChain(words, i, lengthStart[words[i].length() + 1], maxLengths);
+            }
+        }
+        int max = 1;
+        for (int length : maxLengths) {
+            max = Math.max(max, length);
+        }
+        return max;
+    }
+
+    private boolean canMakeChain(char[] s1, char[] s2) {
+        boolean skippedOnce = false;
+        for (int i = 0, j = 0; i < s1.length && j < s2.length;) {
+            if (s1[i] == s2[j]) {
+                i++;
+                j++;
+            } else {
+                if (skippedOnce) {
+                    return false;
+                } else {
+                    skippedOnce = true;
+                    j++;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void searchAndMakeChain(String[] words, int wIndex, int startIndex, int[] maxLengths) {
+        char[] word = words[wIndex].toCharArray();
+        for (int i = startIndex; i < words.length && words[i].length() == words[startIndex].length(); i++) {
+            if (canMakeChain(word, words[i].toCharArray())) {
+                if (maxLengths[wIndex] == 0) {
+                    maxLengths[wIndex] = 1;
+                    maxLengths[i] = Math.max(2, maxLengths[i]);
+                } else {
+                    maxLengths[i] = Math.max(maxLengths[i] , maxLengths[wIndex] + 1);
+                }
+            }
+        }
+    }
+
+    public int longestStrChain2(String[] words) {
         NavigableMap<Integer, List<String>> lenghtOfWords = putWordsIntoMap(words);
         Map<String, Integer> longestChain = new HashMap<>();
 

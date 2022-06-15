@@ -24,7 +24,7 @@ public class StartJanuary {
     public static void main(String[] args) {
         StartJanuary start = new StartJanuary();
 
-//        start.longestStringChain();
+        start.longestStringChain();
 //        start.constructKPalindrome(); //unfinished
 //        start.excelSheetColumnNumber();
 //        start.largestNumber();
@@ -37,7 +37,7 @@ public class StartJanuary {
 //        start.rottingOranges();
 //        start.coinExchange();
 //        start.longestTurbulentSubarray();
-        start.nextGreaterElementII();
+//        start.nextGreaterElementII();
 //        start.searchA2DMatrixII();
 //        start.streamChecker();
 //        start.splitTwoStringsToMakePalindrome();
@@ -45,11 +45,10 @@ public class StartJanuary {
 
     private void longestStringChain() {
         LongestStringChain lsc = new LongestStringChain();
-        String[] words = { "a", "b", "ba", "bca", "bda", "bdca" };
-        String[] words2 = { "xbc", "pcxbcf", "xb", "cxbc", "pcxbc" };
-        System.out.println("4 ==" + lsc.longestStrChain(words));
-        System.out.println("5 ==" + lsc.longestStrChain(words2));
-
+        System.out.println("4 == " + lsc.longestStrChain(new String[]{"a","b","ba","bca","bda","bdca"}));
+        System.out.println("5 == " + lsc.longestStrChain(new String[]{"xbc","pcxbcf","xb","cxbc","pcxbc"}));
+        System.out.println("1 == " + lsc.longestStrChain(new String[]{"abcd","dbqca"}));
+        System.out.println("4 == " + lsc.longestStrChain(new String[]{"a","ab","ac","bd","abc","abd","abdd"}));
     }
 
     private void constructKPalindrome() {
