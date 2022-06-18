@@ -5,9 +5,11 @@ import com.ss.leetcode.LC2022.june.FindPlayersWithZeroOrOneLosses;
 import com.ss.leetcode.LC2022.june.MatchSubstringAfterReplacement;
 import com.ss.leetcode.LC2022.june.MaximumErasureValue;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
+import com.ss.leetcode.LC2022.june.MinimumDifferenceBetweenHALOfKScores;
 import com.ss.leetcode.LC2022.june.MinimumOperationsToReduceXToZero;
 import com.ss.leetcode.LC2022.june.NumberOfMatchingSubsequences;
 import com.ss.leetcode.LC2022.june.PartitionList;
+import com.ss.leetcode.LC2022.june.PrefixAndSuffixSearch;
 import com.ss.leetcode.LC2022.june.ReorderDataInLogFiles;
 import com.ss.leetcode.LC2022.june.StrongPasswordCheckerII;
 import com.ss.leetcode.LC2022.june.SuccessfulPairsOfSpellsAndPotions;
@@ -31,7 +33,9 @@ public class StartJune {
 //        start.maximumErasureValue();
 //        start.triangle();
 //        start.findPlayersWithZeroOrOneLosses();
-        start.countSquareSubmatricesWithAllOnes();
+//        start.countSquareSubmatricesWithAllOnes();
+//        start.prefixAndSuffixSearch();
+        start.minimumDifferenceBetweenHighestAndLowestOfKScores();
     }
 
     public void partitionList() {
@@ -132,5 +136,32 @@ public class StartJune {
 
         System.out.println("15 == " + csswao.countSquares(new int[][]{{0,1,1,1},{1,1,1,1},{0,1,1,1}}));
         System.out.println("7 == " + csswao.countSquares(new int[][]{{1,0,1},{1,1,0},{1,1,0}}));
+    }
+
+    public void prefixAndSuffixSearch() {
+        PrefixAndSuffixSearch pass = new PrefixAndSuffixSearch(new String[]{"apple", "cider", "tram", "tramm"});
+
+        System.out.println("0 == " + pass.f("a", "e"));
+        System.out.println("-1 == " + pass.f("c", "e"));
+        System.out.println("1 == " + pass.f("c", "r"));
+        System.out.println("1 == " + pass.f("ci", "er"));
+        System.out.println("-1 == " + pass.f("ci", "re"));
+        System.out.println("-1 == " + pass.f("ci", "re"));
+        System.out.println("2 == " + pass.f("tr", "am"));
+        System.out.println("3 == " + pass.f("tr", "m"));
+        System.out.println("3 == " + pass.f("tr", "mm"));
+
+        pass = new PrefixAndSuffixSearch(new String[]{"a","a","a","a","a","b","b","b","b","b"});
+
+        System.out.println("4 == " + pass.f("a","a"));
+        System.out.println("4 == " + pass.f("a","a"));
+        System.out.println("9 == " + pass.f("b","b"));
+    }
+
+    public void minimumDifferenceBetweenHighestAndLowestOfKScores() {
+        MinimumDifferenceBetweenHALOfKScores mdbhaloks = new MinimumDifferenceBetweenHALOfKScores();
+
+        System.out.println("0 == " + mdbhaloks.minimumDifference(new int[]{90}, 1));
+        System.out.println("2 == " + mdbhaloks.minimumDifference(new int[]{9,4,1,7}, 2));
     }
 }
