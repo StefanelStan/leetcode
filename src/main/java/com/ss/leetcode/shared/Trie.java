@@ -1,6 +1,8 @@
 package com.ss.leetcode.shared;
 
 
+import java.util.List;
+
 public class Trie {
     private final TrieNode root;
 
@@ -46,6 +48,28 @@ public class Trie {
     public boolean startsWith(String word) {
         TrieNode node = getPrefix(word);
         return node != null;
+    }
+
+    public void getListOfSuggestions(String prefix, List<String> suggestions, int size) {
+        TrieNode node = getPrefix(prefix);
+        if (node == null) {
+            return;
+        }
+        fillUpWithSuggestions(node, prefix, suggestions, size);
+    }
+
+    private void fillUpWithSuggestions(TrieNode node, String prefix, List<String> suggestions, int size) {
+        if (suggestions.size() >= size) {
+            return;
+        }
+        if (node.isEnd()) {
+            suggestions.add(prefix);
+        }
+        for (int i = 0; i < node.links.length; i++) {
+            if (node.links[i] != null && suggestions.size() < size) {
+                fillUpWithSuggestions(node.links[i], prefix + (char)(i + 'a'), suggestions, size);
+            }
+        }
     }
 
 

@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2022.june.NumberOfMatchingSubsequences;
 import com.ss.leetcode.LC2022.june.PartitionList;
 import com.ss.leetcode.LC2022.june.PrefixAndSuffixSearch;
 import com.ss.leetcode.LC2022.june.ReorderDataInLogFiles;
+import com.ss.leetcode.LC2022.june.SearchSuggestionsSystem;
 import com.ss.leetcode.LC2022.june.StrongPasswordCheckerII;
 import com.ss.leetcode.LC2022.june.SuccessfulPairsOfSpellsAndPotions;
 import com.ss.leetcode.LC2022.june.Triangle;
@@ -35,7 +36,8 @@ public class StartJune {
 //        start.findPlayersWithZeroOrOneLosses();
 //        start.countSquareSubmatricesWithAllOnes();
 //        start.prefixAndSuffixSearch();
-        start.minimumDifferenceBetweenHighestAndLowestOfKScores();
+//        start.minimumDifferenceBetweenHighestAndLowestOfKScores();
+        start.searchSuggestionsSystem();
     }
 
     public void partitionList() {
@@ -163,5 +165,16 @@ public class StartJune {
 
         System.out.println("0 == " + mdbhaloks.minimumDifference(new int[]{90}, 1));
         System.out.println("2 == " + mdbhaloks.minimumDifference(new int[]{9,4,1,7}, 2));
+    }
+
+    public void searchSuggestionsSystem() {
+        SearchSuggestionsSystem sss = new SearchSuggestionsSystem();
+
+        System.out.println("[[mobile, moneypot, monitor],[mobile, moneypot, monitor],[mouse, mousepad],[mouse, mousepad],[mouse, mousepad]] == "
+            + sss.suggestedProducts(new String[]{"mobile","mouse","moneypot","monitor","mousepad"}, "mouse"));
+        System.out.println("[[havana],[havana],[havana],[havana],[havana],[havana]] == "
+            + sss.suggestedProducts(new String[]{"havana"}, "havana"));
+        System.out.println("[[baggage, bags, banner],[baggage, bags, banner],[baggage, bags],[bags]] == "
+            + sss.suggestedProducts(new String[]{"bags","baggage","banner","box","cloths"}, "bags"));
     }
 }
