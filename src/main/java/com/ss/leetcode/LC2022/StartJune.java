@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2022.june.PartitionList;
 import com.ss.leetcode.LC2022.june.PrefixAndSuffixSearch;
 import com.ss.leetcode.LC2022.june.ReorderDataInLogFiles;
 import com.ss.leetcode.LC2022.june.SearchSuggestionsSystem;
+import com.ss.leetcode.LC2022.june.ShortEncodingOfWords;
 import com.ss.leetcode.LC2022.june.StrongPasswordCheckerII;
 import com.ss.leetcode.LC2022.june.SuccessfulPairsOfSpellsAndPotions;
 import com.ss.leetcode.LC2022.june.Triangle;
@@ -37,7 +38,8 @@ public class StartJune {
 //        start.countSquareSubmatricesWithAllOnes();
 //        start.prefixAndSuffixSearch();
 //        start.minimumDifferenceBetweenHighestAndLowestOfKScores();
-        start.searchSuggestionsSystem();
+//        start.searchSuggestionsSystem();
+        start.shortEncodingOfWords();
     }
 
     public void partitionList() {
@@ -176,5 +178,12 @@ public class StartJune {
             + sss.suggestedProducts(new String[]{"havana"}, "havana"));
         System.out.println("[[baggage, bags, banner],[baggage, bags, banner],[baggage, bags],[bags]] == "
             + sss.suggestedProducts(new String[]{"bags","baggage","banner","box","cloths"}, "bags"));
+    }
+
+    public void shortEncodingOfWords() {
+        ShortEncodingOfWords seow = new ShortEncodingOfWords();
+
+        System.out.println("10 == " + seow.minimumLengthEncoding(new String[]{"time", "me", "bell"}));
+        System.out.println("2 == " + seow.minimumLengthEncoding(new String[]{"t"}));
     }
 }
