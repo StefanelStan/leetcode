@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.june.CountSquareSubmatricesWithAllOnes;
 import com.ss.leetcode.LC2022.june.FindPlayersWithZeroOrOneLosses;
+import com.ss.leetcode.LC2022.june.FurthestBuildingYouCanReach;
 import com.ss.leetcode.LC2022.june.MatchSubstringAfterReplacement;
 import com.ss.leetcode.LC2022.june.MaximumErasureValue;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
@@ -39,7 +40,8 @@ public class StartJune {
 //        start.prefixAndSuffixSearch();
 //        start.minimumDifferenceBetweenHighestAndLowestOfKScores();
 //        start.searchSuggestionsSystem();
-        start.shortEncodingOfWords();
+//        start.shortEncodingOfWords();
+        start.furthestBuildingYouCanReach();
     }
 
     public void partitionList() {
@@ -185,5 +187,13 @@ public class StartJune {
 
         System.out.println("10 == " + seow.minimumLengthEncoding(new String[]{"time", "me", "bell"}));
         System.out.println("2 == " + seow.minimumLengthEncoding(new String[]{"t"}));
+    }
+
+    public void furthestBuildingYouCanReach() {
+        FurthestBuildingYouCanReach fbycr = new FurthestBuildingYouCanReach();
+
+        System.out.println("4 == " + fbycr.furthestBuilding(new int[]{4,2,7,6,9,14,12}, 5, 1));
+        System.out.println("7 == " + fbycr.furthestBuilding(new int[]{4,12,2,7,3,18,20,3,19}, 10, 2));
+        System.out.println("3 == " + fbycr.furthestBuilding(new int[]{14,3,19,3}, 17, 0));
     }
 }
