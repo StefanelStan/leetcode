@@ -1,12 +1,15 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.june.CountAsterisks;
 import com.ss.leetcode.LC2022.june.CountSquareSubmatricesWithAllOnes;
 import com.ss.leetcode.LC2022.june.FindPlayersWithZeroOrOneLosses;
 import com.ss.leetcode.LC2022.june.FurthestBuildingYouCanReach;
 import com.ss.leetcode.LC2022.june.MatchSubstringAfterReplacement;
 import com.ss.leetcode.LC2022.june.MaximumErasureValue;
+import com.ss.leetcode.LC2022.june.MaximumXORAfterOperations;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
 import com.ss.leetcode.LC2022.june.MinimumDifferenceBetweenHALOfKScores;
+import com.ss.leetcode.LC2022.june.MinimumNumberOfOperationsToConvertTime;
 import com.ss.leetcode.LC2022.june.MinimumOperationsToReduceXToZero;
 import com.ss.leetcode.LC2022.june.NumberOfMatchingSubsequences;
 import com.ss.leetcode.LC2022.june.PartitionList;
@@ -41,7 +44,11 @@ public class StartJune {
 //        start.minimumDifferenceBetweenHighestAndLowestOfKScores();
 //        start.searchSuggestionsSystem();
 //        start.shortEncodingOfWords();
-        start.furthestBuildingYouCanReach();
+//        start.furthestBuildingYouCanReach();
+        start.minimumNumberOfOperationsToConvertTime();
+//        start.countAsterisks();
+//        start.countUnreachablePairsOfNodesInAnUndirectedGraph();
+//        start.maximumXORAfterOperations();
     }
 
     public void partitionList() {
@@ -195,5 +202,29 @@ public class StartJune {
         System.out.println("4 == " + fbycr.furthestBuilding(new int[]{4,2,7,6,9,14,12}, 5, 1));
         System.out.println("7 == " + fbycr.furthestBuilding(new int[]{4,12,2,7,3,18,20,3,19}, 10, 2));
         System.out.println("3 == " + fbycr.furthestBuilding(new int[]{14,3,19,3}, 17, 0));
+    }
+
+    public void minimumNumberOfOperationsToConvertTime() {
+        MinimumNumberOfOperationsToConvertTime mnootct = new MinimumNumberOfOperationsToConvertTime();
+
+        System.out.println("3 == " + mnootct.convertTime("02:30", "04:35"));
+        System.out.println("1 == " + mnootct.convertTime("11:00", "11:01"));
+        System.out.println("6 == " + mnootct.convertTime("03:48", "04:16"));
+    }
+
+    public void countAsterisks() {
+        CountAsterisks ca = new CountAsterisks();
+
+        System.out.println("2 == " + ca.countAsterisks("l|*e*et|c**o|*de|"));
+        System.out.println("0 == " + ca.countAsterisks("iamprogrammer"));
+        System.out.println("5 == " + ca.countAsterisks("yo|uar|e**|b|e***au|tifu|l"));
+    }
+
+    public void maximumXORAfterOperations() {
+        MaximumXORAfterOperations mxorao = new MaximumXORAfterOperations();
+
+        System.out.println("7 == " + mxorao.maximumXOR(new int[]{3,2,4,6}));
+        System.out.println("11 == " + mxorao.maximumXOR(new int[]{1,2,3,9,2}));
+        System.out.println("640 == " + mxorao.maximumXOR(new int[]{640}));
     }
 }
