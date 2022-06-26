@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2022.june.FindPlayersWithZeroOrOneLosses;
 import com.ss.leetcode.LC2022.june.FurthestBuildingYouCanReach;
 import com.ss.leetcode.LC2022.june.MatchSubstringAfterReplacement;
 import com.ss.leetcode.LC2022.june.MaximumErasureValue;
+import com.ss.leetcode.LC2022.june.MaximumPointsYouCanObtainFromCards;
 import com.ss.leetcode.LC2022.june.MaximumXORAfterOperations;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
 import com.ss.leetcode.LC2022.june.MinimumDifferenceBetweenHALOfKScores;
@@ -45,10 +46,11 @@ public class StartJune {
 //        start.searchSuggestionsSystem();
 //        start.shortEncodingOfWords();
 //        start.furthestBuildingYouCanReach();
-        start.minimumNumberOfOperationsToConvertTime();
+//        start.minimumNumberOfOperationsToConvertTime();
 //        start.countAsterisks();
 //        start.countUnreachablePairsOfNodesInAnUndirectedGraph();
 //        start.maximumXORAfterOperations();
+        start.maximumPointsYouCanObtainFromCards();
     }
 
     public void partitionList() {
@@ -226,5 +228,13 @@ public class StartJune {
         System.out.println("7 == " + mxorao.maximumXOR(new int[]{3,2,4,6}));
         System.out.println("11 == " + mxorao.maximumXOR(new int[]{1,2,3,9,2}));
         System.out.println("640 == " + mxorao.maximumXOR(new int[]{640}));
+    }
+
+    public void maximumPointsYouCanObtainFromCards() {
+        MaximumPointsYouCanObtainFromCards mpycofc = new MaximumPointsYouCanObtainFromCards();
+
+        System.out.println("12 == " + mpycofc.maxScore(new int[]{1,2,3,4,5,6,1}, 3));
+        System.out.println("4 == " + mpycofc.maxScore(new int[]{2,2,2}, 2));
+        System.out.println("55 == " + mpycofc.maxScore(new int[]{9,7,7,9,7,7,9}, 7));
     }
 }
