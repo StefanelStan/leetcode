@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.june.CountAsterisks;
+import com.ss.leetcode.LC2022.june.CountNodesWithTheHighestScore;
 import com.ss.leetcode.LC2022.june.CountSquareSubmatricesWithAllOnes;
 import com.ss.leetcode.LC2022.june.FindPlayersWithZeroOrOneLosses;
 import com.ss.leetcode.LC2022.june.FurthestBuildingYouCanReach;
@@ -9,6 +10,7 @@ import com.ss.leetcode.LC2022.june.MaximumErasureValue;
 import com.ss.leetcode.LC2022.june.MaximumPointsYouCanObtainFromCards;
 import com.ss.leetcode.LC2022.june.MaximumXORAfterOperations;
 import com.ss.leetcode.LC2022.june.MinMaxGame;
+import com.ss.leetcode.LC2022.june.MinimumDeletionsToMakeCharacterFrequenciesUnique;
 import com.ss.leetcode.LC2022.june.MinimumDifferenceBetweenHALOfKScores;
 import com.ss.leetcode.LC2022.june.MinimumNumberOfOperationsToConvertTime;
 import com.ss.leetcode.LC2022.june.MinimumOperationsToReduceXToZero;
@@ -50,7 +52,9 @@ public class StartJune {
 //        start.countAsterisks();
 //        start.countUnreachablePairsOfNodesInAnUndirectedGraph();
 //        start.maximumXORAfterOperations();
-        start.maximumPointsYouCanObtainFromCards();
+//        start.maximumPointsYouCanObtainFromCards();
+//        start.countNodesWithTheHighestScore();
+        start.minimumDeletionsToMakeCharacterFrequenciesUnique();
     }
 
     public void partitionList() {
@@ -236,5 +240,47 @@ public class StartJune {
         System.out.println("12 == " + mpycofc.maxScore(new int[]{1,2,3,4,5,6,1}, 3));
         System.out.println("4 == " + mpycofc.maxScore(new int[]{2,2,2}, 2));
         System.out.println("55 == " + mpycofc.maxScore(new int[]{9,7,7,9,7,7,9}, 7));
+    }
+
+    public void countNodesWithTheHighestScore() {
+        CountNodesWithTheHighestScore cnwths = new CountNodesWithTheHighestScore();
+
+        System.out.println("3 == " + cnwths.countHighestScoreNodes(new int[]{-1,2,0,2,0}));
+        System.out.println("2 == " + cnwths.countHighestScoreNodes(new int[]{-1,2,0}));
+    }
+
+    public void minimumDeletionsToMakeCharacterFrequenciesUnique() {
+        MinimumDeletionsToMakeCharacterFrequenciesUnique mdtmcfu = new MinimumDeletionsToMakeCharacterFrequenciesUnique();
+
+        System.out.println("0 == " + mdtmcfu.minDeletions("aab"));
+        System.out.println("2 == " + mdtmcfu.minDeletions("aaabbbcc"));
+        System.out.println("2 == " + mdtmcfu.minDeletions("ceabaacb"));
+        System.out.println("1 == " + mdtmcfu.minDeletions("rrrttt"));
+        System.out.println("1 == " + mdtmcfu.minDeletions("accdcdadddbaadbc"));
+        System.out.println("276 == " + mdtmcfu.minDeletions("abcdefghijklmnopqrstuvwxwzabcdefghijklmn"
+            + "opqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrst"
+            + "uvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwz"
+            + "abcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdef"
+            + "ghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijkl"
+            + "mnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqr"
+            + "stuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwx"
+            + "wzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcd"
+            + "efghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghij"
+            + "klmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnop"
+            + "qrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuv"
+            + "wxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzab"
+            + "cdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefgh"
+            + "ijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklm"
+            + "nopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrs"
+            + "tuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxw"
+            + "zabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcde"
+            + "fghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijk"
+            + "lmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopq"
+            + "rstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvw"
+            + "xwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabc"
+            + "defghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghi"
+            + "jklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmno"
+            + "pqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstu"
+            + "vwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwz"));
     }
 }
