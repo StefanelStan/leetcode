@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2022.june.MinimumOperationsToReduceXToZero;
 import com.ss.leetcode.LC2022.june.NumberOfMatchingSubsequences;
 import com.ss.leetcode.LC2022.june.PartitionList;
 import com.ss.leetcode.LC2022.june.PrefixAndSuffixSearch;
+import com.ss.leetcode.LC2022.june.QueueReconstructionByHeight;
 import com.ss.leetcode.LC2022.june.ReorderDataInLogFiles;
 import com.ss.leetcode.LC2022.june.SearchSuggestionsSystem;
 import com.ss.leetcode.LC2022.june.ShortEncodingOfWords;
@@ -54,7 +55,8 @@ public class StartJune {
 //        start.maximumXORAfterOperations();
 //        start.maximumPointsYouCanObtainFromCards();
 //        start.countNodesWithTheHighestScore();
-        start.minimumDeletionsToMakeCharacterFrequenciesUnique();
+//        start.minimumDeletionsToMakeCharacterFrequenciesUnique();
+        start.queueReconstructionByHeight();
     }
 
     public void partitionList() {
@@ -282,5 +284,16 @@ public class StartJune {
             + "jklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmno"
             + "pqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstu"
             + "vwxwzabcdefghijklmnopqrstuvwxwzabcdefghijklmnopqrstuvwxwz"));
+    }
+
+    public void queueReconstructionByHeight() {
+        QueueReconstructionByHeight qrbh = new QueueReconstructionByHeight();
+
+        System.out.println("[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] == "
+            + Arrays.deepToString(qrbh.reconstructQueue(new int[][]{{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}})));
+        System.out.println("[[4,0],[5,0],[2,2],[3,2],[1,4],[6,0]] == "
+            + Arrays.deepToString(qrbh.reconstructQueue(new int[][]{{6,0},{5,0},{4,0},{3,2},{2,2},{1,4}})));
+        System.out.println("[[0,0],[6,0],[1,1],[5,1],[5,2],[4,3],[7,0],[6,2],[5,5],[6,3]] == "
+            + Arrays.deepToString(qrbh.reconstructQueue(new int[][]{{0,0},{6,2},{5,5},{4,3},{5,2},{1,1},{6,0},{6,3},{7,0},{5,1}})));
     }
 }
