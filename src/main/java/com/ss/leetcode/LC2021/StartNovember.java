@@ -82,7 +82,6 @@ public class StartNovember {
 //        start.minimumNumberOfBucketsCollectRainwaterHouses();
         // missing or hidden description and requirements
 //        start.checkCompletenessOfABinaryTree();
-//        start.minimumMovesToEqualArrayElementsII(); // not working
 //        start.heaters();
 //        start.accountsMerge();
 //        start.findTargetIndicesAfterSortingArray();
@@ -769,14 +768,6 @@ public class StartNovember {
         System.out.println("false == " + ccoabt.isCompleteTree(root3));
         System.out.println("false == " + ccoabt.isCompleteTree(root4));
         System.out.println("false == " + ccoabt.isCompleteTree(root5));
-    }
-
-    public void minimumMovesToEqualArrayElementsII() {
-        MinimumMovesToEqualArrayElementsII mmteaeii = new MinimumMovesToEqualArrayElementsII();
-
-        System.out.println("2 == " + mmteaeii.minMoves2(new int[]{1,2,3}));
-        System.out.println("16 == " + mmteaeii.minMoves2(new int[]{1,10,2,9}));
-        System.out.println("44 == " + mmteaeii.minMoves2(new int[]{10,11,-10,-11, -12}));
     }
 
     public void heaters() {

@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.june.MinimumMovesToEqualArrayElementsII;
 import com.ss.leetcode.LC2022.june.CountAsterisks;
 import com.ss.leetcode.LC2022.june.CountNodesWithTheHighestScore;
 import com.ss.leetcode.LC2022.june.CountSquareSubmatricesWithAllOnes;
@@ -56,7 +57,8 @@ public class StartJune {
 //        start.maximumPointsYouCanObtainFromCards();
 //        start.countNodesWithTheHighestScore();
 //        start.minimumDeletionsToMakeCharacterFrequenciesUnique();
-        start.queueReconstructionByHeight();
+//        start.queueReconstructionByHeight();
+        start.minimumMovesToEqualArrayElementsII();
     }
 
     public void partitionList() {
@@ -295,5 +297,13 @@ public class StartJune {
             + Arrays.deepToString(qrbh.reconstructQueue(new int[][]{{6,0},{5,0},{4,0},{3,2},{2,2},{1,4}})));
         System.out.println("[[0,0],[6,0],[1,1],[5,1],[5,2],[4,3],[7,0],[6,2],[5,5],[6,3]] == "
             + Arrays.deepToString(qrbh.reconstructQueue(new int[][]{{0,0},{6,2},{5,5},{4,3},{5,2},{1,1},{6,0},{6,3},{7,0},{5,1}})));
+    }
+
+    public void minimumMovesToEqualArrayElementsII() {
+        MinimumMovesToEqualArrayElementsII mmteaeii = new MinimumMovesToEqualArrayElementsII();
+
+        System.out.println("2 == " + mmteaeii.minMoves2(new int[]{1,2,3}));
+        System.out.println("16 == " + mmteaeii.minMoves2(new int[]{1,10,2,9}));
+        System.out.println("294 == " + mmteaeii.minMoves2(new int[]{-45,23,17,17,-18,-10,0,12,9,13,90,13,12,13,11,7,-4,-7,-16}));
     }
 }
