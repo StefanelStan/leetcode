@@ -6,6 +6,22 @@ import java.util.Comparator;
 public class MaximumUnitsOnATruck {
     // https://leetcode.com/problems/maximum-units-on-a-truck/
     public int maximumUnits(int[][] boxTypes, int truckSize) {
+        Arrays.sort(boxTypes, (a,b) -> b[1] - a[1]);
+        int maxUnits = 0;
+        int stepUnits = 0;
+        for (int i = 0; i < boxTypes.length && truckSize > 0; i++) {
+            stepUnits = Math.min(boxTypes[i][0], truckSize);
+            maxUnits += (stepUnits * boxTypes[i][1]);
+            truckSize -= stepUnits;
+        }
+        return maxUnits;
+    }
+
+
+
+
+
+    public int maximumUnits2(int[][] boxTypes, int truckSize) {
         // order the boxes by their maximum size/capacity. We want them first
         Arrays.sort(boxTypes, Comparator.comparingInt(a -> a[0]));
         int remainingTruckCapacity = truckSize;
