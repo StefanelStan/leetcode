@@ -17,10 +17,6 @@ public class MaximumUnitsOnATruck {
         return maxUnits;
     }
 
-
-
-
-
     public int maximumUnits2(int[][] boxTypes, int truckSize) {
         // order the boxes by their maximum size/capacity. We want them first
         Arrays.sort(boxTypes, Comparator.comparingInt(a -> a[0]));
