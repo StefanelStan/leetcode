@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.july.Candy;
 import com.ss.leetcode.LC2022.july.DecodeTheMessage;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
 
@@ -8,7 +9,8 @@ public class StartJuly {
         StartJuly start = new StartJuly();
 
 //        start.maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts();
-        start.decodeTheMessage();
+//        start.decodeTheMessage();
+        start.candy();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -25,5 +27,13 @@ public class StartJuly {
 
         System.out.println("this is a secret == " + dtm.decodeMessage("the quick brown fox jumps over the lazy dog", "vkbs bs t suepuv"));
         System.out.println("the five boxing wizards jump quickly == " + dtm.decodeMessage("eljuxhpwnyrdgtqkviszcfmabo", "zwx hnfx lqantp mnoeius ycgk vcnjrdb"));
+    }
+
+    public void candy() {
+        Candy c = new Candy();
+
+//        System.out.println("5 == " + c.candy(new int[]{1,0,2}));
+//        System.out.println("4 == " + c.candy(new int[]{1,2,2}));
+        System.out.println("12 == " + c.candy(new int[]{29,51,87,87,72,12}));
     }
 }
