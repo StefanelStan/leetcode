@@ -1,10 +1,12 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.july.CalculateAmountPaidInTaxes;
 import com.ss.leetcode.LC2022.july.Candy;
 import com.ss.leetcode.LC2022.july.CheckIfMatrixIsXMatrix;
 import com.ss.leetcode.LC2022.july.DecodeTheMessage;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
+import com.ss.leetcode.LC2022.july.RemoveDigitFromNumberToMaximizeResult;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -14,7 +16,9 @@ public class StartJuly {
 //        start.decodeTheMessage();
 //        start.candy();
 //        start.longestConsecutiveSequence();
-        start.checkIfMatrixIsXMatrix();
+//        start.checkIfMatrixIsXMatrix();
+        start.calculateAmountPaidInTaxes();
+//        start.removeDigitFromNumberToMaximizeResult();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -54,5 +58,25 @@ public class StartJuly {
 
         System.out.println("true == " + cimixm.checkXMatrix(new int[][]{{2,0,0,1},{0,3,1,0},{0,5,2,0},{4,0,0,2}}));
         System.out.println("false == " + cimixm.checkXMatrix(new int[][]{{5,7,0},{0,3,1},{0,5,0}}));
+    }
+
+    public void calculateAmountPaidInTaxes() {
+        CalculateAmountPaidInTaxes capit = new CalculateAmountPaidInTaxes();
+
+        System.out.println("2.65000 == " + capit.calculateTax(new int[][]{{3,50},{7,10},{12,25}}, 10));
+        System.out.println("0.25000 == " + capit.calculateTax(new int[][]{{1,0},{4,25},{5,50}}, 2));
+        System.out.println("0.00000 == " + capit.calculateTax(new int[][]{{2,50}}, 0));
+    }
+
+    public void removeDigitFromNumberToMaximizeResult() {
+        RemoveDigitFromNumberToMaximizeResult rdfntmr = new RemoveDigitFromNumberToMaximizeResult();
+
+        System.out.println("12 == " + rdfntmr.removeDigit("123", '3'));
+        System.out.println("231 == " + rdfntmr.removeDigit("1231", '1'));
+        System.out.println("51 == " + rdfntmr.removeDigit("551", '5'));
+        System.out.println("51 == " + rdfntmr.removeDigit("551", '5'));
+        System.out.println("361955234 == " + rdfntmr.removeDigit("3619552534", '5'));
+        System.out.println("7319 == " + rdfntmr.removeDigit("73197", '7'));
+        System.out.println("782198816375484682 == " + rdfntmr.removeDigit("7821988163754846982", '9'));
     }
 }
