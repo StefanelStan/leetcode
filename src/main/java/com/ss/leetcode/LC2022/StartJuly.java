@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2022.july.DecodeTheMessage;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
 import com.ss.leetcode.LC2022.july.RemoveDigitFromNumberToMaximizeResult;
+import com.ss.leetcode.LC2022.july.SolvingQuestionsWithBrainpower;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -17,8 +18,9 @@ public class StartJuly {
 //        start.candy();
 //        start.longestConsecutiveSequence();
 //        start.checkIfMatrixIsXMatrix();
-        start.calculateAmountPaidInTaxes();
+//        start.calculateAmountPaidInTaxes();
 //        start.removeDigitFromNumberToMaximizeResult();
+        start.solvingQuestionsWithBrainpower();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -78,5 +80,13 @@ public class StartJuly {
         System.out.println("361955234 == " + rdfntmr.removeDigit("3619552534", '5'));
         System.out.println("7319 == " + rdfntmr.removeDigit("73197", '7'));
         System.out.println("782198816375484682 == " + rdfntmr.removeDigit("7821988163754846982", '9'));
+    }
+
+    public void solvingQuestionsWithBrainpower() {
+        SolvingQuestionsWithBrainpower sqwb = new SolvingQuestionsWithBrainpower();
+
+        System.out.println("5 == " + sqwb.mostPoints(new int[][]{{3,2},{4,3},{4,4},{2,5}}));
+        System.out.println("7 == " + sqwb.mostPoints(new int[][]{{1,1},{2,2},{3,3},{4,4},{5,5}}));
+        System.out.println("7 == " + sqwb.mostPoints(new int[][]{{3,2},{4,1},{4,5},{2,5},{3,1}}));
     }
 }
