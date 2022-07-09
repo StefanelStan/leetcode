@@ -4,10 +4,14 @@ import com.ss.leetcode.LC2022.july.CalculateAmountPaidInTaxes;
 import com.ss.leetcode.LC2022.july.Candy;
 import com.ss.leetcode.LC2022.july.CheckIfMatrixIsXMatrix;
 import com.ss.leetcode.LC2022.july.DecodeTheMessage;
+import com.ss.leetcode.LC2022.july.EvaluateBooleanBinaryTree;
+import com.ss.leetcode.LC2022.july.JumpGameVI;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
+import com.ss.leetcode.LC2022.july.MinimumSumOfSquaredDifference;
 import com.ss.leetcode.LC2022.july.RemoveDigitFromNumberToMaximizeResult;
 import com.ss.leetcode.LC2022.july.SolvingQuestionsWithBrainpower;
+import com.ss.leetcode.shared.TreeNode;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -20,7 +24,10 @@ public class StartJuly {
 //        start.checkIfMatrixIsXMatrix();
 //        start.calculateAmountPaidInTaxes();
 //        start.removeDigitFromNumberToMaximizeResult();
-        start.solvingQuestionsWithBrainpower();
+//        start.solvingQuestionsWithBrainpower();
+//        start.jumpGameVI();
+//        start.evaluateBooleanBinaryTree();
+        start.minimumSumOfSquaredDifference();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -88,5 +95,35 @@ public class StartJuly {
         System.out.println("5 == " + sqwb.mostPoints(new int[][]{{3,2},{4,3},{4,4},{2,5}}));
         System.out.println("7 == " + sqwb.mostPoints(new int[][]{{1,1},{2,2},{3,3},{4,4},{5,5}}));
         System.out.println("7 == " + sqwb.mostPoints(new int[][]{{3,2},{4,1},{4,5},{2,5},{3,1}}));
+    }
+
+    public void jumpGameVI() {
+        JumpGameVI jgvi = new JumpGameVI();
+
+        System.out.println("7 == " + jgvi.maxResult(new int[]{1,-1,-2,4,-7,3}, 2));
+        System.out.println("17 == " + jgvi.maxResult(new int[]{10,-5,-2,4,0,3}, 3));
+        System.out.println("0 == " + jgvi.maxResult(new int[]{1,-5,-20,4,-1,3,-6,-3}, 2));
+        System.out.println("28 == " + jgvi.maxResult(new int[]{6,4,2,7,-1,-5,-3,-8,-4,-4,-6,-1,5,-3,8,-8,3}, 3));
+        System.out.println("28 == " + jgvi.maxResult(new int[]{6,4,2,7,-1,-5,-3,-8,-4,-4,-6,-1,5,-3,8,-8,3}, 3));
+    }
+
+    public void evaluateBooleanBinaryTree() {
+        EvaluateBooleanBinaryTree ebbt = new EvaluateBooleanBinaryTree();
+
+        TreeNode root1 = new TreeNode(2, new TreeNode(1), new TreeNode(3, new TreeNode(0), new TreeNode(1)));
+
+        System.out.println("true == " + ebbt.evaluateTree(root1));
+        System.out.println("false == " + ebbt.evaluateTree(new TreeNode(0)));
+    }
+
+    public void minimumSumOfSquaredDifference() {
+        MinimumSumOfSquaredDifference msosd = new MinimumSumOfSquaredDifference();
+
+        System.out.println("579 == " + msosd.minSumSquareDiff(new int[]{1,2,3,4}, new int[]{2,10,20,19}, 0,0));
+        System.out.println("43 == " + msosd.minSumSquareDiff(new int[]{1,4,10,12}, new int[]{5,8,6,9}, 1,1));
+        System.out.println("27 == " + msosd.minSumSquareDiff(new int[]{7,11,4,19,11,5,6,1,8}, new int[]{4,7,6,16,12,9,10,2,10}, 3,6));
+        System.out.println("0 == " + msosd.minSumSquareDiff(new int[]{1,4,10,12}, new int[]{5,8,6,9}, 10, 5));
+        System.out.println("985 == " + msosd.minSumSquareDiff(new int[]{19,18,19,18,18,19,19}, new int[]{1,0,1,0,0,1,1}, 10, 33));
+        System.out.println("17 == " + msosd.minSumSquareDiff(new int[]{18,4,8,19,13,8}, new int[]{18,11,8,2,13,15}, 16, 8));
     }
 }

@@ -1,11 +1,5 @@
 package com.ss.leetcode.LC2021.december;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-
 public class JumpGameIII {
     // https://leetcode.com/problems/jump-game-iii/
     public boolean canReach(int[] arr, int start) {
