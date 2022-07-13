@@ -2,6 +2,7 @@ package com.ss.leetcode.shared;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 //Definition for a binary tree node.
 public class TreeNode {
@@ -45,4 +46,10 @@ public class TreeNode {
         }
     }
 
+    @Override
+    public String toString() {
+        List<Integer> lst = new ArrayList<>();
+        traversePreorder(this, lst);
+        return String.valueOf(val);
+    }
 }

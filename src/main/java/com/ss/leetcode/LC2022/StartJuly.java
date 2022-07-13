@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.july.Candy;
 import com.ss.leetcode.LC2022.july.CheckIfMatrixIsXMatrix;
 import com.ss.leetcode.LC2022.july.DecodeTheMessage;
 import com.ss.leetcode.LC2022.july.EvaluateBooleanBinaryTree;
+import com.ss.leetcode.LC2022.july.FindDuplicateSubtrees;
 import com.ss.leetcode.LC2022.july.JumpGameVI;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
@@ -12,6 +13,7 @@ import com.ss.leetcode.LC2022.july.MinimumSumOfSquaredDifference;
 import com.ss.leetcode.LC2022.july.RemoveDigitFromNumberToMaximizeResult;
 import com.ss.leetcode.LC2022.july.SolvingQuestionsWithBrainpower;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.YieldTree;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -27,7 +29,8 @@ public class StartJuly {
 //        start.solvingQuestionsWithBrainpower();
 //        start.jumpGameVI();
 //        start.evaluateBooleanBinaryTree();
-        start.minimumSumOfSquaredDifference();
+//        start.minimumSumOfSquaredDifference();
+        start.findDuplicateSubtrees();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -125,5 +128,75 @@ public class StartJuly {
         System.out.println("0 == " + msosd.minSumSquareDiff(new int[]{1,4,10,12}, new int[]{5,8,6,9}, 10, 5));
         System.out.println("985 == " + msosd.minSumSquareDiff(new int[]{19,18,19,18,18,19,19}, new int[]{1,0,1,0,0,1,1}, 10, 33));
         System.out.println("17 == " + msosd.minSumSquareDiff(new int[]{18,4,8,19,13,8}, new int[]{18,11,8,2,13,15}, 16, 8));
+    }
+
+    public void findDuplicateSubtrees() {
+        FindDuplicateSubtrees fds = new FindDuplicateSubtrees();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3, new TreeNode(2, new TreeNode(4), null), new TreeNode(4)));
+        TreeNode root2 = new TreeNode(2, new TreeNode(1), new TreeNode(1));
+        TreeNode root3 = new TreeNode(2, new TreeNode(2, new TreeNode(3), null), new TreeNode(2, new TreeNode(3), null));
+        TreeNode root4 = new TreeNode(1, new TreeNode(2, new TreeNode(0, new TreeNode(0), new TreeNode(0)), null),
+            new TreeNode(2, null, new TreeNode(0, new TreeNode(0), new TreeNode(0))));
+
+        TreeNode root5 = new TreeNode(0, null,
+            new TreeNode(0,
+                new TreeNode(4,
+                    new TreeNode(1,
+                        new TreeNode(4,
+                            new TreeNode(7,
+                                new TreeNode(7,
+                                    new TreeNode(9, new TreeNode(4), new TreeNode(4)),
+                                    new TreeNode(8, new TreeNode(7), new TreeNode(7))),
+                                new TreeNode(7,
+                                    new TreeNode(1, null, new TreeNode(1)),
+                                    new TreeNode(7, new TreeNode(5), new TreeNode(6)))),
+                            new TreeNode(4)),
+                        new TreeNode(0,
+                            new TreeNode(1,
+                                new TreeNode(0,
+                                    new TreeNode(7, new TreeNode(2), new TreeNode(7)),
+                                    new TreeNode(7, new TreeNode(3), null)),
+                                new TreeNode(2,
+                                    new TreeNode(2, new TreeNode(9), new TreeNode(1)),
+                                    new TreeNode(6, null, new TreeNode(2)))),
+                            new TreeNode(6,
+                                new TreeNode(5, null, new TreeNode(7, new TreeNode(4), new TreeNode(4))),
+                                new TreeNode(5, null, new TreeNode(4, new TreeNode(8), null))))),
+                    new TreeNode(2,
+                        new TreeNode(4,
+                            null,
+                            new TreeNode(1,
+                                new TreeNode(9,
+                                    new TreeNode(6, null, new TreeNode(7)),
+                                    new TreeNode(4, null, new TreeNode(6))),
+                                new TreeNode(3,
+                                    new TreeNode(6, null, new TreeNode(7)),
+                                    null))),
+                        new TreeNode(3,
+                            new TreeNode(0,
+                                new TreeNode(3, null, new TreeNode(9, new TreeNode(4), new TreeNode(3))),
+                                null),
+                            null))),
+                new TreeNode(9, null,
+                    new TreeNode(4, new TreeNode(5),
+                        new TreeNode(5,
+                            new TreeNode(2,
+                                new TreeNode(7, new TreeNode(1, new TreeNode(5), new TreeNode(8)), null),
+                                new TreeNode(6)),
+                            new TreeNode(8,
+                                new TreeNode(6, new TreeNode(2, new TreeNode(4), new TreeNode(8)), null),
+                                new TreeNode(7,
+                                    new TreeNode(9, new TreeNode(3), new TreeNode(5)),
+                                    new TreeNode(1, new TreeNode(5), null))))))));
+
+        TreeNode root6 = new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0))))))))))))))))))))))))))))))))))))))))));
+//        System.out.println("[[2,4], 4] == " + fds.findDuplicateSubtrees(root1));
+//        System.out.println("[[1]] == " + fds.findDuplicateSubtrees(root2));
+//        System.out.println("[[2,3],[3]] == " + fds.findDuplicateSubtrees(root3));
+        System.out.println("[[0,0,0],[0]] == " + fds.findDuplicateSubtrees(root4));
+//        System.out.println("[[6],[6,null,7],[2],[7],[1],[4],[8],[3],[5]] == " + fds.findDuplicateSubtrees(root5));
+//        System.out.println("9 == " + fds.findDuplicateSubtrees(root5).size());
+//        System.out.println("14 == " + fds.findDuplicateSubtrees(root6).size());
     }
 }
