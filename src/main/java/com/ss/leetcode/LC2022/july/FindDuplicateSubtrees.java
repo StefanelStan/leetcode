@@ -2,8 +2,10 @@ package com.ss.leetcode.LC2022.july;
 
 import com.ss.leetcode.shared.TreeNode;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class FindDuplicateSubtrees {
@@ -13,6 +15,34 @@ public class FindDuplicateSubtrees {
     // "1, null, 2" ->
     // "1, 2, null" ->  etc.
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        Map<String, TreeNode[]> inOrderTraverse = new HashMap<>();
+        traverseTree(root, inOrderTraverse);
+        List<TreeNode> duplicated = new ArrayList<>();
+        inOrderTraverse.forEach((k, v) -> {
+            if (v[0] != null && v[1] != null) {
+                duplicated.add(v[1]);
+            }
+        });
+        return duplicated;
+    }
+
+    private String traverseTree(TreeNode node, Map<String, TreeNode[]> inOrderTraverse) {
+        if (node == null) {
+            return "";
+        }
+        String onLeft = traverseTree(node.left, inOrderTraverse);
+        String onRight = traverseTree(node.right, inOrderTraverse);
+        String val = "[" + onLeft + "," + node.val + "," + onRight + "]";
+        TreeNode[] signNodes = inOrderTraverse.computeIfAbsent(val, k -> new TreeNode[2]);
+        if(signNodes[0] == null) {
+            signNodes[0] = node;
+        } else {
+            signNodes[1] = node;
+        }
+        return val;
+    }
+
+    public List<TreeNode> findDuplicateSubtrees2(TreeNode root) {
         if (root.left == root.right) {
             return new ArrayList<>();
         }

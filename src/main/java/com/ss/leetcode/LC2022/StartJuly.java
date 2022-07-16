@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2022.july.CheckIfMatrixIsXMatrix;
 import com.ss.leetcode.LC2022.july.DecodeTheMessage;
 import com.ss.leetcode.LC2022.july.EvaluateBooleanBinaryTree;
 import com.ss.leetcode.LC2022.july.FindDuplicateSubtrees;
+import com.ss.leetcode.LC2022.july.GreatestEnglishLetterInUpperAndLowerCase;
 import com.ss.leetcode.LC2022.july.JumpGameVI;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
@@ -30,7 +31,8 @@ public class StartJuly {
 //        start.jumpGameVI();
 //        start.evaluateBooleanBinaryTree();
 //        start.minimumSumOfSquaredDifference();
-        start.findDuplicateSubtrees();
+//        start.findDuplicateSubtrees();
+        start.greatestEnglishLetterInUpperAndLowerCase();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -191,12 +193,20 @@ public class StartJuly {
                                     new TreeNode(1, new TreeNode(5), null))))))));
 
         TreeNode root6 = new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0, null, new TreeNode(0))))))))))))))))))))))))))))))))))))))))));
-//        System.out.println("[[2,4], 4] == " + fds.findDuplicateSubtrees(root1));
-//        System.out.println("[[1]] == " + fds.findDuplicateSubtrees(root2));
-//        System.out.println("[[2,3],[3]] == " + fds.findDuplicateSubtrees(root3));
+        System.out.println("[[2,4], 4] == " + fds.findDuplicateSubtrees(root1));
+        System.out.println("[[1]] == " + fds.findDuplicateSubtrees(root2));
+        System.out.println("[[2,3],[3]] == " + fds.findDuplicateSubtrees(root3));
         System.out.println("[[0,0,0],[0]] == " + fds.findDuplicateSubtrees(root4));
-//        System.out.println("[[6],[6,null,7],[2],[7],[1],[4],[8],[3],[5]] == " + fds.findDuplicateSubtrees(root5));
-//        System.out.println("9 == " + fds.findDuplicateSubtrees(root5).size());
-//        System.out.println("14 == " + fds.findDuplicateSubtrees(root6).size());
+        System.out.println("[[6],[6,null,7],[2],[7],[1],[4],[8],[3],[5]] == " + fds.findDuplicateSubtrees(root5));
+        System.out.println("9 == " + fds.findDuplicateSubtrees(root5).size());
+        System.out.println("0 == " + fds.findDuplicateSubtrees(root6).size());
+    }
+
+    public void greatestEnglishLetterInUpperAndLowerCase() {
+        GreatestEnglishLetterInUpperAndLowerCase geliualc = new GreatestEnglishLetterInUpperAndLowerCase();
+
+        System.out.println("E == " + geliualc.greatestLetter("lEeTcOdE"));
+        System.out.println("R == " + geliualc.greatestLetter("arRAzFif"));
+        System.out.println(" == " + geliualc.greatestLetter("AbCdEfGhIjK"));
     }
 }
