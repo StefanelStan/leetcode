@@ -12,9 +12,10 @@ import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
 import com.ss.leetcode.LC2022.july.MinimumSumOfSquaredDifference;
 import com.ss.leetcode.LC2022.july.RemoveDigitFromNumberToMaximizeResult;
+import com.ss.leetcode.LC2022.july.ReverseLinkedListII;
 import com.ss.leetcode.LC2022.july.SolvingQuestionsWithBrainpower;
+import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.YieldTree;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -32,7 +33,8 @@ public class StartJuly {
 //        start.evaluateBooleanBinaryTree();
 //        start.minimumSumOfSquaredDifference();
 //        start.findDuplicateSubtrees();
-        start.greatestEnglishLetterInUpperAndLowerCase();
+//        start.greatestEnglishLetterInUpperAndLowerCase();
+        start.reverseLinkedListII();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -208,5 +210,17 @@ public class StartJuly {
         System.out.println("E == " + geliualc.greatestLetter("lEeTcOdE"));
         System.out.println("R == " + geliualc.greatestLetter("arRAzFif"));
         System.out.println(" == " + geliualc.greatestLetter("AbCdEfGhIjK"));
+    }
+
+    public void reverseLinkedListII() {
+        ReverseLinkedListII rllii = new ReverseLinkedListII();
+
+        ListNode head1 = ListNode.makeChain(new int[]{1,2,3,4,5});
+        ListNode head2 = ListNode.makeChain(new int[]{5});
+        ListNode head3 = ListNode.makeChain(new int[]{4,3,1,9,3,2,8,1,2,3,4,5});
+
+        System.out.println("[1,4,3,2,5] == " + rllii.reverseBetween(head1, 2, 4).getAsList());
+        System.out.println("[5] == " + rllii.reverseBetween(head2, 1, 1).getAsList());
+        System.out.println("[4,3,2,1,8,2,3,9,1,3,4,5] == " + rllii.reverseBetween(head3, 1, 11).getAsList());
     }
 }
