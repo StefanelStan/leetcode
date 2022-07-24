@@ -24,7 +24,7 @@ public class StartJanuary {
     public static void main(String[] args) {
         StartJanuary start = new StartJanuary();
 
-        start.longestStringChain();
+//        start.longestStringChain();
 //        start.constructKPalindrome(); //unfinished
 //        start.excelSheetColumnNumber();
 //        start.largestNumber();
@@ -38,7 +38,7 @@ public class StartJanuary {
 //        start.coinExchange();
 //        start.longestTurbulentSubarray();
 //        start.nextGreaterElementII();
-//        start.searchA2DMatrixII();
+        start.searchA2DMatrixII();
 //        start.streamChecker();
 //        start.splitTwoStringsToMakePalindrome();
     }
@@ -200,9 +200,13 @@ public class StartJanuary {
 
     private void searchA2DMatrixII() {
         SearchA2DMatrixII sa2dm = new SearchA2DMatrixII();
-        int[][] nums = { { 1, 4, 7, 11, 15 }, { 2, 5, 8, 12, 19 }, { 3, 6, 9, 16, 22 }, { 10, 13, 14, 17, 24 }, { 18, 21, 23, 26, 30 } };
+        int[][] nums = {{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
         System.out.println("true == " + sa2dm.searchMatrix(nums, 5));
         System.out.println("false == " + sa2dm.searchMatrix(nums, 20));
+        System.out.println("true == " + sa2dm.searchMatrix(new int[][]{{-5}}, -5));
+        System.out.println("false == " + sa2dm.searchMatrix(new int[][]{{-5}}, 5));
+        System.out.println("true == " + sa2dm.searchMatrix(new int[][]{{-5,-4,0,2,6,9}}, 6));
+        System.out.println("false == " + sa2dm.searchMatrix(new int[][]{{-5,-4,0,2,6,9}}, 5));
     }
 
     private void streamChecker() {
