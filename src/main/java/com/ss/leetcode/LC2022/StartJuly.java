@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2022.july.CheckIfMatrixIsXMatrix;
 import com.ss.leetcode.LC2022.july.DecodeTheMessage;
 import com.ss.leetcode.LC2022.july.EvaluateBooleanBinaryTree;
 import com.ss.leetcode.LC2022.july.FindDuplicateSubtrees;
+import com.ss.leetcode.LC2022.july.FindFirstAndLastPositionOfElementInSortedArray;
 import com.ss.leetcode.LC2022.july.GreatestEnglishLetterInUpperAndLowerCase;
 import com.ss.leetcode.LC2022.july.JumpGameVI;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
@@ -16,6 +17,7 @@ import com.ss.leetcode.LC2022.july.ReverseLinkedListII;
 import com.ss.leetcode.LC2022.july.SolvingQuestionsWithBrainpower;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
+import java.util.Arrays;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -34,7 +36,8 @@ public class StartJuly {
 //        start.minimumSumOfSquaredDifference();
 //        start.findDuplicateSubtrees();
 //        start.greatestEnglishLetterInUpperAndLowerCase();
-        start.reverseLinkedListII();
+//        start.reverseLinkedListII();
+        start.findFirstAndLastPositionOfElementInSortedArray();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -222,5 +225,15 @@ public class StartJuly {
         System.out.println("[1,4,3,2,5] == " + rllii.reverseBetween(head1, 2, 4).getAsList());
         System.out.println("[5] == " + rllii.reverseBetween(head2, 1, 1).getAsList());
         System.out.println("[4,3,2,1,8,2,3,9,1,3,4,5] == " + rllii.reverseBetween(head3, 1, 11).getAsList());
+    }
+
+    public void findFirstAndLastPositionOfElementInSortedArray() {
+        FindFirstAndLastPositionOfElementInSortedArray ffalpoeisa = new FindFirstAndLastPositionOfElementInSortedArray();
+
+        System.out.println("[3,4] == " + Arrays.toString(ffalpoeisa.searchRange(new int[]{5,7,7,8,8,10}, 8)));
+        System.out.println("[-1,-1] == " + Arrays.toString(ffalpoeisa.searchRange(new int[]{5,7,7,8,8,10}, 6)));
+        System.out.println("[-1,-1] == " + Arrays.toString(ffalpoeisa.searchRange(new int[0], 8)));
+        System.out.println("[0] == " + Arrays.toString(ffalpoeisa.searchRange(new int[]{1,2,3,4,5,6}, 1)));
+        System.out.println("[5] == " + Arrays.toString(ffalpoeisa.searchRange(new int[]{1,2,3,4,5,6}, 6)));
     }
 }
