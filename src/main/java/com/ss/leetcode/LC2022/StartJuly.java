@@ -7,10 +7,12 @@ import com.ss.leetcode.LC2022.july.DecodeTheMessage;
 import com.ss.leetcode.LC2022.july.EvaluateBooleanBinaryTree;
 import com.ss.leetcode.LC2022.july.FindDuplicateSubtrees;
 import com.ss.leetcode.LC2022.july.FindFirstAndLastPositionOfElementInSortedArray;
+import com.ss.leetcode.LC2022.july.FirstLetterToAppearTwice;
 import com.ss.leetcode.LC2022.july.GreatestEnglishLetterInUpperAndLowerCase;
 import com.ss.leetcode.LC2022.july.JumpGameVI;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
+import com.ss.leetcode.LC2022.july.MaximumNumberOfPairsInArray;
 import com.ss.leetcode.LC2022.july.MinimumSumOfSquaredDifference;
 import com.ss.leetcode.LC2022.july.RemoveDigitFromNumberToMaximizeResult;
 import com.ss.leetcode.LC2022.july.ReverseLinkedListII;
@@ -37,7 +39,9 @@ public class StartJuly {
 //        start.findDuplicateSubtrees();
 //        start.greatestEnglishLetterInUpperAndLowerCase();
 //        start.reverseLinkedListII();
-        start.findFirstAndLastPositionOfElementInSortedArray();
+//        start.findFirstAndLastPositionOfElementInSortedArray();
+//        start.maximumNumberOfPairsInArray();
+        start.firstLetterToAppearTwice();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -235,5 +239,20 @@ public class StartJuly {
         System.out.println("[-1,-1] == " + Arrays.toString(ffalpoeisa.searchRange(new int[0], 8)));
         System.out.println("[0] == " + Arrays.toString(ffalpoeisa.searchRange(new int[]{1,2,3,4,5,6}, 1)));
         System.out.println("[5] == " + Arrays.toString(ffalpoeisa.searchRange(new int[]{1,2,3,4,5,6}, 6)));
+    }
+
+    public void maximumNumberOfPairsInArray() {
+        MaximumNumberOfPairsInArray mnopia = new MaximumNumberOfPairsInArray();
+
+        System.out.println("[3,1] == " + Arrays.toString(mnopia.numberOfPairs(new int[]{1,3,2,1,3,2,2})));
+        System.out.println("[1,0] == " + Arrays.toString(mnopia.numberOfPairs(new int[]{1,1})));
+        System.out.println("[0,1] == " + Arrays.toString(mnopia.numberOfPairs(new int[]{0})));
+    }
+
+    public void firstLetterToAppearTwice() {
+        FirstLetterToAppearTwice fltat = new FirstLetterToAppearTwice();
+
+        System.out.println("c == " + fltat.repeatedCharacter("abccbaacz"));
+        System.out.println("d == " + fltat.repeatedCharacter("abcdd"));
     }
 }

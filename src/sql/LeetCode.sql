@@ -116,3 +116,12 @@ WHERE author_id = viewer_id ORDER BY id;
 SELECT name, COALESCE(SUM(distance), 0) AS travelled_distance FROM Users u
 LEFT JOIN Rides r ON (u.id = r.user_id)
 GROUP BY u.id ORDER BY travelled_distance DESC, name ASC;
+
+-- Sales Person
+-- https://leetcode.com/problems/sales-person/
+SELECT name FROM SalesPerson
+WHERE sales_id NOT IN (
+    SELECT DISTINCT o.sales_id FROM Orders o
+    JOIN Company c ON (c.com_id = o.com_id)
+    WHERE c.name = 'RED'
+);
