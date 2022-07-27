@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2022.july.FirstLetterToAppearTwice;
 import com.ss.leetcode.LC2022.july.GreatestEnglishLetterInUpperAndLowerCase;
 import com.ss.leetcode.LC2022.july.JumpGameVI;
 import com.ss.leetcode.LC2022.july.LongestConsecutiveSequence;
+import com.ss.leetcode.LC2022.july.LongestZigZagPathInABinaryTree;
 import com.ss.leetcode.LC2022.july.MaximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts;
 import com.ss.leetcode.LC2022.july.MaximumNumberOfPairsInArray;
 import com.ss.leetcode.LC2022.july.MinimumSumOfSquaredDifference;
@@ -41,7 +42,8 @@ public class StartJuly {
 //        start.reverseLinkedListII();
 //        start.findFirstAndLastPositionOfElementInSortedArray();
 //        start.maximumNumberOfPairsInArray();
-        start.firstLetterToAppearTwice();
+//        start.firstLetterToAppearTwice();
+        start.longestZigZagPathInABinaryTree();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -254,5 +256,17 @@ public class StartJuly {
 
         System.out.println("c == " + fltat.repeatedCharacter("abccbaacz"));
         System.out.println("d == " + fltat.repeatedCharacter("abcdd"));
+    }
+
+    public void longestZigZagPathInABinaryTree() {
+        LongestZigZagPathInABinaryTree lzzpiabt = new LongestZigZagPathInABinaryTree();
+
+        TreeNode root1 = new TreeNode(1, null, new TreeNode(1, new TreeNode(1), new TreeNode(1, new TreeNode(1, null, new TreeNode(1, null, new TreeNode(1))), new TreeNode(1))));
+        TreeNode root2 = new TreeNode(1, new TreeNode(1, null, new TreeNode(1, new TreeNode(1, null, new TreeNode(1)), new TreeNode(1))), new TreeNode(1));
+        TreeNode root3 = new TreeNode(1);
+
+        System.out.println("3 == " + lzzpiabt.longestZigZag(root1));
+        System.out.println("4 == " + lzzpiabt.longestZigZag(root2));
+        System.out.println("0 == " + lzzpiabt.longestZigZag(root3));
     }
 }
