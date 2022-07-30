@@ -18,6 +18,7 @@ import com.ss.leetcode.LC2022.july.MinimumSumOfSquaredDifference;
 import com.ss.leetcode.LC2022.july.RemoveDigitFromNumberToMaximizeResult;
 import com.ss.leetcode.LC2022.july.ReverseLinkedListII;
 import com.ss.leetcode.LC2022.july.SolvingQuestionsWithBrainpower;
+import com.ss.leetcode.LC2022.july.WordSubsets;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
@@ -43,7 +44,8 @@ public class StartJuly {
 //        start.findFirstAndLastPositionOfElementInSortedArray();
 //        start.maximumNumberOfPairsInArray();
 //        start.firstLetterToAppearTwice();
-        start.longestZigZagPathInABinaryTree();
+//        start.longestZigZagPathInABinaryTree();
+        start.wordSubsets();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -268,5 +270,18 @@ public class StartJuly {
         System.out.println("3 == " + lzzpiabt.longestZigZag(root1));
         System.out.println("4 == " + lzzpiabt.longestZigZag(root2));
         System.out.println("0 == " + lzzpiabt.longestZigZag(root3));
+    }
+
+    public void wordSubsets() {
+        WordSubsets ws = new WordSubsets();
+
+        System.out.println("[facebook,google,leetcode] == " +
+            ws.wordSubsets(new String[]{"amazon","apple","facebook","google","leetcode"}, new String[]{"e","o"}));
+
+        System.out.println("[apple,google,leetcode] == " +
+            ws.wordSubsets(new String[]{"amazon","apple","facebook","google","leetcode"}, new String[]{"l","e"}));
+
+        System.out.println("[warrior,rworld] == " +
+            ws.wordSubsets(new String[]{"warrior","world","rworld"}, new String[]{"wrr"}));
     }
 }
