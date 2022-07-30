@@ -65,12 +65,12 @@ public class StartMarch {
 //        start.richestCustomerWealth();
 //        start.minimumNumberOfStepsToMakeTwoStringsAnagram();
 //        start.minimumAddToMakeParenthesesValid();
-//        start.findAndReplacePattern();
+        start.findAndReplacePattern();
 //        start.scoreAfterFlippingMatrix();
 //        start.designUndergroundSystem();
 //        start.minimumSubsequenceInNonIncreasingOrder();
 //        start.evaluateTheBracketPairsOfAString();
-        start.sortArrayByIncreasingFrequency();
+//        start.sortArrayByIncreasingFrequency();
     }
 
     private void defangingAnIPAddress() {
@@ -343,9 +343,9 @@ public class StartMarch {
 
     private void findAndReplacePattern() {
         FindAndReplacePattern farp = new FindAndReplacePattern();
-        String[] words = { "abc", "deq", "mee", "aqq", "dkd", "ccc" };
 
-        System.out.println("[\"mee\", \"aqq\"] == " + farp.findAndReplacePattern(words, "abb"));
+        System.out.println("[mee, aqq] == " + farp.findAndReplacePattern(new String[]{"abc","deq","mee","aqq","dkd","ccc"}, "abb"));
+        System.out.println("[a, b, c] == " + farp.findAndReplacePattern(new String[]{"a", "b", "c"}, "a"));
     }
 
     private void scoreAfterFlippingMatrix() {
