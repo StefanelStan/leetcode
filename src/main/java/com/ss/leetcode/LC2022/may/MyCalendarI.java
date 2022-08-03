@@ -1,7 +1,48 @@
 package com.ss.leetcode.LC2022.may;
 
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
 public class MyCalendarI {
     // https://leetcode.com/problems/my-calendar-i/
+    TreeMap<Integer, Integer> calendar;
+    public MyCalendarI() {
+        calendar = new TreeMap<>();
+    }
+
+    public boolean book(int start, int end) {
+        if (calendar.isEmpty()) {
+            calendar.put(start, end);
+            return true;
+        }
+        if (isBeforeOK(start, end) && isAfterOK(start, end)) {
+            calendar.put(start, end);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean isAfterOK(int start, int end) {
+        Entry<Integer, Integer> after = calendar.ceilingEntry(start);
+        if (after == null) {
+            return true;
+        } else {
+            return after.getKey() >= end;
+        }
+    }
+
+    private boolean isBeforeOK(int start, int end) {
+        Entry<Integer, Integer> before = calendar.floorEntry(start);
+        if (before == null) {
+            return true;
+        } else {
+            return before.getValue() <= start;
+        }
+    }
+
+
+    /*
     Booking preHead;
     public MyCalendarI() {
         preHead = new Booking(-2, -1);
@@ -74,4 +115,5 @@ public class MyCalendarI {
         }
 
     }
+ */
 }

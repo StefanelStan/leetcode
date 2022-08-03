@@ -51,7 +51,7 @@ public class StartMay {
 //        start.shortestUnsortedContinuousSubarray();
 //        start.maxNumberOfKSumPairs();
 //        start.implementStackUsingQueues();
-//        start.myCalendarI();
+        start.myCalendarI();
 //        start.oneThreeTwo132Pattern();
 //        start.flattenNestedListIterator();
 //        start.letterCombinationsOfAPhoneNumber();
@@ -82,7 +82,7 @@ public class StartMay {
 //        start.maximumProductOfWordLengths();
 //        start.validPerfectSquare();
 //        start.percentageOfLetterInString();
-        start.checkIfAStringContainsAllBinaryCodesOfSizeK();
+//        start.checkIfAStringContainsAllBinaryCodesOfSizeK();
     }
 
     public void latestTimeByReplacingHiddenDigits() {
