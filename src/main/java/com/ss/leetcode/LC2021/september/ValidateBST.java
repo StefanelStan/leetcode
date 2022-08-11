@@ -5,6 +5,46 @@ import com.ss.leetcode.shared.TreeNode;
 public class ValidateBST {
     // https://leetcode.com/problems/validate-binary-search-tree/
     public boolean isValidBST(TreeNode root) {
+        if (root.left == root.right) {
+            return true;
+        }
+        boolean[] isValid = {true};
+        traverseTree(root, isValid);
+        return isValid[0];
+    }
+
+    private int[] traverseTree(TreeNode node, boolean[] isValid) {
+        if (node == null || !isValid[0]) {
+            return null;
+        }
+        if (node.left == node.right) {
+            return new int[]{node.val, node.val};
+        }
+        int[] answer = new int[]{node.val, node.val};
+        int[] left = traverseTree(node.left, isValid);
+        if (isValid[0] && left != null) {
+            if (node.val <= left[1]) {
+                isValid[0] = false;
+                return new int[]{-1, -1};
+            } else {
+                answer[0] = Math.min(left[0], node.val);
+                answer[1] = Math.max(left[1], node.val);
+            }
+        }
+        int[] right = traverseTree(node.right, isValid);
+        if (isValid[0] && right != null) {
+            if (node.val >= right[0]) {
+                isValid[0] = false;
+                return new int[]{-1, -1};
+            } else {
+                answer[0] = Math.min(answer[0], Math.min(right[0], node.val));
+                answer[1] = Math.max(answer[1], Math.max(right[1], node.val));
+            }
+        }
+        return answer;
+    }
+
+    public boolean isValidBST2(TreeNode root) {
         boolean[] isValid = { true };
         traverseAndCheck(root, false, new Integer[2], isValid);
         return isValid[0];
