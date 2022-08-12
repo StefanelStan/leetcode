@@ -5,6 +5,25 @@ import com.ss.leetcode.shared.TreeNode;
 public class LowestCommonAncestorOfaBST {
     // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        TreeNode[] lca = new TreeNode[1];
+        TreeNode small = p.val < q.val ? p : q;
+        TreeNode large = p.val > q.val ? p : q;
+        traverseTree(root, small, large, lca);
+        return lca[0];
+    }
+
+    private void traverseTree(TreeNode node, TreeNode small, TreeNode large, TreeNode[] lca) {
+        if (node != null && lca[0] == null) {
+            if (node.val == small.val || node.val == large.val || (node.val > small.val && node.val < large.val)) {
+                lca[0] = node;
+            } else {
+                traverseTree(node.left, small, large, lca);
+                traverseTree(node.right, small, large, lca);
+            }
+        }
+    }
+
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null)
             return null;
 
