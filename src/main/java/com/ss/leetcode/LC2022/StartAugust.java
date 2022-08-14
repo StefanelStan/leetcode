@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.august.CountVowelsPermutation;
 import com.ss.leetcode.LC2022.august.LongestIncreasingSubsequence;
 import com.ss.leetcode.LC2022.august.MakeArrayZeroBySubtractingEqualAmounts;
 import com.ss.leetcode.LC2022.august.NumberOfArithmeticTriplets;
+import com.ss.leetcode.LC2022.august.SubstringWithConcatenationOfAllWords;
 
 public class StartAugust {
     public static void main(String[] args) {
@@ -12,7 +13,8 @@ public class StartAugust {
 //        start.makeArrayZeroBySubtractingEqualAmounts();
 //        start.countVowelsPermutation();
 //        start.longestIncreasingSubsequence();
-        start.numberOfArithmeticTriplets();
+//        start.numberOfArithmeticTriplets();
+        start.substringWithConcatenationOfAllWords();
     }
 
     public void makeArrayZeroBySubtractingEqualAmounts() {
@@ -53,5 +55,13 @@ public class StartAugust {
         System.out.println("7 == " + noat.arithmeticTriplets(new int[]{1,2,3,4,5,6,7,8,9}, 1));
         System.out.println("1 == " + noat.arithmeticTriplets(new int[]{2,4,6}, 2));
         System.out.println("0 == " + noat.arithmeticTriplets(new int[]{2,4,5}, 2));
+    }
+
+    public void substringWithConcatenationOfAllWords() {
+        SubstringWithConcatenationOfAllWords swcoaw = new SubstringWithConcatenationOfAllWords();
+
+        System.out.println("[0,9] == " + swcoaw.findSubstring("barfoothefoobarman", new String[]{"foo","bar"}));
+        System.out.println("[] == " + swcoaw.findSubstring("wordgoodgoodgoodbestword", new String[]{"word","good","best","word"}));
+        System.out.println("[6,9,12] == " + swcoaw.findSubstring("barfoofoobarthefoobarman", new String[]{"bar","foo","the"}));
     }
 }
