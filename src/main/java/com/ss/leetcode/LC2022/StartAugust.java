@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.august.CountVowelsPermutation;
 import com.ss.leetcode.LC2022.august.LargestLocalValuesInAMatrix;
 import com.ss.leetcode.LC2022.august.LongestIncreasingSubsequence;
 import com.ss.leetcode.LC2022.august.MakeArrayZeroBySubtractingEqualAmounts;
+import com.ss.leetcode.LC2022.august.MergeSimilarItems;
 import com.ss.leetcode.LC2022.august.NumberOfArithmeticTriplets;
 import com.ss.leetcode.LC2022.august.SubstringWithConcatenationOfAllWords;
 import java.util.Arrays;
@@ -17,7 +18,8 @@ public class StartAugust {
 //        start.longestIncreasingSubsequence();
 //        start.numberOfArithmeticTriplets();
 //        start.substringWithConcatenationOfAllWords();
-        start.largestLocalValuesInAMatrix();
+//        start.largestLocalValuesInAMatrix();
+        start.mergeSimilarItems();
     }
 
     public void makeArrayZeroBySubtractingEqualAmounts() {
@@ -74,5 +76,13 @@ public class StartAugust {
         System.out.println("[[9,9],[8,6]] == " + Arrays.deepToString(llviam.largestLocal(new int[][]{{9,9,8,1},{5,6,2,6},{8,2,6,4},{6,2,2,2}})));
         System.out.println("[[2,2,2],[2,2,2],[2,2,2]] == " + Arrays.deepToString(llviam.largestLocal(new int[][]{{1,1,1,1,1},{1,1,1,1,1},
             {1,1,2,1,1},{1,1,1,1,1},{1,1,1,1,1}})));
+    }
+
+    public void mergeSimilarItems() {
+        MergeSimilarItems msi = new MergeSimilarItems();
+
+        System.out.println("[[1,6],[3,9],[4,5]] == " + msi.mergeSimilarItems(new int[][]{{1,1},{4,5},{3,8}}, new int[][]{{3,1},{1,5}}));
+        System.out.println("[[1,4],[2,4],[3,4]] == " + msi.mergeSimilarItems(new int[][]{{1,1},{3,2},{2,3}}, new int[][]{{2,1},{3,2},{1,3}}));
+        System.out.println("[[1,7],[2,4],[7,1]] == " + msi.mergeSimilarItems(new int[][]{{1,3},{2,2}}, new int[][]{{7,1},{2,2},{1,4}}));
     }
 }
