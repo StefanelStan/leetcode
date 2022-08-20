@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2022.august.LongestIncreasingSubsequence;
 import com.ss.leetcode.LC2022.august.MakeArrayZeroBySubtractingEqualAmounts;
 import com.ss.leetcode.LC2022.august.MergeSimilarItems;
 import com.ss.leetcode.LC2022.august.NumberOfArithmeticTriplets;
+import com.ss.leetcode.LC2022.august.StringWithoutAAAOrBBB;
 import com.ss.leetcode.LC2022.august.SubstringWithConcatenationOfAllWords;
 import java.util.Arrays;
 
@@ -19,7 +20,8 @@ public class StartAugust {
 //        start.numberOfArithmeticTriplets();
 //        start.substringWithConcatenationOfAllWords();
 //        start.largestLocalValuesInAMatrix();
-        start.mergeSimilarItems();
+//        start.mergeSimilarItems();
+        start.stringWithoutAAAOrBBB();
     }
 
     public void makeArrayZeroBySubtractingEqualAmounts() {
@@ -84,5 +86,14 @@ public class StartAugust {
         System.out.println("[[1,6],[3,9],[4,5]] == " + msi.mergeSimilarItems(new int[][]{{1,1},{4,5},{3,8}}, new int[][]{{3,1},{1,5}}));
         System.out.println("[[1,4],[2,4],[3,4]] == " + msi.mergeSimilarItems(new int[][]{{1,1},{3,2},{2,3}}, new int[][]{{2,1},{3,2},{1,3}}));
         System.out.println("[[1,7],[2,4],[7,1]] == " + msi.mergeSimilarItems(new int[][]{{1,3},{2,2}}, new int[][]{{7,1},{2,2},{1,4}}));
+    }
+
+    public void stringWithoutAAAOrBBB() {
+        StringWithoutAAAOrBBB swaob = new StringWithoutAAAOrBBB();
+
+        System.out.println("bba == " + swaob.strWithout3a3b(1, 2));
+        System.out.println("aabaa == " + swaob.strWithout3a3b(4, 1));
+        System.out.println("aabaabaaba == " + swaob.strWithout3a3b(7, 3));
+        System.out.println("aabaabaabaabaabaa == " + swaob.strWithout3a3b(12, 5));
     }
 }
