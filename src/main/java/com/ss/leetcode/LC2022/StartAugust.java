@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.august.CountVowelsPermutation;
 import com.ss.leetcode.LC2022.august.LargestLocalValuesInAMatrix;
 import com.ss.leetcode.LC2022.august.LongestIncreasingSubsequence;
 import com.ss.leetcode.LC2022.august.MakeArrayZeroBySubtractingEqualAmounts;
+import com.ss.leetcode.LC2022.august.MaxSumOfRectangleNoLargerThanK;
 import com.ss.leetcode.LC2022.august.MergeSimilarItems;
 import com.ss.leetcode.LC2022.august.NumberOfArithmeticTriplets;
 import com.ss.leetcode.LC2022.august.StringWithoutAAAOrBBB;
@@ -21,7 +22,8 @@ public class StartAugust {
 //        start.substringWithConcatenationOfAllWords();
 //        start.largestLocalValuesInAMatrix();
 //        start.mergeSimilarItems();
-        start.stringWithoutAAAOrBBB();
+//        start.stringWithoutAAAOrBBB();
+        start.maxSumOfRectangleNoLargerThanK();
     }
 
     public void makeArrayZeroBySubtractingEqualAmounts() {
@@ -95,5 +97,13 @@ public class StartAugust {
         System.out.println("aabaa == " + swaob.strWithout3a3b(4, 1));
         System.out.println("aabaabaaba == " + swaob.strWithout3a3b(7, 3));
         System.out.println("aabaabaabaabaabaa == " + swaob.strWithout3a3b(12, 5));
+    }
+
+    public void maxSumOfRectangleNoLargerThanK() {
+        MaxSumOfRectangleNoLargerThanK msornltk = new MaxSumOfRectangleNoLargerThanK();
+
+        System.out.println("2 == " + msornltk.maxSumSubmatrix(new int[][]{{1,0,1},{0,-2,3}}, 2));
+        System.out.println("3 == " + msornltk.maxSumSubmatrix(new int[][]{{2,2,-1}}, 3));
+        System.out.println("2 == " + msornltk.maxSumSubmatrix(new int[][]{{5,-4,-3,4},{-3,-4,4,5},{5,1,5,-4}}, 3));
     }
 }
