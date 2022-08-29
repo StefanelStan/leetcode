@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2022.august.MakeArrayZeroBySubtractingEqualAmounts;
 import com.ss.leetcode.LC2022.august.MaxSumOfRectangleNoLargerThanK;
 import com.ss.leetcode.LC2022.august.MergeSimilarItems;
 import com.ss.leetcode.LC2022.august.NumberOfArithmeticTriplets;
+import com.ss.leetcode.LC2022.august.NumberOfIslands;
 import com.ss.leetcode.LC2022.august.StringWithoutAAAOrBBB;
 import com.ss.leetcode.LC2022.august.SubstringWithConcatenationOfAllWords;
 import java.util.Arrays;
@@ -23,7 +24,8 @@ public class StartAugust {
 //        start.largestLocalValuesInAMatrix();
 //        start.mergeSimilarItems();
 //        start.stringWithoutAAAOrBBB();
-        start.maxSumOfRectangleNoLargerThanK();
+//        start.maxSumOfRectangleNoLargerThanK();
+        start.numberOfIslands();
     }
 
     public void makeArrayZeroBySubtractingEqualAmounts() {
@@ -105,5 +107,13 @@ public class StartAugust {
         System.out.println("2 == " + msornltk.maxSumSubmatrix(new int[][]{{1,0,1},{0,-2,3}}, 2));
         System.out.println("3 == " + msornltk.maxSumSubmatrix(new int[][]{{2,2,-1}}, 3));
         System.out.println("2 == " + msornltk.maxSumSubmatrix(new int[][]{{5,-4,-3,4},{-3,-4,4,5},{5,1,5,-4}}, 3));
+    }
+
+    public void numberOfIslands() {
+        NumberOfIslands noi = new NumberOfIslands();
+
+        System.out.println("1 == " + noi.numIslands(new char[][]{{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}}));
+        System.out.println("3 == " + noi.numIslands(new char[][]{{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}}));
+        System.out.println("2 == " + noi.numIslands(new char[][]{{'1'},{'0'}, {'1'}}));
     }
 }
