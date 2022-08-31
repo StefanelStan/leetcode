@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2022.august.MaxSumOfRectangleNoLargerThanK;
 import com.ss.leetcode.LC2022.august.MergeSimilarItems;
 import com.ss.leetcode.LC2022.august.NumberOfArithmeticTriplets;
 import com.ss.leetcode.LC2022.august.NumberOfIslands;
+import com.ss.leetcode.LC2022.august.ReformatTheString;
 import com.ss.leetcode.LC2022.august.StringWithoutAAAOrBBB;
 import com.ss.leetcode.LC2022.august.SubstringWithConcatenationOfAllWords;
 import java.util.Arrays;
@@ -25,7 +26,8 @@ public class StartAugust {
 //        start.mergeSimilarItems();
 //        start.stringWithoutAAAOrBBB();
 //        start.maxSumOfRectangleNoLargerThanK();
-        start.numberOfIslands();
+//        start.numberOfIslands();
+        start.reformatTheString();
     }
 
     public void makeArrayZeroBySubtractingEqualAmounts() {
@@ -115,5 +117,16 @@ public class StartAugust {
         System.out.println("1 == " + noi.numIslands(new char[][]{{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}}));
         System.out.println("3 == " + noi.numIslands(new char[][]{{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}}));
         System.out.println("2 == " + noi.numIslands(new char[][]{{'1'},{'0'}, {'1'}}));
+    }
+
+    public void reformatTheString() {
+        ReformatTheString rts = new ReformatTheString();
+
+        System.out.println("a0b1c2 == " + rts.reformat("a0b1c2"));
+        System.out.println(" == " + rts.reformat("leetcode"));
+        System.out.println(" == " + rts.reformat("1229857369"));
+        System.out.println("a1b == " + rts.reformat("1ab"));
+        System.out.println("1 == " + rts.reformat("1"));
+        System.out.println("a == " + rts.reformat("a"));
     }
 }
