@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.september.AmountOfTimeForBinaryTreeToBeInfected;
+import com.ss.leetcode.LC2022.september.ConstructStringFromBinaryTree;
 import com.ss.leetcode.LC2022.september.FindSubarraysWithEqualSum;
 import com.ss.leetcode.LC2022.september.LongestSubsequenceWithLimitedSum;
 import com.ss.leetcode.LC2022.september.MaximumNumberOfRobotsWithinBudget;
@@ -18,7 +19,8 @@ public class StartSeptember {
 //        start.findSubarraysWithEqualSum();
 //        start.strictlyPalindromicNumber();
 //        start.maximumNumberOfRobotsWithinBudget();
-        start.numbersWithSameConsecutiveDifferences();
+//        start.numbersWithSameConsecutiveDifferences();
+        start.constructStringFromBinaryTree();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -76,5 +78,17 @@ public class StartSeptember {
         System.out.println("[181,292,707,818,929] == " + Arrays.toString(nwscd.numsSameConsecDiff(3,7)));
         System.out.println("[10,12,21,23,32,34,43,45,54,56,65,67,76,78,87,89,98] == " + Arrays.toString(nwscd.numsSameConsecDiff(2,1)));
         System.out.println("[11,22,33,44,55,66,77,88,99] == " + Arrays.toString(nwscd.numsSameConsecDiff(2,0)));
+    }
+
+    public void constructStringFromBinaryTree() {
+        ConstructStringFromBinaryTree csfbt = new ConstructStringFromBinaryTree();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, null, new TreeNode(4)), new TreeNode(3));
+        TreeNode root3 = new TreeNode(1);
+
+        System.out.println("1(2(4))(3) == " + csfbt.tree2str(root1));
+        System.out.println("1(2()(4))(3) == " + csfbt.tree2str(root2));
+        System.out.println("1 == " + csfbt.tree2str(root3));
     }
 }
