@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2022.september.LongestSubsequenceWithLimitedSum;
 import com.ss.leetcode.LC2022.september.MaximumNumberOfRobotsWithinBudget;
 import com.ss.leetcode.LC2022.september.NumbersWithSameConsecutiveDifferences;
 import com.ss.leetcode.LC2022.september.StrictlyPalindromicNumber;
+import com.ss.leetcode.LC2022.september.TheNumberOfWeakCharactersInTheGame;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 
@@ -20,7 +21,8 @@ public class StartSeptember {
 //        start.strictlyPalindromicNumber();
 //        start.maximumNumberOfRobotsWithinBudget();
 //        start.numbersWithSameConsecutiveDifferences();
-        start.constructStringFromBinaryTree();
+//        start.constructStringFromBinaryTree();
+        start.theNumberOfWeakCharactersInTheGame();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -90,5 +92,13 @@ public class StartSeptember {
         System.out.println("1(2(4))(3) == " + csfbt.tree2str(root1));
         System.out.println("1(2()(4))(3) == " + csfbt.tree2str(root2));
         System.out.println("1 == " + csfbt.tree2str(root3));
+    }
+
+    public void theNumberOfWeakCharactersInTheGame() {
+        TheNumberOfWeakCharactersInTheGame tnowcitg = new TheNumberOfWeakCharactersInTheGame();
+
+        System.out.println("0 == " + tnowcitg.numberOfWeakCharacters(new int[][]{{5,5},{6,3},{3,6}}));
+        System.out.println("1 == " + tnowcitg.numberOfWeakCharacters(new int[][]{{2,2},{3,3}}));
+        System.out.println("1 == " + tnowcitg.numberOfWeakCharacters(new int[][]{{1,5},{10,4},{4,3}}));
     }
 }
