@@ -5,7 +5,9 @@ import com.ss.leetcode.LC2022.september.ConstructStringFromBinaryTree;
 import com.ss.leetcode.LC2022.september.FindSubarraysWithEqualSum;
 import com.ss.leetcode.LC2022.september.LongestSubsequenceWithLimitedSum;
 import com.ss.leetcode.LC2022.september.MaximumNumberOfRobotsWithinBudget;
+import com.ss.leetcode.LC2022.september.MaximumPerformanceOfATeam;
 import com.ss.leetcode.LC2022.september.MinimumAmountOfTimeToCollectGarbage;
+import com.ss.leetcode.LC2022.september.NumberOfGoodWaysToSplitAString;
 import com.ss.leetcode.LC2022.september.NumbersWithSameConsecutiveDifferences;
 import com.ss.leetcode.LC2022.september.StrictlyPalindromicNumber;
 import com.ss.leetcode.LC2022.september.TheNumberOfWeakCharactersInTheGame;
@@ -24,7 +26,9 @@ public class StartSeptember {
 //        start.numbersWithSameConsecutiveDifferences();
 //        start.constructStringFromBinaryTree();
 //        start.theNumberOfWeakCharactersInTheGame();
-        start.minimumAmountOfTimeToCollectGarbage();
+//        start.minimumAmountOfTimeToCollectGarbage();
+//        start.maximumPerformanceOfATeam();
+        start.numberOfGoodWaysToSplitAString();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -109,5 +113,22 @@ public class StartSeptember {
 
         System.out.println("21 == " + maoftcg.garbageCollection(new String[]{"G","P","GP","GG"}, new int[]{2,4,3}));
         System.out.println("37 == " + maoftcg.garbageCollection(new String[]{"MMM","PGM","GP"}, new int[]{3,10}));
+    }
+
+    public void maximumPerformanceOfATeam() {
+        MaximumPerformanceOfATeam mpoat = new MaximumPerformanceOfATeam();
+
+        System.out.println("60 == " + mpoat.maxPerformance(6, new int[]{2,10,3,1,5,8}, new int[]{5,4,3,9,7,2}, 2));
+        System.out.println("68 == " + mpoat.maxPerformance(6, new int[]{2,10,3,1,5,8}, new int[]{5,4,3,9,7,2}, 3));
+        System.out.println("72 == " + mpoat.maxPerformance(6, new int[]{2,10,3,1,5,8}, new int[]{5,4,3,9,7,2}, 4));
+    }
+
+    public void numberOfGoodWaysToSplitAString() {
+        NumberOfGoodWaysToSplitAString nogwtsas = new NumberOfGoodWaysToSplitAString();
+
+        System.out.println("2 == " + nogwtsas.numSplits("aacaba"));
+        System.out.println("1 == " + nogwtsas.numSplits("abcd"));
+        System.out.println("0 == " + nogwtsas.numSplits("a"));
+        System.out.println("2 == " + nogwtsas.numSplits("ghgvbsrfhvgsdghgytklmutibjedwcgferyhbrvtgd"));
     }
 }

@@ -2,6 +2,37 @@ package com.ss.leetcode.LC2022.september;
 
 public class MinimumAmountOfTimeToCollectGarbage {
     // https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/submissions/
+    public int garbageCollection(String[] garbage, int[] travel) {
+        GarbageTruck[] trucks = getGarbageTrucks();
+        int travelTime = 0, codePoint;
+        for (int g = 0; g < garbage.length; g++) {
+            for (int i = 0; i < garbage[g].length(); i++) {
+                codePoint = garbage[g].charAt(i) - 'A';
+                trucks[codePoint].collectedGarbage++;
+                trucks[codePoint].travelTime = travelTime;
+            }
+            travelTime += (g < travel.length ? travel[g] : 0);
+        }
+        return trucks['G' - 'A'].getTotalTime() + trucks['M' - 'A'].getTotalTime() + trucks['P' - 'A'].getTotalTime();
+    }
+
+    private GarbageTruck[] getGarbageTrucks() {
+        GarbageTruck[] trucks = new GarbageTruck[26];
+        trucks['G' - 'A'] = new GarbageTruck();
+        trucks['M' - 'A'] = new GarbageTruck();
+        trucks['P' - 'A'] = new GarbageTruck();
+        return trucks;
+    }
+
+    private static class GarbageTruck {
+        int collectedGarbage;
+        int travelTime;
+
+        public int getTotalTime() {
+            return collectedGarbage + travelTime;
+        }
+    }
+
     /** Algorithm - Advanced memoization
          1. All the trucks start from 0, but they might finish ay i,j,k..depending on garbage
          So it's good to keep track of the last visited house.
@@ -19,7 +50,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
          the travelCumulatedTime of the lastVisitedHouse[codePoint].
          6. Return the answer.
      */
-    public int garbageCollection(String[] garbage, int[] travel) {
+    public int garbageCollection2(String[] garbage, int[] travel) {
         int[] totalGarbage = new int[26];
         int[] lastCollectedHouse = new int[26];
         int[] travelCumulatedTime = new int[travel.length + 1];
