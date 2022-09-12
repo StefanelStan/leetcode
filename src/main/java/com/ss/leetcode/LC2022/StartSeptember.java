@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.september.AmountOfTimeForBinaryTreeToBeInfected;
+import com.ss.leetcode.LC2022.september.BagOfTokens;
 import com.ss.leetcode.LC2022.september.ConstructStringFromBinaryTree;
 import com.ss.leetcode.LC2022.september.FindSubarraysWithEqualSum;
 import com.ss.leetcode.LC2022.september.LongestSubsequenceWithLimitedSum;
@@ -28,7 +29,8 @@ public class StartSeptember {
 //        start.theNumberOfWeakCharactersInTheGame();
 //        start.minimumAmountOfTimeToCollectGarbage();
 //        start.maximumPerformanceOfATeam();
-        start.numberOfGoodWaysToSplitAString();
+//        start.numberOfGoodWaysToSplitAString();
+        start.bagOfTokens();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -130,5 +132,14 @@ public class StartSeptember {
         System.out.println("1 == " + nogwtsas.numSplits("abcd"));
         System.out.println("0 == " + nogwtsas.numSplits("a"));
         System.out.println("2 == " + nogwtsas.numSplits("ghgvbsrfhvgsdghgytklmutibjedwcgferyhbrvtgd"));
+    }
+
+    public void bagOfTokens() {
+        BagOfTokens bot = new BagOfTokens();
+
+        System.out.println("0 == " + bot.bagOfTokensScore(new int[]{100}, 50));
+        System.out.println("1 == " + bot.bagOfTokensScore(new int[]{100,200}, 150));
+        System.out.println("2 == " + bot.bagOfTokensScore(new int[]{100,200,300,400}, 200));
+        System.out.println("14 == " + bot.bagOfTokensScore(new int[]{5,6,7,3,4,2,5,6,7,5,4,3,2,1,4,5,6,7,8,9,5,4,3,0,6,5,0,3,1,4,5,0,8,7,6,5}, 8));
     }
 }
