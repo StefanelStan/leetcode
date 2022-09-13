@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2022.september.NumberOfGoodWaysToSplitAString;
 import com.ss.leetcode.LC2022.september.NumbersWithSameConsecutiveDifferences;
 import com.ss.leetcode.LC2022.september.StrictlyPalindromicNumber;
 import com.ss.leetcode.LC2022.september.TheNumberOfWeakCharactersInTheGame;
+import com.ss.leetcode.LC2022.september.UTF8Validation;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 
@@ -30,7 +31,8 @@ public class StartSeptember {
 //        start.minimumAmountOfTimeToCollectGarbage();
 //        start.maximumPerformanceOfATeam();
 //        start.numberOfGoodWaysToSplitAString();
-        start.bagOfTokens();
+//        start.bagOfTokens();
+        start.uft8Validation();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -141,5 +143,14 @@ public class StartSeptember {
         System.out.println("1 == " + bot.bagOfTokensScore(new int[]{100,200}, 150));
         System.out.println("2 == " + bot.bagOfTokensScore(new int[]{100,200,300,400}, 200));
         System.out.println("14 == " + bot.bagOfTokensScore(new int[]{5,6,7,3,4,2,5,6,7,5,4,3,2,1,4,5,6,7,8,9,5,4,3,0,6,5,0,3,1,4,5,0,8,7,6,5}, 8));
+    }
+
+    public void uft8Validation() {
+        UTF8Validation utf8v = new UTF8Validation();
+
+//        System.out.println("true == " + utf8v.validUtf8(new int[]{197, 130, 1}));
+//        System.out.println("false == " + utf8v.validUtf8(new int[]{235,140,4}));
+//        System.out.println("true == " + utf8v.validUtf8(new int[]{11,34,16}));
+        System.out.println("true == " + utf8v.validUtf8(new int[]{255}));
     }
 }
