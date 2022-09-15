@@ -2,12 +2,53 @@ package com.ss.leetcode.LC2021.september;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class FindOriginalArrayFromDoubledArray {
-
+    // https://leetcode.com/problems/find-original-array-from-doubled-array/
     public int[] findOriginalArray(int[] changed) {
+        if (changed.length % 2 == 1) {
+            return new int[0];
+        }
+        int[] count = countNums(changed);
+        return getOriginal(count, changed.length);
+    }
+
+    private int[] countNums(int[] changed) {
+        int[] count = new int[100_001];
+        for (int num : changed) {
+            count[num]++;
+        }
+        return count;
+    }
+
+    private int[] getOriginal(int[] count, int total) {
+        if (count[0] % 2 == 1) {
+            return new int[0];
+        }
+        int[] original = new int[total / 2];
+        int doubled, originalIndex = 0;
+        for (int i = 0; i < count.length && total > 0;) {
+            if (count[i] < 0) {
+                return new int[0];
+            } else if (count[i] == 0) {
+                i++;
+            } else {
+                doubled = i * 2;
+                if (doubled >= count.length || count[doubled] <= 0) {
+                    return new int[0];
+                } else {
+                    count[i]--;
+                    count[doubled]--;
+                    original[originalIndex++] = i;
+                    total -= 2;
+                }
+            }
+        }
+        return original;
+    }
+
+
+    public int[] findOriginalArray2(int[] changed) {
         int[] counts = new int[100_001];
         List<Integer> original = new ArrayList<>(changed.length / 2);
         for (int nr : changed) {

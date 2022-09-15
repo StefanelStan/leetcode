@@ -81,7 +81,7 @@ public class StartSeptember {
 //        start.lastStoneWeight();
 //        start.firstUniqueCharacterInAString();
 //        start.countPairsAbsoluteDifferenceK();
-//        start.findOriginalArrayFromDoubledArray();
+        start.findOriginalArrayFromDoubledArray();
 //        start.maximumEarningsFromTaxi();
 //        start.validPalindrome();
 //        start.validPalindromeII();
@@ -106,7 +106,7 @@ public class StartSeptember {
 //        start.sumRootToLeafNumbers();
 //        start.finalValueAfterPerformingOperations();
 //        start.splitLinkedListInParts();
-        start.verticalOrderTraversalOfABinaryTree();
+//        start.verticalOrderTraversalOfABinaryTree();
     }
 
     public void arrayNesting() {
@@ -772,6 +772,7 @@ public class StartSeptember {
         System.out.println("[] == " + Arrays.toString(foafda.findOriginalArray(new int[]{6,3,0,1})));
         System.out.println("[] == " + Arrays.toString(foafda.findOriginalArray(new int[]{1})));
         System.out.println("[0,0,1] == " + Arrays.toString(foafda.findOriginalArray(new int[]{0,0,2,1,0,0})));
+        System.out.println("[] == " + Arrays.toString(foafda.findOriginalArray(new int[]{5,0})));
     }
 
     public void maximumEarningsFromTaxi() {
