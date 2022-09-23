@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.september.AmountOfTimeForBinaryTreeToBeInfected;
 import com.ss.leetcode.LC2022.september.BagOfTokens;
+import com.ss.leetcode.LC2022.september.CheckDistancesBetweenSameLetters;
 import com.ss.leetcode.LC2022.september.ConstructStringFromBinaryTree;
 import com.ss.leetcode.LC2022.september.FindSubarraysWithEqualSum;
 import com.ss.leetcode.LC2022.september.LongestSubsequenceWithLimitedSum;
@@ -10,6 +11,7 @@ import com.ss.leetcode.LC2022.september.MaximumPerformanceOfATeam;
 import com.ss.leetcode.LC2022.september.MinimumAmountOfTimeToCollectGarbage;
 import com.ss.leetcode.LC2022.september.NumberOfGoodWaysToSplitAString;
 import com.ss.leetcode.LC2022.september.NumbersWithSameConsecutiveDifferences;
+import com.ss.leetcode.LC2022.september.SmallestEvenMultiple;
 import com.ss.leetcode.LC2022.september.StrictlyPalindromicNumber;
 import com.ss.leetcode.LC2022.september.TheNumberOfWeakCharactersInTheGame;
 import com.ss.leetcode.LC2022.september.UTF8Validation;
@@ -32,7 +34,9 @@ public class StartSeptember {
 //        start.maximumPerformanceOfATeam();
 //        start.numberOfGoodWaysToSplitAString();
 //        start.bagOfTokens();
-        start.uft8Validation();
+//        start.uft8Validation();
+//        start.smallestEvenMultiple();
+        start.checkDistancesBetweenSameLetters();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -148,9 +152,23 @@ public class StartSeptember {
     public void uft8Validation() {
         UTF8Validation utf8v = new UTF8Validation();
 
-//        System.out.println("true == " + utf8v.validUtf8(new int[]{197, 130, 1}));
-//        System.out.println("false == " + utf8v.validUtf8(new int[]{235,140,4}));
-//        System.out.println("true == " + utf8v.validUtf8(new int[]{11,34,16}));
+        System.out.println("true == " + utf8v.validUtf8(new int[]{197, 130, 1}));
+        System.out.println("false == " + utf8v.validUtf8(new int[]{235,140,4}));
+        System.out.println("true == " + utf8v.validUtf8(new int[]{11,34,16}));
         System.out.println("true == " + utf8v.validUtf8(new int[]{255}));
+    }
+
+    public void smallestEvenMultiple() {
+        SmallestEvenMultiple sem = new SmallestEvenMultiple();
+
+        System.out.println("10 == " + sem.smallestEvenMultiple(5));
+        System.out.println("6 == " + sem.smallestEvenMultiple(6));
+    }
+
+    public void checkDistancesBetweenSameLetters() {
+        CheckDistancesBetweenSameLetters cdbsl = new CheckDistancesBetweenSameLetters();
+
+        System.out.println("true ==  " + cdbsl.checkDistances("abaccb", new int[]{1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}));
+        System.out.println("false ==  " + cdbsl.checkDistances("aa", new int[]{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}));
     }
 }
