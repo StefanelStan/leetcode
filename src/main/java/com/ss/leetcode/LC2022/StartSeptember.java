@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2022.september.MinimumAmountOfTimeToCollectGarbage;
 import com.ss.leetcode.LC2022.september.NumberOfGoodWaysToSplitAString;
 import com.ss.leetcode.LC2022.september.NumbersWithSameConsecutiveDifferences;
 import com.ss.leetcode.LC2022.september.SmallestEvenMultiple;
+import com.ss.leetcode.LC2022.september.SortThePeople;
 import com.ss.leetcode.LC2022.september.StrictlyPalindromicNumber;
 import com.ss.leetcode.LC2022.september.TheNumberOfWeakCharactersInTheGame;
 import com.ss.leetcode.LC2022.september.UTF8Validation;
@@ -36,7 +37,8 @@ public class StartSeptember {
 //        start.bagOfTokens();
 //        start.uft8Validation();
 //        start.smallestEvenMultiple();
-        start.checkDistancesBetweenSameLetters();
+//        start.checkDistancesBetweenSameLetters();
+        start.sortThePeople();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -170,5 +172,12 @@ public class StartSeptember {
 
         System.out.println("true ==  " + cdbsl.checkDistances("abaccb", new int[]{1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}));
         System.out.println("false ==  " + cdbsl.checkDistances("aa", new int[]{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}));
+    }
+
+    public void sortThePeople() {
+        SortThePeople stp = new SortThePeople();
+
+        System.out.println("[Mary, Emma, John] == " + Arrays.toString(stp.sortPeople(new String[]{"Mary","John","Emma"}, new int[]{180, 165, 170})));
+        System.out.println("[Bob, Alice, Bob] == " + Arrays.toString(stp.sortPeople(new String[]{"Alice","Bob","Bob"}, new int[]{155, 185, 150})));
     }
 }
