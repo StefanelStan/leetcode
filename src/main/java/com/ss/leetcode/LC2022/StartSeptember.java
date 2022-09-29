@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2022.september.AmountOfTimeForBinaryTreeToBeInfected;
 import com.ss.leetcode.LC2022.september.BagOfTokens;
 import com.ss.leetcode.LC2022.september.CheckDistancesBetweenSameLetters;
 import com.ss.leetcode.LC2022.september.ConstructStringFromBinaryTree;
+import com.ss.leetcode.LC2022.september.FindKClosestElements;
 import com.ss.leetcode.LC2022.september.FindSubarraysWithEqualSum;
 import com.ss.leetcode.LC2022.september.LongestSubsequenceWithLimitedSum;
 import com.ss.leetcode.LC2022.september.MaximumNumberOfRobotsWithinBudget;
@@ -38,7 +39,8 @@ public class StartSeptember {
 //        start.uft8Validation();
 //        start.smallestEvenMultiple();
 //        start.checkDistancesBetweenSameLetters();
-        start.sortThePeople();
+//        start.sortThePeople();
+        start.findKClosestElements();
     }
 
     public void amountOfTimeForBinaryTreeToBeInfected() {
@@ -179,5 +181,13 @@ public class StartSeptember {
 
         System.out.println("[Mary, Emma, John] == " + Arrays.toString(stp.sortPeople(new String[]{"Mary","John","Emma"}, new int[]{180, 165, 170})));
         System.out.println("[Bob, Alice, Bob] == " + Arrays.toString(stp.sortPeople(new String[]{"Alice","Bob","Bob"}, new int[]{155, 185, 150})));
+    }
+
+    public void findKClosestElements() {
+        FindKClosestElements fkce = new FindKClosestElements();
+
+        System.out.println("[1,2,3,4] == " + fkce.findClosestElements(new int[]{1,2,3,4,5}, 4, 3));
+        System.out.println("[1,2,3,4] == " + fkce.findClosestElements(new int[]{1,2,3,4,6}, 4, -1));
+        System.out.println("[3,3,4] == " + fkce.findClosestElements(new int[]{0,0,1,2,3,3,4,7,7,8}, 3, 5));
     }
 }
