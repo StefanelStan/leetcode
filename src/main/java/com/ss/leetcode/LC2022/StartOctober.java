@@ -1,12 +1,14 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.october.IncreasingTripletSubsequence;
 import com.ss.leetcode.LC2022.october.TimeBasedKeyValueStore;
 
 public class StartOctober {
     public static void main(String[] args) {
         StartOctober start = new StartOctober();
 
-        start.timeBasedKeyValueStore();
+//        start.timeBasedKeyValueStore();
+        start.increasingTripletSubsequence();
     }
 
     public void timeBasedKeyValueStore() {
@@ -30,5 +32,23 @@ public class StartOctober {
         System.out.println("high == " + tbkvs.get("love", 15));
         System.out.println("low == " + tbkvs.get("love", 20));
         System.out.println("low == " + tbkvs.get("love", 25));
+    }
+
+    public void increasingTripletSubsequence() {
+        IncreasingTripletSubsequence its = new IncreasingTripletSubsequence();
+
+        System.out.println("true == " + its.increasingTriplet(new int[]{1,2,3,4,5}));
+        System.out.println("false == " + its.increasingTriplet(new int[]{5,4,3,2,1}));
+        System.out.println("true == " + its.increasingTriplet(new int[]{2,1,5,0,4,6}));
+        System.out.println("true == " + its.increasingTriplet(new int[]{1,2,3,4,5}));
+        System.out.println("false == " + its.increasingTriplet(new int[]{5,4,3,2,1}));
+        System.out.println("true == " + its.increasingTriplet(new int[]{5,4,3,2,1,3,4}));
+        System.out.println("false == " + its.increasingTriplet(new int[]{1,2}));
+        System.out.println("false == " + its.increasingTriplet(new int[]{3,2,1}));
+        System.out.println("false == " + its.increasingTriplet(new int[]{3,2}));
+        System.out.println("true == " + its.increasingTriplet(new int[]{1,2,3}));
+        System.out.println("true == " + its.increasingTriplet(new int[]{0,100,10,12,5,13}));
+        System.out.println("false == " + its.increasingTriplet(new int[]{6,7,1,2}));
+        System.out.println("true == " + its.increasingTriplet(new int[]{100,3,101,2,102,1}));
     }
 }
