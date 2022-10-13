@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.october.IncreasingTripletSubsequence;
+import com.ss.leetcode.LC2022.october.NumberOfCommonFactors;
 import com.ss.leetcode.LC2022.october.TimeBasedKeyValueStore;
 
 public class StartOctober {
@@ -8,7 +9,8 @@ public class StartOctober {
         StartOctober start = new StartOctober();
 
 //        start.timeBasedKeyValueStore();
-        start.increasingTripletSubsequence();
+//        start.increasingTripletSubsequence();
+        start.numberOfCommonFactors();
     }
 
     public void timeBasedKeyValueStore() {
@@ -50,5 +52,13 @@ public class StartOctober {
         System.out.println("true == " + its.increasingTriplet(new int[]{0,100,10,12,5,13}));
         System.out.println("false == " + its.increasingTriplet(new int[]{6,7,1,2}));
         System.out.println("true == " + its.increasingTriplet(new int[]{100,3,101,2,102,1}));
+    }
+
+    public void numberOfCommonFactors() {
+        NumberOfCommonFactors nocf = new NumberOfCommonFactors();
+
+        System.out.println("4 == " + nocf.commonFactors(12, 6));
+        System.out.println("2 == " + nocf.commonFactors(25, 30));
+        System.out.println("1 == " + nocf.commonFactors(12, 1));
     }
 }
