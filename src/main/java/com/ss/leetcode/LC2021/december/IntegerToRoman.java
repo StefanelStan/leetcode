@@ -5,6 +5,22 @@ import java.util.Map;
 
 public class IntegerToRoman {
     // https://leetcode.com/problems/integer-to-roman/
+    private static final int[] ints = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
+    private static final String[] romans = {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
+    public String intToRoman(int num) {
+        StringBuilder stb = new StringBuilder();
+        int i = ints.length - 1;
+        while(num > 0) {
+            if (num >= ints[i]) {
+                stb.append(romans[i]);
+                num -= ints[i];
+            } else {
+                i--;
+            }
+        }
+        return stb.toString();
+    }
+
     private static Map<Integer, Character> numerals;
 
     private static final int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
@@ -23,7 +39,7 @@ public class IntegerToRoman {
         }
     }
 
-    public String intToRoman(int num) {
+    public String intToRoman2(int num) {
         StringBuilder stb = new StringBuilder();
 
         for (int i = 0;  i < values.length; i++) {
@@ -35,49 +51,49 @@ public class IntegerToRoman {
         return stb.toString();
     }
 
-    public String intToRoman2(int num) {
+    public String intToRoman3(int num) {
         StringBuilder stb = new StringBuilder();
-        intToRoman(num, stb);
+        parseIntToRoman(num, stb);
         return stb.toString();
     }
 
-    private void intToRoman(int num, StringBuilder stb) {
+    private void parseIntToRoman(int num, StringBuilder stb) {
         if (num == 0) {
             return;
         }
         if (num >= 1000) {
             appendTimes(stb, num / 1000, numerals.get(1000));
-            intToRoman(num % 1000, stb);
+            parseIntToRoman(num % 1000, stb);
         } else if (num >= 900) {
             stb.append("CM");
-            intToRoman(num - 900, stb);
+            parseIntToRoman(num - 900, stb);
         } else if (num >= 500) {
             stb.append(numerals.get(500));
-            intToRoman(num % 500, stb);
+            parseIntToRoman(num % 500, stb);
         } else if (num >= 400) {
             stb.append("CD");
-            intToRoman(num - 400, stb);
+            parseIntToRoman(num - 400, stb);
         } else if (num >= 100) {
             appendTimes(stb, num / 100, numerals.get(100));
-            intToRoman(num % 100, stb);
+            parseIntToRoman(num % 100, stb);
         } else if (num >= 90) {
             stb.append("XC");
-            intToRoman(num - 90, stb);
+            parseIntToRoman(num - 90, stb);
         } else if (num >= 50) {
             stb.append(numerals.get(50));
-            intToRoman(num - 50, stb);
+            parseIntToRoman(num - 50, stb);
         } else if (num >= 40) {
             stb.append("XL");
-            intToRoman(num - 40, stb);
+            parseIntToRoman(num - 40, stb);
         } else if (num >= 10) {
             appendTimes(stb, num / 10, numerals.get(10));
-            intToRoman(num % 10, stb);
+            parseIntToRoman(num % 10, stb);
         } else if (num > 8) {
             stb.append("IX");
-            intToRoman(num - 9, stb);
+            parseIntToRoman(num - 9, stb);
         } else if (num >= 5) {
             stb.append(numerals.get(5));
-            intToRoman(num - 5, stb);
+            parseIntToRoman(num - 5, stb);
         } else if (num > 3) {
             stb.append("IV");
         } else {

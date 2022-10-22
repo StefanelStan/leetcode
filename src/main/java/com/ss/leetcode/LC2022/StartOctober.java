@@ -1,8 +1,11 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.october.DeleteTheMiddleNodeOfALinkedList;
 import com.ss.leetcode.LC2022.october.IncreasingTripletSubsequence;
+import com.ss.leetcode.LC2022.october.MaximumRepeatingSubstring;
 import com.ss.leetcode.LC2022.october.NumberOfCommonFactors;
 import com.ss.leetcode.LC2022.october.TimeBasedKeyValueStore;
+import com.ss.leetcode.shared.ListNode;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -10,7 +13,9 @@ public class StartOctober {
 
 //        start.timeBasedKeyValueStore();
 //        start.increasingTripletSubsequence();
-        start.numberOfCommonFactors();
+//        start.numberOfCommonFactors();
+//        start.deleteTheMiddleNodeOfALinkedList();
+        start.maximumRepeatingSubstring();
     }
 
     public void timeBasedKeyValueStore() {
@@ -60,5 +65,28 @@ public class StartOctober {
         System.out.println("4 == " + nocf.commonFactors(12, 6));
         System.out.println("2 == " + nocf.commonFactors(25, 30));
         System.out.println("1 == " + nocf.commonFactors(12, 1));
+    }
+
+    public void deleteTheMiddleNodeOfALinkedList() {
+        DeleteTheMiddleNodeOfALinkedList dtmoall = new DeleteTheMiddleNodeOfALinkedList();
+
+        System.out.println("[1,3,4,1,2,6] == " + dtmoall.deleteMiddle(ListNode.makeChain(new int[]{1,3,4,7,1,2,6})).getAsList());
+        System.out.println("[1,2,4] == " + dtmoall.deleteMiddle(ListNode.makeChain(new int[]{1,2,3,4})).getAsList());
+        System.out.println("[2] == " + dtmoall.deleteMiddle(ListNode.makeChain(new int[]{2,1})).getAsList());
+        System.out.println("null == " + dtmoall.deleteMiddle(ListNode.makeChain(new int[]{1})));
+    }
+
+    public void maximumRepeatingSubstring() {
+        MaximumRepeatingSubstring mrs = new MaximumRepeatingSubstring();
+
+        System.out.println("2 == " + mrs.maxRepeating("ababc","ab"));
+        System.out.println("1 == " + mrs.maxRepeating("ababc","ba"));
+        System.out.println("0 == " + mrs.maxRepeating("ababc","ac"));
+        System.out.println("1 == " + mrs.maxRepeating("aaabc","abc"));
+        System.out.println("10 == " + mrs.maxRepeating("abababaaaacdababababababababababacab","ab"));
+        System.out.println("6 == " + mrs.maxRepeating("aaaaaa","a"));
+        System.out.println("0 == " + mrs.maxRepeating("aa","aaa"));
+        System.out.println("1 == " + mrs.maxRepeating("aaabaaaacaaaaa","aaa"));
+        System.out.println("5 == " + mrs.maxRepeating("aaabaaaabaaabaaaabaaaabaaaabaaaaba","aaaba"));
     }
 }
