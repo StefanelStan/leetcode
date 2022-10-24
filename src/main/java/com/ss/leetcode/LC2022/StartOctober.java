@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.october.DeleteTheMiddleNodeOfALinkedList;
+import com.ss.leetcode.LC2022.october.FindResultantArrayAfterRemovingAnagrams;
 import com.ss.leetcode.LC2022.october.IncreasingTripletSubsequence;
 import com.ss.leetcode.LC2022.october.MaximumRepeatingSubstring;
 import com.ss.leetcode.LC2022.october.NumberOfCommonFactors;
@@ -15,7 +16,8 @@ public class StartOctober {
 //        start.increasingTripletSubsequence();
 //        start.numberOfCommonFactors();
 //        start.deleteTheMiddleNodeOfALinkedList();
-        start.maximumRepeatingSubstring();
+//        start.maximumRepeatingSubstring();
+        start.findResultantArrayAfterRemovingAnagrams();
     }
 
     public void timeBasedKeyValueStore() {
@@ -88,5 +90,13 @@ public class StartOctober {
         System.out.println("0 == " + mrs.maxRepeating("aa","aaa"));
         System.out.println("1 == " + mrs.maxRepeating("aaabaaaacaaaaa","aaa"));
         System.out.println("5 == " + mrs.maxRepeating("aaabaaaabaaabaaaabaaaabaaaabaaaaba","aaaba"));
+    }
+
+    public void findResultantArrayAfterRemovingAnagrams() {
+        FindResultantArrayAfterRemovingAnagrams fraara = new FindResultantArrayAfterRemovingAnagrams();
+
+        System.out.println("[abba, cd] == " + fraara.removeAnagrams(new String[]{"abba","baba","bbaa","cd","cd"}));
+        System.out.println("[a,b,c,d,e] == " + fraara.removeAnagrams(new String[]{"a","b","c","d","e"}));
+        System.out.println("[abba,aaa,aa,aaa] == " + fraara.removeAnagrams(new String[]{"abba","aabb","aaa","aaa","aa","aaa"}));
     }
 }
