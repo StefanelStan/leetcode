@@ -57,7 +57,7 @@ public class StartDecember {
 //        start.maximumProductSubarray();
 //        start.twoFurthestHousesWithDifferentColors();
 //        start.perfectNumber();
-//        start.continuousSubarraySum();
+        start.continuousSubarraySum();
 //        start.setMismatch();
 //        start.romanToInteger();
 //        start.integerToRoman();
@@ -86,7 +86,7 @@ public class StartDecember {
 //        start.kthLargestElementInAnArray();
 //        start.largestValuesFromLabels();
 //        start.validMountainArray();
-        start.canPlaceFlowers();
+//        start.canPlaceFlowers();
     }
 
     public void wateringPlants() {
@@ -148,12 +148,13 @@ public class StartDecember {
     public void continuousSubarraySum() {
         ContinuousSubarraySum css = new ContinuousSubarraySum();
 
-        System.out.println("false == " + css.checkSubarraySum(new int[]{0}, 1));
-        System.out.println("true == " + css.checkSubarraySum(new int[]{4,5}, 3));
-        System.out.println("true == " + css.checkSubarraySum(new int[]{23,2,4,6,7}, 6));
-        System.out.println("true == " + css.checkSubarraySum(new int[]{23,2,6,4,7}, 6));
-        System.out.println("false == " + css.checkSubarraySum(new int[]{23,2,6,4,7}, 13));
-        System.out.println("true == " + css.checkSubarraySum(new int[]{0,1,2,3,4,5,6,7,8,9,10}, 19));
+        System.out.println("true == " + css.checkSubarraySum(new int[]{23,2,4,6,6}, 7));
+//        System.out.println("false == " + css.checkSubarraySum(new int[]{0}, 1));
+//        System.out.println("true == " + css.checkSubarraySum(new int[]{4,5}, 3));
+//        System.out.println("true == " + css.checkSubarraySum(new int[]{23,2,4,6,7}, 6));
+//        System.out.println("true == " + css.checkSubarraySum(new int[]{23,2,6,4,7}, 6));
+//        System.out.println("false == " + css.checkSubarraySum(new int[]{23,2,6,4,7}, 13));
+//        System.out.println("true == " + css.checkSubarraySum(new int[]{0,1,2,3,4,5,6,7,8,9,10}, 19));
     }
 
     public void setMismatch() {
