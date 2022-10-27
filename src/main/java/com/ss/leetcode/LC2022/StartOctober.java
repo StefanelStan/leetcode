@@ -1,6 +1,8 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.october.CountNumberOfDistinctIntegersAfterReverseOperations;
 import com.ss.leetcode.LC2022.october.DeleteTheMiddleNodeOfALinkedList;
+import com.ss.leetcode.LC2022.october.DetermineIfTwoEventsHaveConflict;
 import com.ss.leetcode.LC2022.october.FindResultantArrayAfterRemovingAnagrams;
 import com.ss.leetcode.LC2022.october.IncreasingTripletSubsequence;
 import com.ss.leetcode.LC2022.october.MaximumRepeatingSubstring;
@@ -17,7 +19,9 @@ public class StartOctober {
 //        start.numberOfCommonFactors();
 //        start.deleteTheMiddleNodeOfALinkedList();
 //        start.maximumRepeatingSubstring();
-        start.findResultantArrayAfterRemovingAnagrams();
+//        start.findResultantArrayAfterRemovingAnagrams();
+//        start.countNumberOfDistinctIntegersAfterReverseOperations();
+        start.determineIfTwoEventsHaveConflict();
     }
 
     public void timeBasedKeyValueStore() {
@@ -98,5 +102,23 @@ public class StartOctober {
         System.out.println("[abba, cd] == " + fraara.removeAnagrams(new String[]{"abba","baba","bbaa","cd","cd"}));
         System.out.println("[a,b,c,d,e] == " + fraara.removeAnagrams(new String[]{"a","b","c","d","e"}));
         System.out.println("[abba,aaa,aa,aaa] == " + fraara.removeAnagrams(new String[]{"abba","aabb","aaa","aaa","aa","aaa"}));
+    }
+
+    public void countNumberOfDistinctIntegersAfterReverseOperations() {
+        CountNumberOfDistinctIntegersAfterReverseOperations cnodiaro = new CountNumberOfDistinctIntegersAfterReverseOperations();
+
+        System.out.println("6 == " + cnodiaro.countDistinctIntegers(new int[]{1,13,10,12,31}));
+        System.out.println("1 == " + cnodiaro.countDistinctIntegers(new int[]{2,2,2}));
+        System.out.println("35 == " + cnodiaro.countDistinctIntegers(new int[]{32,1212,232,3232,1212,7676,543,2323,1212,4545,232,2323,121,343,553,333,444,555,1,1,11,11,111,111,1,7,3,2,7,6,6,5,4,656,343,434,322,223,112,211}));
+        System.out.println("1 == " + cnodiaro.countDistinctIntegers(new int[]{7}));
+        System.out.println("2 == " + cnodiaro.countDistinctIntegers(new int[]{23,32}));
+    }
+
+    public void determineIfTwoEventsHaveConflict() {
+        DetermineIfTwoEventsHaveConflict ditehc = new DetermineIfTwoEventsHaveConflict();
+
+        System.out.println("true == " + ditehc.haveConflict(new String[]{"01:15","02:00"}, new String[]{"02:00","03:00"}));
+        System.out.println("true == " + ditehc.haveConflict(new String[]{"01:00","02:00"}, new String[]{"01:20","03:00"}));
+        System.out.println("false == " + ditehc.haveConflict(new String[]{"10:00","11:00"}, new String[]{"14:00","15:00"}));
     }
 }
