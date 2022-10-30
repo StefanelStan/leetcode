@@ -21,4 +21,11 @@ public class DetermineIfTwoEventsHaveConflict {
         int endMinutes = Integer.parseInt(event[1].substring(0,2)) * 60 + Integer.parseInt(event[1].substring(3));
         return new int[]{startMinutes, endMinutes};
     }
+
+    public boolean haveConflict2(String[] event1, String[] event2) {
+        // compare the string directly and skip the int conversion
+        return (event2[0].compareTo(event1[0]) >= 0 && event2[0].compareTo(event1[1]) <= 0) ||
+            (event1[0].compareTo(event2[0]) >= 0 && event1[0].compareTo(event2[1]) <= 0);
+
+    }
 }

@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.october.AverageValueOfEvenNumbersThatAreDivisibleByThree;
 import com.ss.leetcode.LC2022.october.CountNumberOfDistinctIntegersAfterReverseOperations;
 import com.ss.leetcode.LC2022.october.DeleteTheMiddleNodeOfALinkedList;
 import com.ss.leetcode.LC2022.october.DetermineIfTwoEventsHaveConflict;
@@ -7,8 +8,11 @@ import com.ss.leetcode.LC2022.october.FindResultantArrayAfterRemovingAnagrams;
 import com.ss.leetcode.LC2022.october.IncreasingTripletSubsequence;
 import com.ss.leetcode.LC2022.october.MaximumRepeatingSubstring;
 import com.ss.leetcode.LC2022.october.NumberOfCommonFactors;
+import com.ss.leetcode.LC2022.october.OddStringDifference;
+import com.ss.leetcode.LC2022.october.ReverseOddLevelsOfBinaryTree;
 import com.ss.leetcode.LC2022.october.TimeBasedKeyValueStore;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.TreeNode;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -21,7 +25,10 @@ public class StartOctober {
 //        start.maximumRepeatingSubstring();
 //        start.findResultantArrayAfterRemovingAnagrams();
 //        start.countNumberOfDistinctIntegersAfterReverseOperations();
-        start.determineIfTwoEventsHaveConflict();
+//        start.determineIfTwoEventsHaveConflict();
+//        start.reverseOddLevelsOfBinaryTree();
+//        start.averageValueOfEvenNumbersThatAreDivisibleByThree();
+        start.oddStringDifference();
     }
 
     public void timeBasedKeyValueStore() {
@@ -120,5 +127,32 @@ public class StartOctober {
         System.out.println("true == " + ditehc.haveConflict(new String[]{"01:15","02:00"}, new String[]{"02:00","03:00"}));
         System.out.println("true == " + ditehc.haveConflict(new String[]{"01:00","02:00"}, new String[]{"01:20","03:00"}));
         System.out.println("false == " + ditehc.haveConflict(new String[]{"10:00","11:00"}, new String[]{"14:00","15:00"}));
+    }
+
+    public void reverseOddLevelsOfBinaryTree() {
+        ReverseOddLevelsOfBinaryTree rolobt = new ReverseOddLevelsOfBinaryTree();
+
+        TreeNode root1 = new TreeNode(2, new TreeNode(3, new TreeNode(8), new TreeNode(13)), new TreeNode(5, new TreeNode(21), new TreeNode(34)));
+        TreeNode root2 = new TreeNode(7, new TreeNode(13), new TreeNode(11));
+        TreeNode root3 = new TreeNode(0,
+            new TreeNode(1, new TreeNode(0, new TreeNode(4), new TreeNode(2)), new TreeNode(0, new TreeNode(8), new TreeNode(1))),
+            new TreeNode(2, new TreeNode(0, new TreeNode(7), new TreeNode(9)), new TreeNode(0, new TreeNode(3), new TreeNode(1))));
+
+        System.out.println("[2,5,8,13,3,21,34] == " + TreeNode.preOrder(rolobt.reverseOddLevels(root1)));
+        System.out.println("[7,11,13] == " + TreeNode.preOrder(rolobt.reverseOddLevels(root2)));
+        System.out.println("[0,2,0,1,3,0,9,7,1,0,1,8,0,2,4] == " + TreeNode.preOrder(rolobt.reverseOddLevels(root3)));
+    }
+
+    public void averageValueOfEvenNumbersThatAreDivisibleByThree() {
+        AverageValueOfEvenNumbersThatAreDivisibleByThree avoentadbt = new AverageValueOfEvenNumbersThatAreDivisibleByThree();
+
+        System.out.println("9 == " + avoentadbt.averageValue(new int[]{1,3,6,10,12,15}));
+        System.out.println("0 == " + avoentadbt.averageValue(new int[]{1,2,4,7,10}));
+    }
+
+    public void oddStringDifference() {
+        OddStringDifference osd = new OddStringDifference();
+
+        System.out.println("poo == " + osd.oddString(new String[]{"ddd","poo","baa","onn"}));
     }
 }
