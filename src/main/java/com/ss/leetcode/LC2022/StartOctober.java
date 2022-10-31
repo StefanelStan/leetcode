@@ -7,10 +7,12 @@ import com.ss.leetcode.LC2022.october.DetermineIfTwoEventsHaveConflict;
 import com.ss.leetcode.LC2022.october.FindResultantArrayAfterRemovingAnagrams;
 import com.ss.leetcode.LC2022.october.IncreasingTripletSubsequence;
 import com.ss.leetcode.LC2022.october.MaximumRepeatingSubstring;
+import com.ss.leetcode.LC2022.october.MostPopularVideoCreator;
 import com.ss.leetcode.LC2022.october.NumberOfCommonFactors;
 import com.ss.leetcode.LC2022.october.OddStringDifference;
 import com.ss.leetcode.LC2022.october.ReverseOddLevelsOfBinaryTree;
 import com.ss.leetcode.LC2022.october.TimeBasedKeyValueStore;
+import com.ss.leetcode.LC2022.october.WordsWithinTwoEditsOfDictionary;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -28,7 +30,9 @@ public class StartOctober {
 //        start.determineIfTwoEventsHaveConflict();
 //        start.reverseOddLevelsOfBinaryTree();
 //        start.averageValueOfEvenNumbersThatAreDivisibleByThree();
-        start.oddStringDifference();
+//        start.oddStringDifference();
+//        start.wordsWithinTwoEditsOfDictionary();
+        start.mostPopularVideoCreator();
     }
 
     public void timeBasedKeyValueStore() {
@@ -154,5 +158,25 @@ public class StartOctober {
         OddStringDifference osd = new OddStringDifference();
 
         System.out.println("poo == " + osd.oddString(new String[]{"ddd","poo","baa","onn"}));
+    }
+
+    public void wordsWithinTwoEditsOfDictionary() {
+        WordsWithinTwoEditsOfDictionary wwteod = new WordsWithinTwoEditsOfDictionary();
+
+        System.out.println("[word, note, word] == " + wwteod.twoEditWords(new String[]{"word","note","ants","wood"}, new String[]{"wood","joke","moat"}));
+        System.out.println("[] == " + wwteod.twoEditWords(new String[]{"yes"}, new String[]{"not"}));
+    }
+
+    public void mostPopularVideoCreator() {
+        MostPopularVideoCreator mpvc = new MostPopularVideoCreator();
+
+        System.out.println("[alice, one],[bob, two] == " + mpvc.mostPopularCreator(new String[]{"alice","bob","alice","chris"},
+            new String[]{"one","two","three","four"}, new int[]{5,10,5,4}));
+
+        System.out.println("[alice, b] == " + mpvc.mostPopularCreator(new String[]{"alice","alice","alice"},
+            new String[]{"a","b","c"}, new int[]{1,2,2}));
+
+        System.out.println("[a,a] == " + mpvc.mostPopularCreator(new String[]{"a"},
+            new String[]{"a"}, new int[]{0}));
     }
 }
