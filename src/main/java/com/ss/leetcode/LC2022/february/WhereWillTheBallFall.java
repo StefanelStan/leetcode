@@ -1,6 +1,28 @@
 package com.ss.leetcode.LC2022.february;
 
 public class WhereWillTheBallFall {
+    public int[] findBall(int[][] grid) {
+        int[] destinations = new int[grid[0].length];
+        for (int j = 0; j < grid[0].length; j++) {
+            destinations[j] = getDestination(0, j, grid);
+        }
+        return destinations;
+    }
+
+    private int getDestination(int row, int col, int[][] grid) {
+        if(col < 0 || col >= grid[0].length) {
+            return -1;
+        }
+        if (row == grid.length) {
+            return col;
+        }
+        if ((grid[row][col] == 1 && col < grid[0].length - 1 && grid[row][col+1] == -1)
+            || (grid[row][col] == -1 && col > 0 && grid[row][col -1] == 1)) {
+            return -1;
+        }
+        return getDestination(row +1, col + grid[row][col], grid);
+    }
+
     /** Algorithm
          1. Determine the final destination for each column(ball) via a method and save it in the answer[]
          2. In this methid, apply a 3 step tactic
@@ -11,7 +33,7 @@ public class WhereWillTheBallFall {
          If yes, return -1
          3. Return the final value of col and save it in answer[].
      */
-    public int[] findBall(int[][] grid) {
+    public int[] findBall2(int[][] grid) {
         int[] destinations = new int[grid[0].length];
         for (int i = 0; i < destinations.length; i++) {
             destinations[i] = findDestination(i, grid);
