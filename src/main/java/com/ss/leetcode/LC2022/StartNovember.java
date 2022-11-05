@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
+import java.util.Arrays;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -10,7 +12,8 @@ public class StartNovember {
 
 //        start.largestPositiveIntegerThatExistsWithItsNegative();
 //        start.minimumGeneticMutation();
-        start.longestPalindromeByConcatenatingTwoLetterWords();
+//        start.longestPalindromeByConcatenatingTwoLetterWords();
+        start.imageSmoother();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -39,5 +42,13 @@ public class StartNovember {
         System.out.println("2 == " + lpbctlw.longestPalindrome(new String[]{"cc","ll","xx"}));
         System.out.println("0 == " + lpbctlw.longestPalindrome(new String[]{"cu","lz","xa"}));
         System.out.println("22 == " + lpbctlw.longestPalindrome(new String[]{"dd","aa","bb","dd","aa","dd","bb","dd","aa","cc","bb","cc","dd","cc"}));
+    }
+
+    public void imageSmoother() {
+        ImageSmoother is = new ImageSmoother();
+
+        System.out.println("[[0,0,0],[0,0,0],[0,0,0]] == " + Arrays.deepToString(is.imageSmoother(new int[][]{{1,1,1},{1,0,1},{1,1,1}})));
+        System.out.println("[[137,141,137],[141,138,141],[137,141,137]] == " + Arrays.deepToString(is.imageSmoother(new int[][]{{100,200,100},{200,50,200},{100,200,100}})));
+        System.out.println("[[1]] == " + Arrays.deepToString(is.imageSmoother(new int[][]{{1}})));
     }
 }
