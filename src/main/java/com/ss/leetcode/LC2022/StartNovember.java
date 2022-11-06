@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
+import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import java.util.Arrays;
 
@@ -13,7 +14,8 @@ public class StartNovember {
 //        start.largestPositiveIntegerThatExistsWithItsNegative();
 //        start.minimumGeneticMutation();
 //        start.longestPalindromeByConcatenatingTwoLetterWords();
-        start.imageSmoother();
+//        start.imageSmoother();
+        start.maximumSumOfDistinctSubarraysWithLengthK();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -50,5 +52,16 @@ public class StartNovember {
         System.out.println("[[0,0,0],[0,0,0],[0,0,0]] == " + Arrays.deepToString(is.imageSmoother(new int[][]{{1,1,1},{1,0,1},{1,1,1}})));
         System.out.println("[[137,141,137],[141,138,141],[137,141,137]] == " + Arrays.deepToString(is.imageSmoother(new int[][]{{100,200,100},{200,50,200},{100,200,100}})));
         System.out.println("[[1]] == " + Arrays.deepToString(is.imageSmoother(new int[][]{{1}})));
+    }
+
+    public void maximumSumOfDistinctSubarraysWithLengthK() {
+        MaximumSumOfDistinctSubarraysWithLengthK msaodswlk = new MaximumSumOfDistinctSubarraysWithLengthK();
+
+        System.out.println("15 == " + msaodswlk.maximumSubarraySum(new int[]{1,5,4,2,9,9,9}, 3));
+        System.out.println("0 == " + msaodswlk.maximumSubarraySum(new int[]{4,4,4}, 3));
+        System.out.println("0 == " + msaodswlk.maximumSubarraySum(new int[]{4}, 1));
+        System.out.println("9 == " + msaodswlk.maximumSubarraySum(new int[]{4,5,5}, 2));
+        System.out.println("0 == " + msaodswlk.maximumSubarraySum(new int[]{4,5,5,6}, 3));
+        System.out.println("24 == " + msaodswlk.maximumSubarraySum(new int[]{1,1,1,7,8,9}, 3));
     }
 }
