@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.november.ApplyOperationsToAnArray;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
+import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import java.util.Arrays;
@@ -15,7 +17,10 @@ public class StartNovember {
 //        start.minimumGeneticMutation();
 //        start.longestPalindromeByConcatenatingTwoLetterWords();
 //        start.imageSmoother();
-        start.maximumSumOfDistinctSubarraysWithLengthK();
+//        start.maximumSumOfDistinctSubarraysWithLengthK();
+//        start.makeTheStringGreat();
+        start.applyOperationsToAnArray();
+
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -63,5 +68,26 @@ public class StartNovember {
         System.out.println("9 == " + msaodswlk.maximumSubarraySum(new int[]{4,5,5}, 2));
         System.out.println("0 == " + msaodswlk.maximumSubarraySum(new int[]{4,5,5,6}, 3));
         System.out.println("24 == " + msaodswlk.maximumSubarraySum(new int[]{1,1,1,7,8,9}, 3));
+    }
+
+    public void makeTheStringGreat() {
+        MakeTheStringGreat mtsg = new MakeTheStringGreat();
+
+        System.out.println("leetcode == " + mtsg.makeGood("leEeetcode"));
+        System.out.println(" == " + mtsg.makeGood("abBAcC"));
+        System.out.println("s == " + mtsg.makeGood("s"));
+        System.out.println(" == " + mtsg.makeGood("pP"));
+        System.out.println(" == " + mtsg.makeGood("Pp"));
+    }
+
+    public void applyOperationsToAnArray() {
+        ApplyOperationsToAnArray aotaa = new ApplyOperationsToAnArray();
+
+        System.out.println("[4,4,2,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{4,2,2,2})));
+        System.out.println("[1,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{0,1})));
+        System.out.println("[5,4,3,2,2,2,3,4,5,12,12,7,8,9,0,0,0,0,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{5,4,3,2,1,1,2,3,4,5,6,6,6,6,7,8,9,0,0})));
+        System.out.println("[2,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{1,1})));
+        System.out.println("[2,2,0,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{1,1,1,1})));
+        System.out.println("[2,4,0,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{1,1,2,2})));
     }
 }
