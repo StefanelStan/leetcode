@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetter
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
+import com.ss.leetcode.LC2022.november.OnlineStockSpan;
 import java.util.Arrays;
 
 public class StartNovember {
@@ -19,8 +20,8 @@ public class StartNovember {
 //        start.imageSmoother();
 //        start.maximumSumOfDistinctSubarraysWithLengthK();
 //        start.makeTheStringGreat();
-        start.applyOperationsToAnArray();
-
+//        start.applyOperationsToAnArray();
+        start.stockSpan();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -89,5 +90,25 @@ public class StartNovember {
         System.out.println("[2,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{1,1})));
         System.out.println("[2,2,0,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{1,1,1,1})));
         System.out.println("[2,4,0,0] == " + Arrays.toString(aotaa.applyOperations(new int[]{1,1,2,2})));
+    }
+
+    public void stockSpan() {
+        OnlineStockSpan oss = new OnlineStockSpan();
+
+        System.out.println("1 == " + oss.next(100));
+        System.out.println("1 == " + oss.next(80));
+        System.out.println("1 == " + oss.next(60));
+        System.out.println("2 == " + oss.next(70));
+        System.out.println("3 == " + oss.next(70));
+        System.out.println("1 == " + oss.next(60));
+        System.out.println("5 == " + oss.next(75));
+        System.out.println("7 == " + oss.next(85));
+
+        oss = new OnlineStockSpan();
+        System.out.println("1 == " + oss.next(31));
+        System.out.println("2 == " + oss.next(41));
+        System.out.println("3 == " + oss.next(48));
+        System.out.println("4 == " + oss.next(59));
+        System.out.println("5 == " + oss.next(79));
     }
 }
