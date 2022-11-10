@@ -2,7 +2,19 @@ package com.ss.leetcode.LC2021.april;
 
 public class RemoveAllAdjacentDuplicatesInString {
     // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
-    public String removeDuplicates(String str) {
+    public String removeDuplicates(String s) {
+        StringBuilder stb = new StringBuilder(s.length());
+        for (char ch : s.toCharArray()) {
+            if (stb.isEmpty() || stb.charAt(stb.length() - 1) != ch) {
+                stb.append(ch);
+            } else {
+                stb.setLength(stb.length() - 1);
+            }
+        }
+        return stb.toString();
+    }
+
+    public String removeDuplicates2(String str) {
         boolean[] removedPositions = new boolean[str.length()];
         boolean hasDuplicates = true;
         while (hasDuplicates) {
