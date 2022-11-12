@@ -7,6 +7,8 @@ import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetter
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
+import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
+import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
 import java.util.Arrays;
 
@@ -21,7 +23,9 @@ public class StartNovember {
 //        start.maximumSumOfDistinctSubarraysWithLengthK();
 //        start.makeTheStringGreat();
 //        start.applyOperationsToAnArray();
-        start.stockSpan();
+//        start.stockSpan();
+//        start.numberOfValidClockTimes();
+        start.numberOfDistinctAverages();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -110,5 +114,21 @@ public class StartNovember {
         System.out.println("3 == " + oss.next(48));
         System.out.println("4 == " + oss.next(59));
         System.out.println("5 == " + oss.next(79));
+    }
+
+    public void numberOfValidClockTimes() {
+        NumberOfValidClockTimes novct = new NumberOfValidClockTimes();
+
+        System.out.println("2 == " + novct.countTime("?5:00"));
+        System.out.println("100 == " + novct.countTime("0?:0?"));
+        System.out.println("1440 == " + novct.countTime("??:??"));
+    }
+
+    public void numberOfDistinctAverages() {
+        NumberOfDistinctAverages noda = new NumberOfDistinctAverages();
+
+        System.out.println("2 == " + noda.distinctAverages(new int[]{4,1,4,0,3,5}));
+        System.out.println("1 == " + noda.distinctAverages(new int[]{1,100}));
+        System.out.println("10 == " + noda.distinctAverages(new int[]{4,1,7,3,1,7,23,54,23,15,23,11,11,11,11,11,22,33,44,55,66,0,8,7,6,5,4,3,2,1,2,3,4,5,6,7,8,9,4,0,3,5}));
     }
 }
