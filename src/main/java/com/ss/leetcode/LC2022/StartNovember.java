@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.november.ApplyOperationsToAnArray;
+import com.ss.leetcode.LC2022.november.ConvertTheTemperature;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
@@ -10,6 +11,7 @@ import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
 import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
+import com.ss.leetcode.LC2022.november.ThreeDivisors;
 import java.util.Arrays;
 
 public class StartNovember {
@@ -25,7 +27,9 @@ public class StartNovember {
 //        start.applyOperationsToAnArray();
 //        start.stockSpan();
 //        start.numberOfValidClockTimes();
-        start.numberOfDistinctAverages();
+//        start.numberOfDistinctAverages();
+//        start.convertTheTemperature();
+        start.threeDivisors();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -130,5 +134,20 @@ public class StartNovember {
         System.out.println("2 == " + noda.distinctAverages(new int[]{4,1,4,0,3,5}));
         System.out.println("1 == " + noda.distinctAverages(new int[]{1,100}));
         System.out.println("10 == " + noda.distinctAverages(new int[]{4,1,7,3,1,7,23,54,23,15,23,11,11,11,11,11,22,33,44,55,66,0,8,7,6,5,4,3,2,1,2,3,4,5,6,7,8,9,4,0,3,5}));
+    }
+
+    public void convertTheTemperature() {
+        ConvertTheTemperature ctt = new ConvertTheTemperature();
+
+        System.out.println("[309.65000,97.70000] == " + Arrays.toString(ctt.convertTemperature(36.5)));
+        System.out.println("[395.26000,251.79800] == " + Arrays.toString(ctt.convertTemperature(122.11)));
+    }
+
+    public void threeDivisors() {
+        ThreeDivisors td = new ThreeDivisors();
+
+        System.out.println("false == " + td.isThree(2));
+        System.out.println("true == " + td.isThree(4));
+        System.out.println("false == " + td.isThree(14));
     }
 }
