@@ -8,10 +8,13 @@ import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetter
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
+import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTreeByLevel;
 import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
 import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
 import com.ss.leetcode.LC2022.november.ThreeDivisors;
+import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 import java.util.Arrays;
 
 public class StartNovember {
@@ -29,7 +32,8 @@ public class StartNovember {
 //        start.numberOfValidClockTimes();
 //        start.numberOfDistinctAverages();
 //        start.convertTheTemperature();
-        start.threeDivisors();
+//        start.threeDivisors();
+        start.minimumNumberOfOperationsToSortABinaryTreeByLevel();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -149,5 +153,19 @@ public class StartNovember {
         System.out.println("false == " + td.isThree(2));
         System.out.println("true == " + td.isThree(4));
         System.out.println("false == " + td.isThree(14));
+    }
+
+    public void minimumNumberOfOperationsToSortABinaryTreeByLevel() {
+        MinimumNumberOfOperationsToSortABinaryTreeByLevel mnootsabtbl = new MinimumNumberOfOperationsToSortABinaryTreeByLevel();
+
+        TreeNode root1 = new TreeNode(1,
+            new TreeNode(4, new TreeNode(7), new TreeNode(6)),
+            new TreeNode(3, new TreeNode(8, new TreeNode(9), null), new TreeNode(5, new TreeNode(10), null)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(3, new TreeNode(7), new TreeNode(6)), new TreeNode(2, new TreeNode(5), new TreeNode(4)));
+        TreeNode root3 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), null));
+
+        System.out.println("3 == " + mnootsabtbl.minimumOperations(root1));
+        System.out.println("3 == " + mnootsabtbl.minimumOperations(root2));
+        System.out.println("0 == " + mnootsabtbl.minimumOperations(root3));
     }
 }
