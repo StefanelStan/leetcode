@@ -12,10 +12,12 @@ import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTre
 import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
 import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
+import com.ss.leetcode.LC2022.november.ReplaceWords;
 import com.ss.leetcode.LC2022.november.ThreeDivisors;
 import com.ss.leetcode.shared.TreeNode;
 import com.sun.source.tree.Tree;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -33,7 +35,8 @@ public class StartNovember {
 //        start.numberOfDistinctAverages();
 //        start.convertTheTemperature();
 //        start.threeDivisors();
-        start.minimumNumberOfOperationsToSortABinaryTreeByLevel();
+//        start.minimumNumberOfOperationsToSortABinaryTreeByLevel();
+        start.replaceWords();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -167,5 +170,12 @@ public class StartNovember {
         System.out.println("3 == " + mnootsabtbl.minimumOperations(root1));
         System.out.println("3 == " + mnootsabtbl.minimumOperations(root2));
         System.out.println("0 == " + mnootsabtbl.minimumOperations(root3));
+    }
+
+    public void replaceWords() {
+        ReplaceWords rw = new ReplaceWords();
+
+        System.out.println("the cat was rat by the bat == " + rw.replaceWords(List.of("cat","bat","rat"), "the cattle was rattled by the battery"));
+        System.out.println("a a b c == " + rw.replaceWords(List.of("a","b","c"), "aadsfasf absbs bbab cadsfafs"));
     }
 }
