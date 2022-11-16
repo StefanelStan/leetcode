@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
+import com.ss.leetcode.LC2022.november.MaskingPersonalInformation;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTreeByLevel;
@@ -36,7 +37,8 @@ public class StartNovember {
 //        start.convertTheTemperature();
 //        start.threeDivisors();
 //        start.minimumNumberOfOperationsToSortABinaryTreeByLevel();
-        start.replaceWords();
+//        start.replaceWords();
+        start.maskingPersonalInformation();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -177,5 +179,14 @@ public class StartNovember {
 
         System.out.println("the cat was rat by the bat == " + rw.replaceWords(List.of("cat","bat","rat"), "the cattle was rattled by the battery"));
         System.out.println("a a b c == " + rw.replaceWords(List.of("a","b","c"), "aadsfasf absbs bbab cadsfafs"));
+    }
+
+    public void maskingPersonalInformation() {
+        MaskingPersonalInformation mpi = new MaskingPersonalInformation();
+
+        System.out.println("l*****e@leetcode.com == " + mpi.maskPII("LeetCode@LeetCode.com"));
+        System.out.println("a*****b@qq.com == " + mpi.maskPII("AB@qq.com"));
+        System.out.println("***-***-7890 == " + mpi.maskPII("1(234)567-890"));
+        System.out.println("+***-***-***-7890 == " + mpi.maskPII("+141+(1)(234)567-890"));
     }
 }
