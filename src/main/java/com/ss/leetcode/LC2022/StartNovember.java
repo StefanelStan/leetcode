@@ -13,10 +13,11 @@ import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTre
 import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
 import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
+import com.ss.leetcode.LC2022.november.RectangleArea;
 import com.ss.leetcode.LC2022.november.ReplaceWords;
 import com.ss.leetcode.LC2022.november.ThreeDivisors;
+import com.ss.leetcode.LC2022.november.WalkingRobotSimulation;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,7 +39,9 @@ public class StartNovember {
 //        start.threeDivisors();
 //        start.minimumNumberOfOperationsToSortABinaryTreeByLevel();
 //        start.replaceWords();
-        start.maskingPersonalInformation();
+//        start.maskingPersonalInformation();
+//        start.rectangleArea();
+        start.walkingRobotSimulation();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -188,5 +191,24 @@ public class StartNovember {
         System.out.println("a*****b@qq.com == " + mpi.maskPII("AB@qq.com"));
         System.out.println("***-***-7890 == " + mpi.maskPII("1(234)567-890"));
         System.out.println("+***-***-***-7890 == " + mpi.maskPII("+141+(1)(234)567-890"));
+    }
+
+    public void rectangleArea() {
+        RectangleArea ra = new RectangleArea();
+        System.out.println("45 == " + ra.computeArea(-3,0,3,4,0,-1,9,2));
+        System.out.println("16 == " + ra.computeArea(-2,-2,2,2,-2,-2,2,2));
+    }
+
+    public void walkingRobotSimulation() {
+        WalkingRobotSimulation wrs = new WalkingRobotSimulation();
+
+        System.out.println("25 == " + wrs.robotSim(new int[]{4,-1,3}, new int[0][0]));
+        System.out.println("65 == " + wrs.robotSim(new int[]{4,-1,4,-2,4}, new int[][]{{2,4}}));
+        System.out.println("36 == " + wrs.robotSim(new int[]{6,-1,-1,6}, new int[0][0]));
+        System.out.println("4 == " + wrs.robotSim(new int[]{7,-2,-2,7,5}, new int[][]{{-3,2},{-2,1},{0,1},{-2,4},{-1,0},{-2,-3},{0,-3},{4,4},{-3,3},{2,2}}));
+        System.out.println("4842 == " + wrs.robotSim(new int[]{1,2,-2,5,-1,-2,-1,8,3,-1,9,4,-2,1,3,-2,4,1,4,-1,1,9,-1,-2,5,-1,5,5,-2,6,6,7,7,2,8},
+            new int[][]{{-57,-58},{-72,91},{-55,35},{-20,29},{51,70},{-61,88},{-62,99},{52,17},{-75,-32},{91,-22},{54,33},{-45,-59},{47,-48},{53,-98},{-91,83},{81,12},{-34,-90},{-79,-82},{-15,-86},{-24,66},{-35,35},{3,31},{87,93},{2,-19},{87,-93},{24,-10},{84,-53},{86,87},{-88,-18},{-51,89},{96,66},{-77,-94},{-39,-1},{89,51},{-23,-72},{27,24},{53,-80},{52,-33},{32,4},{78,-55},{-25,18},{-23,47},{79,-5},{-23,-22}}));
+        System.out.println("5265 == " + wrs.robotSim(new int[]{1,2,-2,5,-1,-2,-1,8,3,-1,9,4,-2,3,2,4,3,9,2,-1,-1,-2,1,3,-2,4,1,4,-1,1,9,-1,-2,5,-1,5,5,-2,6,6,7,7,2,8},
+            new int[][]{{-57,-58},{-72,91},{-55,35},{-20,29},{51,70},{-61,88},{-62,99},{52,17},{-75,-32},{91,-22},{54,33},{-45,-59},{47,-48},{53,-98},{-91,83},{81,12},{-34,-90},{-79,-82},{-15,-86},{-24,66},{-35,35},{3,31},{87,93},{2,-19},{87,-93},{24,-10},{84,-53},{86,87},{-88,-18},{-51,89},{96,66},{-77,-94},{-39,-1},{89,51},{-23,-72},{27,24},{53,-80},{52,-33},{32,4},{78,-55},{-25,18},{-23,47},{79,-5},{-23,-22}}));
     }
 }
