@@ -1,7 +1,9 @@
 package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.november.ApplyOperationsToAnArray;
+import com.ss.leetcode.LC2022.november.CheckIfWordIsValidAfterSubstitutions;
 import com.ss.leetcode.LC2022.november.ConvertTheTemperature;
+import com.ss.leetcode.LC2022.november.GetEqualSubstringsWithinBudget;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
@@ -41,7 +43,9 @@ public class StartNovember {
 //        start.replaceWords();
 //        start.maskingPersonalInformation();
 //        start.rectangleArea();
-        start.walkingRobotSimulation();
+//        start.walkingRobotSimulation();
+//        start.checkIfWordIsValidAfterSubstitutions();
+        start.getEqualSubstringsWithinBudget();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -210,5 +214,21 @@ public class StartNovember {
             new int[][]{{-57,-58},{-72,91},{-55,35},{-20,29},{51,70},{-61,88},{-62,99},{52,17},{-75,-32},{91,-22},{54,33},{-45,-59},{47,-48},{53,-98},{-91,83},{81,12},{-34,-90},{-79,-82},{-15,-86},{-24,66},{-35,35},{3,31},{87,93},{2,-19},{87,-93},{24,-10},{84,-53},{86,87},{-88,-18},{-51,89},{96,66},{-77,-94},{-39,-1},{89,51},{-23,-72},{27,24},{53,-80},{52,-33},{32,4},{78,-55},{-25,18},{-23,47},{79,-5},{-23,-22}}));
         System.out.println("5265 == " + wrs.robotSim(new int[]{1,2,-2,5,-1,-2,-1,8,3,-1,9,4,-2,3,2,4,3,9,2,-1,-1,-2,1,3,-2,4,1,4,-1,1,9,-1,-2,5,-1,5,5,-2,6,6,7,7,2,8},
             new int[][]{{-57,-58},{-72,91},{-55,35},{-20,29},{51,70},{-61,88},{-62,99},{52,17},{-75,-32},{91,-22},{54,33},{-45,-59},{47,-48},{53,-98},{-91,83},{81,12},{-34,-90},{-79,-82},{-15,-86},{-24,66},{-35,35},{3,31},{87,93},{2,-19},{87,-93},{24,-10},{84,-53},{86,87},{-88,-18},{-51,89},{96,66},{-77,-94},{-39,-1},{89,51},{-23,-72},{27,24},{53,-80},{52,-33},{32,4},{78,-55},{-25,18},{-23,47},{79,-5},{-23,-22}}));
+    }
+
+    public void checkIfWordIsValidAfterSubstitutions() {
+        CheckIfWordIsValidAfterSubstitutions ciwivas = new CheckIfWordIsValidAfterSubstitutions();
+
+        System.out.println("true == " + ciwivas.isValid("aabcbc"));
+        System.out.println("true == " + ciwivas.isValid("abcabcababcc"));
+        System.out.println("false == " + ciwivas.isValid("abccba"));
+    }
+
+    public void getEqualSubstringsWithinBudget() {
+        GetEqualSubstringsWithinBudget geswb = new GetEqualSubstringsWithinBudget();
+
+        System.out.println("3 == " + geswb.equalSubstring("abcd", "bcdf", 3));
+        System.out.println("1 == " + geswb.equalSubstring("abcd", "cdef", 3));
+        System.out.println("1 == " + geswb.equalSubstring("abcd", "acde", 0));
     }
 }
