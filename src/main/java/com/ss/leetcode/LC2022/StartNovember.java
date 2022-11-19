@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.november.CheckIfWordIsValidAfterSubstitutions;
 import com.ss.leetcode.LC2022.november.ConvertTheTemperature;
 import com.ss.leetcode.LC2022.november.GetEqualSubstringsWithinBudget;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
+import com.ss.leetcode.LC2022.november.LRUCache;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
@@ -45,7 +46,8 @@ public class StartNovember {
 //        start.rectangleArea();
 //        start.walkingRobotSimulation();
 //        start.checkIfWordIsValidAfterSubstitutions();
-        start.getEqualSubstringsWithinBudget();
+//        start.getEqualSubstringsWithinBudget();
+        start.LRUCache();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -230,5 +232,20 @@ public class StartNovember {
         System.out.println("3 == " + geswb.equalSubstring("abcd", "bcdf", 3));
         System.out.println("1 == " + geswb.equalSubstring("abcd", "cdef", 3));
         System.out.println("1 == " + geswb.equalSubstring("abcd", "acde", 0));
+    }
+
+    public void LRUCache() {
+        LRUCache lruc = new LRUCache(2);
+
+        lruc.put(1,1);
+        lruc.put(2,2);
+        System.out.println("1 == " + lruc.get(1));
+        lruc.put(3,3);
+        System.out.println("1 == " + lruc.get(2));
+        lruc.put(4,4);
+        System.out.println("-1 == " + lruc.get(1));
+        System.out.println("3 == " + lruc.get(3));
+        System.out.println("4 == " + lruc.get(4));
+
     }
 }
