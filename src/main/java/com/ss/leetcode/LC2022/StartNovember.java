@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNe
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
 import com.ss.leetcode.LC2022.november.MaskingPersonalInformation;
+import com.ss.leetcode.LC2022.november.MaxChunksToMakeSorted;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTreeByLevel;
@@ -18,6 +19,7 @@ import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
 import com.ss.leetcode.LC2022.november.RectangleArea;
 import com.ss.leetcode.LC2022.november.ReplaceWords;
+import com.ss.leetcode.LC2022.november.StatisticsFromALargeSample;
 import com.ss.leetcode.LC2022.november.ThreeDivisors;
 import com.ss.leetcode.LC2022.november.WalkingRobotSimulation;
 import com.ss.leetcode.shared.TreeNode;
@@ -47,7 +49,9 @@ public class StartNovember {
 //        start.walkingRobotSimulation();
 //        start.checkIfWordIsValidAfterSubstitutions();
 //        start.getEqualSubstringsWithinBudget();
-        start.LRUCache();
+//        start.LRUCache();
+//        start.maxChunksToMakeSorted();
+        start.statisticsFromALargeSample();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -247,5 +251,31 @@ public class StartNovember {
         System.out.println("3 == " + lruc.get(3));
         System.out.println("4 == " + lruc.get(4));
 
+    }
+
+    public void maxChunksToMakeSorted() {
+        MaxChunksToMakeSorted mctms = new MaxChunksToMakeSorted();
+
+        System.out.println("1 == " + mctms.maxChunksToSorted(new int[]{4,3,2,1,0}));
+        System.out.println("4 == " + mctms.maxChunksToSorted(new int[]{1,0,2,3,4}));
+        System.out.println("4 == " + mctms.maxChunksToSorted(new int[]{0,1,4,2,3,5}));
+    }
+
+    public void statisticsFromALargeSample() {
+        StatisticsFromALargeSample sfals = new StatisticsFromALargeSample();
+
+        System.out.println("[1.00000,3.00000,2.37500,2.50000,3.00000] == " + sfals.sampleStats(new int[]{0,1,3,4,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}));
+
+        System.out.println("[1.00000,3.00000,2.37500,2.50000,3.00000] == " + sfals.sampleStats(new int[]{0,4,3,2,
+            2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}));
     }
 }
