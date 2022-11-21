@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2022;
 
+import com.ss.leetcode.LC2022.november.AlphabetBoardPath;
 import com.ss.leetcode.LC2022.november.ApplyOperationsToAnArray;
 import com.ss.leetcode.LC2022.november.CheckIfWordIsValidAfterSubstitutions;
 import com.ss.leetcode.LC2022.november.ConvertTheTemperature;
+import com.ss.leetcode.LC2022.november.CountServersThatCommunicate;
 import com.ss.leetcode.LC2022.november.GetEqualSubstringsWithinBudget;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LRUCache;
@@ -14,6 +16,7 @@ import com.ss.leetcode.LC2022.november.MaxChunksToMakeSorted;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTreeByLevel;
+import com.ss.leetcode.LC2022.november.NearestExitFromEntranceInMaze;
 import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
 import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
@@ -51,7 +54,10 @@ public class StartNovember {
 //        start.getEqualSubstringsWithinBudget();
 //        start.LRUCache();
 //        start.maxChunksToMakeSorted();
-        start.statisticsFromALargeSample();
+//        start.statisticsFromALargeSample();
+        start.nearestExitFromEntranceInMaze();
+//        start.alphabetBoardPath();
+//        start.countServersThatCommunicate();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -278,4 +284,28 @@ public class StartNovember {
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
             0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}));
     }
+
+    public void nearestExitFromEntranceInMaze() {
+        NearestExitFromEntranceInMaze nefeim = new NearestExitFromEntranceInMaze();
+
+        System.out.println("1 == " + nefeim.nearestExit(new char[][]{{'+','+','.','+'},{'.','.','.','+'},{'+','+','+','.'}}, new int[]{1,2}));
+        System.out.println("2 == " + nefeim.nearestExit(new char[][]{{'+','+','+'},{'.','.','.'},{'+','+','+'}}, new int[]{1,0}));
+        System.out.println("-1 == " + nefeim.nearestExit(new char[][]{{'.','+'}}, new int[]{0,0}));
+    }
+
+    public void alphabetBoardPath() {
+        AlphabetBoardPath abp = new AlphabetBoardPath();
+
+        System.out.println("DDR!UURRR!!DDD! == " + abp.alphabetBoardPath("leet"));
+        System.out.println("RR!DDRR!UUL!R! == " + abp.alphabetBoardPath("code"));
+    }
+
+    public void countServersThatCommunicate() {
+        CountServersThatCommunicate cstc = new CountServersThatCommunicate();
+
+        System.out.println("0 == " + cstc.countServers(new int[][]{{1,0},{0,1}}));
+        System.out.println("3 == " + cstc.countServers(new int[][]{{1,0},{1,1}}));
+        System.out.println("4 == " + cstc.countServers(new int[][]{{1,1,0,0},{0,0,1,0},{0,0,1,0},{0,0,0,1}}));
+    }
+
 }
