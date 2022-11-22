@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.november.ApplyOperationsToAnArray;
 import com.ss.leetcode.LC2022.november.CheckIfWordIsValidAfterSubstitutions;
 import com.ss.leetcode.LC2022.november.ConvertTheTemperature;
 import com.ss.leetcode.LC2022.november.CountServersThatCommunicate;
+import com.ss.leetcode.LC2022.november.DistanceBetweenBusStops;
 import com.ss.leetcode.LC2022.november.GetEqualSubstringsWithinBudget;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LRUCache;
@@ -55,9 +56,10 @@ public class StartNovember {
 //        start.LRUCache();
 //        start.maxChunksToMakeSorted();
 //        start.statisticsFromALargeSample();
-        start.nearestExitFromEntranceInMaze();
+//        start.nearestExitFromEntranceInMaze();
 //        start.alphabetBoardPath();
 //        start.countServersThatCommunicate();
+        start.distanceBetweenBusStops();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -306,6 +308,14 @@ public class StartNovember {
         System.out.println("0 == " + cstc.countServers(new int[][]{{1,0},{0,1}}));
         System.out.println("3 == " + cstc.countServers(new int[][]{{1,0},{1,1}}));
         System.out.println("4 == " + cstc.countServers(new int[][]{{1,1,0,0},{0,0,1,0},{0,0,1,0},{0,0,0,1}}));
+    }
+
+    public void distanceBetweenBusStops() {
+        DistanceBetweenBusStops dbbs = new DistanceBetweenBusStops();
+
+        System.out.println("1 == " + dbbs.distanceBetweenBusStops(new int[]{1,2,3,4}, 0, 1));
+        System.out.println("3 == " + dbbs.distanceBetweenBusStops(new int[]{1,2,3,4}, 0, 2));
+        System.out.println("4 == " + dbbs.distanceBetweenBusStops(new int[]{1,2,3,4}, 0, 3));
     }
 
 }
