@@ -9,11 +9,13 @@ import com.ss.leetcode.LC2022.november.DistanceBetweenBusStops;
 import com.ss.leetcode.LC2022.november.GetEqualSubstringsWithinBudget;
 import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LRUCache;
+import com.ss.leetcode.LC2022.november.LargestNumberAfterDigitSwapsByParity;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
 import com.ss.leetcode.LC2022.november.MaskingPersonalInformation;
 import com.ss.leetcode.LC2022.november.MaxChunksToMakeSorted;
+import com.ss.leetcode.LC2022.november.MaximumNumberOfVowelsInASubstringOfGivenLength;
 import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTreeByLevel;
@@ -59,7 +61,9 @@ public class StartNovember {
 //        start.nearestExitFromEntranceInMaze();
 //        start.alphabetBoardPath();
 //        start.countServersThatCommunicate();
-        start.distanceBetweenBusStops();
+//        start.distanceBetweenBusStops();
+//        start.maximumNumberOfVowelsInASubstringOfGivenLength();
+        start.largestNumberAfterDigitSwapsByParity();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -316,6 +320,21 @@ public class StartNovember {
         System.out.println("1 == " + dbbs.distanceBetweenBusStops(new int[]{1,2,3,4}, 0, 1));
         System.out.println("3 == " + dbbs.distanceBetweenBusStops(new int[]{1,2,3,4}, 0, 2));
         System.out.println("4 == " + dbbs.distanceBetweenBusStops(new int[]{1,2,3,4}, 0, 3));
+    }
+
+    public void maximumNumberOfVowelsInASubstringOfGivenLength() {
+        MaximumNumberOfVowelsInASubstringOfGivenLength mnoviasogl = new MaximumNumberOfVowelsInASubstringOfGivenLength();
+
+        System.out.println("3 == " + mnoviasogl.maxVowels("abciiidef", 3));
+        System.out.println("2 == " + mnoviasogl.maxVowels("aeiou", 2));
+        System.out.println("2 == " + mnoviasogl.maxVowels("leetcode", 3));
+    }
+
+    public void largestNumberAfterDigitSwapsByParity() {
+        LargestNumberAfterDigitSwapsByParity lnadsbp = new LargestNumberAfterDigitSwapsByParity();
+
+        System.out.println("3412 == " + lnadsbp.largestInteger(1234));
+        System.out.println("87655 == " + lnadsbp.largestInteger(65875));
     }
 
 }
