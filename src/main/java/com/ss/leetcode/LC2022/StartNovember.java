@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2022.november.ImageSmoother;
 import com.ss.leetcode.LC2022.november.LRUCache;
 import com.ss.leetcode.LC2022.november.LargestNumberAfterDigitSwapsByParity;
 import com.ss.leetcode.LC2022.november.LargestPositiveIntegerThatExistsWithItsNegative;
+import com.ss.leetcode.LC2022.november.LargestTimeForGivenDigits;
 import com.ss.leetcode.LC2022.november.LongestPalindromeByConcatenatingTwoLetterWords;
 import com.ss.leetcode.LC2022.november.MakeTheStringGreat;
 import com.ss.leetcode.LC2022.november.MaskingPersonalInformation;
@@ -63,7 +64,8 @@ public class StartNovember {
 //        start.countServersThatCommunicate();
 //        start.distanceBetweenBusStops();
 //        start.maximumNumberOfVowelsInASubstringOfGivenLength();
-        start.largestNumberAfterDigitSwapsByParity();
+//        start.largestNumberAfterDigitSwapsByParity();
+        start.largestTimeForGivenDigits();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -335,6 +337,21 @@ public class StartNovember {
 
         System.out.println("3412 == " + lnadsbp.largestInteger(1234));
         System.out.println("87655 == " + lnadsbp.largestInteger(65875));
+    }
+
+    public void largestTimeForGivenDigits() {
+        LargestTimeForGivenDigits ltfgd = new LargestTimeForGivenDigits();
+
+        System.out.println("23:41 == " + ltfgd.largestTimeFromDigits(new int[]{1,2,3,4}));
+        System.out.println(" == " + ltfgd.largestTimeFromDigits(new int[]{5,5,5,5}));
+        System.out.println("23:49 == " + ltfgd.largestTimeFromDigits(new int[]{9,3,4,2}));
+        System.out.println("06:26 == " + ltfgd.largestTimeFromDigits(new int[]{2,0,6,6}));
+        System.out.println("06:26 == " + ltfgd.largestTimeFromDigits(new int[]{2,0,6,6}));
+        System.out.println("19:49 == " + ltfgd.largestTimeFromDigits(new int[]{1,4,9,9}));
+        System.out.println("19:59 == " + ltfgd.largestTimeFromDigits(new int[]{1,5,9,9}));
+        System.out.println(" == " + ltfgd.largestTimeFromDigits(new int[]{1,6,9,9}));
+        System.out.println("19:06 == " + ltfgd.largestTimeFromDigits(new int[]{1,9,6,0}));
+
     }
 
 }
