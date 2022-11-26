@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2022;
 import com.ss.leetcode.LC2022.november.AlphabetBoardPath;
 import com.ss.leetcode.LC2022.november.ApplyOperationsToAnArray;
 import com.ss.leetcode.LC2022.november.CheckIfWordIsValidAfterSubstitutions;
+import com.ss.leetcode.LC2022.november.CompareStringsByFrequencyOfTheSmallestCharacter;
 import com.ss.leetcode.LC2022.november.ConvertTheTemperature;
 import com.ss.leetcode.LC2022.november.CountServersThatCommunicate;
 import com.ss.leetcode.LC2022.november.DistanceBetweenBusStops;
@@ -65,7 +66,8 @@ public class StartNovember {
 //        start.distanceBetweenBusStops();
 //        start.maximumNumberOfVowelsInASubstringOfGivenLength();
 //        start.largestNumberAfterDigitSwapsByParity();
-        start.largestTimeForGivenDigits();
+//        start.largestTimeForGivenDigits();
+        start.compareStringsByFrequencyOfTheSmallestCharacter();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -352,6 +354,13 @@ public class StartNovember {
         System.out.println(" == " + ltfgd.largestTimeFromDigits(new int[]{1,6,9,9}));
         System.out.println("19:06 == " + ltfgd.largestTimeFromDigits(new int[]{1,9,6,0}));
 
+    }
+
+    public void compareStringsByFrequencyOfTheSmallestCharacter() {
+        CompareStringsByFrequencyOfTheSmallestCharacter csbfotsc = new CompareStringsByFrequencyOfTheSmallestCharacter();
+
+        System.out.println("[1] == " + Arrays.toString(csbfotsc.numSmallerByFrequency(new String[]{"cbd"}, new String[]{"zaaaz"})));
+        System.out.println("[1,2] == " + Arrays.toString(csbfotsc.numSmallerByFrequency(new String[]{"bbb","cc"}, new String[]{"a","aa","aaa","aaaa"})));
     }
 
 }
