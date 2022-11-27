@@ -131,3 +131,7 @@ WHERE sales_id NOT IN (
 SELECT activity_date as day, COUNT(DISTINCT user_id) AS active_users FROM Activity
 WHERE activity_date BETWEEN '2019-06-28' AND '2019-07-27'
 GROUP BY activity_date;
+
+-- Patients With a Condition
+-- https://leetcode.com/problems/patients-with-a-condition
+SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions like '% DIAB1%';

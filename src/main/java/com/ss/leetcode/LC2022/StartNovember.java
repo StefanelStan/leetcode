@@ -25,6 +25,7 @@ import com.ss.leetcode.LC2022.november.NearestExitFromEntranceInMaze;
 import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
 import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
+import com.ss.leetcode.LC2022.november.RankTeamsByVotes;
 import com.ss.leetcode.LC2022.november.RectangleArea;
 import com.ss.leetcode.LC2022.november.ReplaceWords;
 import com.ss.leetcode.LC2022.november.StatisticsFromALargeSample;
@@ -67,7 +68,8 @@ public class StartNovember {
 //        start.maximumNumberOfVowelsInASubstringOfGivenLength();
 //        start.largestNumberAfterDigitSwapsByParity();
 //        start.largestTimeForGivenDigits();
-        start.compareStringsByFrequencyOfTheSmallestCharacter();
+//        start.compareStringsByFrequencyOfTheSmallestCharacter();
+        start.rankTeamsByVotes();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -361,6 +363,14 @@ public class StartNovember {
 
         System.out.println("[1] == " + Arrays.toString(csbfotsc.numSmallerByFrequency(new String[]{"cbd"}, new String[]{"zaaaz"})));
         System.out.println("[1,2] == " + Arrays.toString(csbfotsc.numSmallerByFrequency(new String[]{"bbb","cc"}, new String[]{"a","aa","aaa","aaaa"})));
+    }
+
+    public void rankTeamsByVotes() {
+        RankTeamsByVotes rtbv = new RankTeamsByVotes();
+
+//        System.out.println("ACB == " + rtbv.rankTeams(new String[]{"ABC","ACB","ABC","ACB","ACB"}));
+        System.out.println("XWYZ == " + rtbv.rankTeams(new String[]{"WXYZ","XYZW"}));
+//        System.out.println("ZMNAGUEDSJYLBOPHRQICWFXTVK == " + rtbv.rankTeams(new String[]{"ZMNAGUEDSJYLBOPHRQICWFXTVK"}));
     }
 
 }
