@@ -22,10 +22,12 @@ import com.ss.leetcode.LC2022.november.MaximumSumOfDistinctSubarraysWithLengthK;
 import com.ss.leetcode.LC2022.november.MinimumGeneticMutation;
 import com.ss.leetcode.LC2022.november.MinimumNumberOfOperationsToSortABinaryTreeByLevel;
 import com.ss.leetcode.LC2022.november.NearestExitFromEntranceInMaze;
+import com.ss.leetcode.LC2022.november.NumberOfClosedIslands;
 import com.ss.leetcode.LC2022.november.NumberOfDistinctAverages;
 import com.ss.leetcode.LC2022.november.NumberOfValidClockTimes;
 import com.ss.leetcode.LC2022.november.OnlineStockSpan;
 import com.ss.leetcode.LC2022.november.RankTeamsByVotes;
+import com.ss.leetcode.LC2022.november.RearrangeWordsInASentence;
 import com.ss.leetcode.LC2022.november.RectangleArea;
 import com.ss.leetcode.LC2022.november.ReplaceWords;
 import com.ss.leetcode.LC2022.november.StatisticsFromALargeSample;
@@ -69,7 +71,9 @@ public class StartNovember {
 //        start.largestNumberAfterDigitSwapsByParity();
 //        start.largestTimeForGivenDigits();
 //        start.compareStringsByFrequencyOfTheSmallestCharacter();
-        start.rankTeamsByVotes();
+//        start.rankTeamsByVotes();
+//        start.rearrangeWordsInASentence();
+        start.numberOfClosedIslands();
     }
 
     public void largestPositiveIntegerThatExistsWithItsNegative() {
@@ -368,9 +372,22 @@ public class StartNovember {
     public void rankTeamsByVotes() {
         RankTeamsByVotes rtbv = new RankTeamsByVotes();
 
-//        System.out.println("ACB == " + rtbv.rankTeams(new String[]{"ABC","ACB","ABC","ACB","ACB"}));
+        System.out.println("ACB == " + rtbv.rankTeams(new String[]{"ABC","ACB","ABC","ACB","ACB"}));
         System.out.println("XWYZ == " + rtbv.rankTeams(new String[]{"WXYZ","XYZW"}));
-//        System.out.println("ZMNAGUEDSJYLBOPHRQICWFXTVK == " + rtbv.rankTeams(new String[]{"ZMNAGUEDSJYLBOPHRQICWFXTVK"}));
+        System.out.println("ZMNAGUEDSJYLBOPHRQICWFXTVK == " + rtbv.rankTeams(new String[]{"ZMNAGUEDSJYLBOPHRQICWFXTVK"}));
     }
 
+    public void rearrangeWordsInASentence() {
+        RearrangeWordsInASentence rwias = new RearrangeWordsInASentence();
+
+        System.out.println("Is cool leetcode == " + rwias.arrangeWords("Leetcode is cool"));
+        System.out.println("On and keep calm code == " + rwias.arrangeWords("Keep calm and code on"));
+        System.out.println("To be or to be not == " + rwias.arrangeWords("To be or not to be"));
+    }
+
+    public void numberOfClosedIslands() {
+        NumberOfClosedIslands noci = new NumberOfClosedIslands();
+
+        System.out.println("2 == " + noci.closedIsland(new int[][]{{1,1,1,1,1,1,1,0},{1,0,0,0,0,1,1,0},{1,0,1,0,1,1,1,0},{1,0,0,0,0,1,0,1},{1,1,1,1,1,1,1,0}}));
+    }
 }
