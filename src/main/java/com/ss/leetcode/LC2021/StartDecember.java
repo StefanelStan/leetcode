@@ -51,13 +51,13 @@ public class StartDecember {
         StartDecember start = new StartDecember();
 
 //        start.wateringPlants();
-//        start.oddEvenLinkedList();
+        start.oddEvenLinkedList();
 //        start.constructTheRectangle();
 //        start.teemoAttacking();
 //        start.maximumProductSubarray();
 //        start.twoFurthestHousesWithDifferentColors();
 //        start.perfectNumber();
-        start.continuousSubarraySum();
+//        start.continuousSubarraySum();
 //        start.setMismatch();
 //        start.romanToInteger();
 //        start.integerToRoman();
@@ -100,7 +100,7 @@ public class StartDecember {
     public void oddEvenLinkedList() {
         OddEvenLinkedList oell = new OddEvenLinkedList();
 
-        System.out.println("[1,3,5,2,4] == " + oell.oddEvenList(ListNode.makeChain(new int[]{1,2,3,4,5})).getAsList());
+//        System.out.println("[1,3,5,2,4] == " + oell.oddEvenList(ListNode.makeChain(new int[]{1,2,3,4,5})).getAsList());
         System.out.println("[2,3,6,7,1,5,4] == " + oell.oddEvenList(ListNode.makeChain(new int[]{2,1,3,5,6,4,7})).getAsList());
     }
 
