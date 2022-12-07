@@ -5,9 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
-
-
+    // https://leetcode.com/problems/two-sum/
     public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> numsSoFar = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            Integer possible = numsSoFar.get(target - nums[i]);
+            if (possible != null) {
+                return new int[]{possible, i};
+            } else {
+                numsSoFar.put(nums[i], i);
+            }
+        }
+        return new int[]{-1,-1};
+    }
+
+    public int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> numsToPosition = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             numsToPosition.put(nums[i], i);
