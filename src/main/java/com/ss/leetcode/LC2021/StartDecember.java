@@ -51,7 +51,7 @@ public class StartDecember {
         StartDecember start = new StartDecember();
 
 //        start.wateringPlants();
-        start.oddEvenLinkedList();
+//        start.oddEvenLinkedList();
 //        start.constructTheRectangle();
 //        start.teemoAttacking();
 //        start.maximumProductSubarray();
@@ -75,7 +75,7 @@ public class StartDecember {
 //        start.insertionSortList();
 //        start.maximalSquare();
 //        start.base7();
-//        start.decodeString();
+        start.decodeString();
 //        start.longestPalindromicSubstring();
 //        start.reorderList();
 //        start.courseScheduleII();

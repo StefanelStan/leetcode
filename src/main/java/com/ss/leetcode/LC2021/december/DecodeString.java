@@ -1,8 +1,32 @@
 package com.ss.leetcode.LC2021.december;
 
+import java.util.LinkedList;
+
 public class DecodeString {
     // https://leetcode.com/problems/decode-string/
     public String decodeString(String s) {
+        StringBuilder stb = new StringBuilder(s.length());
+        LinkedList<Integer> openingPositions = new LinkedList<>();
+        LinkedList<Integer> numbers = new LinkedList<>();
+        int value = 0;
+        for (char ch : s.toCharArray()) {
+            if (ch == ']') {
+                int insertIndex = openingPositions.removeLast();
+                stb.replace(insertIndex, stb.length(), stb.substring(insertIndex).repeat(numbers.removeLast()));
+            } else if (ch == '[') {
+                openingPositions.add(stb.length());
+                numbers.addLast(value);
+                value = 0;
+            } else if (Character.isDigit(ch)) {
+                value = value * 10 + (ch - '0');
+            } else {
+                stb.append(ch);
+            }
+        }
+        return stb.toString();
+    }
+
+    public String decodeString2(String s) {
         StringBuilder decoded = new StringBuilder();
         int openLevel = 0;
         char ch;
