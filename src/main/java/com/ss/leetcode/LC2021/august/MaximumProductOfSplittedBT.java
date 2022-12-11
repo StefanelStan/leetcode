@@ -8,6 +8,31 @@ import java.util.List;
 public class MaximumProductOfSplittedBT {
     // https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
     public int maxProduct(TreeNode root) {
+        long[] maxProduct = {0};
+        int sum = getSum(root);
+        traverseTree(root, sum, maxProduct);
+        return (int)(maxProduct[0] % 1_000_000_007);
+    }
+
+    private int getSum(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return node.val + getSum(node.left) + getSum(node.right);
+    }
+
+    private int traverseTree(TreeNode node, int sum, long[] maxProduct) {
+        if (node == null) {
+            return 0;
+        }
+        int subTreeSum = traverseTree(node.left, sum, maxProduct);
+        subTreeSum += traverseTree(node.right, sum, maxProduct);
+        subTreeSum += node.val;
+        maxProduct[0] = Math.max(maxProduct[0], (long)subTreeSum * (sum - subTreeSum));
+        return subTreeSum;
+    }
+
+    public int maxProduct2(TreeNode root) {
         List<Integer> subtreeSum = new ArrayList<>();
         traverseAndCalculateSubtreeSum(root, subtreeSum);
         return getMaxProduct(subtreeSum);
