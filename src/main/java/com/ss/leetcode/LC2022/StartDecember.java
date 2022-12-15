@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.december.BinaryTreeMaximumPathSum;
 import com.ss.leetcode.LC2022.december.BullsAndCows;
+import com.ss.leetcode.LC2022.december.FindThePivotInteger;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -11,7 +12,8 @@ public class StartDecember {
 
 //        start.replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters();
 //        start.bullsAndCows();
-        start.binaryTreeMaximumPathSum();
+//        start.binaryTreeMaximumPathSum();
+        start.findThePivotInteger();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -40,5 +42,14 @@ public class StartDecember {
         System.out.println("6 == " + btmps.maxPathSum(root1));
         System.out.println("42 == " + btmps.maxPathSum(root2));
         System.out.println("-3 == " + btmps.maxPathSum(new TreeNode(-3)));
+    }
+
+    public void findThePivotInteger() {
+        FindThePivotInteger ftpi = new FindThePivotInteger();
+
+        System.out.println("6 == " + ftpi.pivotInteger(8));
+        System.out.println("1 == " + ftpi.pivotInteger(1));
+        System.out.println("-1 == " + ftpi.pivotInteger(4));
+        System.out.println("-1 == " + ftpi.pivotInteger(896));
     }
 }
