@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.december.BinaryTreeMaximumPathSum;
 import com.ss.leetcode.LC2022.december.BullsAndCows;
+import com.ss.leetcode.LC2022.december.FindIfPathExistsInGraph;
 import com.ss.leetcode.LC2022.december.FindThePivotInteger;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
 import com.ss.leetcode.shared.TreeNode;
@@ -13,7 +14,8 @@ public class StartDecember {
 //        start.replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters();
 //        start.bullsAndCows();
 //        start.binaryTreeMaximumPathSum();
-        start.findThePivotInteger();
+//        start.findThePivotInteger();
+        start.findIfPathExistsInGraph();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -51,5 +53,14 @@ public class StartDecember {
         System.out.println("1 == " + ftpi.pivotInteger(1));
         System.out.println("-1 == " + ftpi.pivotInteger(4));
         System.out.println("-1 == " + ftpi.pivotInteger(896));
+    }
+
+    public void findIfPathExistsInGraph() {
+        FindIfPathExistsInGraph fipeig = new FindIfPathExistsInGraph();
+
+        System.out.println("true == " + fipeig.validPath(3, new int[][]{{0,1},{1,2},{2,0}}, 0, 2));
+        System.out.println("false == " + fipeig.validPath(6, new int[][]{{0,1},{0,2},{3,5},{5,4},{4,3}}, 0, 5));
+        System.out.println("false == " + fipeig.validPath(5, new int[][]{{0,1},{2,3},{4,1}}, 0, 2));
+        System.out.println("true == " + fipeig.validPath(1, new int[][]{{}}, 0, 0));
     }
 }
