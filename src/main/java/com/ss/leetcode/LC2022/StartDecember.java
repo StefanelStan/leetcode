@@ -2,8 +2,10 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.december.BinaryTreeMaximumPathSum;
 import com.ss.leetcode.LC2022.december.BullsAndCows;
+import com.ss.leetcode.LC2022.december.DeleteGreatestValueInEachRow;
 import com.ss.leetcode.LC2022.december.FindIfPathExistsInGraph;
 import com.ss.leetcode.LC2022.december.FindThePivotInteger;
+import com.ss.leetcode.LC2022.december.RemoveLetterToEqualizeFrequency;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -15,7 +17,9 @@ public class StartDecember {
 //        start.bullsAndCows();
 //        start.binaryTreeMaximumPathSum();
 //        start.findThePivotInteger();
-        start.findIfPathExistsInGraph();
+//        start.findIfPathExistsInGraph();
+//        start.deleteGreatestValueInEachRow();
+        start.removeLetterToEqualizeFrequency();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -62,5 +66,24 @@ public class StartDecember {
         System.out.println("false == " + fipeig.validPath(6, new int[][]{{0,1},{0,2},{3,5},{5,4},{4,3}}, 0, 5));
         System.out.println("false == " + fipeig.validPath(5, new int[][]{{0,1},{2,3},{4,1}}, 0, 2));
         System.out.println("true == " + fipeig.validPath(1, new int[][]{{}}, 0, 0));
+    }
+
+    public void deleteGreatestValueInEachRow() {
+        DeleteGreatestValueInEachRow dgvier = new DeleteGreatestValueInEachRow();
+
+        System.out.println("8 == " + dgvier.deleteGreatestValue(new int[][]{{1,2,4},{3,3,1}}));
+        System.out.println("10 == " + dgvier.deleteGreatestValue(new int[][]{{10}}));
+        System.out.println("53 == " + dgvier.deleteGreatestValue(new int[][]{{1,2,8,1,4,2,8,9,1,2,4},{1,8,8,5,1,7,8,9,2,1,3}}));
+    }
+
+    public void removeLetterToEqualizeFrequency() {
+        RemoveLetterToEqualizeFrequency rltef = new RemoveLetterToEqualizeFrequency();
+
+//        System.out.println("true == " + rltef.equalFrequency("abcc"));
+//        System.out.println("false == " + rltef.equalFrequency("aabb"));
+//        System.out.println("true == " + rltef.equalFrequency("ab"));
+//        System.out.println("true == " + rltef.equalFrequency("aa"));
+        System.out.println("false == " + rltef.equalFrequency("ddaccb"));
+        System.out.println("true == " + rltef.equalFrequency("abcdefgg"));
     }
 }
