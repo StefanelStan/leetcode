@@ -8,7 +8,7 @@ public class LongestSubsequenceWithLimitedSum {
     /** Algorithm
          1. The "longest subsequence" actually means you have to start by selecting the lowest numbers first.
             EG:[2,2,2,3,4,5,1,1,1] query = [3]. We will always get better results if we select the smallest ones first. (1,1,1)
-         2. In order to acheive this, the intuition tell to use count the numbers and use a TreeMap<Integer, Integer(count)>
+         2. In order to achieve this, the intuition tell to use count the numbers and use a TreeMap<Integer, Integer(count)>
             so you can traverse it and keep adding/calculating the sum until you reach your query.
          3. However, you can do a trick: why not sort the numbers (1,1,1,2,2,3,4,5) and calculate a rolling sum.
              This way, each sum (1,2,3,5,7,10,14,19) and its index will indicate how many numbers form up that sum.

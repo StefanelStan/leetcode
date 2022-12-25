@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2022.december.BullsAndCows;
 import com.ss.leetcode.LC2022.december.DeleteGreatestValueInEachRow;
 import com.ss.leetcode.LC2022.december.FindIfPathExistsInGraph;
 import com.ss.leetcode.LC2022.december.FindThePivotInteger;
+import com.ss.leetcode.LC2022.december.MaximumEnemyFortsThatCanBeCaptured;
 import com.ss.leetcode.LC2022.december.RemoveLetterToEqualizeFrequency;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
 import com.ss.leetcode.shared.TreeNode;
@@ -19,7 +20,8 @@ public class StartDecember {
 //        start.findThePivotInteger();
 //        start.findIfPathExistsInGraph();
 //        start.deleteGreatestValueInEachRow();
-        start.removeLetterToEqualizeFrequency();
+//        start.removeLetterToEqualizeFrequency();
+        start.maximumEnemyFortsThatCanBeCaptured();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -85,5 +87,12 @@ public class StartDecember {
 //        System.out.println("true == " + rltef.equalFrequency("aa"));
         System.out.println("false == " + rltef.equalFrequency("ddaccb"));
         System.out.println("true == " + rltef.equalFrequency("abcdefgg"));
+    }
+
+    public void maximumEnemyFortsThatCanBeCaptured() {
+        MaximumEnemyFortsThatCanBeCaptured meftcbc = new MaximumEnemyFortsThatCanBeCaptured();
+
+        System.out.println("4 == " + meftcbc.captureForts(new int[]{1,0,0,-1,0,0,0,0,1}));
+        System.out.println("0 == " + meftcbc.captureForts(new int[]{0,0,1,-1}));
     }
 }
