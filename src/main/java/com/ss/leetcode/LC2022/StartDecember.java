@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2022.december.FindThePivotInteger;
 import com.ss.leetcode.LC2022.december.MaximumEnemyFortsThatCanBeCaptured;
 import com.ss.leetcode.LC2022.december.RemoveLetterToEqualizeFrequency;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
+import com.ss.leetcode.LC2022.december.ShortestDistanceToTargetStringInACircularArray;
 import com.ss.leetcode.shared.TreeNode;
 
 public class StartDecember {
@@ -21,7 +22,8 @@ public class StartDecember {
 //        start.findIfPathExistsInGraph();
 //        start.deleteGreatestValueInEachRow();
 //        start.removeLetterToEqualizeFrequency();
-        start.maximumEnemyFortsThatCanBeCaptured();
+//        start.maximumEnemyFortsThatCanBeCaptured();
+        start.shortestDistanceToTargetStringInACircularArray();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -94,5 +96,14 @@ public class StartDecember {
 
         System.out.println("4 == " + meftcbc.captureForts(new int[]{1,0,0,-1,0,0,0,0,1}));
         System.out.println("0 == " + meftcbc.captureForts(new int[]{0,0,1,-1}));
+    }
+
+    public void shortestDistanceToTargetStringInACircularArray() {
+        ShortestDistanceToTargetStringInACircularArray sdttsiaca = new ShortestDistanceToTargetStringInACircularArray();
+
+        System.out.println("1 == " + sdttsiaca.closestTarget(new String[]{"hello","i","am","leetcode","hello"}, "hello", 1));
+        System.out.println("1 == " + sdttsiaca.closestTarget(new String[]{"a","b","leetcode"}, "leetcode", 0));
+        System.out.println("-1 == " + sdttsiaca.closestTarget(new String[]{"i","eat","leetcode"}, "ate", 0));
+        System.out.println("0 == " + sdttsiaca.closestTarget(new String[]{"hello"}, "hello", 0));
     }
 }
