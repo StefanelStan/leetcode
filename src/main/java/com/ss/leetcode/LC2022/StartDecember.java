@@ -5,9 +5,11 @@ import com.ss.leetcode.LC2022.december.BullsAndCows;
 import com.ss.leetcode.LC2022.december.DeleteGreatestValueInEachRow;
 import com.ss.leetcode.LC2022.december.FindIfPathExistsInGraph;
 import com.ss.leetcode.LC2022.december.FindThePivotInteger;
+import com.ss.leetcode.LC2022.december.MaximumBagsWithFullCapacityOfRocks;
 import com.ss.leetcode.LC2022.december.MaximumEnemyFortsThatCanBeCaptured;
 import com.ss.leetcode.LC2022.december.RemoveLetterToEqualizeFrequency;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
+import com.ss.leetcode.LC2022.december.RewardTopKStudents;
 import com.ss.leetcode.LC2022.december.ShortestDistanceToTargetStringInACircularArray;
 import com.ss.leetcode.shared.TreeNode;
 
@@ -23,7 +25,9 @@ public class StartDecember {
 //        start.deleteGreatestValueInEachRow();
 //        start.removeLetterToEqualizeFrequency();
 //        start.maximumEnemyFortsThatCanBeCaptured();
-        start.shortestDistanceToTargetStringInACircularArray();
+//        start.shortestDistanceToTargetStringInACircularArray();
+//        start.maximumBagsWithFullCapacityOfRocks();
+        start.rewardTopKStudents();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -105,5 +109,22 @@ public class StartDecember {
         System.out.println("1 == " + sdttsiaca.closestTarget(new String[]{"a","b","leetcode"}, "leetcode", 0));
         System.out.println("-1 == " + sdttsiaca.closestTarget(new String[]{"i","eat","leetcode"}, "ate", 0));
         System.out.println("0 == " + sdttsiaca.closestTarget(new String[]{"hello"}, "hello", 0));
+    }
+
+    public void maximumBagsWithFullCapacityOfRocks() {
+        MaximumBagsWithFullCapacityOfRocks mbwfcor = new MaximumBagsWithFullCapacityOfRocks();
+
+        System.out.println("3 == " + mbwfcor.maximumBags(new int[]{2,3,4,5}, new int[]{1,2,4,4}, 2));
+        System.out.println("3 == " + mbwfcor.maximumBags(new int[]{10,2,2}, new int[]{2,2,0}, 100));
+        System.out.println("2 == " + mbwfcor.maximumBags(new int[]{10,90}, new int[]{0, 7}, 100));
+        System.out.println("1 == " + mbwfcor.maximumBags(new int[]{10,100}, new int[]{0, 7}, 100));
+        System.out.println("1 == " + mbwfcor.maximumBags(new int[]{10}, new int[]{9}, 1));
+    }
+
+    public void rewardTopKStudents() {
+        RewardTopKStudents rtks = new RewardTopKStudents();
+
+        System.out.println("[1,2] == " + rtks.topStudents(new String[]{"smart","brilliant","studious"}, new String[]{"not"}, new String[]{"this student is studious","the student is smart"}, new int[]{1,2}, 2));
+        System.out.println("[2,1] == " + rtks.topStudents(new String[]{"smart","brilliant","studious"}, new String[]{"not"}, new String[]{"this student is not studious","the student is smart"}, new int[]{1,2}, 2));
     }
 }
