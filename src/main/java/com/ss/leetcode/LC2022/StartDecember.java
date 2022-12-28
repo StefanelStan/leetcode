@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2022.december.FindThePivotInteger;
 import com.ss.leetcode.LC2022.december.MaximumBagsWithFullCapacityOfRocks;
 import com.ss.leetcode.LC2022.december.MaximumEnemyFortsThatCanBeCaptured;
 import com.ss.leetcode.LC2022.december.RemoveLetterToEqualizeFrequency;
+import com.ss.leetcode.LC2022.december.RemoveStonesToMinimizeTheTotal;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
 import com.ss.leetcode.LC2022.december.RewardTopKStudents;
 import com.ss.leetcode.LC2022.december.ShortestDistanceToTargetStringInACircularArray;
@@ -27,7 +28,8 @@ public class StartDecember {
 //        start.maximumEnemyFortsThatCanBeCaptured();
 //        start.shortestDistanceToTargetStringInACircularArray();
 //        start.maximumBagsWithFullCapacityOfRocks();
-        start.rewardTopKStudents();
+//        start.rewardTopKStudents();
+        start.removeStonesToMinimizeTheTotal();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -126,5 +128,12 @@ public class StartDecember {
 
         System.out.println("[1,2] == " + rtks.topStudents(new String[]{"smart","brilliant","studious"}, new String[]{"not"}, new String[]{"this student is studious","the student is smart"}, new int[]{1,2}, 2));
         System.out.println("[2,1] == " + rtks.topStudents(new String[]{"smart","brilliant","studious"}, new String[]{"not"}, new String[]{"this student is not studious","the student is smart"}, new int[]{1,2}, 2));
+    }
+
+    public void removeStonesToMinimizeTheTotal() {
+        RemoveStonesToMinimizeTheTotal rstmtt = new RemoveStonesToMinimizeTheTotal();
+
+        System.out.println("12 == " + rstmtt.minStoneSum(new int[]{5,4,9}, 2));
+        System.out.println("12 == " + rstmtt.minStoneSum(new int[]{4,3,6,7}, 3));
     }
 }
