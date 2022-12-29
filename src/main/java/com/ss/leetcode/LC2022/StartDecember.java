@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2022;
 
 import com.ss.leetcode.LC2022.december.BinaryTreeMaximumPathSum;
 import com.ss.leetcode.LC2022.december.BullsAndCows;
+import com.ss.leetcode.LC2022.december.CountPairsOfSimilarStrings;
 import com.ss.leetcode.LC2022.december.DeleteGreatestValueInEachRow;
 import com.ss.leetcode.LC2022.december.FindIfPathExistsInGraph;
 import com.ss.leetcode.LC2022.december.FindThePivotInteger;
@@ -12,7 +13,9 @@ import com.ss.leetcode.LC2022.december.RemoveStonesToMinimizeTheTotal;
 import com.ss.leetcode.LC2022.december.ReplaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters;
 import com.ss.leetcode.LC2022.december.RewardTopKStudents;
 import com.ss.leetcode.LC2022.december.ShortestDistanceToTargetStringInACircularArray;
+import com.ss.leetcode.LC2022.december.SingleThreadedCPU;
 import com.ss.leetcode.shared.TreeNode;
+import java.util.Arrays;
 
 public class StartDecember {
     public static void main(String[] args) {
@@ -29,7 +32,9 @@ public class StartDecember {
 //        start.shortestDistanceToTargetStringInACircularArray();
 //        start.maximumBagsWithFullCapacityOfRocks();
 //        start.rewardTopKStudents();
-        start.removeStonesToMinimizeTheTotal();
+//        start.removeStonesToMinimizeTheTotal();
+//        start.singleThreadedCPU();
+        start.countPairsOfSimilarStrings();
     }
 
     public void replaceAllQuestionMarksToAvoidConsecutiveRepeatingCharacters() {
@@ -135,5 +140,22 @@ public class StartDecember {
 
         System.out.println("12 == " + rstmtt.minStoneSum(new int[]{5,4,9}, 2));
         System.out.println("12 == " + rstmtt.minStoneSum(new int[]{4,3,6,7}, 3));
+    }
+
+    public void singleThreadedCPU() {
+        SingleThreadedCPU stcpu = new SingleThreadedCPU();
+
+        System.out.println("[0,2,3,1] == " + Arrays.toString(stcpu.getOrder(new int[][]{{1,2},{2,4},{3,2},{4,1}})));
+        System.out.println("[4,3,2,0,1] == " + Arrays.toString(stcpu.getOrder(new int[][]{{7,10},{7,12},{7,5},{7,4},{7,2}})));
+        System.out.println("[4,5,3,2,0,1] == " + Arrays.toString(stcpu.getOrder(new int[][]{{7,10},{7,12},{7,5},{7,4},{7,2},{7,2}})));
+        System.out.println("[6,1,2,9,4,10,0,11,5,13,3,8,12,7] == " + Arrays.toString(stcpu.getOrder(new int[][]{{19,13},{16,9},{21,10},{32,25},{37,4},{49,24},{2,15},{38,41},{37,34},{33,6},{45,4},{18,18},{46,39},{12,24}})));
+    }
+
+    public void countPairsOfSimilarStrings() {
+        CountPairsOfSimilarStrings cposs = new CountPairsOfSimilarStrings();
+
+        System.out.println("2 == " + cposs.similarPairs(new String[]{"aba","aabb","abcd","bac","aabc"}));
+        System.out.println("3 == " + cposs.similarPairs(new String[]{"aabb","ab","ba"}));
+        System.out.println("0 == " + cposs.similarPairs(new String[]{"nba","cba","dba"}));
     }
 }
