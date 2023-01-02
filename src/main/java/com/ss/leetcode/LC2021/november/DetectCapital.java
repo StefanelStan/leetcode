@@ -3,6 +3,17 @@ package com.ss.leetcode.LC2021.november;
 public class DetectCapital {
     // https://leetcode.com/problems/detect-capital/
     public boolean detectCapitalUse(String word) {
+        char[] chrs = word.toCharArray();
+        boolean allUpperCase = Character.isUpperCase(chrs[0]) && Character.isUpperCase(chrs[chrs.length - 1]);
+        for (int i = 1; i < chrs.length; i++) {
+            if (Character.isUpperCase(chrs[i]) != allUpperCase) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean detectCapitalUse2(String word) {
         if (word.length() == 1) {
             return true;
         }
