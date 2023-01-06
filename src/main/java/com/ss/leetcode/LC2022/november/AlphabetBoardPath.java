@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2022.november;
 
 public class AlphabetBoardPath {
-    // https://leetcode.com/problems/alphabet-board-path
+    // https://leetcode.com/problems/alphabet-board-path/
     private int[][] letterCoords;
     public String alphabetBoardPath(String target) {
         setLetterCoords();

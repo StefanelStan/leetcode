@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2022.november;
 
 public class CheckIfWordIsValidAfterSubstitutions {
-    // https://leetcode.com/problems/check-if-word-is-valid-after-substitutions
+    // https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/
     /** Algorithm
          1. Use a stack to add chars from the string
          2. Loop over the chars from s and :

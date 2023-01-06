@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2022.november;
 
 public class CompareStringsByFrequencyOfTheSmallestCharacter {
-    // https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character
+    // https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/
     /** Algorithm
          1. The main idea is to find the frequency of each word of words.
              Once you have it, count and store/increment the frequency of ALL into an array[11]

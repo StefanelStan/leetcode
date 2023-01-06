@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2023.january;
 
 public class RearrangeCharactersToMakeTargetString {
-    // https://leetcode.com/problems/rearrange-characters-to-make-target-string
+    // https://leetcode.com/problems/rearrange-characters-to-make-target-string/
     /** Algorithm
          1. In order to make copies of target, you need to know how many letters of each time from target you have in s string;
          2. Count/map the letters from s and target

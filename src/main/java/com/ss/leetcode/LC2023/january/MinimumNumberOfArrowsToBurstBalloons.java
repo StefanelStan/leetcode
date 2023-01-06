@@ -3,7 +3,7 @@ package com.ss.leetcode.LC2023.january;
 import java.util.Arrays;
 
 public class MinimumNumberOfArrowsToBurstBalloons {
-    // https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
+    // https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
     public int findMinArrowShots(int[][] points) {
         int arrows = 1;
         int minPoint;
