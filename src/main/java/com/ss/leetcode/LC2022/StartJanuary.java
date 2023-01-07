@@ -42,7 +42,7 @@ public class StartJanuary {
 //        start.linkedListCycleII();
 //        start.redistributeCharactersToMakeAllStringsEqual();
 //        start.escapeTheGhosts();
-//        start.gasStation();
+        start.gasStation();
 //        start.maximumDifferenceBetweenIncreasingElements();
 //        start.minimumCostOfBuyingCandiesWithDiscount();
 //        start.countTheHiddenSequences();
@@ -62,7 +62,7 @@ public class StartJanuary {
 //        start.rearrangeArrayElementsBySign();
 //        start.lemonadeChange();
 //        start.designAddAndSearchWordsDataStructure();
-        start.numberOfLaserBeamsInABank();
+//        start.numberOfLaserBeamsInABank();
     }
 
     public void longPressedName() {
@@ -363,8 +363,9 @@ public class StartJanuary {
     public void gasStation() {
         GasStation gs = new GasStation();
 
-        System.out.println("3 == " + gs.canCompleteCircuit(new int[]{1,2,3,4,5}, new int[]{3,4,5,1,2})) ;
-        System.out.println("-1 == " + gs.canCompleteCircuit(new int[]{2,3,4}, new int[]{3,4,3})) ;
+//        System.out.println("3 == " + gs.canCompleteCircuit(new int[]{1,2,3,4,5}, new int[]{3,4,5,1,2})) ;
+//        System.out.println("-1 == " + gs.canCompleteCircuit(new int[]{2,3,4}, new int[]{3,4,3})) ;
+        System.out.println("4 == " + gs.canCompleteCircuit(new int[]{5,1,2,3,4}, new int[]{4,4,1,5,1})) ;
     }
 
     public void maximumDifferenceBetweenIncreasingElements() {
