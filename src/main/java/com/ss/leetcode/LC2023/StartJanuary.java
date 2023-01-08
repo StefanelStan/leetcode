@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
 import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
+import com.ss.leetcode.LC2023.january.MostFrequentEvenElement;
 import com.ss.leetcode.LC2023.january.RearrangeCharactersToMakeTargetString;
 
 public class StartJanuary {
@@ -10,7 +11,9 @@ public class StartJanuary {
 
 //        start.minimumRoundsToCompleteAllTasks();
 //        start.minimumNumberOfArrowsToBurstBalloons();
-        start.rearrangeCharactersToMakeTargetString();
+//        start.rearrangeCharactersToMakeTargetString();
+        start.mostFrequentEvenElement();
+
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -37,5 +40,14 @@ public class StartJanuary {
         System.out.println("1 == " +  rctmts.rearrangeCharacters("abbaccaddaeea", "aaaaa"));
         System.out.println("0 == " +  rctmts.rearrangeCharacters("a", "ab"));
         System.out.println("0 == " +  rctmts.rearrangeCharacters("a", "z"));
+    }
+
+    public void mostFrequentEvenElement() {
+        MostFrequentEvenElement mfee = new MostFrequentEvenElement();
+
+        System.out.println("2 == " + mfee.mostFrequentEven(new int[]{0,1,2,2,4,4,1}));
+        System.out.println("4 == " + mfee.mostFrequentEven(new int[]{4,4,4,9,2,4}));
+        System.out.println("-1 == " + mfee.mostFrequentEven(new int[]{29,47,21,41,13,37,25,7}));
+        System.out.println("0 == " + mfee.mostFrequentEven(new int[]{0,1,2,2,4,4,1,0}));
     }
 }
