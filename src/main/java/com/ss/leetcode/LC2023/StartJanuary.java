@@ -3,7 +3,9 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
 import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
 import com.ss.leetcode.LC2023.january.MostFrequentEvenElement;
+import com.ss.leetcode.LC2023.january.NumberOfNodesInTheSubTreeWithTheSameLabel;
 import com.ss.leetcode.LC2023.january.RearrangeCharactersToMakeTargetString;
+import java.util.Arrays;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -12,8 +14,8 @@ public class StartJanuary {
 //        start.minimumRoundsToCompleteAllTasks();
 //        start.minimumNumberOfArrowsToBurstBalloons();
 //        start.rearrangeCharactersToMakeTargetString();
-        start.mostFrequentEvenElement();
-
+//        start.mostFrequentEvenElement();
+        start.numberOfNodesInTheSubTreeWithTheSameLabel();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -49,5 +51,13 @@ public class StartJanuary {
         System.out.println("4 == " + mfee.mostFrequentEven(new int[]{4,4,4,9,2,4}));
         System.out.println("-1 == " + mfee.mostFrequentEven(new int[]{29,47,21,41,13,37,25,7}));
         System.out.println("0 == " + mfee.mostFrequentEven(new int[]{0,1,2,2,4,4,1,0}));
+    }
+
+    public void numberOfNodesInTheSubTreeWithTheSameLabel() {
+        NumberOfNodesInTheSubTreeWithTheSameLabel nonitstwtsl = new NumberOfNodesInTheSubTreeWithTheSameLabel();
+
+        System.out.println("[2,1,1,1,1,1,1] == " + Arrays.toString(nonitstwtsl.countSubTrees(7, new int[][]{{0,1},{0,2},{1,4},{1,5},{2,3},{2,6}}, "abaedcd")));
+        System.out.println("[4,2,1,1] == " + Arrays.toString(nonitstwtsl.countSubTrees(4, new int[][]{{0,1},{1,2},{0,3}}, "bbbb")));
+        System.out.println("[3,2,1,1,1] == " + Arrays.toString(nonitstwtsl.countSubTrees(5, new int[][]{{0,1},{0,2},{1,3},{0,4}}, "aabab")));
     }
 }
