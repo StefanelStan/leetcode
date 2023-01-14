@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
 import com.ss.leetcode.LC2023.january.LongestPathWithDifferentAdjacentCharacters;
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
 import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
@@ -17,7 +18,8 @@ public class StartJanuary {
 //        start.rearrangeCharactersToMakeTargetString();
 //        start.mostFrequentEvenElement();
 //        start.numberOfNodesInTheSubTreeWithTheSameLabel();
-        start.longestPathWithDifferentAdjacentCharacters();
+//        start.longestPathWithDifferentAdjacentCharacters();
+        start.lexicographicallySmallestEquivalentString();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -76,5 +78,16 @@ public class StartJanuary {
                 58,118,10,138,14,28,91,60,47,2,149,99,28,154,71,96,60,106,79,129,83,42,102,34,41,55,
                 31,154,26,34,127,42,133,113,125,113,13,54,132,13,56,13,42,102,135,130,75,25,80,159,39,29,41,89,85,19},
             "ajunvefrdrpgxltugqqrwisyfwwtldxjgaxsbbkhvuqeoigqssefoyngykgtthpzvsxgxrqedntvsjcpdnupvqtroxmbpsdwoswxfarnixkvcimzgvrevxnxtkkovwxcjmtgqrrsqyshxbfxptuvqrytctujnzzydhpal"));
+    }
+
+    public void lexicographicallySmallestEquivalentString() {
+        LexicographicallySmallestEquivalentString lses = new LexicographicallySmallestEquivalentString();
+
+        System.out.println("makkek == " + lses.smallestEquivalentString("parker", "morris", "parser"));
+        System.out.println("hdld == " + lses.smallestEquivalentString("hello", "world", "hold"));
+        System.out.println("hdld == " + lses.smallestEquivalentString("leetcode", "programs", "sourcecode"));
+        System.out.println("sanaazzwalakarauaannakpzaqjmjmaokraauqaayalpsapzao == " + lses.smallestEquivalentString("dccaccbdafgeabeeghbigbhicggfbhiccfgbechdicbhdcgahi", "igfcigeciahdafgegfbeddhgbacaeehcdiehiifgbhhehhccde", "sanfbzzwblekirguignnfkpzgqjmjmfokrdfuqbgyflpsfpzbo"));
+        System.out.println("aqppaaaaaaaaannaaaztqoqapaayzaaqasyaawyaaaoaaaruay == " + lses.smallestEquivalentString("gicimlheddadmbmhiimakmhgklliljllfgjegamichefljcdef", "jgjbjkhkliegkfdcbfcdgmeadlkgcdfkcjdmmcgliegijgjimj", "lqppdcmgachdannbaeztqoqfpimyzcdqksykgwymceogkgruey"));
+        System.out.println("ttusuaaraaasswaaaaxaxaaaaayaaaaaatwwaaaaaataaaaaru == " + lses.smallestEquivalentString("opecenadojbodihfgmpijpfocomhcncicefpohkibjckijghii", "ndlbhpaeppgekfhnjnmmplmdoifdhbglmedpjgleofgnahglbe", "ttusuhhrabgsswpaapxoxdanchyccmpjitwwmfioedtbiggfru"));
     }
 }
