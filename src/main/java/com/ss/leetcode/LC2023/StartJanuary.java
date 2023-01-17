@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
 import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
 import com.ss.leetcode.LC2023.january.LongestPathWithDifferentAdjacentCharacters;
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
@@ -19,7 +20,8 @@ public class StartJanuary {
 //        start.mostFrequentEvenElement();
 //        start.numberOfNodesInTheSubTreeWithTheSameLabel();
 //        start.longestPathWithDifferentAdjacentCharacters();
-        start.lexicographicallySmallestEquivalentString();
+//        start.lexicographicallySmallestEquivalentString();
+        start.flipStringToMonotoneIncreasing();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -89,5 +91,17 @@ public class StartJanuary {
         System.out.println("sanaazzwalakarauaannakpzaqjmjmaokraauqaayalpsapzao == " + lses.smallestEquivalentString("dccaccbdafgeabeeghbigbhicggfbhiccfgbechdicbhdcgahi", "igfcigeciahdafgegfbeddhgbacaeehcdiehiifgbhhehhccde", "sanfbzzwblekirguignnfkpzgqjmjmfokrdfuqbgyflpsfpzbo"));
         System.out.println("aqppaaaaaaaaannaaaztqoqapaayzaaqasyaawyaaaoaaaruay == " + lses.smallestEquivalentString("gicimlheddadmbmhiimakmhgklliljllfgjegamichefljcdef", "jgjbjkhkliegkfdcbfcdgmeadlkgcdfkcjdmmcgliegijgjimj", "lqppdcmgachdannbaeztqoqfpimyzcdqksykgwymceogkgruey"));
         System.out.println("ttusuaaraaasswaaaaxaxaaaaayaaaaaatwwaaaaaataaaaaru == " + lses.smallestEquivalentString("opecenadojbodihfgmpijpfocomhcncicefpohkibjckijghii", "ndlbhpaeppgekfhnjnmmplmdoifdhbglmedpjgleofgnahglbe", "ttusuhhrabgsswpaapxoxdanchyccmpjitwwmfioedtbiggfru"));
+    }
+
+    public void flipStringToMonotoneIncreasing() {
+        FlipStringToMonotoneIncreasing fstmi = new FlipStringToMonotoneIncreasing();
+
+        System.out.println("1 == " + fstmi.minFlipsMonoIncr("00110"));
+        System.out.println("2 == " + fstmi.minFlipsMonoIncr("010110"));
+        System.out.println("2 == " + fstmi.minFlipsMonoIncr("00011000"));
+        System.out.println("0 == " + fstmi.minFlipsMonoIncr("11"));
+        System.out.println("0 == " + fstmi.minFlipsMonoIncr("01"));
+        System.out.println("0 == " + fstmi.minFlipsMonoIncr("0"));
+        System.out.println("3 == " + fstmi.minFlipsMonoIncr("0101100011"));
     }
 }

@@ -47,7 +47,7 @@ public class LexicographicallySmallestEquivalentString {
         LetterGroup minGroup = g1.minChar < g2.minChar ? g1 : g2;
         LetterGroup maxGroup = minGroup == g1 ? g2 : g1;
         for (int i = 0; i < 26; i++) {
-            if (maxGroup.present[i]) {
+            if (groups[i] == maxGroup) {
                 minGroup.appendToGroup((char)(i + 'a'));
                 groups[i] = minGroup;
             }
@@ -56,18 +56,15 @@ public class LexicographicallySmallestEquivalentString {
 
     private static class LetterGroup {
         private char minChar;
-        private boolean[] present = new boolean[26];
 
         public LetterGroup(char c) {
             this.minChar = c;
-            present[c - 'a'] = true;
         }
 
         public void appendToGroup(char newChar) {
             if (newChar < minChar) {
                 minChar = newChar;
             }
-            present[newChar - 'a'] = true;
         }
     }
 }
