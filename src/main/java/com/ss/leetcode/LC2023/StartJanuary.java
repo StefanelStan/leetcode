@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
 import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
 import com.ss.leetcode.LC2023.january.LongestPathWithDifferentAdjacentCharacters;
+import com.ss.leetcode.LC2023.january.MaximumSumCircularSubarray;
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
 import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
 import com.ss.leetcode.LC2023.january.MostFrequentEvenElement;
@@ -21,7 +22,8 @@ public class StartJanuary {
 //        start.numberOfNodesInTheSubTreeWithTheSameLabel();
 //        start.longestPathWithDifferentAdjacentCharacters();
 //        start.lexicographicallySmallestEquivalentString();
-        start.flipStringToMonotoneIncreasing();
+//        start.flipStringToMonotoneIncreasing();
+        start.maximumSumCircularSubarray();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -103,5 +105,16 @@ public class StartJanuary {
         System.out.println("0 == " + fstmi.minFlipsMonoIncr("01"));
         System.out.println("0 == " + fstmi.minFlipsMonoIncr("0"));
         System.out.println("3 == " + fstmi.minFlipsMonoIncr("0101100011"));
+    }
+
+    public void maximumSumCircularSubarray() {
+        MaximumSumCircularSubarray mscs = new MaximumSumCircularSubarray();
+
+        System.out.println("3 == " + mscs.maxSubarraySumCircular(new int[]{1,-2,3,-2}));
+        System.out.println("10 == " + mscs.maxSubarraySumCircular(new int[]{5,-3,5}));
+        System.out.println("-2 == " + mscs.maxSubarraySumCircular(new int[]{-3,-2,-3}));
+        System.out.println("16 == " + mscs.maxSubarraySumCircular(new int[]{5,-3,-2,-3,0,1,2,3,4,0,-5,4,3,-4,-3,-10,-13,7}));
+        System.out.println("17 == " + mscs.maxSubarraySumCircular(new int[]{5,-3,-2,-3,0,1,2,3,4,0,-5,4,3,-4,-3,-10,-13,7,5}));
+        System.out.println("3 == " + mscs.maxSubarraySumCircular(new int[]{3,-2,-3}));
     }
 }

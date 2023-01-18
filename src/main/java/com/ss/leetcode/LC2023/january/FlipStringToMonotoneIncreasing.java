@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2023.january;
 
 public class FlipStringToMonotoneIncreasing {
-
+    // https://leetcode.com/problems/flip-string-to-monotone-increasing/
     /** Algorithm
      *  1. Count the ones. If there are 0 1s or ALL are 1s, return 0 as no change is needed.
      *  2. While counting, retain the position of the 1st 1 (from left).
