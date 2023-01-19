@@ -1,14 +1,17 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
 import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
 import com.ss.leetcode.LC2023.january.LongestPathWithDifferentAdjacentCharacters;
+import com.ss.leetcode.LC2023.january.MaximumCountOfPositiveIntegerAndNegativeInteger;
 import com.ss.leetcode.LC2023.january.MaximumSumCircularSubarray;
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
 import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
 import com.ss.leetcode.LC2023.january.MostFrequentEvenElement;
 import com.ss.leetcode.LC2023.january.NumberOfNodesInTheSubTreeWithTheSameLabel;
 import com.ss.leetcode.LC2023.january.RearrangeCharactersToMakeTargetString;
+import com.ss.leetcode.LC2023.january.SubarraySumsDivisibleByK;
 import java.util.Arrays;
 
 public class StartJanuary {
@@ -23,7 +26,10 @@ public class StartJanuary {
 //        start.longestPathWithDifferentAdjacentCharacters();
 //        start.lexicographicallySmallestEquivalentString();
 //        start.flipStringToMonotoneIncreasing();
-        start.maximumSumCircularSubarray();
+//        start.maximumSumCircularSubarray();
+//        start.subarraySumsDivisibleByK();
+//        start.differenceBetweenElementSumAndDigitSumOfAnArray();
+        start.maximumCountOfPositiveIntegerAndNegativeInteger();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -113,8 +119,35 @@ public class StartJanuary {
         System.out.println("3 == " + mscs.maxSubarraySumCircular(new int[]{1,-2,3,-2}));
         System.out.println("10 == " + mscs.maxSubarraySumCircular(new int[]{5,-3,5}));
         System.out.println("-2 == " + mscs.maxSubarraySumCircular(new int[]{-3,-2,-3}));
-        System.out.println("16 == " + mscs.maxSubarraySumCircular(new int[]{5,-3,-2,-3,0,1,2,3,4,0,-5,4,3,-4,-3,-10,-13,7}));
+        System.out.println("16 == " + mscs.maxSubarraySumCircular(new int[]{4,5,0,-2,6,3,2,3,4,5,6,7,8,9,7,6,5,4,3,2,1,2,3,4,5,6,7,8,7,67,5,54,54,4,4,3,4,4,3,32,2,23,4,5,6,4,-8,5,-4,5,65,67,78,-4,-6,-8,3,2,-23,-3,-17,-3,1}));
         System.out.println("17 == " + mscs.maxSubarraySumCircular(new int[]{5,-3,-2,-3,0,1,2,3,4,0,-5,4,3,-4,-3,-10,-13,7,5}));
         System.out.println("3 == " + mscs.maxSubarraySumCircular(new int[]{3,-2,-3}));
+    }
+
+    public void subarraySumsDivisibleByK() {
+        SubarraySumsDivisibleByK ssdbk = new SubarraySumsDivisibleByK();
+
+        System.out.println("7 == " + ssdbk.subarraysDivByK(new int[]{4,5,0,-2,-3,1}, 7));
+        System.out.println("0 == " + ssdbk.subarraysDivByK(new int[]{5}, 9));
+    }
+
+    public void differenceBetweenElementSumAndDigitSumOfAnArray() {
+        DifferenceBetweenElementSumAndDigitSumOfAnArray dbesadsoaa = new DifferenceBetweenElementSumAndDigitSumOfAnArray();
+
+        System.out.println("9 == " + dbesadsoaa.differenceOfSum(new int[]{1,15,6,3}));
+        System.out.println("0 == " + dbesadsoaa.differenceOfSum(new int[]{1,2,3,4}));
+        System.out.println("0 == " + dbesadsoaa.differenceOfSum(new int[]{5}));
+        System.out.println("3402 == " + dbesadsoaa.differenceOfSum(new int[]{10,15,6,3,6,5,3,2,4,5,6,7,1,2,3,4,5,6,700,8,9,8,7,6,5,4,3,2000,1,5,6,700}));
+    }
+
+    public void maximumCountOfPositiveIntegerAndNegativeInteger() {
+        MaximumCountOfPositiveIntegerAndNegativeInteger mcopiani = new MaximumCountOfPositiveIntegerAndNegativeInteger();
+
+        System.out.println("3 == " + mcopiani.maximumCount(new int[]{-2,-1,-1,1,2,3}));
+        System.out.println("3 == " + mcopiani.maximumCount(new int[]{-3,-2,-1,0,0,1,2}));
+        System.out.println("4 == " + mcopiani.maximumCount(new int[]{5,20,66,1314}));
+        System.out.println("4 == " + mcopiani.maximumCount(new int[]{5,20,66,1314}));
+        System.out.println("4 == " + mcopiani.maximumCount(new int[]{-2,-2,-2,-1,0,0,0,0,0,0}));
+        System.out.println("3 == " + mcopiani.maximumCount(new int[]{0,1,2,3}));
     }
 }
