@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.january.CountTheDigitsThatDivideANumber;
 import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
 import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
@@ -29,7 +30,8 @@ public class StartJanuary {
 //        start.maximumSumCircularSubarray();
 //        start.subarraySumsDivisibleByK();
 //        start.differenceBetweenElementSumAndDigitSumOfAnArray();
-        start.maximumCountOfPositiveIntegerAndNegativeInteger();
+//        start.maximumCountOfPositiveIntegerAndNegativeInteger();
+        start.countTheDigitsThatDivideANumber();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -149,5 +151,16 @@ public class StartJanuary {
         System.out.println("4 == " + mcopiani.maximumCount(new int[]{5,20,66,1314}));
         System.out.println("4 == " + mcopiani.maximumCount(new int[]{-2,-2,-2,-1,0,0,0,0,0,0}));
         System.out.println("3 == " + mcopiani.maximumCount(new int[]{0,1,2,3}));
+    }
+
+    public void countTheDigitsThatDivideANumber() {
+        CountTheDigitsThatDivideANumber ctdtdan = new CountTheDigitsThatDivideANumber();
+
+        System.out.println("1 == " + ctdtdan.countDigits(7));
+        System.out.println("2 == " + ctdtdan.countDigits(121));
+        System.out.println("4 == " + ctdtdan.countDigits(1248));
+        System.out.println("4 == " + ctdtdan.countDigits(1248));
+        System.out.println("1 == " + ctdtdan.countDigits(534534521));
+        System.out.println("4 == " + ctdtdan.countDigits(222221111));
     }
 }
