@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.january.CountDaysSpentTogether;
 import com.ss.leetcode.LC2023.january.CountTheDigitsThatDivideANumber;
 import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
@@ -31,7 +32,8 @@ public class StartJanuary {
 //        start.subarraySumsDivisibleByK();
 //        start.differenceBetweenElementSumAndDigitSumOfAnArray();
 //        start.maximumCountOfPositiveIntegerAndNegativeInteger();
-        start.countTheDigitsThatDivideANumber();
+//        start.countTheDigitsThatDivideANumber();
+        start.countDaysSpentTogether();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -162,5 +164,14 @@ public class StartJanuary {
         System.out.println("4 == " + ctdtdan.countDigits(1248));
         System.out.println("1 == " + ctdtdan.countDigits(534534521));
         System.out.println("4 == " + ctdtdan.countDigits(222221111));
+    }
+
+    public void countDaysSpentTogether() {
+        CountDaysSpentTogether cdst = new CountDaysSpentTogether();
+
+        System.out.println("3 == " + cdst.countDaysTogether("08-15", "08-18", "08-16", "08-19"));
+        System.out.println("0 == " + cdst.countDaysTogether("10-01", "10-31", "11-01", "12-31"));
+        System.out.println("1 == " + cdst.countDaysTogether("10-01", "10-31", "10-31", "12-31"));
+        System.out.println("4 == " + cdst.countDaysTogether("10-01", "10-04", "01-31", "12-31"));
     }
 }
