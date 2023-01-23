@@ -6,8 +6,11 @@ import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAn
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
 import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
 import com.ss.leetcode.LC2023.january.LongestPathWithDifferentAdjacentCharacters;
+import com.ss.leetcode.LC2023.january.LongestUploadedPrefix;
 import com.ss.leetcode.LC2023.january.MaximumCountOfPositiveIntegerAndNegativeInteger;
 import com.ss.leetcode.LC2023.january.MaximumSumCircularSubarray;
+import com.ss.leetcode.LC2023.january.MaximumSumOfAnHourglass;
+import com.ss.leetcode.LC2023.january.MinimumHoursOfTrainingToWinACompetition;
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
 import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
 import com.ss.leetcode.LC2023.january.MostFrequentEvenElement;
@@ -33,7 +36,10 @@ public class StartJanuary {
 //        start.differenceBetweenElementSumAndDigitSumOfAnArray();
 //        start.maximumCountOfPositiveIntegerAndNegativeInteger();
 //        start.countTheDigitsThatDivideANumber();
-        start.countDaysSpentTogether();
+//        start.countDaysSpentTogether();
+//        start.maximumSumOfAnHourglass();
+//        start.longestUploadedPrefix();
+        start.minimumHoursOfTrainingToWinACompetition();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -173,5 +179,32 @@ public class StartJanuary {
         System.out.println("0 == " + cdst.countDaysTogether("10-01", "10-31", "11-01", "12-31"));
         System.out.println("1 == " + cdst.countDaysTogether("10-01", "10-31", "10-31", "12-31"));
         System.out.println("4 == " + cdst.countDaysTogether("10-01", "10-04", "01-31", "12-31"));
+    }
+
+    public void maximumSumOfAnHourglass() {
+        MaximumSumOfAnHourglass msoah = new MaximumSumOfAnHourglass();
+
+        System.out.println("30 == " + msoah.maxSum(new int[][]{{6,2,1,3},{4,2,1,5},{9,2,8,7},{4,1,2,9}}));
+        System.out.println("35 == " + msoah.maxSum(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
+    }
+
+    public void longestUploadedPrefix() {
+        LongestUploadedPrefix lup = new LongestUploadedPrefix(4);
+
+        lup.upload(3);
+        System.out.println("0 == " + lup.longest());
+        lup.upload(1);
+        System.out.println("1 == " + lup.longest());
+        lup.upload(2);
+        System.out.println("3 == " + lup.longest());
+    }
+
+    public void minimumHoursOfTrainingToWinACompetition() {
+        MinimumHoursOfTrainingToWinACompetition mhottwac = new MinimumHoursOfTrainingToWinACompetition();
+
+        System.out.println("8 == " + mhottwac.minNumberOfHours(5, 3, new int[]{1,4,3,2},new int[]{2,6,3,1}));
+        System.out.println("0 == " + mhottwac.minNumberOfHours(2, 4, new int[]{1},new int[]{3}));
+        System.out.println("2 == " + mhottwac.minNumberOfHours(5, 3, new int[]{1,4},new int[]{2,5}));
+        System.out.println("51 == " + mhottwac.minNumberOfHours(1, 1, new int[]{1,1,1,1},new int[]{1,1,1,50}));
     }
 }
