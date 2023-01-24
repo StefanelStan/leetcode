@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.january.AlternatingDigitSum;
 import com.ss.leetcode.LC2023.january.CountDaysSpentTogether;
 import com.ss.leetcode.LC2023.january.CountTheDigitsThatDivideANumber;
 import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
@@ -16,6 +17,8 @@ import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
 import com.ss.leetcode.LC2023.january.MostFrequentEvenElement;
 import com.ss.leetcode.LC2023.january.NumberOfNodesInTheSubTreeWithTheSameLabel;
 import com.ss.leetcode.LC2023.january.RearrangeCharactersToMakeTargetString;
+import com.ss.leetcode.LC2023.january.SortTheStudentsByTheirKthScore;
+import com.ss.leetcode.LC2023.january.StepsToMakeArrayNonDecreasing;
 import com.ss.leetcode.LC2023.january.SubarraySumsDivisibleByK;
 import java.util.Arrays;
 
@@ -39,7 +42,10 @@ public class StartJanuary {
 //        start.countDaysSpentTogether();
 //        start.maximumSumOfAnHourglass();
 //        start.longestUploadedPrefix();
-        start.minimumHoursOfTrainingToWinACompetition();
+//        start.minimumHoursOfTrainingToWinACompetition();
+        start.alternatingDigitSum();
+//        start.stepsToMakeArrayNonDecreasing();
+//        start.sortTheStudentsByTheirKthScore();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -206,5 +212,33 @@ public class StartJanuary {
         System.out.println("0 == " + mhottwac.minNumberOfHours(2, 4, new int[]{1},new int[]{3}));
         System.out.println("2 == " + mhottwac.minNumberOfHours(5, 3, new int[]{1,4},new int[]{2,5}));
         System.out.println("51 == " + mhottwac.minNumberOfHours(1, 1, new int[]{1,1,1,1},new int[]{1,1,1,50}));
+    }
+
+    public void alternatingDigitSum() {
+        AlternatingDigitSum ads = new AlternatingDigitSum();
+
+        System.out.println("4 == " + ads.alternateDigitSum(521));
+        System.out.println("4 == " + ads.alternateDigitSum(521));
+        System.out.println("0 == " + ads.alternateDigitSum(886996));
+    }
+
+    public void stepsToMakeArrayNonDecreasing() {
+        StepsToMakeArrayNonDecreasing stmand = new StepsToMakeArrayNonDecreasing();
+
+        System.out.println("3 == " + stmand.totalSteps(new int[]{5,3,4,4,7,3,6,11,8,5,11}));
+        System.out.println("0 == " + stmand.totalSteps(new int[]{4,5,7,7,13}));
+        System.out.println("3 == " + stmand.totalSteps(new int[]{5,3,4,4,7,3,6,11,23,12,45,23,12,11,22,33,12,45,78,65,43,2,12,3,11}));
+        System.out.println("7 == " + stmand.totalSteps(new int[]{11,23,12,45,23,12,11,22,33,12,45,32,12,34,56,78,65,43,2,12,3,4,5,6,7,8,5,11}));
+        System.out.println("8 == " + stmand.totalSteps(new int[]{11,23,12,45,23,12,11,22,33,12,45,32,12,34,56,78,65,43,2,12,3,4,5,6,7,8,5,11,12,7,11,6}));
+        System.out.println("9 == " + stmand.totalSteps(new int[]{11,23,12,45,23,12,11,22,33,12,45,32,12,34,56,78,65,43,2,12,3,4,5,6,7,8,5,11,11,7,11,6}));
+        System.out.println("1 == " + stmand.totalSteps(new int[]{5,3,8}));
+        System.out.println("5 == " + stmand.totalSteps(new int[]{78,65,43,2,12,3,4,5,12,6,7,8,5,11,12,7,11,6}));
+    }
+
+    public void sortTheStudentsByTheirKthScore() {
+        SortTheStudentsByTheirKthScore stsbtks = new SortTheStudentsByTheirKthScore();
+
+        System.out.println("[[7,5,11,2],[10,6,9,1],[4,8,3,15]] == " + Arrays.deepToString(stsbtks.sortTheStudents(new int[][]{{10,6,9,1},{7,5,11,2},{4,8,3,15}}, 2)));
+        System.out.println("[[5,6],[3,4]] == " + Arrays.deepToString(stsbtks.sortTheStudents(new int[][]{{3,4},{5,6}}, 0)));
     }
 }
