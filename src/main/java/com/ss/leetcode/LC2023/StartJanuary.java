@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.january.CountDaysSpentTogether;
 import com.ss.leetcode.LC2023.january.CountTheDigitsThatDivideANumber;
 import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
+import com.ss.leetcode.LC2023.january.HtmlEntityParser;
 import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
 import com.ss.leetcode.LC2023.january.LongestPathWithDifferentAdjacentCharacters;
 import com.ss.leetcode.LC2023.january.LongestUploadedPrefix;
@@ -43,9 +44,10 @@ public class StartJanuary {
 //        start.maximumSumOfAnHourglass();
 //        start.longestUploadedPrefix();
 //        start.minimumHoursOfTrainingToWinACompetition();
-        start.alternatingDigitSum();
+//        start.alternatingDigitSum();
 //        start.stepsToMakeArrayNonDecreasing();
 //        start.sortTheStudentsByTheirKthScore();
+        start.htmlEntityParser();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -240,5 +242,13 @@ public class StartJanuary {
 
         System.out.println("[[7,5,11,2],[10,6,9,1],[4,8,3,15]] == " + Arrays.deepToString(stsbtks.sortTheStudents(new int[][]{{10,6,9,1},{7,5,11,2},{4,8,3,15}}, 2)));
         System.out.println("[[5,6],[3,4]] == " + Arrays.deepToString(stsbtks.sortTheStudents(new int[][]{{3,4},{5,6}}, 0)));
+    }
+
+    public void htmlEntityParser() {
+        HtmlEntityParser hep = new HtmlEntityParser();
+
+        System.out.println("& is an HTML entity but &ambassador; is not. == " + hep.entityParser("&amp; is an HTML entity but &ambassador; is not."));
+        System.out.println("and I quote: \"...\" == " + hep.entityParser("and I quote: &quot;...&quot;"));
+        System.out.println("&amp == " + hep.entityParser("&amp"));
     }
 }
