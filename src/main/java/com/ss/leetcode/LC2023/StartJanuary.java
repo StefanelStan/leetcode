@@ -1,6 +1,9 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.january.AlternatingDigitSum;
+import com.ss.leetcode.LC2023.january.CamelcaseMatching;
+import com.ss.leetcode.LC2023.january.CheapestFlightsWithinKStops;
+import com.ss.leetcode.LC2023.january.ConcatenatedWords;
 import com.ss.leetcode.LC2023.january.CountDaysSpentTogether;
 import com.ss.leetcode.LC2023.january.CountTheDigitsThatDivideANumber;
 import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
@@ -47,7 +50,10 @@ public class StartJanuary {
 //        start.alternatingDigitSum();
 //        start.stepsToMakeArrayNonDecreasing();
 //        start.sortTheStudentsByTheirKthScore();
-        start.htmlEntityParser();
+//        start.htmlEntityParser();
+//        start.camelcaseMatching();
+//        start.cheapestFlightsWithinKStops();
+        start.concatenatedWords();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -250,5 +256,28 @@ public class StartJanuary {
         System.out.println("& is an HTML entity but &ambassador; is not. == " + hep.entityParser("&amp; is an HTML entity but &ambassador; is not."));
         System.out.println("and I quote: \"...\" == " + hep.entityParser("and I quote: &quot;...&quot;"));
         System.out.println("&amp == " + hep.entityParser("&amp"));
+    }
+
+    public void camelcaseMatching() {
+        CamelcaseMatching cm = new CamelcaseMatching();
+
+        System.out.println("[true,false,true,true,false] == " + cm.camelMatch(new String[]{"FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"}, "FB"));
+        System.out.println("[true,false,true,false,false] == " + cm.camelMatch(new String[]{"FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"}, "FoBa"));
+        System.out.println("[false,true,false,false,false] == " + cm.camelMatch(new String[]{"FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"}, "FoBaT"));
+        System.out.println("[false,true,false,false,false] == " + cm.camelMatch(new String[]{"FooaBar","FooaBarTest","FootBall","FrameBuffer","ForceFeedBack"}, "FoaBaT"));
+        System.out.println("[false] == " + cm.camelMatch(new String[]{"ab"}, "ac"));
+    }
+
+    public void cheapestFlightsWithinKStops() {
+        CheapestFlightsWithinKStops cfwks = new CheapestFlightsWithinKStops();
+
+        System.out.println("700 == " + cfwks.findCheapestPrice(4, new int[][]{{0,1,100},{1,2,100},{2,0,100},{1,3,600},{2,3,200}}, 0, 3, 1));
+    }
+
+    public void concatenatedWords() {
+        ConcatenatedWords cw = new ConcatenatedWords();
+
+        System.out.println("[catsdogcats, dogcatsdog, ratcatdogcat] == " + cw.findAllConcatenatedWordsInADict(new String[]{"cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"}));
+        System.out.println("[catdog] == " + cw.findAllConcatenatedWordsInADict(new String[]{"cat","dog","catdog"}));
     }
 }
