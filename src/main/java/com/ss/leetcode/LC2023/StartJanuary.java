@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2023.january.CheapestFlightsWithinKStops;
 import com.ss.leetcode.LC2023.january.ConcatenatedWords;
 import com.ss.leetcode.LC2023.january.CountDaysSpentTogether;
 import com.ss.leetcode.LC2023.january.CountTheDigitsThatDivideANumber;
+import com.ss.leetcode.LC2023.january.DataStreamAsDisjointIntervals;
 import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
 import com.ss.leetcode.LC2023.january.HtmlEntityParser;
@@ -24,7 +25,12 @@ import com.ss.leetcode.LC2023.january.RearrangeCharactersToMakeTargetString;
 import com.ss.leetcode.LC2023.january.SortTheStudentsByTheirKthScore;
 import com.ss.leetcode.LC2023.january.StepsToMakeArrayNonDecreasing;
 import com.ss.leetcode.LC2023.january.SubarraySumsDivisibleByK;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.Arrays;
+import java.util.List;
+import org.apache.commons.io.FileUtils;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -53,7 +59,8 @@ public class StartJanuary {
 //        start.htmlEntityParser();
 //        start.camelcaseMatching();
 //        start.cheapestFlightsWithinKStops();
-        start.concatenatedWords();
+//        start.concatenatedWords();
+        start.dataStreamAsDisjointIntervals();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -279,5 +286,53 @@ public class StartJanuary {
 
         System.out.println("[catsdogcats, dogcatsdog, ratcatdogcat] == " + cw.findAllConcatenatedWordsInADict(new String[]{"cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"}));
         System.out.println("[catdog] == " + cw.findAllConcatenatedWordsInADict(new String[]{"cat","dog","catdog"}));
+    }
+
+    public void dataStreamAsDisjointIntervals() {
+        DataStreamAsDisjointIntervals dsasi = new DataStreamAsDisjointIntervals();
+
+        dsasi.addNum(1);
+        System.out.println("[[1, 1]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(3);
+        System.out.println("[[1, 1],[3,3]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(7);
+        System.out.println("[[1, 1], [3, 3], [7, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(2);
+        System.out.println("[[1, 3], [7, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(6);
+        System.out.println("[[1, 3], [6, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+
+
+        dsasi = new DataStreamAsDisjointIntervals();
+        dsasi.addNum(1);
+        System.out.println("[[1, 1]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(2);
+        System.out.println("[[1, 2]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(7);
+        System.out.println("[[1, 2], [7, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(4);
+        System.out.println("[[1, 2], [4,4], [7, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(6);
+        System.out.println("[[1, 2], [4,4], [6, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(3);
+        System.out.println("[[1, 4], [6, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(3);
+        System.out.println("[[1, 4], [6, 7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+
+        dsasi = new DataStreamAsDisjointIntervals();
+        dsasi.addNum(1);
+        System.out.println("[[1, 1]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(3);
+        System.out.println("[[1, 1], [3,3]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(2);
+        System.out.println("[[1, 3]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(0);
+        System.out.println("[[0, 3]]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(6);
+        System.out.println("[[0, 3], [6,6]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(3);
+        System.out.println("[[0, 3], [6,6]] == " + Arrays.deepToString(dsasi.getIntervals()));
+        dsasi.addNum(7);
+        System.out.println("[[0, 3], [6,7]] == " + Arrays.deepToString(dsasi.getIntervals()));
     }
 }
