@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2023.january.DataStreamAsDisjointIntervals;
 import com.ss.leetcode.LC2023.january.DifferenceBetweenElementSumAndDigitSumOfAnArray;
 import com.ss.leetcode.LC2023.january.FlipStringToMonotoneIncreasing;
 import com.ss.leetcode.LC2023.january.HtmlEntityParser;
+import com.ss.leetcode.LC2023.january.LFUCache;
 import com.ss.leetcode.LC2023.january.LexicographicallySmallestEquivalentString;
 import com.ss.leetcode.LC2023.january.LongestPathWithDifferentAdjacentCharacters;
 import com.ss.leetcode.LC2023.january.LongestUploadedPrefix;
@@ -25,12 +26,8 @@ import com.ss.leetcode.LC2023.january.RearrangeCharactersToMakeTargetString;
 import com.ss.leetcode.LC2023.january.SortTheStudentsByTheirKthScore;
 import com.ss.leetcode.LC2023.january.StepsToMakeArrayNonDecreasing;
 import com.ss.leetcode.LC2023.january.SubarraySumsDivisibleByK;
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.List;
-import org.apache.commons.io.FileUtils;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -60,7 +57,8 @@ public class StartJanuary {
 //        start.camelcaseMatching();
 //        start.cheapestFlightsWithinKStops();
 //        start.concatenatedWords();
-        start.dataStreamAsDisjointIntervals();
+//        start.dataStreamAsDisjointIntervals();
+        start.LFUCache();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -334,5 +332,32 @@ public class StartJanuary {
         System.out.println("[[0, 3], [6,6]] == " + Arrays.deepToString(dsasi.getIntervals()));
         dsasi.addNum(7);
         System.out.println("[[0, 3], [6,7]] == " + Arrays.deepToString(dsasi.getIntervals()));
+    }
+
+    public void LFUCache() {
+        LFUCache lfuc = new LFUCache(2);
+
+        lfuc.put(1,1);
+        lfuc.put(2,2);
+        System.out.println("1 == " + lfuc.get(1));
+        lfuc.put(3,3);
+        System.out.println("-1 == " + lfuc.get(2));
+        lfuc.put(4,4);
+        System.out.println("1 == " + lfuc.get(1));
+        System.out.println("-1 == " + lfuc.get(3));
+        System.out.println("4 == " + lfuc.get(4));
+
+        lfuc = new LFUCache(2);
+        lfuc.put(1,1);
+        lfuc.put(2,2);
+        System.out.println("1 == " + lfuc.get(1));
+        System.out.println("2 == " + lfuc.get(2));
+        lfuc.put(5,5);
+        System.out.println("2 == " + lfuc.get(2));
+        lfuc.put(4,4);
+        System.out.println("-1 == " + lfuc.get(1));
+        System.out.println("-1 == " + lfuc.get(3));
+        System.out.println("4 == " + lfuc.get(4));
+
     }
 }
