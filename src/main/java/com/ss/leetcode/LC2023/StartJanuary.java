@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2023.january.LongestUploadedPrefix;
 import com.ss.leetcode.LC2023.january.MaximumCountOfPositiveIntegerAndNegativeInteger;
 import com.ss.leetcode.LC2023.january.MaximumSumCircularSubarray;
 import com.ss.leetcode.LC2023.january.MaximumSumOfAnHourglass;
+import com.ss.leetcode.LC2023.january.MinimumAbsoluteSumDifference;
 import com.ss.leetcode.LC2023.january.MinimumHoursOfTrainingToWinACompetition;
 import com.ss.leetcode.LC2023.january.MinimumNumberOfArrowsToBurstBalloons;
 import com.ss.leetcode.LC2023.january.MinimumRoundsToCompleteAllTasks;
@@ -58,7 +59,8 @@ public class StartJanuary {
 //        start.cheapestFlightsWithinKStops();
 //        start.concatenatedWords();
 //        start.dataStreamAsDisjointIntervals();
-        start.LFUCache();
+//        start.LFUCache();
+        start.minimumAbsoluteSumDifference();
     }
 
     public void minimumRoundsToCompleteAllTasks() {
@@ -359,5 +361,16 @@ public class StartJanuary {
         System.out.println("-1 == " + lfuc.get(3));
         System.out.println("4 == " + lfuc.get(4));
 
+    }
+
+    public void minimumAbsoluteSumDifference() {
+        MinimumAbsoluteSumDifference masd = new MinimumAbsoluteSumDifference();
+
+        System.out.println("3 == " + masd.minAbsoluteSumDiff(new int[]{1,7,5}, new int[]{2,3,5}));
+        System.out.println("0 == " + masd.minAbsoluteSumDiff(new int[]{2,4,6,8,10}, new int[]{2,4,6,8,10}));
+        System.out.println("20 == " + masd.minAbsoluteSumDiff(new int[]{1,10,4,4,2,7}, new int[]{9,3,5,1,7,4}));
+        System.out.println("39 == " + masd.minAbsoluteSumDiff(new int[]{1,7,3,2,5,6,7,8,1,3,4,6,27,5}, new int[]{2,3,5,6,3,2,12,3,4,5,6,7,8,1}));
+        System.out.println("39 == " + masd.minAbsoluteSumDiff(new int[]{1,1,1,1,1,1,1,1,1,1,1,1}, new int[]{2,3,5,6,7,8,1,2,3,4,5,6}));
+        System.out.println("64 == " + masd.minAbsoluteSumDiff(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2}, new int[]{2,3,5,6,7,8,1,2,3,4,5,6,8,7,6,5,4,3,2,1,3,4}));
     }
 }
