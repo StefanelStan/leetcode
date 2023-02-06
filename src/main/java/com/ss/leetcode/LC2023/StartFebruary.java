@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARange
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
+import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
 import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
 import java.io.File;
@@ -24,7 +25,8 @@ public class StartFebruary {
 //        start.separateTheDigitsInAnArray();
 //        start.maximumNumberOfIntegersToChooseFromARangeI();
 //        start.maximizeWinFromTwoSegments();
-        start.minimumCommonValue();
+//        start.minimumCommonValue();
+        start.takeGiftsFromTheRichestPile();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -105,5 +107,12 @@ public class StartFebruary {
         System.out.println("-1 == " + mcv.getCommon(new int[]{1}, new int[]{2}));
         System.out.println("2 == " + mcv.getCommon(new int[]{1,2}, new int[]{2,3}));
         System.out.println("3 == " + mcv.getCommon(new int[]{3}, new int[]{2,3}));
+    }
+
+    public void takeGiftsFromTheRichestPile() {
+        TakeGiftsFromTheRichestPile tgftrp = new TakeGiftsFromTheRichestPile();
+
+        System.out.println("29 == " + tgftrp.pickGifts(new int[]{25,64,9,4,100}, 4));
+        System.out.println("4 == " + tgftrp.pickGifts(new int[]{1,1,1,1}, 4));
     }
 }
