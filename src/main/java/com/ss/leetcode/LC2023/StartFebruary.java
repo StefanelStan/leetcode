@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
+import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
@@ -22,7 +23,8 @@ public class StartFebruary {
 //        start.tupleWithSameProduct();
 //        start.separateTheDigitsInAnArray();
 //        start.maximumNumberOfIntegersToChooseFromARangeI();
-        start.maximizeWinFromTwoSegments();
+//        start.maximizeWinFromTwoSegments();
+        start.minimumCommonValue();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -93,5 +95,15 @@ public class StartFebruary {
         System.out.println(Arrays.binarySearch(arr, 18));
         System.out.println(Arrays.binarySearch(arr, 20));
 
+    }
+
+    public void minimumCommonValue() {
+        MinimumCommonValue mcv = new MinimumCommonValue();
+
+        System.out.println("2 == " + mcv.getCommon(new int[]{1,2,3}, new int[]{2,4}));
+        System.out.println("2 == " + mcv.getCommon(new int[]{1,2,3,6}, new int[]{2,3,4,5}));
+        System.out.println("-1 == " + mcv.getCommon(new int[]{1}, new int[]{2}));
+        System.out.println("2 == " + mcv.getCommon(new int[]{1,2}, new int[]{2,3}));
+        System.out.println("3 == " + mcv.getCommon(new int[]{3}, new int[]{2,3}));
     }
 }
