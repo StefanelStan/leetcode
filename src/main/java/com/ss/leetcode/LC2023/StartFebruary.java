@@ -1,11 +1,14 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
+import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
+import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
+import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
 import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
@@ -26,7 +29,10 @@ public class StartFebruary {
 //        start.maximumNumberOfIntegersToChooseFromARangeI();
 //        start.maximizeWinFromTwoSegments();
 //        start.minimumCommonValue();
-        start.takeGiftsFromTheRichestPile();
+//        start.takeGiftsFromTheRichestPile();
+//        start.fruitIntoBaskets();
+//        start.slidingWindowMaximum();
+        start.maximalScoreAfterApplyingKOperations();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -114,5 +120,32 @@ public class StartFebruary {
 
         System.out.println("29 == " + tgftrp.pickGifts(new int[]{25,64,9,4,100}, 4));
         System.out.println("4 == " + tgftrp.pickGifts(new int[]{1,1,1,1}, 4));
+    }
+
+    public void fruitIntoBaskets() {
+        FruitIntoBaskets fib = new FruitIntoBaskets();
+
+        System.out.println("3 == " + fib.totalFruit(new int[]{1,2,1}));
+        System.out.println("3 == " + fib.totalFruit(new int[]{0,1,2,2}));
+        System.out.println("4 == " + fib.totalFruit(new int[]{1,2,3,2,2}));
+        System.out.println("4 == " + fib.totalFruit(new int[]{1,2,3,2,2}));
+        System.out.println("2 == " + fib.totalFruit(new int[]{1,0}));
+        System.out.println("1 == " + fib.totalFruit(new int[]{0}));
+    }
+
+    public void slidingWindowMaximum() {
+        SlidingWindowMaximum swm = new SlidingWindowMaximum();
+
+        System.out.println("[3,3,5,5,6,7] == " + Arrays.toString(swm.maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7}, 3)));
+        System.out.println("[1] == " + Arrays.toString(swm.maxSlidingWindow(new int[]{1}, 1)));
+    }
+
+    public void maximalScoreAfterApplyingKOperations() {
+        MaximalScoreAfterApplyingKOperations msaako = new MaximalScoreAfterApplyingKOperations();
+
+        System.out.println("50 == " + msaako.maxKelements(new int[]{10,10,10,10,10}, 5));
+        System.out.println("17 == " + msaako.maxKelements(new int[]{1,10,3,3,3}, 3));
+        System.out.println("151 == " + msaako.maxKelements(new int[]{10,10,10,14,12,13,14,7,6,5,4,3,4,5,6,7,8,9,1,2,3,4,5,8,9,5,4,3,10,10}, 15));
+        System.out.println("26 == " + msaako.maxKelements(new int[]{4}, 22));
     }
 }
