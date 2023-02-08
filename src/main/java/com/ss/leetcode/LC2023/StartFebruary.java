@@ -1,13 +1,16 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
+import com.ss.leetcode.LC2023.february.JumpGameII;
 import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
+import com.ss.leetcode.LC2023.february.SingleNumberII;
 import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
@@ -32,7 +35,10 @@ public class StartFebruary {
 //        start.takeGiftsFromTheRichestPile();
 //        start.fruitIntoBaskets();
 //        start.slidingWindowMaximum();
-        start.maximalScoreAfterApplyingKOperations();
+//        start.maximalScoreAfterApplyingKOperations();
+//        start.jumpGameII();
+//        start.singleNumberII();
+        start.binarySubarraysWithSum();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -147,5 +153,27 @@ public class StartFebruary {
         System.out.println("17 == " + msaako.maxKelements(new int[]{1,10,3,3,3}, 3));
         System.out.println("151 == " + msaako.maxKelements(new int[]{10,10,10,14,12,13,14,7,6,5,4,3,4,5,6,7,8,9,1,2,3,4,5,8,9,5,4,3,10,10}, 15));
         System.out.println("26 == " + msaako.maxKelements(new int[]{4}, 22));
+    }
+
+    public void jumpGameII() {
+        JumpGameII jgii = new JumpGameII();
+
+        System.out.println("2 == " + jgii.jump(new int[]{2,3,1,1,4}));
+        System.out.println("2 == " + jgii.jump(new int[]{2,3,0,1,4}));
+    }
+
+    public void singleNumberII() {
+        SingleNumberII snii = new SingleNumberII();
+
+        System.out.println("3 == " + snii.singleNumber(new int[]{2,2,3,2}));
+        System.out.println("99 == " + snii.singleNumber(new int[]{0,1,0,1,0,1,99}));
+        System.out.println("1 == " + snii.singleNumber(new int[]{1}));
+    }
+
+    public void binarySubarraysWithSum() {
+        BinarySubarraysWithSum bsws = new BinarySubarraysWithSum();
+
+        System.out.println("4 == " + bsws.numSubarraysWithSum(new int[]{1,0,1,0,1}, 2));
+        System.out.println("15 == " + bsws.numSubarraysWithSum(new int[]{0,0,0,0,0}, 0));
     }
 }
