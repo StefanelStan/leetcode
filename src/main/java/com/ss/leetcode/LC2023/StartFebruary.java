@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
+import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.JumpGameII;
@@ -8,17 +9,17 @@ import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
+import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
+import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
+import com.ss.leetcode.LC2023.february.RedundantConnection;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
 import com.ss.leetcode.LC2023.february.SingleNumberII;
 import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
 import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
-import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
-import org.apache.commons.io.FileUtils;
 
 public class StartFebruary {
     public static void main(String[] args) {
@@ -38,7 +39,11 @@ public class StartFebruary {
 //        start.maximalScoreAfterApplyingKOperations();
 //        start.jumpGameII();
 //        start.singleNumberII();
-        start.binarySubarraysWithSum();
+//        start.binarySubarraysWithSum();
+//        start.namingACompany();
+//        start.redundantConnection();
+//        start.circularSentence();
+        start.minimumCutsToDivideACircle();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -175,5 +180,37 @@ public class StartFebruary {
 
         System.out.println("4 == " + bsws.numSubarraysWithSum(new int[]{1,0,1,0,1}, 2));
         System.out.println("15 == " + bsws.numSubarraysWithSum(new int[]{0,0,0,0,0}, 0));
+    }
+
+    public void namingACompany() {
+        NamingACompany nac = new NamingACompany();
+
+        System.out.println("6 == " + nac.distinctNames(new String[]{"coffee","donuts","time","toffee"}));
+        System.out.println("0 == " + nac.distinctNames(new String[]{"lack","back"}));
+    }
+
+    public void redundantConnection() {
+        RedundantConnection rc = new RedundantConnection();
+
+        System.out.println("[2,3] == " + Arrays.toString(rc.findRedundantConnection(new int[][]{{1,2},{1,3},{2,3}})));
+        System.out.println("[1,4] == " + Arrays.toString(rc.findRedundantConnection(new int[][]{{1,2},{2,3},{3,4},{1,4},{1,5}})));
+    }
+
+    public void circularSentence() {
+        CircularSentence cs = new CircularSentence();
+
+        System.out.println("true == " + cs.isCircularSentence("leetcode exercises sound delightful"));
+        System.out.println("true == " + cs.isCircularSentence("eetcode"));
+        System.out.println("false == " + cs.isCircularSentence("Leetcode is cool"));
+    }
+
+    public void minimumCutsToDivideACircle() {
+        MinimumCutsToDivideACircle mctdac = new MinimumCutsToDivideACircle();
+
+        System.out.println("2 == " + mctdac.numberOfCuts(4));
+        System.out.println("3 == " + mctdac.numberOfCuts(3));
+        System.out.println("0 == " + mctdac.numberOfCuts(1));
+        System.out.println("33 == " + mctdac.numberOfCuts(33));
+        System.out.println("18 == " + mctdac.numberOfCuts(56));
     }
 }
