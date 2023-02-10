@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.february.AsFarFromLandAsPossible;
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
@@ -43,7 +44,8 @@ public class StartFebruary {
 //        start.namingACompany();
 //        start.redundantConnection();
 //        start.circularSentence();
-        start.minimumCutsToDivideACircle();
+//        start.minimumCutsToDivideACircle();
+        start.asFarFromLandAsPossible();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -212,5 +214,13 @@ public class StartFebruary {
         System.out.println("0 == " + mctdac.numberOfCuts(1));
         System.out.println("33 == " + mctdac.numberOfCuts(33));
         System.out.println("18 == " + mctdac.numberOfCuts(56));
+    }
+
+    public void asFarFromLandAsPossible() {
+        AsFarFromLandAsPossible afflap = new AsFarFromLandAsPossible();
+
+        System.out.println("2 == " + afflap.maxDistance(new int[][]{{1,0,1},{0,0,0},{1,0,1}}));
+        System.out.println("4 == " + afflap.maxDistance(new int[][]{{1,0,0},{0,0,0},{0,0,0}}));
+        System.out.println("2 == " + afflap.maxDistance(new int[][]{{1,0,0,0,1},{1,0,0,0,1},{1,0,0,0,1},{1,0,0,0,1},{1,0,0,0,1}}));
     }
 }
