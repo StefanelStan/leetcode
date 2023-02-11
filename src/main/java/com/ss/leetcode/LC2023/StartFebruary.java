@@ -4,15 +4,19 @@ import com.ss.leetcode.LC2023.february.AsFarFromLandAsPossible;
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
+import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.JumpGameII;
 import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
+import com.ss.leetcode.LC2023.february.MaximumValueOfAStringInAnArray;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
 import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
+import com.ss.leetcode.LC2023.february.NumberOfProvinces;
+import com.ss.leetcode.LC2023.february.ReconstructOriginalDigitsFromEnglish;
 import com.ss.leetcode.LC2023.february.RedundantConnection;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
 import com.ss.leetcode.LC2023.february.SingleNumberII;
@@ -45,7 +49,11 @@ public class StartFebruary {
 //        start.redundantConnection();
 //        start.circularSentence();
 //        start.minimumCutsToDivideACircle();
-        start.asFarFromLandAsPossible();
+//        start.asFarFromLandAsPossible();
+//        start.reconstructOriginalDigitsFromEnglish();
+//        start.maximumValueOfAStringInAnArray();
+//        start.differenceBetweenOnesAndZerosInRowAndColumn();
+        start.numberOfProvinces();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -222,5 +230,43 @@ public class StartFebruary {
         System.out.println("2 == " + afflap.maxDistance(new int[][]{{1,0,1},{0,0,0},{1,0,1}}));
         System.out.println("4 == " + afflap.maxDistance(new int[][]{{1,0,0},{0,0,0},{0,0,0}}));
         System.out.println("2 == " + afflap.maxDistance(new int[][]{{1,0,0,0,1},{1,0,0,0,1},{1,0,0,0,1},{1,0,0,0,1},{1,0,0,0,1}}));
+    }
+
+    public void reconstructOriginalDigitsFromEnglish() {
+        ReconstructOriginalDigitsFromEnglish rodfs = new ReconstructOriginalDigitsFromEnglish();
+
+        System.out.println("012 == " + rodfs.originalDigits("owoztneoer"));
+        System.out.println("45 == " + rodfs.originalDigits("fviefuro"));
+        System.out.println("0012 == " + rodfs.originalDigits("owoztneoerorez"));
+        System.out.println("0 == " + rodfs.originalDigits("roez"));
+        System.out.println("9 == " + rodfs.originalDigits("einn"));
+        System.out.println("59 == " + rodfs.originalDigits("fiinenve"));
+    }
+
+    public void maximumValueOfAStringInAnArray() {
+        MaximumValueOfAStringInAnArray mvoasiaa = new MaximumValueOfAStringInAnArray();
+
+        System.out.println("5 == " + mvoasiaa.maximumValue(new String[]{"alic3","bob","3","4","00000"}));
+        System.out.println("1 == " + mvoasiaa.maximumValue(new String[]{"1","01","001","0001"}));
+        System.out.println("9 == " + mvoasiaa.maximumValue(new String[]{"1","ab", "3c0","9","r"}));
+        System.out.println("1 == " + mvoasiaa.maximumValue(new String[]{"r"}));
+        System.out.println("1 == " + mvoasiaa.maximumValue(new String[]{"1"}));
+    }
+
+    public void differenceBetweenOnesAndZerosInRowAndColumn() {
+        DifferenceBetweenOnesAndZerosInRowAndColumn dboazirac = new DifferenceBetweenOnesAndZerosInRowAndColumn();
+
+        System.out.println("[[0,0,4],[0,0,4],[-2,-2,2]] == " + Arrays.deepToString(dboazirac.onesMinusZeros(new int[][]{{0,1,1},{1,0,1},{0,0,1}})));
+        System.out.println("[[5,5,5],[5,5,5]] == " + Arrays.deepToString(dboazirac.onesMinusZeros(new int[][]{{1,1,1},{1,1,1}})));
+
+
+    }
+
+    public void numberOfProvinces() {
+        NumberOfProvinces nop = new NumberOfProvinces();
+
+//        System.out.println("2 == " + nop.findCircleNum(new int[][]{{1,1,0},{1,1,0},{0,0,1}}));
+//        System.out.println("3 == " + nop.findCircleNum(new int[][]{{1,0,0},{0,1,0},{0,0,1}}));
+        System.out.println("1 == " + nop.findCircleNum(new int[][]{{1,0,0,1},{0,1,1,0},{0,1,1,1},{1,0,1,1}}));
     }
 }

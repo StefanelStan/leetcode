@@ -1,7 +1,5 @@
 package com.ss.leetcode.playground;
 
-import java.nio.file.Path;
-
 public class PathCompression {
     private int[] root;
 
