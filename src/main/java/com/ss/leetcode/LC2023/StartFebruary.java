@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
+import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.JumpGameII;
 import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
@@ -13,6 +14,7 @@ import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARange
 import com.ss.leetcode.LC2023.february.MaximumValueOfAStringInAnArray;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
+import com.ss.leetcode.LC2023.february.MinimumFuelCostToReportToTheCapital;
 import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.NumberOfProvinces;
@@ -53,7 +55,9 @@ public class StartFebruary {
 //        start.reconstructOriginalDigitsFromEnglish();
 //        start.maximumValueOfAStringInAnArray();
 //        start.differenceBetweenOnesAndZerosInRowAndColumn();
-        start.numberOfProvinces();
+//        start.numberOfProvinces();
+//        start.minimumFuelCostToReportToTheCapital();
+        start.findTheArrayConcatenationValue();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -265,8 +269,28 @@ public class StartFebruary {
     public void numberOfProvinces() {
         NumberOfProvinces nop = new NumberOfProvinces();
 
-//        System.out.println("2 == " + nop.findCircleNum(new int[][]{{1,1,0},{1,1,0},{0,0,1}}));
-//        System.out.println("3 == " + nop.findCircleNum(new int[][]{{1,0,0},{0,1,0},{0,0,1}}));
+        System.out.println("2 == " + nop.findCircleNum(new int[][]{{1,1,0},{1,1,0},{0,0,1}}));
+        System.out.println("3 == " + nop.findCircleNum(new int[][]{{1,0,0},{0,1,0},{0,0,1}}));
         System.out.println("1 == " + nop.findCircleNum(new int[][]{{1,0,0,1},{0,1,1,0},{0,1,1,1},{1,0,1,1}}));
+    }
+
+    public void minimumFuelCostToReportToTheCapital() {
+        MinimumFuelCostToReportToTheCapital mfctrttc = new MinimumFuelCostToReportToTheCapital();
+
+        System.out.println("3 == " + mfctrttc.minimumFuelCost(new int[][]{{0,1},{0,2},{0,3}}, 5));
+        System.out.println("7 == " + mfctrttc.minimumFuelCost(new int[][]{{3,1},{3,2},{1,0},{0,4},{0,5},{4,6}}, 2));
+        System.out.println("0 == " + mfctrttc.minimumFuelCost(new int[0][0], 1));
+        System.out.println("1 == " + mfctrttc.minimumFuelCost(new int[][]{{0,1}}, 1));
+        System.out.println("17 == " + mfctrttc.minimumFuelCost(new int[][]{{3,1},{3,2},{1,0},{0,4},{0,5},{4,6},{3,7},{3,8},{3,9},{9,10},{2,11}}, 2));
+        System.out.println("13 == " + mfctrttc.minimumFuelCost(new int[][]{{3,1},{3,2},{1,0},{0,4},{0,5},{4,6},{3,7},{3,8},{3,9},{9,10},{2,11}}, 4));
+    }
+
+    public void findTheArrayConcatenationValue() {
+        FindTheArrayConcatenationValue ftacv = new FindTheArrayConcatenationValue();
+
+        System.out.println("596 == " + ftacv.findTheArrayConcVal(new int[]{7,52,2,4}));
+        System.out.println("673 == " + ftacv.findTheArrayConcVal(new int[]{5,14,13,8,12}));
+        System.out.println("1 == " + ftacv.findTheArrayConcVal(new int[]{1}));
+        System.out.println("44 == " + ftacv.findTheArrayConcVal(new int[]{1,1,2,2,1,1}));
     }
 }
