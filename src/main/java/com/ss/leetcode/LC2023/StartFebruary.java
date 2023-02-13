@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.february.AsFarFromLandAsPossible;
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
+import com.ss.leetcode.LC2023.february.CountVowelStringsInRanges;
 import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
@@ -15,6 +16,7 @@ import com.ss.leetcode.LC2023.february.MaximumValueOfAStringInAnArray;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
 import com.ss.leetcode.LC2023.february.MinimumFuelCostToReportToTheCapital;
+import com.ss.leetcode.LC2023.february.MinimumNumberOfMovesToSeatEveryone;
 import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.NumberOfProvinces;
@@ -57,7 +59,9 @@ public class StartFebruary {
 //        start.differenceBetweenOnesAndZerosInRowAndColumn();
 //        start.numberOfProvinces();
 //        start.minimumFuelCostToReportToTheCapital();
-        start.findTheArrayConcatenationValue();
+//        start.findTheArrayConcatenationValue();
+//        start.minimumNumberOfMovesToSeatEveryone();
+        start.countVowelStringsInRanges();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -292,5 +296,25 @@ public class StartFebruary {
         System.out.println("673 == " + ftacv.findTheArrayConcVal(new int[]{5,14,13,8,12}));
         System.out.println("1 == " + ftacv.findTheArrayConcVal(new int[]{1}));
         System.out.println("44 == " + ftacv.findTheArrayConcVal(new int[]{1,1,2,2,1,1}));
+    }
+
+    public void minimumNumberOfMovesToSeatEveryone() {
+        MinimumNumberOfMovesToSeatEveryone mnomtse = new MinimumNumberOfMovesToSeatEveryone();
+
+        System.out.println("4 == " + mnomtse.minMovesToSeat(new int[]{3,1,5},new int[]{2,7,4}));
+        System.out.println("7 == " + mnomtse.minMovesToSeat(new int[]{4,1,5,9},new int[]{1,3,2,6}));
+        System.out.println("0 == " + mnomtse.minMovesToSeat(new int[]{2,2,6,6},new int[]{2,2,6,6}));
+        System.out.println("9 == " + mnomtse.minMovesToSeat(new int[]{2,2,6,5,2,8,3,2,1,7,8,5,6},new int[]{1,3,2,6,3,2,4,7,8,3,2,1,6}));
+    }
+
+    public void countVowelStringsInRanges() {
+        CountVowelStringsInRanges cvsir = new CountVowelStringsInRanges();
+
+        System.out.println("[2,3,0] == " + Arrays.toString(cvsir.vowelStrings(new String[]{"aba","bcb","ece","aa","e"}, new int[][]{{0,2},{1,4},{1,1}})));
+        System.out.println("[3,2,1] == " + Arrays.toString(cvsir.vowelStrings(new String[]{"a","e","i"}, new int[][]{{0,2},{0,1},{2,2}})));
+        System.out.println("[1] == " + Arrays.toString(cvsir.vowelStrings(new String[]{"a"}, new int[][]{{0,0}})));
+        System.out.println("[0] == " + Arrays.toString(cvsir.vowelStrings(new String[]{"pa"}, new int[][]{{0,0}})));
+        System.out.println("[2,3,0,7,4,6,0,1] == " + Arrays.toString(cvsir.vowelStrings(new String[]{"aba","bcb","ece","aa","e","ejho","abbq","ioi","rtaq","oabu","uyyp","okk","pooi"},
+            new int[][]{{0,2},{1,4},{1,1},{0,12},{4,9},{2,10},{11,12},{9,12}})));
     }
 }
