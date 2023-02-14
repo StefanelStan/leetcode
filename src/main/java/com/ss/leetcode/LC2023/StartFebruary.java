@@ -2,9 +2,11 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.february.AsFarFromLandAsPossible;
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
+import com.ss.leetcode.LC2023.february.BinaryTreeZigzagLevelOrderTraversal;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.CountVowelStringsInRanges;
+import com.ss.leetcode.LC2023.february.DesignMemoryAllocator;
 import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
@@ -28,6 +30,7 @@ import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
 import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
+import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 
 public class StartFebruary {
@@ -61,7 +64,9 @@ public class StartFebruary {
 //        start.minimumFuelCostToReportToTheCapital();
 //        start.findTheArrayConcatenationValue();
 //        start.minimumNumberOfMovesToSeatEveryone();
-        start.countVowelStringsInRanges();
+//        start.countVowelStringsInRanges();
+        start.binaryTreeZigzagLevelOrderTraversal();
+//        start.designMemoryAllocator();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -316,5 +321,150 @@ public class StartFebruary {
         System.out.println("[0] == " + Arrays.toString(cvsir.vowelStrings(new String[]{"pa"}, new int[][]{{0,0}})));
         System.out.println("[2,3,0,7,4,6,0,1] == " + Arrays.toString(cvsir.vowelStrings(new String[]{"aba","bcb","ece","aa","e","ejho","abbq","ioi","rtaq","oabu","uyyp","okk","pooi"},
             new int[][]{{0,2},{1,4},{1,1},{0,12},{4,9},{2,10},{11,12},{9,12}})));
+    }
+
+    public void binaryTreeZigzagLevelOrderTraversal() {
+        BinaryTreeZigzagLevelOrderTraversal btzlot = new BinaryTreeZigzagLevelOrderTraversal();
+
+        TreeNode root1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1);
+
+        System.out.println("[[3],[20,9],[15,7]] == " + btzlot.zigzagLevelOrder(root1));
+        System.out.println("[[1]] == " + btzlot.zigzagLevelOrder(root2));
+        System.out.println("[] == " + btzlot.zigzagLevelOrder(null));
+    }
+
+    public void designMemoryAllocator() {
+
+        DesignMemoryAllocator dma = new DesignMemoryAllocator(10);
+        System.out.println("0 == " + dma.allocate(1,1));
+        System.out.println("1 == " + dma.allocate(1,2));
+        System.out.println("2 == " + dma.allocate(1,3));
+        System.out.println("1 == " + dma.free(2));
+        System.out.println("3 == " + dma.allocate(3,4));
+        System.out.println("1 == " + dma.allocate(1,1));
+        System.out.println("6 == " + dma.allocate(1,1));
+        System.out.println("3 == " + dma.free(1));
+        System.out.println("-1 == " + dma.allocate(10,2));
+        System.out.println("0 == " + dma.free(7));
+
+        dma = new DesignMemoryAllocator(7);
+        System.out.println("2 == " + dma.allocate(3,1));
+        System.out.println("2 == " + dma.allocate(5,2));
+        System.out.println("1 == " + dma.free(1));
+        System.out.println("0 == " + dma.free(3));
+
+        dma = new DesignMemoryAllocator(50);
+        System.out.println("0 == " + dma.allocate(12,6));
+        System.out.println("12 == " + dma.allocate(28,16));
+        System.out.println("-1 == " + dma.allocate(17,23));
+        System.out.println("-1 == " + dma.allocate(50,23));
+        System.out.println("12 == " + dma.free(6));
+        System.out.println("0 == " + dma.free(10));
+        System.out.println("0 == " + dma.free(10));
+        System.out.println("-1 == " + dma.allocate(16,8));
+        System.out.println("-1 == " + dma.allocate(17,41));
+        System.out.println("-1 == " + dma.allocate(44,27));
+        System.out.println("0 == " + dma.allocate(12,45));
+        System.out.println("0 == " + dma.free(33));
+
+        dma = new DesignMemoryAllocator(254);
+        String[] commands = {"free","allocate","allocate","free","allocate","free","free","free","allocate",
+            "allocate","allocate","free","allocate","free","free","free","allocate","allocate","free",
+            "allocate","free","free","free","free","free","allocate","allocate","free","allocate","allocate",
+            "allocate","free","free","allocate","free","free","free","allocate","allocate","allocate",
+            "allocate","free","free","allocate","free","allocate","allocate","free","allocate","allocate",
+            "allocate","free","free","allocate","allocate","free","allocate","free","allocate","allocate",
+            "free","free","allocate","allocate","free","allocate","allocate","allocate","free","free",
+            "allocate","allocate","allocate","free","free","free","free","allocate","allocate","free",
+            "free","free","allocate","allocate","free","free","allocate","free","free","allocate","free",
+            "allocate","allocate","allocate","allocate","allocate","allocate","free","free","allocate",
+            "free","free","allocate","free","allocate","free","free","allocate","free","allocate","free",
+            "allocate","free","allocate","allocate","free","free","allocate","allocate","free","allocate",
+            "allocate","allocate","free","free","free","allocate","allocate","free","allocate","allocate",
+            "free","allocate","allocate","free","allocate","allocate","allocate","allocate","allocate",
+            "free","free","free","free","allocate","allocate","free","free","free","free","allocate",
+            "allocate","allocate","allocate","free","allocate","free","allocate","allocate","free","allocate",
+            "allocate","allocate","free","allocate","free","allocate","free","free","free","free","free",
+            "allocate","allocate","free","allocate","free","allocate","allocate","free","free","free","allocate",
+            "free","allocate","allocate","free","allocate","free","free","free","free","allocate","allocate",
+            "free","allocate","allocate","free","free","allocate","allocate","free","free","allocate","free",
+            "free","free","allocate","allocate","free","allocate","allocate","allocate","free","allocate",
+            "free","allocate","free","allocate","free","free","allocate","allocate","allocate","free","free",
+            "free","allocate","allocate","free","allocate","allocate","allocate","allocate","allocate",
+            "allocate","free","free","free","free","allocate","free","allocate","free","free","free","free",
+            "free","allocate","allocate","allocate","free","free","free","allocate","free","allocate","free",
+            "free","allocate","free","free","free","allocate","allocate","allocate","free","free","free",
+            "allocate","allocate","free","allocate","free","free","free","free","free","free","free","allocate",
+            "free","allocate","allocate","free","free","allocate","allocate","free","free","free","free",
+            "allocate","free","free","allocate","free","allocate","free","allocate","allocate","allocate",
+            "allocate","free","allocate","allocate","free","allocate","allocate","allocate","allocate",
+            "allocate","allocate","free","free","allocate","free","allocate","free","allocate","free",
+            "free","free","allocate","free","free","allocate","allocate","allocate","allocate","free",
+            "free","free","allocate","free","allocate","allocate","allocate","allocate","allocate","allocate",
+            "allocate","allocate","allocate","allocate","allocate","allocate","allocate","allocate","free",
+            "free","free","free","free","allocate","allocate","free","allocate","allocate","free","allocate",
+            "free","allocate","free","free","allocate","free","allocate","free","free","free","free","allocate",
+            "allocate","allocate","free","allocate","free","allocate","free","allocate","allocate","allocate",
+            "free","allocate","free","allocate","allocate","free","allocate","allocate","free","allocate",
+            "free","allocate","free","free","allocate","allocate","free","allocate","allocate","allocate",
+            "free","free","allocate","allocate","free","allocate","allocate","allocate","allocate","free",
+            "free","allocate","free","free","allocate","allocate","allocate","free","allocate","allocate",
+            "free","free","allocate","free","free","free","free","free","free","free","allocate","allocate","allocate"};
+        int[][] params = {{286},{243,370},{471,470},{363},{436,490},{490},{470},{490},{443,453},{467,94},
+            {423,41},{20},{220,234},{94},{94},{405},{246,36},{487,251},{370},{342,373},{373},{373},{84},
+            {405},{36},{461,302},{141,197},{199},{340,269},{331,2},{475,443},{405},{373},{330,409},{302},
+            {251},{269},{258,375},{427,353},{209,133},{455,369},{20},{353},{448,471},{409},{218,292},{182,320},
+            {181},{312,488},{282,73},{444,440},{41},{87},{240,353},{385,462},{226},{168,114},{20},{92,230},
+            {399,101},{82},{363},{325,127},{86,183},{82},{468,264},{389,249},{173,47},{433},{84},{331,202},
+            {222,283},{67,154},{462},{335},{114},{241},{203,376},{445,406},{153},{479},{202},{13,134},{195,293},
+            {470},{462},{261,238},{26},{294},{176,1},{284},{444,374},{271,245},{405,209},{85,365},{30,195},
+            {203,345},{362},{133},{454,404},{471},{134},{340,27},{443},{288,195},{241},{362},{294,288},{87},
+            {122,422},{483},{225,2},{230},{281,274},{387,122},{249},{488},{63,65},{329,450},{251},{158,438},
+            {446,322},{107,72},{65},{26},{299},{22,186},{332,122},{343},{461,258},{197,33},{433},{148,305},
+            {392,359},{179},{171,297},{36,330},{343,440},{41,370},{15,26},{186},{206},{2},{440},{344,438},
+            {413,34},{369},{273},{187},{211},{170,228},{216,340},{148,123},{139,247},{417},{118,399},{332},
+            {277,271},{238,360},{467},{115,314},{248,160},{374,248},{349},{441,237},{202},{398,443},{216},
+            {422},{302},{471},{181},{139,330},{7,157},{406},{53,432},{490},{85,129},{93,262},{179},{369},
+            {122},{315,293},{245},{265,50},{257,114},{230},{380,154},{363},{73},{221},{273},{447,22},{393,295},
+            {50},{187,123},{332,89},{197},{185},{295,389},{160,182},{449},{377},{168,241},{65},{284},{330},
+            {452,307},{237,68},{198},{405,33},{273,204},{492,340},{453},{158,292},{343},{223,143},{226},
+            {449,404},{274},{353},{186,4},{173,484},{215,295},{376},{293},{17},{86,76},{384,170},{399},
+            {285,63},{437,206},{364,73},{41,154},{109,256},{263,346},{20},{72},{73},{355},{129,247},{355},
+            {441,64},{484},{330},{2},{36},{17},{349,472},{200,377},{493,90},{370},{442},{352},{19,463},
+            {6},{51,178},{430},{375},{131,466},{295},{228},{239},{343,463},{85,208},{229,448},{123},{72},
+            {343},{498,33},{122,366},{294},{358,370},{417},{17},{83},{160},{244},{288},{204},{73,116},{295},
+            {91,387},{329,67},{375},{34},{404,226},{87,472},{365},{226},{27},{83},{321,242},{398},{314},
+            {260,129},{352},{299,94},{143},{300,259},{290,376},{153,335},{91,261},{230},{343,219},{422,11},
+            {211},{382,460},{53,95},{425,221},{436,22},{338,30},{324,340},{456},{228},{412,469},{335},
+            {37,432},{128},{468,479},{143},{73},{399},{215,440},{27},{251},{16,50},{438,11},{245,414},
+            {476,337},{463},{76},{438},{352,378},{181},{204,132},{476,406},{52,479},{258,192},{262,248},
+            {115,163},{466,212},{206,237},{106,462},{44,151},{184,334},{288,172},{24,437},{235,72},{93},
+            {347},{295},{483},{26},{118,459},{464,66},{50},{310,395},{182,26},{430},{177,427},{197},{400,349},
+            {349},{139},{135,13},{349},{42,227},{248},{33},{249},{248},{264,362},{417,33},{245,97},{473},
+            {18,190},{283},{390,433},{293},{174,165},{487,347},{192,186},{116},{40,63},{184},{125,118},
+            {402,424},{370},{288,246},{462,423},{204},{57,168},{417},{498,308},{123},{345},{72,217},{252,371},
+            {221},{154,391},{56,496},{413,344},{47},{4},{461,479},{62,441},{349},{231,349},{357,91},{22,332},
+            {262,490},{135},{284},{129,164},{399},{460},{294,424},{294,352},{363,342},{122},{257,80},{288,52},
+            {107},{251},{387,179},{449},{237},{337},{398},{404},{466},{57},{264,227},{225,434},{334,215}};
+        int[] expected = {0,0,-1,0,-1,0,0,0,-1,-1,-1,0,-1,0,0,0,-1,-1,243,-1,0,0,0,0,0,-1,0,0,-1,-1,-1,0,0,-1,
+            0,0,0,-1,-1,-1,-1,0,0,-1,0,-1,-1,0,-1,-1,-1,0,0,-1,-1,0,-1,0,141,-1,0,0,-1,-1,0,-1,-1,-1,0,0,-1,
+            -1,-1,0,0,0,0,-1,-1,0,0,0,233,-1,0,0,-1,0,0,-1,0,-1,-1,-1,-1,-1,-1,0,0,-1,0,13,-1,0,-1,0,0,-1,0,
+            -1,0,-1,92,-1,-1,0,0,141,-1,0,-1,-1,-1,63,0,0,141,-1,0,-1,-1,0,-1,-1,0,-1,163,-1,199,-1,22,0,0,0,
+            -1,-1,0,0,0,0,-1,-1,-1,-1,0,-1,0,-1,-1,0,-1,-1,-1,0,-1,0,-1,0,0,0,0,0,-1,141,0,-1,0,-1,-1,0,0,0,
+            -1,0,-1,-1,0,-1,0,0,0,0,-1,-1,0,-1,-1,141,0,-1,-1,0,0,-1,0,0,36,-1,-1,0,-1,-1,-1,0,-1,0,-1,0,
+            -1,0,0,-1,-1,-1,0,0,0,0,-1,0,-1,-1,-1,86,-1,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,-1,-1,-1,41,0,0,148,0,
+            167,0,0,-1,0,0,0,-1,-1,-1,0,0,0,-1,-1,0,-1,0,0,0,0,0,0,0,-1,0,-1,-1,0,0,-1,-1,0,0,0,0,-1,0,0,
+            -1,0,-1,0,-1,-1,-1,-1,0,-1,-1,0,-1,-1,-1,-1,-1,-1,0,0,-1,0,-1,0,-1,0,0,0,-1,0,0,218,-1,-1,-1,
+            19,86,0,-1,0,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,52,-1,0,0,0,0,0,-1,-1,16,-1,-1,0,-1,0,-1,0,0,
+            -1,0,-1,0,0,0,0,-1,-1,-1,0,148,0,-1,0,-1,-1,-1,0,-1,0,-1,-1,0,-1,-1,0,-1,0,-1,0,0,-1,-1,0,-1,
+            -1,-1,0,0,-1,-1,0,-1,-1,218,-1,0,0,-1,0,0,-1,-1,-1,0,-1,-1,0,0,-1,0,0,0,0,0,0,0,-1,-1,-1};
+        int result;
+        for (int i = 0; i < commands.length; i++) {
+            result = commands[i].equals("free") ? dma.free(params[i][0]) : dma.allocate(params[i][0], params[i][1]);
+            if (result != expected[i]) {
+                System.out.println("Step " + i + " failed: got " + result + " expected = " + expected[i]);
+            }
+        }
     }
 }
