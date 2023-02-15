@@ -24,12 +24,14 @@ import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.NumberOfProvinces;
 import com.ss.leetcode.LC2023.february.ReconstructOriginalDigitsFromEnglish;
 import com.ss.leetcode.LC2023.february.RedundantConnection;
+import com.ss.leetcode.LC2023.february.RemoveNodesFromLinkedList;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
 import com.ss.leetcode.LC2023.february.SingleNumberII;
 import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
 import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
+import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 
@@ -65,8 +67,9 @@ public class StartFebruary {
 //        start.findTheArrayConcatenationValue();
 //        start.minimumNumberOfMovesToSeatEveryone();
 //        start.countVowelStringsInRanges();
-        start.binaryTreeZigzagLevelOrderTraversal();
+//        start.binaryTreeZigzagLevelOrderTraversal();
 //        start.designMemoryAllocator();
+        start.removeNodesFromLinkedList();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -466,5 +469,14 @@ public class StartFebruary {
                 System.out.println("Step " + i + " failed: got " + result + " expected = " + expected[i]);
             }
         }
+    }
+
+    public void removeNodesFromLinkedList() {
+        RemoveNodesFromLinkedList rnfll = new RemoveNodesFromLinkedList();
+        ListNode head1 = ListNode.makeChain(new int[]{5,2,13,3,8});
+        ListNode head2 = ListNode.makeChain(new int[]{1,1,1,1});
+
+        System.out.println("[13,8] == " + rnfll.removeNodes(head1).getAsList());
+        System.out.println("[1,1,1,1] == " + rnfll.removeNodes(head2).getAsList());
     }
 }
