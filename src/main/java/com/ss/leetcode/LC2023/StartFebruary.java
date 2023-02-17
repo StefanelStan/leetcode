@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.february.AsFarFromLandAsPossible;
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.BinaryTreeZigzagLevelOrderTraversal;
 import com.ss.leetcode.LC2023.february.CircularSentence;
+import com.ss.leetcode.LC2023.february.CorporateFlightBookings;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.CountVowelStringsInRanges;
 import com.ss.leetcode.LC2023.february.DesignMemoryAllocator;
@@ -11,6 +12,7 @@ import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColu
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.JumpGameII;
+import com.ss.leetcode.LC2023.february.LongestArithmeticSubsequenceOfGivenDifference;
 import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
@@ -28,6 +30,7 @@ import com.ss.leetcode.LC2023.february.RemoveNodesFromLinkedList;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
 import com.ss.leetcode.LC2023.february.SingleNumberII;
 import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
+import com.ss.leetcode.LC2023.february.SwapForLongestRepeatedCharacterSubstring;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
 import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
@@ -69,7 +72,10 @@ public class StartFebruary {
 //        start.countVowelStringsInRanges();
 //        start.binaryTreeZigzagLevelOrderTraversal();
 //        start.designMemoryAllocator();
-        start.removeNodesFromLinkedList();
+//        start.removeNodesFromLinkedList();
+//        start.swapForLongestRepeatedCharacterSubstring();
+//        start.corporateFlightBookings();
+        start.longestArithmeticSubsequenceOfGivenDifference();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -478,5 +484,42 @@ public class StartFebruary {
 
         System.out.println("[13,8] == " + rnfll.removeNodes(head1).getAsList());
         System.out.println("[1,1,1,1] == " + rnfll.removeNodes(head2).getAsList());
+    }
+
+    public void swapForLongestRepeatedCharacterSubstring() {
+        SwapForLongestRepeatedCharacterSubstring sflrcs = new SwapForLongestRepeatedCharacterSubstring();
+
+        System.out.println("3 == " + sflrcs.maxRepOpt1("ababa"));
+        System.out.println("6 == " + sflrcs.maxRepOpt1("aaabaaa"));
+        System.out.println("5 == " + sflrcs.maxRepOpt1("aaaaa"));
+        System.out.println("4 == " + sflrcs.maxRepOpt1("aaababcbcbcbcbcbc"));
+        System.out.println("1 == " + sflrcs.maxRepOpt1("ab"));
+        System.out.println("2 == " + sflrcs.maxRepOpt1("aab"));
+        System.out.println("4 == " + sflrcs.maxRepOpt1("aaabbaaa"));
+        System.out.println("9 == " + sflrcs.maxRepOpt1("aaadighivnhugxhgvcxhgdvcyszgtdvytsvsgtvtgcvd"
+            + "gcvdgcvdsgvsdytdvufhdhhdhdhdhdhdhhhhshshsisjfsdpigjdofsilgvvvvvveryicfghundsyfgcnhsdg"
+            + "hvdsjhcgfwsjfbsdcfbsjdndufsighcdilskcugdshgghcjfskjsdjchgdhgfhdsxfbhgfxhtdxfgdthdfhsg"
+            + "ddddddddttttttaatatatatataaaaatttaaattattatatttaaaaaaaatttayyfisdjfhdsaiiofhodcjgedogiduvygshaa"));
+        System.out.println("7 == " + sflrcs.maxRepOpt1("aabaaabaaaba"));
+        System.out.println("6 == " + sflrcs.maxRepOpt1("bbababaaaa"));
+        System.out.println("3 == " + sflrcs.maxRepOpt1("bdbacafga"));
+        System.out.println("5 == " + sflrcs.maxRepOpt1("abbabaabababaaabbaaa"));
+    }
+
+    public void corporateFlightBookings() {
+        CorporateFlightBookings cfb = new CorporateFlightBookings();
+
+        System.out.println("[10,55,45,25,25] == " + Arrays.toString(cfb.corpFlightBookings(new int[][]{{1,2,10},{2,3,20},{2,5,25}}, 5)));
+        System.out.println("[10,25] == " + Arrays.toString(cfb.corpFlightBookings(new int[][]{{1,2,10},{2,2,15}}, 2)));
+    }
+
+    public void longestArithmeticSubsequenceOfGivenDifference() {
+        LongestArithmeticSubsequenceOfGivenDifference lasogd = new LongestArithmeticSubsequenceOfGivenDifference();
+
+        System.out.println("4 == " + lasogd.longestSubsequence(new int[]{1,2,3,4}, 1));
+        System.out.println("1 == " + lasogd.longestSubsequence(new int[]{1,3,5,7}, 1));
+        System.out.println("4 == " + lasogd.longestSubsequence(new int[]{1,5,7,8,5,3,4,2,1}, -2));
+        System.out.println("8 == " + lasogd.longestSubsequence(new int[]{1,5,7,8,5,4,3,2,4,5,6,5,4,3,4,5,6,78,7,6,5,4,4,5,6,7,6,5,4,3,3,2,1,2,3,4,5,6,7,8,7,6,5,4,5,5,6,6,3,43,43,5,3,5,3,56,3,5,46,3,563,3,4,2,1}, 1));
+        System.out.println("15 == " + lasogd.longestSubsequence(new int[]{1,5,7,8,5,4,3,2,4,5,6,5,4,3,4,5,6,78,7,6,5,4,4,5,6,7,6,5,4,3,3,2,1,2,3,4,5,6,7,8,7,6,5,4,5,5,6,6,3,43,43,5,3,5,3,56,3,5,46,3,563,3,4,2,1}, 0));
     }
 }

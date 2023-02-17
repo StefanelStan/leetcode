@@ -15,7 +15,7 @@ public class StartNovember {
 //        start.binaryTreePaths();
 //        start.deleteNodeInABST();
 //        start.kthDistinctStringOnAnArray();
-        start.kClosestPointsToOrigin();
+//        start.kClosestPointsToOrigin();
 //        start.sumOfAbsoluteDiffSortedArray();
 //        start.binaryTreeRightSideView();
 //        start.insufficientNodesInRootToLeafPaths();
@@ -34,7 +34,7 @@ public class StartNovember {
 //        start.reformatDate();
 //        start.findLargestValueInEachTreeRow();
 //        start.mostFrequentSubtreeSum();
-//        start.minimumDistanceBetweenBSTNodes();
+        start.minimumDistanceBetweenBSTNodes();
 //        start.elementMore25InSortedArray();
 //        start.rankTransformOfAnArray();
             // to be continued ->
@@ -336,10 +336,12 @@ public class StartNovember {
         MinimumDistanceBetweenBSTNodes mdbbstn = new MinimumDistanceBetweenBSTNodes();
 
         TreeNode root1 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(6));
-        TreeNode root2 = new TreeNode(1, new TreeNode(0), new TreeNode(48, new TreeNode(12), new TreeNode(49)));
+        TreeNode root2 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(6));
+        TreeNode root3 = new TreeNode(11, new TreeNode(1), new TreeNode(48, new TreeNode(12), new TreeNode(49)));
 
-        System.out.println("1 == " + mdbbstn.minDiffInBST(root1));
-        System.out.println("1 == " + mdbbstn.minDiffInBST(root2));
+//        System.out.println("1 == " + mdbbstn.minDiffInBST(root1));
+//        System.out.println("1 == " + mdbbstn.minDiffInBST(root2));
+        System.out.println("1 == " + mdbbstn.minDiffInBST(root3));
     }
 
     public void elementMore25InSortedArray() {

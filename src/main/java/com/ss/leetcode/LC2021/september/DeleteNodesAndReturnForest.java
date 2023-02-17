@@ -16,6 +16,37 @@ public class DeleteNodesAndReturnForest {
      *  5. If the current node is not to be deleted but its parent was deleted, then add it to forest
      */
     public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
+        boolean[] toDelete = new boolean[1001];
+        for (int deleted : to_delete) {
+            toDelete[deleted] = true;
+        }
+        List<TreeNode> remaining = new ArrayList<>();
+        traverseTree(root, toDelete, false, remaining);
+        return remaining;
+    }
+
+    private void traverseTree(TreeNode node, boolean[] toDelete, boolean parentAdded, List<TreeNode> remaining) {
+        if (node != null) {
+            if (!toDelete[node.val]) {
+                if (!parentAdded) {
+                    remaining.add(node);
+                }
+                traverseTree(node.left, toDelete, true, remaining);
+                if (node.left != null && toDelete[node.left.val]) {
+                    node.left = null;
+                }
+                traverseTree(node.right, toDelete, true, remaining);
+                if (node.right != null && toDelete[node.right.val]) {
+                    node.right = null;
+                }
+            } else {
+                traverseTree(node.left, toDelete, false, remaining);
+                traverseTree(node.right, toDelete, false, remaining);
+            }
+        }
+    }
+
+    public List<TreeNode> delNodes2(TreeNode root, int[] to_delete) {
         if (to_delete.length == 0) {
             return List.of(root);
         }
