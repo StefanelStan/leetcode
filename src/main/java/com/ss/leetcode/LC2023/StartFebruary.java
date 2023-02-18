@@ -10,16 +10,20 @@ import com.ss.leetcode.LC2023.february.CountVowelStringsInRanges;
 import com.ss.leetcode.LC2023.february.DesignMemoryAllocator;
 import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
+import com.ss.leetcode.LC2023.february.FriendsOfAppropriateAges;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.JumpGameII;
+import com.ss.leetcode.LC2023.february.LengthOfLongestFibonacciSubsequence;
 import com.ss.leetcode.LC2023.february.LongestArithmeticSubsequenceOfGivenDifference;
 import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
+import com.ss.leetcode.LC2023.february.MaximumDifferenceByRemappingADigit;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
 import com.ss.leetcode.LC2023.february.MaximumValueOfAStringInAnArray;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
 import com.ss.leetcode.LC2023.february.MinimumFuelCostToReportToTheCapital;
+import com.ss.leetcode.LC2023.february.MinimumImpossibleOR;
 import com.ss.leetcode.LC2023.february.MinimumNumberOfMovesToSeatEveryone;
 import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
@@ -32,6 +36,8 @@ import com.ss.leetcode.LC2023.february.SingleNumberII;
 import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
 import com.ss.leetcode.LC2023.february.SwapForLongestRepeatedCharacterSubstring;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
+import com.ss.leetcode.LC2023.february.TheEmployeeThatWorkedOnTheLongestTask;
+import com.ss.leetcode.LC2023.february.TimeNeededToRearrangeABinaryString;
 import com.ss.leetcode.LC2023.february.TupleWithSameProduct;
 import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
 import com.ss.leetcode.shared.ListNode;
@@ -75,7 +81,13 @@ public class StartFebruary {
 //        start.removeNodesFromLinkedList();
 //        start.swapForLongestRepeatedCharacterSubstring();
 //        start.corporateFlightBookings();
-        start.longestArithmeticSubsequenceOfGivenDifference();
+//        start.longestArithmeticSubsequenceOfGivenDifference();
+//        start.maximumDifferenceByRemappingADigit();
+//        start.minimumImpossibleOR();
+//        start.lengthOfLongestFibonacciSubsequence();
+//        start.friendsOfAppropriateAges();
+//        start.theEmployeeThatWorkedOnTheLongestTask();
+        start.timeNeededToRearrangeABinaryString();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -521,5 +533,52 @@ public class StartFebruary {
         System.out.println("4 == " + lasogd.longestSubsequence(new int[]{1,5,7,8,5,3,4,2,1}, -2));
         System.out.println("8 == " + lasogd.longestSubsequence(new int[]{1,5,7,8,5,4,3,2,4,5,6,5,4,3,4,5,6,78,7,6,5,4,4,5,6,7,6,5,4,3,3,2,1,2,3,4,5,6,7,8,7,6,5,4,5,5,6,6,3,43,43,5,3,5,3,56,3,5,46,3,563,3,4,2,1}, 1));
         System.out.println("15 == " + lasogd.longestSubsequence(new int[]{1,5,7,8,5,4,3,2,4,5,6,5,4,3,4,5,6,78,7,6,5,4,4,5,6,7,6,5,4,3,3,2,1,2,3,4,5,6,7,8,7,6,5,4,5,5,6,6,3,43,43,5,3,5,3,56,3,5,46,3,563,3,4,2,1}, 0));
+    }
+
+    public void maximumDifferenceByRemappingADigit() {
+        MaximumDifferenceByRemappingADigit mdbrad = new MaximumDifferenceByRemappingADigit();
+
+        System.out.println("99009 == " + mdbrad.minMaxDifference(11891));
+        System.out.println("99 == " + mdbrad.minMaxDifference(90));
+    }
+
+    public void minimumImpossibleOR() {
+        // NOT CORRECT
+        MinimumImpossibleOR mio = new MinimumImpossibleOR();
+
+        System.out.println("4 == " + mio.minImpossibleOR(new int[]{2,1}));
+        System.out.println("1 == " + mio.minImpossibleOR(new int[]{5,3,2}));
+    }
+
+    public void lengthOfLongestFibonacciSubsequence() {
+        LengthOfLongestFibonacciSubsequence lolfs = new LengthOfLongestFibonacciSubsequence();
+
+        System.out.println("5 == " + lolfs.lenLongestFibSubseq(new int[]{1,2,3,4,5,6,7,8}));
+        System.out.println("3 == " + lolfs.lenLongestFibSubseq(new int[]{1,3,7,11,12,14,18}));
+    }
+
+    public void friendsOfAppropriateAges() {
+        FriendsOfAppropriateAges foaa = new FriendsOfAppropriateAges();
+
+        System.out.println("2 == " + foaa.numFriendRequests(new int[]{16,16}));
+        System.out.println("2 == " + foaa.numFriendRequests(new int[]{16,17,18}));
+        System.out.println("299 == " + foaa.numFriendRequests(new int[]{20,30,100,110,120,5,4,6,7,8,9,8,7,66,55,4,33,22,11,22,33,44,55,66,77,88,99,100,101,12,23,34,45,56,67,78,90,12,32,43,54,65,76,87,98,10,14,16,24,26,35,37,39}));
+    }
+
+    public void theEmployeeThatWorkedOnTheLongestTask() {
+        TheEmployeeThatWorkedOnTheLongestTask tetwotlt = new TheEmployeeThatWorkedOnTheLongestTask();
+
+        System.out.println("1 == " + tetwotlt.hardestWorker(10, new int[][]{{0,3},{2,5},{0,9},{1,15}}));
+        System.out.println("3 == " + tetwotlt.hardestWorker(26, new int[][]{{1,1},{3,7},{2,12},{7,17}}));
+        System.out.println("0 == " + tetwotlt.hardestWorker(26, new int[][]{{0,10},{1,20}}));
+    }
+
+    public void timeNeededToRearrangeABinaryString() {
+        TimeNeededToRearrangeABinaryString tntrabs = new TimeNeededToRearrangeABinaryString();
+
+        System.out.println("4 == " + tntrabs.secondsToRemoveOccurrences("0110101"));
+        System.out.println("0 == " + tntrabs.secondsToRemoveOccurrences("11100"));
+        System.out.println("43 == " + tntrabs.secondsToRemoveOccurrences("010101010101111111000000000000000111111111111100000000001111111111000000000000"));
+        System.out.println("5 == " + tntrabs.secondsToRemoveOccurrences("000111"));
     }
 }
