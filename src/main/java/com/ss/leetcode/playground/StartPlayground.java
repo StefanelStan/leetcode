@@ -7,8 +7,8 @@ public class StartPlayground {
 //        start.quickFind();
 //        start.quickUnion();
 //        start.unionByRank();
-//        start.pathCompression();
-        start.pathCompressionUnionByRank();
+        start.pathCompression();
+//        start.pathCompressionUnionByRank();
     }
 
     public void quickFind() {
@@ -73,7 +73,7 @@ public class StartPlayground {
 
     public void pathCompression() {
         PathCompression pc = new PathCompression(10, new int[][]{{0,1},{0,2},{1,3},{4,8},{5,7},{5,6}});
-
+/**
         System.out.println("0 == " + pc.find(3));
         System.out.println("0 == " + pc.find(2));
         System.out.println("4 == " + pc.find(4));
@@ -91,6 +91,11 @@ public class StartPlayground {
         System.out.println("true == " + pc.areConnected(9,8));
         System.out.println("true == " + pc.areConnected(9,4));
         System.out.println("true == " + pc.areConnected(4,9));
+*/
+        pc = new PathCompression(4, new int[][]{{0,3},{1,2},{0,2}});
+        System.out.println("true == " + pc.areConnected(0, 1));
+        System.out.println("true == " + pc.areConnected(2, 1));
+        System.out.println("true == " + pc.areConnected(3, 1));
     }
 
     public void pathCompressionUnionByRank() {

@@ -1,5 +1,10 @@
 package com.ss.leetcode.playground;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class PathCompression {
     private int[] root;
 
@@ -37,4 +42,5 @@ public class PathCompression {
     public boolean areConnected(int node1, int node2) {
         return find(node1) == find(node2);
     }
+
 }

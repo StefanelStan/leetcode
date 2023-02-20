@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.february.AsFarFromLandAsPossible;
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.BinaryTreeZigzagLevelOrderTraversal;
+import com.ss.leetcode.LC2023.february.CanMakePalindromeFromSubstring;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CorporateFlightBookings;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
@@ -15,6 +16,7 @@ import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.JumpGameII;
 import com.ss.leetcode.LC2023.february.LengthOfLongestFibonacciSubsequence;
 import com.ss.leetcode.LC2023.february.LongestArithmeticSubsequenceOfGivenDifference;
+import com.ss.leetcode.LC2023.february.MaxConsecutiveOnesIII;
 import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumDifferenceByRemappingADigit;
@@ -34,6 +36,8 @@ import com.ss.leetcode.LC2023.february.RemoveNodesFromLinkedList;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
 import com.ss.leetcode.LC2023.february.SingleNumberII;
 import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
+import com.ss.leetcode.LC2023.february.SmallestStringWithSwaps;
+import com.ss.leetcode.LC2023.february.SnapshotArray;
 import com.ss.leetcode.LC2023.february.SwapForLongestRepeatedCharacterSubstring;
 import com.ss.leetcode.LC2023.february.TakeGiftsFromTheRichestPile;
 import com.ss.leetcode.LC2023.february.TheEmployeeThatWorkedOnTheLongestTask;
@@ -43,6 +47,7 @@ import com.ss.leetcode.LC2023.february.UniqueLength3PalindromicSubsequences;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartFebruary {
     public static void main(String[] args) {
@@ -87,7 +92,11 @@ public class StartFebruary {
 //        start.lengthOfLongestFibonacciSubsequence();
 //        start.friendsOfAppropriateAges();
 //        start.theEmployeeThatWorkedOnTheLongestTask();
-        start.timeNeededToRearrangeABinaryString();
+//        start.timeNeededToRearrangeABinaryString();
+//        start.snapshotArray();
+//        start.canMakePalindromeFromSubstring();
+//        start.maxConsecutiveOnesIII();
+        start.smallestStringWithSwaps();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -580,5 +589,36 @@ public class StartFebruary {
         System.out.println("0 == " + tntrabs.secondsToRemoveOccurrences("11100"));
         System.out.println("43 == " + tntrabs.secondsToRemoveOccurrences("010101010101111111000000000000000111111111111100000000001111111111000000000000"));
         System.out.println("5 == " + tntrabs.secondsToRemoveOccurrences("000111"));
+    }
+
+    public void canMakePalindromeFromSubstring() {
+        CanMakePalindromeFromSubstring cmpfs = new CanMakePalindromeFromSubstring();
+
+        System.out.println("[true,false,false,true,true] == " + cmpfs.canMakePaliQueries("abcda", new int[][]{{3,3,0},{1,2,0},{0,3,1},{0,3,2},{0,4,1}}));
+        System.out.println("[false,true] == " + cmpfs.canMakePaliQueries("lyb", new int[][]{{0,1,0},{2,2,1}}));
+    }
+
+    public void snapshotArray() {
+        SnapshotArray sa = new SnapshotArray(3);
+
+        sa.set(0,5);
+        System.out.println("0 == " + sa.snap());
+        sa.set(0,65);
+        System.out.println("5 == " + sa.get(0,0));
+    }
+
+    public void maxConsecutiveOnesIII() {
+        MaxConsecutiveOnesIII mcoiii = new MaxConsecutiveOnesIII();
+
+        System.out.println("6 == " + mcoiii.longestOnes(new int[]{1,1,1,0,0,0,1,1,1,1,0}, 2));
+        System.out.println("10 == " + mcoiii.longestOnes(new int[]{0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1}, 3));
+    }
+
+    public void smallestStringWithSwaps() {
+        SmallestStringWithSwaps ssws = new SmallestStringWithSwaps();
+
+        System.out.println("bacd == " + ssws.smallestStringWithSwaps("dcab", List.of(List.of(0,3), List.of(1,2))));
+        System.out.println("abcd == " + ssws.smallestStringWithSwaps("dcab", List.of(List.of(0,3), List.of(1,2), List.of(0,2))));
+        System.out.println("abc == " + ssws.smallestStringWithSwaps("cba", List.of(List.of(0,1), List.of(1,2))));
     }
 }
