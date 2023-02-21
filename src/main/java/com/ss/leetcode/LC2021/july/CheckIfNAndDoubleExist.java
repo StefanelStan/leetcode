@@ -2,10 +2,24 @@ package com.ss.leetcode.LC2021.july;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class CheckIfNAndDoubleExist {
     // https://leetcode.com/problems/check-if-n-and-its-double-exist/
+    public boolean checkIfExist(int[] arr) {
+        boolean zeroFound = false;
+        Set<Integer> nums = new HashSet<>();
+        for (int num : arr) {
+            if ((num % 2 == 0 && nums.contains(num / 2)) || nums.contains(num * 2)){
+                return true;
+            }
+            nums.add(num);
+        }
+        return false;
+    }
+
     public boolean checkIfExist2(int[] arr) {
         Map<Integer, Integer> numbers = new HashMap<>();
         for(int number: arr)
@@ -21,7 +35,7 @@ public class CheckIfNAndDoubleExist {
         return false;
     }
 
-    public boolean checkIfExist(int[] arr) {
+    public boolean checkIfExist3(int[] arr) {
         Arrays.sort(arr);
         int doubleValue = 0;
         for (int i = 0; i < arr.length - 1; i++) {

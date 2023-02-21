@@ -7,8 +7,9 @@ public class StartPlayground {
 //        start.quickFind();
 //        start.quickUnion();
 //        start.unionByRank();
-        start.pathCompression();
+//        start.pathCompression();
 //        start.pathCompressionUnionByRank();
+        start.dfsGraph();
     }
 
     public void quickFind() {
@@ -117,5 +118,11 @@ public class StartPlayground {
         ppubr.connect(9, 4);
         System.out.println("true == " + ppubr.areConnected(9,4));
         System.out.println("true == " + ppubr.areConnected(9,8));
+    }
+
+    public void dfsGraph() {
+        DfsTraversal dt = new DfsTraversal(8, new int[][]{{0,1},{0,2},{0,3},{1,4},{2,5},{3,6},{4,7},{5,7},{6,7}});
+
+        System.out.println("[0,1,2,3,4,5,6,7]== " + dt.traverse());
     }
 }

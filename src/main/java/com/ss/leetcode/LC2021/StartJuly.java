@@ -39,7 +39,7 @@ public class StartJuly {
 //        start.binaryTreePruning();
 //        start.longestCommonPrefix();
 //        start.implementStrStr();
-//        start.searchInsertPosition();
+        start.searchInsertPosition();
 //        start.checkIfAllCharactersEqualOccurrences();
 //        start.describeThePainting();
 //        start.kthMissingPositiveNumber();
@@ -62,7 +62,7 @@ public class StartJuly {
 //        start.designAStackWithIncrementOperation();
 //        start.findNUniqueIntegersSumUpToZero();
 //        start.binarySearchTreeToGreaterSumTree();
-        start.convertBSTToGreaterTree();
+//        start.convertBSTToGreaterTree();
 //        start.fibonacciNumber();
 //        start.substringsOfSizeThreeDistinct();
 //        start.threeSumClosest();

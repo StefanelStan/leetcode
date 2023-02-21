@@ -25,8 +25,10 @@ import com.ss.leetcode.LC2023.february.MaximumValueOfAStringInAnArray;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
 import com.ss.leetcode.LC2023.february.MinimumFuelCostToReportToTheCapital;
+import com.ss.leetcode.LC2023.february.MinimumHeightTrees;
 import com.ss.leetcode.LC2023.february.MinimumImpossibleOR;
 import com.ss.leetcode.LC2023.february.MinimumNumberOfMovesToSeatEveryone;
+import com.ss.leetcode.LC2023.february.MinimumNumberOfVerticesToReachAllNodes;
 import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.NumberOfProvinces;
@@ -96,7 +98,9 @@ public class StartFebruary {
 //        start.snapshotArray();
 //        start.canMakePalindromeFromSubstring();
 //        start.maxConsecutiveOnesIII();
-        start.smallestStringWithSwaps();
+//        start.smallestStringWithSwaps();
+        start.minimumNumberOfVerticesToReachAllNodes();
+//        start.minimumHeightTrees();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -620,5 +624,21 @@ public class StartFebruary {
         System.out.println("bacd == " + ssws.smallestStringWithSwaps("dcab", List.of(List.of(0,3), List.of(1,2))));
         System.out.println("abcd == " + ssws.smallestStringWithSwaps("dcab", List.of(List.of(0,3), List.of(1,2), List.of(0,2))));
         System.out.println("abc == " + ssws.smallestStringWithSwaps("cba", List.of(List.of(0,1), List.of(1,2))));
+    }
+
+    public void minimumNumberOfVerticesToReachAllNodes() {
+        MinimumNumberOfVerticesToReachAllNodes mnovtran = new MinimumNumberOfVerticesToReachAllNodes();
+
+        System.out.println("[0,3] == " + mnovtran.findSmallestSetOfVertices(6, List.of(
+            List.of(0,1), List.of(0,2), List.of(2,5), List.of(3,4), List.of(4,2))));
+        System.out.println("[0,2,3] == " + mnovtran.findSmallestSetOfVertices(5, List.of(
+            List.of(0,1), List.of(2,1), List.of(3,1), List.of(1,4), List.of(2,4))));
+    }
+
+    public void minimumHeightTrees() {
+        MinimumHeightTrees mht = new MinimumHeightTrees();
+
+        System.out.println("[1] == " + mht.findMinHeightTrees(4, new int[][]{{1,0},{1,2},{1,3}}));
+        System.out.println("[3,4] == " + mht.findMinHeightTrees(6, new int[][]{{3,0},{3,1},{3,2},{3,4},{5,4}}));
     }
 }
