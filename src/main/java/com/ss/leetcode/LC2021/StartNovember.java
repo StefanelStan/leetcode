@@ -34,7 +34,7 @@ public class StartNovember {
 //        start.reformatDate();
 //        start.findLargestValueInEachTreeRow();
 //        start.mostFrequentSubtreeSum();
-        start.minimumDistanceBetweenBSTNodes();
+//        start.minimumDistanceBetweenBSTNodes();
 //        start.elementMore25InSortedArray();
 //        start.rankTransformOfAnArray();
             // to be continued ->
@@ -61,7 +61,7 @@ public class StartNovember {
 //        start.wordPattern();
 //        start.powerOfThree();
 //        start.isSubsequence();
-//        start.singleElementInASortedArray();
+        start.singleElementInASortedArray();
 //        start.assignCookies();
 //        start.numberOfSegmentsInAString();
 //        start.longerContiguousSegmentsOf1Than0();
@@ -598,6 +598,9 @@ public class StartNovember {
         System.out.println("12 == " + seiasa.singleNonDuplicate(new int[]{0,0,1,1,3,3,8,8,9,9,11,11,12,13,13,14,14}));
         System.out.println("0 == " + seiasa.singleNonDuplicate(new int[]{0,1,1,3,3,8,8,9,9,11,11,12,12,13,13,14,14}));
         System.out.println("14 == " + seiasa.singleNonDuplicate(new int[]{0,0,1,1,3,3,8,8,9,9,11,11,12,12,13,13,14}));
+        System.out.println("2 == " + seiasa.singleNonDuplicate(new int[]{1,1,2,3,3,4,4,8,8,10,10,11,11,12,12,13,13,14,14,15,15}));
+        System.out.println("16 == " + seiasa.singleNonDuplicate(new int[]{1,1,3,3,4,4,8,8,10,10,11,11,12,12,13,13,14,14,15,15,16}));
+        System.out.println("1 == " + seiasa.singleNonDuplicate(new int[]{1,2,2,3,3,4,4,8,8,10,10,11,11,12,12,13,13,14,14,15,15,16,16}));
     }
 
     public void assignCookies() {

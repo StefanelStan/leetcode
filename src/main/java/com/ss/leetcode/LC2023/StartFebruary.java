@@ -22,6 +22,7 @@ import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
 import com.ss.leetcode.LC2023.february.MaximumDifferenceByRemappingADigit;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
 import com.ss.leetcode.LC2023.february.MaximumValueOfAStringInAnArray;
+import com.ss.leetcode.LC2023.february.MergeTwo2DArraysBySummingValues;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
 import com.ss.leetcode.LC2023.february.MinimumFuelCostToReportToTheCapital;
@@ -99,8 +100,9 @@ public class StartFebruary {
 //        start.canMakePalindromeFromSubstring();
 //        start.maxConsecutiveOnesIII();
 //        start.smallestStringWithSwaps();
-        start.minimumNumberOfVerticesToReachAllNodes();
+//        start.minimumNumberOfVerticesToReachAllNodes();
 //        start.minimumHeightTrees();
+        start.mergeTwo2DArraysBySummingValues();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -640,5 +642,12 @@ public class StartFebruary {
 
         System.out.println("[1] == " + mht.findMinHeightTrees(4, new int[][]{{1,0},{1,2},{1,3}}));
         System.out.println("[3,4] == " + mht.findMinHeightTrees(6, new int[][]{{3,0},{3,1},{3,2},{3,4},{5,4}}));
+    }
+
+    public void mergeTwo2DArraysBySummingValues() {
+        MergeTwo2DArraysBySummingValues mt2dabsv = new MergeTwo2DArraysBySummingValues();
+
+        System.out.println("[[1,6],[2,3],[3,2],[4,6]] == " + Arrays.deepToString(mt2dabsv.mergeArrays(new int[][]{{1,2},{2,3},{4,5}}, new int[][]{{1,4},{3,2},{4,1}})));
+        System.out.println("[[1,3],[2,4],[3,6],[4,3],[5,5]] == " + Arrays.deepToString(mt2dabsv.mergeArrays(new int[][]{{2,4},{3,6},{5,5}}, new int[][]{{1,3},{4,3}})));
     }
 }
