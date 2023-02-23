@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.february.AsFarFromLandAsPossible;
 import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.BinaryTreeZigzagLevelOrderTraversal;
 import com.ss.leetcode.LC2023.february.CanMakePalindromeFromSubstring;
+import com.ss.leetcode.LC2023.february.CapacityToShipPackagesWithinDDays;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CorporateFlightBookings;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
@@ -30,9 +31,11 @@ import com.ss.leetcode.LC2023.february.MinimumHeightTrees;
 import com.ss.leetcode.LC2023.february.MinimumImpossibleOR;
 import com.ss.leetcode.LC2023.february.MinimumNumberOfMovesToSeatEveryone;
 import com.ss.leetcode.LC2023.february.MinimumNumberOfVerticesToReachAllNodes;
+import com.ss.leetcode.LC2023.february.MinimumOperationsToReduceAnIntegerTo0;
 import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.NumberOfProvinces;
+import com.ss.leetcode.LC2023.february.NumberOfUnequalTripletsInArray;
 import com.ss.leetcode.LC2023.february.ReconstructOriginalDigitsFromEnglish;
 import com.ss.leetcode.LC2023.february.RedundantConnection;
 import com.ss.leetcode.LC2023.february.RemoveNodesFromLinkedList;
@@ -102,7 +105,10 @@ public class StartFebruary {
 //        start.smallestStringWithSwaps();
 //        start.minimumNumberOfVerticesToReachAllNodes();
 //        start.minimumHeightTrees();
-        start.mergeTwo2DArraysBySummingValues();
+//        start.mergeTwo2DArraysBySummingValues();
+//        start.capacityToShipPackagesWithinDDays();
+//        start.minimumOperationsToReduceAnIntegerTo0();
+        start.numberOfUnequalTripletsInArray();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -649,5 +655,31 @@ public class StartFebruary {
 
         System.out.println("[[1,6],[2,3],[3,2],[4,6]] == " + Arrays.deepToString(mt2dabsv.mergeArrays(new int[][]{{1,2},{2,3},{4,5}}, new int[][]{{1,4},{3,2},{4,1}})));
         System.out.println("[[1,3],[2,4],[3,6],[4,3],[5,5]] == " + Arrays.deepToString(mt2dabsv.mergeArrays(new int[][]{{2,4},{3,6},{5,5}}, new int[][]{{1,3},{4,3}})));
+    }
+
+    public void capacityToShipPackagesWithinDDays() {
+        CapacityToShipPackagesWithinDDays ctspwdd = new CapacityToShipPackagesWithinDDays();
+
+        System.out.println("15 == " + ctspwdd.shipWithinDays(new int[]{1,2,3,4,5,6,7,8,9,10}, 5));
+        System.out.println("6 == " + ctspwdd.shipWithinDays(new int[]{3,2,2,4,1,4}, 3));
+        System.out.println("3 == " + ctspwdd.shipWithinDays(new int[]{1,2,3,1,1}, 4));
+    }
+
+    public void minimumOperationsToReduceAnIntegerTo0() {
+        MinimumOperationsToReduceAnIntegerTo0 motrait0 = new MinimumOperationsToReduceAnIntegerTo0();
+
+        System.out.println("3 == " + motrait0.minOperations(39));
+        System.out.println("3 == " + motrait0.minOperations(54));
+        System.out.println("2 == " + motrait0.minOperations(56));
+    }
+
+    public void numberOfUnequalTripletsInArray() {
+        NumberOfUnequalTripletsInArray noutia = new NumberOfUnequalTripletsInArray();
+
+        System.out.println("22 == " + noutia.unequalTriplets(new int[]{4,4,2,8,4,1,3}));
+        System.out.println("10 == " + noutia.unequalTriplets(new int[]{4,4,2,4,1,3}));
+        System.out.println("3 == " + noutia.unequalTriplets(new int[]{4,4,2,4,3}));
+        System.out.println("0 == " + noutia.unequalTriplets(new int[]{1,1,1,1,1}));
+        System.out.println("255 == " + noutia.unequalTriplets(new int[]{4,4,2,2,4,3,3,2,3,4,5,6,5,4,3}));
     }
 }

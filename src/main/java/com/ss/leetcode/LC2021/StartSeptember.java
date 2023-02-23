@@ -81,8 +81,8 @@ public class StartSeptember {
 //        start.lastStoneWeight();
 //        start.firstUniqueCharacterInAString();
 //        start.countPairsAbsoluteDifferenceK();
-        start.findOriginalArrayFromDoubledArray();
-//        start.maximumEarningsFromTaxi();
+//        start.findOriginalArrayFromDoubledArray();
+        start.maximumEarningsFromTaxi();
 //        start.validPalindrome();
 //        start.validPalindromeII();
 //        start.removeDuplicatesFromSortedListII();
@@ -778,7 +778,7 @@ public class StartSeptember {
     public void maximumEarningsFromTaxi() {
         MaximumEarningsFromTaxi meft = new MaximumEarningsFromTaxi();
 
-        System.out.println("7 == " + meft.maxTaxiEarnings(5, new int[][]{{2,5,4}, {1,5,1}}));
+//        System.out.println("7 == " + meft.maxTaxiEarnings(5, new int[][]{{2,5,4}, {1,5,1}}));
         System.out.println("20 == " + meft.maxTaxiEarnings(5, new int[][]{{1,6,1}, {3,10,2},{10,12,3}, {11,12,2}, {12,15,2},{13,18,1}}));
     }
 
