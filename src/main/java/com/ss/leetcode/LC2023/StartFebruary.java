@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.february.BinarySubarraysWithSum;
 import com.ss.leetcode.LC2023.february.BinaryTreeZigzagLevelOrderTraversal;
 import com.ss.leetcode.LC2023.february.CanMakePalindromeFromSubstring;
 import com.ss.leetcode.LC2023.february.CapacityToShipPackagesWithinDDays;
+import com.ss.leetcode.LC2023.february.CategorizeBoxAccordingToCriteria;
 import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CorporateFlightBookings;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
@@ -17,6 +18,7 @@ import com.ss.leetcode.LC2023.february.FriendsOfAppropriateAges;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.IPO;
 import com.ss.leetcode.LC2023.february.JumpGameII;
+import com.ss.leetcode.LC2023.february.LeastNumberOfUniqueIntegersAfterKRemovals;
 import com.ss.leetcode.LC2023.february.LengthOfLongestFibonacciSubsequence;
 import com.ss.leetcode.LC2023.february.LongestArithmeticSubsequenceOfGivenDifference;
 import com.ss.leetcode.LC2023.february.MaxConsecutiveOnesIII;
@@ -26,6 +28,7 @@ import com.ss.leetcode.LC2023.february.MaximumDifferenceByRemappingADigit;
 import com.ss.leetcode.LC2023.february.MaximumNumberOfIntegersToChooseFromARangeI;
 import com.ss.leetcode.LC2023.february.MaximumValueOfAStringInAnArray;
 import com.ss.leetcode.LC2023.february.MergeTwo2DArraysBySummingValues;
+import com.ss.leetcode.LC2023.february.MinimizeDeviationInArray;
 import com.ss.leetcode.LC2023.february.MinimumCommonValue;
 import com.ss.leetcode.LC2023.february.MinimumCutsToDivideACircle;
 import com.ss.leetcode.LC2023.february.MinimumFuelCostToReportToTheCapital;
@@ -38,6 +41,7 @@ import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.NumberOfProvinces;
 import com.ss.leetcode.LC2023.february.NumberOfUnequalTripletsInArray;
+import com.ss.leetcode.LC2023.february.PathWithMaximumGold;
 import com.ss.leetcode.LC2023.february.ReconstructOriginalDigitsFromEnglish;
 import com.ss.leetcode.LC2023.february.RedundantConnection;
 import com.ss.leetcode.LC2023.february.RemoveNodesFromLinkedList;
@@ -112,7 +116,11 @@ public class StartFebruary {
 //        start.minimumOperationsToReduceAnIntegerTo0();
 //        start.numberOfUnequalTripletsInArray();
 //        start.ipo();
-        start.decreaseElementsToMakeArrayZigzag();
+//        start.decreaseElementsToMakeArrayZigzag();
+//        start.minimizeDeviationInArray();
+//        start.categorizeBoxAccordingToCriteria();
+//        start.pathWithMaximumGold();
+        start.leastNumberOfUniqueIntegersAfterKRemovals();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -699,5 +707,43 @@ public class StartFebruary {
 
         System.out.println("2 == " + detmaz.movesToMakeZigzag(new int[]{1,2,3}));
         System.out.println("4 == " + detmaz.movesToMakeZigzag(new int[]{9,6,1,6,2}));
+    }
+
+    public void minimizeDeviationInArray() {
+        MinimizeDeviationInArray mdia = new MinimizeDeviationInArray();
+
+        System.out.println("1 == " + mdia.minimumDeviation(new int[]{1,2,3,4}));
+        System.out.println("3 == " + mdia.minimumDeviation(new int[]{4,1,5,20,3}));
+        System.out.println("3 == " + mdia.minimumDeviation(new int[]{2,10,8}));
+        System.out.println("1 == " + mdia.minimumDeviation(new int[]{3,5}));
+        System.out.println("7 == " + mdia.minimumDeviation(new int[]{3,13}));
+        System.out.println("7 == " + mdia.minimumDeviation(new int[]{3,7,13}));
+    }
+
+    public void categorizeBoxAccordingToCriteria() {
+        CategorizeBoxAccordingToCriteria cbatc = new CategorizeBoxAccordingToCriteria();
+
+        System.out.println("Heavy == " + cbatc.categorizeBox(1000, 35, 700, 300));
+        System.out.println("Neither == " + cbatc.categorizeBox(200, 50, 800, 50));
+        System.out.println("Bulky == " + cbatc.categorizeBox(78964, 10000, 43212, 8));
+        System.out.println("Both == " + cbatc.categorizeBox(78964, 10000, 43212, 400));
+    }
+
+    public void pathWithMaximumGold() {
+        PathWithMaximumGold pwmg = new PathWithMaximumGold();
+
+        System.out.println("129 == " + pwmg.getMaximumGold(new int[][]{{0,0,0,0,0,0,32,0,0,20}, {0,0,2,0,0,0,0,40,0,32},
+            {13,20,36,0,0,0,20,0,0,0},{0,31,27,0,19,0,0,25,18,0},{0,0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,18,0,6},
+            {0,0,0,25,0,0,0,0,0,0},{0,0,0,21,0,30,0,0,0,0},{19,10,0,0,34,0,2,0,0,27},{0,0,0,0,0,34,0,0,0,0}}));
+    }
+
+    public void leastNumberOfUniqueIntegersAfterKRemovals() {
+        LeastNumberOfUniqueIntegersAfterKRemovals lnouiakr = new LeastNumberOfUniqueIntegersAfterKRemovals();
+
+        System.out.println("1 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{5,5,4}, 1));
+        System.out.println("0 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{5}, 1));
+        System.out.println("2 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{4,3,1,1,3,3,2}, 3));
+        System.out.println("6 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{5,5,3,2,1,3,4,5,6,7,7,6,5,5,4,4,3,3,2,2,1,1,2,3,4,5,6,7,8,4}, 4));
+        System.out.println("5 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{5,5,3,2,1,3,4,5,6,7,7,6,5,5,4,4,3,3,2,2,1,1,2,3,4,5,6,7,8,4}, 9));
     }
 }
