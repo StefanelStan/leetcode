@@ -9,11 +9,13 @@ import com.ss.leetcode.LC2023.february.CircularSentence;
 import com.ss.leetcode.LC2023.february.CorporateFlightBookings;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.CountVowelStringsInRanges;
+import com.ss.leetcode.LC2023.february.DecreaseElementsToMakeArrayZigzag;
 import com.ss.leetcode.LC2023.february.DesignMemoryAllocator;
 import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
 import com.ss.leetcode.LC2023.february.FriendsOfAppropriateAges;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
+import com.ss.leetcode.LC2023.february.IPO;
 import com.ss.leetcode.LC2023.february.JumpGameII;
 import com.ss.leetcode.LC2023.february.LengthOfLongestFibonacciSubsequence;
 import com.ss.leetcode.LC2023.february.LongestArithmeticSubsequenceOfGivenDifference;
@@ -108,7 +110,9 @@ public class StartFebruary {
 //        start.mergeTwo2DArraysBySummingValues();
 //        start.capacityToShipPackagesWithinDDays();
 //        start.minimumOperationsToReduceAnIntegerTo0();
-        start.numberOfUnequalTripletsInArray();
+//        start.numberOfUnequalTripletsInArray();
+//        start.ipo();
+        start.decreaseElementsToMakeArrayZigzag();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -681,5 +685,19 @@ public class StartFebruary {
         System.out.println("3 == " + noutia.unequalTriplets(new int[]{4,4,2,4,3}));
         System.out.println("0 == " + noutia.unequalTriplets(new int[]{1,1,1,1,1}));
         System.out.println("255 == " + noutia.unequalTriplets(new int[]{4,4,2,2,4,3,3,2,3,4,5,6,5,4,3}));
+    }
+
+    public void ipo() {
+        IPO ipo = new IPO();
+
+        System.out.println("4 == " + ipo.findMaximizedCapital(2, 0, new int[]{1,2,3}, new int[]{0,1,1}));
+        System.out.println("6 == " + ipo.findMaximizedCapital(3, 0, new int[]{1,2,3}, new int[]{0,1,2}));
+    }
+
+    public void decreaseElementsToMakeArrayZigzag() {
+        DecreaseElementsToMakeArrayZigzag detmaz = new DecreaseElementsToMakeArrayZigzag();
+
+        System.out.println("2 == " + detmaz.movesToMakeZigzag(new int[]{1,2,3}));
+        System.out.println("4 == " + detmaz.movesToMakeZigzag(new int[]{9,6,1,6,2}));
     }
 }
