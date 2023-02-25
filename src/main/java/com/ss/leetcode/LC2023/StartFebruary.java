@@ -21,6 +21,7 @@ import com.ss.leetcode.LC2023.february.JumpGameII;
 import com.ss.leetcode.LC2023.february.LeastNumberOfUniqueIntegersAfterKRemovals;
 import com.ss.leetcode.LC2023.february.LengthOfLongestFibonacciSubsequence;
 import com.ss.leetcode.LC2023.february.LongestArithmeticSubsequenceOfGivenDifference;
+import com.ss.leetcode.LC2023.february.MakeNumberOfDistinctCharactersEqual;
 import com.ss.leetcode.LC2023.february.MaxConsecutiveOnesIII;
 import com.ss.leetcode.LC2023.february.MaximalScoreAfterApplyingKOperations;
 import com.ss.leetcode.LC2023.february.MaximizeWinFromTwoSegments;
@@ -45,6 +46,7 @@ import com.ss.leetcode.LC2023.february.PathWithMaximumGold;
 import com.ss.leetcode.LC2023.february.ReconstructOriginalDigitsFromEnglish;
 import com.ss.leetcode.LC2023.february.RedundantConnection;
 import com.ss.leetcode.LC2023.february.RemoveNodesFromLinkedList;
+import com.ss.leetcode.LC2023.february.RemovingStarsFromAString;
 import com.ss.leetcode.LC2023.february.SeparateTheDigitsInAnArray;
 import com.ss.leetcode.LC2023.february.SingleNumberII;
 import com.ss.leetcode.LC2023.february.SlidingWindowMaximum;
@@ -120,7 +122,9 @@ public class StartFebruary {
 //        start.minimizeDeviationInArray();
 //        start.categorizeBoxAccordingToCriteria();
 //        start.pathWithMaximumGold();
-        start.leastNumberOfUniqueIntegersAfterKRemovals();
+//        start.leastNumberOfUniqueIntegersAfterKRemovals();
+//        start.makeNumberOfDistinctCharactersEqual();
+        start.removingStarsFromAString();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -745,5 +749,29 @@ public class StartFebruary {
         System.out.println("2 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{4,3,1,1,3,3,2}, 3));
         System.out.println("6 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{5,5,3,2,1,3,4,5,6,7,7,6,5,5,4,4,3,3,2,2,1,1,2,3,4,5,6,7,8,4}, 4));
         System.out.println("5 == " + lnouiakr.findLeastNumOfUniqueInts(new int[]{5,5,3,2,1,3,4,5,6,7,7,6,5,5,4,4,3,3,2,2,1,1,2,3,4,5,6,7,8,4}, 9));
+    }
+
+    public void makeNumberOfDistinctCharactersEqual() {
+        MakeNumberOfDistinctCharactersEqual mnodcq = new MakeNumberOfDistinctCharactersEqual();
+
+        System.out.println("false == " + mnodcq.isItPossible("ac", "b"));
+        System.out.println("true == " + mnodcq.isItPossible("abcc", "aab"));
+        System.out.println("true == " + mnodcq.isItPossible("abcde", "fghij"));
+        System.out.println("true == " + mnodcq.isItPossible("a", "b"));
+        System.out.println("true == " + mnodcq.isItPossible("a", "ba"));
+        System.out.println("true == " + mnodcq.isItPossible("a", "a"));
+        System.out.println("true == " + mnodcq.isItPossible("ac", "cd"));
+        System.out.println("false == " + mnodcq.isItPossible("aa", "ab"));
+        System.out.println("true == " + mnodcq.isItPossible("fafdd", "fbdc"));
+        System.out.println("true == " + mnodcq.isItPossible("deea", "eaaae"));
+    }
+
+    public void removingStarsFromAString() {
+        RemovingStarsFromAString rsfas = new RemovingStarsFromAString();
+
+        System.out.println("lecoe == " + rsfas.removeStars("leet**cod*e"));
+        System.out.println(" == " + rsfas.removeStars("erase*****"));
+        System.out.println("ecoe == " + rsfas.removeStars("l*eet**cod*e"));
+        System.out.println("ecoesdgfdsffseredsdds == " + rsfas.removeStars("l*eet**cod*esdgfdsffsdfd***ereere***dsddsd*"));
     }
 }
