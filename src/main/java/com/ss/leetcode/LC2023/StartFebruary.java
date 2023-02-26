@@ -13,12 +13,14 @@ import com.ss.leetcode.LC2023.february.CountVowelStringsInRanges;
 import com.ss.leetcode.LC2023.february.DecreaseElementsToMakeArrayZigzag;
 import com.ss.leetcode.LC2023.february.DesignMemoryAllocator;
 import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
+import com.ss.leetcode.LC2023.february.FindConsecutiveIntegersFromADataStream;
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
 import com.ss.leetcode.LC2023.february.FriendsOfAppropriateAges;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.IPO;
 import com.ss.leetcode.LC2023.february.JumpGameII;
 import com.ss.leetcode.LC2023.february.LeastNumberOfUniqueIntegersAfterKRemovals;
+import com.ss.leetcode.LC2023.february.LeftAndRightSumDifferences;
 import com.ss.leetcode.LC2023.february.LengthOfLongestFibonacciSubsequence;
 import com.ss.leetcode.LC2023.february.LongestArithmeticSubsequenceOfGivenDifference;
 import com.ss.leetcode.LC2023.february.MakeNumberOfDistinctCharactersEqual;
@@ -124,7 +126,10 @@ public class StartFebruary {
 //        start.pathWithMaximumGold();
 //        start.leastNumberOfUniqueIntegersAfterKRemovals();
 //        start.makeNumberOfDistinctCharactersEqual();
-        start.removingStarsFromAString();
+//        start.removingStarsFromAString();
+        // TODO Edit Distance Top Down LC problem
+//        start.findConsecutiveIntegersFromADataStream();
+        start.leftAndRightSumDifferences();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -773,5 +778,21 @@ public class StartFebruary {
         System.out.println(" == " + rsfas.removeStars("erase*****"));
         System.out.println("ecoe == " + rsfas.removeStars("l*eet**cod*e"));
         System.out.println("ecoesdgfdsffseredsdds == " + rsfas.removeStars("l*eet**cod*esdgfdsffsdfd***ereere***dsddsd*"));
+    }
+
+    public void findConsecutiveIntegersFromADataStream() {
+        FindConsecutiveIntegersFromADataStream fcifads = new FindConsecutiveIntegersFromADataStream(4,3);
+
+        System.out.println("false == " + fcifads.consec(4));
+        System.out.println("false == " + fcifads.consec(4));
+        System.out.println("true == " + fcifads.consec(4));
+        System.out.println("false == " + fcifads.consec(3));
+    }
+
+    public void leftAndRightSumDifferences() {
+        LeftAndRightSumDifferences larsd = new LeftAndRightSumDifferences();
+
+        System.out.println("[15,1,11,22] == " + Arrays.toString(larsd.leftRigthDifference(new int[]{10,4,8,3})));
+        System.out.println("[0] == " + Arrays.toString(larsd.leftRigthDifference(new int[]{1})));
     }
 }
