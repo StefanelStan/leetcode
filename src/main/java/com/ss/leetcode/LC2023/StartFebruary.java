@@ -7,12 +7,14 @@ import com.ss.leetcode.LC2023.february.CanMakePalindromeFromSubstring;
 import com.ss.leetcode.LC2023.february.CapacityToShipPackagesWithinDDays;
 import com.ss.leetcode.LC2023.february.CategorizeBoxAccordingToCriteria;
 import com.ss.leetcode.LC2023.february.CircularSentence;
+import com.ss.leetcode.LC2023.february.ConstructQuadTree;
 import com.ss.leetcode.LC2023.february.CorporateFlightBookings;
 import com.ss.leetcode.LC2023.february.CountDistinctNumbersOnBoard;
 import com.ss.leetcode.LC2023.february.CountVowelStringsInRanges;
 import com.ss.leetcode.LC2023.february.DecreaseElementsToMakeArrayZigzag;
 import com.ss.leetcode.LC2023.february.DesignMemoryAllocator;
 import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColumn;
+import com.ss.leetcode.LC2023.february.EditDistance;
 import com.ss.leetcode.LC2023.february.FindConsecutiveIntegersFromADataStream;
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
 import com.ss.leetcode.LC2023.february.FriendsOfAppropriateAges;
@@ -44,6 +46,7 @@ import com.ss.leetcode.LC2023.february.NamingACompany;
 import com.ss.leetcode.LC2023.february.NumberOfDaysBetweenTwoDates;
 import com.ss.leetcode.LC2023.february.NumberOfProvinces;
 import com.ss.leetcode.LC2023.february.NumberOfUnequalTripletsInArray;
+import com.ss.leetcode.LC2023.february.OptimalPartitionOfString;
 import com.ss.leetcode.LC2023.february.PathWithMaximumGold;
 import com.ss.leetcode.LC2023.february.ReconstructOriginalDigitsFromEnglish;
 import com.ss.leetcode.LC2023.february.RedundantConnection;
@@ -129,7 +132,10 @@ public class StartFebruary {
 //        start.removingStarsFromAString();
         // TODO Edit Distance Top Down LC problem
 //        start.findConsecutiveIntegersFromADataStream();
-        start.leftAndRightSumDifferences();
+//        start.leftAndRightSumDifferences();
+//        start.constructQuadTree();
+//        start.editDistance();
+        start.optimalPartitionOfString();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -794,5 +800,35 @@ public class StartFebruary {
 
         System.out.println("[15,1,11,22] == " + Arrays.toString(larsd.leftRigthDifference(new int[]{10,4,8,3})));
         System.out.println("[0] == " + Arrays.toString(larsd.leftRigthDifference(new int[]{1})));
+    }
+
+    public void constructQuadTree() {
+        ConstructQuadTree cqt = new ConstructQuadTree();
+
+        System.out.println("false == " + cqt.construct(new int[][]{{0,1},{1,0}}).isLeaf);
+        System.out.println("false == " + cqt.construct(new int[][]{{1,1,1,1,0,0,0,0},{1,1,1,1,0,0,0,0},{1,1,1,1,1,1,1,1},{1,1,1,1,1,1,1,1},
+            {1,1,1,1,0,0,0,0},{1,1,1,1,0,0,0,0},{1,1,1,1,0,0,0,0},{1,1,1,1,0,0,0,0}}).isLeaf);
+        System.out.println("true == " + cqt.construct(new int[][]{{0,0},{0,0}}).isLeaf);
+    }
+
+    public void editDistance() {
+        EditDistance ed = new EditDistance();
+
+//        System.out.println("1 == " + ed.minDistance("abdskfjhdafhsdjfhsdjfbfhgbvcjhzxbchgzxvXchgzCvhzgHCxc", "dksjfhdsuyfhsbkfhufyhsudyfcshdbfhjchfidsuj")); // 1 replacement
+        System.out.println("2 == " + ed.minDistance("abc", "dabe")); // 1 replacement + 1 deletion
+
+        System.out.println("40 == " + ed.minDistanceTopDown("abdskfjhdafhsdjfhsdjfbfhgbvcjhzxbchgzxvXchgzCvhzgHCxc", "dksjfhdsuyfhsbkfhufyhsudyfcshdbfhjchfidsuj")); // 1 replacement
+        System.out.println("2 == " + ed.minDistanceTopDown("abc", "dabe")); // 1 replacement + 1 deletion
+    }
+
+    public void optimalPartitionOfString() {
+        OptimalPartitionOfString opos = new OptimalPartitionOfString();
+
+        System.out.println("4 == " + opos.partitionString("abacaba"));
+        System.out.println("6 == " + opos.partitionString("ssssss"));
+        System.out.println("5 == " + opos.partitionString("abadfgdsfgfsdcaba"));
+        System.out.println("9 == " + opos.partitionString("abadfasdasdasdasgdsfgfsdcaba"));
+        System.out.println("2 == " + opos.partitionString("aba"));
+        System.out.println("1 == " + opos.partitionString("a"));
     }
 }
