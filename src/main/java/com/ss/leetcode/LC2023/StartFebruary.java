@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2023.february.DifferenceBetweenOnesAndZerosInRowAndColu
 import com.ss.leetcode.LC2023.february.EditDistance;
 import com.ss.leetcode.LC2023.february.FindConsecutiveIntegersFromADataStream;
 import com.ss.leetcode.LC2023.february.FindTheArrayConcatenationValue;
+import com.ss.leetcode.LC2023.february.FindTheDivisibilityArrayOfAString;
 import com.ss.leetcode.LC2023.february.FriendsOfAppropriateAges;
 import com.ss.leetcode.LC2023.february.FruitIntoBaskets;
 import com.ss.leetcode.LC2023.february.IPO;
@@ -135,7 +136,8 @@ public class StartFebruary {
 //        start.leftAndRightSumDifferences();
 //        start.constructQuadTree();
 //        start.editDistance();
-        start.optimalPartitionOfString();
+//        start.optimalPartitionOfString();
+        start.findTheDivisibilityArrayOfAString();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -830,5 +832,16 @@ public class StartFebruary {
         System.out.println("9 == " + opos.partitionString("abadfasdasdasdasgdsfgfsdcaba"));
         System.out.println("2 == " + opos.partitionString("aba"));
         System.out.println("1 == " + opos.partitionString("a"));
+    }
+
+    public void findTheDivisibilityArrayOfAString() {
+        FindTheDivisibilityArrayOfAString ftdaoas = new FindTheDivisibilityArrayOfAString();
+
+        System.out.println("[1,1,0,0,0,1,1,0,0] == " + Arrays.toString(ftdaoas.divisibilityArray("998244353", 3)));
+        System.out.println("[0,1,0,1] == " + Arrays.toString(ftdaoas.divisibilityArray("1010", 10)));
+        System.out.println("0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+            + "0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,"
+            + "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 == "
+            +  Arrays.toString(ftdaoas.divisibilityArray("9982435345345345345343434534343434000000000343453453453453453400000000005345345345345345345300000000000045345345345345333333344353", 1000000000)));
     }
 }

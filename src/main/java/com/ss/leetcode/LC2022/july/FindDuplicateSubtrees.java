@@ -10,13 +10,57 @@ import java.util.Set;
 
 public class FindDuplicateSubtrees {
     // https://leetcode.com/problems/find-duplicate-subtrees/
-    // Could also be done via basic order serialisation: inOrder: get the ir-order String serialisation and put it to a map.
-    // EG: 1 -> List<Nodes>
-    // "1, null, 2" ->
-    // "1, 2, null" ->  etc.
+    /** Algorithm
+        1. In order to determine if a node's content exists already (aka duplicate subtree), we need to determine
+        the signature of the node's subtree.
+        2. One of the easiest way is to use strings to wrap the node value and subtree values
+             eg: for leaf : [-node.val-]
+            for parent: [leftLeafSignature-nodeval-rightLeafSignature]
+        3. If two nodes have the same content, they will have the same signature.
+        4. Use a Map<String, CustomNode> mapping to map each signature to each node. The DuplicatedNode class
+            wraps the node and a flag to say if the node was added to the list of duplicates or not.
+        5. Traverse and build the left, right + node signature. If signature does not exist in map, add the node.
+            If signature exists and the node was not added to list of answer, mark it as added and add the node to list.
+        6. Return the list.
+     */
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        List<TreeNode> duplicated = new ArrayList<>();
+        traverseTree(root, new HashMap<String, DuplicatedNode>(), duplicated);
+        return duplicated;
+    }
+
+    private String traverseTree(TreeNode node, Map<String, DuplicatedNode> nodes, List<TreeNode> duplicated) {
+        if (node == null) {
+            return "";
+        }
+        String onLeft = traverseTree(node.left, nodes, duplicated);
+        String onRight = traverseTree(node.right, nodes, duplicated);
+        StringBuilder stb = new StringBuilder(onLeft.length() + onRight.length());
+        stb.append('[').append(onLeft).append('-').append(node.val).append('-').append(onRight);
+        stb.append(']');
+        String val = stb.toString();
+        DuplicatedNode existing = nodes.get(val);
+        if (existing == null) {
+            nodes.put(val, new DuplicatedNode(node));
+        } else if (!existing.added) {
+            existing.added = true;
+            duplicated.add(node);
+        }
+        return val;
+    }
+
+    private static class DuplicatedNode {
+        TreeNode node;
+        boolean added;
+
+        public DuplicatedNode(TreeNode node) {
+            this.node = node;
+        }
+    }
+
+    public List<TreeNode> findDuplicateSubtrees2(TreeNode root) {
         Map<String, TreeNode[]> inOrderTraverse = new HashMap<>();
-        traverseTree(root, inOrderTraverse);
+        traverseTree2(root, inOrderTraverse);
         List<TreeNode> duplicated = new ArrayList<>();
         inOrderTraverse.forEach((k, v) -> {
             if (v[0] != null && v[1] != null) {
@@ -26,12 +70,12 @@ public class FindDuplicateSubtrees {
         return duplicated;
     }
 
-    private String traverseTree(TreeNode node, Map<String, TreeNode[]> inOrderTraverse) {
+    private String traverseTree2(TreeNode node, Map<String, TreeNode[]> inOrderTraverse) {
         if (node == null) {
             return "";
         }
-        String onLeft = traverseTree(node.left, inOrderTraverse);
-        String onRight = traverseTree(node.right, inOrderTraverse);
+        String onLeft = traverseTree2(node.left, inOrderTraverse);
+        String onRight = traverseTree2(node.right, inOrderTraverse);
         String val = "[" + onLeft + "," + node.val + "," + onRight + "]";
         TreeNode[] signNodes = inOrderTraverse.computeIfAbsent(val, k -> new TreeNode[2]);
         if(signNodes[0] == null) {
@@ -42,7 +86,7 @@ public class FindDuplicateSubtrees {
         return val;
     }
 
-    public List<TreeNode> findDuplicateSubtrees2(TreeNode root) {
+    public List<TreeNode> findDuplicateSubtrees3(TreeNode root) {
         if (root.left == root.right) {
             return new ArrayList<>();
         }
