@@ -1,10 +1,12 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
+import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfDaysToMakeMBouquets;
 import com.ss.leetcode.LC2023.march.MinimumOperationsToMakeArrayEqualII;
 import com.ss.leetcode.LC2023.march.PartitionStringIntoSubstringsWithValuesAtMostK;
+import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
 import com.ss.leetcode.LC2023.march.SortAnArray;
 import java.util.Arrays;
 
@@ -17,7 +19,9 @@ public class StartMarch {
 //        start.minimumFlipsToMakeAORBEqualToC();
 //        start.minimumNumberOfDaysToMakeMBouquets();
 //        start.partitionStringIntoSubstringsWithValuesAtMostK();
-        start.minimumOperationsToMakeArrayEqualII();
+//        start.minimumOperationsToMakeArrayEqualII();
+//        start.minimumAmountOfTimeToFillCups();
+        start.smallestNumberInInfiniteSet();
     }
 
     public void sortAnArray() {
@@ -66,5 +70,26 @@ public class StartMarch {
         System.out.println("0 == " + motmaeii.minOperations(new int[]{1,3,7,1}, new int[]{1,3,7,1}, 0));
         System.out.println("-1 == " + motmaeii.minOperations(new int[]{5,2,11,4,9}, new int[]{1,2,3,4,5}, 4));
         System.out.println("2 == " + motmaeii.minOperations(new int[]{5,2,5,4,9}, new int[]{1,2,13,4,5}, 4));
+    }
+
+    public void minimumAmountOfTimeToFillCups() {
+        MinimumAmountOfTimeToFillCups maoftfc = new MinimumAmountOfTimeToFillCups();
+
+        System.out.println("4 == " + maoftfc.fillCups(new int[]{1,4,2}));
+        System.out.println("7 == " + maoftfc.fillCups(new int[]{5,4,4}));
+        System.out.println("5 == " + maoftfc.fillCups(new int[]{5,0,0}));
+    }
+
+    public void smallestNumberInInfiniteSet() {
+        SmallestNumberInInfiniteSet sniis = new SmallestNumberInInfiniteSet();
+
+        sniis.addBack(2);
+        System.out.println("1 == " + sniis.popSmallest());
+        System.out.println("2 == " + sniis.popSmallest());
+        System.out.println("3 == " + sniis.popSmallest());
+        sniis.addBack(1);
+        System.out.println("1 == " + sniis.popSmallest());
+        System.out.println("4 == " + sniis.popSmallest());
+        System.out.println("5 == " + sniis.popSmallest());
     }
 }
