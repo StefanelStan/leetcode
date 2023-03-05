@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.IncrementSubmatricesByOne;
+import com.ss.leetcode.LC2023.march.KthLargestSumInABinaryTree;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
@@ -10,10 +11,13 @@ import com.ss.leetcode.LC2023.march.MinimumNumberOfDaysToMakeMBouquets;
 import com.ss.leetcode.LC2023.march.MinimumOperationsToMakeArrayEqualII;
 import com.ss.leetcode.LC2023.march.NumberOfTimesBinaryStringIsPrefixAligned;
 import com.ss.leetcode.LC2023.march.PartitionStringIntoSubstringsWithValuesAtMostK;
+import com.ss.leetcode.LC2023.march.PassThePillow;
+import com.ss.leetcode.LC2023.march.PrintWordsVertically;
 import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
 import com.ss.leetcode.LC2023.march.SortAnArray;
 import com.ss.leetcode.LC2023.march.SplitWithMinimumSum;
 import com.ss.leetcode.LC2023.march.ThousandSeparator;
+import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 
 public class StartMarch {
@@ -33,7 +37,10 @@ public class StartMarch {
 //        start.countWaysToGroupOverlappingRanges();
 //        start.incrementSubmatricesByOne();
 //        start.numberOfTimesBinaryStringIsPrefixAligned();
-        start.thousandSeparator();
+//        start.thousandSeparator();
+//        start.printWordsVertically();
+//        start.passThePillow();
+        start.kthLargestSumInABinaryTree();
     }
 
     public void sortAnArray() {
@@ -158,5 +165,32 @@ public class StartMarch {
         System.out.println("123.132.131 == " + ts.thousandSeparator(123132131));
         System.out.println("0 == " + ts.thousandSeparator(0));
         System.out.println("1.000 == " + ts.thousandSeparator(1000));
+    }
+
+    public void printWordsVertically() {
+        PrintWordsVertically pwv = new PrintWordsVertically();
+
+        System.out.println("[HAY,ORO,WEU] == " + pwv.printVertically("HOW ARE YOU"));
+        System.out.println("[TBONTB,OEROOE,   T] == " + pwv.printVertically("TO BE OR NOT TO BE"));
+        System.out.println("[AAAAAAA, BBBBDD,  CCDFF,   DERE,   ERER,      G,      A] == " + pwv.printVertically("A AB ABC ABCDE ABDER ADFRE ADFERGA"));
+    }
+
+    public void passThePillow() {
+        PassThePillow ptp = new PassThePillow();
+
+        System.out.println("2 == " + ptp.passThePillow(4,5));
+        System.out.println("3 == " + ptp.passThePillow(3,2));
+    }
+
+    public void kthLargestSumInABinaryTree() {
+        KthLargestSumInABinaryTree klsiabt = new KthLargestSumInABinaryTree();
+
+        TreeNode root1 = new TreeNode(5,
+            new TreeNode(8, new TreeNode(2, new TreeNode(4), new TreeNode(6)), new TreeNode(1)),
+            new TreeNode(9, new TreeNode(3), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, new TreeNode(3), null), null);
+
+        System.out.println("13 == " + klsiabt.kthLargestLevelSum(root1, 2));
+        System.out.println("3 == " + klsiabt.kthLargestLevelSum(root2, 1));
     }
 }
