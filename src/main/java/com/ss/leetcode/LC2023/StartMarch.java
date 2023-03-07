@@ -2,8 +2,10 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
+import com.ss.leetcode.LC2023.march.DesignCircularDeque;
 import com.ss.leetcode.LC2023.march.IncrementSubmatricesByOne;
 import com.ss.leetcode.LC2023.march.KthLargestSumInABinaryTree;
+import com.ss.leetcode.LC2023.march.LengthOfTheLongestAlphabeticalContinuousSubstring;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
@@ -40,7 +42,9 @@ public class StartMarch {
 //        start.thousandSeparator();
 //        start.printWordsVertically();
 //        start.passThePillow();
-        start.kthLargestSumInABinaryTree();
+//        start.kthLargestSumInABinaryTree();
+//        start.lengthOfTheLongestAlphabeticalContinuousSubstring();
+        start.designCircularDeque();
     }
 
     public void sortAnArray() {
@@ -192,5 +196,56 @@ public class StartMarch {
 
         System.out.println("13 == " + klsiabt.kthLargestLevelSum(root1, 2));
         System.out.println("3 == " + klsiabt.kthLargestLevelSum(root2, 1));
+    }
+
+    public void lengthOfTheLongestAlphabeticalContinuousSubstring() {
+        LengthOfTheLongestAlphabeticalContinuousSubstring lotlacs = new LengthOfTheLongestAlphabeticalContinuousSubstring();
+
+        System.out.println("2 == " + lotlacs.longestContinuousSubstring("abacaba"));
+        System.out.println("5 == " + lotlacs.longestContinuousSubstring("abcde"));
+    }
+
+    public void designCircularDeque() {
+        DesignCircularDeque dcd = new DesignCircularDeque(3);
+
+        System.out.println("true == " + dcd.insertLast(1));
+        System.out.println("true == " + dcd.insertLast(2));
+        System.out.println("true == " + dcd.insertFront(3));
+        System.out.println("false == " + dcd.insertFront(4));
+        System.out.println("2 == " + dcd.getRear());
+        System.out.println("true == " + dcd.isFull());
+        System.out.println("true == " + dcd.deleteLast());
+        System.out.println("true == " + dcd.insertFront(4));
+        System.out.println("4 == " + dcd.getFront());
+
+
+        dcd = new DesignCircularDeque(3);
+
+        System.out.println("true == " + dcd.insertLast(1));
+        System.out.println("true == " + dcd.insertFront(3));
+        System.out.println("true == " + dcd.insertFront(4));
+        System.out.println("1 == " + dcd.getRear());
+        System.out.println("4 == " + dcd.getFront());
+        System.out.println("true == " + dcd.isFull());
+        System.out.println("true == " + dcd.deleteFront());
+        System.out.println("true == " + dcd.insertLast(5));
+        System.out.println("5 == " + dcd.getRear());
+        System.out.println("3 == " + dcd.getFront());
+
+         dcd = new DesignCircularDeque(8);
+
+        System.out.println("true == " + dcd.insertFront(5));
+        System.out.println("5 == " + dcd.getFront());
+        System.out.println("false == " + dcd.isEmpty());
+        System.out.println("true == " + dcd.deleteFront());
+        System.out.println("true == " + dcd.insertLast(3));
+        System.out.println("3 == " + dcd.getRear());
+        System.out.println("true == " + dcd.insertLast(7));
+        System.out.println("true == " + dcd.insertFront(7));
+        System.out.println("true == " + dcd.deleteLast());
+        System.out.println("true == " + dcd.insertLast(4));
+        System.out.println("false == " + dcd.isEmpty());
+
+
     }
 }
