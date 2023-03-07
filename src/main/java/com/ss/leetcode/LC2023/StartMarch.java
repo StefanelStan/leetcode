@@ -10,11 +10,14 @@ import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfDaysToMakeMBouquets;
+import com.ss.leetcode.LC2023.march.MinimumNumberOfStepsToMakeTwoStringsAnagramII;
 import com.ss.leetcode.LC2023.march.MinimumOperationsToMakeArrayEqualII;
+import com.ss.leetcode.LC2023.march.MinimumTimeToCompleteTrips;
 import com.ss.leetcode.LC2023.march.NumberOfTimesBinaryStringIsPrefixAligned;
 import com.ss.leetcode.LC2023.march.PartitionStringIntoSubstringsWithValuesAtMostK;
 import com.ss.leetcode.LC2023.march.PassThePillow;
 import com.ss.leetcode.LC2023.march.PrintWordsVertically;
+import com.ss.leetcode.LC2023.march.RemovingMinimumNumberOfMagicBeans;
 import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
 import com.ss.leetcode.LC2023.march.SortAnArray;
 import com.ss.leetcode.LC2023.march.SplitWithMinimumSum;
@@ -44,7 +47,10 @@ public class StartMarch {
 //        start.passThePillow();
 //        start.kthLargestSumInABinaryTree();
 //        start.lengthOfTheLongestAlphabeticalContinuousSubstring();
-        start.designCircularDeque();
+//        start.designCircularDeque();
+//        start.minimumNumberOfStepsToMakeTwoStringsAnagramII();
+        start.removingMinimumNumberOfMagicBeans();
+//        start.minimumTimeToCompleteTrips();
     }
 
     public void sortAnArray() {
@@ -247,5 +253,31 @@ public class StartMarch {
         System.out.println("false == " + dcd.isEmpty());
 
 
+    }
+
+    public void minimumNumberOfStepsToMakeTwoStringsAnagramII() {
+        MinimumNumberOfStepsToMakeTwoStringsAnagramII mnostmtsaii = new MinimumNumberOfStepsToMakeTwoStringsAnagramII();
+
+        System.out.println("7 == " + mnostmtsaii.minSteps("leetcode", "coats"));
+        System.out.println("0 == " + mnostmtsaii.minSteps("night", "thing"));
+    }
+
+    public void removingMinimumNumberOfMagicBeans() {
+        RemovingMinimumNumberOfMagicBeans rmnomb = new RemovingMinimumNumberOfMagicBeans();
+
+        System.out.println("4 == " + rmnomb.minimumRemoval(new int[]{4,1,6,5}));
+        System.out.println("7 == " + rmnomb.minimumRemoval(new int[]{2,10,3,2}));
+    }
+
+    public void minimumTimeToCompleteTrips() {
+
+        MinimumTimeToCompleteTrips mttct = new MinimumTimeToCompleteTrips();
+
+        System.out.println("3 == " + mttct.minimumTime(new int[]{1,2,3}, 5));
+        System.out.println("2 == " + mttct.minimumTime(new int[]{2}, 1));
+        System.out.println("48 == " + mttct.minimumTime(new int[]{1,2,3,4,5,6,7,8,7,6,5,4,34,5,6,5,4,5,6,8,9,7,6,4,3,54,56,7,5,4,3,45,65,76,5,34,3}, 327));
+        System.out.println("25 == " + mttct.minimumTime(new int[]{5,10,10}, 9));
+        System.out.println("9 == " + mttct.minimumTime(new int[]{3,3,8}, 6));
+        System.out.println("9 == " + mttct.minimumTime(new int[]{3,3,8}, 7));
     }
 }
