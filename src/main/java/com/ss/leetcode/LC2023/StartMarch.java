@@ -1,9 +1,12 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.march.CheckIfArrayIsSortedAndRotated;
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.DesignCircularDeque;
 import com.ss.leetcode.LC2023.march.IncrementSubmatricesByOne;
+import com.ss.leetcode.LC2023.march.IntervalsBetweenIdenticalElements;
+import com.ss.leetcode.LC2023.march.KokoEatingBananas;
 import com.ss.leetcode.LC2023.march.KthLargestSumInABinaryTree;
 import com.ss.leetcode.LC2023.march.LengthOfTheLongestAlphabeticalContinuousSubstring;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
@@ -49,8 +52,11 @@ public class StartMarch {
 //        start.lengthOfTheLongestAlphabeticalContinuousSubstring();
 //        start.designCircularDeque();
 //        start.minimumNumberOfStepsToMakeTwoStringsAnagramII();
-        start.removingMinimumNumberOfMagicBeans();
+//        start.removingMinimumNumberOfMagicBeans();
 //        start.minimumTimeToCompleteTrips();
+//        start.kokoEatingBananas();
+//        start.checkIfArrayIsSortedAndRotated();
+        start.intervalsBetweenIdenticalElements();
     }
 
     public void sortAnArray() {
@@ -279,5 +285,30 @@ public class StartMarch {
         System.out.println("25 == " + mttct.minimumTime(new int[]{5,10,10}, 9));
         System.out.println("9 == " + mttct.minimumTime(new int[]{3,3,8}, 6));
         System.out.println("9 == " + mttct.minimumTime(new int[]{3,3,8}, 7));
+    }
+
+    public void kokoEatingBananas() {
+        KokoEatingBananas keb = new KokoEatingBananas();
+
+        System.out.println("4 == " + keb.minEatingSpeed(new int[]{3,6,7,11}, 8));
+        System.out.println("30 == " + keb.minEatingSpeed(new int[]{30,11,23,4,20}, 5));
+        System.out.println("23 == " + keb.minEatingSpeed(new int[]{30,11,23,4,20}, 6));
+    }
+
+    public void checkIfArrayIsSortedAndRotated() {
+        CheckIfArrayIsSortedAndRotated ciaisar = new CheckIfArrayIsSortedAndRotated();
+
+        System.out.println("true == " + ciaisar.check(new int[]{3,4,5,1,2}));
+        System.out.println("false == " + ciaisar.check(new int[]{2,1,3,4}));
+        System.out.println("true == " + ciaisar.check(new int[]{1,2,3}));
+        System.out.println("false == " + ciaisar.check(new int[]{1,3,2}));
+    }
+
+    public void intervalsBetweenIdenticalElements() {
+        IntervalsBetweenIdenticalElements ibie = new IntervalsBetweenIdenticalElements();
+
+        System.out.println("[4,2,7,2,4,4,5] == " + Arrays.toString(ibie.getDistances(new int[]{2,1,3,1,2,3,3})));
+        System.out.println("[5,0,3,4] == " + Arrays.toString(ibie.getDistances(new int[]{10,5,10,10})));
+        System.out.println("[0] == " + Arrays.toString(ibie.getDistances(new int[]{10})));
     }
 }
