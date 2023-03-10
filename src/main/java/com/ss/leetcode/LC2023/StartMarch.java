@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.march.BestPokerHand;
 import com.ss.leetcode.LC2023.march.CheckIfArrayIsSortedAndRotated;
+import com.ss.leetcode.LC2023.march.ConstructStringWithRepeatLimit;
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.DesignCircularDeque;
@@ -62,7 +63,8 @@ public class StartMarch {
 //        start.intervalsBetweenIdenticalElements();
 //        start.firstMissingPositive();
 //        start.bestPokerHand();
-        start.previousPermutationWithOneSwap();
+//        start.previousPermutationWithOneSwap();
+        start.constructStringWithRepeatLimit();
     }
 
     public void sortAnArray() {
@@ -342,5 +344,13 @@ public class StartMarch {
         System.out.println("[1,1,5] == " + Arrays.toString(ppwos.prevPermOpt1(new int[]{1,1,5})));
         System.out.println("[1,7,4,6,9] == " + Arrays.toString(ppwos.prevPermOpt1(new int[]{1,9,4,6,7})));
         System.out.println("[1,3,1,3] == " + Arrays.toString(ppwos.prevPermOpt1(new int[]{3,1,1,3})));
+    }
+
+    public void constructStringWithRepeatLimit() {
+        ConstructStringWithRepeatLimit cswrl = new ConstructStringWithRepeatLimit();
+
+        System.out.println("zzcccac == " + cswrl.repeatLimitedString("cczazcc", 3));
+        System.out.println("bbabaa == " + cswrl.repeatLimitedString("aababab", 2));
+        System.out.println("bbabaa == " + cswrl.repeatLimitedString("aabasdfhsdyifsdjfhsdguyfgsdyufgydhfgdhfdhgfgdhfgfhfhgdhgdghdghdfdfdfdfghdfhghghgdfhdfhgdfghdfuhdfuydfuydfuydfuyhdfuuhuhdfsjksdfjkdsfkldsfkldfsklkjkgjkljohkjgjhdbab", 3));
     }
 }
