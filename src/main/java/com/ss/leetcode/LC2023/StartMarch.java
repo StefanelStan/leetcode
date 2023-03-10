@@ -1,9 +1,11 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.march.BestPokerHand;
 import com.ss.leetcode.LC2023.march.CheckIfArrayIsSortedAndRotated;
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.DesignCircularDeque;
+import com.ss.leetcode.LC2023.march.FirstMissingPositive;
 import com.ss.leetcode.LC2023.march.IncrementSubmatricesByOne;
 import com.ss.leetcode.LC2023.march.IntervalsBetweenIdenticalElements;
 import com.ss.leetcode.LC2023.march.KokoEatingBananas;
@@ -19,6 +21,7 @@ import com.ss.leetcode.LC2023.march.MinimumTimeToCompleteTrips;
 import com.ss.leetcode.LC2023.march.NumberOfTimesBinaryStringIsPrefixAligned;
 import com.ss.leetcode.LC2023.march.PartitionStringIntoSubstringsWithValuesAtMostK;
 import com.ss.leetcode.LC2023.march.PassThePillow;
+import com.ss.leetcode.LC2023.march.PreviousPermutationWithOneSwap;
 import com.ss.leetcode.LC2023.march.PrintWordsVertically;
 import com.ss.leetcode.LC2023.march.RemovingMinimumNumberOfMagicBeans;
 import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
@@ -56,7 +59,10 @@ public class StartMarch {
 //        start.minimumTimeToCompleteTrips();
 //        start.kokoEatingBananas();
 //        start.checkIfArrayIsSortedAndRotated();
-        start.intervalsBetweenIdenticalElements();
+//        start.intervalsBetweenIdenticalElements();
+//        start.firstMissingPositive();
+//        start.bestPokerHand();
+        start.previousPermutationWithOneSwap();
     }
 
     public void sortAnArray() {
@@ -310,5 +316,31 @@ public class StartMarch {
         System.out.println("[4,2,7,2,4,4,5] == " + Arrays.toString(ibie.getDistances(new int[]{2,1,3,1,2,3,3})));
         System.out.println("[5,0,3,4] == " + Arrays.toString(ibie.getDistances(new int[]{10,5,10,10})));
         System.out.println("[0] == " + Arrays.toString(ibie.getDistances(new int[]{10})));
+    }
+
+    public void firstMissingPositive() {
+        FirstMissingPositive fmp = new FirstMissingPositive();
+
+        System.out.println("3 == " + fmp.firstMissingPositive(new int[]{1,2,0}));
+        System.out.println("2 == " + fmp.firstMissingPositive(new int[]{3,4,-1,1}));
+        System.out.println("1 == " + fmp.firstMissingPositive(new int[]{7,8,9,11,12}));
+        System.out.println("4 == " + fmp.firstMissingPositive(new int[]{7,8,9,11,120,0,1,2,3,5,6,7}));
+    }
+
+    public void bestPokerHand() {
+        BestPokerHand bph = new BestPokerHand();
+
+        System.out.println("Flush == " + bph.bestHand(new int[]{13,2,3,1,9}, new char[]{'a','a','a','a','a'}));
+        System.out.println("Three of a Kind == " + bph.bestHand(new int[]{4,4,2,4,4}, new char[]{'d','a','a','b','c'}));
+        System.out.println("Pair == " + bph.bestHand(new int[]{10,10,2,12,9}, new char[]{'a','b','c','a','d'}));
+    }
+
+    public void previousPermutationWithOneSwap() {
+        PreviousPermutationWithOneSwap ppwos = new PreviousPermutationWithOneSwap();
+
+        System.out.println("[3,1,2] == " + Arrays.toString(ppwos.prevPermOpt1(new int[]{3,2,1})));
+        System.out.println("[1,1,5] == " + Arrays.toString(ppwos.prevPermOpt1(new int[]{1,1,5})));
+        System.out.println("[1,7,4,6,9] == " + Arrays.toString(ppwos.prevPermOpt1(new int[]{1,9,4,6,7})));
+        System.out.println("[1,3,1,3] == " + Arrays.toString(ppwos.prevPermOpt1(new int[]{3,1,1,3})));
     }
 }

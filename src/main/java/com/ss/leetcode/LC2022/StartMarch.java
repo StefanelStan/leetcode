@@ -80,7 +80,7 @@ public class StartMarch {
 //        start.partitionArrayIntoThreePartsWithEqualSum();
 //        start.oneBitAndTwoBitCharacters();
 //        start.searchInRotatedSortedArrayII();
-//        start.findTheDuplicateNumber();
+        start.findTheDuplicateNumber();
 //        start.lowestCommonAncestorOfABinaryTree();
 //        start.magicSquaresInGrid();
 //        start.splitArrayLargestSum();
@@ -388,6 +388,9 @@ public class StartMarch {
 
         System.out.println("2 == " + ftdn.findDuplicate(new int[]{1,3,4,2,2}));
         System.out.println("3 == " + ftdn.findDuplicate(new int[]{3,1,3,4,2}));
+        System.out.println("3 == " + ftdn.findDuplicate(new int[]{3,1,3,4,3,2}));
+        System.out.println("1 == " + ftdn.findDuplicate(new int[]{1,1,3,4,5,2}));
+        System.out.println("2 == " + ftdn.findDuplicate(new int[]{2,1,2}));
     }
 
     public void lowestCommonAncestorOfABinaryTree() {
