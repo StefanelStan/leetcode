@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.march.BestPokerHand;
 import com.ss.leetcode.LC2023.march.CheckIfArrayIsSortedAndRotated;
+import com.ss.leetcode.LC2023.march.CheckIfBinaryStringHasAtMostOneSegmentOfOnes;
 import com.ss.leetcode.LC2023.march.ConstructStringWithRepeatLimit;
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
@@ -12,6 +13,7 @@ import com.ss.leetcode.LC2023.march.IntervalsBetweenIdenticalElements;
 import com.ss.leetcode.LC2023.march.KokoEatingBananas;
 import com.ss.leetcode.LC2023.march.KthLargestSumInABinaryTree;
 import com.ss.leetcode.LC2023.march.LengthOfTheLongestAlphabeticalContinuousSubstring;
+import com.ss.leetcode.LC2023.march.LongestWellPerformingInterval;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
@@ -28,6 +30,7 @@ import com.ss.leetcode.LC2023.march.RemovingMinimumNumberOfMagicBeans;
 import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
 import com.ss.leetcode.LC2023.march.SortAnArray;
 import com.ss.leetcode.LC2023.march.SplitWithMinimumSum;
+import com.ss.leetcode.LC2023.march.SumOfBeautyOfAllSubstrings;
 import com.ss.leetcode.LC2023.march.ThousandSeparator;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
@@ -64,7 +67,10 @@ public class StartMarch {
 //        start.firstMissingPositive();
 //        start.bestPokerHand();
 //        start.previousPermutationWithOneSwap();
-        start.constructStringWithRepeatLimit();
+//        start.constructStringWithRepeatLimit();
+//        start.checkIfBinaryStringHasAtMostOneSegmentOfOnes();
+        start.longestWellPerformingInterval();
+//        start.sumOfBeautyOfAllSubstrings();
     }
 
     public void sortAnArray() {
@@ -352,5 +358,27 @@ public class StartMarch {
         System.out.println("zzcccac == " + cswrl.repeatLimitedString("cczazcc", 3));
         System.out.println("bbabaa == " + cswrl.repeatLimitedString("aababab", 2));
         System.out.println("bbabaa == " + cswrl.repeatLimitedString("aabasdfhsdyifsdjfhsdguyfgsdyufgydhfgdhfdhgfgdhfgfhfhgdhgdghdghdfdfdfdfghdfhghghgdfhdfhgdfghdfuhdfuydfuydfuydfuyhdfuuhuhdfsjksdfjkdsfkldsfkldfsklkjkgjkljohkjgjhdbab", 3));
+    }
+
+    public void checkIfBinaryStringHasAtMostOneSegmentOfOnes() {
+        CheckIfBinaryStringHasAtMostOneSegmentOfOnes cibshamosoo = new CheckIfBinaryStringHasAtMostOneSegmentOfOnes();
+
+        System.out.println("false == " + cibshamosoo.checkOnesSegment("1001"));
+        System.out.println("true == " + cibshamosoo.checkOnesSegment("110"));
+    }
+
+    public void longestWellPerformingInterval() {
+        LongestWellPerformingInterval lwpi = new LongestWellPerformingInterval();
+
+        System.out.println("3 == " + lwpi.longestWPI(new int[]{9,9,6,0,6,6,9}));
+        System.out.println("0 == " + lwpi.longestWPI(new int[]{5,5,5}));
+    }
+
+    public void sumOfBeautyOfAllSubstrings() {
+        SumOfBeautyOfAllSubstrings soboas = new SumOfBeautyOfAllSubstrings();
+
+        System.out.println("5 == " + soboas.beautySum("aabcb"));
+        System.out.println("17 == " + soboas.beautySum("aabcbaa"));
+        System.out.println("33166 == " + soboas.beautySum("aabghjsfdgfdgdfgdsfgdfghfdigvshdkuvsfjdhsudycbsudycbsdjhbcnsdijkvcsnbdfyhvenifucvneduhcnuinisduchnsiudfhncusyhcbaa"));
     }
 }
