@@ -25,7 +25,7 @@ public class LongestWellPerformingInterval {
         5. Bases on #4, traverse each hour and calculate the diff between cumulative T and NT.
             Store the diff and its index in a hashmap ONLY IF IT DOES NOT EXIST already.
             If it exists, you must keep it because it gives you the longest available interval. (most left prefix sum - difference)
-        6. Traverse each hour, calculate the diff, check the map for existing diff -1 and isnert in map (it not existing).
+        6. Traverse each hour, calculate the diff, check the map for existing diff -1 and insert in map (it not existing).
      */
     public int longestWPI(int[] hours) {
         Map<Integer, Integer> sumToIndex = new HashMap<>();

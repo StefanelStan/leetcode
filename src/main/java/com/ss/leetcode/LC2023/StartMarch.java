@@ -15,6 +15,7 @@ import com.ss.leetcode.LC2023.march.KthLargestSumInABinaryTree;
 import com.ss.leetcode.LC2023.march.LengthOfTheLongestAlphabeticalContinuousSubstring;
 import com.ss.leetcode.LC2023.march.LongestWellPerformingInterval;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
+import com.ss.leetcode.LC2023.march.MergeKSortedLists;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfDaysToMakeMBouquets;
@@ -27,11 +28,13 @@ import com.ss.leetcode.LC2023.march.PassThePillow;
 import com.ss.leetcode.LC2023.march.PreviousPermutationWithOneSwap;
 import com.ss.leetcode.LC2023.march.PrintWordsVertically;
 import com.ss.leetcode.LC2023.march.RemovingMinimumNumberOfMagicBeans;
+import com.ss.leetcode.LC2023.march.ReverseNodesInEvenLengthGroups;
 import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
 import com.ss.leetcode.LC2023.march.SortAnArray;
 import com.ss.leetcode.LC2023.march.SplitWithMinimumSum;
 import com.ss.leetcode.LC2023.march.SumOfBeautyOfAllSubstrings;
 import com.ss.leetcode.LC2023.march.ThousandSeparator;
+import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 
@@ -69,8 +72,10 @@ public class StartMarch {
 //        start.previousPermutationWithOneSwap();
 //        start.constructStringWithRepeatLimit();
 //        start.checkIfBinaryStringHasAtMostOneSegmentOfOnes();
-        start.longestWellPerformingInterval();
+//        start.longestWellPerformingInterval();
 //        start.sumOfBeautyOfAllSubstrings();
+        start.mergeKSortedLists();
+//        start.reverseNodesInEvenLengthGroups();
     }
 
     public void sortAnArray() {
@@ -380,5 +385,27 @@ public class StartMarch {
         System.out.println("5 == " + soboas.beautySum("aabcb"));
         System.out.println("17 == " + soboas.beautySum("aabcbaa"));
         System.out.println("33166 == " + soboas.beautySum("aabghjsfdgfdgdfgdsfgdfghfdigvshdkuvsfjdhsudycbsudycbsdjhbcnsdijkvcsnbdfyhvenifucvneduhcnuinisduchnsiudfhncusyhcbaa"));
+    }
+
+    public void mergeKSortedLists() {
+        MergeKSortedLists mksl = new MergeKSortedLists();
+
+        System.out.println("[1,1,2,3,4,4,5,6] == " + mksl.mergeKLists(new ListNode[]{ListNode.makeChain(new int[]{1,4,5}),
+            ListNode.makeChain(new int[]{1,3,4}), ListNode.makeChain(new int[]{2,6})}));
+
+        System.out.println("null == " + mksl.mergeKLists(new ListNode[]{null}));
+        System.out.println("null == " + mksl.mergeKLists(new ListNode[0]));
+    }
+
+    public void reverseNodesInEvenLengthGroups() {
+        ReverseNodesInEvenLengthGroups rnielg = new ReverseNodesInEvenLengthGroups();
+
+        ListNode head1 = ListNode.makeChain(new int[]{5,2,6,3,9,1,7,3,8,4});
+        ListNode head2 = ListNode.makeChain(new int[]{1,1,0,6});
+        ListNode head3 = ListNode.makeChain(new int[]{1,1,0,6,5});
+
+        System.out.println("[5,6,2,3,9,1,4,8,3,7] == " + rnielg.reverseEvenLengthGroups(head1).getAsList());
+        System.out.println("[1,0,1,6] == " + rnielg.reverseEvenLengthGroups(head2).getAsList());
+        System.out.println("[1,0,1,5,6] == " + rnielg.reverseEvenLengthGroups(head3).getAsList());
     }
 }
