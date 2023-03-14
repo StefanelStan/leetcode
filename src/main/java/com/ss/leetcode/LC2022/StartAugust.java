@@ -19,7 +19,7 @@ public class StartAugust {
 
 //        start.makeArrayZeroBySubtractingEqualAmounts();
 //        start.countVowelsPermutation();
-//        start.longestIncreasingSubsequence();
+        start.longestIncreasingSubsequence();
 //        start.numberOfArithmeticTriplets();
 //        start.substringWithConcatenationOfAllWords();
 //        start.largestLocalValuesInAMatrix();
@@ -27,7 +27,7 @@ public class StartAugust {
 //        start.stringWithoutAAAOrBBB();
 //        start.maxSumOfRectangleNoLargerThanK();
 //        start.numberOfIslands();
-        start.reformatTheString();
+//        start.reformatTheString();
     }
 
     public void makeArrayZeroBySubtractingEqualAmounts() {
@@ -53,11 +53,11 @@ public class StartAugust {
         LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
 
         System.out.println("4 == " + lis.lengthOfLIS(new int[]{10,9,2,5,3,7,101,18}));
-        System.out.println("4 == " + lis.lengthOfLIS(new int[]{0,1,0,3,2,3}));
-        System.out.println("1 == " + lis.lengthOfLIS(new int[]{7}));
-        System.out.println("4 == " + lis.lengthOfLIS(new int[]{3,2,1,1,1,1,2,3,4,4,4,4,3,2,1,2,3}));
-        System.out.println("9 == " + lis.lengthOfLIS(new int[]{1,2,3,4,5,6,7,8,9}));
-        System.out.println("1 == " + lis.lengthOfLIS(new int[]{9,8,7,6,5,4,3,2,1}));
+//        System.out.println("4 == " + lis.lengthOfLIS(new int[]{0,1,0,3,2,3}));
+//        System.out.println("1 == " + lis.lengthOfLIS(new int[]{7}));
+//        System.out.println("4 == " + lis.lengthOfLIS(new int[]{3,2,1,1,1,1,2,3,4,4,4,4,3,2,1,2,3}));
+//        System.out.println("9 == " + lis.lengthOfLIS(new int[]{1,2,3,4,5,6,7,8,9}));
+//        System.out.println("1 == " + lis.lengthOfLIS(new int[]{9,8,7,6,5,4,3,2,1}));
     }
 
     public void numberOfArithmeticTriplets() {

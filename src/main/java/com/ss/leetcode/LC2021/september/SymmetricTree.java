@@ -5,6 +5,22 @@ import com.ss.leetcode.shared.TreeNode;
 public class SymmetricTree {
     // https://leetcode.com/problems/symmetric-tree/
     public boolean isSymmetric(TreeNode root) {
+        return isSymmetric(root.left, root.right);
+    }
+
+    boolean isSymmetric(TreeNode leftHalf, TreeNode rightHalf) {
+        if (leftHalf == rightHalf) {
+            return true;
+        }
+        if (leftHalf == null || rightHalf == null) {
+            return false;
+        }
+        return leftHalf.val == rightHalf.val
+            && isSymmetric(leftHalf.left, rightHalf.right)
+            && isSymmetric(leftHalf.right, rightHalf.left);
+    }
+
+    public boolean isSymmetric2(TreeNode root) {
         if(root.left == null && root.right == null) {
             return true;
         }

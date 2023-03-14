@@ -20,7 +20,7 @@ public class LongestIncreasingSubsequence {
         seqLengths[nums.length - 1] = 1;
         longestSeqs.add(new int[]{nums[nums.length -1], 1});
         for (int i = nums.length - 2; i >= 0; i--) {
-            int canAddToLongest = canAddToLongestSeq(nums, i, longestSeqs, seqLengths);
+            int canAddToLongest = canAddToLongestSeq(nums, i, longestSeqs);
             if (canAddToLongest >= 0) {
                 seqLengths[i] = longestSeqs.get(0)[1];
             } else {
@@ -32,7 +32,7 @@ public class LongestIncreasingSubsequence {
     }
 
     // return state of this; was added successfully, was not added, was = with head
-    private int canAddToLongestSeq(int[] nums, int i, List<int[]> longestSeqs, int[] seqLengths) {
+    private int canAddToLongestSeq(int[] nums, int i, List<int[]> longestSeqs) {
         int[] longestFoundSeq = null;
         boolean foundEqualSeq = false;
         for (int[] longSeq : longestSeqs) {

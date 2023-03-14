@@ -9,7 +9,8 @@ public class StartPlayground {
 //        start.unionByRank();
 //        start.pathCompression();
 //        start.pathCompressionUnionByRank();
-        start.dfsGraph();
+//        start.dfsGraph();
+        start.fenwickTree();
     }
 
     public void quickFind() {
@@ -124,5 +125,17 @@ public class StartPlayground {
         DfsTraversal dt = new DfsTraversal(8, new int[][]{{0,1},{0,2},{0,3},{1,4},{2,5},{3,6},{4,7},{5,7},{6,7}});
 
         System.out.println("[0,1,2,3,4,5,6,7]== " + dt.traverse());
+    }
+
+    public void fenwickTree() {
+        FenwickTree ft = new FenwickTree(new int[]{2, 21, 12, 31, 22, 33, 40, 15, 60, 17, 18, 19});
+
+        int total = ft.getPrefixSum(6);
+        System.out.println("Sum of the elements in array a[0 ... 6]" + " is: " + total);
+        System.out.println("64 == " + ft.getRangeSum(1,3));
+        ft.updateFenwick(3, 7);
+        total = ft.getPrefixSum(6);
+        System.out.println("Sum of the elements in array a[0 ... 6] after update is: " + total);
+
     }
 }
