@@ -61,7 +61,7 @@ public class StartNovember {
 //        start.wordPattern();
 //        start.powerOfThree();
 //        start.isSubsequence();
-        start.singleElementInASortedArray();
+//        start.singleElementInASortedArray();
 //        start.assignCookies();
 //        start.numberOfSegmentsInAString();
 //        start.longerContiguousSegmentsOf1Than0();
@@ -80,8 +80,9 @@ public class StartNovember {
 //        start.countCommonWordsWithOneOccurrence();
 //        start.minimumCostHomeComingOfARobotInAGrid();
 //        start.minimumNumberOfBucketsCollectRainwaterHouses();
-        // missing or hidden description and requirements
-//        start.checkCompletenessOfABinaryTree();
+        // 28.11.2021 missing or hidden description and requirements
+        // 15.03.2023 nope, it works
+        start.checkCompletenessOfABinaryTree();
 //        start.heaters();
 //        start.accountsMerge();
 //        start.findTargetIndicesAfterSortingArray();
@@ -773,6 +774,23 @@ public class StartNovember {
         System.out.println("false == " + ccoabt.isCompleteTree(root3));
         System.out.println("false == " + ccoabt.isCompleteTree(root4));
         System.out.println("false == " + ccoabt.isCompleteTree(root5));
+
+
+        TreeNode root6 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), null));
+        TreeNode root7 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, null, new TreeNode(7)));
+        TreeNode root8 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), null);
+        TreeNode root9 = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(7), new TreeNode(8)));
+        TreeNode root10 = new TreeNode(1, new TreeNode(2, new TreeNode(5), null), new TreeNode(3, new TreeNode(7), new TreeNode(8)));
+        TreeNode root11 = new TreeNode(1, null, new TreeNode(2));
+        TreeNode root12 = new TreeNode(1);
+
+        System.out.println("true == " + ccoabt.isCompleteTree(root6));
+        System.out.println("false == " + ccoabt.isCompleteTree(root7));
+        System.out.println("false == " + ccoabt.isCompleteTree(root8));
+        System.out.println("false == " + ccoabt.isCompleteTree(root9));
+        System.out.println("false == " + ccoabt.isCompleteTree(root10));
+        System.out.println("false == " + ccoabt.isCompleteTree(root11));
+        System.out.println("true == " + ccoabt.isCompleteTree(root12));
     }
 
     public void heaters() {

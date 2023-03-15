@@ -7,8 +7,49 @@ import java.util.List;
 
 public class CheckCompletenessOfABinaryTree {
     // https://leetcode.com/problems/check-completeness-of-a-binary-tree/
-    // ! incorrect or incomplete description. Hidden requirements .....
+    // Nope. Just solved it years later :)
     public boolean isCompleteTree(TreeNode root) {
+        if (root.left == root.right) {
+            return true;
+        }
+        List<List<TreeNode>> nodes = new ArrayList<>();
+        traverseTree(root, 1, nodes);
+        return checkNodeLevels(nodes);
+    }
+
+    private void traverseTree(TreeNode node, int level, List<List<TreeNode>> nodes) {
+        if (node == null) {
+            return;
+        }
+        if (level > nodes.size()) {
+            nodes.add(new ArrayList<>());
+        }
+        nodes.get(level -1).add(node);
+        traverseTree(node.left, level + 1, nodes);
+        traverseTree(node.right, level + 1, nodes);
+    }
+
+    private boolean checkNodeLevels(List<List<TreeNode>> nodes) {
+        for (int i = 0; i < nodes.size() - 1; i++) {
+            if (nodes.get(i).size() != Math.pow(2, i)) {
+                return false;
+            }
+        }
+        int last = nodes.size() -1, before = nodes.size() - 2;
+        for (int i = 0; i < nodes.get(before).size(); i++) {
+            TreeNode parent = nodes.get(before).get(i);
+            if ((parent.left == null && parent.right != null)
+                || (parent.left == parent.right && nodes.get(last).size() > i * 2)
+                || (parent.left != null && parent.right == null && nodes.get(last).size() > i * 2 + 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // (28.11.2021) ! incorrect or incomplete description. Hidden requirements .....
+    // (15.03.2023) Nope, I solved it years later :)
+    public boolean isCompleteTree2(TreeNode root) {
         boolean[] isComplete = {true};
         if (root.left == null && root.right == null) {
             isComplete[0] = true;

@@ -17,7 +17,7 @@ public class FenwickTree {
         idx = idx + 1;
         while (idx < fenArray.length) {
             fenArray[idx] = fenArray[idx] + num;
-            idx = idx + (idx & (-idx));
+            idx +=  idx & (-idx);
         }
     }
 

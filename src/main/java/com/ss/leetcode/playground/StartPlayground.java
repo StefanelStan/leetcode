@@ -4,13 +4,26 @@ public class StartPlayground {
     public static void main(String[] args) {
         StartPlayground start = new StartPlayground();
 
+        start.addNumerical();
 //        start.quickFind();
 //        start.quickUnion();
 //        start.unionByRank();
 //        start.pathCompression();
 //        start.pathCompressionUnionByRank();
 //        start.dfsGraph();
-        start.fenwickTree();
+//        start.fenwickTree();
+    }
+
+    public void addNumerical() {
+        AddNumerical an = new AddNumerical();
+
+        System.out.println("22 == " + an.sumOfSubStringIntegers("ab+10+ced1>:{11#$%^"));
+        System.out.println("20 == " + an.sumOfSubStringIntegers("ab+10+ced-1>:{11#$%^"));
+        System.out.println("0 == " + an.sumOfSubStringIntegers("ab++ced->:{#$%^"));
+        System.out.println("0 == " + an.sumOfSubStringIntegers("ab++c0ed->:{#$%^"));
+        System.out.println("0 == " + an.sumOfSubStringIntegers("ab++-c0ed->:{#$%^"));
+        System.out.println("4 == " + an.sumOfSubStringIntegers("ab++-c0ed->:{#$%^4"));
+        System.out.println("-4 == " + an.sumOfSubStringIntegers("ab++-c0ed->:{#$%^-4"));
     }
 
     public void quickFind() {

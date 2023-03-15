@@ -82,7 +82,7 @@ public class StartSeptember {
 //        start.firstUniqueCharacterInAString();
 //        start.countPairsAbsoluteDifferenceK();
 //        start.findOriginalArrayFromDoubledArray();
-        start.maximumEarningsFromTaxi();
+//        start.maximumEarningsFromTaxi();
 //        start.validPalindrome();
 //        start.validPalindromeII();
 //        start.removeDuplicatesFromSortedListII();
@@ -103,7 +103,7 @@ public class StartSeptember {
 //        start.majorityElement();
 //        start.balancedBinaryTree();
 //        start.findMinFibonacciNumbersToSumK();
-//        start.sumRootToLeafNumbers();
+        start.sumRootToLeafNumbers();
 //        start.finalValueAfterPerformingOperations();
 //        start.splitLinkedListInParts();
 //        start.verticalOrderTraversalOfABinaryTree();
