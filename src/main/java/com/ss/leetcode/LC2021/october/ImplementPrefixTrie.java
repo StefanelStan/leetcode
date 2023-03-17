@@ -4,6 +4,62 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ImplementPrefixTrie {
+    // https://leetcode.com/problems/implement-trie-prefix-tree
+    int R = 26;
+    TrieNode root;
+    public ImplementPrefixTrie() {
+        root = new TrieNode();
+    }
+
+    public void insert(String word) {
+        TrieNode current = root;
+        int codePoint;
+        for (int i = 0; i < word.length(); i++) {
+            codePoint = word.charAt(i) - 'a';
+            if (current.links[codePoint] == null) {
+                current.links[codePoint] = new TrieNode();
+            }
+            current = current.links[codePoint];
+        }
+        current.isWord = true;
+    }
+
+    public boolean search(String word) {
+        TrieNode current = root;
+        int codePoint;
+        for (int i = 0; i < word.length(); i++) {
+            codePoint = word.charAt(i) - 'a';
+            if (current.links[codePoint] == null) {
+                return false;
+            }
+            current = current.links[codePoint];
+        }
+        return current != null && current.isWord;
+    }
+
+    public boolean startsWith(String prefix) {
+        TrieNode current = root;
+        int codePoint;
+        for (int i = 0; i < prefix.length(); i++) {
+            codePoint = prefix.charAt(i) - 'a';
+            if (current.links[codePoint] == null) {
+                return false;
+            }
+            current = current.links[codePoint];
+        }
+        return current != null;
+    }
+
+    private static class TrieNode {
+        int R = 26;
+        TrieNode[] links;
+        boolean isWord;
+
+        public TrieNode() {
+            links = new TrieNode[R];
+        }
+    }
+    /**
     private final Map<String, TrieWord> trieWords;
 
     public ImplementPrefixTrie() {
@@ -35,4 +91,5 @@ public class ImplementPrefixTrie {
     private static final class TrieWord {
         private boolean isWord;
     }
+     */
 }

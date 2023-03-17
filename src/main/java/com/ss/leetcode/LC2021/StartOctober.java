@@ -146,8 +146,8 @@ public class StartOctober {
     }
 
     public void implementPrefixTrie() {
-//        ImplementPrefixTrie ipt = new ImplementPrefixTrie();
-        Trie ipt = new Trie();
+        ImplementPrefixTrie ipt = new ImplementPrefixTrie();
+//        Trie ipt = new Trie();
         ipt.insert("apple");
         System.out.println("true == " + ipt.search("apple"));   // return True
         System.out.println("false == " + ipt.search("app"));     // return False
