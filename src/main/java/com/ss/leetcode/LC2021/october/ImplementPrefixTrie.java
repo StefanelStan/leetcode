@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class ImplementPrefixTrie {
     // https://leetcode.com/problems/implement-trie-prefix-tree
-    int R = 26;
     TrieNode root;
     public ImplementPrefixTrie() {
         root = new TrieNode();

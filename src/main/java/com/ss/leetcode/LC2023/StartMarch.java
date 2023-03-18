@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.march.BestPokerHand;
 import com.ss.leetcode.LC2023.march.CheckIfArrayIsSortedAndRotated;
 import com.ss.leetcode.LC2023.march.CheckIfBinaryStringHasAtMostOneSegmentOfOnes;
 import com.ss.leetcode.LC2023.march.ConstructStringWithRepeatLimit;
+import com.ss.leetcode.LC2023.march.CountNumberOfHomogenousSubstrings;
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.DesignCircularDeque;
@@ -15,6 +16,7 @@ import com.ss.leetcode.LC2023.march.KthLargestSumInABinaryTree;
 import com.ss.leetcode.LC2023.march.LengthOfTheLongestAlphabeticalContinuousSubstring;
 import com.ss.leetcode.LC2023.march.LongestWellPerformingInterval;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
+import com.ss.leetcode.LC2023.march.MaximizeGreatnessOfAnArray;
 import com.ss.leetcode.LC2023.march.MergeKSortedLists;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
@@ -34,6 +36,7 @@ import com.ss.leetcode.LC2023.march.SortAnArray;
 import com.ss.leetcode.LC2023.march.SplitWithMinimumSum;
 import com.ss.leetcode.LC2023.march.SumOfBeautyOfAllSubstrings;
 import com.ss.leetcode.LC2023.march.ThousandSeparator;
+import com.ss.leetcode.LC2023.march.DistributeMoneyToMaximumChildren;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
@@ -74,8 +77,11 @@ public class StartMarch {
 //        start.checkIfBinaryStringHasAtMostOneSegmentOfOnes();
 //        start.longestWellPerformingInterval();
 //        start.sumOfBeautyOfAllSubstrings();
-        start.mergeKSortedLists();
+//        start.mergeKSortedLists();
 //        start.reverseNodesInEvenLengthGroups();
+//        start.distributeMoneyToMaximumChildren();
+//        start.maximizeGreatnessOfAnArray();
+        start.countNumberOfHomogenousSubstrings();
     }
 
     public void sortAnArray() {
@@ -407,5 +413,36 @@ public class StartMarch {
         System.out.println("[5,6,2,3,9,1,4,8,3,7] == " + rnielg.reverseEvenLengthGroups(head1).getAsList());
         System.out.println("[1,0,1,6] == " + rnielg.reverseEvenLengthGroups(head2).getAsList());
         System.out.println("[1,0,1,5,6] == " + rnielg.reverseEvenLengthGroups(head3).getAsList());
+    }
+
+    public void distributeMoneyToMaximumChildren() {
+        DistributeMoneyToMaximumChildren dmtmc = new DistributeMoneyToMaximumChildren();
+
+        System.out.println("1 == " + dmtmc.distMoney(24, 2));
+        System.out.println("1 == " + dmtmc.distMoney(20, 3));
+        System.out.println("16 == " + dmtmc.distMoney(16, 2));
+        System.out.println("-1 == " + dmtmc.distMoney(1, 2));
+        System.out.println("0 == " + dmtmc.distMoney(5, 2));
+        System.out.println("0 == " + dmtmc.distMoney(8, 2));
+        System.out.println("1 == " + dmtmc.distMoney(13, 3));
+        System.out.println("1 == " + dmtmc.distMoney(17, 2));
+    }
+
+    public void maximizeGreatnessOfAnArray() {
+        MaximizeGreatnessOfAnArray mgoaa = new MaximizeGreatnessOfAnArray();
+
+        System.out.println("4 == " + mgoaa.maximizeGreatness(new int[]{1,3,5,2,1,3,1}));
+        System.out.println("3 == " + mgoaa.maximizeGreatness(new int[]{1,2,3,4}));
+    }
+
+    public void countNumberOfHomogenousSubstrings() {
+        CountNumberOfHomogenousSubstrings cnohs = new CountNumberOfHomogenousSubstrings();
+
+        System.out.println("13 == " + cnohs.countHomogenous("abbcccaa"));
+        System.out.println("2 == " + cnohs.countHomogenous("xy"));
+        System.out.println("15 == " + cnohs.countHomogenous("zzzzz"));
+        System.out.println("2078 == " + cnohs.countHomogenous("abbcccaaccccccccddddddddddddddeeeeeee"
+            + "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeccccggghghghhhhiiiuuuuuusduaygyds"
+            + "dyyyyyyysasssskjdsadiudhsudhushudhuhudsdssduhuhuhfdhudfdffd"));
     }
 }
