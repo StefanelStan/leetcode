@@ -2,6 +2,60 @@ package com.ss.leetcode.LC2022.january;
 
 
 public class DesignAddAndSearchWordsDataStructure {
+    // https://leetcode.com/problems/design-add-and-search-words-data-structure/
+    TrieNode root;
+    public DesignAddAndSearchWordsDataStructure() {
+        root = new TrieNode();
+    }
+
+    public void addWord(String word) {
+        TrieNode current = root;
+        int codePoint;
+        for (int i = 0; i < word.length(); i++) {
+            codePoint = word.charAt(i) - 'a';
+            if(current.links[codePoint] == null) {
+                current.links[codePoint] = new TrieNode();
+            }
+            current = current.links[codePoint];
+        }
+        current.isWord = true;
+    }
+
+    public boolean search(String word) {
+        boolean[] found = {false};
+        searchWord(root, word.toCharArray(), 0, found);
+        return found[0];
+    }
+
+    private void searchWord(TrieNode node, char[] word, int index, boolean[] found) {
+        if(found[0] || node == null || (index >= word.length && !node.isWord)) {
+            return;
+        }
+        if (index == word.length) {
+            found[0] = true;
+            return;
+        }
+        char ch = word[index];
+        if (ch != '.') {
+            searchWord(node.links[ch - 'a'], word, index + 1, found);
+        } else {
+            for (int i = 0; i < 26 && !found[0]; i++) {
+                searchWord(node.links[i], word, index + 1, found);
+            }
+        }
+    }
+
+    private static class TrieNode {
+        TrieNode[] links;
+        boolean isWord;
+
+        public TrieNode() {
+            this.links = new TrieNode[26];
+        }
+    }
+
+
+    /** Version is quite long
     TrieNode root;
 
     public DesignAddAndSearchWordsDataStructure() {
@@ -88,4 +142,5 @@ public class DesignAddAndSearchWordsDataStructure {
             return isEnd;
         }
     }
+     */
 }

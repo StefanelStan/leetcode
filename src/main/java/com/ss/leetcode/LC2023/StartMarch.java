@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.DesignCircularDeque;
 import com.ss.leetcode.LC2023.march.FirstMissingPositive;
+import com.ss.leetcode.LC2023.march.FormArrayByConcatenatingSubarraysOfAnotherArray;
 import com.ss.leetcode.LC2023.march.IncrementSubmatricesByOne;
 import com.ss.leetcode.LC2023.march.IntervalsBetweenIdenticalElements;
 import com.ss.leetcode.LC2023.march.KokoEatingBananas;
@@ -81,7 +82,8 @@ public class StartMarch {
 //        start.reverseNodesInEvenLengthGroups();
 //        start.distributeMoneyToMaximumChildren();
 //        start.maximizeGreatnessOfAnArray();
-        start.countNumberOfHomogenousSubstrings();
+//        start.countNumberOfHomogenousSubstrings();
+        start.formArrayByConcatenatingSubarraysOfAnotherArray();
     }
 
     public void sortAnArray() {
@@ -444,5 +446,16 @@ public class StartMarch {
         System.out.println("2078 == " + cnohs.countHomogenous("abbcccaaccccccccddddddddddddddeeeeeee"
             + "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeccccggghghghhhhiiiuuuuuusduaygyds"
             + "dyyyyyyysasssskjdsadiudhsudhushudhuhudsdssduhuhuhfdhudfdffd"));
+    }
+
+    public void formArrayByConcatenatingSubarraysOfAnotherArray() {
+        FormArrayByConcatenatingSubarraysOfAnotherArray fabcsoaa = new FormArrayByConcatenatingSubarraysOfAnotherArray();
+
+        System.out.println("true == " + fabcsoaa.canChoose(new int[][]{{1,-1,-1},{3,-2,0}}, new int[]{1,-1,0,1,-1,-1,3,-2,0}));
+        System.out.println("false == " + fabcsoaa.canChoose(new int[][]{{10,-2},{1,2,3,4}}, new int[]{1,2,3,4,10,-2}));
+        System.out.println("false == " + fabcsoaa.canChoose(new int[][]{{1,2,3},{3,4}}, new int[]{7,7,1,2,3,4,7,7}));
+        System.out.println("false == " + fabcsoaa.canChoose(new int[][]{{1,2,3},{4,5}}, new int[]{1,2,4,5,7,8,9,0,0,0,1,2,3}));
+        System.out.println("false == " + fabcsoaa.canChoose(new int[][]{{1,2,3},{4,5},{1,2,3,4,5,6,7,8,9,0,1,2,3}}, new int[]{1,2,4,5,7,8,9,0,0,0,1,2,3}));
+        System.out.println("true == " + fabcsoaa.canChoose(new int[][]{{1,1,1},{1,1}}, new int[]{1,1,1,1,1}));
     }
 }
