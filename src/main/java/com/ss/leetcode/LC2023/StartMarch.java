@@ -18,6 +18,7 @@ import com.ss.leetcode.LC2023.march.LengthOfTheLongestAlphabeticalContinuousSubs
 import com.ss.leetcode.LC2023.march.LongestWellPerformingInterval;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MaximizeGreatnessOfAnArray;
+import com.ss.leetcode.LC2023.march.MaximumLengthOfSubarrayWithPositiveProduct;
 import com.ss.leetcode.LC2023.march.MergeKSortedLists;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
@@ -83,7 +84,8 @@ public class StartMarch {
 //        start.distributeMoneyToMaximumChildren();
 //        start.maximizeGreatnessOfAnArray();
 //        start.countNumberOfHomogenousSubstrings();
-        start.formArrayByConcatenatingSubarraysOfAnotherArray();
+//        start.formArrayByConcatenatingSubarraysOfAnotherArray();
+        start.maximumLengthOfSubarrayWithPositiveProduct();
     }
 
     public void sortAnArray() {
@@ -457,5 +459,18 @@ public class StartMarch {
         System.out.println("false == " + fabcsoaa.canChoose(new int[][]{{1,2,3},{4,5}}, new int[]{1,2,4,5,7,8,9,0,0,0,1,2,3}));
         System.out.println("false == " + fabcsoaa.canChoose(new int[][]{{1,2,3},{4,5},{1,2,3,4,5,6,7,8,9,0,1,2,3}}, new int[]{1,2,4,5,7,8,9,0,0,0,1,2,3}));
         System.out.println("true == " + fabcsoaa.canChoose(new int[][]{{1,1,1},{1,1}}, new int[]{1,1,1,1,1}));
+    }
+
+    public void maximumLengthOfSubarrayWithPositiveProduct() {
+        MaximumLengthOfSubarrayWithPositiveProduct mlpswpp = new MaximumLengthOfSubarrayWithPositiveProduct();
+
+        System.out.println("0 == " + mlpswpp.getMaxLen(new int[]{-5}));
+        System.out.println("3 == " + mlpswpp.getMaxLen(new int[]{1,2,3}));
+        System.out.println("8 == " + mlpswpp.getMaxLen(new int[]{-5,4,5,-6,8,9,-2,5,4}));
+        System.out.println("0 == " + mlpswpp.getMaxLen(new int[]{0,0,0,0,0,-1}));
+        System.out.println("1 == " + mlpswpp.getMaxLen(new int[]{1,0,0,0,0,0,-1}));
+        System.out.println("0 == " + mlpswpp.getMaxLen(new int[]{-1,0,0,0,0,0,-1}));
+        System.out.println("1 == " + mlpswpp.getMaxLen(new int[]{-1,0,0,0,0,0,1,-1,1}));
+        System.out.println("5 == " + mlpswpp.getMaxLen(new int[]{-1,0,0,0,0,0,1,-1,1,-1,0,1,1,1,-1,0,-4,-4,-4,-4,5}));
     }
 }
