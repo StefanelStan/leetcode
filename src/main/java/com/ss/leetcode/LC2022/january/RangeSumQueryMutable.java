@@ -2,7 +2,66 @@ package com.ss.leetcode.LC2022.january;
 
 public class RangeSumQueryMutable {
     // https://leetcode.com/problems/range-sum-query-mutable/
+    // Fenwick TREE FTW!
+    private final FenwickTree ft;
+    public RangeSumQueryMutable(int[] nums) {
+        ft = new FenwickTree(nums);
+    }
+
+    public void update(int index, int val) {
+        ft.replaceValue(index, val);
+    }
+
+    public int sumRange(int left, int right) {
+        int sumRight = ft.getSum(right);
+        int outerLeft = ft.getSum(left - 1);
+        return sumRight - outerLeft;
+    }
+
+    private static class FenwickTree {
+        int[] fenArray;
+        int[] nums;
+
+        public FenwickTree(int[] nums) {
+            this.nums = nums;
+            fenArray = new int[nums.length + 1];
+            for (int i = 0; i < nums.length; i++) {
+                addValue(i, nums[i]);
+            }
+        }
+
+        protected void addValue(int index, int newValue) {
+            index++;
+            while(index < fenArray.length) {
+                fenArray[index] += newValue;
+                index += (index & -index);
+            }
+        }
+
+        private void replaceValue(int index, int newValue) {
+            int existing = nums[index];
+            nums[index] = newValue;
+            index++;
+            while(index < fenArray.length) {
+                fenArray[index] -= existing;
+                fenArray[index] += newValue;
+                index += (index & -index);
+            }
+        }
+
+        protected int getSum(int index) {
+            index++;
+            int sum = 0;
+            while (index > 0) {
+                sum += fenArray[index];
+                index -= (index & -index);
+            }
+            return sum;
+        }
+    }
+
     // TLE on 12/15
+   /**
     int[] sums;
     int[] numz;
     public RangeSumQueryMutable(int[] nums) {

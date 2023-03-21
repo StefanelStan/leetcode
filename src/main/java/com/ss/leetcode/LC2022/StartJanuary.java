@@ -31,9 +31,9 @@ public class StartJanuary {
 //        start.maximizeDistanceToClosestPerson();
 //        start.capitalizeTheTitle();
 //        start.divideAStringIntoGroupsOfSizeK();
-        start.minimumPathSum();
+//        start.minimumPathSum();
 //        start.binaryTreeLevelOrderTraversalII();
-//        start.rangeSumQueryMutable(); TLE
+        start.rangeSumQueryMutable();
 //        start.findSmallestLetterGreaterThanTarget();
 //        start.mostCommonWord();
 //        start.linkedListInBinaryTree();

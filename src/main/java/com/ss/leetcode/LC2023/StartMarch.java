@@ -27,6 +27,7 @@ import com.ss.leetcode.LC2023.march.MinimumNumberOfStepsToMakeTwoStringsAnagramI
 import com.ss.leetcode.LC2023.march.MinimumOperationsToMakeArrayEqualII;
 import com.ss.leetcode.LC2023.march.MinimumTimeToCompleteTrips;
 import com.ss.leetcode.LC2023.march.NumberOfTimesBinaryStringIsPrefixAligned;
+import com.ss.leetcode.LC2023.march.NumberOfZeroFilledSubarrays;
 import com.ss.leetcode.LC2023.march.PartitionStringIntoSubstringsWithValuesAtMostK;
 import com.ss.leetcode.LC2023.march.PassThePillow;
 import com.ss.leetcode.LC2023.march.PreviousPermutationWithOneSwap;
@@ -85,7 +86,8 @@ public class StartMarch {
 //        start.maximizeGreatnessOfAnArray();
 //        start.countNumberOfHomogenousSubstrings();
 //        start.formArrayByConcatenatingSubarraysOfAnotherArray();
-        start.maximumLengthOfSubarrayWithPositiveProduct();
+//        start.maximumLengthOfSubarrayWithPositiveProduct();
+        start.numberOfZeroFilledSubarrays();
     }
 
     public void sortAnArray() {
@@ -472,5 +474,13 @@ public class StartMarch {
         System.out.println("0 == " + mlpswpp.getMaxLen(new int[]{-1,0,0,0,0,0,-1}));
         System.out.println("1 == " + mlpswpp.getMaxLen(new int[]{-1,0,0,0,0,0,1,-1,1}));
         System.out.println("5 == " + mlpswpp.getMaxLen(new int[]{-1,0,0,0,0,0,1,-1,1,-1,0,1,1,1,-1,0,-4,-4,-4,-4,5}));
+    }
+
+    public void numberOfZeroFilledSubarrays() {
+        NumberOfZeroFilledSubarrays nozfs = new NumberOfZeroFilledSubarrays();
+
+        System.out.println("6 == " + nozfs.zeroFilledSubarray(new int[]{1,3,0,0,2,0,0,4}));
+        System.out.println("9 == " + nozfs.zeroFilledSubarray(new int[]{0,0,0,2,0,0}));
+        System.out.println("0 == " + nozfs.zeroFilledSubarray(new int[]{2,10,2019}));
     }
 }

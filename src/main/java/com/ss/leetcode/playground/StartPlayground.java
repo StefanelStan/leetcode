@@ -4,14 +4,14 @@ public class StartPlayground {
     public static void main(String[] args) {
         StartPlayground start = new StartPlayground();
 
-        start.addNumerical();
+//        start.addNumerical();
 //        start.quickFind();
 //        start.quickUnion();
 //        start.unionByRank();
 //        start.pathCompression();
 //        start.pathCompressionUnionByRank();
 //        start.dfsGraph();
-//        start.fenwickTree();
+        start.fenwickTree();
     }
 
     public void addNumerical() {
@@ -146,7 +146,7 @@ public class StartPlayground {
         int total = ft.getPrefixSum(6);
         System.out.println("Sum of the elements in array a[0 ... 6]" + " is: " + total);
         System.out.println("64 == " + ft.getRangeSum(1,3));
-        ft.updateFenwick(3, 7);
+        ft.updateFenwick(3, 1);
         total = ft.getPrefixSum(6);
         System.out.println("Sum of the elements in array a[0 ... 6] after update is: " + total);
 
