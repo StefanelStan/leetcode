@@ -25,6 +25,7 @@ import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfDaysToMakeMBouquets;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfStepsToMakeTwoStringsAnagramII;
 import com.ss.leetcode.LC2023.march.MinimumOperationsToMakeArrayEqualII;
+import com.ss.leetcode.LC2023.march.MinimumScoreOfAPathBetweenTwoCities;
 import com.ss.leetcode.LC2023.march.MinimumTimeToCompleteTrips;
 import com.ss.leetcode.LC2023.march.NumberOfTimesBinaryStringIsPrefixAligned;
 import com.ss.leetcode.LC2023.march.NumberOfZeroFilledSubarrays;
@@ -87,7 +88,8 @@ public class StartMarch {
 //        start.countNumberOfHomogenousSubstrings();
 //        start.formArrayByConcatenatingSubarraysOfAnotherArray();
 //        start.maximumLengthOfSubarrayWithPositiveProduct();
-        start.numberOfZeroFilledSubarrays();
+//        start.numberOfZeroFilledSubarrays();
+        start.minimumScoreOfAPathBetweenTwoCities();
     }
 
     public void sortAnArray() {
@@ -482,5 +484,13 @@ public class StartMarch {
         System.out.println("6 == " + nozfs.zeroFilledSubarray(new int[]{1,3,0,0,2,0,0,4}));
         System.out.println("9 == " + nozfs.zeroFilledSubarray(new int[]{0,0,0,2,0,0}));
         System.out.println("0 == " + nozfs.zeroFilledSubarray(new int[]{2,10,2019}));
+    }
+
+    public void minimumScoreOfAPathBetweenTwoCities() {
+        MinimumScoreOfAPathBetweenTwoCities msoapbtc = new MinimumScoreOfAPathBetweenTwoCities();
+
+        System.out.println("5 == " + msoapbtc.minScore(4, new int[][]{{1,2,9},{2,3,6},{2,4,5},{1,4,7}}));
+        System.out.println("2 == " + msoapbtc.minScore(4, new int[][]{{1,2,2},{1,3,4},{3,4,7}}));
+        System.out.println("4 == " + msoapbtc.minScore(7, new int[][]{{1,2,9},{2,3,6},{2,4,5},{1,4,7},{1,7,4},{5,6,1}}));
     }
 }
