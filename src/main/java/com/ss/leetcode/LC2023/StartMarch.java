@@ -35,6 +35,7 @@ import com.ss.leetcode.LC2023.march.PassThePillow;
 import com.ss.leetcode.LC2023.march.PreviousPermutationWithOneSwap;
 import com.ss.leetcode.LC2023.march.PrintWordsVertically;
 import com.ss.leetcode.LC2023.march.RemovingMinimumNumberOfMagicBeans;
+import com.ss.leetcode.LC2023.march.ReorderRoutesToMakeAllPathsLeadToTheCityZero;
 import com.ss.leetcode.LC2023.march.ReverseNodesInEvenLengthGroups;
 import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
 import com.ss.leetcode.LC2023.march.SortAnArray;
@@ -91,7 +92,8 @@ public class StartMarch {
 //        start.maximumLengthOfSubarrayWithPositiveProduct();
 //        start.numberOfZeroFilledSubarrays();
 //        start.minimumScoreOfAPathBetweenTwoCities();
-        start.numberOfOperationsToMakeNetworkConnected();
+//        start.numberOfOperationsToMakeNetworkConnected();
+        start.reorderRoutesToMakeAllPathsLeadToTheCityZero();
     }
 
     public void sortAnArray() {
@@ -502,5 +504,13 @@ public class StartMarch {
         System.out.println("1 == " + nootmnc.makeConnected(4, new int[][]{{0,1},{0,2},{1,2}}));
         System.out.println("2 == " + nootmnc.makeConnected(6, new int[][]{{0,1},{0,2},{0,3},{1,2},{1,3}}));
         System.out.println("-1 == " + nootmnc.makeConnected(6, new int[][]{{0,1},{0,2},{0,3},{1,2}}));
+    }
+
+    public void reorderRoutesToMakeAllPathsLeadToTheCityZero() {
+        ReorderRoutesToMakeAllPathsLeadToTheCityZero rrtmaplttcz = new ReorderRoutesToMakeAllPathsLeadToTheCityZero();
+
+        System.out.println("3 == " + rrtmaplttcz.minReorder(6, new int[][]{{0,1},{1,3},{2,3},{4,0},{4,5}}));
+        System.out.println("3 == " + rrtmaplttcz.minReorder(6, new int[][]{{0,1},{1,3},{2,3},{4,0},{4,5}}));
+        System.out.println("0 == " + rrtmaplttcz.minReorder(3, new int[][]{{1,0},{2,0}}));
     }
 }
