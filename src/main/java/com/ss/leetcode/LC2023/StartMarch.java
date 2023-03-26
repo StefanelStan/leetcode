@@ -6,8 +6,10 @@ import com.ss.leetcode.LC2023.march.CheckIfBinaryStringHasAtMostOneSegmentOfOnes
 import com.ss.leetcode.LC2023.march.ConstructStringWithRepeatLimit;
 import com.ss.leetcode.LC2023.march.CountNumberOfHomogenousSubstrings;
 import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
+import com.ss.leetcode.LC2023.march.CountUnreachablePairsOfNodesInAnUndirectedGraph;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.DesignCircularDeque;
+import com.ss.leetcode.LC2023.march.EliminateMaximumNumberOfMonsters;
 import com.ss.leetcode.LC2023.march.FirstMissingPositive;
 import com.ss.leetcode.LC2023.march.FormArrayByConcatenatingSubarraysOfAnotherArray;
 import com.ss.leetcode.LC2023.march.IncrementSubmatricesByOne;
@@ -93,7 +95,9 @@ public class StartMarch {
 //        start.numberOfZeroFilledSubarrays();
 //        start.minimumScoreOfAPathBetweenTwoCities();
 //        start.numberOfOperationsToMakeNetworkConnected();
-        start.reorderRoutesToMakeAllPathsLeadToTheCityZero();
+//        start.reorderRoutesToMakeAllPathsLeadToTheCityZero();
+//        start.countUnreachablePairsOfNodesInAnUndirectedGraph();
+        start.eliminateMaximumNumberOfMonsters();
     }
 
     public void sortAnArray() {
@@ -512,5 +516,20 @@ public class StartMarch {
         System.out.println("3 == " + rrtmaplttcz.minReorder(6, new int[][]{{0,1},{1,3},{2,3},{4,0},{4,5}}));
         System.out.println("3 == " + rrtmaplttcz.minReorder(6, new int[][]{{0,1},{1,3},{2,3},{4,0},{4,5}}));
         System.out.println("0 == " + rrtmaplttcz.minReorder(3, new int[][]{{1,0},{2,0}}));
+    }
+
+    public void countUnreachablePairsOfNodesInAnUndirectedGraph() {
+        CountUnreachablePairsOfNodesInAnUndirectedGraph cuponiaug = new CountUnreachablePairsOfNodesInAnUndirectedGraph();
+
+        System.out.println("0 == " + cuponiaug.countPairs(3, new int[][]{{0,1},{0,2},{1,2}}));
+        System.out.println("14 == " + cuponiaug.countPairs(7, new int[][]{{0,2},{0,5},{2,4},{1,6},{5,4}}));
+    }
+
+    public void eliminateMaximumNumberOfMonsters() {
+        EliminateMaximumNumberOfMonsters emnof = new EliminateMaximumNumberOfMonsters();
+
+        System.out.println("3 == " + emnof.eliminateMaximum(new int[]{1,3,4}, new int[]{1,1,1}));
+        System.out.println("1 == " + emnof.eliminateMaximum(new int[]{1,1,2,3}, new int[]{1,1,1,1}));
+        System.out.println("1 == " + emnof.eliminateMaximum(new int[]{3,2,4}, new int[]{5,3,2}));
     }
 }
