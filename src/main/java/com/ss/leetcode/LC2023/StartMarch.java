@@ -22,6 +22,7 @@ import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MaximizeGreatnessOfAnArray;
 import com.ss.leetcode.LC2023.march.MaximumLengthOfSubarrayWithPositiveProduct;
 import com.ss.leetcode.LC2023.march.MergeKSortedLists;
+import com.ss.leetcode.LC2023.march.MergeTripletsToFormTargetTriplet;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfDaysToMakeMBouquets;
@@ -97,7 +98,8 @@ public class StartMarch {
 //        start.numberOfOperationsToMakeNetworkConnected();
 //        start.reorderRoutesToMakeAllPathsLeadToTheCityZero();
 //        start.countUnreachablePairsOfNodesInAnUndirectedGraph();
-        start.eliminateMaximumNumberOfMonsters();
+//        start.eliminateMaximumNumberOfMonsters();
+        start.mergeTripletsToFormTargetTriplet();
     }
 
     public void sortAnArray() {
@@ -531,5 +533,13 @@ public class StartMarch {
         System.out.println("3 == " + emnof.eliminateMaximum(new int[]{1,3,4}, new int[]{1,1,1}));
         System.out.println("1 == " + emnof.eliminateMaximum(new int[]{1,1,2,3}, new int[]{1,1,1,1}));
         System.out.println("1 == " + emnof.eliminateMaximum(new int[]{3,2,4}, new int[]{5,3,2}));
+    }
+
+    public void mergeTripletsToFormTargetTriplet() {
+        MergeTripletsToFormTargetTriplet mttftt = new MergeTripletsToFormTargetTriplet();
+
+        System.out.println("true == " + mttftt.mergeTriplets(new int[][]{{2,5,3},{1,8,4},{1,7,5}}, new int[]{2,7,5}));
+        System.out.println("false == " + mttftt.mergeTriplets(new int[][]{{3,4,5},{4,5,6}}, new int[]{3,2,5}));
+        System.out.println("true == " + mttftt.mergeTriplets(new int[][]{{2,5,3},{2,3,4},{1,2,5},{5,2,3}}, new int[]{5,5,5}));
     }
 }
