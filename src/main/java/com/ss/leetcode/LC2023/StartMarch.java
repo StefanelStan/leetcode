@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2023.march.CountTotalNumberOfColoredCells;
 import com.ss.leetcode.LC2023.march.CountUnreachablePairsOfNodesInAnUndirectedGraph;
 import com.ss.leetcode.LC2023.march.CountWaysToGroupOverlappingRanges;
 import com.ss.leetcode.LC2023.march.DesignCircularDeque;
+import com.ss.leetcode.LC2023.march.DetectCyclesIn2DGrid;
 import com.ss.leetcode.LC2023.march.EliminateMaximumNumberOfMonsters;
 import com.ss.leetcode.LC2023.march.FirstMissingPositive;
 import com.ss.leetcode.LC2023.march.FormArrayByConcatenatingSubarraysOfAnotherArray;
@@ -99,7 +100,8 @@ public class StartMarch {
 //        start.reorderRoutesToMakeAllPathsLeadToTheCityZero();
 //        start.countUnreachablePairsOfNodesInAnUndirectedGraph();
 //        start.eliminateMaximumNumberOfMonsters();
-        start.mergeTripletsToFormTargetTriplet();
+//        start.mergeTripletsToFormTargetTriplet();
+        start.detectCyclesIn2DGrid();
     }
 
     public void sortAnArray() {
@@ -541,5 +543,13 @@ public class StartMarch {
         System.out.println("true == " + mttftt.mergeTriplets(new int[][]{{2,5,3},{1,8,4},{1,7,5}}, new int[]{2,7,5}));
         System.out.println("false == " + mttftt.mergeTriplets(new int[][]{{3,4,5},{4,5,6}}, new int[]{3,2,5}));
         System.out.println("true == " + mttftt.mergeTriplets(new int[][]{{2,5,3},{2,3,4},{1,2,5},{5,2,3}}, new int[]{5,5,5}));
+    }
+
+    public void detectCyclesIn2DGrid() {
+        DetectCyclesIn2DGrid dci2dg = new DetectCyclesIn2DGrid();
+
+        System.out.println("true == " + dci2dg.containsCycle(new char[][]{{'a','a','a','a'},{'a','b','b','a'},{'a','b','b','a'},{'a','a','a','a'}}));
+        System.out.println("true == " + dci2dg.containsCycle(new char[][]{{'c','c','c','a'},{'c','d','c','c'},{'c','c','e','c'},{'f','c','c','c'}}));
+        System.out.println("false == " + dci2dg.containsCycle(new char[][]{{'a','b','b'},{'b','z','b'},{'b','b','a'}}));
     }
 }
