@@ -22,9 +22,11 @@ import com.ss.leetcode.LC2023.march.LongestWellPerformingInterval;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MaximizeGreatnessOfAnArray;
 import com.ss.leetcode.LC2023.march.MaximumLengthOfSubarrayWithPositiveProduct;
+import com.ss.leetcode.LC2023.march.MaximumValueAfterInsertion;
 import com.ss.leetcode.LC2023.march.MergeKSortedLists;
 import com.ss.leetcode.LC2023.march.MergeTripletsToFormTargetTriplet;
 import com.ss.leetcode.LC2023.march.MinimumAmountOfTimeToFillCups;
+import com.ss.leetcode.LC2023.march.MinimumCostForTickets;
 import com.ss.leetcode.LC2023.march.MinimumFlipsToMakeAORBEqualToC;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfDaysToMakeMBouquets;
 import com.ss.leetcode.LC2023.march.MinimumNumberOfStepsToMakeTwoStringsAnagramII;
@@ -38,6 +40,7 @@ import com.ss.leetcode.LC2023.march.PartitionStringIntoSubstringsWithValuesAtMos
 import com.ss.leetcode.LC2023.march.PassThePillow;
 import com.ss.leetcode.LC2023.march.PreviousPermutationWithOneSwap;
 import com.ss.leetcode.LC2023.march.PrintWordsVertically;
+import com.ss.leetcode.LC2023.march.ReducingDishes;
 import com.ss.leetcode.LC2023.march.RemovingMinimumNumberOfMagicBeans;
 import com.ss.leetcode.LC2023.march.ReorderRoutesToMakeAllPathsLeadToTheCityZero;
 import com.ss.leetcode.LC2023.march.ReverseNodesInEvenLengthGroups;
@@ -101,7 +104,10 @@ public class StartMarch {
 //        start.countUnreachablePairsOfNodesInAnUndirectedGraph();
 //        start.eliminateMaximumNumberOfMonsters();
 //        start.mergeTripletsToFormTargetTriplet();
-        start.detectCyclesIn2DGrid();
+//        start.detectCyclesIn2DGrid();
+//        start.maximumValueAfterInsertion();
+//        start.minimumCostForTickets();
+        start.reducingDishes();
     }
 
     public void sortAnArray() {
@@ -551,5 +557,37 @@ public class StartMarch {
         System.out.println("true == " + dci2dg.containsCycle(new char[][]{{'a','a','a','a'},{'a','b','b','a'},{'a','b','b','a'},{'a','a','a','a'}}));
         System.out.println("true == " + dci2dg.containsCycle(new char[][]{{'c','c','c','a'},{'c','d','c','c'},{'c','c','e','c'},{'f','c','c','c'}}));
         System.out.println("false == " + dci2dg.containsCycle(new char[][]{{'a','b','b'},{'b','z','b'},{'b','b','a'}}));
+    }
+
+    public void maximumValueAfterInsertion() {
+        MaximumValueAfterInsertion mvai = new MaximumValueAfterInsertion();
+
+        System.out.println("999 == " + mvai.maxValue("99", 2));
+        System.out.println("-123 == " + mvai.maxValue("13", 2));
+        System.out.println("-1364564564634554324644312341783817398123217394164612536 == " + mvai.maxValue("-136456456463455432464431234183817398123217394164612536", 7));
+        System.out.println("-78 == " + mvai.maxValue("-8", 7));
+        System.out.println("-14 == " + mvai.maxValue("-1", 4));
+        System.out.println("94 == " + mvai.maxValue("9", 4));
+        System.out.println("21 == " + mvai.maxValue("1", 2));
+        System.out.println("11 == " + mvai.maxValue("1", 1));
+    }
+
+    public void minimumCostForTickets() {
+        MinimumCostForTickets mcft = new MinimumCostForTickets();
+
+        System.out.println("11 == " + mcft.mincostTickets(new int[]{1,4,6,7,8,20}, new int[]{2,7,15}));
+        System.out.println("17 == " + mcft.mincostTickets(new int[]{1,2,3,4,5,6,7,8,9,10,30,31}, new int[]{2,7,15}));
+        System.out.println("45 == " + mcft.mincostTickets(new int[]{1,4,6,7,8,20,23,24,25,39,56,101,131,178,179,190,193,231,299,301,341,343,364,365}, new int[]{2,7,15}));
+        System.out.println("16 == " + mcft.mincostTickets(new int[]{1,4,6,7,8,20,23,24,25,39,56,101,131,178,179,190,193,231,299,301,341,343,364,365}, new int[]{7,7,2}));
+        System.out.println("2 == " + mcft.mincostTickets(new int[]{265}, new int[]{2,7,15}));
+    }
+
+    public void reducingDishes() {
+        ReducingDishes rd = new ReducingDishes();
+
+        System.out.println("14 == " + rd.maxSatisfaction(new int[]{-1,-8,0,5,-9}));
+        System.out.println("20 == " + rd.maxSatisfaction(new int[]{4,3,2}));
+        System.out.println("0 == " + rd.maxSatisfaction(new int[]{-1,-4,-5}));
+        System.out.println("196 == " + rd.maxSatisfaction(new int[]{-1,-8,0,5,-7,5,4,3,2,-1,-1,0,0,-1}));
     }
 }
