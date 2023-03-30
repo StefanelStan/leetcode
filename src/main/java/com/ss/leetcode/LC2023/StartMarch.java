@@ -44,6 +44,7 @@ import com.ss.leetcode.LC2023.march.ReducingDishes;
 import com.ss.leetcode.LC2023.march.RemovingMinimumNumberOfMagicBeans;
 import com.ss.leetcode.LC2023.march.ReorderRoutesToMakeAllPathsLeadToTheCityZero;
 import com.ss.leetcode.LC2023.march.ReverseNodesInEvenLengthGroups;
+import com.ss.leetcode.LC2023.march.ShortestPalindrome;
 import com.ss.leetcode.LC2023.march.SmallestNumberInInfiniteSet;
 import com.ss.leetcode.LC2023.march.SortAnArray;
 import com.ss.leetcode.LC2023.march.SplitWithMinimumSum;
@@ -107,7 +108,8 @@ public class StartMarch {
 //        start.detectCyclesIn2DGrid();
 //        start.maximumValueAfterInsertion();
 //        start.minimumCostForTickets();
-        start.reducingDishes();
+//        start.reducingDishes();
+        start.shortestPalindrome();
     }
 
     public void sortAnArray() {
@@ -589,5 +591,15 @@ public class StartMarch {
         System.out.println("20 == " + rd.maxSatisfaction(new int[]{4,3,2}));
         System.out.println("0 == " + rd.maxSatisfaction(new int[]{-1,-4,-5}));
         System.out.println("196 == " + rd.maxSatisfaction(new int[]{-1,-8,0,5,-7,5,4,3,2,-1,-1,0,0,-1}));
+    }
+
+    public void shortestPalindrome() {
+        ShortestPalindrome sp = new ShortestPalindrome();
+
+        System.out.println("aaacecaaa == " + sp.shortestPalindrome("aacecaaa"));
+        System.out.println("dcbabcd == " + sp.shortestPalindrome("abcd"));
+        System.out.println("abba == " + sp.shortestPalindrome("abba"));
+        System.out.println("aatttttttttttttttttttacecaacecatttttttttttttttttttaa == " + sp.shortestPalindrome("aacecatttttttttttttttttttaa"));
+        System.out.println("a == " + sp.shortestPalindrome("a"));
     }
 }
