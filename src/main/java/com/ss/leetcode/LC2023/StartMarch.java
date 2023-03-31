@@ -22,6 +22,7 @@ import com.ss.leetcode.LC2023.march.LongestWellPerformingInterval;
 import com.ss.leetcode.LC2023.march.MaxDifferenceYouCanGetFromChangingAnInteger;
 import com.ss.leetcode.LC2023.march.MaximizeGreatnessOfAnArray;
 import com.ss.leetcode.LC2023.march.MaximumLengthOfSubarrayWithPositiveProduct;
+import com.ss.leetcode.LC2023.march.MaximumScoreFromRemovingSubstrings;
 import com.ss.leetcode.LC2023.march.MaximumValueAfterInsertion;
 import com.ss.leetcode.LC2023.march.MergeKSortedLists;
 import com.ss.leetcode.LC2023.march.MergeTripletsToFormTargetTriplet;
@@ -54,6 +55,8 @@ import com.ss.leetcode.LC2023.march.DistributeMoneyToMaximumChildren;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class StartMarch {
     public static void main(String[] args) {
@@ -109,12 +112,13 @@ public class StartMarch {
 //        start.maximumValueAfterInsertion();
 //        start.minimumCostForTickets();
 //        start.reducingDishes();
-        start.shortestPalindrome();
+//        start.shortestPalindrome();
+        start.maximumScoreFromRemovingSubstrings();
     }
 
     public void sortAnArray() {
         SortAnArray saa = new SortAnArray();
-
+        LinkedList<Character> ll = new LinkedList<>();
         System.out.println("[1,2,3,5] == " + Arrays.toString(saa.sortArray(new int[]{5,2,3,1})));
         System.out.println("[0,0,1,1,2,5] == " + Arrays.toString(saa.sortArray(new int[]{5,1,1,2,0,0})));
     }
@@ -602,4 +606,13 @@ public class StartMarch {
         System.out.println("aatttttttttttttttttttacecaacecatttttttttttttttttttaa == " + sp.shortestPalindrome("aacecatttttttttttttttttttaa"));
         System.out.println("a == " + sp.shortestPalindrome("a"));
     }
+
+    public void maximumScoreFromRemovingSubstrings() {
+        MaximumScoreFromRemovingSubstrings msfrs = new MaximumScoreFromRemovingSubstrings();
+
+        System.out.println("19 == " + msfrs.maximumGain("cdbcbbaaabab", 4, 5));
+        System.out.println("20 == " + msfrs.maximumGain("aabbaaxybbaabb", 5, 4));
+        System.out.println("3203 == " + msfrs.maximumGain("ababababaaababababbababababbababbbababababababababaaaaabbbbbababababaab", 1, 100));
+    }
+
 }
