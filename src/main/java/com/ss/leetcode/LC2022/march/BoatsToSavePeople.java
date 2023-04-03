@@ -18,6 +18,20 @@ public class BoatsToSavePeople {
      */
     // https://leetcode.com/problems/boats-to-save-people/
     public int numRescueBoats(int[] people, int limit) {
+        int boats = 0;
+        Arrays.sort(people);
+        int left = 0, right = people.length -1;
+        while (left <= right) {
+            if (people[left] + people[right] <= limit) {
+                left++;
+            }
+            right--;
+            boats++;
+        }
+        return boats;
+    }
+
+    public int numRescueBoats2(int[] people, int limit) {
         if (people.length == 1) {
             return 1;
         }

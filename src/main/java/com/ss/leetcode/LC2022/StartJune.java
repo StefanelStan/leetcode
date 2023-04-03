@@ -39,7 +39,7 @@ public class StartJune {
 //        start.numberOfMatchingSubsequences();
 //        start.minimumOperationsToReduceXToZero();
 //        start.strongPasswordCheckerII();
-//        start.successfulPairsOfSpellsAndPotions();
+        start.successfulPairsOfSpellsAndPotions();
 //        start.matchSubstringAfterReplacement();
 //        start.maximumErasureValue();
 //        start.triangle();
@@ -58,7 +58,7 @@ public class StartJune {
 //        start.countNodesWithTheHighestScore();
 //        start.minimumDeletionsToMakeCharacterFrequenciesUnique();
 //        start.queueReconstructionByHeight();
-        start.minimumMovesToEqualArrayElementsII();
+//        start.minimumMovesToEqualArrayElementsII();
     }
 
     public void partitionList() {
@@ -111,8 +111,9 @@ public class StartJune {
         SuccessfulPairsOfSpellsAndPotions sposap = new SuccessfulPairsOfSpellsAndPotions();
 
         System.out.println("[4,0,3] == " + Arrays.toString(sposap.successfulPairs(new int[]{5,1,3}, new int[]{1,2,3,4,5}, 7)));
+        System.out.println("[5,5,5] == " + Arrays.toString(sposap.successfulPairs(new int[]{5,1,3}, new int[]{1,2,3,4,5}, 1)));
         System.out.println("[2,0,2] == " + Arrays.toString(sposap.successfulPairs(new int[]{3,1,2}, new int[]{8,5,8}, 16)));
-        System.out.println("[2,0,2] == " + Arrays.toString(sposap.successfulPairs(new int[]{3,1,2}, new int[]{8,5,8}, 2986127332L)));
+        System.out.println("[0,0,0] == " + Arrays.toString(sposap.successfulPairs(new int[]{3,1,2}, new int[]{8,5,8}, 2986127332L)));
     }
 
     public void matchSubstringAfterReplacement() {
