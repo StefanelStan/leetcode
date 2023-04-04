@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
+import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
 
@@ -12,7 +13,8 @@ public class StartApril {
 //        start.formSmallestNumberFromTwoDigitArrays();
 //        start.findTheSubstringWithMaximumCost();
 //        start.shortestCycle();
-        start.sellDiminishingValuedColoredBalls();
+//        start.sellDiminishingValuedColoredBalls();
+        start.maximumSumObtainedOfAnyPermutation();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -47,5 +49,13 @@ public class StartApril {
         System.out.println("27 == " + sdvcb.maxProfit(new int[]{4,2,1,5,9,9,9,8,7,6,5,4}, 3));
         System.out.println("100 == " + sdvcb.maxProfit(new int[]{4,2,1,5,9,9,9,8,7,6,5,4}, 13));
         System.out.println("155 == " + sdvcb.maxProfit(new int[]{4,2,1,5,9,9,9,8,7,6,5,4}, 23));
+    }
+
+    public void maximumSumObtainedOfAnyPermutation() {
+        MaximumSumObtainedOfAnyPermutation msooap = new MaximumSumObtainedOfAnyPermutation();
+
+        System.out.println("19 == " + msooap.maxSumRangeQuery(new int[]{1,2,3,4,5}, new int[][]{{1,3}, {0,1}}));
+        System.out.println("11 == " + msooap.maxSumRangeQuery(new int[]{1,2,3,4,5,6}, new int[][]{{0,1}}));
+        System.out.println("47 == " + msooap.maxSumRangeQuery(new int[]{1,2,3,4,5,10}, new int[][]{{0,2},{1,3},{1,1}}));
     }
 }
