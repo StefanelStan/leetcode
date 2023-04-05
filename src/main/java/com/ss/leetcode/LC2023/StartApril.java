@@ -3,6 +3,8 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
+import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
+import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
 
@@ -14,7 +16,9 @@ public class StartApril {
 //        start.findTheSubstringWithMaximumCost();
 //        start.shortestCycle();
 //        start.sellDiminishingValuedColoredBalls();
-        start.maximumSumObtainedOfAnyPermutation();
+//        start.maximumSumObtainedOfAnyPermutation();
+//        start.minimizeMaximumOfArray();
+        start.rearrangeSpacesBetweenWords();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -58,4 +62,22 @@ public class StartApril {
         System.out.println("11 == " + msooap.maxSumRangeQuery(new int[]{1,2,3,4,5,6}, new int[][]{{0,1}}));
         System.out.println("47 == " + msooap.maxSumRangeQuery(new int[]{1,2,3,4,5,10}, new int[][]{{0,2},{1,3},{1,1}}));
     }
+
+    public void minimizeMaximumOfArray() {
+        MinimizeMaximumOfArray mmoa = new MinimizeMaximumOfArray();
+
+        System.out.println("5 == " + mmoa.minimizeArrayValue(new int[]{3,7,1,6}));
+        System.out.println("10 == " + mmoa.minimizeArrayValue(new int[]{10,1}));
+    }
+
+    public void rearrangeSpacesBetweenWords() {
+        RearrangeSpacesBetweenWords rsbw = new RearrangeSpacesBetweenWords();
+
+        System.out.println("this   is   a   sentence == " + rsbw.reorderSpaces("  this   is  a sentence "));
+        System.out.println("practice   makes   perfect  == " + rsbw.reorderSpaces(" practice   makes   perfect"));
+        System.out.println("john        == " + rsbw.reorderSpaces("   john     "));
+        System.out.println("doe       == " + rsbw.reorderSpaces("doe      "));
+        System.out.println("r        == " + rsbw.reorderSpaces("       r"));
+    }
+
 }
