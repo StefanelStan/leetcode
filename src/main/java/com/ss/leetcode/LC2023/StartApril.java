@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
@@ -18,7 +19,8 @@ public class StartApril {
 //        start.sellDiminishingValuedColoredBalls();
 //        start.maximumSumObtainedOfAnyPermutation();
 //        start.minimizeMaximumOfArray();
-        start.rearrangeSpacesBetweenWords();
+//        start.rearrangeSpacesBetweenWords();
+        start.changeMinimumCharactersToSatisfyOneOfThreeConditions();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -78,6 +80,17 @@ public class StartApril {
         System.out.println("john        == " + rsbw.reorderSpaces("   john     "));
         System.out.println("doe       == " + rsbw.reorderSpaces("doe      "));
         System.out.println("r        == " + rsbw.reorderSpaces("       r"));
+    }
+
+    public void changeMinimumCharactersToSatisfyOneOfThreeConditions() {
+        ChangeMinimumCharactersToSatisfyOneOfThreeConditions cmctsoftc = new ChangeMinimumCharactersToSatisfyOneOfThreeConditions();
+
+        System.out.println("2 == " + cmctsoftc.minCharacters("aba", "caa"));
+        System.out.println("3 == " + cmctsoftc.minCharacters("dabadd", "cda"));
+        System.out.println("0 == " + cmctsoftc.minCharacters("zzzzzzzz", "cda"));
+        System.out.println("0 == " + cmctsoftc.minCharacters("a", "a"));
+        System.out.println("33 == " + cmctsoftc.minCharacters("dsfgsdfsdfdsfsdfsdfsdfsdfsdfdffdfsd", "yujgujthdfgsdfsdfgrtgfdgdjguohniufvhwsydfigywekjdfnwaoidfmsmsufignfiweuhdus"));
+        System.out.println("52 == " + cmctsoftc.minCharacters("zzzzzzaaaaaazzzzzaaaaaabcdefghjijlopqrstuwxxxyyyyzzz", "zzzzzzaaaaaazzzzzaaaaaabcdefghjijlopqrstuwxxxyyyyzzz"));
     }
 
 }
