@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
 import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
+import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
@@ -20,7 +21,8 @@ public class StartApril {
 //        start.maximumSumObtainedOfAnyPermutation();
 //        start.minimizeMaximumOfArray();
 //        start.rearrangeSpacesBetweenWords();
-        start.changeMinimumCharactersToSatisfyOneOfThreeConditions();
+//        start.changeMinimumCharactersToSatisfyOneOfThreeConditions();
+        start.numberOfEnclaves();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -93,4 +95,14 @@ public class StartApril {
         System.out.println("52 == " + cmctsoftc.minCharacters("zzzzzzaaaaaazzzzzaaaaaabcdefghjijlopqrstuwxxxyyyyzzz", "zzzzzzaaaaaazzzzzaaaaaabcdefghjijlopqrstuwxxxyyyyzzz"));
     }
 
+    public void numberOfEnclaves() {
+        NumberOfEnclaves noe = new NumberOfEnclaves();
+
+        System.out.println("3 == " + noe.numEnclaves(new int[][]{{0,0,0,0},{1,0,1,0},{0,1,1,0},{0,0,0,0}}));
+        System.out.println("0 == " + noe.numEnclaves(new int[][]{{0,1,1,0},{0,0,1,0},{0,0,1,0},{0,0,0,0}}));
+        System.out.println("5 == " + noe.numEnclaves(new int[][]{{0,0,0,0,1},{1,0,1,0,0},{0,1,1,1,0},{0,1,0,0,1},{1,0,0,1,0}}));
+        System.out.println("0 == " + noe.numEnclaves(new int[][]{{1}}));
+        System.out.println("1 == " + noe.numEnclaves(new int[][]{{0,0,0},{0,1,0},{0,0,0}}));
+        System.out.println("0 == " + noe.numEnclaves(new int[][]{{0}}));
+    }
 }
