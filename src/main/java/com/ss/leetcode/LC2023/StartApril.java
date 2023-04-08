@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
+import com.ss.leetcode.LC2023.april.MaximumDistanceBetweenAPairOfValues;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
 import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
@@ -22,7 +23,8 @@ public class StartApril {
 //        start.minimizeMaximumOfArray();
 //        start.rearrangeSpacesBetweenWords();
 //        start.changeMinimumCharactersToSatisfyOneOfThreeConditions();
-        start.numberOfEnclaves();
+//        start.numberOfEnclaves();
+        start.maximumDistanceBetweenAPairOfValues();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -104,5 +106,17 @@ public class StartApril {
         System.out.println("0 == " + noe.numEnclaves(new int[][]{{1}}));
         System.out.println("1 == " + noe.numEnclaves(new int[][]{{0,0,0},{0,1,0},{0,0,0}}));
         System.out.println("0 == " + noe.numEnclaves(new int[][]{{0}}));
+    }
+
+    public void maximumDistanceBetweenAPairOfValues() {
+        MaximumDistanceBetweenAPairOfValues mdbapov = new MaximumDistanceBetweenAPairOfValues();
+
+        System.out.println("2 == " + mdbapov.maxDistance(new int[]{55,30,5,4,2}, new int[]{100,20,10,10,5}));
+        System.out.println("1 == " + mdbapov.maxDistance(new int[]{2,2,2}, new int[]{10,10,1}));
+        System.out.println("2 == " + mdbapov.maxDistance(new int[]{30,29,19,5}, new int[]{25,25,25,25,25}));
+        System.out.println("0 == " + mdbapov.maxDistance(new int[]{121,111,101,99,88,77,66,55,30,5,4,2}, new int[]{131,100,20,10,10,5}));
+        System.out.println("4 == " + mdbapov.maxDistance(new int[]{121,111,101,99,88,77,66,55,30,5,4,2}, new int[]{151,141,131,100,20,10,10,5,5,5,4,4,3,3,2,2,1,1}));
+        System.out.println("0 == " + mdbapov.maxDistance(new int[]{1}, new int[]{2}));
+        System.out.println("6 == " + mdbapov.maxDistance(new int[]{3,3,3,3,3,3,3,3}, new int[]{4,4,4,4,4,4,4,1}));
     }
 }

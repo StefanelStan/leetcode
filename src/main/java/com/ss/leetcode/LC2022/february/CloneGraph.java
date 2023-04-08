@@ -8,6 +8,28 @@ public class CloneGraph {
         if (node == null) {
             return null;
         }
+        Node[] nodes = new Node[101];
+        visitNode(node, nodes);
+        return nodes[node.val];
+    }
+
+    private void visitNode(Node node, Node[] nodes) {
+        if (nodes[node.val] != null) {
+            return;
+        }
+        nodes[node.val] = new Node(node.val);
+        for (Node neighbor : node.children) {
+            visitNode(neighbor, nodes);
+            nodes[node.val].children.add(nodes[neighbor.val]);
+        }
+    }
+
+
+
+    public Node cloneGraph2(Node node) {
+        if (node == null) {
+            return null;
+        }
         if (node.children.isEmpty()) {
             return new Node(node.val);
         }
