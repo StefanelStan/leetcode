@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
+import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
 import com.ss.leetcode.LC2023.april.MaximumDistanceBetweenAPairOfValues;
@@ -24,7 +25,8 @@ public class StartApril {
 //        start.rearrangeSpacesBetweenWords();
 //        start.changeMinimumCharactersToSatisfyOneOfThreeConditions();
 //        start.numberOfEnclaves();
-        start.maximumDistanceBetweenAPairOfValues();
+//        start.maximumDistanceBetweenAPairOfValues();
+        start.destroyingAsteroids();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -118,5 +120,15 @@ public class StartApril {
         System.out.println("4 == " + mdbapov.maxDistance(new int[]{121,111,101,99,88,77,66,55,30,5,4,2}, new int[]{151,141,131,100,20,10,10,5,5,5,4,4,3,3,2,2,1,1}));
         System.out.println("0 == " + mdbapov.maxDistance(new int[]{1}, new int[]{2}));
         System.out.println("6 == " + mdbapov.maxDistance(new int[]{3,3,3,3,3,3,3,3}, new int[]{4,4,4,4,4,4,4,1}));
+    }
+
+    public void destroyingAsteroids() {
+        DestroyingAsteroids da = new DestroyingAsteroids();
+
+        System.out.println("true == " + da.asteroidsDestroyed(10, new int[]{3,9,19,5,21}));
+        System.out.println("false == " + da.asteroidsDestroyed(5, new int[]{4,9,23,4}));
+        System.out.println("true == " + da.asteroidsDestroyed(5, new int[]{4,9,18,4,23,23,23,23,23,23,23}));
+        System.out.println("true == " + da.asteroidsDestroyed(5, new int[]{5}));
+        System.out.println("false == " + da.asteroidsDestroyed(5, new int[]{6}));
     }
 }
