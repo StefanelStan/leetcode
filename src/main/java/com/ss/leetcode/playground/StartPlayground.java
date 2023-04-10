@@ -11,7 +11,9 @@ public class StartPlayground {
 //        start.pathCompression();
 //        start.pathCompressionUnionByRank();
 //        start.dfsGraph();
-        start.fenwickTree();
+//        start.fenwickTree();
+//        start.topologicalSort();
+        start.kahnTopologicalSort();
     }
 
     public void addNumerical() {
@@ -150,5 +152,18 @@ public class StartPlayground {
         total = ft.getPrefixSum(6);
         System.out.println("Sum of the elements in array a[0 ... 6] after update is: " + total);
 
+    }
+
+    public void topologicalSort() {
+        DFSTopologicalSort ts = new DFSTopologicalSort(10, new int[][]{{0,1},{5,8},{8,9},{3,5},{1,4},{5,7},{1,3},{0,2},{5,6},{7,8},{1,2}});
+        System.out.println(ts.getTopologicalSort());
+    }
+
+    public void kahnTopologicalSort() {
+//        KahnTopologicalSort kts = new KahnTopologicalSort(7, new int[][]{{0, 1},{0,4},{0,6}, {2,6},{3,1}, {3,5},{3,6},{4,3},{4,6}});
+//        System.out.println(kts.getTopologicalSort());
+
+        KahnTopologicalSort kts = new KahnTopologicalSort(7, new int[][]{{1, 0},{0,4},{0,6}, {2,6},{3,1}, {3,5},{3,6},{4,3},{4,6}});
+        System.out.println(kts.getTopologicalSort());
     }
 }
