@@ -1,15 +1,81 @@
 package com.ss.leetcode.LC2021.december;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class CourseScheduleII {
     // https://leetcode.com/problems/course-schedule-ii/
+    // Kahn's Topological Sort
     public int[] findOrder(int numCourses, int[][] prerequisites) {
+        List<Integer> order = new ArrayList<>(numCourses);
+        int[] inDegree = new int[numCourses];
+        List[] outgoing = new List[numCourses];
+        calculateInDegree(inDegree, outgoing, prerequisites);
+        addFirstCourses(inDegree, order);
+        int length, from = 0;
+        while (order.size() < numCourses) {
+            length = order.size();
+            for (int i = from; i < length; i++) {
+                if (inDegree[order.get(i)] != -1) {
+                    reduceIncomingDegreeOfOutgoingNodes(order, inDegree, outgoing, i);
+                    inDegree[order.get(i)] = -1;
+                }
+                from = i + 1;
+            }
+            if (length == order.size()) {
+                return new int[0];
+            }
+        }
+        return toArray(order);
+    }
+
+    private void reduceIncomingDegreeOfOutgoingNodes(List<Integer> order, int[] inDegree, List[] outgoing, int i) {
+        List<Integer> outgoings = outgoing[order.get(i)];
+        if (outgoings != null) {
+            for (int out : outgoings) {
+                inDegree[out]--;
+                if (inDegree[out] == 0) {
+                    order.add(out);
+                }
+            }
+        }
+    }
+
+    private void addFirstCourses(int[] inDegree, List<Integer> order) {
+        for (int i = 0; i < inDegree.length; i++) {
+            if (inDegree[i] == 0) {
+                order.add(i);
+            }
+        }
+    }
+
+    private void calculateInDegree(int[] inDegree, List[] outgoing, int[][] prerequisites) {
+        for (int[] prereq : prerequisites) {
+            if (outgoing[prereq[1]] == null) {
+                outgoing[prereq[1]] = new ArrayList<>();
+            }
+            outgoing[prereq[1]].add(prereq[0]);
+            inDegree[prereq[0]]++;
+        }
+    }
+
+    private int[] toArray(List<Integer> order) {
+        int[] inOrder =  new int[order.size()];
+        int insertIndex = 0;
+        for (int course : order) {
+            inOrder[insertIndex++] = course;
+        }
+        return inOrder;
+    }
+
+
+    public int[] findOrder2(int numCourses, int[][] prerequisites) {
         Map<Integer, Set<Integer>> courseMap = getCourseMap(prerequisites);
         Set<Integer> orderedCourses = getOrderedCourses(courseMap);
         if (orderedCourses == null) {

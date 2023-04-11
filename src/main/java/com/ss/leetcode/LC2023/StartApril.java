@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
+import com.ss.leetcode.LC2023.april.CourseSchedule;
 import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
@@ -26,7 +27,8 @@ public class StartApril {
 //        start.changeMinimumCharactersToSatisfyOneOfThreeConditions();
 //        start.numberOfEnclaves();
 //        start.maximumDistanceBetweenAPairOfValues();
-        start.destroyingAsteroids();
+//        start.destroyingAsteroids();
+        start.courseSchedule();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -130,5 +132,13 @@ public class StartApril {
         System.out.println("true == " + da.asteroidsDestroyed(5, new int[]{4,9,18,4,23,23,23,23,23,23,23}));
         System.out.println("true == " + da.asteroidsDestroyed(5, new int[]{5}));
         System.out.println("false == " + da.asteroidsDestroyed(5, new int[]{6}));
+    }
+
+    public void courseSchedule() {
+        CourseSchedule cs = new CourseSchedule();
+
+        System.out.println("true == " + cs.canFinish(2, new int[][]{{1,0}}));
+        System.out.println("false == " + cs.canFinish(2, new int[][]{{1,0},{0,1}}));
+        System.out.println("true == " + cs.canFinish(4, new int[0][0]));
     }
 }
