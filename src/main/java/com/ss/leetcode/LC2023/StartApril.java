@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
+import com.ss.leetcode.LC2023.april.CheckIfThereIsAValidPathInAGrid;
 import com.ss.leetcode.LC2023.april.CourseSchedule;
 import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
@@ -12,6 +13,7 @@ import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
+import com.ss.leetcode.LC2023.april.SimplifyPath;
 
 public class StartApril {
     public static void main(String[] args) {
@@ -28,7 +30,9 @@ public class StartApril {
 //        start.numberOfEnclaves();
 //        start.maximumDistanceBetweenAPairOfValues();
 //        start.destroyingAsteroids();
-        start.courseSchedule();
+//        start.courseSchedule();
+//        start.simplifyPath();
+        start.checkIfThereIsAValidPathInAGrid();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -140,5 +144,26 @@ public class StartApril {
         System.out.println("true == " + cs.canFinish(2, new int[][]{{1,0}}));
         System.out.println("false == " + cs.canFinish(2, new int[][]{{1,0},{0,1}}));
         System.out.println("true == " + cs.canFinish(4, new int[0][0]));
+    }
+
+    public void simplifyPath() {
+        SimplifyPath sp = new SimplifyPath();
+
+        System.out.println("/home == " + sp.simplifyPath("/home/"));
+        System.out.println("/ == " + sp.simplifyPath("/../"));
+        System.out.println("/home/foo == " + sp.simplifyPath("/home//foo/"));
+    }
+
+    public void checkIfThereIsAValidPathInAGrid() {
+        CheckIfThereIsAValidPathInAGrid citiavpiag = new CheckIfThereIsAValidPathInAGrid();
+
+        System.out.println("true == " + citiavpiag.hasValidPath(new int[][]{{2,4,3},{6,5,2}}));
+        System.out.println("false == " + citiavpiag.hasValidPath(new int[][]{{1,2,1},{1,2,1}}));
+        System.out.println("false == " + citiavpiag.hasValidPath(new int[][]{{1,1,2}}));
+        System.out.println("false == " + citiavpiag.hasValidPath(new int[][]{{2,4,3,3,1},{2,2,6,5,2}}));
+        System.out.println("false == " + citiavpiag.hasValidPath(new int[][]{{1,1,1,5},{2,2,6,5,2}}));
+        System.out.println("true == " + citiavpiag.hasValidPath(new int[][]{{1}}));
+        System.out.println("true == " + citiavpiag.hasValidPath(new int[][]{{1}}));
+        System.out.println("true == " + citiavpiag.hasValidPath(new int[][]{{3},{2},{2},{2},{6}}));
     }
 }
