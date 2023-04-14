@@ -135,3 +135,11 @@ GROUP BY activity_date;
 -- Patients With a Condition
 -- https://leetcode.com/problems/patients-with-a-condition
 SELECT * FROM Patients WHERE conditions LIKE 'DIAB1%' OR conditions like '% DIAB1%';
+
+-- Replace Employee ID With The Unique Identifier
+-- https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier
+SELECT eu.unique_id, e.name FROM Employees e LEFT JOIN EmployeeUNI eu ON (e.id = eu.id);
+
+-- Invalid Tweets
+-- https://leetcode.com/problems/invalid-tweets
+SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15;

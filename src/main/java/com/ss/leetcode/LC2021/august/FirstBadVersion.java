@@ -1,8 +1,24 @@
 package com.ss.leetcode.LC2021.august;
 
 public class FirstBadVersion {
-    private int badVersion;
+    // https://leetcode.com/problems/first-bad-version
+    public int firstBadVersion(int n) {
+        int low = 1, high = n, pivot = n;
+        boolean isBad = true;
+        while (low <= high) {
+            pivot = low + (high - low) / 2;
+            isBad = isBadVersion(pivot);
+            if (isBad) {
+                high = pivot - 1;
+            } else {
+                low = pivot + 1;
+            }
+        }
+        return isBad ? pivot : pivot + 1;
+    }
 
+
+    private int badVersion;
     public void setBadVersion(int badVersion) {
         this.badVersion = badVersion;
     }
@@ -11,7 +27,7 @@ public class FirstBadVersion {
         return version >= badVersion;
     }
 
-    public int firstBadVersion(int n) {
+    public int firstBadVersion2(int n) {
         if (n == 1) {
             return 1;
         }

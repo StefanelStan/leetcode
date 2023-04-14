@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
 import com.ss.leetcode.LC2023.april.CheckIfThereIsAValidPathInAGrid;
+import com.ss.leetcode.LC2023.april.ConvertAnArrayIntoA2DArrayWithConditions;
 import com.ss.leetcode.LC2023.april.CourseSchedule;
 import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
@@ -32,7 +33,8 @@ public class StartApril {
 //        start.destroyingAsteroids();
 //        start.courseSchedule();
 //        start.simplifyPath();
-        start.checkIfThereIsAValidPathInAGrid();
+//        start.checkIfThereIsAValidPathInAGrid();
+        start.convertAnArrayIntoA2DArrayWithConditions();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -165,5 +167,12 @@ public class StartApril {
         System.out.println("true == " + citiavpiag.hasValidPath(new int[][]{{1}}));
         System.out.println("true == " + citiavpiag.hasValidPath(new int[][]{{1}}));
         System.out.println("true == " + citiavpiag.hasValidPath(new int[][]{{3},{2},{2},{2},{6}}));
+    }
+
+    public void convertAnArrayIntoA2DArrayWithConditions() {
+        ConvertAnArrayIntoA2DArrayWithConditions caaia2dawc = new ConvertAnArrayIntoA2DArrayWithConditions();
+
+        System.out.println("[[1,3,4,2],[1,3],[1]] == " + caaia2dawc.findMatrix(new int[]{1,3,4,1,2,3,1}));
+        System.out.println("[[4,3,2,1]] == " + caaia2dawc.findMatrix(new int[]{1,2,3,4}));
     }
 }

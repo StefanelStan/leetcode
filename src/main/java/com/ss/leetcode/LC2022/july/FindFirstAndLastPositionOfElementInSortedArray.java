@@ -2,6 +2,41 @@ package com.ss.leetcode.LC2022.july;
 
 public class FindFirstAndLastPositionOfElementInSortedArray {
     // https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+    public int[] searchRange(int[] nums, int target) {
+        int[] range;
+        int findLeft = binarySearch(nums, target, true);
+        if (findLeft != -1) {
+            range = new int[]{findLeft, binarySearch(nums, target, false)};
+        } else {
+            range = new int[]{-1, -1};
+        }
+        return range;
+    }
+
+    private int binarySearch(int[] nums, int target, boolean isLeft) {
+        if (nums.length == 0) {
+            return -1;
+        }
+        boolean found = false;
+        int low = 0, high = nums.length -1, pivot = 1;
+        while(low <= high) {
+            pivot = low + (high - low) / 2;
+            if (nums[pivot] > target) {
+                high = pivot - 1;
+            } else if (nums[pivot] < target) {
+                low = pivot + 1;
+            } else {
+                found = true;
+                if (isLeft) {
+                    high = pivot - 1;
+                } else {
+                    low = pivot + 1;
+                }
+            }
+        }
+        return !found ? -1 : isLeft ? low : high;
+    }
+
     /** Algorithm
          1. Apply divide et impera: find one occurance of it. If none found, return -1,-1
          2. If one if found, then utilize 2 methods that will look on the left side (0, index) and one to look on the right side (index, length -1).
@@ -10,7 +45,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
          - findRight will try to increase the low to pivot in case nums[pivot] == target
          - findLeft will try to decrease high to pivot in case nums[pivot] == target.
      */
-    public int[] searchRange(int[] nums, int target) {
+    public int[] searchRange2(int[] nums, int target) {
         int[] range = {-1, -1};
         if (nums.length == 1) {
             if (nums[0] == target) {
