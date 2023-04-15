@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.april.ArrayWithElementsNotEqualToAverageOfNeighbors;
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
 import com.ss.leetcode.LC2023.april.CheckIfThereIsAValidPathInAGrid;
 import com.ss.leetcode.LC2023.april.ConvertAnArrayIntoA2DArrayWithConditions;
@@ -8,6 +9,7 @@ import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
 import com.ss.leetcode.LC2023.april.MaximumDistanceBetweenAPairOfValues;
+import com.ss.leetcode.LC2023.april.MaximumScoreFromRemovingStones;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
 import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
@@ -15,6 +17,7 @@ import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
 import com.ss.leetcode.LC2023.april.SimplifyPath;
+import java.util.Arrays;
 
 public class StartApril {
     public static void main(String[] args) {
@@ -34,7 +37,9 @@ public class StartApril {
 //        start.courseSchedule();
 //        start.simplifyPath();
 //        start.checkIfThereIsAValidPathInAGrid();
-        start.convertAnArrayIntoA2DArrayWithConditions();
+//        start.convertAnArrayIntoA2DArrayWithConditions();
+//        start.maximumScoreFromRemovingStones();
+        start.arrayWithElementsNotEqualToAverageOfNeighbors();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -174,5 +179,20 @@ public class StartApril {
 
         System.out.println("[[1,3,4,2],[1,3],[1]] == " + caaia2dawc.findMatrix(new int[]{1,3,4,1,2,3,1}));
         System.out.println("[[4,3,2,1]] == " + caaia2dawc.findMatrix(new int[]{1,2,3,4}));
+    }
+
+    public void maximumScoreFromRemovingStones() {
+        MaximumScoreFromRemovingStones msfrs = new MaximumScoreFromRemovingStones();
+
+        System.out.println("6 == " + msfrs.maximumScore(2,4,6));
+        System.out.println("7 == " + msfrs.maximumScore(4,4,6));
+        System.out.println("9 == " + msfrs.maximumScore(1,8,8));
+    }
+
+    public void arrayWithElementsNotEqualToAverageOfNeighbors() {
+        ArrayWithElementsNotEqualToAverageOfNeighbors awenetaon = new ArrayWithElementsNotEqualToAverageOfNeighbors();
+
+        System.out.println("[5,2,1,4,3] == " + Arrays.toString(awenetaon.rearrangeArray(new int[]{1,2,3,4,5})));
+        System.out.println("[0,2,6,7,9] == " + Arrays.toString(awenetaon.rearrangeArray(new int[]{6,2,0,9,7})));
     }
 }
