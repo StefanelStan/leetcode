@@ -6,12 +6,14 @@ import com.ss.leetcode.LC2023.april.CheckIfThereIsAValidPathInAGrid;
 import com.ss.leetcode.LC2023.april.ConvertAnArrayIntoA2DArrayWithConditions;
 import com.ss.leetcode.LC2023.april.CourseSchedule;
 import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
+import com.ss.leetcode.LC2023.april.FindTheLongestBalancedSubstringOfABinaryString;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
 import com.ss.leetcode.LC2023.april.MaximumDistanceBetweenAPairOfValues;
 import com.ss.leetcode.LC2023.april.MaximumScoreFromRemovingStones;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
 import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
+import com.ss.leetcode.LC2023.april.MinimumMovesToReachTargetScore;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
@@ -39,7 +41,9 @@ public class StartApril {
 //        start.checkIfThereIsAValidPathInAGrid();
 //        start.convertAnArrayIntoA2DArrayWithConditions();
 //        start.maximumScoreFromRemovingStones();
-        start.arrayWithElementsNotEqualToAverageOfNeighbors();
+//        start.arrayWithElementsNotEqualToAverageOfNeighbors();
+//        start.findTheLongestBalancedSubstringOfABinaryString();
+        start.minimumMovesToReachTargetScore();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -194,5 +198,21 @@ public class StartApril {
 
         System.out.println("[5,2,1,4,3] == " + Arrays.toString(awenetaon.rearrangeArray(new int[]{1,2,3,4,5})));
         System.out.println("[0,2,6,7,9] == " + Arrays.toString(awenetaon.rearrangeArray(new int[]{6,2,0,9,7})));
+    }
+
+    public void findTheLongestBalancedSubstringOfABinaryString() {
+        FindTheLongestBalancedSubstringOfABinaryString ftlbsoabs = new FindTheLongestBalancedSubstringOfABinaryString();
+
+        System.out.println("6 == " + ftlbsoabs.findTheLongestBalancedSubstring("01000111"));
+        System.out.println("4 == " + ftlbsoabs.findTheLongestBalancedSubstring("00111"));
+        System.out.println("0 == " + ftlbsoabs.findTheLongestBalancedSubstring("111"));
+    }
+
+    public void minimumMovesToReachTargetScore() {
+        MinimumMovesToReachTargetScore mmtrts = new MinimumMovesToReachTargetScore();
+
+        System.out.println("4 == " + mmtrts.minMoves(5, 0));
+        System.out.println("7 == " + mmtrts.minMoves(19, 2));
+        System.out.println("4 == " + mmtrts.minMoves(10, 4));
     }
 }
