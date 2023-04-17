@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2023.april.CheckIfThereIsAValidPathInAGrid;
 import com.ss.leetcode.LC2023.april.ConvertAnArrayIntoA2DArrayWithConditions;
 import com.ss.leetcode.LC2023.april.CourseSchedule;
 import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
+import com.ss.leetcode.LC2023.april.FindAllLonelyNumbersInTheArray;
 import com.ss.leetcode.LC2023.april.FindTheLongestBalancedSubstringOfABinaryString;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
@@ -43,7 +44,8 @@ public class StartApril {
 //        start.maximumScoreFromRemovingStones();
 //        start.arrayWithElementsNotEqualToAverageOfNeighbors();
 //        start.findTheLongestBalancedSubstringOfABinaryString();
-        start.minimumMovesToReachTargetScore();
+//        start.minimumMovesToReachTargetScore();
+        start.findAllLonelyNumbersInTheArray();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -214,5 +216,12 @@ public class StartApril {
         System.out.println("4 == " + mmtrts.minMoves(5, 0));
         System.out.println("7 == " + mmtrts.minMoves(19, 2));
         System.out.println("4 == " + mmtrts.minMoves(10, 4));
+    }
+
+    public void findAllLonelyNumbersInTheArray() {
+        FindAllLonelyNumbersInTheArray falnita = new FindAllLonelyNumbersInTheArray();
+
+        System.out.println("[8,10] == " + falnita.findLonely(new int[]{10,6,5,8}));
+        System.out.println("[1,5] == " + falnita.findLonely(new int[]{1,3,5,3}));
     }
 }
