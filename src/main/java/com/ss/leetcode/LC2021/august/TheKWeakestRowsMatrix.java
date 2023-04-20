@@ -8,6 +8,39 @@ import java.util.List;
 public class TheKWeakestRowsMatrix {
     // https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
     public int[] kWeakestRows(int[][] mat, int k) {
+        int[][] weakRows = mapWeakRows(mat);
+        int[] kWeakest = new int[k];
+        while(k > 0) {
+            kWeakest[k-1] = weakRows[k-1][1];
+            k--;
+        }
+        return kWeakest;
+    }
+
+    private int[][] mapWeakRows(int[][] mat) {
+        int[][] weakRows = new int[mat.length][2];
+        for (int i = 0; i < mat.length; i++) {
+            weakRows[i][0] = powerOf(mat[i]);
+            weakRows[i][1] = i;
+        }
+        Arrays.sort(weakRows, (a, b) -> a[0] == b[0] ? a[1] - b[1]: a[0] - b[0]);
+        return weakRows;
+    }
+
+    private int powerOf(int[] row) {
+        int left = 0, right = row.length -1, pivot;
+        while(left <= right) {
+            pivot = left + (right - left) / 2;
+            if (row[pivot] == 1) {
+                left = pivot + 1;
+            } else {
+                right = pivot - 1;
+            }
+        }
+        return row[0] == 1 ? left : 0;
+    }
+
+    public int[] kWeakestRows2(int[][] mat, int k) {
         int[][] rows = new int[mat.length][2];
         for (int i = 0; i < mat.length; i++) {
             int count  = 0;
@@ -30,7 +63,7 @@ public class TheKWeakestRowsMatrix {
         return order;
     }
 
-    public int[] kWeakestRows2(int[][] mat, int k) {
+    public int[] kWeakestRows3(int[][] mat, int k) {
         List<Row> rows = new ArrayList<>(mat.length);
         int nrOfSoldiers = 0;
         for (int i = 0; i < mat.length; i++) {

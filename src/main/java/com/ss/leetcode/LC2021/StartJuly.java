@@ -35,11 +35,11 @@ public class StartJuly {
 //        start.pushDominoes();
 //        start.partitionArrayIntoDisjointIntervals();
 //        start.maximumPopulationYear();
-//        start.checkIfNAndDoubleExist();
+        start.checkIfNAndDoubleExist();
 //        start.binaryTreePruning();
 //        start.longestCommonPrefix();
 //        start.implementStrStr();
-        start.searchInsertPosition();
+//        start.searchInsertPosition();
 //        start.checkIfAllCharactersEqualOccurrences();
 //        start.describeThePainting();
 //        start.kthMissingPositiveNumber();
@@ -331,14 +331,15 @@ public class StartJuly {
     public void checkIfNAndDoubleExist() {
         CheckIfNAndDoubleExist cinade = new CheckIfNAndDoubleExist();
 
-        System.out.println("true == " + cinade.checkIfExist(new int[]{-766,259,203,601,896,-226,-844,168,126,-542,159,
-            -833,950,-454,-253,824,-395,155,94,894,-766,-63,836,-433,-780,611,-907,695,-395,-975,256,373,-971,-813,-154,
-            -765,691,812,617,-919,-616,-510,608,201,-138,-669,-764,-77,-658,394,-506,-675,523}));
+//        System.out.println("true == " + cinade.checkIfExist(new int[]{-766,259,203,601,896,-226,-844,168,126,-542,159,
+//            -833,950,-454,-253,824,-395,155,94,894,-766,-63,836,-433,-780,611,-907,695,-395,-975,256,373,-971,-813,-154,
+//            -765,691,812,617,-919,-616,-510,608,201,-138,-669,-764,-77,-658,394,-506,-675,523}));
+//        System.out.println("false == " + cinade.checkIfExist(new int[]{-2,0,10,-19,4,6,-8}));
+//        System.out.println("true == " + cinade.checkIfExist(new int[]{-10,12,-20,-8,15}));
+//        System.out.println("true == " + cinade.checkIfExist(new int[]{10,2,5,3}));
+//        System.out.println("true == " + cinade.checkIfExist(new int[]{7,1,14,11}));
+//        System.out.println("false == " + cinade.checkIfExist(new int[]{3,1,7,11}));
         System.out.println("false == " + cinade.checkIfExist(new int[]{-2,0,10,-19,4,6,-8}));
-        System.out.println("true == " + cinade.checkIfExist(new int[]{-10,12,-20,-8,15}));
-        System.out.println("true == " + cinade.checkIfExist(new int[]{10,2,5,3}));
-        System.out.println("true == " + cinade.checkIfExist(new int[]{7,1,14,11}));
-        System.out.println("false == " + cinade.checkIfExist(new int[]{3,1,7,11}));
     }
 
     public void binaryTreePruning() {

@@ -9,6 +9,34 @@ import java.util.Set;
 public class CheckIfNAndDoubleExist {
     // https://leetcode.com/problems/check-if-n-and-its-double-exist/
     public boolean checkIfExist(int[] arr) {
+        int[] count = new int[2001];
+        int mask;
+        for (int num : arr) {
+            num += 1000;
+            count[num]++;
+        }
+        if (count[1000] > 1) {
+            return true;
+        } else {
+            count[1000] = 0;
+        }
+        for (int i = 0; i <= 1500 ; i++) {
+            if (count[i] > 0) {
+                mask = i - 1000;
+                if (i < 1000) {
+                    if (mask % 2 == 0 && count[1000 + mask / 2] > 0) {
+                        return true;
+                    }
+                } else if (count[1000 + mask * 2] > 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public boolean checkIfExist2(int[] arr) {
         boolean zeroFound = false;
         Set<Integer> nums = new HashSet<>();
         for (int num : arr) {
@@ -20,7 +48,7 @@ public class CheckIfNAndDoubleExist {
         return false;
     }
 
-    public boolean checkIfExist2(int[] arr) {
+    public boolean checkIfExist3(int[] arr) {
         Map<Integer, Integer> numbers = new HashMap<>();
         for(int number: arr)
             numbers.merge(number, 1, Integer::sum);
@@ -35,7 +63,7 @@ public class CheckIfNAndDoubleExist {
         return false;
     }
 
-    public boolean checkIfExist3(int[] arr) {
+    public boolean checkIfExist4(int[] arr) {
         Arrays.sort(arr);
         int doubleValue = 0;
         for (int i = 0; i < arr.length - 1; i++) {
