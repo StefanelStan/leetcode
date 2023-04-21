@@ -2,7 +2,24 @@ package com.ss.leetcode.LC2021.august;
 
 public class FindMinInRotatedSortedArray {
     // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/
+    // PRO binary search
     public int findMin(int[] nums) {
+        int min = 5001;
+        int low = 0, high = nums.length - 1, pivot;
+        while (low <= high) {
+            pivot = low + (high - low) / 2;
+            if (nums[low] <= nums[pivot]) {
+                min = Math.min(min, nums[low]);
+                low = pivot + 1;
+            } else {
+                min = Math.min(min, nums[pivot + 1]);
+                high = pivot;
+            }
+        }
+        return min;
+    }
+
+    public int findMin2(int[] nums) {
         return findMinArray(nums, 0, nums.length-1);
     }
 

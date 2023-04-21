@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
 import com.ss.leetcode.LC2023.april.MinimumMovesToReachTargetScore;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
+import com.ss.leetcode.LC2023.april.SearchInRotatedSortedArray;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
 import com.ss.leetcode.LC2023.april.SimplifyPath;
@@ -45,7 +46,8 @@ public class StartApril {
 //        start.arrayWithElementsNotEqualToAverageOfNeighbors();
 //        start.findTheLongestBalancedSubstringOfABinaryString();
 //        start.minimumMovesToReachTargetScore();
-        start.findAllLonelyNumbersInTheArray();
+//        start.findAllLonelyNumbersInTheArray();
+        start.searchInRotatedSortedArray();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -223,5 +225,15 @@ public class StartApril {
 
         System.out.println("[8,10] == " + falnita.findLonely(new int[]{10,6,5,8}));
         System.out.println("[1,5] == " + falnita.findLonely(new int[]{1,3,5,3}));
+    }
+
+    public void searchInRotatedSortedArray() {
+        SearchInRotatedSortedArray sirsa = new SearchInRotatedSortedArray();
+
+        System.out.println("4 == " + sirsa.search(new int[]{4,5,6,7,0,1,2}, 0));
+        System.out.println("-1 == " + sirsa.search(new int[]{4,5,6,7,0,1,2}, 3));
+        System.out.println("-1 == " + sirsa.search(new int[]{1}, 0));
+        System.out.println("4 == " + sirsa.search(new int[]{4,5,6,7,8,1,2,3}, 8));
+        System.out.println("1 == " + sirsa.search(new int[]{5,1,2,3,4}, 1));
     }
 }
