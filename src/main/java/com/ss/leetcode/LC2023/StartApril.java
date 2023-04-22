@@ -15,6 +15,7 @@ import com.ss.leetcode.LC2023.april.MaximumScoreFromRemovingStones;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
 import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
 import com.ss.leetcode.LC2023.april.MinimumMovesToReachTargetScore;
+import com.ss.leetcode.LC2023.april.MinimumOperationsToMakeAUniValueGrid;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.SearchInRotatedSortedArray;
@@ -47,7 +48,8 @@ public class StartApril {
 //        start.findTheLongestBalancedSubstringOfABinaryString();
 //        start.minimumMovesToReachTargetScore();
 //        start.findAllLonelyNumbersInTheArray();
-        start.searchInRotatedSortedArray();
+//        start.searchInRotatedSortedArray();
+        start.minimumOperationsToMakeAUniValueGrid();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -235,5 +237,17 @@ public class StartApril {
         System.out.println("-1 == " + sirsa.search(new int[]{1}, 0));
         System.out.println("4 == " + sirsa.search(new int[]{4,5,6,7,8,1,2,3}, 8));
         System.out.println("1 == " + sirsa.search(new int[]{5,1,2,3,4}, 1));
+    }
+
+    public void minimumOperationsToMakeAUniValueGrid() {
+        MinimumOperationsToMakeAUniValueGrid motmauvg = new MinimumOperationsToMakeAUniValueGrid();
+
+        System.out.println("4 == " + motmauvg.minOperations(new int[][]{{2,4},{6,8}}, 2));
+        System.out.println("5 == " + motmauvg.minOperations(new int[][]{{1,5},{2,3}}, 1));
+        System.out.println("-1 == " + motmauvg.minOperations(new int[][]{{1,2},{3,4}}, 2));
+        System.out.println("-1 == " + motmauvg.minOperations(new int[][]{{1,2},{3,4}}, 2));
+        System.out.println("19 == " + motmauvg.minOperations(new int[][]{{1,1,1,1,3,3,5,5,5,9,7,9,7,7,7,7}}, 2));
+        System.out.println("12 == " + motmauvg.minOperations(new int[][]{{1,10,19,28}}, 3));
+        System.out.println("41 == " + motmauvg.minOperations(new int[][]{{1,2,3,4,5,6,7},{2,4,6,8,10,12,13}}, 1));
     }
 }
