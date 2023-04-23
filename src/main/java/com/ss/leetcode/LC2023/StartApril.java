@@ -1,10 +1,12 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.april.ArrayWithElementsNotEqualToAverageOfNeighbors;
+import com.ss.leetcode.LC2023.april.CalculateDelayedArrivalTime;
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
 import com.ss.leetcode.LC2023.april.CheckIfThereIsAValidPathInAGrid;
 import com.ss.leetcode.LC2023.april.ConvertAnArrayIntoA2DArrayWithConditions;
 import com.ss.leetcode.LC2023.april.CourseSchedule;
+import com.ss.leetcode.LC2023.april.CousinsInBinaryTreeII;
 import com.ss.leetcode.LC2023.april.DestroyingAsteroids;
 import com.ss.leetcode.LC2023.april.FindAllLonelyNumbersInTheArray;
 import com.ss.leetcode.LC2023.april.FindTheLongestBalancedSubstringOfABinaryString;
@@ -18,10 +20,13 @@ import com.ss.leetcode.LC2023.april.MinimumMovesToReachTargetScore;
 import com.ss.leetcode.LC2023.april.MinimumOperationsToMakeAUniValueGrid;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
+import com.ss.leetcode.LC2023.april.RestoreTheArray;
 import com.ss.leetcode.LC2023.april.SearchInRotatedSortedArray;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
 import com.ss.leetcode.LC2023.april.SimplifyPath;
+import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 import java.util.Arrays;
 
 public class StartApril {
@@ -49,7 +54,10 @@ public class StartApril {
 //        start.minimumMovesToReachTargetScore();
 //        start.findAllLonelyNumbersInTheArray();
 //        start.searchInRotatedSortedArray();
-        start.minimumOperationsToMakeAUniValueGrid();
+//        start.minimumOperationsToMakeAUniValueGrid();
+//        start.restoreTheArray();
+//        start.calculateDelayedArrivalTime();
+        start.cousinsInBinaryTreeII();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -249,5 +257,36 @@ public class StartApril {
         System.out.println("19 == " + motmauvg.minOperations(new int[][]{{1,1,1,1,3,3,5,5,5,9,7,9,7,7,7,7}}, 2));
         System.out.println("12 == " + motmauvg.minOperations(new int[][]{{1,10,19,28}}, 3));
         System.out.println("41 == " + motmauvg.minOperations(new int[][]{{1,2,3,4,5,6,7},{2,4,6,8,10,12,13}}, 1));
+    }
+
+    public void restoreTheArray() {
+        RestoreTheArray rta = new RestoreTheArray();
+
+        System.out.println("1 == " + rta.numberOfArrays("1000", 10000));
+        System.out.println("0 == " + rta.numberOfArrays("1000", 10));
+        System.out.println("8 == " + rta.numberOfArrays("1318", 2000));
+        System.out.println("8 == " + rta.numberOfArrays("1318", 2000));
+        System.out.println("0 == " + rta.numberOfArrays("34534543344234232304320342034202310231032400000000000", 17219));
+        System.out.println("250769347 == " + rta.numberOfArrays("345345433442342323043203420342023102310324000", 17219));
+    }
+
+    public void calculateDelayedArrivalTime() {
+        CalculateDelayedArrivalTime cdat = new CalculateDelayedArrivalTime();
+
+        System.out.println("20 == " + cdat.findDelayedArrivalTime(15, 5));
+        System.out.println("0 == " + cdat.findDelayedArrivalTime(13, 11));
+    }
+
+    public void cousinsInBinaryTreeII() {
+        CousinsInBinaryTreeII cibtii = new CousinsInBinaryTreeII();
+
+        TreeNode root1 = new TreeNode(5, new TreeNode(4, new TreeNode(1), new TreeNode(10)), new TreeNode(9, null, new TreeNode(7)));
+        TreeNode root2 = new TreeNode(3, new TreeNode(1), new TreeNode(2));
+        TreeNode root3 = new TreeNode(3);
+
+        System.out.println("[0,0,7,7,0, 11] == " + TreeNode.preOrder(cibtii.replaceValueInTree(root1)));
+        System.out.println("[0,0,0] == " + TreeNode.preOrder(cibtii.replaceValueInTree(root2)));
+        System.out.println("[0] == " + TreeNode.preOrder(cibtii.replaceValueInTree(root3)));
+
     }
 }
