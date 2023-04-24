@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.april.AppendKIntegersWithMinimalSum;
 import com.ss.leetcode.LC2023.april.ArrayWithElementsNotEqualToAverageOfNeighbors;
 import com.ss.leetcode.LC2023.april.CalculateDelayedArrivalTime;
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
@@ -57,7 +58,8 @@ public class StartApril {
 //        start.minimumOperationsToMakeAUniValueGrid();
 //        start.restoreTheArray();
 //        start.calculateDelayedArrivalTime();
-        start.cousinsInBinaryTreeII();
+//        start.cousinsInBinaryTreeII();
+        start.appendKIntegersWithMinimalSum();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -288,5 +290,13 @@ public class StartApril {
         System.out.println("[0,0,0] == " + TreeNode.preOrder(cibtii.replaceValueInTree(root2)));
         System.out.println("[0] == " + TreeNode.preOrder(cibtii.replaceValueInTree(root3)));
 
+    }
+
+    public void appendKIntegersWithMinimalSum() {
+        AppendKIntegersWithMinimalSum akiwms = new AppendKIntegersWithMinimalSum();
+
+        System.out.println("5 == " + akiwms.minimalKSum(new int[]{1,4,25,10,25}, 2));
+        System.out.println("25 == " + akiwms.minimalKSum(new int[]{5,6}, 6));
+        System.out.println("794 == " + akiwms.minimalKSum(new int[]{96,44,99,25,61,84,88,18,19,33,60,86,52,19,32,47,35,50,94,17,29,98,22,21,72,100,40,84}, 35));
     }
 }
