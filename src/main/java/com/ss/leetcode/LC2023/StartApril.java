@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.april.ArrayWithElementsNotEqualToAverageOfNeighbor
 import com.ss.leetcode.LC2023.april.CalculateDelayedArrivalTime;
 import com.ss.leetcode.LC2023.april.ChangeMinimumCharactersToSatisfyOneOfThreeConditions;
 import com.ss.leetcode.LC2023.april.CheckIfThereIsAValidPathInAGrid;
+import com.ss.leetcode.LC2023.april.ClosestNodesQueriesInABinarySearchTree;
 import com.ss.leetcode.LC2023.april.ConvertAnArrayIntoA2DArrayWithConditions;
 import com.ss.leetcode.LC2023.april.CourseSchedule;
 import com.ss.leetcode.LC2023.april.CousinsInBinaryTreeII;
@@ -13,6 +14,7 @@ import com.ss.leetcode.LC2023.april.FindAllLonelyNumbersInTheArray;
 import com.ss.leetcode.LC2023.april.FindTheLongestBalancedSubstringOfABinaryString;
 import com.ss.leetcode.LC2023.april.FindTheSubstringWithMaximumCost;
 import com.ss.leetcode.LC2023.april.FormSmallestNumberFromTwoDigitArrays;
+import com.ss.leetcode.LC2023.april.MaximalNetworkRank;
 import com.ss.leetcode.LC2023.april.MaximumDistanceBetweenAPairOfValues;
 import com.ss.leetcode.LC2023.april.MaximumScoreFromRemovingStones;
 import com.ss.leetcode.LC2023.april.MaximumSumObtainedOfAnyPermutation;
@@ -27,8 +29,8 @@ import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
 import com.ss.leetcode.LC2023.april.SimplifyPath;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.Tree;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartApril {
     public static void main(String[] args) {
@@ -59,7 +61,9 @@ public class StartApril {
 //        start.restoreTheArray();
 //        start.calculateDelayedArrivalTime();
 //        start.cousinsInBinaryTreeII();
-        start.appendKIntegersWithMinimalSum();
+//        start.appendKIntegersWithMinimalSum();
+//        start.maximalNetworkRank();
+        start.closestNodesQueriesInABinarySearchTree();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -294,9 +298,27 @@ public class StartApril {
 
     public void appendKIntegersWithMinimalSum() {
         AppendKIntegersWithMinimalSum akiwms = new AppendKIntegersWithMinimalSum();
-
         System.out.println("5 == " + akiwms.minimalKSum(new int[]{1,4,25,10,25}, 2));
         System.out.println("25 == " + akiwms.minimalKSum(new int[]{5,6}, 6));
         System.out.println("794 == " + akiwms.minimalKSum(new int[]{96,44,99,25,61,84,88,18,19,33,60,86,52,19,32,47,35,50,94,17,29,98,22,21,72,100,40,84}, 35));
+    }
+
+    public void maximalNetworkRank() {
+        MaximalNetworkRank mnr = new MaximalNetworkRank();
+
+        System.out.println("4 == " + mnr.maximalNetworkRank(4, new int[][]{{0,1},{0,3},{1,2},{1,3}}));
+        System.out.println("5 == " + mnr.maximalNetworkRank(5, new int[][]{{0,1},{0,3},{1,2},{1,3},{2,3},{2,4}}));
+        System.out.println("5 == " + mnr.maximalNetworkRank(8, new int[][]{{0,1},{1,2},{2,3},{2,4},{5,6},{5,7}}));
+        System.out.println("43 == " + mnr.maximalNetworkRank(32, new int[][]{{3,31},{13,22},{30,26},{26,6},{21,4},{26,14},{17,6},{11,2},{20,14},{22,5},{13,9},{9,21},{6,3},{25,28},{7,19},{25,15},{0,20},{18,19},{8,26},{18,0},{24,27},{20,5},{9,19},{14,16},{30,2},{2,0},{15,10},{5,11},{28,30},{17,27},{27,0},{12,20},{25,21},{12,26},{27,4},{11,13},{14,22},{12,11},{31,22},{19,1},{28,26},{9,27},{12,1},{27,8},{21,23},{10,4},{16,7},{22,28},{10,5},{25,1},{3,25},{28,16},{9,14},{13,12},{19,25},{30,4},{21,0},{31,16},{10,14},{13,14},{17,20},{12,2},{21,24},{3,19},{18,28},{7,14},{6,27},{21,11},{19,4},{22,26},{29,4},{12,22},{20,23},{30,0},{6,23},{22,11},{1,27},{9,23},{29,31},{27,13},{0,31},{7,2},{10,27},{10,22},{21,10},{24,25},{14,6},{22,0},{24,30},{0,9},{4,7},{12,17},{21,30},{29,6},{7,3},{16,23},{16,19},{0,6},{24,22},{19,13},{4,0},{12,25},{16,15},{22,3},{1,11},{18,17},{19,28},{2,13},{6,15},{12,23},{12,7},{7,10},{23,4},{2,23},{11,24},{16,21},{8,23},{3,18},{20,18},{20,11},{22,2},{17,5},{12,15},{20,26},{18,16},{18,26},{16,27},{2,18},{9,26},{0,29},{2,26},{30,13},{15,22},{25,14},{3,26},{10,23},{2,15},{12,16},{8,24},{14,17},{30,9},{20,28},{25,4},{29,20},{28,4},{25,13},{28,6},{14,8},{20,1},{26,23},{19,20},{29,13},{27,21},{19,17},{10,20},{3,17},{23,1},{14,2},{9,6},{9,16},{2,24},{4,20},{5,9},{28,11},{17,26},{20,15},{29,8},{7,23},{24,28},{22,23},{20,13},{12,10},{12,8},{2,1},{25,2},{9,15},{30,19},{11,27},{11,30},{4,26},{13,10},{31,6},{5,28},{23,24},{18,29},{29,19},{19,26},{11,16},{27,2},{31,21},{3,2},{31,12},{15,18},{30,5},{27,15},{30,23},{4,17},{23,18},{18,14},{21,22},{22,17},{27,28},{14,19},{16,17},{4,12},{31,2},{4,15},{29,7},{5,12},{3,21},{24,18},{17,30},{27,14},{31,19},{9,4},{11,23},{10,0},{27,30},{31,9},{20,8},{18,30},{6,19},{18,21},{10,19},{24,16},{13,5},{16,10},{4,6},{1,15},{24,1},{30,10},{19,11},{20,30},{27,31},{26,11},{4,3},{24,17},{30,3},{26,5},{29,24},{5,4},{24,7},{10,3},{4,31},{16,3},{7,17},{5,6},{25,9},{13,24},{14,4},{27,7},{0,28},{1,10},{26,7},{12,28},{16,6},{16,0},{2,9},{24,31},{3,20},{12,30},{25,29},{17,2},{4,16},{26,16},{6,30},{3,14},{21,28},{1,5},{22,7},{0,8}}));
+    }
+
+    public void closestNodesQueriesInABinarySearchTree() {
+        ClosestNodesQueriesInABinarySearchTree cnqiabst = new ClosestNodesQueriesInABinarySearchTree();
+
+        TreeNode root1 = new TreeNode(6, new TreeNode(2, new TreeNode(1), new TreeNode(4)), new TreeNode(13, new TreeNode(9), new TreeNode(15, new TreeNode(14), null)));
+
+        System.out.println("[[2,2],[4,6],[15,-1]] == " + cnqiabst.closestNodes(root1, List.of(2,5,16)));
+        System.out.println("[[1,1],[2,2],[2,4],[4,4],[4,6],[6,6],[6,9],[6,9],[9,9],[9,13],[9,13],[9,13],[13,13],[14,14],[15,15],[15,-1]] == "
+            + cnqiabst.closestNodes(root1, List.of(3,4,5,6,7,8,9,10,11,12,13,14,15,16)));
     }
 }
