@@ -22,13 +22,16 @@ import com.ss.leetcode.LC2023.april.MinimizeMaximumOfArray;
 import com.ss.leetcode.LC2023.april.MinimumMovesToReachTargetScore;
 import com.ss.leetcode.LC2023.april.MinimumOperationsToMakeAUniValueGrid;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
+import com.ss.leetcode.LC2023.april.NumberOfGoodLeafNodesPairs;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.RestoreTheArray;
 import com.ss.leetcode.LC2023.april.SearchInRotatedSortedArray;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
+import com.ss.leetcode.LC2023.april.SimilarStringGroups;
 import com.ss.leetcode.LC2023.april.SimplifyPath;
 import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.YieldTree;
 import java.util.Arrays;
 import java.util.List;
 
@@ -63,7 +66,9 @@ public class StartApril {
 //        start.cousinsInBinaryTreeII();
 //        start.appendKIntegersWithMinimalSum();
 //        start.maximalNetworkRank();
-        start.closestNodesQueriesInABinarySearchTree();
+//        start.closestNodesQueriesInABinarySearchTree();
+        start.similarStringGroups();
+//        start.numberOfGoodLeafNodesPairs();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -320,5 +325,25 @@ public class StartApril {
         System.out.println("[[2,2],[4,6],[15,-1]] == " + cnqiabst.closestNodes(root1, List.of(2,5,16)));
         System.out.println("[[1,1],[2,2],[2,4],[4,4],[4,6],[6,6],[6,9],[6,9],[9,9],[9,13],[9,13],[9,13],[13,13],[14,14],[15,15],[15,-1]] == "
             + cnqiabst.closestNodes(root1, List.of(3,4,5,6,7,8,9,10,11,12,13,14,15,16)));
+    }
+
+    public void similarStringGroups() {
+        SimilarStringGroups ssg = new SimilarStringGroups();
+
+        System.out.println("2 == " + ssg.numSimilarGroups(new String[]{"tars","rats","arts","star"}));
+        System.out.println("1 == " + ssg.numSimilarGroups(new String[]{"omv","ovm"}));
+    }
+
+    public void numberOfGoodLeafNodesPairs() {
+        NumberOfGoodLeafNodesPairs noglnp = new NumberOfGoodLeafNodesPairs();
+
+        TreeNode root1 = new TreeNode(1, new TreeNode(2, null, new TreeNode(4)), new TreeNode(3));
+        TreeNode root2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), new TreeNode(7)));
+        TreeNode root3 = new TreeNode(7, new TreeNode(1, new TreeNode(6), null),
+            new TreeNode(4, new TreeNode(5), new TreeNode(3, null, new TreeNode(2))));
+
+        System.out.println("1 == " + noglnp.countPairs(root1, 4));
+        System.out.println("2 == " + noglnp.countPairs(root2, 3));
+        System.out.println("1 == " + noglnp.countPairs(root3, 3));
     }
 }
