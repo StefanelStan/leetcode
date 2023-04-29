@@ -25,13 +25,14 @@ import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.NumberOfGoodLeafNodesPairs;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
 import com.ss.leetcode.LC2023.april.RestoreTheArray;
+import com.ss.leetcode.LC2023.april.RowWithMaximumOnes;
 import com.ss.leetcode.LC2023.april.SearchInRotatedSortedArray;
 import com.ss.leetcode.LC2023.april.SellDiminishingValuedColoredBalls;
 import com.ss.leetcode.LC2023.april.ShortestCycle;
 import com.ss.leetcode.LC2023.april.SimilarStringGroups;
 import com.ss.leetcode.LC2023.april.SimplifyPath;
+import com.ss.leetcode.LC2023.april.SlidingSubarrayBeauty;
 import com.ss.leetcode.shared.TreeNode;
-import com.sun.source.tree.YieldTree;
 import java.util.Arrays;
 import java.util.List;
 
@@ -67,8 +68,10 @@ public class StartApril {
 //        start.appendKIntegersWithMinimalSum();
 //        start.maximalNetworkRank();
 //        start.closestNodesQueriesInABinarySearchTree();
-        start.similarStringGroups();
+//        start.similarStringGroups();
 //        start.numberOfGoodLeafNodesPairs();
+//        start.rowWithMaximumOnes();
+        start.slidingSubarrayBeauty();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -345,5 +348,21 @@ public class StartApril {
         System.out.println("1 == " + noglnp.countPairs(root1, 4));
         System.out.println("2 == " + noglnp.countPairs(root2, 3));
         System.out.println("1 == " + noglnp.countPairs(root3, 3));
+    }
+
+    public void rowWithMaximumOnes() {
+        RowWithMaximumOnes rwmo = new RowWithMaximumOnes();
+
+        System.out.println("[0,1] == " + Arrays.toString(rwmo.rowAndMaximumOnes(new int[][]{{0,1},{1,0}})));
+        System.out.println("[1,2] == " + Arrays.toString(rwmo.rowAndMaximumOnes(new int[][]{{0,0,0},{1,1,1}})));
+        System.out.println("[1,2] == " + Arrays.toString(rwmo.rowAndMaximumOnes(new int[][]{{0,0},{1,1},{0,0}})));
+    }
+
+    public void slidingSubarrayBeauty() {
+        SlidingSubarrayBeauty ssb = new SlidingSubarrayBeauty();
+
+        System.out.println("[-1,-2,-2] == " + Arrays.toString(ssb.getSubarrayBeauty(new int[]{1,-1,-3,-2,3}, 3, 2)));
+        System.out.println("[-1,-2,-3,-4] == " + Arrays.toString(ssb.getSubarrayBeauty(new int[]{-1,-2,-3,-4,-5}, 2, 2)));
+        System.out.println("[-3,0,-3,-3,-3] == " + Arrays.toString(ssb.getSubarrayBeauty(new int[]{-3,1,2,-3,0,-3}, 2, 1)));
     }
 }

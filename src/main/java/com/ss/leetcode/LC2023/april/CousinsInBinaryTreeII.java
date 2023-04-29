@@ -12,7 +12,7 @@ public class CousinsInBinaryTreeII {
         2. Traverse the tree and for each node, if it is NOT null OR LEAF
             - get the sum of the two children
             - deduct the sum of the two children from the sum of all nodes on next level.
-            - replace the values of each children with the difference.
+            - replace the values of each child with the difference.
         3. Root value will also be set to 0.
         4. Return the root.
     */
