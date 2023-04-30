@@ -23,7 +23,9 @@ import com.ss.leetcode.LC2023.april.MinimumMovesToReachTargetScore;
 import com.ss.leetcode.LC2023.april.MinimumOperationsToMakeAUniValueGrid;
 import com.ss.leetcode.LC2023.april.NumberOfEnclaves;
 import com.ss.leetcode.LC2023.april.NumberOfGoodLeafNodesPairs;
+import com.ss.leetcode.LC2023.april.RLEIterator;
 import com.ss.leetcode.LC2023.april.RearrangeSpacesBetweenWords;
+import com.ss.leetcode.LC2023.april.RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable;
 import com.ss.leetcode.LC2023.april.RestoreTheArray;
 import com.ss.leetcode.LC2023.april.RowWithMaximumOnes;
 import com.ss.leetcode.LC2023.april.SearchInRotatedSortedArray;
@@ -71,7 +73,9 @@ public class StartApril {
 //        start.similarStringGroups();
 //        start.numberOfGoodLeafNodesPairs();
 //        start.rowWithMaximumOnes();
-        start.slidingSubarrayBeauty();
+//        start.slidingSubarrayBeauty();
+//        start.removeMaxNumberOfEdgesToKeepGraphFullyTraversable();
+        start.rleIterator();
     }
 
     public void formSmallestNumberFromTwoDigitArrays() {
@@ -364,5 +368,22 @@ public class StartApril {
         System.out.println("[-1,-2,-2] == " + Arrays.toString(ssb.getSubarrayBeauty(new int[]{1,-1,-3,-2,3}, 3, 2)));
         System.out.println("[-1,-2,-3,-4] == " + Arrays.toString(ssb.getSubarrayBeauty(new int[]{-1,-2,-3,-4,-5}, 2, 2)));
         System.out.println("[-3,0,-3,-3,-3] == " + Arrays.toString(ssb.getSubarrayBeauty(new int[]{-3,1,2,-3,0,-3}, 2, 1)));
+    }
+
+    public void removeMaxNumberOfEdgesToKeepGraphFullyTraversable() {
+        RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable rmnoetkgft = new RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable();
+
+        System.out.println("2 == " + rmnoetkgft.maxNumEdgesToRemove(4, new int[][]{{3,1,2},{3,2,3},{1,1,3},{1,2,4},{1,1,2},{2,3,4}}));
+        System.out.println("0 == " + rmnoetkgft.maxNumEdgesToRemove(4, new int[][]{{3,1,2},{3,2,3},{1,1,4},{2,1,4}}));
+        System.out.println("-1 == " + rmnoetkgft.maxNumEdgesToRemove(4, new int[][]{{3,2,2},{1,1,2},{2,3,4}}));
+    }
+
+    public void rleIterator() {
+        RLEIterator rlei = new RLEIterator(new int[]{3, 8, 0, 9, 2, 5});
+
+        System.out.println("8 == " + rlei.next(2));
+        System.out.println("8 == " + rlei.next(1));
+        System.out.println("5 == " + rlei.next(1));
+        System.out.println("-1 == " + rlei.next(2));
     }
 }
