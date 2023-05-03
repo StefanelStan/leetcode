@@ -16,33 +16,27 @@ public class FindTheDifferenceOfTwoArrays {
          3. Return a list containing both lists.
      */
     public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
-        boolean[] inOne = mapNums(nums1);
-        boolean[] inTwo = mapNums(nums2);
-        return getDifference(inOne, inTwo);
+        boolean[] present1 = markPresentNumbers(nums1);
+        boolean[] present2 = markPresentNumbers(nums2);
+        List<Integer> unique1 = new ArrayList<>();
+        List<Integer> unique2 = new ArrayList<>();
+        for (int i = 0; i < present1.length; i++) {
+            if (present1[i] ^ present2[i]) {
+                if (present1[i]) {
+                    unique1.add(i - 1000);
+                } else {
+                    unique2.add(i - 1000);
+                }
+            }
+        }
+        return List.of(unique1, unique2);
     }
 
-    private boolean[] mapNums(int[] nums) {
+    private boolean[] markPresentNumbers(int[] nums) {
         boolean[] present = new boolean[2001];
         for (int num : nums) {
             present[num + 1000] = true;
         }
         return present;
-    }
-
-    private List<List<Integer>> getDifference(boolean[] nums1, boolean[] nums2) {
-        List<Integer> diffOne = new ArrayList<>();
-        List<Integer> diffTwo = new ArrayList<>();
-        for(int i = 0, j = nums2.length -1; i < nums1.length; i++, j--) {
-            if(nums1[i] && !nums2[i]) {
-                diffOne.add(i - 1000);
-            }
-            if(nums2[j] && !nums1[j]) {
-                diffTwo.add(j - 1000);
-            }
-        }
-        List<List<Integer>> difference = new ArrayList<>(2);
-        difference.add(diffOne);
-        difference.add(diffTwo);
-        return difference;
     }
 }
