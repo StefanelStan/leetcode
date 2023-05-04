@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
+import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
 import com.ss.leetcode.LC2023.may.MaximumGap;
@@ -17,7 +18,8 @@ public class StartMay {
 //        start.containsDuplicateIII();
 //        start.maximumGap();
 //        start.minimumSizeSubarraySum();
-        start.majorityElementII();
+//        start.majorityElementII();
+        start.findTheWidthOfColumnsOfAGrid();
     }
 
     public void matrixBlockSum() {
@@ -69,5 +71,12 @@ public class StartMay {
         System.out.println("[1] == " + meii.majorityElement(new int[]{1}));
         System.out.println("[1,2] == " + meii.majorityElement(new int[]{1,2}));
         System.out.println("[1] == " + meii.majorityElement(new int[]{1,1}));
+    }
+
+    public void findTheWidthOfColumnsOfAGrid() {
+        FindTheWidthOfColumnsOfAGrid ftwocoag = new FindTheWidthOfColumnsOfAGrid();
+
+        System.out.println("[3] == " + Arrays.toString(ftwocoag.findColumnWidth(new int[][]{{1},{22},{333}})));
+        System.out.println("[3,1,2] == " + Arrays.toString(ftwocoag.findColumnWidth(new int[][]{{-15,1,3},{15,7,12},{5,6,-2}})));
     }
 }
