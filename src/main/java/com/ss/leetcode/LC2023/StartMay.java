@@ -1,12 +1,15 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
+import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
 import com.ss.leetcode.LC2023.may.MaximumGap;
+import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
 import com.ss.leetcode.LC2023.may.MinimumSizeSubarraySum;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
+import com.ss.leetcode.LC2023.may.SumMultiples;
 import java.util.Arrays;
 
 public class StartMay {
@@ -19,7 +22,10 @@ public class StartMay {
 //        start.maximumGap();
 //        start.minimumSizeSubarraySum();
 //        start.majorityElementII();
-        start.findTheWidthOfColumnsOfAGrid();
+//        start.findTheWidthOfColumnsOfAGrid();
+//        start.findThePrefixCommonArrayOfTwoArrays();
+//        start.maximumSumWithExactlyKElements();
+        start.sumMultiples();
     }
 
     public void matrixBlockSum() {
@@ -78,5 +84,27 @@ public class StartMay {
 
         System.out.println("[3] == " + Arrays.toString(ftwocoag.findColumnWidth(new int[][]{{1},{22},{333}})));
         System.out.println("[3,1,2] == " + Arrays.toString(ftwocoag.findColumnWidth(new int[][]{{-15,1,3},{15,7,12},{5,6,-2}})));
+    }
+
+    public void findThePrefixCommonArrayOfTwoArrays() {
+        FindThePrefixCommonArrayOfTwoArrays ftpcaota = new FindThePrefixCommonArrayOfTwoArrays();
+
+        System.out.println("[0,2,3,4] == " + Arrays.toString(ftpcaota.findThePrefixCommonArray(new int[]{1,3,2,4}, new int[]{3,1,2,4})));
+        System.out.println("[0,1,3] == " + Arrays.toString(ftpcaota.findThePrefixCommonArray(new int[]{2,3,1}, new int[]{3,1,2})));
+    }
+
+    public void maximumSumWithExactlyKElements() {
+        MaximumSumWithExactlyKElements msweke = new MaximumSumWithExactlyKElements();
+
+        System.out.println("18 == " + msweke.maximizeSum(new int[]{2,4,5,1,3}, 3));
+        System.out.println("11 == " + msweke.maximizeSum(new int[]{5,5,5}, 2));
+    }
+
+    public void sumMultiples() {
+        SumMultiples sm = new SumMultiples();
+
+        System.out.println("21 == " + sm.sumOfMultiples(7));
+        System.out.println("40 == " + sm.sumOfMultiples(10));
+        System.out.println("342 == " + sm.sumOfMultiples(35));
     }
 }
