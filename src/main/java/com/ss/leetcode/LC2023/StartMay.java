@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
 import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
+import com.ss.leetcode.LC2023.may.KItemsWithTheMaximumSum;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
 import com.ss.leetcode.LC2023.may.MaximumGap;
@@ -25,7 +26,8 @@ public class StartMay {
 //        start.findTheWidthOfColumnsOfAGrid();
 //        start.findThePrefixCommonArrayOfTwoArrays();
 //        start.maximumSumWithExactlyKElements();
-        start.sumMultiples();
+//        start.sumMultiples();
+        start.kItemsWithTheMaximumSum();
     }
 
     public void matrixBlockSum() {
@@ -106,5 +108,12 @@ public class StartMay {
         System.out.println("21 == " + sm.sumOfMultiples(7));
         System.out.println("40 == " + sm.sumOfMultiples(10));
         System.out.println("342 == " + sm.sumOfMultiples(35));
+    }
+
+    public void kItemsWithTheMaximumSum() {
+        KItemsWithTheMaximumSum kiwtms = new KItemsWithTheMaximumSum();
+
+        System.out.println("2 == " + kiwtms.kItemsWithMaximumSum(3, 2, 0, 2));
+        System.out.println("3 == " + kiwtms.kItemsWithMaximumSum(3, 2, 0, 4));
     }
 }
