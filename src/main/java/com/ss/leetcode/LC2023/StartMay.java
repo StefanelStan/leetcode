@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.may.CheckIfArrayPairsAreDivisibleByK;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
 import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
@@ -27,7 +28,8 @@ public class StartMay {
 //        start.findThePrefixCommonArrayOfTwoArrays();
 //        start.maximumSumWithExactlyKElements();
 //        start.sumMultiples();
-        start.kItemsWithTheMaximumSum();
+//        start.kItemsWithTheMaximumSum();
+        start.checkIfArrayPairsAreDivisibleByK();
     }
 
     public void matrixBlockSum() {
@@ -115,5 +117,15 @@ public class StartMay {
 
         System.out.println("2 == " + kiwtms.kItemsWithMaximumSum(3, 2, 0, 2));
         System.out.println("3 == " + kiwtms.kItemsWithMaximumSum(3, 2, 0, 4));
+    }
+
+    public void checkIfArrayPairsAreDivisibleByK() {
+        CheckIfArrayPairsAreDivisibleByK ciapadbk = new CheckIfArrayPairsAreDivisibleByK();
+
+        System.out.println("true == " + ciapadbk.canArrange(new int[]{1,2,3,4,5,10,6,7,8,9}, 5));
+        System.out.println("true == " + ciapadbk.canArrange(new int[]{1,2,3,4,5,6}, 7));
+        System.out.println("false == " + ciapadbk.canArrange(new int[]{1,2,3,4,5,6}, 10));
+        System.out.println("true == " + ciapadbk.canArrange(new int[]{-1,1,-2,2,-3,3,-4,4}, 3));
+        System.out.println("false == " + ciapadbk.canArrange(new int[]{1,2,3,4,5,6,6,6}, 7));
     }
 }
