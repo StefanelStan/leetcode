@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2023.may.KItemsWithTheMaximumSum;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
 import com.ss.leetcode.LC2023.may.MaximumGap;
+import com.ss.leetcode.LC2023.may.MaximumSumOfTwoNonOverlappingSubarrays;
 import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
 import com.ss.leetcode.LC2023.may.MinimumSizeSubarraySum;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
@@ -29,7 +30,8 @@ public class StartMay {
 //        start.maximumSumWithExactlyKElements();
 //        start.sumMultiples();
 //        start.kItemsWithTheMaximumSum();
-        start.checkIfArrayPairsAreDivisibleByK();
+//        start.checkIfArrayPairsAreDivisibleByK();
+        start.maximumSumOfTwoNonOverlappingSubarrays();
     }
 
     public void matrixBlockSum() {
@@ -127,5 +129,13 @@ public class StartMay {
         System.out.println("false == " + ciapadbk.canArrange(new int[]{1,2,3,4,5,6}, 10));
         System.out.println("true == " + ciapadbk.canArrange(new int[]{-1,1,-2,2,-3,3,-4,4}, 3));
         System.out.println("false == " + ciapadbk.canArrange(new int[]{1,2,3,4,5,6,6,6}, 7));
+    }
+
+    public void maximumSumOfTwoNonOverlappingSubarrays() {
+        MaximumSumOfTwoNonOverlappingSubarrays msotnos = new MaximumSumOfTwoNonOverlappingSubarrays();
+
+        System.out.println("20 == " + msotnos.maxSumTwoNoOverlap(new int[]{0,6,5,2,2,5,1,9,4}, 1, 2));
+        System.out.println("29 == " + msotnos.maxSumTwoNoOverlap(new int[]{3,8,1,3,2,1,8,9,0}, 3, 2));
+        System.out.println("31 == " + msotnos.maxSumTwoNoOverlap(new int[]{2,1,5,6,0,9,5,0,3,8}, 4, 3));
     }
 }
