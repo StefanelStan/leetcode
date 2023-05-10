@@ -2,7 +2,45 @@ package com.ss.leetcode.LC2022.april;
 
 public class SpiralMatrixII {
     // https://leetcode.com/problems/spiral-matrix-ii/
+    // PRO MODE
     public int[][] generateMatrix(int n) {
+        int[][] generated = new int[n][n];
+        int numToInsert = 1;
+        int topLeftRow = 0, topRightCol = n -1, bottomRightRow = n-1;
+        while (numToInsert <= n * n) {
+            numToInsert = traverseHorizontally(generated, topLeftRow, topRightCol, topLeftRow, 1, numToInsert);
+            numToInsert = traverseVertically(generated, topLeftRow, topRightCol, bottomRightRow, 1, numToInsert);
+            numToInsert = traverseHorizontally(generated, topRightCol, topLeftRow, bottomRightRow, -1, numToInsert);
+            numToInsert = traverseVertically(generated, bottomRightRow, topLeftRow, topLeftRow, -1, numToInsert);
+            topLeftRow++;
+            topRightCol--;
+            bottomRightRow--;
+        }
+        return generated;
+    }
+
+    private int traverseHorizontally(int[][] generated, int colStart, int colEnd, int row, int direction, int numToInsert) {
+        while (numToInsert <= generated.length * generated[0].length) {
+            generated[row][colStart] = numToInsert++;
+            if (colStart == colEnd) {
+                break;
+            }
+            colStart += direction;
+        }
+        return numToInsert;
+    }
+
+    private int traverseVertically(int[][] generated, int rowStart, int rowEnd, int col, int direction, int numToInsert) {
+        rowStart += direction;
+        while (rowStart != rowEnd && numToInsert <= generated.length * generated[0].length) {
+            generated[rowStart][col] = numToInsert++;
+            rowStart += direction;
+        }
+        return numToInsert;
+    }
+
+
+    public int[][] generateMatrix2(int n) {
         int[][] generated;
         if (n == 1) {
             generated = new int[][]{{1}};

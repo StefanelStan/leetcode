@@ -6,29 +6,15 @@ import java.util.List;
 public class SpiralMatrix {
     // https://leetcode.com/problems/spiral-matrix/submissions/
     public List<Integer> spiralOrder(int[][] matrix) {
-        int direction = 1, totalElements = matrix.length * matrix[0].length;
+        int totalElements = matrix.length * matrix[0].length;
         int[][] corners = getCorners(matrix);
         List<Integer> order = new ArrayList<>(totalElements);
         while (order.size() < totalElements) {
-            switch (direction) {
-                case 1 -> {
-                    moveHorizontally(matrix, corners[0], corners[1], 1, order);
-                    direction++;
-                }
-                case 2 -> {
-                    moveVertically(matrix, corners[1], corners[2], 1, order);
-                    direction++;
-                }
-                case 3 -> {
-                    moveHorizontally(matrix, corners[2], corners[3], -1, order);
-                    direction++;
-                }
-                default -> {
-                    moveVertically(matrix, corners[3], corners[0], -1, order);
-                    adjustCorners(corners);
-                    direction = 1;
-                }
-            }
+            moveHorizontally(matrix, corners[0], corners[1], 1, order);
+            moveVertically(matrix, corners[1], corners[2], 1, order);
+            moveHorizontally(matrix, corners[2], corners[3], -1, order);
+            moveVertically(matrix, corners[3], corners[0], -1, order);
+            adjustCorners(corners);
         }
         return order;
     }
@@ -36,7 +22,7 @@ public class SpiralMatrix {
     private void moveHorizontally(int[][] matrix, int[] from, int[] to, int direction, List<Integer> order) {
         int col = from[1];
         boolean finished = false;
-        while(!finished) {
+        while(!finished && matrix.length * matrix[0].length > order.size()) {
             order.add(matrix[from[0]][col]);
             finished = col == to[1];
             col += direction;
@@ -45,7 +31,7 @@ public class SpiralMatrix {
 
     private void moveVertically(int[][] matrix, int[] from, int[] to, int direction, List<Integer> order) {
         int row = from[0] + direction;
-        while(row != to[0]) {
+        while(row != to[0] && matrix.length * matrix[0].length > order.size()) {
             order.add(matrix[row][from[1]]);
             row += direction;
         }
