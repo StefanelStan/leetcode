@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2023.may.MaximumGap;
 import com.ss.leetcode.LC2023.may.MaximumSumOfTwoNonOverlappingSubarrays;
 import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
 import com.ss.leetcode.LC2023.may.MinimumSizeSubarraySum;
+import com.ss.leetcode.LC2023.may.NumberOfEvenAndOddBits;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
 import com.ss.leetcode.LC2023.may.SumMultiples;
 import java.util.Arrays;
@@ -31,7 +32,8 @@ public class StartMay {
 //        start.sumMultiples();
 //        start.kItemsWithTheMaximumSum();
 //        start.checkIfArrayPairsAreDivisibleByK();
-        start.maximumSumOfTwoNonOverlappingSubarrays();
+//        start.maximumSumOfTwoNonOverlappingSubarrays();
+        start.numberOfEvenAndOddBits();
     }
 
     public void matrixBlockSum() {
@@ -137,5 +139,12 @@ public class StartMay {
         System.out.println("20 == " + msotnos.maxSumTwoNoOverlap(new int[]{0,6,5,2,2,5,1,9,4}, 1, 2));
         System.out.println("29 == " + msotnos.maxSumTwoNoOverlap(new int[]{3,8,1,3,2,1,8,9,0}, 3, 2));
         System.out.println("31 == " + msotnos.maxSumTwoNoOverlap(new int[]{2,1,5,6,0,9,5,0,3,8}, 4, 3));
+    }
+
+    public void numberOfEvenAndOddBits() {
+        NumberOfEvenAndOddBits noeaob = new NumberOfEvenAndOddBits();
+
+        System.out.println("[2,0] == " + Arrays.toString(noeaob.evenOddBit(17)));
+        System.out.println("[0,1] == " + Arrays.toString(noeaob.evenOddBit(2)));
     }
 }
