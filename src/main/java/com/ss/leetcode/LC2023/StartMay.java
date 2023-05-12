@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2023.may.MaximumSumOfTwoNonOverlappingSubarrays;
 import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
 import com.ss.leetcode.LC2023.may.MinimumSizeSubarraySum;
 import com.ss.leetcode.LC2023.may.NumberOfEvenAndOddBits;
+import com.ss.leetcode.LC2023.may.PrimeInDiagonal;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
 import com.ss.leetcode.LC2023.may.SumMultiples;
 import java.util.Arrays;
@@ -33,7 +34,8 @@ public class StartMay {
 //        start.kItemsWithTheMaximumSum();
 //        start.checkIfArrayPairsAreDivisibleByK();
 //        start.maximumSumOfTwoNonOverlappingSubarrays();
-        start.numberOfEvenAndOddBits();
+//        start.numberOfEvenAndOddBits();
+        start.primeInDiagonal();
     }
 
     public void matrixBlockSum() {
@@ -146,5 +148,12 @@ public class StartMay {
 
         System.out.println("[2,0] == " + Arrays.toString(noeaob.evenOddBit(17)));
         System.out.println("[0,1] == " + Arrays.toString(noeaob.evenOddBit(2)));
+    }
+
+    public void primeInDiagonal() {
+        PrimeInDiagonal pid = new PrimeInDiagonal();
+
+        System.out.println("11 == " + pid.diagonalPrime(new int[][]{{1,2,3},{5,6,7},{9,10,11}}));
+        System.out.println("17 == " + pid.diagonalPrime(new int[][]{{1,2,3},{5,17,7},{9,10,11}}));
     }
 }
