@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.may.CheckIfArrayPairsAreDivisibleByK;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
+import com.ss.leetcode.LC2023.may.CountWaysToBuildGoodStrings;
 import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
 import com.ss.leetcode.LC2023.may.KItemsWithTheMaximumSum;
@@ -35,7 +36,8 @@ public class StartMay {
 //        start.checkIfArrayPairsAreDivisibleByK();
 //        start.maximumSumOfTwoNonOverlappingSubarrays();
 //        start.numberOfEvenAndOddBits();
-        start.primeInDiagonal();
+//        start.primeInDiagonal();
+        start.countWaysToBuildGoodStrings();
     }
 
     public void matrixBlockSum() {
@@ -155,5 +157,13 @@ public class StartMay {
 
         System.out.println("11 == " + pid.diagonalPrime(new int[][]{{1,2,3},{5,6,7},{9,10,11}}));
         System.out.println("17 == " + pid.diagonalPrime(new int[][]{{1,2,3},{5,17,7},{9,10,11}}));
+    }
+
+    public void countWaysToBuildGoodStrings() {
+        CountWaysToBuildGoodStrings cwtbgs = new CountWaysToBuildGoodStrings();
+
+        System.out.println("8 == " + cwtbgs.countGoodStrings(3,3,1,1));
+        System.out.println("5 == " + cwtbgs.countGoodStrings(2,3,1,2));
+        System.out.println("628681342 == " + cwtbgs.countGoodStrings(123,214,4,11));
     }
 }
