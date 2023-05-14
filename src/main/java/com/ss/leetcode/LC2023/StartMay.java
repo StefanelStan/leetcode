@@ -3,11 +3,14 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.may.CheckIfArrayPairsAreDivisibleByK;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
 import com.ss.leetcode.LC2023.may.CountWaysToBuildGoodStrings;
+import com.ss.leetcode.LC2023.may.DiagonalTraverse;
+import com.ss.leetcode.LC2023.may.EqualRowAndColumnPairs;
 import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
 import com.ss.leetcode.LC2023.may.KItemsWithTheMaximumSum;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
+import com.ss.leetcode.LC2023.may.MaximizeScoreAfterNOperations;
 import com.ss.leetcode.LC2023.may.MaximumGap;
 import com.ss.leetcode.LC2023.may.MaximumSumOfTwoNonOverlappingSubarrays;
 import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
@@ -37,7 +40,10 @@ public class StartMay {
 //        start.maximumSumOfTwoNonOverlappingSubarrays();
 //        start.numberOfEvenAndOddBits();
 //        start.primeInDiagonal();
-        start.countWaysToBuildGoodStrings();
+//        start.countWaysToBuildGoodStrings();
+//        start.maximizeScoreAfterNOperations();
+//        start.equalRowAndColumnPairs();
+        start.diagonalTraverse();
     }
 
     public void matrixBlockSum() {
@@ -165,5 +171,35 @@ public class StartMay {
         System.out.println("8 == " + cwtbgs.countGoodStrings(3,3,1,1));
         System.out.println("5 == " + cwtbgs.countGoodStrings(2,3,1,2));
         System.out.println("628681342 == " + cwtbgs.countGoodStrings(123,214,4,11));
+    }
+
+    public void maximizeScoreAfterNOperations() {
+        MaximizeScoreAfterNOperations msano = new MaximizeScoreAfterNOperations();
+
+        System.out.println("1 == " + msano.maxScore(new int[]{1,2}));
+        System.out.println("11 == " + msano.maxScore(new int[]{3,4,6,8}));
+        System.out.println("14 == " + msano.maxScore(new int[]{1,2,3,4,5,6}));
+        System.out.println("162 == " + msano.maxScore(new int[]{1,2,8,3,2,5,6,7,3,2,5,6,7,8}));
+        System.out.println("162 == " + msano.maxScore(new int[]{1,2,8,3,2,5,6,7,3,2,5,6,7,8}));
+        System.out.println("97 == " + msano.maxScore(new int[]{12,13,14,32,12,14,23,54}));
+        System.out.println("484 == " + msano.maxScore(new int[]{12,13,14,32,12,14,23,54,34,13,45,66,88,81}));
+        System.out.println("91 == " + msano.maxScore(new int[]{9,17,16,15,18,13,18,20}));
+    }
+
+    public void equalRowAndColumnPairs() {
+        EqualRowAndColumnPairs eracp = new EqualRowAndColumnPairs();
+
+        System.out.println("1 == " +eracp.equalPairs(new int[][]{{3,2,1},{1,7,6},{2,7,7}}));
+        System.out.println("3 == " +eracp.equalPairs(new int[][]{{3,1,2,2},{1,4,4,5},{2,4,2,2},{2,4,2,2}}));
+        System.out.println("3 == " +eracp.equalPairs(new int[][]{{3,1,2,2},{1,4,4,5},{2,4,2,2},{2,4,2,2}}));
+        System.out.println("4 == " +eracp.equalPairs(new int[][]{{1,1},{1,1}}));
+        System.out.println("0 == " +eracp.equalPairs(new int[][]{{2,1},{3,32}}));
+    }
+
+    public void diagonalTraverse() {
+        DiagonalTraverse dt = new DiagonalTraverse();
+
+        System.out.println("[1,2,4,7,5,3,6,8,9] == " + Arrays.toString(dt.findDiagonalOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}})));
+        System.out.println("[1,2,3,4] == " + Arrays.toString(dt.findDiagonalOrder(new int[][]{{1,2},{3,4}})));
     }
 }
