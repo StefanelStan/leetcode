@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
 import com.ss.leetcode.LC2023.may.KItemsWithTheMaximumSum;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
+import com.ss.leetcode.LC2023.may.MaxSumOfAPairWithEqualSumOfDigits;
 import com.ss.leetcode.LC2023.may.MaximizeScoreAfterNOperations;
 import com.ss.leetcode.LC2023.may.MaximumGap;
 import com.ss.leetcode.LC2023.may.MaximumSumOfTwoNonOverlappingSubarrays;
@@ -17,6 +18,7 @@ import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
 import com.ss.leetcode.LC2023.may.MinimumSizeSubarraySum;
 import com.ss.leetcode.LC2023.may.NumberOfEvenAndOddBits;
 import com.ss.leetcode.LC2023.may.PrimeInDiagonal;
+import com.ss.leetcode.LC2023.may.RangeFrequencyQueries;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
 import com.ss.leetcode.LC2023.may.SumMultiples;
 import java.util.Arrays;
@@ -43,7 +45,9 @@ public class StartMay {
 //        start.countWaysToBuildGoodStrings();
 //        start.maximizeScoreAfterNOperations();
 //        start.equalRowAndColumnPairs();
-        start.diagonalTraverse();
+//        start.diagonalTraverse();
+//        start.rangeFrequencyQueries();
+        start.maxSumOfAPairWithEqualSumOfDigits();
     }
 
     public void matrixBlockSum() {
@@ -201,5 +205,30 @@ public class StartMay {
 
         System.out.println("[1,2,4,7,5,3,6,8,9] == " + Arrays.toString(dt.findDiagonalOrder(new int[][]{{1,2,3},{4,5,6},{7,8,9}})));
         System.out.println("[1,2,3,4] == " + Arrays.toString(dt.findDiagonalOrder(new int[][]{{1,2},{3,4}})));
+    }
+
+    public void rangeFrequencyQueries() {
+        RangeFrequencyQueries rfq = new RangeFrequencyQueries(new int[]{12, 33, 4, 56, 22, 2, 34, 33, 22, 12, 34, 56});
+
+        System.out.println("1 == " + rfq.query(1,2,4));
+        System.out.println("2 == " + rfq.query(0,11,33));
+        System.out.println("2 == " + rfq.query(0,11,33));
+
+        rfq = new RangeFrequencyQueries(new int[]{3,4,5,3,3,2,2,2,5,4});
+        System.out.println("2 == " + rfq.query(2,6,3));
+        System.out.println("0 == " + rfq.query(5,6,5));
+        System.out.println("2 == " + rfq.query(1,6,2));
+        System.out.println("1 == " + rfq.query(0,2,3));
+        System.out.println("0 == " + rfq.query(5,6,4));
+    }
+
+    public void maxSumOfAPairWithEqualSumOfDigits() {
+        MaxSumOfAPairWithEqualSumOfDigits msoapwesod = new MaxSumOfAPairWithEqualSumOfDigits();
+
+        System.out.println("54 == " + msoapwesod.maximumSum(new int[]{18,43,36,13,7}));
+        System.out.println("-1 == " + msoapwesod.maximumSum(new int[]{10,12,19,14}));
+        System.out.println("-1 == " + msoapwesod.maximumSum(new int[]{1}));
+        System.out.println("233 == " + msoapwesod.maximumSum(new int[]{18,43,36,13,7,11,12,13,14,15,51,23,32,44,44,76,67,157}));
+        System.out.println("155 == " + msoapwesod.maximumSum(new int[]{19,91,55,64}));
     }
 }
