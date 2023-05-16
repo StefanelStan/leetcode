@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.may.AppendCharactersToStringToMakeSubsequence;
 import com.ss.leetcode.LC2023.may.CheckIfArrayPairsAreDivisibleByK;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
 import com.ss.leetcode.LC2023.may.CountWaysToBuildGoodStrings;
@@ -47,7 +48,8 @@ public class StartMay {
 //        start.equalRowAndColumnPairs();
 //        start.diagonalTraverse();
 //        start.rangeFrequencyQueries();
-        start.maxSumOfAPairWithEqualSumOfDigits();
+//        start.maxSumOfAPairWithEqualSumOfDigits();
+        start.appendCharactersToStringToMakeSubsequence();
     }
 
     public void matrixBlockSum() {
@@ -230,5 +232,13 @@ public class StartMay {
         System.out.println("-1 == " + msoapwesod.maximumSum(new int[]{1}));
         System.out.println("233 == " + msoapwesod.maximumSum(new int[]{18,43,36,13,7,11,12,13,14,15,51,23,32,44,44,76,67,157}));
         System.out.println("155 == " + msoapwesod.maximumSum(new int[]{19,91,55,64}));
+    }
+
+    public void appendCharactersToStringToMakeSubsequence() {
+        AppendCharactersToStringToMakeSubsequence actstms = new AppendCharactersToStringToMakeSubsequence();
+
+        System.out.println("4 == " + actstms.appendCharacters("coaching", "coding"));
+        System.out.println("0 == " + actstms.appendCharacters("abcde", "a"));
+        System.out.println("5 == " + actstms.appendCharacters("z", "abcde"));
     }
 }
