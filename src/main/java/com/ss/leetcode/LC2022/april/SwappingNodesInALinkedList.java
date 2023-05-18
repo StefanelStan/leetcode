@@ -5,6 +5,8 @@ import com.ss.leetcode.shared.ListNode;
 public class SwappingNodesInALinkedList {
     // https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
     // This swaps the values, not the nodes.
+    // Try to run pointer 1 from 0 to K. (start -> pointer1 will have a window of k. Push this window until the end
+    // Once hit, run another from beginning and stop when pointer reaches null.
     public ListNode swapNodes(ListNode head, int k) {
         ListNode originalHead = head;
         int size = 0;
