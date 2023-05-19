@@ -6,8 +6,10 @@ import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
 import com.ss.leetcode.LC2023.may.CountWaysToBuildGoodStrings;
 import com.ss.leetcode.LC2023.may.DiagonalTraverse;
 import com.ss.leetcode.LC2023.may.EqualRowAndColumnPairs;
+import com.ss.leetcode.LC2023.may.FindTheDistinctDifferenceArray;
 import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
+import com.ss.leetcode.LC2023.may.IsGraphBipartite;
 import com.ss.leetcode.LC2023.may.KItemsWithTheMaximumSum;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
@@ -49,7 +51,9 @@ public class StartMay {
 //        start.diagonalTraverse();
 //        start.rangeFrequencyQueries();
 //        start.maxSumOfAPairWithEqualSumOfDigits();
-        start.appendCharactersToStringToMakeSubsequence();
+//        start.appendCharactersToStringToMakeSubsequence();
+        start.isGraphBipartite();
+//        start.findTheDistinctDifferenceArray();
     }
 
     public void matrixBlockSum() {
@@ -240,5 +244,19 @@ public class StartMay {
         System.out.println("4 == " + actstms.appendCharacters("coaching", "coding"));
         System.out.println("0 == " + actstms.appendCharacters("abcde", "a"));
         System.out.println("5 == " + actstms.appendCharacters("z", "abcde"));
+    }
+
+    public void isGraphBipartite() {
+        IsGraphBipartite igb = new IsGraphBipartite();
+
+        System.out.println("false == " + igb.isBipartite(new int[][]{{1,2,3},{0,2},{0,1,3},{0,2}}));
+        System.out.println("true == " + igb.isBipartite(new int[][]{{1,3},{0,2},{1,3},{0,2}}));
+    }
+
+    public void findTheDistinctDifferenceArray() {
+        FindTheDistinctDifferenceArray ftdda = new FindTheDistinctDifferenceArray();
+
+        System.out.println("[-3,-1,1,3,5] == " + Arrays.toString(ftdda.distinctDifferenceArray(new int[]{1,2,3,4,5})));
+        System.out.println("[-2,-1,0,2,3] == " + Arrays.toString(ftdda.distinctDifferenceArray(new int[]{3,2,3,4,2})));
     }
 }
