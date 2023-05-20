@@ -23,7 +23,9 @@ import com.ss.leetcode.LC2023.may.NumberOfEvenAndOddBits;
 import com.ss.leetcode.LC2023.may.PrimeInDiagonal;
 import com.ss.leetcode.LC2023.may.RangeFrequencyQueries;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
+import com.ss.leetcode.LC2023.may.SpiralMatrixIV;
 import com.ss.leetcode.LC2023.may.SumMultiples;
+import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 
 public class StartMay {
@@ -52,8 +54,9 @@ public class StartMay {
 //        start.rangeFrequencyQueries();
 //        start.maxSumOfAPairWithEqualSumOfDigits();
 //        start.appendCharactersToStringToMakeSubsequence();
-        start.isGraphBipartite();
+//        start.isGraphBipartite();
 //        start.findTheDistinctDifferenceArray();
+        start.spiralMatrixIV();
     }
 
     public void matrixBlockSum() {
@@ -258,5 +261,15 @@ public class StartMay {
 
         System.out.println("[-3,-1,1,3,5] == " + Arrays.toString(ftdda.distinctDifferenceArray(new int[]{1,2,3,4,5})));
         System.out.println("[-2,-1,0,2,3] == " + Arrays.toString(ftdda.distinctDifferenceArray(new int[]{3,2,3,4,2})));
+    }
+
+    public void spiralMatrixIV() {
+        SpiralMatrixIV smiv = new SpiralMatrixIV();
+
+        ListNode head1 = ListNode.makeChain(new int[]{3,0,2,6,8,1,7,9,4,2,5,5,0});
+        ListNode head2 = ListNode.makeChain(new int[]{0,1,2});
+
+        System.out.println("[[3,0,2,6,8],[5,0,-1,-1,1],[5,2,4,9,7]] == " + Arrays.deepToString(smiv.spiralMatrix(3, 5, head1)));
+        System.out.println("[[0,1,2,-1]] == " + Arrays.deepToString(smiv.spiralMatrix(1, 4, head2)));
     }
 }
