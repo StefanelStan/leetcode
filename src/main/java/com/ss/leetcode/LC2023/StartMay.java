@@ -23,8 +23,10 @@ import com.ss.leetcode.LC2023.may.NumberOfEvenAndOddBits;
 import com.ss.leetcode.LC2023.may.PrimeInDiagonal;
 import com.ss.leetcode.LC2023.may.RangeFrequencyQueries;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
+import com.ss.leetcode.LC2023.may.ShortestBridge;
 import com.ss.leetcode.LC2023.may.SpiralMatrixIV;
 import com.ss.leetcode.LC2023.may.SumMultiples;
+import com.ss.leetcode.LC2023.may.TheKStrongestValuesInAnArray;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 
@@ -56,7 +58,9 @@ public class StartMay {
 //        start.appendCharactersToStringToMakeSubsequence();
 //        start.isGraphBipartite();
 //        start.findTheDistinctDifferenceArray();
-        start.spiralMatrixIV();
+//        start.spiralMatrixIV();
+//        start.shortestBridge();
+        start.theKStrongestValuesInAnArray();
     }
 
     public void matrixBlockSum() {
@@ -271,5 +275,21 @@ public class StartMay {
 
         System.out.println("[[3,0,2,6,8],[5,0,-1,-1,1],[5,2,4,9,7]] == " + Arrays.deepToString(smiv.spiralMatrix(3, 5, head1)));
         System.out.println("[[0,1,2,-1]] == " + Arrays.deepToString(smiv.spiralMatrix(1, 4, head2)));
+    }
+
+    public void shortestBridge() {
+        ShortestBridge sb = new ShortestBridge();
+
+        System.out.println("1 == " + sb.shortestBridge(new int[][]{{0,1},{1,0}}));
+        System.out.println("2 == " + sb.shortestBridge(new int[][]{{0,1,0},{0,0,0},{0,0,1}}));
+        System.out.println("1 == " + sb.shortestBridge(new int[][]{{1,1,1,1,1},{1,0,0,0,1},{1,0,1,0,1},{1,0,0,0,1},{1,1,1,1,1}}));
+    }
+
+    public void theKStrongestValuesInAnArray() {
+        TheKStrongestValuesInAnArray tksviaa = new TheKStrongestValuesInAnArray();
+
+        System.out.println("[5,1] == " + Arrays.toString(tksviaa.getStrongest(new int[]{1,2,3,4,5}, 2)));
+        System.out.println("[5,5] == " + Arrays.toString(tksviaa.getStrongest(new int[]{1,1,3,5,5}, 2)));
+        System.out.println("[11,8,6,6,7] == " + Arrays.toString(tksviaa.getStrongest(new int[]{6,7,11,7,6,8}, 5)));
     }
 }
