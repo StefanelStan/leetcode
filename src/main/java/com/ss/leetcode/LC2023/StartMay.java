@@ -1,9 +1,12 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.may.AllDivisionsWithTheHighestScoreOfABinaryArray;
 import com.ss.leetcode.LC2023.may.AppendCharactersToStringToMakeSubsequence;
 import com.ss.leetcode.LC2023.may.CheckIfArrayPairsAreDivisibleByK;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
+import com.ss.leetcode.LC2023.may.CountTheNumberOfCompleteComponents;
 import com.ss.leetcode.LC2023.may.CountWaysToBuildGoodStrings;
+import com.ss.leetcode.LC2023.may.DetonateTheMaximumBombs;
 import com.ss.leetcode.LC2023.may.DiagonalTraverse;
 import com.ss.leetcode.LC2023.may.EqualRowAndColumnPairs;
 import com.ss.leetcode.LC2023.may.FindTheDistinctDifferenceArray;
@@ -60,7 +63,10 @@ public class StartMay {
 //        start.findTheDistinctDifferenceArray();
 //        start.spiralMatrixIV();
 //        start.shortestBridge();
-        start.theKStrongestValuesInAnArray();
+//        start.theKStrongestValuesInAnArray();
+//        start.allDivisionsWithTheHighestScoreOfABinaryArray();
+        start.detonateTheMaximumBombs();
+//        start.countTheNumberOfCompleteComponents();
     }
 
     public void matrixBlockSum() {
@@ -291,5 +297,31 @@ public class StartMay {
         System.out.println("[5,1] == " + Arrays.toString(tksviaa.getStrongest(new int[]{1,2,3,4,5}, 2)));
         System.out.println("[5,5] == " + Arrays.toString(tksviaa.getStrongest(new int[]{1,1,3,5,5}, 2)));
         System.out.println("[11,8,6,6,7] == " + Arrays.toString(tksviaa.getStrongest(new int[]{6,7,11,7,6,8}, 5)));
+    }
+
+    public void allDivisionsWithTheHighestScoreOfABinaryArray() {
+        AllDivisionsWithTheHighestScoreOfABinaryArray adwthsoaba = new AllDivisionsWithTheHighestScoreOfABinaryArray();
+
+        System.out.println("[2,4] == " + adwthsoaba.maxScoreIndices(new int[]{0,0,1,0}));
+        System.out.println("[3] == " + adwthsoaba.maxScoreIndices(new int[]{0,0,0}));
+        System.out.println("[0] == " + adwthsoaba.maxScoreIndices(new int[]{1,1}));
+    }
+
+    public void detonateTheMaximumBombs() {
+        DetonateTheMaximumBombs dtmb = new DetonateTheMaximumBombs();
+
+        System.out.println("2 == " + dtmb.maximumDetonation(new int[][]{{2,1,3},{6,1,4}}));
+        System.out.println("1 == " + dtmb.maximumDetonation(new int[][]{{1,1,5},{10,10,5}}));
+        System.out.println("5 == " + dtmb.maximumDetonation(new int[][]{{1,2,3},{2,3,1},{3,4,2},{4,5,3},{5,6,4}}));
+        System.out.println("1 == " + dtmb.maximumDetonation(new int[][]{{54,95,4},{99,46,3},{29,21,3},{96,72,8},{49,43,3},{11,20,3},{2,57,1},{69,51,7},{97,1,10},{85,45,2},{38,47,1},{83,75,3},{65,59,3},{33,4,1},{32,10,2},{20,97,8},{35,37,3}}));
+        System.out.println("3 == " + dtmb.maximumDetonation(new int[][]{{7,26,7},{7,18,4},{3,10,7},{17,50,1},{3,25,10},{85,23,8},{80,50,1},{58,74,1},{38,39,7},{50,51,8},{31,99,3},{53,6,5},{59,27,10},{87,78,9},{68,58,3}}));
+        System.out.println("9 == " + dtmb.maximumDetonation(new int[][]{{855,82,158},{17,719,430},{90,756,164},{376,17,340},{691,636,152},{565,776,5},{464,154,271},{53,361,162},{278,609,82},{202,927,219},{542,865,377},{330,402,270},{720,199,10},{986,697,443},{471,296,69},{393,81,404},{127,405,177}}));
+    }
+
+    public void countTheNumberOfCompleteComponents() {
+        CountTheNumberOfCompleteComponents ctnocc = new CountTheNumberOfCompleteComponents();
+
+        System.out.println("3 == " + ctnocc.countCompleteComponents(6, new int[][]{{0,1},{0,2},{1,2},{3,4}}));
+        System.out.println("1 == " + ctnocc.countCompleteComponents(6, new int[][]{{0,1},{0,2},{1,2},{3,4},{3,5}}));
     }
 }
