@@ -19,6 +19,7 @@ import com.ss.leetcode.LC2023.may.MatrixBlockSum;
 import com.ss.leetcode.LC2023.may.MaxSumOfAPairWithEqualSumOfDigits;
 import com.ss.leetcode.LC2023.may.MaximizeScoreAfterNOperations;
 import com.ss.leetcode.LC2023.may.MaximumGap;
+import com.ss.leetcode.LC2023.may.MaximumSubsequenceScore;
 import com.ss.leetcode.LC2023.may.MaximumSumOfTwoNonOverlappingSubarrays;
 import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
 import com.ss.leetcode.LC2023.may.MinimumSizeSubarraySum;
@@ -28,6 +29,7 @@ import com.ss.leetcode.LC2023.may.RangeFrequencyQueries;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
 import com.ss.leetcode.LC2023.may.ShortestBridge;
 import com.ss.leetcode.LC2023.may.SpiralMatrixIV;
+import com.ss.leetcode.LC2023.may.SumInAMatrix;
 import com.ss.leetcode.LC2023.may.SumMultiples;
 import com.ss.leetcode.LC2023.may.TheKStrongestValuesInAnArray;
 import com.ss.leetcode.shared.ListNode;
@@ -65,8 +67,10 @@ public class StartMay {
 //        start.shortestBridge();
 //        start.theKStrongestValuesInAnArray();
 //        start.allDivisionsWithTheHighestScoreOfABinaryArray();
-        start.detonateTheMaximumBombs();
+//        start.detonateTheMaximumBombs();
 //        start.countTheNumberOfCompleteComponents();
+//        start.maximumSubsequenceScore();
+        start.sumInAMatrix();
     }
 
     public void matrixBlockSum() {
@@ -323,5 +327,22 @@ public class StartMay {
 
         System.out.println("3 == " + ctnocc.countCompleteComponents(6, new int[][]{{0,1},{0,2},{1,2},{3,4}}));
         System.out.println("1 == " + ctnocc.countCompleteComponents(6, new int[][]{{0,1},{0,2},{1,2},{3,4},{3,5}}));
+    }
+
+    public void maximumSubsequenceScore() {
+        MaximumSubsequenceScore mss = new MaximumSubsequenceScore();
+
+        System.out.println("12 == " + mss.maxScore(new int[]{1,3,3,2}, new int[]{2,1,3,4}, 3));
+        System.out.println("30 == " + mss.maxScore(new int[]{4,2,3,1,1}, new int[]{7,5,10,9,6}, 1));
+        System.out.println("168 == " + mss.maxScore(new int[]{2,1,14,12}, new int[]{11,7,13,6}, 3));
+        System.out.println("216 == " + mss.maxScore(new int[]{2,1,14,12,8,4,1,6,2,7,2}, new int[]{11,7,13,6,1,7,8,2,1,5,9}, 7));
+        System.out.println("98 == " + mss.maxScore(new int[]{2,1,14,12,8,4,1,6,2,7,2}, new int[]{11,7,13,6,1,7,8,2,1,5,9}, 9));
+    }
+
+    public void sumInAMatrix() {
+        SumInAMatrix siam = new SumInAMatrix();
+
+        System.out.println("15 == " + siam.matrixSum(new int[][]{{7,2,1},{6,4,2},{6,5,3},{3,2,1}}));
+        System.out.println("1 == " + siam.matrixSum(new int[][]{{1}}));
     }
 }
