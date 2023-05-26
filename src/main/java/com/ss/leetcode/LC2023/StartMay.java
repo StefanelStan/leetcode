@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.may.AllDivisionsWithTheHighestScoreOfABinaryArray;
+import com.ss.leetcode.LC2023.may.AllNodesDistanceKInBinaryTree;
 import com.ss.leetcode.LC2023.may.AppendCharactersToStringToMakeSubsequence;
 import com.ss.leetcode.LC2023.may.CheckIfArrayPairsAreDivisibleByK;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
@@ -33,6 +34,8 @@ import com.ss.leetcode.LC2023.may.SumInAMatrix;
 import com.ss.leetcode.LC2023.may.SumMultiples;
 import com.ss.leetcode.LC2023.may.TheKStrongestValuesInAnArray;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.TreeNode;
+import com.sun.source.tree.Tree;
 import java.util.Arrays;
 
 public class StartMay {
@@ -70,7 +73,8 @@ public class StartMay {
 //        start.detonateTheMaximumBombs();
 //        start.countTheNumberOfCompleteComponents();
 //        start.maximumSubsequenceScore();
-        start.sumInAMatrix();
+//        start.sumInAMatrix();
+        start.allNodesDistanceKInBinaryTree();
     }
 
     public void matrixBlockSum() {
@@ -344,5 +348,17 @@ public class StartMay {
 
         System.out.println("15 == " + siam.matrixSum(new int[][]{{7,2,1},{6,4,2},{6,5,3},{3,2,1}}));
         System.out.println("1 == " + siam.matrixSum(new int[][]{{1}}));
+    }
+
+    public void allNodesDistanceKInBinaryTree() {
+        AllNodesDistanceKInBinaryTree andkibt = new AllNodesDistanceKInBinaryTree();
+
+        TreeNode target1 = new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4)));
+        TreeNode root1 = new TreeNode(3, target1, new TreeNode(1, new TreeNode(0), new TreeNode(8)));
+
+        TreeNode root2 = new TreeNode(1);
+
+        System.out.println("[7,4,1] == " + andkibt.distanceK(root1, target1, 2));
+        System.out.println("[] == " + andkibt.distanceK(root2, root2, 3));
     }
 }
