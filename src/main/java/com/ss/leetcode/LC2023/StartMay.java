@@ -15,6 +15,7 @@ import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
 import com.ss.leetcode.LC2023.may.IsGraphBipartite;
 import com.ss.leetcode.LC2023.may.KItemsWithTheMaximumSum;
+import com.ss.leetcode.LC2023.may.LongestUnivaluePath;
 import com.ss.leetcode.LC2023.may.MajorityElementII;
 import com.ss.leetcode.LC2023.may.MatrixBlockSum;
 import com.ss.leetcode.LC2023.may.MaxSumOfAPairWithEqualSumOfDigits;
@@ -74,7 +75,8 @@ public class StartMay {
 //        start.countTheNumberOfCompleteComponents();
 //        start.maximumSubsequenceScore();
 //        start.sumInAMatrix();
-        start.allNodesDistanceKInBinaryTree();
+//        start.allNodesDistanceKInBinaryTree();
+        start.longestUnivaluePath();
     }
 
     public void matrixBlockSum() {
@@ -360,5 +362,15 @@ public class StartMay {
 
         System.out.println("[7,4,1] == " + andkibt.distanceK(root1, target1, 2));
         System.out.println("[] == " + andkibt.distanceK(root2, root2, 3));
+    }
+
+    public void longestUnivaluePath() {
+        LongestUnivaluePath lup = new LongestUnivaluePath();
+
+        TreeNode root1 = new TreeNode(5, new TreeNode(4, new TreeNode(1), new TreeNode(1)), new TreeNode(5, null, new TreeNode(5)));
+        TreeNode root2 = new TreeNode(1, new TreeNode(4, new TreeNode(4), new TreeNode(4)), new TreeNode(5, null, new TreeNode(5)));
+
+        System.out.println("2 == " + lup.longestUnivaluePath(root1));
+        System.out.println("2 == " + lup.longestUnivaluePath(root2));
     }
 }
