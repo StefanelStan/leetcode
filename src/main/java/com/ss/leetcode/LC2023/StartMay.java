@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.may.AllDivisionsWithTheHighestScoreOfABinaryArray;
 import com.ss.leetcode.LC2023.may.AllNodesDistanceKInBinaryTree;
 import com.ss.leetcode.LC2023.may.AppendCharactersToStringToMakeSubsequence;
+import com.ss.leetcode.LC2023.may.BuyTwoChocolates;
 import com.ss.leetcode.LC2023.may.CheckIfArrayPairsAreDivisibleByK;
 import com.ss.leetcode.LC2023.may.ContainsDuplicateIII;
 import com.ss.leetcode.LC2023.may.CountTheNumberOfCompleteComponents;
@@ -24,10 +25,12 @@ import com.ss.leetcode.LC2023.may.MaximumGap;
 import com.ss.leetcode.LC2023.may.MaximumSubsequenceScore;
 import com.ss.leetcode.LC2023.may.MaximumSumOfTwoNonOverlappingSubarrays;
 import com.ss.leetcode.LC2023.may.MaximumSumWithExactlyKElements;
+import com.ss.leetcode.LC2023.may.MinimumCostToCutAStick;
 import com.ss.leetcode.LC2023.may.MinimumSizeSubarraySum;
 import com.ss.leetcode.LC2023.may.NumberOfEvenAndOddBits;
 import com.ss.leetcode.LC2023.may.PrimeInDiagonal;
 import com.ss.leetcode.LC2023.may.RangeFrequencyQueries;
+import com.ss.leetcode.LC2023.may.RangeSumOfSortedSubarraySums;
 import com.ss.leetcode.LC2023.may.RemoveColoredPiecesIfBothNeighborsAreTheSameColor;
 import com.ss.leetcode.LC2023.may.ShortestBridge;
 import com.ss.leetcode.LC2023.may.SpiralMatrixIV;
@@ -76,7 +79,10 @@ public class StartMay {
 //        start.maximumSubsequenceScore();
 //        start.sumInAMatrix();
 //        start.allNodesDistanceKInBinaryTree();
-        start.longestUnivaluePath();
+//        start.longestUnivaluePath();
+//        start.minimumCostToCutAStick();
+//        start.buyTwoChocolates();
+        start.rangeSumOfSortedSubarraySums();
     }
 
     public void matrixBlockSum() {
@@ -372,5 +378,29 @@ public class StartMay {
 
         System.out.println("2 == " + lup.longestUnivaluePath(root1));
         System.out.println("2 == " + lup.longestUnivaluePath(root2));
+    }
+
+    public void minimumCostToCutAStick() {
+        MinimumCostToCutAStick mctcas = new MinimumCostToCutAStick();
+
+//        System.out.println("16 == " + mctcas.minCost(7, new int[]{1,3,4,5}));
+//        System.out.println("22 == " + mctcas.minCost(9, new int[]{5,6,1,4,2}));
+        System.out.println("540 == " + mctcas.minCost(189, new int[]{23,87,12,16,19,92,91,29,33,100,17,32,56,67,78}));
+        System.out.println("41 == " + mctcas.minCost(16, new int[]{9,1,7,3,15}));
+    }
+
+    public void buyTwoChocolates() {
+        BuyTwoChocolates btc = new BuyTwoChocolates();
+
+        System.out.println("0 == " + btc.buyChoco(new int[]{1,2,2}, 3));
+        System.out.println("3 == " + btc.buyChoco(new int[]{3,2,3}, 3));
+    }
+
+    public void rangeSumOfSortedSubarraySums() {
+        RangeSumOfSortedSubarraySums rsosss = new RangeSumOfSortedSubarraySums();
+
+        System.out.println("13 == " + rsosss.rangeSum(new int[]{1,2,3,4}, 4, 1, 5));
+        System.out.println("6 == " + rsosss.rangeSum(new int[]{1,2,3,4}, 4, 3, 4));
+        System.out.println("50 == " + rsosss.rangeSum(new int[]{1,2,3,4}, 4, 1, 10));
     }
 }
