@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2023.may.DetonateTheMaximumBombs;
 import com.ss.leetcode.LC2023.may.DiagonalTraverse;
 import com.ss.leetcode.LC2023.may.EqualRowAndColumnPairs;
 import com.ss.leetcode.LC2023.may.FindTheDistinctDifferenceArray;
+import com.ss.leetcode.LC2023.may.FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints;
 import com.ss.leetcode.LC2023.may.FindThePrefixCommonArrayOfTwoArrays;
 import com.ss.leetcode.LC2023.may.FindTheWidthOfColumnsOfAGrid;
 import com.ss.leetcode.LC2023.may.IsGraphBipartite;
@@ -82,7 +83,8 @@ public class StartMay {
 //        start.longestUnivaluePath();
 //        start.minimumCostToCutAStick();
 //        start.buyTwoChocolates();
-        start.rangeSumOfSortedSubarraySums();
+//        start.rangeSumOfSortedSubarraySums();
+        start.findTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints();
     }
 
     public void matrixBlockSum() {
@@ -402,5 +404,13 @@ public class StartMay {
         System.out.println("13 == " + rsosss.rangeSum(new int[]{1,2,3,4}, 4, 1, 5));
         System.out.println("6 == " + rsosss.rangeSum(new int[]{1,2,3,4}, 4, 3, 4));
         System.out.println("50 == " + rsosss.rangeSum(new int[]{1,2,3,4}, 4, 1, 10));
+    }
+
+    public void findTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints() {
+        FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints ftmamnonbcp = new FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints();
+
+        System.out.println("[-1,-1] == " + Arrays.toString(ftmamnonbcp.nodesBetweenCriticalPoints(ListNode.makeChain(new int[]{3,1}))));
+        System.out.println("[1,3] == " + Arrays.toString(ftmamnonbcp.nodesBetweenCriticalPoints(ListNode.makeChain(new int[]{5,3,1,2,5,1,2}))));
+        System.out.println("[3,3] == " + Arrays.toString(ftmamnonbcp.nodesBetweenCriticalPoints(ListNode.makeChain(new int[]{1,3,2,2,3,2,2,2,7}))));
     }
 }

@@ -12,7 +12,7 @@ import com.ss.leetcode.LC2021.may.JewelsAndStones;
 import com.ss.leetcode.LC2021.may.MaximumNestingDepthParentheses;
 import com.ss.leetcode.LC2021.may.MergeStringsAlternately;
 import com.ss.leetcode.LC2021.may.NumberOfStepsToReduceANumberToZero;
-import com.ss.leetcode.LC2021.may.ParkingSystem;
+import com.ss.leetcode.LC2021.may.DesignParkingSystem;
 import com.ss.leetcode.LC2021.may.PartitioningIntoMinimumNumber;
 import com.ss.leetcode.LC2021.may.RobotReturnToOrigin;
 import com.ss.leetcode.LC2021.may.ShuffleString;
@@ -61,7 +61,7 @@ public class StartMay {
     }
 
     public void designParkingSystem() {
-        ParkingSystem parkingSystem = new ParkingSystem(1, 1, 0);
+        DesignParkingSystem parkingSystem = new DesignParkingSystem(1, 1, 0);
         System.out.println("true == " + parkingSystem.addCar(1)); // return true becausebecause there is 1 available slot for a big car
         System.out.println("true == " + parkingSystem.addCar(2)); // return true because there is 1 available slot for a big car
         System.out.println("false == " + parkingSystem.addCar(3)); // return true because there is 1 available slot for a big car
