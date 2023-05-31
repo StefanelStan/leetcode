@@ -7,25 +7,60 @@ import java.util.Map;
 
 public class DesignUndergroundSystem {
     // https://leetcode.com/problems/design-underground-system/
+    private final Map<String, Map<String, int[]>> stationTimes;
+    private final Map<Integer, StartingStation> travels;
+    public DesignUndergroundSystem() {
+        stationTimes = new HashMap<>();
+        travels = new HashMap<>();
+    }
+
+    public void checkIn(int id, String stationName, int t) {
+        travels.put(id, new StartingStation(stationName, t));
+    }
+
+    public void checkOut(int id, String stationName, int t) {
+        StartingStation station = travels.remove(id);
+        Map<String, int[]> destinations = stationTimes.computeIfAbsent(station.stationName, d -> new HashMap<>());
+        int[] times = destinations.computeIfAbsent(stationName, i -> new int[]{0, 0});
+        times[0] += t - station.enterTime;
+        times[1]++;
+    }
+
+    public double getAverageTime(String startStation, String endStation) {
+        int[] times = stationTimes.get(startStation).get(endStation);
+        return (double)times[0] / times[1];
+    }
+
+    private static class StartingStation {
+        String stationName;
+        int enterTime;
+
+        public StartingStation(String stationName, int enterTime) {
+            this.stationName = stationName;
+            this.enterTime = enterTime;
+        }
+    }
+
+
     Destination[] checkins;
     Map<String, int[]> trips;
-    public DesignUndergroundSystem() {
+    public void DesignUndergroundSystem2() {
         checkins = new Destination[1_000_001];
         trips = new HashMap<>();
     }
 
-    public void checkIn(int id, String stationName, int t) {
+    public void checkIn2(int id, String stationName, int t) {
         checkins[id] = new Destination(stationName, t);
     }
 
-    public void checkOut(int id, String stationName, int t) {
+    public void checkOut2(int id, String stationName, int t) {
         int[] avgs = trips.computeIfAbsent(checkins[id].from + "-" + stationName, k -> new int[]{0,0});
         avgs[0]++;
         avgs[1] += (t - checkins[id].time);
         checkins[id] = null;
     }
 
-    public double getAverageTime(String startStation, String endStation) {
+    public double getAverageTime2(String startStation, String endStation) {
         int[] avgs = trips.get(startStation + "-" + endStation);
         return (double)(avgs[1])/avgs[0];
     }
@@ -41,17 +76,16 @@ public class DesignUndergroundSystem {
 
     private Map<String, int[]> checkIns;
     private LinkedList<CheckIn> entries;
-
-    public void DesignUndergroundSystem2() {
+    public void DesignUndergroundSystem3() {
         checkIns = new HashMap<>();
         entries = new LinkedList<>();
     }
 
-    public void checkIn2(int id, String stationName, int t) {
+    public void checkIn3(int id, String stationName, int t) {
         entries.add(new CheckIn(id, stationName, t));
     }
 
-    public void checkOut2(int id, String stationName, int t) {
+    public void checkOut3(int id, String stationName, int t) {
         Iterator<CheckIn> iterator = entries.descendingIterator();
         CheckIn c;
         while (iterator.hasNext()) {
@@ -72,7 +106,7 @@ public class DesignUndergroundSystem {
         }
     }
 
-    public double getAverageTime2(String startStation, String endStation) {
+    public double getAverageTime3(String startStation, String endStation) {
         int[] records = checkIns.get(startStation + "-" + endStation);
         return (double) records[0] / records[1];
     }
