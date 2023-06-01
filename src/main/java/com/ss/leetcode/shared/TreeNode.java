@@ -1,6 +1,7 @@
 package com.ss.leetcode.shared;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.StringJoiner;
 
@@ -44,6 +45,31 @@ public class TreeNode {
             traversePreorder(node.left, values);
             traversePreorder(node.right, values);
         }
+    }
+
+    public static List<Integer> levelOrder(TreeNode node) {
+        List<Integer> levelOrder = new ArrayList<>();
+        if (node == null) {
+            return levelOrder;
+        }
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(node);
+        TreeNode current;
+        while(!queue.isEmpty()) {
+            current = queue.removeFirst();
+            levelOrder.add(current.val);
+            if (current.left != null) {
+                queue.addLast(current.left);
+            }
+            if (current.right != null) {
+                queue.addLast(current.right);
+            }
+        }
+        return levelOrder;
+    }
+
+    private static void traverseLevelOrder(TreeNode node, List<Integer> levelOrder) {
+
     }
 
     @Override

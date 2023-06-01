@@ -70,7 +70,7 @@ public class StartSeptember {
 //        start.uncommonWordsFromTwoSentences();
 //        start.kthSmallestElementInABST();
 //        start.occurrencesAfterBigram();
-        start.spiralMatrix();
+//        start.spiralMatrix();
 //        start.specialPositionsInABinaryMatrix();
 //        start.intersectionOfTwoArraysII();
 //        start.linkedListCycle();
@@ -91,7 +91,7 @@ public class StartSeptember {
 //        start.binaryTreePreorderTraversal();
 //        start.binaryTreePostorderTraversal();
 //        start.symmetricTree();
-//        start.binaryTreeLevelOrderTraversal();
+        start.binaryTreeLevelOrderTraversal();
 //        start.checkIfAWordPrefixInASentence();
 //        start.calculateMoneyInLeetcodeBank();
 //        start.maxConsecutiveOnes();

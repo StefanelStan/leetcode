@@ -13,7 +13,7 @@ public class StartPlayground {
 //        start.dfsGraph();
 //        start.fenwickTree();
 //        start.topologicalSort();
-        start.kahnTopologicalSort();
+//        start.kahnTopologicalSort();
     }
 
     public void addNumerical() {
