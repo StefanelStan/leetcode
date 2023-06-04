@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
 import com.ss.leetcode.LC2023.june.ShortestPathInBinaryMatrix;
@@ -10,7 +11,8 @@ public class StartJune {
 
 //        start.shortestPathInBinaryMatrix();
 //        start.numberOfSeniorCitizens();
-        start.removeTrailingZerosFromAString();
+//        start.removeTrailingZerosFromAString();
+        start.minimizeResultByAddingParenthesesToExpression();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -33,5 +35,14 @@ public class StartJune {
 
         System.out.println("512301 == " + rtzfas.removeTrailingZeros("51230100"));
         System.out.println("123 == " + rtzfas.removeTrailingZeros("123"));
+    }
+
+    public void minimizeResultByAddingParenthesesToExpression() {
+        MinimizeResultByAddingParenthesesToExpression mrbapte = new MinimizeResultByAddingParenthesesToExpression();
+
+        System.out.println("2(47+38) == " + mrbapte.minimizeResult("247+38"));
+        System.out.println("1(2+3)4 == " + mrbapte.minimizeResult("12+34"));
+        System.out.println("(999+999) == " + mrbapte.minimizeResult("999+999"));
+        System.out.println("(9999+99999) == " + mrbapte.minimizeResult("9999+99999"));
     }
 }

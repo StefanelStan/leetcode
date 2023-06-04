@@ -1,0 +1,23 @@
+// https://leetcode.com/problems/to-be-or-not-to-be
+/** Algorithm
+    1. toBe: if val === val2, return true, else throw new Error("Not Equal")
+    2. notToBe: if val !== val2, return true, else throw new Error("Equal")
+    return {toBe, notToBe}
+ */
+var expect = function(val) {
+    toBe = (val2) => {
+        if (val2 === val) {
+            return true;
+        } else {
+            throw new Error("Not Equal");
+        }
+    }
+    notToBe = (val2) => {
+        if (val2 !== val) {
+            return true;
+        } else {
+            throw new Error("Equal");
+        }
+    }
+    return { toBe, notToBe }
+};

@@ -6,6 +6,28 @@ import java.util.List;
 public class TimeNeededToInformAllEmployees {
     // https://leetcode.com/problems/time-needed-to-inform-all-employees/
     public int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
+        Integer[] responseTime = new Integer[n];
+        int maxTime = 0;
+        for (int i = 0; i < n; i++) {
+            if (informTime[i] == 0) {
+                maxTime = Math.max(maxTime, getInformTimeOfEmployee(manager, informTime, responseTime, i));
+            }
+        }
+        return maxTime;
+    }
+
+    private int getInformTimeOfEmployee(int[] manager, int[] informTime, Integer[] responseTime, int i) {
+        if (i == -1) {
+            return 0;
+        }
+        if (responseTime[i] == null) {
+            responseTime[i] = informTime[i] + getInformTimeOfEmployee(manager, informTime, responseTime, manager[i]);
+        }
+        return responseTime[i];
+    }
+
+
+    public int numOfMinutes2(int n, int headID, int[] manager, int[] informTime) {
         int numOfMinutes;
         if (informTime.length == 1) {
             numOfMinutes = informTime[0];
