@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
@@ -12,7 +13,8 @@ public class StartJune {
 //        start.shortestPathInBinaryMatrix();
 //        start.numberOfSeniorCitizens();
 //        start.removeTrailingZerosFromAString();
-        start.minimizeResultByAddingParenthesesToExpression();
+//        start.minimizeResultByAddingParenthesesToExpression();
+        start.countArtifactsThatCanBeExtracted();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -44,5 +46,13 @@ public class StartJune {
         System.out.println("1(2+3)4 == " + mrbapte.minimizeResult("12+34"));
         System.out.println("(999+999) == " + mrbapte.minimizeResult("999+999"));
         System.out.println("(9999+99999) == " + mrbapte.minimizeResult("9999+99999"));
+    }
+
+    public void countArtifactsThatCanBeExtracted() {
+        CountArtifactsThatCanBeExtracted catcbe = new CountArtifactsThatCanBeExtracted();
+
+        System.out.println("1 == " + catcbe.digArtifacts(2, new int[][]{{0,0,0,0}, {0,1,1,1}}, new int[][]{{0,0},{0,1}}));
+        System.out.println("2 == " + catcbe.digArtifacts(2, new int[][]{{0,0,0,0}, {0,1,1,1}}, new int[][]{{0,0},{0,1},{1,1}}));
+        System.out.println("0 == " + catcbe.digArtifacts(2, new int[][]{{0,0,0,0}, {0,1,1,1}}, new int[][]{{1,0}}));
     }
 }
