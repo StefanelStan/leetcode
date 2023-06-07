@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
+import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
@@ -14,7 +15,8 @@ public class StartJune {
 //        start.numberOfSeniorCitizens();
 //        start.removeTrailingZerosFromAString();
 //        start.minimizeResultByAddingParenthesesToExpression();
-        start.countArtifactsThatCanBeExtracted();
+//        start.countArtifactsThatCanBeExtracted();
+        start.maximumStrengthOfAGroup();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -54,5 +56,12 @@ public class StartJune {
         System.out.println("1 == " + catcbe.digArtifacts(2, new int[][]{{0,0,0,0}, {0,1,1,1}}, new int[][]{{0,0},{0,1}}));
         System.out.println("2 == " + catcbe.digArtifacts(2, new int[][]{{0,0,0,0}, {0,1,1,1}}, new int[][]{{0,0},{0,1},{1,1}}));
         System.out.println("0 == " + catcbe.digArtifacts(2, new int[][]{{0,0,0,0}, {0,1,1,1}}, new int[][]{{1,0}}));
+    }
+
+    public void maximumStrengthOfAGroup() {
+        MaximumStrengthOfAGroup msoag = new MaximumStrengthOfAGroup();
+
+        System.out.println("1350 == " + msoag.maxStrength(new int[]{3,-1,-5,2,5,-9}));
+        System.out.println("20 == " + msoag.maxStrength(new int[]{-4,-5,-4}));
     }
 }
