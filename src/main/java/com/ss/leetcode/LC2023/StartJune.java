@@ -1,11 +1,14 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
 import com.ss.leetcode.LC2023.june.ShortestPathInBinaryMatrix;
+import com.ss.leetcode.LC2023.june.SumOfMatrixAfterQueries;
+import java.util.Arrays;
 
 public class StartJune {
     public static void main(String[] args) {
@@ -16,7 +19,9 @@ public class StartJune {
 //        start.removeTrailingZerosFromAString();
 //        start.minimizeResultByAddingParenthesesToExpression();
 //        start.countArtifactsThatCanBeExtracted();
-        start.maximumStrengthOfAGroup();
+//        start.maximumStrengthOfAGroup();
+//        start.avoidFloodInTheCity();
+        start.sumOfMatrixAfterQueries();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -63,5 +68,20 @@ public class StartJune {
 
         System.out.println("1350 == " + msoag.maxStrength(new int[]{3,-1,-5,2,5,-9}));
         System.out.println("20 == " + msoag.maxStrength(new int[]{-4,-5,-4}));
+    }
+
+    public void avoidFloodInTheCity() {
+        AvoidFloodInTheCity afitc = new AvoidFloodInTheCity();
+
+        System.out.println("[-1,-1,-1,-1] == " + Arrays.toString(afitc.avoidFlood(new int[]{1,2,3,4})));
+        System.out.println("[-1,-1,2,1,-1,-1] == " + Arrays.toString(afitc.avoidFlood(new int[]{1,2,0,0,2,1})));
+        System.out.println("[] == " + Arrays.toString(afitc.avoidFlood(new int[]{1,2,0,1,2})));
+    }
+
+    public void sumOfMatrixAfterQueries() {
+        SumOfMatrixAfterQueries somaq = new SumOfMatrixAfterQueries();
+
+        System.out.println("23 == " + somaq.matrixSumQueries(3, new int[][]{{0,0,1},{1,2,2},{0,2,3},{1,0,4}}));
+        System.out.println("17 == " + somaq.matrixSumQueries(3, new int[][]{{0,0,4},{0,1,2},{1,0,1},{0,2,3},{1,2,1}}));
     }
 }
