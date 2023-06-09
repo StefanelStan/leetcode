@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
+import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
@@ -21,7 +22,8 @@ public class StartJune {
 //        start.countArtifactsThatCanBeExtracted();
 //        start.maximumStrengthOfAGroup();
 //        start.avoidFloodInTheCity();
-        start.sumOfMatrixAfterQueries();
+//        start.sumOfMatrixAfterQueries();
+        start.maximumNumberOfFishInAGrid();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -83,5 +85,12 @@ public class StartJune {
 
         System.out.println("23 == " + somaq.matrixSumQueries(3, new int[][]{{0,0,1},{1,2,2},{0,2,3},{1,0,4}}));
         System.out.println("17 == " + somaq.matrixSumQueries(3, new int[][]{{0,0,4},{0,1,2},{1,0,1},{0,2,3},{1,2,1}}));
+    }
+
+    public void maximumNumberOfFishInAGrid() {
+        MaximumNumberOfFishInAGrid mnofiag = new MaximumNumberOfFishInAGrid();
+
+        System.out.println("7 == " + mnofiag.findMaxFish(new int[][]{{0,2,1,0},{4,0,0,3},{1,0,0,4},{0,3,2,0}}));
+        System.out.println("1 == " + mnofiag.findMaxFish(new int[][]{{1,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,1}}));
     }
 }
