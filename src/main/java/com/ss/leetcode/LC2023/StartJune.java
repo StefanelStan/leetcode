@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
+import com.ss.leetcode.LC2023.june.MaximumValueAtAGivenIndexInABoundedArray;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
@@ -23,7 +24,8 @@ public class StartJune {
 //        start.maximumStrengthOfAGroup();
 //        start.avoidFloodInTheCity();
 //        start.sumOfMatrixAfterQueries();
-        start.maximumNumberOfFishInAGrid();
+//        start.maximumNumberOfFishInAGrid();
+        start.maximumValueAtAGivenIndexInABoundedArray();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -92,5 +94,14 @@ public class StartJune {
 
         System.out.println("7 == " + mnofiag.findMaxFish(new int[][]{{0,2,1,0},{4,0,0,3},{1,0,0,4},{0,3,2,0}}));
         System.out.println("1 == " + mnofiag.findMaxFish(new int[][]{{1,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,1}}));
+    }
+
+    public void maximumValueAtAGivenIndexInABoundedArray() {
+        MaximumValueAtAGivenIndexInABoundedArray mvaagiiaba = new MaximumValueAtAGivenIndexInABoundedArray();
+
+//        System.out.println("2 == " + mvaagiiaba.maxValue(4, 2, 6));
+//        System.out.println("3 == " + mvaagiiaba.maxValue(6, 1, 10));
+//        System.out.println("20 == " + mvaagiiaba.maxValue(4, 2, 76));
+        System.out.println("1 == " + mvaagiiaba.maxValue(132, 4, 132));
     }
 }
