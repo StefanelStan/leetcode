@@ -10,6 +10,33 @@ public class SummaryRanges {
         if (nums.length == 0) {
             return ranges;
         }
+        int start = nums[0], previous = start;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] - previous != 1) {
+                ranges.add(previous == start ? toRangeString(start) : toRangeString(start, previous));
+                start = nums[i];
+            }
+            previous = nums[i];
+        }
+        ranges.add(previous == start ? toRangeString(start) : toRangeString(start, previous));
+        return ranges;
+    }
+
+    private String toRangeString(int... nums) {
+        StringBuilder stb = new StringBuilder();
+        stb.append(nums[0]);
+        if (nums.length > 1) {
+            stb.append("->").append(nums[1]);
+        }
+        return stb.toString();
+    }
+
+
+    public List<String> summaryRanges2(int[] nums) {
+        List<String> ranges = new ArrayList<>();
+        if (nums.length == 0) {
+            return ranges;
+        }
         if (nums.length == 1) {
             ranges.add(String.valueOf(nums[0]));
             return ranges;

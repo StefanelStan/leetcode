@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
+import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MaximumValueAtAGivenIndexInABoundedArray;
@@ -25,7 +26,8 @@ public class StartJune {
 //        start.avoidFloodInTheCity();
 //        start.sumOfMatrixAfterQueries();
 //        start.maximumNumberOfFishInAGrid();
-        start.maximumValueAtAGivenIndexInABoundedArray();
+//        start.maximumValueAtAGivenIndexInABoundedArray();
+        start.frequencyTracker();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -99,9 +101,26 @@ public class StartJune {
     public void maximumValueAtAGivenIndexInABoundedArray() {
         MaximumValueAtAGivenIndexInABoundedArray mvaagiiaba = new MaximumValueAtAGivenIndexInABoundedArray();
 
-//        System.out.println("2 == " + mvaagiiaba.maxValue(4, 2, 6));
-//        System.out.println("3 == " + mvaagiiaba.maxValue(6, 1, 10));
-//        System.out.println("20 == " + mvaagiiaba.maxValue(4, 2, 76));
+        System.out.println("2 == " + mvaagiiaba.maxValue(4, 2, 6));
+        System.out.println("3 == " + mvaagiiaba.maxValue(6, 1, 10));
+        System.out.println("20 == " + mvaagiiaba.maxValue(4, 2, 76));
         System.out.println("1 == " + mvaagiiaba.maxValue(132, 4, 132));
+    }
+
+    public void frequencyTracker() {
+        FrequencyTracker ft = new FrequencyTracker();
+        ft.add(3);
+        ft.add(3);
+        System.out.println("true == " + ft.hasFrequency(2));
+
+        ft = new FrequencyTracker();
+        ft.add(1);
+        ft.deleteOne(1);
+        System.out.println("false == " + ft.hasFrequency(1));
+
+        ft = new FrequencyTracker();
+        System.out.println("false == " + ft.hasFrequency(2));
+        ft.add(3);
+        System.out.println("true == " + ft.hasFrequency(1));
     }
 }
