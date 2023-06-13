@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
+import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
@@ -27,7 +28,8 @@ public class StartJune {
 //        start.sumOfMatrixAfterQueries();
 //        start.maximumNumberOfFishInAGrid();
 //        start.maximumValueAtAGivenIndexInABoundedArray();
-        start.frequencyTracker();
+//        start.frequencyTracker();
+        start.determineTheWinnerOfABowlingGame();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -122,5 +124,14 @@ public class StartJune {
         System.out.println("false == " + ft.hasFrequency(2));
         ft.add(3);
         System.out.println("true == " + ft.hasFrequency(1));
+    }
+
+    public void determineTheWinnerOfABowlingGame() {
+        DetermineTheWinnerOfABowlingGame dtwoabg = new DetermineTheWinnerOfABowlingGame();
+
+        System.out.println("1 == " + dtwoabg.isWinner(new int[]{4,10,7,9}, new int[]{6,5,2,3}));
+        System.out.println("2 == " + dtwoabg.isWinner(new int[]{3,5,7,6}, new int[]{8,10,10,2}));
+        System.out.println("0 == " + dtwoabg.isWinner(new int[]{2,3}, new int[]{4,1}));
+        System.out.println("2 == " + dtwoabg.isWinner(new int[]{2}, new int[]{4}));
     }
 }
