@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2023.june.MaximumValueAtAGivenIndexInABoundedArray;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
+import com.ss.leetcode.LC2023.june.ReorganizeString;
 import com.ss.leetcode.LC2023.june.ShortestPathInBinaryMatrix;
 import com.ss.leetcode.LC2023.june.SumOfMatrixAfterQueries;
 import java.util.Arrays;
@@ -29,7 +30,8 @@ public class StartJune {
 //        start.maximumNumberOfFishInAGrid();
 //        start.maximumValueAtAGivenIndexInABoundedArray();
 //        start.frequencyTracker();
-        start.determineTheWinnerOfABowlingGame();
+//        start.determineTheWinnerOfABowlingGame();
+        start.reorganizeString();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -133,5 +135,16 @@ public class StartJune {
         System.out.println("2 == " + dtwoabg.isWinner(new int[]{3,5,7,6}, new int[]{8,10,10,2}));
         System.out.println("0 == " + dtwoabg.isWinner(new int[]{2,3}, new int[]{4,1}));
         System.out.println("2 == " + dtwoabg.isWinner(new int[]{2}, new int[]{4}));
+    }
+
+    public void reorganizeString() {
+        ReorganizeString rs = new ReorganizeString();
+
+        System.out.println("aba == " + rs.reorganizeString("aab"));
+        System.out.println(" == " + rs.reorganizeString("aaab"));
+        System.out.println(" == " + rs.reorganizeString("ioioioioioioioioiiii"));
+        System.out.println(" == " + rs.reorganizeString("aaaaa"));
+        System.out.println("a == " + rs.reorganizeString("a"));
+        System.out.println("babab == " + rs.reorganizeString("aabbb"));
     }
 }
