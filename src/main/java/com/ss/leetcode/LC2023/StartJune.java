@@ -8,7 +8,9 @@ import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MaximumValueAtAGivenIndexInABoundedArray;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
+import com.ss.leetcode.LC2023.june.MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
+import com.ss.leetcode.LC2023.june.NumberOfSmoothDescentPeriodsOfAStock;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
 import com.ss.leetcode.LC2023.june.ReorganizeString;
 import com.ss.leetcode.LC2023.june.ShortestPathInBinaryMatrix;
@@ -31,7 +33,9 @@ public class StartJune {
 //        start.maximumValueAtAGivenIndexInABoundedArray();
 //        start.frequencyTracker();
 //        start.determineTheWinnerOfABowlingGame();
-        start.reorganizeString();
+//        start.reorganizeString();
+//        start.numberOfSmoothDescentPeriodsOfAStock();
+        start.minimumDifferenceBetweenLargestAndSmallestValueInThreeMoves();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -146,5 +150,21 @@ public class StartJune {
         System.out.println(" == " + rs.reorganizeString("aaaaa"));
         System.out.println("a == " + rs.reorganizeString("a"));
         System.out.println("babab == " + rs.reorganizeString("aabbb"));
+    }
+
+    public void numberOfSmoothDescentPeriodsOfAStock() {
+        NumberOfSmoothDescentPeriodsOfAStock nosdpoas = new NumberOfSmoothDescentPeriodsOfAStock();
+
+        System.out.println("7 == " + nosdpoas.getDescentPeriods(new int[]{3,2,1,4}));
+        System.out.println("4 == " + nosdpoas.getDescentPeriods(new int[]{8,6,7,7}));
+        System.out.println("1 == " + nosdpoas.getDescentPeriods(new int[]{1}));
+    }
+
+    public void minimumDifferenceBetweenLargestAndSmallestValueInThreeMoves() {
+        MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves mdblasvitm = new MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves();
+
+        System.out.println("0 == " + mdblasvitm.minDifference(new int[]{5,3,2,4}));
+        System.out.println("1 == " + mdblasvitm.minDifference(new int[]{1,5,0,10,14}));
+        System.out.println("0 == " + mdblasvitm.minDifference(new int[]{3,100,20}));
     }
 }
