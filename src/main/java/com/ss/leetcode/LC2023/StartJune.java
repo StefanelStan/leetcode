@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MaximumValueAtAGivenIndexInABoundedArray;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
 import com.ss.leetcode.LC2023.june.MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves;
+import com.ss.leetcode.LC2023.june.MinimumLengthOfStringAfterDeletingSimilarEnds;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.NumberOfSmoothDescentPeriodsOfAStock;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
@@ -35,7 +36,8 @@ public class StartJune {
 //        start.determineTheWinnerOfABowlingGame();
 //        start.reorganizeString();
 //        start.numberOfSmoothDescentPeriodsOfAStock();
-        start.minimumDifferenceBetweenLargestAndSmallestValueInThreeMoves();
+//        start.minimumDifferenceBetweenLargestAndSmallestValueInThreeMoves();
+        start.minimumLengthOfStringAfterDeletingSimilarEnds();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -166,5 +168,16 @@ public class StartJune {
         System.out.println("0 == " + mdblasvitm.minDifference(new int[]{5,3,2,4}));
         System.out.println("1 == " + mdblasvitm.minDifference(new int[]{1,5,0,10,14}));
         System.out.println("0 == " + mdblasvitm.minDifference(new int[]{3,100,20}));
+    }
+
+    public void minimumLengthOfStringAfterDeletingSimilarEnds() {
+        MinimumLengthOfStringAfterDeletingSimilarEnds mlosadse = new MinimumLengthOfStringAfterDeletingSimilarEnds();
+
+        System.out.println("2 == " + mlosadse.minimumLength("ca"));
+        System.out.println("0 == " + mlosadse.minimumLength("cabaabac"));
+        System.out.println("3 == " + mlosadse.minimumLength("aabccabba"));
+        System.out.println("0 == " + mlosadse.minimumLength("aaaa"));
+        System.out.println("0 == " + mlosadse.minimumLength("aaaaa"));
+        System.out.println("1 == " + mlosadse.minimumLength("a"));
     }
 }
