@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
+import com.ss.leetcode.LC2023.june.MaximumNumberOfMovesInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MaximumValueAtAGivenIndexInABoundedArray;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
@@ -37,7 +38,8 @@ public class StartJune {
 //        start.reorganizeString();
 //        start.numberOfSmoothDescentPeriodsOfAStock();
 //        start.minimumDifferenceBetweenLargestAndSmallestValueInThreeMoves();
-        start.minimumLengthOfStringAfterDeletingSimilarEnds();
+//        start.minimumLengthOfStringAfterDeletingSimilarEnds();
+        start.maximumNumberOfMovesInAGrid();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -179,5 +181,12 @@ public class StartJune {
         System.out.println("0 == " + mlosadse.minimumLength("aaaa"));
         System.out.println("0 == " + mlosadse.minimumLength("aaaaa"));
         System.out.println("1 == " + mlosadse.minimumLength("a"));
+    }
+
+    public void maximumNumberOfMovesInAGrid() {
+        MaximumNumberOfMovesInAGrid mnomiag = new MaximumNumberOfMovesInAGrid();
+
+        System.out.println("3 == " + mnomiag.maxMoves(new int[][]{{2,4,3,5},{5,4,9,3},{3,4,2,11},{10,9,13,15}}));
+        System.out.println("0 == " + mnomiag.maxMoves(new int[][]{{3,2,4},{2,1,9},{1,1,7}}));
     }
 }

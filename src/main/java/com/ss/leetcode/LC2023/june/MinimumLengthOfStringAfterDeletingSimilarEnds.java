@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2023.june;
 
 public class MinimumLengthOfStringAfterDeletingSimilarEnds {
-    // ttps://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends
+    // https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends
     /** Algorithm
         1. If s length == 1, return 1 immediately
         2. Use 2 pointers (left / right) that will traverse from 0..n-1 and n-1..0
