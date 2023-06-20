@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
+import com.ss.leetcode.LC2023.june.KRadiusSubarrayAverages;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfMovesInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
@@ -39,7 +40,8 @@ public class StartJune {
 //        start.numberOfSmoothDescentPeriodsOfAStock();
 //        start.minimumDifferenceBetweenLargestAndSmallestValueInThreeMoves();
 //        start.minimumLengthOfStringAfterDeletingSimilarEnds();
-        start.maximumNumberOfMovesInAGrid();
+//        start.maximumNumberOfMovesInAGrid();
+        start.kRadiusSubarrayAverages();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -188,5 +190,13 @@ public class StartJune {
 
         System.out.println("3 == " + mnomiag.maxMoves(new int[][]{{2,4,3,5},{5,4,9,3},{3,4,2,11},{10,9,13,15}}));
         System.out.println("0 == " + mnomiag.maxMoves(new int[][]{{3,2,4},{2,1,9},{1,1,7}}));
+    }
+
+    public void kRadiusSubarrayAverages() {
+        KRadiusSubarrayAverages krsa = new KRadiusSubarrayAverages();
+
+        System.out.println("[-1,-1,-1,5,4,4,-1,-1,-1] == " + Arrays.toString(krsa.getAverages(new int[]{7,4,3,9,1,8,5,2,6}, 3)));
+        System.out.println("[100000] == " + Arrays.toString(krsa.getAverages(new int[]{100000}, 0)));
+        System.out.println("[-1] == " + Arrays.toString(krsa.getAverages(new int[]{8}, 10000)));
     }
 }
