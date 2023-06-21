@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2023.june.MaximumNumberOfMovesInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
 import com.ss.leetcode.LC2023.june.MaximumValueAtAGivenIndexInABoundedArray;
 import com.ss.leetcode.LC2023.june.MinimizeResultByAddingParenthesesToExpression;
+import com.ss.leetcode.LC2023.june.MinimumCostToMakeArrayEqual;
 import com.ss.leetcode.LC2023.june.MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves;
 import com.ss.leetcode.LC2023.june.MinimumLengthOfStringAfterDeletingSimilarEnds;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
@@ -41,7 +42,8 @@ public class StartJune {
 //        start.minimumDifferenceBetweenLargestAndSmallestValueInThreeMoves();
 //        start.minimumLengthOfStringAfterDeletingSimilarEnds();
 //        start.maximumNumberOfMovesInAGrid();
-        start.kRadiusSubarrayAverages();
+//        start.kRadiusSubarrayAverages();
+        start.minimumCostToMakeArrayEqual();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -198,5 +200,15 @@ public class StartJune {
         System.out.println("[-1,-1,-1,5,4,4,-1,-1,-1] == " + Arrays.toString(krsa.getAverages(new int[]{7,4,3,9,1,8,5,2,6}, 3)));
         System.out.println("[100000] == " + Arrays.toString(krsa.getAverages(new int[]{100000}, 0)));
         System.out.println("[-1] == " + Arrays.toString(krsa.getAverages(new int[]{8}, 10000)));
+    }
+
+    public void minimumCostToMakeArrayEqual() {
+        MinimumCostToMakeArrayEqual mctmae = new MinimumCostToMakeArrayEqual();
+
+        System.out.println("8 == " +  mctmae.minCost(new int[]{1,3,5,2}, new int[]{2,3,1,14}));
+        System.out.println("0 == " +  mctmae.minCost(new int[]{2,2,2,2,2}, new int[]{4,2,8,1,3}));
+        System.out.println("35 == " +  mctmae.minCost(new int[]{1,3,5,2,6,5,3,2}, new int[]{2,3,1,14,4,3,2,3}));
+        System.out.println("55 == " +  mctmae.minCost(new int[]{1,3,5,2,6,5,3,2,1,3,4}, new int[]{2,3,1,14,4,3,2,3,4,5,6}));
+        System.out.println("261 == " +  mctmae.minCost(new int[]{1,3,5,2,6,5,3,2,1,3,4,5,6,7,8,9,12,13}, new int[]{2,3,1,14,4,3,2,3,4,5,6,7,8,9,12,13,4,2}));
     }
 }
