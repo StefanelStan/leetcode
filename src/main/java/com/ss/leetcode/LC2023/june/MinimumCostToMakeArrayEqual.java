@@ -69,13 +69,7 @@ public class MinimumCostToMakeArrayEqual {
         return numsAndCost;
     }
 
-    private static class GroupCost {
-        private final int value;
-        private final long cost;
+    private record GroupCost(int value, long cost) {
 
-        public GroupCost(int value, long cost) {
-            this.value = value;
-            this.cost = cost;
-        }
     }
 }

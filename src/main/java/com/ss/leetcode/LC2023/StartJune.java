@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.KRadiusSubarrayAverages;
+import com.ss.leetcode.LC2023.june.LongestIdealSubsequence;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfMovesInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumStrengthOfAGroup;
@@ -43,7 +44,8 @@ public class StartJune {
 //        start.minimumLengthOfStringAfterDeletingSimilarEnds();
 //        start.maximumNumberOfMovesInAGrid();
 //        start.kRadiusSubarrayAverages();
-        start.minimumCostToMakeArrayEqual();
+//        start.minimumCostToMakeArrayEqual();
+        start.longestIdealSubsequence();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -210,5 +212,15 @@ public class StartJune {
         System.out.println("35 == " +  mctmae.minCost(new int[]{1,3,5,2,6,5,3,2}, new int[]{2,3,1,14,4,3,2,3}));
         System.out.println("55 == " +  mctmae.minCost(new int[]{1,3,5,2,6,5,3,2,1,3,4}, new int[]{2,3,1,14,4,3,2,3,4,5,6}));
         System.out.println("261 == " +  mctmae.minCost(new int[]{1,3,5,2,6,5,3,2,1,3,4,5,6,7,8,9,12,13}, new int[]{2,3,1,14,4,3,2,3,4,5,6,7,8,9,12,13,4,2}));
+    }
+
+    public void longestIdealSubsequence() {
+        LongestIdealSubsequence lis = new LongestIdealSubsequence();
+
+        System.out.println("4 == " + lis.longestIdealString("acfgbd", 2));
+        System.out.println("4 == " + lis.longestIdealString("abcd", 3));
+        System.out.println("58 == " + lis.longestIdealString("dkfpsofkemxdrhsyunfeseqaghnsoqdjasifuvhbsrufyeijuyvbcxiatuduhdsnuksdyafhcnowsefhbwiodcjsdibnij", 8));
+        System.out.println("19 == " + lis.longestIdealString("dkfpsofkemxdrhsyunfeseqaghnsoqdjasifuvhbsrufyeijuyvbcxiatuduhdsnuksdyafhcnowsefhbwiodcjsdibnij", 1));
+        System.out.println("9 == " + lis.longestIdealString("aaaaabbbb", 1));
     }
 }
