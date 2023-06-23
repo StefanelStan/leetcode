@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.KRadiusSubarrayAverages;
+import com.ss.leetcode.LC2023.june.LongestArithmeticSubsequence;
 import com.ss.leetcode.LC2023.june.LongestIdealSubsequence;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfMovesInAGrid;
@@ -45,7 +46,8 @@ public class StartJune {
 //        start.maximumNumberOfMovesInAGrid();
 //        start.kRadiusSubarrayAverages();
 //        start.minimumCostToMakeArrayEqual();
-        start.longestIdealSubsequence();
+//        start.longestIdealSubsequence();
+        start.longestArithmeticSubsequence();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -222,5 +224,13 @@ public class StartJune {
         System.out.println("58 == " + lis.longestIdealString("dkfpsofkemxdrhsyunfeseqaghnsoqdjasifuvhbsrufyeijuyvbcxiatuduhdsnuksdyafhcnowsefhbwiodcjsdibnij", 8));
         System.out.println("19 == " + lis.longestIdealString("dkfpsofkemxdrhsyunfeseqaghnsoqdjasifuvhbsrufyeijuyvbcxiatuduhdsnuksdyafhcnowsefhbwiodcjsdibnij", 1));
         System.out.println("9 == " + lis.longestIdealString("aaaaabbbb", 1));
+    }
+
+    public void longestArithmeticSubsequence() {
+        LongestArithmeticSubsequence las = new LongestArithmeticSubsequence();
+
+        System.out.println("4 == " + las.longestArithSeqLength(new int[]{3,6,9,12}));
+        System.out.println("3 == " + las.longestArithSeqLength(new int[]{9,4,7,2,10}));
+        System.out.println("4 == " + las.longestArithSeqLength(new int[]{20,1,15,3,10,5,8}));
     }
 }
