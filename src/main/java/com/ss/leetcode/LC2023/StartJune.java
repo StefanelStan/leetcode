@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.KRadiusSubarrayAverages;
+import com.ss.leetcode.LC2023.june.LexicographicallySmallestPalindrome;
 import com.ss.leetcode.LC2023.june.LongestArithmeticSubsequence;
 import com.ss.leetcode.LC2023.june.LongestIdealSubsequence;
 import com.ss.leetcode.LC2023.june.MaximumNumberOfFishInAGrid;
@@ -47,7 +48,8 @@ public class StartJune {
 //        start.kRadiusSubarrayAverages();
 //        start.minimumCostToMakeArrayEqual();
 //        start.longestIdealSubsequence();
-        start.longestArithmeticSubsequence();
+//        start.longestArithmeticSubsequence();
+        start.lexicographicallySmallestPalindrome();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -232,5 +234,13 @@ public class StartJune {
         System.out.println("4 == " + las.longestArithSeqLength(new int[]{3,6,9,12}));
         System.out.println("3 == " + las.longestArithSeqLength(new int[]{9,4,7,2,10}));
         System.out.println("4 == " + las.longestArithSeqLength(new int[]{20,1,15,3,10,5,8}));
+    }
+
+    public void lexicographicallySmallestPalindrome() {
+        LexicographicallySmallestPalindrome lsp = new LexicographicallySmallestPalindrome();
+
+        System.out.println("efcfe == " + lsp.makeSmallestPalindrome("egcfe"));
+        System.out.println("abba == " + lsp.makeSmallestPalindrome("abcd"));
+        System.out.println("neven == " + lsp.makeSmallestPalindrome("seven"));
     }
 }
