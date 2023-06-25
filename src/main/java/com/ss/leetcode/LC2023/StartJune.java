@@ -18,6 +18,7 @@ import com.ss.leetcode.LC2023.june.MinimumDifferenceBetweenLargestAndSmallestVal
 import com.ss.leetcode.LC2023.june.MinimumLengthOfStringAfterDeletingSimilarEnds;
 import com.ss.leetcode.LC2023.june.NumberOfSeniorCitizens;
 import com.ss.leetcode.LC2023.june.NumberOfSmoothDescentPeriodsOfAStock;
+import com.ss.leetcode.LC2023.june.NumberOfSubstringsWithOnly1s;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
 import com.ss.leetcode.LC2023.june.ReorganizeString;
 import com.ss.leetcode.LC2023.june.ShortestPathInBinaryMatrix;
@@ -49,7 +50,8 @@ public class StartJune {
 //        start.minimumCostToMakeArrayEqual();
 //        start.longestIdealSubsequence();
 //        start.longestArithmeticSubsequence();
-        start.lexicographicallySmallestPalindrome();
+//        start.lexicographicallySmallestPalindrome();
+        start.numberOfSubstringsWithOnly1s();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -242,5 +244,13 @@ public class StartJune {
         System.out.println("efcfe == " + lsp.makeSmallestPalindrome("egcfe"));
         System.out.println("abba == " + lsp.makeSmallestPalindrome("abcd"));
         System.out.println("neven == " + lsp.makeSmallestPalindrome("seven"));
+    }
+
+    public void numberOfSubstringsWithOnly1s() {
+        NumberOfSubstringsWithOnly1s noswo1 = new NumberOfSubstringsWithOnly1s();
+
+        System.out.println("9 == " + noswo1.numSub("0110111"));
+        System.out.println("2 == " + noswo1.numSub("101"));
+        System.out.println("21 == " + noswo1.numSub("111111"));
     }
 }
