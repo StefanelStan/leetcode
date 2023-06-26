@@ -23,6 +23,7 @@ import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
 import com.ss.leetcode.LC2023.june.ReorganizeString;
 import com.ss.leetcode.LC2023.june.ShortestPathInBinaryMatrix;
 import com.ss.leetcode.LC2023.june.SumOfMatrixAfterQueries;
+import com.ss.leetcode.LC2023.june.TotalCostToHireKWorkers;
 import java.util.Arrays;
 
 public class StartJune {
@@ -51,7 +52,8 @@ public class StartJune {
 //        start.longestIdealSubsequence();
 //        start.longestArithmeticSubsequence();
 //        start.lexicographicallySmallestPalindrome();
-        start.numberOfSubstringsWithOnly1s();
+//        start.numberOfSubstringsWithOnly1s();
+        start.totalCostToHireKWorkers();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -252,5 +254,13 @@ public class StartJune {
         System.out.println("9 == " + noswo1.numSub("0110111"));
         System.out.println("2 == " + noswo1.numSub("101"));
         System.out.println("21 == " + noswo1.numSub("111111"));
+    }
+
+    public void totalCostToHireKWorkers() {
+        TotalCostToHireKWorkers tcthkw = new TotalCostToHireKWorkers();
+
+        System.out.println("11 == " + tcthkw.totalCost(new int[]{17,12,10,2,7,2,11,20,8}, 3, 4));
+        System.out.println("4 == " + tcthkw.totalCost(new int[]{1,2,4,1}, 3, 3));
+        System.out.println("223 == " + tcthkw.totalCost(new int[]{18,64,12,21,21,78,36,58,88,58,99,26,92,91,53,10,24,25,20,92,73,63,51,65,87,6,17,32,14,42,46,65,43,9,75}, 13, 23));
     }
 }
