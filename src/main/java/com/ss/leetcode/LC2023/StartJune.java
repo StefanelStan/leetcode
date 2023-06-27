@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
+import com.ss.leetcode.LC2023.june.FindKPairsWithSmallestSums;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.KRadiusSubarrayAverages;
 import com.ss.leetcode.LC2023.june.LexicographicallySmallestPalindrome;
@@ -53,7 +54,8 @@ public class StartJune {
 //        start.longestArithmeticSubsequence();
 //        start.lexicographicallySmallestPalindrome();
 //        start.numberOfSubstringsWithOnly1s();
-        start.totalCostToHireKWorkers();
+//        start.totalCostToHireKWorkers();
+        start.findKPairsWithSmallestSums();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -262,5 +264,13 @@ public class StartJune {
         System.out.println("11 == " + tcthkw.totalCost(new int[]{17,12,10,2,7,2,11,20,8}, 3, 4));
         System.out.println("4 == " + tcthkw.totalCost(new int[]{1,2,4,1}, 3, 3));
         System.out.println("223 == " + tcthkw.totalCost(new int[]{18,64,12,21,21,78,36,58,88,58,99,26,92,91,53,10,24,25,20,92,73,63,51,65,87,6,17,32,14,42,46,65,43,9,75}, 13, 23));
+    }
+
+    public void findKPairsWithSmallestSums() {
+        FindKPairsWithSmallestSums fkpwss = new FindKPairsWithSmallestSums();
+
+        System.out.println("[[1,2],[1,4],[1,6]] == " + fkpwss.kSmallestPairs(new int[]{1,7,11}, new int[]{2,4,6}, 3));
+        System.out.println("[[1,1],[1,1]] == " + fkpwss.kSmallestPairs(new int[]{1,1,2}, new int[]{1,2,3}, 2));
+        System.out.println("[[1,3],[2,3]] == " + fkpwss.kSmallestPairs(new int[]{1,2}, new int[]{3}, 3));
     }
 }
