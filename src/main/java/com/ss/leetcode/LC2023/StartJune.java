@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.june.AvoidFloodInTheCity;
 import com.ss.leetcode.LC2023.june.CountArtifactsThatCanBeExtracted;
 import com.ss.leetcode.LC2023.june.DetermineTheWinnerOfABowlingGame;
+import com.ss.leetcode.LC2023.june.DivideArrayInSetsOfKConsecutiveNumbers;
 import com.ss.leetcode.LC2023.june.FindKPairsWithSmallestSums;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.KRadiusSubarrayAverages;
@@ -22,6 +23,7 @@ import com.ss.leetcode.LC2023.june.NumberOfSmoothDescentPeriodsOfAStock;
 import com.ss.leetcode.LC2023.june.NumberOfSubstringsWithOnly1s;
 import com.ss.leetcode.LC2023.june.PathWithMaximumProbability;
 import com.ss.leetcode.LC2023.june.RemoveTrailingZerosFromAString;
+import com.ss.leetcode.LC2023.june.RemovingMinimumAndMaximumFromArray;
 import com.ss.leetcode.LC2023.june.ReorganizeString;
 import com.ss.leetcode.LC2023.june.ShortestPathInBinaryMatrix;
 import com.ss.leetcode.LC2023.june.SumOfMatrixAfterQueries;
@@ -57,7 +59,9 @@ public class StartJune {
 //        start.numberOfSubstringsWithOnly1s();
 //        start.totalCostToHireKWorkers();
 //        start.findKPairsWithSmallestSums();
-        start.pathWithMaximumProbability();
+//        start.pathWithMaximumProbability();
+//        start.removingMinimumAndMaximumFromArray();
+        start.divideArrayInSetsOfKConsecutiveNumbers();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -282,5 +286,21 @@ public class StartJune {
         System.out.println("0.2500 == " +  pwmp.maxProbability(3, new int[][]{{0,1},{1,2},{0,2}}, new double[]{0.5, 0.5, 0.2}, 0, 2));
         System.out.println("0.3000 == " +  pwmp.maxProbability(3, new int[][]{{0,1},{1,2},{0,2}}, new double[]{0.5, 0.5, 0.3}, 0, 2));
         System.out.println("0.0000 == " +  pwmp.maxProbability(3, new int[][]{{0,1}}, new double[]{0.5}, 0, 2));
+    }
+
+    public void removingMinimumAndMaximumFromArray() {
+        RemovingMinimumAndMaximumFromArray rmamfa = new RemovingMinimumAndMaximumFromArray();
+
+        System.out.println("5 == " + rmamfa.minimumDeletions(new int[]{2,10,7,5,4,1,8,6}));
+        System.out.println("3 == " + rmamfa.minimumDeletions(new int[]{0,-4,19,1,8,-2,-3,5}));
+        System.out.println("1 == " + rmamfa.minimumDeletions(new int[]{101}));
+    }
+
+    public void divideArrayInSetsOfKConsecutiveNumbers() {
+        DivideArrayInSetsOfKConsecutiveNumbers daisokcn = new DivideArrayInSetsOfKConsecutiveNumbers();
+
+        System.out.println("true == " + daisokcn.isPossibleDivide(new int[]{1,2,3,3,4,4,5,6}, 4));
+        System.out.println("true == " + daisokcn.isPossibleDivide(new int[]{3,2,1,2,3,4,3,4,5,9,10,11}, 3));
+        System.out.println("false == " + daisokcn.isPossibleDivide(new int[]{1,2,3,4}, 3));
     }
 }
