@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2023.june.DivideArrayInSetsOfKConsecutiveNumbers;
 import com.ss.leetcode.LC2023.june.FindKPairsWithSmallestSums;
 import com.ss.leetcode.LC2023.june.FrequencyTracker;
 import com.ss.leetcode.LC2023.june.KRadiusSubarrayAverages;
+import com.ss.leetcode.LC2023.june.LastDayWhereYouCanStillCross;
 import com.ss.leetcode.LC2023.june.LexicographicallySmallestPalindrome;
 import com.ss.leetcode.LC2023.june.LongestArithmeticSubsequence;
 import com.ss.leetcode.LC2023.june.LongestIdealSubsequence;
@@ -61,7 +62,8 @@ public class StartJune {
 //        start.findKPairsWithSmallestSums();
 //        start.pathWithMaximumProbability();
 //        start.removingMinimumAndMaximumFromArray();
-        start.divideArrayInSetsOfKConsecutiveNumbers();
+//        start.divideArrayInSetsOfKConsecutiveNumbers();
+        start.lastDayWhereYouCanStillCross();
     }
 
     public void shortestPathInBinaryMatrix() {
@@ -302,5 +304,13 @@ public class StartJune {
         System.out.println("true == " + daisokcn.isPossibleDivide(new int[]{1,2,3,3,4,4,5,6}, 4));
         System.out.println("true == " + daisokcn.isPossibleDivide(new int[]{3,2,1,2,3,4,3,4,5,9,10,11}, 3));
         System.out.println("false == " + daisokcn.isPossibleDivide(new int[]{1,2,3,4}, 3));
+    }
+
+    public void lastDayWhereYouCanStillCross() {
+        LastDayWhereYouCanStillCross ldwycsc = new LastDayWhereYouCanStillCross();
+
+        System.out.println("2 == " + ldwycsc.latestDayToCross(2, 2, new int[][]{{1,1},{2,1},{1,2},{2,2}}));
+        System.out.println("1 == " + ldwycsc.latestDayToCross(2, 2, new int[][]{{1,1},{1,2},{2,1},{2,2}}));
+        System.out.println("3 == " + ldwycsc.latestDayToCross(3,3, new int[][]{{1,2},{2,1},{3,3},{2,2},{1,1},{1,3},{2,3},{3,2},{3,1}}));
     }
 }
