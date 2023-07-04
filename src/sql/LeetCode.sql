@@ -143,3 +143,14 @@ SELECT eu.unique_id, e.name FROM Employees e LEFT JOIN EmployeeUNI eu ON (e.id =
 -- Invalid Tweets
 -- https://leetcode.com/problems/invalid-tweets
 SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15;
+
+-- Biggest Single Number
+-- // https://leetcode.com/problems/biggest-single-number
+SELECT
+    CASE
+        WHEN (SELECT * FROM MyNumbers GROUP BY num HAVING count(*) = 1 ORDER BY num DESC LIMIT 1) IS NULL THEN NULL
+        ELSE (SELECT * FROM MyNumbers GROUP BY num HAVING count(*) = 1 ORDER BY num DESC LIMIT 1)
+    END AS num
+FROM MyNumbers LIMIT 1;
+-- OR
+SELECT MAX(num) as num FROM (SELECT * FROM MyNumbers GROUP BY num HAVING count(*) = 1 ORDER BY num DESC LIMIT 1) t
