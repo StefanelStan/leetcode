@@ -6,6 +6,36 @@ import java.util.List;
 public class LongestSubarrayOf1AfterDeletingOneElement {
     // https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element
     public int longestSubarray(int[] nums) {
+        boolean onChain = false;
+        int longest = 0, firstHalf = 0, secondHalf = 0, prev = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                if (onChain) {
+                    secondHalf++;
+                } else {
+                    firstHalf++;
+                }
+            } else {
+                if (prev == 1 && i < nums.length - 1 && nums[i+1] == 1) {
+                    if (onChain) {
+                        firstHalf = secondHalf;
+                        secondHalf = 0;
+                    }
+                    onChain = true;
+                } else {
+                    onChain = false;
+                    firstHalf = 0;
+                    secondHalf = 0;
+                }
+            }
+            prev = nums[i];
+            longest = Math.max(longest, firstHalf + secondHalf);
+        }
+        return longest == nums.length ? nums.length -1 : longest;
+    }
+
+    // Novice :)
+    public int longestSubarray2(int[] nums) {
         final List<ZeroCount> zeroPositions = countZeroes(nums);
         if(zeroPositions.isEmpty()) {
             return nums.length -1;
