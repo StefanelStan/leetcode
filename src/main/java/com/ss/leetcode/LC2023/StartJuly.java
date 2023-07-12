@@ -1,5 +1,7 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.july.CountNumberOfTexts;
+import com.ss.leetcode.LC2023.july.FindEventualSafeStates;
 import com.ss.leetcode.LC2023.july.FindTheKthLargestIntegerInTheArray;
 import com.ss.leetcode.LC2023.july.LongestEvenOddSubarrayWithThreshold;
 import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
@@ -21,7 +23,9 @@ public class StartJuly {
 //        start.longestEvenOddSubarrayWithThreshold();
 //        start.mostProfitAssigningWork();
 //        start.minimumDepthOfBinaryTree();
-        start.minimumOperationsToHalveArraySum();
+//        start.minimumOperationsToHalveArraySum();
+//        start.findEventualSafeStates();
+        start.countNumberOfTexts();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -88,5 +92,20 @@ public class StartJuly {
 
         System.out.println("3 == " + mothas.halveArray(new int[]{5,19,8,1}));
         System.out.println("3 == " + mothas.halveArray(new int[]{3,8,20}));
+    }
+
+    public void findEventualSafeStates() {
+        FindEventualSafeStates fess = new FindEventualSafeStates();
+
+        System.out.println("[2,4,5,6] == " + fess.eventualSafeNodes(new int[][]{{1,2},{2,3},{5},{0},{5},{},{}}));
+        System.out.println("[4] == " + fess.eventualSafeNodes(new int[][]{{1,2,3,4},{1,2},{3,4},{0,4},{}}));
+    }
+
+    public void countNumberOfTexts() {
+        CountNumberOfTexts cnot = new CountNumberOfTexts();
+
+        System.out.println("8 == " + cnot.countTexts("22233"));
+        System.out.println("82876089 == " + cnot.countTexts("222222222222222222222222222222222222"));
+        System.out.println("7 == " + cnot.countTexts("23333"));
     }
 }
