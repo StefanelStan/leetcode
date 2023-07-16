@@ -8,9 +8,13 @@ import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
 import com.ss.leetcode.LC2023.july.MinimumOperationsToHalveArraySum;
 import com.ss.leetcode.LC2023.july.MostProfitAssigningWork;
+import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
 import com.ss.leetcode.shared.TreeNode;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -25,7 +29,8 @@ public class StartJuly {
 //        start.minimumDepthOfBinaryTree();
 //        start.minimumOperationsToHalveArraySum();
 //        start.findEventualSafeStates();
-        start.countNumberOfTexts();
+//        start.countNumberOfTexts();
+        start.smallestSufficientTeam();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -107,5 +112,44 @@ public class StartJuly {
         System.out.println("8 == " + cnot.countTexts("22233"));
         System.out.println("82876089 == " + cnot.countTexts("222222222222222222222222222222222222"));
         System.out.println("7 == " + cnot.countTexts("23333"));
+    }
+
+    public void smallestSufficientTeam() {
+        SmallestSufficientTeam sst = new SmallestSufficientTeam();
+
+        List<List<String>> people1 = List.of(List.of("java"), List.of("nodejs"), List.of("nodejs", "reactjs"));
+        List<List<String>> people2 = List.of(List.of("algorithms", "math", "java"), List.of("algorithms", "math", "reactjs"),
+            List.of("java", "csharp", "aws"), List.of("reactjs", "csharp"), List.of("csharp", "math"), List.of("aws", "java"));
+        List<List<String>> people3 = List.of(
+            List.of("peaqbonzgl","xtadkauiqwravo"),
+            List.of("peaqbonzgl","pcfpppaxsxtpixd","zshbwqdhx"),
+            List.of("x","a"), List.of("a"), List.of("jmhobexvmmlyyzk","fjubadocdwaygs","xtadkauiqwravo","zshbwqdhx"),
+            List.of("fjubadocdwaygs","x","zshbwqdhx"), List.of("x","xtadkauiqwravo"), List.of("x","hyxnrujrqykzhizm"),
+            List.of("peaqbonzgl","x","pcfpppaxsxtpixd","a"), List.of("peaqbonzgl","pcfpppaxsxtpixd"),
+            List.of("a"), List.of("hyxnrujrqykzhizm"), List.of("jmhobexvmmlyyzk"), List.of("hfkbcrslcdjq","xtadkauiqwravo","a","zshbwqdhx"),
+            List.of("peaqbonzgl","mf","a","rahimgtlopffbwdg","zshbwqdhx"), List.of("xtadkauiqwravo"),List.of("fjubadocdwaygs"),
+            List.of("x","a","ulqocaijhezwfr","zshbwqdhx"), List.of("peaqbonzgl"), List.of("pcfpppaxsxtpixd","ulqocaijhezwfr","hyxnrujrqykzhizm"),
+            List.of("a","ulqocaijhezwfr","hyxnrujrqykzhizm"), List.of("a","rahimgtlopffbwdg"), List.of("zshbwqdhx"),
+            List.of("fjubadocdwaygs","peaqbonzgl","brgjopmm","x"), List.of("hyxnrujrqykzhizm"), List.of("jmhobexvmmlyyzk","a","ulqocaijhezwfr"),
+            List.of("peaqbonzgl","x","a","ulqocaijhezwfr","zshbwqdhx"), List.of("mf","pcfpppaxsxtpixd"), List.of("fjubadocdwaygs","ulqocaijhezwfr"),
+            List.of("fjubadocdwaygs","x","a"), List.of("zezdb","hyxnrujrqykzhizm"), List.of("ccwfthnjt","a"), List.of("fjubadocdwaygs","zezdb","a"),
+            List.of(), List.of("peaqbonzgl","ccwfthnjt","hyxnrujrqykzhizm"), List.of("xtadkauiqwravo","hyxnrujrqykzhizm"),
+            List.of("peaqbonzgl","a"), List.of("x","a","hyxnrujrqykzhizm"), List.of("zshbwqdhx"), List.of(),
+            List.of("fjubadocdwaygs","mf","pcfpppaxsxtpixd","zshbwqdhx"), List.of("pcfpppaxsxtpixd","a","zshbwqdhx"),
+            List.of("peaqbonzgl"), List.of("peaqbonzgl","x","ulqocaijhezwfr"), List.of("ulqocaijhezwfr"), List.of("x"),
+            List.of("fjubadocdwaygs","peaqbonzgl"), List.of("fjubadocdwaygs","xtadkauiqwravo"), List.of("pcfpppaxsxtpixd","zshbwqdhx"),
+            List.of("peaqbonzgl","brgjopmm","pcfpppaxsxtpixd","a"), List.of("fjubadocdwaygs","x","mf","ulqocaijhezwfr"),
+            List.of("jmhobexvmmlyyzk","brgjopmm","rahimgtlopffbwdg","hyxnrujrqykzhizm"), List.of("x","ccwfthnjt","hyxnrujrqykzhizm"),
+            List.of("hyxnrujrqykzhizm"),List.of("peaqbonzgl","x","xtadkauiqwravo","ulqocaijhezwfr","hyxnrujrqykzhizm"),
+            List.of("brgjopmm","ulqocaijhezwfr","zshbwqdhx"), List.of("peaqbonzgl","pcfpppaxsxtpixd"), List.of("fjubadocdwaygs","x","a","zshbwqdhx"),
+            List.of("fjubadocdwaygs","peaqbonzgl","x") ,List.of("ccwfthnjt"));
+        List<List<String>> people4 = List.of(List.of("vaostwmycy"), List.of("mgdipkgt"), List.of("bjwxnfbbubpnd"), List.of(), List.of("uhppib"));
+
+//        System.out.println("[0, 2] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"java", "nodejs", "reactjs"}, people1)));
+//        System.out.println("[1,2] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"algorithms", "math", "java", "reactjs", "csharp", "aws"}, people2)));
+        System.out.println("[14, 13, 49, 25, 32, 52] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{
+            "hfkbcrslcdjq","jmhobexvmmlyyzk","fjubadocdwaygs","peaqbonzgl","brgjopmm","x","mf","pcfpppaxsxtpixd","ccwfthnjt","xtadkauiqwravo","zezdb","a","rahimgtlopffbwdg","ulqocaijhezwfr","zshbwqdhx","hyxnrujrqykzhizm"},
+            people3)));
+//        System.out.println("[0,1,2,4] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"uhppib","mgdipkgt","vaostwmycy","bjwxnfbbubpnd"}, people4)));
     }
 }
