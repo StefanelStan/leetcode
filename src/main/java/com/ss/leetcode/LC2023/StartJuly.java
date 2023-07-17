@@ -145,11 +145,11 @@ public class StartJuly {
             List.of("fjubadocdwaygs","peaqbonzgl","x") ,List.of("ccwfthnjt"));
         List<List<String>> people4 = List.of(List.of("vaostwmycy"), List.of("mgdipkgt"), List.of("bjwxnfbbubpnd"), List.of(), List.of("uhppib"));
 
-//        System.out.println("[0, 2] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"java", "nodejs", "reactjs"}, people1)));
-//        System.out.println("[1,2] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"algorithms", "math", "java", "reactjs", "csharp", "aws"}, people2)));
+        System.out.println("[0, 2] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"java", "nodejs", "reactjs"}, people1)));
+        System.out.println("[1,2] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"algorithms", "math", "java", "reactjs", "csharp", "aws"}, people2)));
         System.out.println("[14, 13, 49, 25, 32, 52] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{
             "hfkbcrslcdjq","jmhobexvmmlyyzk","fjubadocdwaygs","peaqbonzgl","brgjopmm","x","mf","pcfpppaxsxtpixd","ccwfthnjt","xtadkauiqwravo","zezdb","a","rahimgtlopffbwdg","ulqocaijhezwfr","zshbwqdhx","hyxnrujrqykzhizm"},
             people3)));
-//        System.out.println("[0,1,2,4] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"uhppib","mgdipkgt","vaostwmycy","bjwxnfbbubpnd"}, people4)));
+        System.out.println("[0,1,2,4] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"uhppib","mgdipkgt","vaostwmycy","bjwxnfbbubpnd"}, people4)));
     }
 }

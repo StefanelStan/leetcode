@@ -7,7 +7,51 @@ import java.util.LinkedList;
 
 public class AddTwoNumbersII {
     // https://leetcode.com/problems/add-two-numbers-ii/
+    /** Algorithm
+     *  1. Use the stack to memory space to operate over current node or nodes. If the returned values from calling appendNodes(next)
+     *    is 1, add it to longList.val
+     *  2. Get their sizes and differences (how many steps need to be skipped from long list tor each an index matching start of shortList
+     *  3. Add current shortList or 0 to carryOver + longList.val, overriding longList.val
+     *  4. If final carryOVer is 1, add new node in front of longList.
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int[] sizes = getSizes(l1, l2);
+        ListNode longList = sizes[0] <= sizes[1] ? l2 : l1;
+        ListNode shortList = sizes[0] <= sizes[1] ? l1 : l2;
+        int carryOver = appendNodes(longList, shortList, Math.abs(sizes[0] - sizes[1]));
+        return carryOver == 1 ? new ListNode(1, longList) : longList;
+    }
+
+    private int appendNodes(ListNode longList, ListNode shortList, int diff) {
+        if (longList == null) {
+            return 0;
+        }
+        int carryOver = diff > 0
+            ? appendNodes(longList.next, shortList, diff -1)
+            : appendNodes(longList.next, shortList.next, diff - 1);
+        int sum = diff > 0  ? longList.val + carryOver : longList.val + carryOver + shortList.val;
+        longList.val = sum % 10;
+        return sum / 10;
+    }
+
+    private int[] getSizes(ListNode l1, ListNode l2) {
+        int[] sizes = {0,0};
+        while (l1 != null || l2 != null) {
+            if (l1 != null) {
+                l1 = l1.next;
+                sizes[0]++;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+                sizes[1]++;
+            }
+        }
+        return sizes;
+    }
+
+
+
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         int[] l1Size = {0};
         int[] l2Size = {0};
         ListNode l1Rev = reverse(l1, l1Size);
@@ -49,8 +93,7 @@ public class AddTwoNumbersII {
         return prev;
     }
 
-    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
-        int sumL1 = 0, sumL2 = 0;
+    public ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
         Deque<Integer> l1Digits = new LinkedList<>();
         Deque<Integer> l2Digits =  new LinkedList<>();
         while(l1 != null){
