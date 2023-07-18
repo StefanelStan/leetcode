@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022.november;
 
 public class LRUCache {
+    // https://leetcode.com/problems/lru-cache
     /** Algorithm
          1. Studying LRU, you can understand that you need a FIFO data structure (first in, first out or QUEUE).
             The first elements in the queue become the "oldest" and should be evicted first, accordingly
@@ -12,6 +13,97 @@ public class LRUCache {
          5. Get: if cache[key] == null, return -1, else move the CachedObject at the end (after tail). Pay attention when breaking the links.
          6. Put: if key exists, check against the current size and either add new tail OR evict head and add new tail.
      */
+    // more pro version
+    private int currentSize;
+    private final int maxSize;
+    private int head = -1, tail = -1;
+    private final CacheObject[] keys;
+    public LRUCache(int capacity) {
+        maxSize = capacity;
+        keys = new CacheObject[10001];
+    }
+
+    public int get(int key) {
+        if (keys[key] == null) {
+            return -1;
+        } else {
+            CacheObject object = keys[key];
+            removeCachedObject(key);
+            addCacheObject(key, object);
+            return keys[key].value;
+        }
+    }
+
+    public void put(int key, int value) {
+        if (keys[key] == null) {
+            if (currentSize == maxSize) {
+                removeCachedObject(head);
+            }
+            addCacheObject(key, new CacheObject(key, value));
+        } else {
+            keys[key].value = value;
+            CacheObject object = keys[key];
+            removeCachedObject(key);
+            addCacheObject(key, object);
+        }
+    }
+
+    private void addCacheObject(int key, CacheObject newObject) {
+        // there is guaranteed room for this!
+        keys[key] = newObject;
+        if (currentSize == 0) { // size == 0
+            head = tail = key;
+        } else if (currentSize == 1) { //size == 1
+            tail = key;
+            keys[head].next = newObject;
+            newObject.previous = keys[head];
+        } else { // size > 1
+            keys[tail].next = newObject;
+            newObject.previous = keys[tail];
+            tail = key;
+        }
+        currentSize++;
+    }
+
+    private void removeCachedObject(int key) {
+        // single object
+        if (currentSize == 1) {
+            head = -1;
+            tail = -1;
+        } else if(key == head) { // head
+            int nextHead = keys[head].next.key;
+            keys[nextHead].previous = null;
+            keys[head].next = null;
+            head = nextHead;
+        } else if (key == tail) { // tail
+            int nextTail = keys[tail].previous.key;
+            keys[tail].previous = null;
+            keys[nextTail].next = null;
+            tail = nextTail;
+        } else { // middle
+            keys[key].previous.next = keys[key].next;
+            keys[key].next.previous = keys[key].previous;
+            keys[key].previous = null;
+            keys[key].next = null;
+        }
+        keys[key] = null;
+        currentSize--;
+    }
+
+    private static class CacheObject{
+        int key;
+        int value;
+        CacheObject next;
+        CacheObject previous;
+
+        public CacheObject(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+
+    /**
     private final int maxCapacity;
     private int currentSize;
     private final CachedObject[] cache;
@@ -134,4 +226,5 @@ public class LRUCache {
             this.value = value;
         }
     }
+     */
 }
