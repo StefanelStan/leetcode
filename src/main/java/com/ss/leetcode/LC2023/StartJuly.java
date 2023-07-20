@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.july.AsteroidCollision;
 import com.ss.leetcode.LC2023.july.CountNumberOfTexts;
 import com.ss.leetcode.LC2023.july.FindEventualSafeStates;
 import com.ss.leetcode.LC2023.july.FindTheKthLargestIntegerInTheArray;
@@ -8,6 +9,7 @@ import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
 import com.ss.leetcode.LC2023.july.MinimumOperationsToHalveArraySum;
 import com.ss.leetcode.LC2023.july.MostProfitAssigningWork;
+import com.ss.leetcode.LC2023.july.NonOverlappingIntervals;
 import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
@@ -30,7 +32,9 @@ public class StartJuly {
 //        start.minimumOperationsToHalveArraySum();
 //        start.findEventualSafeStates();
 //        start.countNumberOfTexts();
-        start.smallestSufficientTeam();
+//        start.smallestSufficientTeam();
+//        start.asteroidCollision();
+        start.nonOverlappingIntervals();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -151,5 +155,22 @@ public class StartJuly {
             "hfkbcrslcdjq","jmhobexvmmlyyzk","fjubadocdwaygs","peaqbonzgl","brgjopmm","x","mf","pcfpppaxsxtpixd","ccwfthnjt","xtadkauiqwravo","zezdb","a","rahimgtlopffbwdg","ulqocaijhezwfr","zshbwqdhx","hyxnrujrqykzhizm"},
             people3)));
         System.out.println("[0,1,2,4] == " + Arrays.toString(sst.smallestSufficientTeam(new String[]{"uhppib","mgdipkgt","vaostwmycy","bjwxnfbbubpnd"}, people4)));
+    }
+
+    public void asteroidCollision() {
+        AsteroidCollision ac = new AsteroidCollision();
+
+        System.out.println("[5,10] == " + Arrays.toString(ac.asteroidCollision(new int[]{5,10,-5})));
+        System.out.println("[] == " + Arrays.toString(ac.asteroidCollision(new int[]{8,-8})));
+        System.out.println("[10] == " + Arrays.toString(ac.asteroidCollision(new int[]{10,2,-5})));
+    }
+
+    public void nonOverlappingIntervals() {
+        NonOverlappingIntervals noi = new NonOverlappingIntervals();
+
+        System.out.println("1 == " + noi.eraseOverlapIntervals(new int[][]{{1,2},{2,3},{3,4},{1,3}}));
+        System.out.println("2 == " + noi.eraseOverlapIntervals(new int[][]{{1,2},{1,2},{1,2}}));
+        System.out.println("0 == " + noi.eraseOverlapIntervals(new int[][]{{1,2},{2,3}}));
+        System.out.println("4 == " + noi.eraseOverlapIntervals(new int[][]{{1,7},{2,6},{1,2},{6,8},{8,10},{7,10},{3,9},{11,12},{8,12}}));
     }
 }

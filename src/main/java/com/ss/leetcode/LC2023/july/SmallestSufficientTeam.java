@@ -32,7 +32,7 @@ public class SmallestSufficientTeam {
         10. Return the most efficient team.
      */
     public int[] smallestSufficientTeam(String[] req_skills, List<List<String>> people) {
-        List<SkilledPerson> sortBySkills = getPeopleSortedBySkills(people); new ArrayList<>();
+        List<SkilledPerson> sortBySkills = getPeopleSortedBySkills(people);
         Map<String, Integer> skillMap = getReqSkillMap(req_skills);
         int[][] skilledPeople = getSkilledPeople(sortBySkills, skillMap);
         int[][] presentSkills = getPresentSkills(skilledPeople);
