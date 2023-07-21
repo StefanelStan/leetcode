@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
 import com.ss.leetcode.LC2023.july.MinimumOperationsToHalveArraySum;
 import com.ss.leetcode.LC2023.july.MostProfitAssigningWork;
 import com.ss.leetcode.LC2023.july.NonOverlappingIntervals;
+import com.ss.leetcode.LC2023.july.NumberOfLongestIncreasingSubsequence;
 import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
@@ -34,7 +35,8 @@ public class StartJuly {
 //        start.countNumberOfTexts();
 //        start.smallestSufficientTeam();
 //        start.asteroidCollision();
-        start.nonOverlappingIntervals();
+//        start.nonOverlappingIntervals();
+        start.numberOfLongestIncreasingSubsequence();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -172,5 +174,16 @@ public class StartJuly {
         System.out.println("2 == " + noi.eraseOverlapIntervals(new int[][]{{1,2},{1,2},{1,2}}));
         System.out.println("0 == " + noi.eraseOverlapIntervals(new int[][]{{1,2},{2,3}}));
         System.out.println("4 == " + noi.eraseOverlapIntervals(new int[][]{{1,7},{2,6},{1,2},{6,8},{8,10},{7,10},{3,9},{11,12},{8,12}}));
+    }
+
+    public void numberOfLongestIncreasingSubsequence() {
+        NumberOfLongestIncreasingSubsequence nolis = new NumberOfLongestIncreasingSubsequence();
+
+        System.out.println("2 == " + nolis.findNumberOfLIS(new int[]{1,3,5,4,7}));
+        System.out.println("5 == " + nolis.findNumberOfLIS(new int[]{2,2,2,2,2}));
+        System.out.println("1 == " + nolis.findNumberOfLIS(new int[]{1}));
+        System.out.println("2 == " + nolis.findNumberOfLIS(new int[]{6,1,2,3,11,12,13,14,7,8,9,10}));
+        System.out.println("1 == " + nolis.findNumberOfLIS(new int[]{6,1,2,3,11,12,13,14,7,8,9,11,4,5,6,7,8,9,78,6,5,4,3,2,43,54,6,7,8,76,5,3,2,10}));
+        System.out.println("5 == " + nolis.findNumberOfLIS(new int[]{5,4,3,2,1}));
     }
 }
