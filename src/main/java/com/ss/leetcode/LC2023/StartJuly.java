@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.july.AsteroidCollision;
 import com.ss.leetcode.LC2023.july.CountNumberOfTexts;
 import com.ss.leetcode.LC2023.july.FindEventualSafeStates;
 import com.ss.leetcode.LC2023.july.FindTheKthLargestIntegerInTheArray;
+import com.ss.leetcode.LC2023.july.KnightProbabilityInChessboard;
 import com.ss.leetcode.LC2023.july.LongestEvenOddSubarrayWithThreshold;
 import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
@@ -36,7 +37,8 @@ public class StartJuly {
 //        start.smallestSufficientTeam();
 //        start.asteroidCollision();
 //        start.nonOverlappingIntervals();
-        start.numberOfLongestIncreasingSubsequence();
+//        start.numberOfLongestIncreasingSubsequence();
+        start.knightProbabilityInChessboard();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -185,5 +187,15 @@ public class StartJuly {
         System.out.println("2 == " + nolis.findNumberOfLIS(new int[]{6,1,2,3,11,12,13,14,7,8,9,10}));
         System.out.println("1 == " + nolis.findNumberOfLIS(new int[]{6,1,2,3,11,12,13,14,7,8,9,11,4,5,6,7,8,9,78,6,5,4,3,2,43,54,6,7,8,76,5,3,2,10}));
         System.out.println("5 == " + nolis.findNumberOfLIS(new int[]{5,4,3,2,1}));
+    }
+
+    public void knightProbabilityInChessboard() {
+        KnightProbabilityInChessboard kpic = new KnightProbabilityInChessboard();
+
+        System.out.println("0.06250 == " + kpic.knightProbability(3,2,0,0));
+        System.out.println("1.00000 == " + kpic.knightProbability(1,0,0,0));
+        System.out.println("0.00634 == " + kpic.knightProbability(17,76,8,8));
+        System.out.println("0.00122 == " + kpic.knightProbability(25,100,0,0));
+        System.out.println("0.08580 == " + kpic.knightProbability(8,10,4,3));
     }
 }
