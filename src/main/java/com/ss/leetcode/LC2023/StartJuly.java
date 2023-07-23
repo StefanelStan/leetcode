@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.july.AllPossibleFullBinaryTrees;
 import com.ss.leetcode.LC2023.july.AsteroidCollision;
 import com.ss.leetcode.LC2023.july.CountNumberOfTexts;
 import com.ss.leetcode.LC2023.july.FindEventualSafeStates;
@@ -16,7 +17,6 @@ import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
 import com.ss.leetcode.shared.TreeNode;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,7 +38,8 @@ public class StartJuly {
 //        start.asteroidCollision();
 //        start.nonOverlappingIntervals();
 //        start.numberOfLongestIncreasingSubsequence();
-        start.knightProbabilityInChessboard();
+//        start.knightProbabilityInChessboard();
+        start.allPossibleFullBinaryTrees();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -197,5 +198,13 @@ public class StartJuly {
         System.out.println("0.00634 == " + kpic.knightProbability(17,76,8,8));
         System.out.println("0.00122 == " + kpic.knightProbability(25,100,0,0));
         System.out.println("0.08580 == " + kpic.knightProbability(8,10,4,3));
+    }
+
+    public void allPossibleFullBinaryTrees() {
+        AllPossibleFullBinaryTrees alfbt = new AllPossibleFullBinaryTrees();
+
+        System.out.println("1 == " + alfbt.allPossibleFBT(1).size());
+        System.out.println("1 == " + alfbt.allPossibleFBT(3).size());
+        System.out.println("42 == " + alfbt.allPossibleFBT(11).size());
     }
 }
