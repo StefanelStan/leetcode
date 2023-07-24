@@ -3,9 +3,12 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.july.AllPossibleFullBinaryTrees;
 import com.ss.leetcode.LC2023.july.AsteroidCollision;
 import com.ss.leetcode.LC2023.july.CountNumberOfTexts;
+import com.ss.leetcode.LC2023.july.CountNumberOfWaysToPlaceHouses;
 import com.ss.leetcode.LC2023.july.FindEventualSafeStates;
 import com.ss.leetcode.LC2023.july.FindTheKthLargestIntegerInTheArray;
+import com.ss.leetcode.LC2023.july.HIndexII;
 import com.ss.leetcode.LC2023.july.KnightProbabilityInChessboard;
+import com.ss.leetcode.LC2023.july.LinkedListComponents;
 import com.ss.leetcode.LC2023.july.LongestEvenOddSubarrayWithThreshold;
 import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
@@ -16,6 +19,7 @@ import com.ss.leetcode.LC2023.july.NumberOfLongestIncreasingSubsequence;
 import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
+import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +43,10 @@ public class StartJuly {
 //        start.nonOverlappingIntervals();
 //        start.numberOfLongestIncreasingSubsequence();
 //        start.knightProbabilityInChessboard();
-        start.allPossibleFullBinaryTrees();
+//        start.allPossibleFullBinaryTrees();
+//        start.linkedListComponents();
+//        start.countNumberOfWaysToPlaceHouses();
+        start.hIndexII();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -206,5 +213,38 @@ public class StartJuly {
         System.out.println("1 == " + alfbt.allPossibleFBT(1).size());
         System.out.println("1 == " + alfbt.allPossibleFBT(3).size());
         System.out.println("42 == " + alfbt.allPossibleFBT(11).size());
+    }
+
+    public void linkedListComponents() {
+        LinkedListComponents llc = new LinkedListComponents();
+
+        System.out.println("2 == " + llc.numComponents(ListNode.makeChain(new int[]{0,1,2,3}), new int[]{0,1,3}));
+        System.out.println("2 == " + llc.numComponents(ListNode.makeChain(new int[]{0,1,2,3,4}), new int[]{0,3,1,4}));
+        System.out.println("2 == " + llc.numComponents(ListNode.makeChain(new int[]{0,1,2,3,4}), new int[]{0,3,1,4}));
+        System.out.println("5 == " + llc.numComponents(ListNode.makeChain(new int[]{0,1,2,3,9,4,8,7,6,5,11,13,12,10}), new int[]{9,8,6,13,0}));
+        System.out.println("2 == " + llc.numComponents(ListNode.makeChain(new int[]{0,1,2,3,9,4,8,7,6,5,11,13,12,10}), new int[]{5,6,7,8,9,11,2,3,1}));
+    }
+
+    public void countNumberOfWaysToPlaceHouses() {
+        CountNumberOfWaysToPlaceHouses cnowtph = new CountNumberOfWaysToPlaceHouses();
+
+        System.out.println("4 == " + cnowtph.countHousePlacements(1));
+        System.out.println("9 == " + cnowtph.countHousePlacements(2));
+        System.out.println("25 == " + cnowtph.countHousePlacements(3));
+        System.out.println("64 == " + cnowtph.countHousePlacements(4));
+        System.out.println("169 == " + cnowtph.countHousePlacements(5));
+        System.out.println("441 == " + cnowtph.countHousePlacements(6));
+        System.out.println("1156 == " + cnowtph.countHousePlacements(7));
+    }
+
+    public void hIndexII() {
+        HIndexII hiii = new HIndexII();
+
+        System.out.println("3 == " + hiii.hIndex(new int[]{0,1,3,5,6}));
+        System.out.println("2 == " + hiii.hIndex(new int[]{1,2,100}));
+        System.out.println("2 == " + hiii.hIndex(new int[]{0,1,2,4,6}));
+        System.out.println("5 == " + hiii.hIndex(new int[]{0,0,0,1,1,1,2,3,6,7,8,9,10}));
+        System.out.println("5 == " + hiii.hIndex(new int[]{4,5,6,7,8,9}));
+        System.out.println("2 == " + hiii.hIndex(new int[]{0,0,0,0,1,2,3}));
     }
 }
