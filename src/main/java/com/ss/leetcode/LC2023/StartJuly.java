@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2023.july.KnightProbabilityInChessboard;
 import com.ss.leetcode.LC2023.july.LinkedListComponents;
 import com.ss.leetcode.LC2023.july.LongestEvenOddSubarrayWithThreshold;
 import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
+import com.ss.leetcode.LC2023.july.MaximumNumberOfEatenApples;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
 import com.ss.leetcode.LC2023.july.MinimumOperationsToHalveArraySum;
 import com.ss.leetcode.LC2023.july.MostProfitAssigningWork;
@@ -19,6 +20,7 @@ import com.ss.leetcode.LC2023.july.NumberOfLongestIncreasingSubsequence;
 import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
+import com.ss.leetcode.LC2023.july.WaysToSplitArrayIntoThreeSubarrays;
 import com.ss.leetcode.shared.ListNode;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
@@ -46,7 +48,9 @@ public class StartJuly {
 //        start.allPossibleFullBinaryTrees();
 //        start.linkedListComponents();
 //        start.countNumberOfWaysToPlaceHouses();
-        start.hIndexII();
+//        start.hIndexII();
+//        start.maximumNumberOfEatenApples();
+        start.waysToSplitArrayIntoThreeSubarrays();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -246,5 +250,25 @@ public class StartJuly {
         System.out.println("5 == " + hiii.hIndex(new int[]{0,0,0,1,1,1,2,3,6,7,8,9,10}));
         System.out.println("5 == " + hiii.hIndex(new int[]{4,5,6,7,8,9}));
         System.out.println("2 == " + hiii.hIndex(new int[]{0,0,0,0,1,2,3}));
+    }
+
+    public void maximumNumberOfEatenApples() {
+        MaximumNumberOfEatenApples mnoea = new MaximumNumberOfEatenApples();
+
+        System.out.println("7 == " + mnoea.eatenApples(new int[]{1,2,3,5,2}, new int[]{3,2,1,4,2}));
+        System.out.println("5 == " + mnoea.eatenApples(new int[]{3,0,0,0,0,2}, new int[]{3,0,0,0,0,2}));
+        System.out.println("4 == " + mnoea.eatenApples(new int[]{2,1,10}, new int[]{2,10,1}));
+    }
+
+    public void waysToSplitArrayIntoThreeSubarrays() {
+        WaysToSplitArrayIntoThreeSubarrays wtsits = new WaysToSplitArrayIntoThreeSubarrays();
+
+        System.out.println("1 == " + wtsits.waysToSplit(new int[]{1,1,1}));
+        System.out.println("3 == " + wtsits.waysToSplit(new int[]{1,2,2,2,5,0}));
+        System.out.println("0 == " + wtsits.waysToSplit(new int[]{3,2,1}));
+        System.out.println("0 == " + wtsits.waysToSplit(new int[]{3,100,4,4}));
+        System.out.println("7 == " + wtsits.waysToSplit(new int[]{5,3,3,0,0,0,0,0,0,3,3}));
+        System.out.println("1 == " + wtsits.waysToSplit(new int[]{0,0,0}));
+        System.out.println("80 == " + wtsits.waysToSplit(new int[]{5,4,3,2,1,0,0,0,0,10,5,0,0,0,1,2,3,4,9,8,7,6}));
     }
 }
