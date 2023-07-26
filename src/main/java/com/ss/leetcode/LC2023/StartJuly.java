@@ -14,6 +14,7 @@ import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
 import com.ss.leetcode.LC2023.july.MaximumNumberOfEatenApples;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
 import com.ss.leetcode.LC2023.july.MinimumOperationsToHalveArraySum;
+import com.ss.leetcode.LC2023.july.MinimumSpeedToArriveOnTime;
 import com.ss.leetcode.LC2023.july.MostProfitAssigningWork;
 import com.ss.leetcode.LC2023.july.NonOverlappingIntervals;
 import com.ss.leetcode.LC2023.july.NumberOfLongestIncreasingSubsequence;
@@ -50,7 +51,8 @@ public class StartJuly {
 //        start.countNumberOfWaysToPlaceHouses();
 //        start.hIndexII();
 //        start.maximumNumberOfEatenApples();
-        start.waysToSplitArrayIntoThreeSubarrays();
+//        start.waysToSplitArrayIntoThreeSubarrays();
+        start.minimumSpeedToArriveOnTime();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -270,5 +272,14 @@ public class StartJuly {
         System.out.println("7 == " + wtsits.waysToSplit(new int[]{5,3,3,0,0,0,0,0,0,3,3}));
         System.out.println("1 == " + wtsits.waysToSplit(new int[]{0,0,0}));
         System.out.println("80 == " + wtsits.waysToSplit(new int[]{5,4,3,2,1,0,0,0,0,10,5,0,0,0,1,2,3,4,9,8,7,6}));
+    }
+
+    public void minimumSpeedToArriveOnTime() {
+        MinimumSpeedToArriveOnTime mstaot = new MinimumSpeedToArriveOnTime();
+
+        System.out.println("1 == " + mstaot.minSpeedOnTime(new int[]{1,3,2}, 6));
+        System.out.println("3 == " + mstaot.minSpeedOnTime(new int[]{1,3,2}, 2.7));
+        System.out.println("-1 == " + mstaot.minSpeedOnTime(new int[]{1,3,2}, 1.9));
+        System.out.println("10000000 == " + mstaot.minSpeedOnTime(new int[]{1,1,100000}, 2.01));
     }
 }
