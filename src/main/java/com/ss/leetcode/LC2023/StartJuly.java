@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.july.AllPossibleFullBinaryTrees;
 import com.ss.leetcode.LC2023.july.AsteroidCollision;
 import com.ss.leetcode.LC2023.july.CountNumberOfTexts;
 import com.ss.leetcode.LC2023.july.CountNumberOfWaysToPlaceHouses;
+import com.ss.leetcode.LC2023.july.ExpressiveWords;
 import com.ss.leetcode.LC2023.july.FindEventualSafeStates;
 import com.ss.leetcode.LC2023.july.FindTheKthLargestIntegerInTheArray;
 import com.ss.leetcode.LC2023.july.HIndexII;
@@ -52,7 +53,8 @@ public class StartJuly {
 //        start.hIndexII();
 //        start.maximumNumberOfEatenApples();
 //        start.waysToSplitArrayIntoThreeSubarrays();
-        start.minimumSpeedToArriveOnTime();
+//        start.minimumSpeedToArriveOnTime();
+        start.expressiveWords();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -281,5 +283,14 @@ public class StartJuly {
         System.out.println("3 == " + mstaot.minSpeedOnTime(new int[]{1,3,2}, 2.7));
         System.out.println("-1 == " + mstaot.minSpeedOnTime(new int[]{1,3,2}, 1.9));
         System.out.println("10000000 == " + mstaot.minSpeedOnTime(new int[]{1,1,100000}, 2.01));
+    }
+
+    public void expressiveWords() {
+        ExpressiveWords ew = new ExpressiveWords();
+
+        System.out.println("1 == " + ew.expressiveWords("heeellooo", new String[]{"hello", "hi", "helo"}));
+        System.out.println("3 == " + ew.expressiveWords("zzzzzyyyyy", new String[]{"zzyy","zy","zyy"}));
+        System.out.println("2 == " + ew.expressiveWords("aaaaaa", new String[]{"aaaa","a","aaaaaaa","aaaaab"}));
+        System.out.println("0 == " + ew.expressiveWords("aaaa", new String[]{"ab"}));
     }
 }
