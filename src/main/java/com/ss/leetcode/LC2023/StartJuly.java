@@ -19,6 +19,7 @@ import com.ss.leetcode.LC2023.july.MinimumSpeedToArriveOnTime;
 import com.ss.leetcode.LC2023.july.MostProfitAssigningWork;
 import com.ss.leetcode.LC2023.july.NonOverlappingIntervals;
 import com.ss.leetcode.LC2023.july.NumberOfLongestIncreasingSubsequence;
+import com.ss.leetcode.LC2023.july.PredictTheWinner;
 import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
@@ -54,7 +55,8 @@ public class StartJuly {
 //        start.maximumNumberOfEatenApples();
 //        start.waysToSplitArrayIntoThreeSubarrays();
 //        start.minimumSpeedToArriveOnTime();
-        start.expressiveWords();
+//        start.expressiveWords();
+        start.predictTheWinner();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -292,5 +294,12 @@ public class StartJuly {
         System.out.println("3 == " + ew.expressiveWords("zzzzzyyyyy", new String[]{"zzyy","zy","zyy"}));
         System.out.println("2 == " + ew.expressiveWords("aaaaaa", new String[]{"aaaa","a","aaaaaaa","aaaaab"}));
         System.out.println("0 == " + ew.expressiveWords("aaaa", new String[]{"ab"}));
+    }
+
+    public void predictTheWinner() {
+        PredictTheWinner ptw = new PredictTheWinner();
+
+        System.out.println("false == " + ptw.predictTheWinner(new int[]{1,5,2}));
+        System.out.println("true == " + ptw.predictTheWinner(new int[]{1,5,233,7}));
     }
 }
