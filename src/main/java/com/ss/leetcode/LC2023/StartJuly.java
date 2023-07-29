@@ -16,6 +16,7 @@ import com.ss.leetcode.LC2023.july.MaximumNumberOfEatenApples;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
 import com.ss.leetcode.LC2023.july.MinimumOperationsToHalveArraySum;
 import com.ss.leetcode.LC2023.july.MinimumSpeedToArriveOnTime;
+import com.ss.leetcode.LC2023.july.MinimumTimeToRepairCars;
 import com.ss.leetcode.LC2023.july.MostProfitAssigningWork;
 import com.ss.leetcode.LC2023.july.NonOverlappingIntervals;
 import com.ss.leetcode.LC2023.july.NumberOfLongestIncreasingSubsequence;
@@ -56,7 +57,8 @@ public class StartJuly {
 //        start.waysToSplitArrayIntoThreeSubarrays();
 //        start.minimumSpeedToArriveOnTime();
 //        start.expressiveWords();
-        start.predictTheWinner();
+//        start.predictTheWinner();
+        start.minimumTimeToRepairCars();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -301,5 +303,13 @@ public class StartJuly {
 
         System.out.println("false == " + ptw.predictTheWinner(new int[]{1,5,2}));
         System.out.println("true == " + ptw.predictTheWinner(new int[]{1,5,233,7}));
+    }
+
+    public void minimumTimeToRepairCars() {
+        MinimumTimeToRepairCars mttrc = new MinimumTimeToRepairCars();
+
+        System.out.println("16 == " + mttrc.repairCars(new int[]{4,2,3,1}, 10));
+        System.out.println("16 == " + mttrc.repairCars(new int[]{5,1,8}, 6));
+        System.out.println("100000000000000 == " + mttrc.repairCars(new int[]{100}, 1000000));
     }
 }
