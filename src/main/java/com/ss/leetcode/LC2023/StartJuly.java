@@ -10,9 +10,11 @@ import com.ss.leetcode.LC2023.july.FindTheKthLargestIntegerInTheArray;
 import com.ss.leetcode.LC2023.july.HIndexII;
 import com.ss.leetcode.LC2023.july.KnightProbabilityInChessboard;
 import com.ss.leetcode.LC2023.july.LinkedListComponents;
+import com.ss.leetcode.LC2023.july.LongestCommonSubsequence;
 import com.ss.leetcode.LC2023.july.LongestEvenOddSubarrayWithThreshold;
 import com.ss.leetcode.LC2023.july.MaximizeTheConfusionOfAnExam;
 import com.ss.leetcode.LC2023.july.MaximumNumberOfEatenApples;
+import com.ss.leetcode.LC2023.july.MinimumASCIIDeleteSumForTwoStrings;
 import com.ss.leetcode.LC2023.july.MinimumDepthOfBinaryTree;
 import com.ss.leetcode.LC2023.july.MinimumOperationsToHalveArraySum;
 import com.ss.leetcode.LC2023.july.MinimumSpeedToArriveOnTime;
@@ -22,6 +24,7 @@ import com.ss.leetcode.LC2023.july.NonOverlappingIntervals;
 import com.ss.leetcode.LC2023.july.NumberOfLongestIncreasingSubsequence;
 import com.ss.leetcode.LC2023.july.PredictTheWinner;
 import com.ss.leetcode.LC2023.july.SmallestSufficientTeam;
+import com.ss.leetcode.LC2023.july.StrangePrinter;
 import com.ss.leetcode.LC2023.july.TotalDistanceTraveled;
 import com.ss.leetcode.LC2023.july.UniqueSubstringsInWraparoundString;
 import com.ss.leetcode.LC2023.july.WaysToSplitArrayIntoThreeSubarrays;
@@ -58,7 +61,10 @@ public class StartJuly {
 //        start.minimumSpeedToArriveOnTime();
 //        start.expressiveWords();
 //        start.predictTheWinner();
-        start.minimumTimeToRepairCars();
+//        start.minimumTimeToRepairCars();
+//        start.strangePrinter();
+//        start.longestCommonSubsequence();
+        start.minimumASCIIDeleteSumForTwoStrings();
     }
 
     public void uniqueSubstringsInWraparoundString() {
@@ -311,5 +317,32 @@ public class StartJuly {
         System.out.println("16 == " + mttrc.repairCars(new int[]{4,2,3,1}, 10));
         System.out.println("16 == " + mttrc.repairCars(new int[]{5,1,8}, 6));
         System.out.println("100000000000000 == " + mttrc.repairCars(new int[]{100}, 1000000));
+    }
+
+    public void strangePrinter() {
+        StrangePrinter sp = new StrangePrinter();
+
+        System.out.println("2 == " + sp.strangePrinter("aaabbb"));
+        System.out.println("2 == " + sp.strangePrinter("aba"));
+        System.out.println("2 == " + sp.strangePrinter("aaaaabaaaaaaaaaaaaa"));
+        System.out.println("7 == " + sp.strangePrinter("aaadfsdfsdf"));
+        System.out.println("4 == " + sp.strangePrinter("abcd"));
+        System.out.println("3 == " + sp.strangePrinter("abab"));
+        System.out.println("9 == " + sp.strangePrinter("aaaaaaaabbbbbbbbbbbbbaaaaaaammmmmnnnnnnooooooiiiiiiyyyyyyaaaaaaabbbbbbbnnnnmmmm"));
+    }
+
+    public void longestCommonSubsequence() {
+        LongestCommonSubsequence lcs = new LongestCommonSubsequence();
+
+        System.out.println("3 == " + lcs.longestCommonSubsequence("abcde", "ace"));
+        System.out.println("3 == " + lcs.longestCommonSubsequence("abc", "abc"));
+        System.out.println("0 == " + lcs.longestCommonSubsequence("abc", "def"));
+    }
+
+    public void minimumASCIIDeleteSumForTwoStrings() {
+        MinimumASCIIDeleteSumForTwoStrings madsfts = new MinimumASCIIDeleteSumForTwoStrings();
+
+        System.out.println("231 == " + madsfts.minimumDeleteSum("sea","eat"));
+        System.out.println("403 == " + madsfts.minimumDeleteSum("delete","leet"));
     }
 }
