@@ -24,7 +24,35 @@ public class LetterCombinationsOfAPhoneNumber {
     private static final List<List<String>> DIGIT_LETTERS = List.of(
         List.of("a","b","c"), List.of("d","e","f"), List.of("g","h","i"), List.of("j","k","l"),
         List.of("m","n","o"), List.of("p","q","r","s"), List.of("t","u","v"), List.of("w","x","y", "z"));
+
     public List<String> letterCombinations(String digits) {
+        if (digits.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return makeCombinations(digits, 0);
+    }
+
+    private List<String> makeCombinations(String s, int index) {
+        if (index == s.length() - 1) {
+            return DIGIT_LETTERS.get(s.charAt(index) - '2');
+        }
+        StringBuilder stb = new StringBuilder(s.length() - index);
+        List<String> downStreamCombinations = makeCombinations(s, index + 1);
+        List<String> indexCombinations = new ArrayList<>(DIGIT_LETTERS.get(s.charAt(index) - '2').size() * downStreamCombinations.size());
+        for (String indexLetter : DIGIT_LETTERS.get(s.charAt(index) - '2')) {
+            stb.setLength(0);
+            stb.append(indexLetter);
+            for(String list : downStreamCombinations) {
+                stb.append(list);
+                indexCombinations.add(stb.toString());
+                stb.setLength(1);
+            }
+        }
+        return indexCombinations;
+    }
+
+
+    public List<String> letterCombinations2(String digits) {
         if (digits.length() == 0) {
             return Collections.emptyList();
         }
