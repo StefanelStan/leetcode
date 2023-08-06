@@ -2,7 +2,9 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
+import com.ss.leetcode.LC2023.august.WalkingRobotSimulationII;
 import com.ss.leetcode.LC2023.august.WordBreak;
+import java.util.Arrays;
 import java.util.List;
 
 public class StartAugust {
@@ -11,7 +13,8 @@ public class StartAugust {
 
 //        start.repeatedDNASequences();
 //        start.findTheMaximumDivisibilityScore();
-        start.wordBreak();
+//        start.wordBreak();
+        start.walkingRobotSimulationII();
     }
 
     public void repeatedDNASequences() {
@@ -36,5 +39,46 @@ public class StartAugust {
         System.out.println("true == " + wb.wordBreak("leetcode", List.of("leet","code")));
         System.out.println("true == " + wb.wordBreak("applepenapple", List.of("apple","pen")));
         System.out.println("false == " + wb.wordBreak("catsandog", List.of("cats","dog","sand","and","cat")));
+    }
+
+    public void walkingRobotSimulationII() {
+        WalkingRobotSimulationII wrsii = new WalkingRobotSimulationII(6,3);
+        wrsii.step(2);
+        wrsii.step(2);
+        System.out.println("[4,0] == " + Arrays.toString(wrsii.getPos()));
+        System.out.println("East == " + wrsii.getDir());
+        wrsii.step(1);
+        wrsii.step(4);
+        System.out.println("[1,2] == " + Arrays.toString(wrsii.getPos()));
+        System.out.println("West == " + wrsii.getDir());
+
+        wrsii = new WalkingRobotSimulationII(6,3);
+        wrsii.step(14);
+        System.out.println("South == " + wrsii.getDir());
+        wrsii.step(5);
+        System.out.println("East == " + wrsii.getDir());
+        wrsii.step(1);
+        System.out.println("North == " + wrsii.getDir());
+        wrsii.step(15);
+        System.out.println("North == " + wrsii.getDir());
+        wrsii.step(33);
+        System.out.println("West == " + wrsii.getDir());
+        System.out.println("[0,2] == " + Arrays.toString(wrsii.getPos()));
+
+        wrsii = new WalkingRobotSimulationII(2,2);
+        wrsii.step(14);
+        System.out.println("North == " + wrsii.getDir());
+        wrsii.step(5);
+        System.out.println("West == " + wrsii.getDir());
+        wrsii.step(1);
+        System.out.println("South == " + wrsii.getDir());
+        wrsii.step(17);
+        System.out.println("East == " + wrsii.getDir());
+        wrsii.step(2);
+        System.out.println("West == " + wrsii.getDir());
+        wrsii.step(12);
+        System.out.println("West == " + wrsii.getDir());
+        System.out.println("[0,1] == " + Arrays.toString(wrsii.getPos()));
+
     }
 }
