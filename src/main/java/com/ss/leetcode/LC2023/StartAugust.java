@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
+import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
 import com.ss.leetcode.LC2023.august.WalkingRobotSimulationII;
 import com.ss.leetcode.LC2023.august.WordBreak;
@@ -14,7 +15,8 @@ public class StartAugust {
 //        start.repeatedDNASequences();
 //        start.findTheMaximumDivisibilityScore();
 //        start.wordBreak();
-        start.walkingRobotSimulationII();
+//        start.walkingRobotSimulationII();
+        start.minimizeTheMaximumDifferenceOfPairs();
     }
 
     public void repeatedDNASequences() {
@@ -80,5 +82,12 @@ public class StartAugust {
         System.out.println("West == " + wrsii.getDir());
         System.out.println("[0,1] == " + Arrays.toString(wrsii.getPos()));
 
+    }
+
+    public void minimizeTheMaximumDifferenceOfPairs() {
+        MinimizeTheMaximumDifferenceOfPairs mtmdop = new MinimizeTheMaximumDifferenceOfPairs();
+
+        System.out.println("1 == " + mtmdop.minimizeMax(new int[]{10,1,2,7,1,3}, 2));
+        System.out.println("0 == " + mtmdop.minimizeMax(new int[]{4,2,1,2}, 1));
     }
 }
