@@ -52,12 +52,12 @@ public class StartFebruary {
 //        start.maximumOfAbsoluteValueExpression();
 //        start.dota2Senate();
 //        start.largestRectangleInHistogram();
-//        start.replaceTheSubstringForBalancedString();
+        start.replaceTheSubstringForBalancedString();
 //        start.productOfTheLastKNumbers();
 //        start.sequentialDigits();
 //        start.concatenationOfConsecutiveBinaryNumbers();
 //        start.binaryNumberWithAlternatingBits();
-        start.numberOf1Bits();
+//        start.numberOf1Bits();
 //        start.checkIfItIsAStraightLine();
 //        start.findRightInterval();
 //        start.removeAllAdjacentDuplicatesInStringII();
@@ -297,11 +297,13 @@ public class StartFebruary {
 
     private void replaceTheSubstringForBalancedString() {
         // not done
+        // Edit 11.08.2023: It is done: 2 pointer/sliding window
         ReplaceTheSubstringForBalancedString rtsfbs = new ReplaceTheSubstringForBalancedString();
         System.out.println("0 == " + rtsfbs.balancedString("QWER"));
         System.out.println("1 == " + rtsfbs.balancedString("QQER"));
         System.out.println("2 == " + rtsfbs.balancedString("QQQR"));
         System.out.println("3 == " + rtsfbs.balancedString("QQQQ"));
+        System.out.println("3 == " + rtsfbs.balancedString("WQWRQQQW"));
     }
 
     private void productOfTheLastKNumbers() {
