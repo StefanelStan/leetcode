@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.august.CheckIfThereIsAValidPartitionForTheArray;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
@@ -16,7 +17,8 @@ public class StartAugust {
 //        start.findTheMaximumDivisibilityScore();
 //        start.wordBreak();
 //        start.walkingRobotSimulationII();
-        start.minimizeTheMaximumDifferenceOfPairs();
+//        start.minimizeTheMaximumDifferenceOfPairs();
+        start.checkIfThereIsAValidPartitionForTheArray();
     }
 
     public void repeatedDNASequences() {
@@ -89,5 +91,12 @@ public class StartAugust {
 
         System.out.println("1 == " + mtmdop.minimizeMax(new int[]{10,1,2,7,1,3}, 2));
         System.out.println("0 == " + mtmdop.minimizeMax(new int[]{4,2,1,2}, 1));
+    }
+
+    public void checkIfThereIsAValidPartitionForTheArray() {
+        CheckIfThereIsAValidPartitionForTheArray citiavpfta = new CheckIfThereIsAValidPartitionForTheArray();
+
+        System.out.println("true == " + citiavpfta.validPartition(new int[]{4,4,4,5,6}));
+        System.out.println("false == " + citiavpfta.validPartition(new int[]{1,1,1,2}));
     }
 }
