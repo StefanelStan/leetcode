@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.august.CheckIfThereIsAValidPartitionForTheArray;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
+import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
 import com.ss.leetcode.LC2023.august.WalkingRobotSimulationII;
 import com.ss.leetcode.LC2023.august.WordBreak;
@@ -18,7 +19,8 @@ public class StartAugust {
 //        start.wordBreak();
 //        start.walkingRobotSimulationII();
 //        start.minimizeTheMaximumDifferenceOfPairs();
-        start.checkIfThereIsAValidPartitionForTheArray();
+//        start.checkIfThereIsAValidPartitionForTheArray();
+        start.platesBetweenCandles();
     }
 
     public void repeatedDNASequences() {
@@ -98,5 +100,12 @@ public class StartAugust {
 
         System.out.println("true == " + citiavpfta.validPartition(new int[]{4,4,4,5,6}));
         System.out.println("false == " + citiavpfta.validPartition(new int[]{1,1,1,2}));
+    }
+
+    public void platesBetweenCandles() {
+        PlatesBetweenCandles pbc = new PlatesBetweenCandles();
+
+        System.out.println("[2,3] == " + Arrays.toString(pbc.platesBetweenCandles("**|**|***|", new int[][]{{2,5},{5,9}})));
+        System.out.println("9,0,0,0,0] == " + Arrays.toString(pbc.platesBetweenCandles("***|**|*****|**||**|*", new int[][]{{1,17},{4,5},{14,17},{5,11},{15,16}})));
     }
 }
