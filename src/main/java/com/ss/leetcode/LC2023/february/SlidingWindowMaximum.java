@@ -13,7 +13,50 @@ public class SlidingWindowMaximum {
         5. Add the peek() on the queue to answer
         6. Return the answer;
      */
+    // Can be enhanced with a linkedList to keep max at the end and smallest in the front
     public int[] maxSlidingWindow(int[] nums, int k) {
+        int[] max = new int[1 + nums.length - k];
+        PriorityQueue<Integer> highestNums = new PriorityQueue<>((a,b) -> Integer.compare(nums[b], nums[a]));
+        for (int i = 0; i < k; i++) {
+            if (!highestNums.isEmpty() && nums[highestNums.peek()] <= nums[i]) {
+                highestNums.clear();
+            }
+            highestNums.add(i);
+        }
+        int insertIndex = 0;
+        max[insertIndex++] = nums[highestNums.peek()];
+        for (int j = k; j < nums.length; j++) {
+            while (!highestNums.isEmpty() && insertIndex > highestNums.peek()) {
+                highestNums.poll();
+            }
+            if (!highestNums.isEmpty() && nums[highestNums.peek()] <= nums[j]) {
+                highestNums.clear();
+            }
+            highestNums.add(j);
+            max[insertIndex++] = nums[highestNums.peek()];
+        }
+        return max;
+    }
+
+    public int[] maxSlidingWindow2(int[] nums, int k) {
+        int[] max = new int[1 + nums.length - k];
+        PriorityQueue<Integer> highestNums = new PriorityQueue<>((a,b) -> Integer.compare(nums[b], nums[a]));
+        for (int i = 0; i < k; i++) {
+            highestNums.add(i);
+        }
+        int insertIndex = 0;
+        max[insertIndex++] = nums[highestNums.peek()];
+        for (int j = k; j < nums.length; j++) {
+            highestNums.add(j);
+            while (insertIndex > highestNums.peek()) {
+                highestNums.poll();
+            }
+            max[insertIndex++] = nums[highestNums.peek()];
+        }
+        return max;
+    }
+
+    public int[] maxSlidingWindow3(int[] nums, int k) {
         int slidingIndex = 0;
         int[] maxWindows = new int[nums.length - k + 1];
         PriorityQueue<int[]> window = getWindow(nums, k);

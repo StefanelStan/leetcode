@@ -83,7 +83,7 @@ public class StartFebruary {
 //        start.minimumCommonValue();
 //        start.takeGiftsFromTheRichestPile();
 //        start.fruitIntoBaskets();
-//        start.slidingWindowMaximum();
+        start.slidingWindowMaximum();
 //        start.maximalScoreAfterApplyingKOperations();
 //        start.jumpGameII();
 //        start.singleNumberII();
@@ -137,7 +137,7 @@ public class StartFebruary {
 //        start.constructQuadTree();
 //        start.editDistance();
 //        start.optimalPartitionOfString();
-        start.findTheDivisibilityArrayOfAString();
+//        start.findTheDivisibilityArrayOfAString();
     }
 
     public void numberOfDaysBetweenTwoDates() {
@@ -242,7 +242,7 @@ public class StartFebruary {
         SlidingWindowMaximum swm = new SlidingWindowMaximum();
 
         System.out.println("[3,3,5,5,6,7] == " + Arrays.toString(swm.maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7}, 3)));
-        System.out.println("[1] == " + Arrays.toString(swm.maxSlidingWindow(new int[]{1}, 1)));
+//        System.out.println("[1] == " + Arrays.toString(swm.maxSlidingWindow(new int[]{1}, 1)));
     }
 
     public void maximalScoreAfterApplyingKOperations() {
