@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.august.AllOOneDataStructure;
 import com.ss.leetcode.LC2023.august.CheckIfThereIsAValidPartitionForTheArray;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
@@ -20,7 +21,8 @@ public class StartAugust {
 //        start.walkingRobotSimulationII();
 //        start.minimizeTheMaximumDifferenceOfPairs();
 //        start.checkIfThereIsAValidPartitionForTheArray();
-        start.platesBetweenCandles();
+//        start.platesBetweenCandles();
+        start.allOOneDataStructure();
     }
 
     public void repeatedDNASequences() {
@@ -107,5 +109,17 @@ public class StartAugust {
 
         System.out.println("[2,3] == " + Arrays.toString(pbc.platesBetweenCandles("**|**|***|", new int[][]{{2,5},{5,9}})));
         System.out.println("9,0,0,0,0] == " + Arrays.toString(pbc.platesBetweenCandles("***|**|*****|**||**|*", new int[][]{{1,17},{4,5},{14,17},{5,11},{15,16}})));
+    }
+
+    public void allOOneDataStructure() {
+        AllOOneDataStructure aoods = new AllOOneDataStructure();
+
+        aoods.inc("hello");
+        aoods.inc("hello");
+        System.out.println("hello == " + aoods.getMaxKey());
+        System.out.println("hello == " + aoods.getMinKey());
+        aoods.inc("leet");
+        System.out.println("hello == " + aoods.getMaxKey());
+        System.out.println("leet == " + aoods.getMinKey());
     }
 }
