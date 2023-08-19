@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.august.AllOOneDataStructure;
 import com.ss.leetcode.LC2023.august.CheckIfThereIsAValidPartitionForTheArray;
+import com.ss.leetcode.LC2023.august.FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
@@ -22,7 +23,8 @@ public class StartAugust {
 //        start.minimizeTheMaximumDifferenceOfPairs();
 //        start.checkIfThereIsAValidPartitionForTheArray();
 //        start.platesBetweenCandles();
-        start.allOOneDataStructure();
+//        start.allOOneDataStructure();
+        start.findCriticalAndPseudoCriticalEdgesInMinimumSpanningTree();
     }
 
     public void repeatedDNASequences() {
@@ -121,5 +123,14 @@ public class StartAugust {
         aoods.inc("leet");
         System.out.println("hello == " + aoods.getMaxKey());
         System.out.println("leet == " + aoods.getMinKey());
+    }
+
+    public void findCriticalAndPseudoCriticalEdgesInMinimumSpanningTree() {
+        FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree fcapceimst = new FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree();
+
+        System.out.println("[[0,1],[2,3,4,5]] == " + fcapceimst.findCriticalAndPseudoCriticalEdges(5, new int[][]{{0,1,1},{1,2,1},{2,3,2},{0,3,2},
+            {0,4,3},{3,4,3},{1,4,6}}));
+
+        System.out.println("[[],[0,1,2,3]] == " + fcapceimst.findCriticalAndPseudoCriticalEdges(4, new int[][]{{0,1,1},{1,2,1},{2,3,1},{0,3,1}}));
     }
 }
