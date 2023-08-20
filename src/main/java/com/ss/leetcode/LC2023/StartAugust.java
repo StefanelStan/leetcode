@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.august.AllOOneDataStructure;
 import com.ss.leetcode.LC2023.august.CheckIfThereIsAValidPartitionForTheArray;
+import com.ss.leetcode.LC2023.august.CountBinarySubstrings;
 import com.ss.leetcode.LC2023.august.FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
@@ -24,7 +25,8 @@ public class StartAugust {
 //        start.checkIfThereIsAValidPartitionForTheArray();
 //        start.platesBetweenCandles();
 //        start.allOOneDataStructure();
-        start.findCriticalAndPseudoCriticalEdgesInMinimumSpanningTree();
+//        start.findCriticalAndPseudoCriticalEdgesInMinimumSpanningTree();
+        start.countBinarySubstrings();
     }
 
     public void repeatedDNASequences() {
@@ -132,5 +134,12 @@ public class StartAugust {
             {0,4,3},{3,4,3},{1,4,6}}));
 
         System.out.println("[[],[0,1,2,3]] == " + fcapceimst.findCriticalAndPseudoCriticalEdges(4, new int[][]{{0,1,1},{1,2,1},{2,3,1},{0,3,1}}));
+    }
+
+    public void countBinarySubstrings() {
+        CountBinarySubstrings cbs = new CountBinarySubstrings();
+
+        System.out.println("6 == " + cbs.countBinarySubstrings("00110011"));
+        System.out.println("4 == " + cbs.countBinarySubstrings("10101"));
     }
 }
