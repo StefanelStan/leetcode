@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.august.CheckIfThereIsAValidPartitionForTheArray;
 import com.ss.leetcode.LC2023.august.CountBinarySubstrings;
 import com.ss.leetcode.LC2023.august.FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
+import com.ss.leetcode.LC2023.august.HIndex;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
@@ -26,7 +27,8 @@ public class StartAugust {
 //        start.platesBetweenCandles();
 //        start.allOOneDataStructure();
 //        start.findCriticalAndPseudoCriticalEdgesInMinimumSpanningTree();
-        start.countBinarySubstrings();
+//        start.countBinarySubstrings();
+        start.hIndex();
     }
 
     public void repeatedDNASequences() {
@@ -141,5 +143,12 @@ public class StartAugust {
 
         System.out.println("6 == " + cbs.countBinarySubstrings("00110011"));
         System.out.println("4 == " + cbs.countBinarySubstrings("10101"));
+    }
+
+    public void hIndex() {
+        HIndex hi = new HIndex();
+
+        System.out.println("3 == " + hi.hIndex(new int[]{3,0,6,1,5}));
+        System.out.println("1 == " + hi.hIndex(new int[]{1,3,1}));
     }
 }
