@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2023.august.CountBinarySubstrings;
 import com.ss.leetcode.LC2023.august.FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.HIndex;
+import com.ss.leetcode.LC2023.august.MaximizeNumberOfSubsequencesInAString;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
@@ -28,7 +29,8 @@ public class StartAugust {
 //        start.allOOneDataStructure();
 //        start.findCriticalAndPseudoCriticalEdgesInMinimumSpanningTree();
 //        start.countBinarySubstrings();
-        start.hIndex();
+//        start.hIndex();
+        start.maximizeNumberOfSubsequencesInAString();
     }
 
     public void repeatedDNASequences() {
@@ -150,5 +152,14 @@ public class StartAugust {
 
         System.out.println("3 == " + hi.hIndex(new int[]{3,0,6,1,5}));
         System.out.println("1 == " + hi.hIndex(new int[]{1,3,1}));
+    }
+
+    public void maximizeNumberOfSubsequencesInAString() {
+        MaximizeNumberOfSubsequencesInAString mnosias = new MaximizeNumberOfSubsequencesInAString();
+
+        System.out.println("4 == " + mnosias.maximumSubsequenceCount("abdcdbc", "ac"));
+        System.out.println("6 == " + mnosias.maximumSubsequenceCount("aabb", "ab"));
+        System.out.println("171 == " + mnosias.maximumSubsequenceCount("aaaaaaaaaaaaaaaaaa", "aa"));
+        System.out.println("3 == " + mnosias.maximumSubsequenceCount("aa", "aa"));
     }
 }
