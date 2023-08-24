@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2023.august.MaximizeNumberOfSubsequencesInAString;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
+import com.ss.leetcode.LC2023.august.TextJustification;
 import com.ss.leetcode.LC2023.august.WalkingRobotSimulationII;
 import com.ss.leetcode.LC2023.august.WordBreak;
 import java.util.Arrays;
@@ -30,7 +31,8 @@ public class StartAugust {
 //        start.findCriticalAndPseudoCriticalEdgesInMinimumSpanningTree();
 //        start.countBinarySubstrings();
 //        start.hIndex();
-        start.maximizeNumberOfSubsequencesInAString();
+//        start.maximizeNumberOfSubsequencesInAString();
+        start.textJustification();
     }
 
     public void repeatedDNASequences() {
@@ -161,5 +163,14 @@ public class StartAugust {
         System.out.println("6 == " + mnosias.maximumSubsequenceCount("aabb", "ab"));
         System.out.println("171 == " + mnosias.maximumSubsequenceCount("aaaaaaaaaaaaaaaaaa", "aa"));
         System.out.println("3 == " + mnosias.maximumSubsequenceCount("aa", "aa"));
+    }
+
+    public void textJustification() {
+        TextJustification tj = new TextJustification();
+
+        System.out.println("[This    is    an,example  of text,justification.  ] == " + tj.fullJustify(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16));
+        System.out.println("[What   must   be,acknowledgment  ,shall be        ] == " + tj.fullJustify(new String[]{"What","must","be","acknowledgment","shall","be"}, 16));
+        System.out.println("[Science  is  what we,understand      well,enough to explain to,a  computer.  Art is,everything  else  we,do                  ] == "
+            + tj.fullJustify(new String[]{"Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"}, 20));
     }
 }
