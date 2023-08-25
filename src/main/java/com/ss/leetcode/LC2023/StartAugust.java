@@ -6,10 +6,12 @@ import com.ss.leetcode.LC2023.august.CountBinarySubstrings;
 import com.ss.leetcode.LC2023.august.FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree;
 import com.ss.leetcode.LC2023.august.FindTheMaximumDivisibilityScore;
 import com.ss.leetcode.LC2023.august.HIndex;
+import com.ss.leetcode.LC2023.august.InterleavingString;
 import com.ss.leetcode.LC2023.august.MaximizeNumberOfSubsequencesInAString;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
+import com.ss.leetcode.LC2023.august.ShiftingLettersII;
 import com.ss.leetcode.LC2023.august.TextJustification;
 import com.ss.leetcode.LC2023.august.WalkingRobotSimulationII;
 import com.ss.leetcode.LC2023.august.WordBreak;
@@ -32,7 +34,9 @@ public class StartAugust {
 //        start.countBinarySubstrings();
 //        start.hIndex();
 //        start.maximizeNumberOfSubsequencesInAString();
-        start.textJustification();
+//        start.textJustification();
+//        start.shiftingLettersII();
+        start.interleavingString();
     }
 
     public void repeatedDNASequences() {
@@ -172,5 +176,24 @@ public class StartAugust {
         System.out.println("[What   must   be,acknowledgment  ,shall be        ] == " + tj.fullJustify(new String[]{"What","must","be","acknowledgment","shall","be"}, 16));
         System.out.println("[Science  is  what we,understand      well,enough to explain to,a  computer.  Art is,everything  else  we,do                  ] == "
             + tj.fullJustify(new String[]{"Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"}, 20));
+    }
+
+    public void shiftingLettersII() {
+        ShiftingLettersII slii = new ShiftingLettersII();
+
+        System.out.println("ace == " + slii.shiftingLetters("abc", new int[][]{{0,1,0},{1,2,1},{0,2,1}}));
+        System.out.println("catz == " + slii.shiftingLetters("dztz", new int[][]{{0,0,0},{1,1,1}}));
+    }
+
+    public void interleavingString() {
+        InterleavingString is = new InterleavingString();
+
+//        System.out.println("true == " + is.isInterleave("aabcc","dbbca","aadbbcbcac"));
+//        System.out.println("false == " + is.isInterleave("aabcc","dbbca","aadbbbaccc"));
+//        System.out.println("true == " + is.isInterleave("","",""));
+//        System.out.println("true == " + is.isInterleave("","b","b"));
+        System.out.println("false == " + is.isInterleave("abababababababababababababababababababababababababababababababababababababababababababababababababbb",
+            "babababababababababababababababababababababababababababababababababababababababababababababababaaaba",
+            "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbb"));
     }
 }

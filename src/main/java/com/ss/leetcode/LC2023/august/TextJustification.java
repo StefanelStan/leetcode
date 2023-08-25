@@ -1,11 +1,13 @@
 package com.ss.leetcode.LC2023.august;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
 
 public class TextJustification {
     // https://leetcode.com/problems/text-justification
     public List<String> fullJustify(String[] words, int maxWidth) {
+        ArrayDeque ad = new ArrayDeque();
         List<String> justified = new LinkedList<>();
         int windowTotalCharCount = 0, windowWordCharCount = 0;
         int leftIndex = 0, rightIndex = 0;
