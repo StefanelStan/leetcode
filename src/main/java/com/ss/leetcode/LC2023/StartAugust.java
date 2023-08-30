@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2023.august.MaximizeNumberOfSubsequencesInAString;
 import com.ss.leetcode.LC2023.august.MaximumLengthOfPairChain;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
 import com.ss.leetcode.LC2023.august.MinimumPenaltyForAShop;
+import com.ss.leetcode.LC2023.august.MinimumReplacementsToSortTheArray;
 import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
 import com.ss.leetcode.LC2023.august.RepeatedDNASequences;
 import com.ss.leetcode.LC2023.august.ShiftingLettersII;
@@ -42,7 +43,8 @@ public class StartAugust {
 //        start.interleavingString();
 //        start.maximumLengthOfPairChain();
 //        start.frogJump();
-        start.minimumPenaltyForAShop();
+//        start.minimumPenaltyForAShop();
+        start.minimumReplacementsToSortTheArray();
     }
 
     public void repeatedDNASequences() {
@@ -230,5 +232,12 @@ public class StartAugust {
         System.out.println("12 == " + mpfas.bestClosingTime("YYNYNYYNYNYYNNYNYNYNNYNY"));
         System.out.println("5 == " + mpfas.bestClosingTime("YYYYYNN"));
         System.out.println("1 == " + mpfas.bestClosingTime("YN"));
+    }
+
+    public void minimumReplacementsToSortTheArray() {
+        MinimumReplacementsToSortTheArray mrtsta = new MinimumReplacementsToSortTheArray();
+
+        System.out.println("2 == " + mrtsta.minimumReplacement(new int[]{3,9,3}));
+        System.out.println("0 == " + mrtsta.minimumReplacement(new int[]{1,2,3,4,5}));
     }
 }
