@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2023.august.InterleavingString;
 import com.ss.leetcode.LC2023.august.MaximizeNumberOfSubsequencesInAString;
 import com.ss.leetcode.LC2023.august.MaximumLengthOfPairChain;
 import com.ss.leetcode.LC2023.august.MinimizeTheMaximumDifferenceOfPairs;
+import com.ss.leetcode.LC2023.august.MinimumNumberOfTapsToOpenToWaterAGarden;
 import com.ss.leetcode.LC2023.august.MinimumPenaltyForAShop;
 import com.ss.leetcode.LC2023.august.MinimumReplacementsToSortTheArray;
 import com.ss.leetcode.LC2023.august.PlatesBetweenCandles;
@@ -44,7 +45,8 @@ public class StartAugust {
 //        start.maximumLengthOfPairChain();
 //        start.frogJump();
 //        start.minimumPenaltyForAShop();
-        start.minimumReplacementsToSortTheArray();
+//        start.minimumReplacementsToSortTheArray();
+        start.minimumNumberOfTapsToOpenToWaterAGarden();
     }
 
     public void repeatedDNASequences() {
@@ -239,5 +241,14 @@ public class StartAugust {
 
         System.out.println("2 == " + mrtsta.minimumReplacement(new int[]{3,9,3}));
         System.out.println("0 == " + mrtsta.minimumReplacement(new int[]{1,2,3,4,5}));
+    }
+
+    public void minimumNumberOfTapsToOpenToWaterAGarden() {
+        MinimumNumberOfTapsToOpenToWaterAGarden mnottotwag = new MinimumNumberOfTapsToOpenToWaterAGarden();
+
+        System.out.println("1 == " + mnottotwag.minTaps(5, new int[]{3,4,1,1,0,0}));
+        System.out.println("-1 == " + mnottotwag.minTaps(3, new int[]{0,0,0,0}));
+        System.out.println("8 == " + mnottotwag.minTaps(28, new int[]{1,2,1,2,1,1,2,2,1,2,1,2,1,2,3,2,3,2,2,2,1,2,1,2,1,2,0,1,0}));
+        System.out.println("1 == " + mnottotwag.minTaps(8, new int[]{4,0,0,0,4,0,0,0,4}));
     }
 }
