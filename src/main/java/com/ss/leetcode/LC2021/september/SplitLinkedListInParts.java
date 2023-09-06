@@ -5,6 +5,34 @@ import com.ss.leetcode.shared.ListNode;
 public class SplitLinkedListInParts {
     // https://leetcode.com/problems/split-linked-list-in-parts/
     public ListNode[] splitListToParts(ListNode head, int k) {
+        int size = getSize(head);
+        ListNode[] parts = new ListNode[k];
+        int modulo = size % k, partSize = size / k;
+        for (int i = 0; i < k; i++) {
+            head = splitInSize(head, parts, i, modulo, partSize);
+            modulo--;
+        }
+        return parts;
+    }
+
+    private ListNode splitInSize(ListNode head, ListNode[] parts, int i, int modulo, int length) {
+        if (head == null) {
+            return null;
+        }
+        length += (modulo > 0 ? 1 : 0);
+        parts[i] = head;
+        while (head != null && length-- > 1) {
+            head = head.next;
+        }
+        ListNode toReturn = head;
+        if (head != null) {
+            toReturn = head.next;
+            head.next = null;
+        }
+        return toReturn;
+    }
+
+    public ListNode[] splitListToParts2(ListNode head, int k) {
         int listSize = getSize(head);
         // put the heads into a matrix position 0.next will point to the first node of each array
         ListNode[][] tempList = new ListNode[k][2];

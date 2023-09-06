@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.september.CanConvertStringInKMoves;
 import com.ss.leetcode.LC2023.september.ExtraCharactersInAString;
 import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
+import com.ss.leetcode.LC2023.september.LongestHappyString;
 
 public class StartSeptember {
     public static void main(String[] args) {
@@ -10,7 +11,8 @@ public class StartSeptember {
 
 //        start.extraCharactersInAString();
 //        start.canConvertStringInKMoves();
-        start.implementMagicDictionary();
+//        start.implementMagicDictionary();
+        start.longestHappyString();
     }
 
     public void extraCharactersInAString() {
@@ -37,5 +39,13 @@ public class StartSeptember {
         System.out.println("true == " + imd.search("hhllo"));
         System.out.println("false == " + imd.search("hell"));
         System.out.println("false == " + imd.search("leetcoded"));
+    }
+
+    public void longestHappyString() {
+        LongestHappyString lhs = new LongestHappyString();
+
+        System.out.println("ccaccbcc == " + lhs.longestDiverseString(1,1,7));
+        System.out.println("aabaa == " + lhs.longestDiverseString(7,1,0));
+        System.out.println("aabaacaa == " + lhs.longestDiverseString(6,1,1));
     }
 }

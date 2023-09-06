@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImplementMagicDictionary {
+    // https://leetcode.com/problems/implement-magic-dictionary
     /** Algorithm
         1. Use a List<char[]>[] to store the char arrays for each string on its own size bucket.
             It's faster to search through char[] than string
