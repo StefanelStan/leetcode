@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.september.CanConvertStringInKMoves;
 import com.ss.leetcode.LC2023.september.ExtraCharactersInAString;
 import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
+import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 
 public class StartSeptember {
     public static void main(String[] args) {
@@ -12,7 +13,8 @@ public class StartSeptember {
 //        start.extraCharactersInAString();
 //        start.canConvertStringInKMoves();
 //        start.implementMagicDictionary();
-        start.longestHappyString();
+//        start.longestHappyString();
+        start.sentenceSimilarityIII();
     }
 
     public void extraCharactersInAString() {
@@ -47,5 +49,15 @@ public class StartSeptember {
         System.out.println("ccaccbcc == " + lhs.longestDiverseString(1,1,7));
         System.out.println("aabaa == " + lhs.longestDiverseString(7,1,0));
         System.out.println("aabaacaa == " + lhs.longestDiverseString(6,1,1));
+    }
+
+    public void sentenceSimilarityIII() {
+        SentenceSimilarityIII ssiii = new SentenceSimilarityIII();
+
+        System.out.println("true == " + ssiii.areSentencesSimilar("My name is Haley", "My Haley"));
+        System.out.println("false == " + ssiii.areSentencesSimilar("of", "A lot of words"));
+        System.out.println("true == " + ssiii.areSentencesSimilar("Eating right now", "Eating"));
+        System.out.println("true == " + ssiii.areSentencesSimilar("A A AAa", "A AAa"));
+        System.out.println("true == " + ssiii.areSentencesSimilar("A B C D B B", "A B B"));
     }
 }
