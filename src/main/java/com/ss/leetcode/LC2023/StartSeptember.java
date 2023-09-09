@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.september.CanConvertStringInKMoves;
 import com.ss.leetcode.LC2023.september.ExtraCharactersInAString;
 import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
+import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 
 public class StartSeptember {
@@ -14,7 +15,8 @@ public class StartSeptember {
 //        start.canConvertStringInKMoves();
 //        start.implementMagicDictionary();
 //        start.longestHappyString();
-        start.sentenceSimilarityIII();
+//        start.sentenceSimilarityIII();
+        start.maximumNonNegativeProductInAMatrix();
     }
 
     public void extraCharactersInAString() {
@@ -59,5 +61,14 @@ public class StartSeptember {
         System.out.println("true == " + ssiii.areSentencesSimilar("Eating right now", "Eating"));
         System.out.println("true == " + ssiii.areSentencesSimilar("A A AAa", "A AAa"));
         System.out.println("true == " + ssiii.areSentencesSimilar("A B C D B B", "A B B"));
+    }
+
+    public void maximumNonNegativeProductInAMatrix() {
+        MaximumNonNegativeProductInAMatrix mnnpiam = new MaximumNonNegativeProductInAMatrix();
+
+        System.out.println("-1 == " + mnnpiam.maxProductPath(new int[][]{{-1,-2,-3},{-2,-3,-3},{-3,-3,-2}}));
+        System.out.println("8 == " + mnnpiam.maxProductPath(new int[][]{{1,-2,1},{1,-2,1},{3,-4,1}}));
+        System.out.println("0 == " + mnnpiam.maxProductPath(new int[][]{{1,3},{0,-4}}));
+
     }
 }
