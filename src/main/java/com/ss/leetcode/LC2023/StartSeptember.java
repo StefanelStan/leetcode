@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.september.CanConvertStringInKMoves;
+import com.ss.leetcode.LC2023.september.DesignTwitter;
 import com.ss.leetcode.LC2023.september.ExtraCharactersInAString;
 import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
@@ -16,7 +17,8 @@ public class StartSeptember {
 //        start.implementMagicDictionary();
 //        start.longestHappyString();
 //        start.sentenceSimilarityIII();
-        start.maximumNonNegativeProductInAMatrix();
+//        start.maximumNonNegativeProductInAMatrix();
+        start.designTwitter();
     }
 
     public void extraCharactersInAString() {
@@ -70,5 +72,39 @@ public class StartSeptember {
         System.out.println("8 == " + mnnpiam.maxProductPath(new int[][]{{1,-2,1},{1,-2,1},{3,-4,1}}));
         System.out.println("0 == " + mnnpiam.maxProductPath(new int[][]{{1,3},{0,-4}}));
 
+    }
+
+    public void designTwitter() {
+        DesignTwitter dt = new DesignTwitter();
+
+        dt.postTweet(1, 5);
+        System.out.println("[5] == " + dt.getNewsFeed(1));
+        dt.follow(1, 2);
+        dt.postTweet(2, 6);
+        System.out.println("[6,5] == " + dt.getNewsFeed(1));
+        dt.unfollow(1, 2);
+        System.out.println("[5] == " + dt.getNewsFeed(1));
+
+        dt = new DesignTwitter();
+        dt.postTweet(1, 5);
+        System.out.println("[5] == " + dt.getNewsFeed(1));
+        dt.follow(1, 2);
+        dt.postTweet(2, 6);
+        dt.postTweet(2, 7);
+        dt.postTweet(2, 9);
+        dt.postTweet(2, 8);
+        dt.postTweet(2, 10);
+        dt.postTweet(2, 12);
+        dt.postTweet(2, 11);
+        dt.postTweet(2, 14);
+        dt.postTweet(2, 16);
+        dt.postTweet(2, 15);
+        dt.postTweet(2, 13);
+        dt.postTweet(2, 17);
+
+        System.out.println("[17,13,15,16,14,11,12,10,8,9] == " + dt.getNewsFeed(1));
+        dt.unfollow(1, 2);
+        System.out.println("[5] == " + dt.getNewsFeed(1));
+        System.out.println("[17,13,15,16,14,11,12,10,8,9] == " + dt.getNewsFeed(2));
     }
 }
