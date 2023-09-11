@@ -10,6 +10,22 @@ public class GroupThePeopleGivenGroupSize {
     // https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/
     public List<List<Integer>> groupThePeople(int[] groupSizes) {
         List<List<Integer>> groups = new LinkedList<>();
+        List<Integer>[] sizes = new List[501];
+        for (int i = 0; i < groupSizes.length; i++) {
+            if (sizes[groupSizes[i]] == null) {
+                sizes[groupSizes[i]] = new ArrayList<>(groupSizes[i]);
+            }
+            sizes[groupSizes[i]].add(i);
+            if (sizes[groupSizes[i]].size() == groupSizes[i]) {
+                groups.add(sizes[groupSizes[i]]);
+                sizes[groupSizes[i]] = null;
+            }
+        }
+        return groups;
+    }
+
+    public List<List<Integer>> groupThePeople2(int[] groupSizes) {
+        List<List<Integer>> groups = new LinkedList<>();
         Map<Integer, List<Integer>> sizePreferences = new HashMap<>();
         for(int i = 0; i < groupSizes.length; i++) {
             List<Integer> bucket = sizePreferences.computeIfAbsent(groupSizes[i], k -> new ArrayList<>());
