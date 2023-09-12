@@ -5,6 +5,38 @@ import java.util.LinkedList;
 
 public class MinimumDeletionsToMakeCharacterFrequenciesUnique {
     // https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/
+    /** Algorithm
+        1. Count and sort the frequencies
+        2. Starting from back, IF needed, to make each frequency distinct from previous one, deducting 1 from prev one.
+        3. For i =  n -2 .. 0 in array of frequencies
+            - If freq[i] >= freq[i+1], then freq[i] then freq[i] = diff + 1, unless freq[i+1] is 0,
+            which means current freq needs to be 0 as well.
+        4. Loop and lower each freq until you reach 0.
+        5. Return the sum
+     */
+    public int minDeletions(String s) {
+        int deletions = 0, toDelete;
+        int[] sortedCount = getCharCount(s);
+        for (int i = sortedCount.length - 2; i >= 0 && sortedCount[i] != 0; i--) {
+            if (sortedCount[i] >= sortedCount[i+1]) {
+                toDelete = sortedCount[i+1] == 0 ? sortedCount[i] : 1 + sortedCount[i] - sortedCount[i+1];
+                deletions += toDelete;
+                sortedCount[i] = sortedCount[i] - toDelete;
+            }
+        }
+        return deletions;
+    }
+
+    private int[] getCharCount(String s) {
+        int[] count =  new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 'a']++;
+        }
+        Arrays.sort(count);
+        return count;
+    }
+
+
     public int minDeletions2(String s) {
         int[] minDeletions = {0};
         int[] count = countAndSortLetters(s);
@@ -54,7 +86,7 @@ public class MinimumDeletionsToMakeCharacterFrequenciesUnique {
              When we introduce 7, the same, we see that 7-5 > 1 so, 7 is the NEW pointer to the closest free frequency /slot.
              You can use a stack to put these or just one pointer; when used, then find a new one, navigating back
      */
-    public int minDeletions(String s) {
+    public int minDeletions3(String s) {
         int[] minDeletions = {0};
         int[] count = countAndSortLetters(s);
         if (count.length == 1) {

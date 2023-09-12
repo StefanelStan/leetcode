@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
 import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
+import com.ss.leetcode.LC2023.september.SumOfSubarrayRanges;
 
 public class StartSeptember {
     public static void main(String[] args) {
@@ -18,7 +19,8 @@ public class StartSeptember {
 //        start.longestHappyString();
 //        start.sentenceSimilarityIII();
 //        start.maximumNonNegativeProductInAMatrix();
-        start.designTwitter();
+//        start.designTwitter();
+        start.sumOfSubarrayRanges();
     }
 
     public void extraCharactersInAString() {
@@ -106,5 +108,13 @@ public class StartSeptember {
         dt.unfollow(1, 2);
         System.out.println("[5] == " + dt.getNewsFeed(1));
         System.out.println("[17,13,15,16,14,11,12,10,8,9] == " + dt.getNewsFeed(2));
+    }
+
+    public void sumOfSubarrayRanges() {
+        SumOfSubarrayRanges sosr = new SumOfSubarrayRanges();
+
+        System.out.println("4 == " + sosr.subArrayRanges(new int[]{1,2,3}));
+        System.out.println("4 == " + sosr.subArrayRanges(new int[]{1,3,3}));
+        System.out.println("59 == " + sosr.subArrayRanges(new int[]{4,-2,-3,4,1}));
     }
 }
