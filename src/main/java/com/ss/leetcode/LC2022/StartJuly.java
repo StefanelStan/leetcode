@@ -29,7 +29,7 @@ public class StartJuly {
 
 //        start.maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts();
 //        start.decodeTheMessage();
-//        start.candy();
+        start.candy();
 //        start.longestConsecutiveSequence();
 //        start.checkIfMatrixIsXMatrix();
 //        start.calculateAmountPaidInTaxes();
@@ -45,7 +45,7 @@ public class StartJuly {
 //        start.maximumNumberOfPairsInArray();
 //        start.firstLetterToAppearTwice();
 //        start.longestZigZagPathInABinaryTree();
-        start.wordSubsets();
+//        start.wordSubsets();
     }
 
     public void maximumAreaOfAPieceOfCakeAfterHorizontalAndVerticalCuts() {
@@ -70,6 +70,11 @@ public class StartJuly {
         System.out.println("5 == " + c.candy(new int[]{1,0,2}));
         System.out.println("4 == " + c.candy(new int[]{1,2,2}));
         System.out.println("12 == " + c.candy(new int[]{29,51,87,87,72,12}));
+        System.out.println("10 == " + c.candy(new int[]{2,1,2,1,0,0}));
+        System.out.println("12 == " + c.candy(new int[]{4,4,3,3,3,2,2,1,1}));
+        System.out.println("59 == " + c.candy(new int[]{4,32,1,1,23,4,5,67,56,4,3,2,1,23,4,5,56,6,6,6,5,5,5,4,4,3,3,3,2,2,1,1}));
+        System.out.println("112 == " + c.candy(new int[]{5,4,3,2,3,3,23,2,1,2,3,3,2,1,2,43,5,6,8,9,0,8,76,5,4,32,1,1,23,4,5,67,56,4,3,2,1,23,4,5,56,6,6,6,5,5,5,4,4,3,3,3,2,2,1,1}));
+        System.out.println("31 == " + c.candy(new int[]{4,32,1,1,23,4,5,67,56,4,3,2,1}));
     }
 
     public void longestConsecutiveSequence() {

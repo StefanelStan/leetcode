@@ -6,6 +6,44 @@ import java.util.PriorityQueue;
 public class Candy {
     // https://leetcode.com/problems/candy/
     public int candy(int[] ratings) {
+        int candies = 1, lastPeak = 0;
+        int[] assignedCandies = new int[ratings.length];
+        int elementsInSlope, peakCopy;
+        assignedCandies[0] = 1;
+        for (int i = 1; i < ratings.length; i++) {
+            if (ratings[i] > ratings[i-1]) {
+                assignedCandies[i] = assignedCandies[i-1] + 1;
+                candies += assignedCandies[i];
+                lastPeak = i;
+            } else if (ratings[i] == ratings[i-1]) {
+                assignedCandies[i] = 1;
+                lastPeak = i;
+                candies++;
+            } else {
+                if (assignedCandies[i-1] > 1) {
+                    assignedCandies[i] = 1;
+                    candies++;
+                } else {
+                    // readjust the candies from last mountain:
+                    elementsInSlope = i - lastPeak;
+                    if (assignedCandies[lastPeak] == elementsInSlope) {
+                        // increase the peak and everything else
+                        peakCopy = assignedCandies[lastPeak];
+                        assignedCandies[i-1] = 2;
+                        assignedCandies[lastPeak] = peakCopy + 1;
+                        candies += (i - lastPeak);
+                    } else {
+                        candies += (i - lastPeak) - 1;
+                    }
+                    assignedCandies[i] = 1;
+                    candies++;
+                }
+            }
+        }
+        return candies;
+    }
+
+    public int candy2(int[] ratings) {
         if (ratings.length == 1) {
             return 1;
         }
