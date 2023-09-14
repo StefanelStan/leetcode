@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.september.DesignTwitter;
 import com.ss.leetcode.LC2023.september.ExtraCharactersInAString;
 import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
+import com.ss.leetcode.LC2023.september.LongestSquareStreakInAnArray;
 import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 import com.ss.leetcode.LC2023.september.SumOfSubarrayRanges;
@@ -20,7 +21,8 @@ public class StartSeptember {
 //        start.sentenceSimilarityIII();
 //        start.maximumNonNegativeProductInAMatrix();
 //        start.designTwitter();
-        start.sumOfSubarrayRanges();
+//        start.sumOfSubarrayRanges();
+        start.longestSquareStreakInAnArray();
     }
 
     public void extraCharactersInAString() {
@@ -116,5 +118,12 @@ public class StartSeptember {
         System.out.println("4 == " + sosr.subArrayRanges(new int[]{1,2,3}));
         System.out.println("4 == " + sosr.subArrayRanges(new int[]{1,3,3}));
         System.out.println("59 == " + sosr.subArrayRanges(new int[]{4,-2,-3,4,1}));
+    }
+
+    public void longestSquareStreakInAnArray() {
+        LongestSquareStreakInAnArray lssiaa = new LongestSquareStreakInAnArray();
+
+        System.out.println("3 == " + lssiaa.longestSquareStreak(new int[]{4,3,6,16,8,2}));
+        System.out.println("-1 == " + lssiaa.longestSquareStreak(new int[]{2,3,5,6,7}));
     }
 }
