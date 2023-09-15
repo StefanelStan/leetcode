@@ -1,14 +1,17 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.september.CanConvertStringInKMoves;
+import com.ss.leetcode.LC2023.september.DesignANumberContainerSystem;
 import com.ss.leetcode.LC2023.september.DesignTwitter;
 import com.ss.leetcode.LC2023.september.ExtraCharactersInAString;
+import com.ss.leetcode.LC2023.september.FindTwoNonOverlappingSubArraysEachWithTargetSum;
 import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
 import com.ss.leetcode.LC2023.september.LongestSquareStreakInAnArray;
 import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 import com.ss.leetcode.LC2023.september.SumOfSubarrayRanges;
+import java.util.TreeSet;
 
 public class StartSeptember {
     public static void main(String[] args) {
@@ -22,7 +25,9 @@ public class StartSeptember {
 //        start.maximumNonNegativeProductInAMatrix();
 //        start.designTwitter();
 //        start.sumOfSubarrayRanges();
-        start.longestSquareStreakInAnArray();
+//        start.longestSquareStreakInAnArray();
+//        start.findTwoNonOverlappingSubArraysEachWithTargetSum();
+        start.designANumberContainerSystem();
     }
 
     public void extraCharactersInAString() {
@@ -125,5 +130,31 @@ public class StartSeptember {
 
         System.out.println("3 == " + lssiaa.longestSquareStreak(new int[]{4,3,6,16,8,2}));
         System.out.println("-1 == " + lssiaa.longestSquareStreak(new int[]{2,3,5,6,7}));
+    }
+
+    public void findTwoNonOverlappingSubArraysEachWithTargetSum() {
+        FindTwoNonOverlappingSubArraysEachWithTargetSum ftnosaeats = new FindTwoNonOverlappingSubArraysEachWithTargetSum();
+
+        System.out.println("2 == " + ftnosaeats.minSumOfLengths(new int[]{3,2,2,4,3}, 3));
+        System.out.println("2 == " + ftnosaeats.minSumOfLengths(new int[]{7,3,4,7}, 7));
+        System.out.println("-1 == " + ftnosaeats.minSumOfLengths(new int[]{4,3,2,6,2,3,4}, 6));
+        System.out.println("-1 == " + ftnosaeats.minSumOfLengths(new int[]{2,2,3,3,4,4}, 9));
+        System.out.println("8 == " + ftnosaeats.minSumOfLengths(new int[]{2,3,2,3,2,3,2,3,2,3,2,3,2,3,2,3,4,5,6,5,4,5,4,3,2,3,4,5,6,5,4,3,2,1,2,3,4,5,6,5,4,3,2,1,2,3,4,5,6,5,4,3,2,1,2,3,4,5,6,5}, 13));
+        System.out.println("3 == " + ftnosaeats.minSumOfLengths(new int[]{3,1,1,1,5,1,2,1}, 3));
+        System.out.println("23 == " + ftnosaeats.minSumOfLengths(new int[]{2,2,4,4,4,4,4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, 20));
+        System.out.println("11 == " + ftnosaeats.minSumOfLengths(new int[]{1,2,3,3,3,1,1,1,1,1,1,1,1,1,1}, 9));
+    }
+
+    public void designANumberContainerSystem() {
+        DesignANumberContainerSystem dancs = new DesignANumberContainerSystem();
+
+        System.out.println("-1 == " + dancs.find(10));
+        dancs.change(2, 10);
+        dancs.change(1, 10);
+        dancs.change(3, 10);
+        dancs.change(5, 10);
+        System.out.println("1 == " + dancs.find(10));
+        dancs.change(1, 20);
+        System.out.println("2 == " + dancs.find(10));
     }
 }

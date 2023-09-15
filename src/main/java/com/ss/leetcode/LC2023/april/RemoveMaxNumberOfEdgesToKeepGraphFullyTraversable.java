@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023.april;
 import java.util.Arrays;
 
 public class RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable {
+    // https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable
     /** Algorithm
         1. The solution is actually to look at the problem as its two different graphs: Alice and Bob.
         2. Sort the edges in reverse order by type (3,2,1). It is vital to add the shared edges(3) first.
