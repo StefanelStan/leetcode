@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2023.august;
 
 public class InterleavingString {
-    // https://leetcode.com/problems/interleaving-string/post-solution
+    // https://leetcode.com/problems/interleaving-string
     /** Algorithm
         1. Fail fast: if their lengths do not match return false;
         2. Fail fast: if one of them is empty, return s3.equals(the_other_string)

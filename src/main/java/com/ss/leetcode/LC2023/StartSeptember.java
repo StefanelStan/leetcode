@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
 import com.ss.leetcode.LC2023.september.LongestSquareStreakInAnArray;
 import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
+import com.ss.leetcode.LC2023.september.PathWithMinimumEffort;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 import com.ss.leetcode.LC2023.september.SumOfSubarrayRanges;
 import java.util.TreeSet;
@@ -27,7 +28,8 @@ public class StartSeptember {
 //        start.sumOfSubarrayRanges();
 //        start.longestSquareStreakInAnArray();
 //        start.findTwoNonOverlappingSubArraysEachWithTargetSum();
-        start.designANumberContainerSystem();
+//        start.designANumberContainerSystem();
+        start.pathWithMinimumEffort();
     }
 
     public void extraCharactersInAString() {
@@ -156,5 +158,13 @@ public class StartSeptember {
         System.out.println("1 == " + dancs.find(10));
         dancs.change(1, 20);
         System.out.println("2 == " + dancs.find(10));
+    }
+
+    public void pathWithMinimumEffort() {
+        PathWithMinimumEffort pwme = new PathWithMinimumEffort();
+
+        System.out.println("2 == " + pwme.minimumEffortPath(new int[][]{{1,2,2},{3,8,2},{5,3,5}}));
+        System.out.println("1 == " + pwme.minimumEffortPath(new int[][]{{1,2,3},{3,8,4},{5,3,5}}));
+        System.out.println("0 == " + pwme.minimumEffortPath(new int[][]{{1,2,1,1,1},{1,2,1,2,1},{1,2,1,2,1},{1,2,1,2,1},{1,1,1,2,1}}));
     }
 }
