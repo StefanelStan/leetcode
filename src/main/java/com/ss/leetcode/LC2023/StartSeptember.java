@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2023.september.LongestHappyString;
 import com.ss.leetcode.LC2023.september.LongestSquareStreakInAnArray;
 import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
 import com.ss.leetcode.LC2023.september.PathWithMinimumEffort;
+import com.ss.leetcode.LC2023.september.RearrangeArrayToMaximizePrefixScore;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 import com.ss.leetcode.LC2023.september.SumOfSubarrayRanges;
 import java.util.TreeSet;
@@ -29,7 +30,8 @@ public class StartSeptember {
 //        start.longestSquareStreakInAnArray();
 //        start.findTwoNonOverlappingSubArraysEachWithTargetSum();
 //        start.designANumberContainerSystem();
-        start.pathWithMinimumEffort();
+//        start.pathWithMinimumEffort();
+        start.rearrangeArrayToMaximizePrefixScore();
     }
 
     public void extraCharactersInAString() {
@@ -166,5 +168,12 @@ public class StartSeptember {
         System.out.println("2 == " + pwme.minimumEffortPath(new int[][]{{1,2,2},{3,8,2},{5,3,5}}));
         System.out.println("1 == " + pwme.minimumEffortPath(new int[][]{{1,2,3},{3,8,4},{5,3,5}}));
         System.out.println("0 == " + pwme.minimumEffortPath(new int[][]{{1,2,1,1,1},{1,2,1,2,1},{1,2,1,2,1},{1,2,1,2,1},{1,1,1,2,1}}));
+    }
+
+    public void rearrangeArrayToMaximizePrefixScore() {
+        RearrangeArrayToMaximizePrefixScore ratmps = new RearrangeArrayToMaximizePrefixScore();
+
+        System.out.println("6 == " + ratmps.maxScore(new int[]{2,-1,0,1,-3,3,-3}));
+        System.out.println("0 == " + ratmps.maxScore(new int[]{-2,-3,0}));
     }
 }
