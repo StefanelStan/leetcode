@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
 import com.ss.leetcode.LC2023.september.LongestSquareStreakInAnArray;
 import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
+import com.ss.leetcode.LC2023.september.MedianOfTwoSortedArrays;
 import com.ss.leetcode.LC2023.september.PathWithMinimumEffort;
 import com.ss.leetcode.LC2023.september.RearrangeArrayToMaximizePrefixScore;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
@@ -31,7 +32,8 @@ public class StartSeptember {
 //        start.findTwoNonOverlappingSubArraysEachWithTargetSum();
 //        start.designANumberContainerSystem();
 //        start.pathWithMinimumEffort();
-        start.rearrangeArrayToMaximizePrefixScore();
+//        start.rearrangeArrayToMaximizePrefixScore();
+        start.medianOfTwoSortedArrays();
     }
 
     public void extraCharactersInAString() {
@@ -175,5 +177,12 @@ public class StartSeptember {
 
         System.out.println("6 == " + ratmps.maxScore(new int[]{2,-1,0,1,-3,3,-3}));
         System.out.println("0 == " + ratmps.maxScore(new int[]{-2,-3,0}));
+    }
+
+    public void medianOfTwoSortedArrays() {
+        MedianOfTwoSortedArrays motsa = new MedianOfTwoSortedArrays();
+
+        System.out.println("2.0 === " + motsa.findMedianSortedArrays(new int[]{1,3}, new int[]{2}));
+        System.out.println("2.5 === " + motsa.findMedianSortedArrays(new int[]{1,2}, new int[]{3,4}));
     }
 }
