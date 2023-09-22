@@ -9,53 +9,49 @@ public class NumberOfLongestIncreasingSubsequence {
             - if equal, then increment the chain count under i with chain count under j
             - if chain under j > chain under i, then i can make a longer chain if connect with j
             so update the chainLength of i (length +1) and set chain count[i] to chainCount of j.
-        3. As optimizations, also keep track of max nums[i] so far and longext existing chain.
+        3. As optimizations, also keep track of max nums[i] so far and longest existing chain.
             If there aren't numbers greater than nums[i], then just stop
             If there aren't chains longer than current chain of i, just stop.
         4. Traverse the longestChain and chainCount. and determine the sum of highest longestChains.
      */
     public int findNumberOfLIS(int[] nums) {
-        int[] bestChainAtIndex = new int[nums.length];
-        int[] countChains = new int[nums.length];
-        int[] maxChainFound = new int[nums.length];
-        int[] maxSoFar = new int[nums.length];
-        findBestChains(nums, bestChainAtIndex, countChains, maxChainFound, maxSoFar);
-        return countBestChains(bestChainAtIndex, countChains);
+        int[] subseqLengthAtIndex = new int[nums.length];
+        int[] subseqCountAtIndex = new int[nums.length];
+        findMaxIndices(nums, subseqLengthAtIndex, subseqCountAtIndex);
+        return countMax(subseqLengthAtIndex, subseqCountAtIndex);
     }
 
-    private int countBestChains(int[] bestChainAtIndex, int[] countChains) {
-        int longestChain = 0, longestChainCount = 0;
-        for (int i = 0; i < bestChainAtIndex.length; i++) {
-            if (bestChainAtIndex[i] == longestChain) {
-                longestChainCount += countChains[i];
-            } else if (bestChainAtIndex[i] > longestChain) {
-                longestChain = bestChainAtIndex[i];
-                longestChainCount = countChains[i];
-            }
-        }
-        return longestChainCount;
-    }
-
-    private void findBestChains(int[] nums, int[] bestChainAtIndex, int[] chainCount, int[] maxChainFound, int[] maxSoFar) {
-        bestChainAtIndex[nums.length - 1] = 1;
-        chainCount[nums.length -1] = 1;
-        maxChainFound[nums.length - 1] = 1;
-        maxSoFar[nums.length - 1] = nums[nums.length - 1];
-        for (int i = nums.length - 2; i>= 0; i--) {
-            bestChainAtIndex[i] = 1;
-            chainCount[i] = 1;
-            for (int j = i + 1; j < nums.length && nums[i] <= maxSoFar[j] && maxChainFound[j] >= maxChainFound[i]; j++) {
+    private void findMaxIndices(int[] nums, int[] subseqLengthAtIndex, int[] subseqCountAtIndex) {
+        subseqLengthAtIndex[nums.length - 1] = 1;
+        subseqCountAtIndex[nums.length - 1] = 1;
+        for (int i = nums.length - 2; i >= 0; i--) {
+            for (int j = i + 1; j < nums.length; j++) {
                 if (nums[j] > nums[i]) {
-                    if (bestChainAtIndex[j] + 1 == bestChainAtIndex[i]) {
-                        chainCount[i] += chainCount[j];
-                    } else if (bestChainAtIndex[j] + 1 > bestChainAtIndex[i]) {
-                        bestChainAtIndex[i] = bestChainAtIndex[j] + 1;
-                        chainCount[i] = chainCount[j];
+                    if (subseqLengthAtIndex[j] > subseqLengthAtIndex[i]) {
+                        subseqLengthAtIndex[i] = subseqLengthAtIndex[j];
+                        subseqCountAtIndex[i] = subseqCountAtIndex[j];
+                    } else if (subseqLengthAtIndex[j] == subseqLengthAtIndex[i]) {
+                        subseqCountAtIndex[i] += subseqCountAtIndex[j];
                     }
                 }
             }
-            maxSoFar[i] = Math.max(maxSoFar[i+1], nums[i]);
-            maxChainFound[i] = Math.max(maxChainFound[i+1], bestChainAtIndex[i]);
+            subseqLengthAtIndex[i]++;
+            subseqCountAtIndex[i] = Math.max(1, subseqCountAtIndex[i]);
         }
     }
+
+    private int countMax(int[] subseqLengthAtIndex, int[] subseqCountAtIndex) {
+        int maxLength = 0, maxCount = 0;
+        for (int i = 0; i < subseqLengthAtIndex.length; i++) {
+            if (subseqLengthAtIndex[i] > maxLength) {
+                maxCount = subseqCountAtIndex[i];
+                maxLength = subseqLengthAtIndex[i];
+            } else if (subseqLengthAtIndex[i] == maxLength) {
+                maxCount += subseqCountAtIndex[i];
+            }
+        }
+        return maxCount;
+    }
+
+
 }
