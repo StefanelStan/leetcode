@@ -24,7 +24,7 @@ public class StartJanuary {
     public static void main(String[] args) {
         StartJanuary start = new StartJanuary();
 
-//        start.longestStringChain();
+        start.longestStringChain();
 //        start.constructKPalindrome(); //unfinished
 //        start.excelSheetColumnNumber();
 //        start.largestNumber();
@@ -38,7 +38,7 @@ public class StartJanuary {
 //        start.coinExchange();
 //        start.longestTurbulentSubarray();
 //        start.nextGreaterElementII();
-        start.searchA2DMatrixII();
+//        start.searchA2DMatrixII();
 //        start.streamChecker();
 //        start.splitTwoStringsToMakePalindrome();
     }
@@ -49,6 +49,8 @@ public class StartJanuary {
         System.out.println("5 == " + lsc.longestStrChain(new String[]{"xbc","pcxbcf","xb","cxbc","pcxbc"}));
         System.out.println("1 == " + lsc.longestStrChain(new String[]{"abcd","dbqca"}));
         System.out.println("4 == " + lsc.longestStrChain(new String[]{"a","ab","ac","bd","abc","abd","abdd"}));
+        System.out.println("1 == " + lsc.longestStrChain(new String[]{"a","b"}));
+        System.out.println("9 == " + lsc.longestStrChain(new String[]{"czgxmxrpx","lgh","bj","cheheex","jnzlxgh","nzlgh","ltxdoxc","bju","srxoatl","bbadhiju","cmpx","xi","ntxbzdr","cheheevx","bdju","sra","getqgxi","geqxi","hheex","ltxdc","nzlxgh","pjnzlxgh","e","bbadhju","cmxrpx","gh","pjnzlxghe","oqlt","x","sarxoatl","ee","bbadju","lxdc","geqgxi","oqltu","heex","oql","eex","bbdju","ntxubzdr","sroa","cxmxrpx","cmrpx","ltxdoc","g","cgxmxrpx","nlgh","sroat","sroatl","fcheheevx","gxi","gqxi","heheex"}));
     }
 
     private void constructKPalindrome() {

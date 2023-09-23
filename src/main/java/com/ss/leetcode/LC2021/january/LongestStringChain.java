@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2021.january;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,7 +12,169 @@ import java.util.TreeMap;
 
 public class LongestStringChain {
     // https://leetcode.com/problems/longest-string-chain/
+    /** Algorithm
+        1. Put each String into its own bucket based on length: 1,2.3 etc.
+            This way, if we want to measure the chain made by a string of length 3 we need to look in the bucket of length 4
+        2. Create an array of size 17 of such buckets.
+            Use an object  WordChain to hold the bucket. Each WordChain object will consist of one list of strings (char[]),
+            one list of int chainSizes ( could use a map char[] -> int) AND the TRIE of the whole bucket of words
+        3. Iterate from right to left. if the bucket i is NOT empty and bucket i + 1 is not empty, try to build chains between the two sets of words
+        4. The core of the algorithm is to check If an char[] {a,c,b} can be part of a TRIE of 4 letters with the option to skip one
+        5. If current trie node exists, then walk over and advance in the char[]
+            If the current trie node does not exist and you can skip, then select any other available node [0,25] and walk over it
+            If current trie node does not exist and you cannot skip, return 0.
+            Also, if you can skip, also try skipping the current node.
+        6. There will be edge cases such as "fabc" (bucket of 4) and "fabfe", "xfacb".
+            If you walk on the f, this will lead to the path "fabfe", which you cannot build a chain
+            If you skip, then skip the f node, so you can jump into the path of x -> facb
+        7. Return the longest chain ever build.
+     */
     public int longestStrChain(String[] words) {
+        WordChain[] wordChains = getWordChains(words);
+        int longest = 1;
+        for (int i = 15; i >= 1; i--) {
+            if (wordChains[i] != null && wordChains[i+1] != null) {
+                longest = Math.max(longest, buildWordChain(wordChains[i], wordChains[i+1]));
+            }
+        }
+        return longest;
+    }
+
+    private int buildWordChain(WordChain leftWords, WordChain rightWords) {
+        int longest = 1;
+        for (int i = 0; i < leftWords.words.size(); i++) {
+            leftWords.chainSizes.set(i, 1 + getMaxChain(leftWords.words.get(i), 0, true, rightWords.root, rightWords));
+            longest = Math.max(longest, leftWords.chainSizes.get(i));
+        }
+
+        return longest;
+    }
+
+    private int getMaxChain(char[] left, int index, boolean canSkip, TreeNode root, WordChain rightWords) {
+        if (index >= left.length) {
+
+            int max = 0;
+            if (root.isWord) {
+                return rightWords.chainSizes.get(root.groupIndex);
+            }
+            for (TreeNode node : root.nodes) {
+                if (node != null) {
+                    max = Math.max(max, rightWords.chainSizes.get(node.groupIndex));
+                }
+            }
+            return max;
+        }
+        if (!root.hasNode(left[index])) {
+            if (!canSkip) {
+                return 0;
+            }
+            else {
+                int max = 0;
+                for (TreeNode node : root.nodes) {
+                    if (node != null) {
+                        max = Math.max(max, getMaxChain(left, index, false, node, rightWords));
+                    }
+                }
+                return max;
+            }
+        }
+
+        int max = getMaxChain(left, index + 1, canSkip, root.getNode(left[index]), rightWords);
+        if (canSkip) {
+            for (TreeNode node : root.nodes) {
+                if (node != null) {
+                    max = Math.max(max, getMaxChain(left, index, false, node, rightWords));
+                }
+            }
+        }
+        return max;
+
+    }
+
+    private WordChain[] getWordChains(String[] words) {
+        WordChain[] wordChains = new WordChain[17];
+        for (String word : words) {
+            if (wordChains[word.length()] == null) {
+                wordChains[word.length()] = new WordChain();
+            }
+            wordChains[word.length()].addWord(word);
+        }
+        return wordChains;
+    }
+
+    private static class WordChain {
+        List<char[]> words;
+        List<Integer> chainSizes;
+        TreeNode root;
+
+        public WordChain() {
+            words = new ArrayList<>();
+            chainSizes = new ArrayList<>();
+            root = new TreeNode();
+        }
+
+        public void addWord(String word) {
+            words.add(word.toCharArray());
+            chainSizes.add(1);
+            addToRoot(words.size() - 1,  words.get(words.size() - 1));
+        }
+
+        public void addToRoot(int index, char[] chars) {
+            TreeNode copy = root;
+            for (char c : chars) {
+                copy = copy.addIfNull(c);
+            }
+            copy.setFinalWordAndGroupIndex(index);
+        }
+
+    }
+
+    public static class TreeNode {
+        TreeNode[] nodes;
+        boolean isWord;
+        int groupIndex;
+
+        public TreeNode() {
+            nodes = new TreeNode[26];
+        }
+
+        public TreeNode addIfNull(char c) {
+            if (nodes[c - 'a'] == null) {
+                nodes[c - 'a'] = new TreeNode();
+            }
+            return nodes[c - 'a'];
+        }
+
+        public TreeNode getNode(char c) {
+            return nodes[c - 'a'];
+        }
+
+        public boolean hasNode(char c) {
+            return nodes[c - 'a'] != null;
+        }
+
+        public void setFinalWordAndGroupIndex(int groupIndex) {
+            this.isWord = true;
+            this.groupIndex = groupIndex;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public int longestStrChain2(String[] words) {
         if (words.length == 1) {
             return 1;
         }
@@ -68,7 +231,7 @@ public class LongestStringChain {
         }
     }
 
-    public int longestStrChain2(String[] words) {
+    public int longestStrChain3(String[] words) {
         NavigableMap<Integer, List<String>> lenghtOfWords = putWordsIntoMap(words);
         Map<String, Integer> longestChain = new HashMap<>();
 
