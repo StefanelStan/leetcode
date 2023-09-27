@@ -6,8 +6,8 @@ public class ChampagneTower {
     public double champagneTower(int poured, int query_row, int query_glass) {
         double[] current = {poured};
         double[] next = new double[current.length + 1];
-        int row = 0, col = 0;
-        double halfDiff = 0;
+        int row, col;
+        double halfDiff;
         for (row = 0; row <= query_row; row++) {
             for (col = 0; col <= row; col++) {
                 if (current[col] > 1) {

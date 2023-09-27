@@ -4,14 +4,18 @@ import com.ss.leetcode.LC2023.september.CanConvertStringInKMoves;
 import com.ss.leetcode.LC2023.september.DesignANumberContainerSystem;
 import com.ss.leetcode.LC2023.september.DesignTwitter;
 import com.ss.leetcode.LC2023.september.ExtraCharactersInAString;
+import com.ss.leetcode.LC2023.september.FindAllGoodIndices;
 import com.ss.leetcode.LC2023.september.FindTwoNonOverlappingSubArraysEachWithTargetSum;
 import com.ss.leetcode.LC2023.september.ImplementMagicDictionary;
 import com.ss.leetcode.LC2023.september.LongestHappyString;
 import com.ss.leetcode.LC2023.september.LongestSquareStreakInAnArray;
 import com.ss.leetcode.LC2023.september.MaximumNonNegativeProductInAMatrix;
+import com.ss.leetcode.LC2023.september.MaximumNumberOfRemovableCharacters;
 import com.ss.leetcode.LC2023.september.MedianOfTwoSortedArrays;
+import com.ss.leetcode.LC2023.september.MinimumElementsToAddToFormAGivenSum;
 import com.ss.leetcode.LC2023.september.PathWithMinimumEffort;
 import com.ss.leetcode.LC2023.september.RearrangeArrayToMaximizePrefixScore;
+import com.ss.leetcode.LC2023.september.RemoveDuplicateLetters;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 import com.ss.leetcode.LC2023.september.SumOfSubarrayRanges;
 import java.util.TreeSet;
@@ -33,7 +37,11 @@ public class StartSeptember {
 //        start.designANumberContainerSystem();
 //        start.pathWithMinimumEffort();
 //        start.rearrangeArrayToMaximizePrefixScore();
-        start.medianOfTwoSortedArrays();
+//        start.medianOfTwoSortedArrays();
+        start.removeDuplicateLetters();
+//        start.findAllGoodIndices();
+//        start.maximumNumberOfRemovableCharacters();
+//        start.minimumElementsToAddToFormAGivenSum();
     }
 
     public void extraCharactersInAString() {
@@ -185,4 +193,41 @@ public class StartSeptember {
         System.out.println("2.0 === " + motsa.findMedianSortedArrays(new int[]{1,3}, new int[]{2}));
         System.out.println("2.5 === " + motsa.findMedianSortedArrays(new int[]{1,2}, new int[]{3,4}));
     }
+
+    public void removeDuplicateLetters() {
+        RemoveDuplicateLetters rdl = new RemoveDuplicateLetters();
+
+        System.out.println("abc == " + rdl.removeDuplicateLetters("bcabc"));
+        System.out.println("acdb == " + rdl.removeDuplicateLetters("cbacdcbc"));
+    }
+
+    public void findAllGoodIndices() {
+        FindAllGoodIndices fagi = new FindAllGoodIndices();
+
+        System.out.println("[2,3] == " + fagi.goodIndices(new int[]{2,1,1,1,3,4,1}, 2));
+        System.out.println("[] == " + fagi.goodIndices(new int[]{2,1,1,2}, 2));
+    }
+
+    public void maximumNumberOfRemovableCharacters() {
+        MaximumNumberOfRemovableCharacters mnorc = new MaximumNumberOfRemovableCharacters();
+
+        System.out.println("2 == " + mnorc.maximumRemovals("abcacb", "ab", new int[]{3,1,0}));
+        System.out.println("1 == " + mnorc.maximumRemovals("abcbddddd", "abcd", new int[]{3,2,1,4,5,6}));
+        System.out.println("0 == " + mnorc.maximumRemovals("abcab", "abc", new int[]{0,1,2,3,4}));
+        System.out.println("0 == " + mnorc.maximumRemovals("abcab", "abc", new int[]{0,1,2,3,4}));
+        System.out.println("0 == " + mnorc.maximumRemovals("abfdgdfgdfgdfgdfgdfgfdcab", "abc", new int[]{0,1,2,3,4}));
+        System.out.println("5 == " + mnorc.maximumRemovals("aaaaaaaaaa", "aa", new int[]{0,4,3,1,2}));
+        System.out.println("0 == " + mnorc.maximumRemovals("efgabc", "abc", new int[]{3,4,5}));
+    }
+
+    public void minimumElementsToAddToFormAGivenSum() {
+        MinimumElementsToAddToFormAGivenSum metatfags = new MinimumElementsToAddToFormAGivenSum();
+
+        System.out.println("2 == " + metatfags.minElements(new int[]{1,-1,1}, 3, -4));
+        System.out.println("1 == " + metatfags.minElements(new int[]{1,-10,9,1}, 100, 0));
+        System.out.println("2354882 == " + metatfags.minElements(new int[]{4,3,2,3,4,5,6,7,6,5,-6,2,3,2,4,5,6,5,4,3,2,3,5,6,4}, 15, -35323123));
+        System.out.println("0 == " + metatfags.minElements(new int[]{7}, 7, 0));
+    }
+
+
 }
