@@ -14,10 +14,12 @@ import com.ss.leetcode.LC2023.september.MaximumNumberOfRemovableCharacters;
 import com.ss.leetcode.LC2023.september.MedianOfTwoSortedArrays;
 import com.ss.leetcode.LC2023.september.MinimumElementsToAddToFormAGivenSum;
 import com.ss.leetcode.LC2023.september.PathWithMinimumEffort;
+import com.ss.leetcode.LC2023.september.QueryKthSmallestTrimmedNumber;
 import com.ss.leetcode.LC2023.september.RearrangeArrayToMaximizePrefixScore;
 import com.ss.leetcode.LC2023.september.RemoveDuplicateLetters;
 import com.ss.leetcode.LC2023.september.SentenceSimilarityIII;
 import com.ss.leetcode.LC2023.september.SumOfSubarrayRanges;
+import java.util.Arrays;
 import java.util.TreeSet;
 
 public class StartSeptember {
@@ -38,10 +40,11 @@ public class StartSeptember {
 //        start.pathWithMinimumEffort();
 //        start.rearrangeArrayToMaximizePrefixScore();
 //        start.medianOfTwoSortedArrays();
-        start.removeDuplicateLetters();
+//        start.removeDuplicateLetters();
 //        start.findAllGoodIndices();
 //        start.maximumNumberOfRemovableCharacters();
 //        start.minimumElementsToAddToFormAGivenSum();
+        start.queryKthSmallestTrimmedNumber();
     }
 
     public void extraCharactersInAString() {
@@ -229,5 +232,10 @@ public class StartSeptember {
         System.out.println("0 == " + metatfags.minElements(new int[]{7}, 7, 0));
     }
 
+    public void queryKthSmallestTrimmedNumber() {
+        QueryKthSmallestTrimmedNumber qkstn = new QueryKthSmallestTrimmedNumber();
 
+        System.out.println("[2,2,1,0] == " + Arrays.toString(qkstn.smallestTrimmedNumbers(new String[]{"102","473","251","814"}, new int[][]{{1,1},{2,3},{4,2},{1,2}})));
+        System.out.println("[3,0] == " + Arrays.toString(qkstn.smallestTrimmedNumbers(new String[]{"24","37","96","04"}, new int[][]{{2,1},{2,2}})));
+    }
 }
