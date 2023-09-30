@@ -51,8 +51,8 @@ public class StartMay {
 //        start.shortestUnsortedContinuousSubarray();
 //        start.maxNumberOfKSumPairs();
 //        start.implementStackUsingQueues();
-        start.myCalendarI();
-//        start.oneThreeTwo132Pattern();
+//        start.myCalendarI();
+        start.oneThreeTwo132Pattern();
 //        start.flattenNestedListIterator();
 //        start.letterCombinationsOfAPhoneNumber();
 //        start.combinationSumIII();
