@@ -6,7 +6,28 @@ import java.util.Map;
 
 public class NumberOfGoodPairs {
     // https://leetcode.com/problems/number-of-good-pairs/
+    // PERFORMANT SOLUTION
     public int numIdenticalPairs(int[] nums) {
+        int sum = 0;
+        int[] count = getCount(nums);
+        for (int c : count) {
+            if (c > 1) {
+                sum += (c * (c-1) / 2);
+            }
+        }
+        return sum;
+    }
+
+    private int[] getCount(int[] nums) {
+        int[] count = new int[101];
+        for (int num : nums) {
+            count[num]++;
+        }
+        return count;
+    }
+
+
+    public int numIdenticalPairs2(int[] nums) {
         Map<Integer, Integer> incidences = new HashMap<>();
         Map<Integer, BigInteger> factorials = new HashMap<>();
         for(int num : nums) {
