@@ -3,10 +3,43 @@ package com.ss.leetcode.LC2020.december;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BestBreak {
+public class IntegerBreak {
     // https://leetcode.com/problems/integer-break/
-    private static Map<Integer, Integer> bestBreak = new HashMap<>();
+    public int integerBreak(int n) {
+        if (n == 2) {
+            return 1;
+        } else if (n == 3) {
+            return 2;
+        } else if (n == 4) {
+            return 4;
+        } else {
+            return breakInteger(n);
+        }
+    }
 
+    private int breakInteger(int n) {
+        int div = n / 3;
+        int mod = n % 3;
+        if (mod == 1) {
+            return (int)Math.pow(3, div - 1) * 4;
+        }
+        int result = (int)Math.pow(3, div);
+        if (mod != 0) {
+            result *= mod;
+        }
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+    private static Map<Integer, Integer> bestBreak = new HashMap<>();
     static {
         bestBreak.put(1, 1);
         bestBreak.put(2, 1);
@@ -15,7 +48,7 @@ public class BestBreak {
         bestBreak.put(5, 6);
     }
 
-    public int integerBreak(int n) {
+    public int integerBreak2(int n) {
         if(bestBreak.containsKey(n)) {
             return bestBreak.get(n);
         }

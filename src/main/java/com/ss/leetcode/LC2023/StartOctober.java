@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.october.AlertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod;
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
+import com.ss.leetcode.LC2023.october.SumOfMutatedArrayClosestToTarget;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -10,7 +11,8 @@ public class StartOctober {
 
 //        start.alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod();
 //        start.countGoodNumbers();
-        start.countCollisionsOnARoad();
+//        start.countCollisionsOnARoad();
+        start.sumOfMutatedArrayClosestToTarget();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -42,5 +44,14 @@ public class StartOctober {
         System.out.println("0 == " + ccoar.countCollisions("R"));
         System.out.println("0 == " + ccoar.countCollisions("L"));
         System.out.println("0 == " + ccoar.countCollisions("LLLLSSSSS"));
+    }
+
+    public void sumOfMutatedArrayClosestToTarget() {
+        SumOfMutatedArrayClosestToTarget somactt = new SumOfMutatedArrayClosestToTarget();
+
+        System.out.println("3 == " + somactt.findBestValue(new int[]{4,9,3}, 10));
+        System.out.println("5 == " + somactt.findBestValue(new int[]{2,3,5}, 10));
+        System.out.println("11361 == " + somactt.findBestValue(new int[]{60864,25176,27249,21296,20204}, 56803));
+        System.out.println("1 == " + somactt.findBestValue(new int[]{1,1}, 100000));
     }
 }

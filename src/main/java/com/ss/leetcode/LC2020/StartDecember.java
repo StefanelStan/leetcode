@@ -1,7 +1,7 @@
 package com.ss.leetcode.LC2020;
 
 import com.ss.leetcode.LC2020.december.AddTwoNumbers;
-import com.ss.leetcode.LC2020.december.BestBreak;
+import com.ss.leetcode.LC2020.december.IntegerBreak;
 import com.ss.leetcode.LC2020.december.CountingBits;
 import com.ss.leetcode.LC2020.december.FilterRestaurants;
 import com.ss.leetcode.LC2020.december.HandOfStraights;
@@ -224,7 +224,7 @@ public class StartDecember {
     }
 
     private void bestBreak() {
-        BestBreak bb = new BestBreak();
+        IntegerBreak bb = new IntegerBreak();
         System.out.println(bb.integerBreak(11));
         System.out.println(bb.integerBreak(8));
     }
