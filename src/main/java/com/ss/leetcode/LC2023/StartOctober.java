@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.october.AlertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod;
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
+import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
 import com.ss.leetcode.LC2023.october.SumOfMutatedArrayClosestToTarget;
 
 public class StartOctober {
@@ -12,7 +13,8 @@ public class StartOctober {
 //        start.alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod();
 //        start.countGoodNumbers();
 //        start.countCollisionsOnARoad();
-        start.sumOfMutatedArrayClosestToTarget();
+//        start.sumOfMutatedArrayClosestToTarget();
+        start.makeStringASubsequenceUsingCyclicIncrements();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -53,5 +55,13 @@ public class StartOctober {
         System.out.println("5 == " + somactt.findBestValue(new int[]{2,3,5}, 10));
         System.out.println("11361 == " + somactt.findBestValue(new int[]{60864,25176,27249,21296,20204}, 56803));
         System.out.println("1 == " + somactt.findBestValue(new int[]{1,1}, 100000));
+    }
+
+    public void makeStringASubsequenceUsingCyclicIncrements() {
+        MakeStringASubsequenceUsingCyclicIncrements msasuci = new MakeStringASubsequenceUsingCyclicIncrements();
+
+        System.out.println("true == " + msasuci.canMakeSubsequence("abc", "ad"));
+        System.out.println("true == " + msasuci.canMakeSubsequence("zc", "ad"));
+        System.out.println("false == " + msasuci.canMakeSubsequence("ab", "d"));
     }
 }
