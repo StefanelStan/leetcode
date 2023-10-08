@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.october.AlertUsingSameKeyCardThreeOrMoreTimesInAOn
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
+import com.ss.leetcode.LC2023.october.MaxDotProductOfTwoSubsequences;
 import com.ss.leetcode.LC2023.october.SumOfMutatedArrayClosestToTarget;
 
 public class StartOctober {
@@ -14,7 +15,8 @@ public class StartOctober {
 //        start.countGoodNumbers();
 //        start.countCollisionsOnARoad();
 //        start.sumOfMutatedArrayClosestToTarget();
-        start.makeStringASubsequenceUsingCyclicIncrements();
+//        start.makeStringASubsequenceUsingCyclicIncrements();
+        start.maxDotProductOfTwoSubsequences();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -63,5 +65,14 @@ public class StartOctober {
         System.out.println("true == " + msasuci.canMakeSubsequence("abc", "ad"));
         System.out.println("true == " + msasuci.canMakeSubsequence("zc", "ad"));
         System.out.println("false == " + msasuci.canMakeSubsequence("ab", "d"));
+    }
+
+    public void maxDotProductOfTwoSubsequences() {
+        MaxDotProductOfTwoSubsequences mdpots = new MaxDotProductOfTwoSubsequences();
+
+        System.out.println("18 == " + mdpots.maxDotProduct(new int[]{2,1,-2,5}, new int[]{3,0,-6}));
+        System.out.println("21 == " + mdpots.maxDotProduct(new int[]{3, -2}, new int[]{2,-6,7}));
+        System.out.println("-1 == " + mdpots.maxDotProduct(new int[]{-1,-1}, new int[]{1,1}));
+        System.out.println("14 == " + mdpots.maxDotProduct(new int[]{1,2,3}, new int[]{1,2,3}));
     }
 }
