@@ -32,4 +32,51 @@ public class MaxDotProductOfTwoSubsequences {
             }
         }
     }
+
+    public int[] searchRange(int[] nums, int target) {
+        if (nums.length == 0) {
+            return new int[]{-1,-1};
+        }
+        int left = findLeft(nums, target);
+        return left == -1 ? new int[]{-1,-1} : new int[]{left, findRight(nums, target)};
+    }
+
+    private int findRight(int[] nums, int target) {
+        if (nums[nums.length -1] == target) {
+            return nums.length -1;
+        }
+        int low = 0, high = nums.length - 1, pivot;
+        while (low <= high) {
+            pivot = low + (high - low) / 2;
+            if (nums[pivot] <= target) {
+                low = pivot + 1;
+            } else {
+                high = pivot -1;
+            }
+        }
+        if ((low == 0 && nums[0] != target) || (low == nums.length && nums[low -1] != target)) {
+            return -1;
+        }
+        return nums[low - 1] == target ? low - 1 : -1;
+    }
+
+    private int findLeft(int[] nums, int target) {
+        if (nums[0] == target) {
+            return 0;
+        }
+        int low = 0, high = nums.length - 1, pivot;
+        while (low <= high) {
+            pivot = low + (high - low) / 2;
+            if (nums[pivot] >= target) {
+                high = pivot - 1;
+            } else {
+                low = pivot + 1;
+            }
+        }
+        if (high == -1 || (high == nums.length -1 && nums[high] != target) || nums[high + 1] != target) {
+            return -1;
+        } else {
+            return high + 1;
+        }
+    }
 }

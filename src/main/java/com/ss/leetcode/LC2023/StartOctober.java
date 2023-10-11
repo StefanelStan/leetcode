@@ -5,7 +5,9 @@ import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
 import com.ss.leetcode.LC2023.october.MaxDotProductOfTwoSubsequences;
+import com.ss.leetcode.LC2023.october.NumberOfFlowersInFullBloom;
 import com.ss.leetcode.LC2023.october.SumOfMutatedArrayClosestToTarget;
+import java.util.Arrays;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -16,7 +18,8 @@ public class StartOctober {
 //        start.countCollisionsOnARoad();
 //        start.sumOfMutatedArrayClosestToTarget();
 //        start.makeStringASubsequenceUsingCyclicIncrements();
-        start.maxDotProductOfTwoSubsequences();
+//        start.maxDotProductOfTwoSubsequences();
+        start.numberOfFlowersInFullBloom();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -70,9 +73,17 @@ public class StartOctober {
     public void maxDotProductOfTwoSubsequences() {
         MaxDotProductOfTwoSubsequences mdpots = new MaxDotProductOfTwoSubsequences();
 
+        System.out.println("[3,4] == " + Arrays.toString(mdpots.searchRange(new int[]{5,7,7,8,8,10}, 8)));
         System.out.println("18 == " + mdpots.maxDotProduct(new int[]{2,1,-2,5}, new int[]{3,0,-6}));
         System.out.println("21 == " + mdpots.maxDotProduct(new int[]{3, -2}, new int[]{2,-6,7}));
         System.out.println("-1 == " + mdpots.maxDotProduct(new int[]{-1,-1}, new int[]{1,1}));
         System.out.println("14 == " + mdpots.maxDotProduct(new int[]{1,2,3}, new int[]{1,2,3}));
+    }
+
+    public void numberOfFlowersInFullBloom() {
+        NumberOfFlowersInFullBloom nofifb = new NumberOfFlowersInFullBloom();
+
+        System.out.println("[1,2,2,2] == " + Arrays.toString(nofifb.fullBloomFlowers(new int[][]{{1,6},{3,7},{9,12},{4,13}}, new int[]{2,3,7,11})));
+        System.out.println("[2,2,1] == " + Arrays.toString(nofifb.fullBloomFlowers(new int[][]{{1,10},{3,3}}, new int[]{3,3,2})));
     }
 }
