@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2023.october.FindTheMostCompetitiveSubsequence;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
 import com.ss.leetcode.LC2023.october.MaxDotProductOfTwoSubsequences;
 import com.ss.leetcode.LC2023.october.NumberOfFlowersInFullBloom;
+import com.ss.leetcode.LC2023.october.NumberOfWaysToStayInTheSamePlaceAfterSomeSteps;
 import com.ss.leetcode.LC2023.october.SumOfMutatedArrayClosestToTarget;
 import java.util.Arrays;
 
@@ -21,7 +22,8 @@ public class StartOctober {
 //        start.makeStringASubsequenceUsingCyclicIncrements();
 //        start.maxDotProductOfTwoSubsequences();
 //        start.numberOfFlowersInFullBloom();
-        start.findTheMostCompetitiveSubsequence();
+//        start.findTheMostCompetitiveSubsequence();
+        start.numberOfWaysToStayInTheSamePlaceAfterSomeSteps();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -93,5 +95,15 @@ public class StartOctober {
 
         System.out.println("[2,6] == " + Arrays.toString(ftmcs.mostCompetitive(new int[]{3,5,2,6}, 2)));
         System.out.println("[2,3,3,4] == " + Arrays.toString(ftmcs.mostCompetitive(new int[]{2,4,3,3,5,4,9,6}, 4)));
+    }
+
+    public void numberOfWaysToStayInTheSamePlaceAfterSomeSteps() {
+        NumberOfWaysToStayInTheSamePlaceAfterSomeSteps nowtsitspass = new NumberOfWaysToStayInTheSamePlaceAfterSomeSteps();
+
+        System.out.println("4 == " + nowtsitspass.numWays(3, 2));
+        System.out.println("2 == " + nowtsitspass.numWays(2, 4));
+        System.out.println("8 == " + nowtsitspass.numWays(4, 2));
+        System.out.println("374847123 == " + nowtsitspass.numWays(500, 1000000));
+        System.out.println("2188 == " + nowtsitspass.numWays(10, 50));
     }
 }
