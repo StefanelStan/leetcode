@@ -5,7 +5,20 @@ import java.util.List;
 
 public class PascalsTriangleII {
     // https://leetcode.com/problems/pascals-triangle-ii/
+    // OPTIMIZED
     public List<Integer> getRow(int rowIndex) {
+        List<Integer> pascalRow = new ArrayList<>(rowIndex + 1);
+        pascalRow.add(1);
+        for (int row = 1; row <= rowIndex; row++) {
+            pascalRow.add(1);
+            for (int prevRow = row - 1; prevRow > 0; prevRow--) {
+                pascalRow.set(prevRow, pascalRow.get(prevRow) + pascalRow.get(prevRow - 1));
+            }
+        }
+        return pascalRow;
+    }
+
+    public List<Integer> getRow2(int rowIndex) {
         if (rowIndex == 0) {
             return List.of(1);
         }
