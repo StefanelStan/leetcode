@@ -3,12 +3,14 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.october.AlertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod;
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
+import com.ss.leetcode.LC2023.october.DoubleANumberRepresentedAsALinkedList;
 import com.ss.leetcode.LC2023.october.FindTheMostCompetitiveSubsequence;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
 import com.ss.leetcode.LC2023.october.MaxDotProductOfTwoSubsequences;
 import com.ss.leetcode.LC2023.october.NumberOfFlowersInFullBloom;
 import com.ss.leetcode.LC2023.october.NumberOfWaysToStayInTheSamePlaceAfterSomeSteps;
 import com.ss.leetcode.LC2023.october.SumOfMutatedArrayClosestToTarget;
+import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 
 public class StartOctober {
@@ -23,7 +25,8 @@ public class StartOctober {
 //        start.maxDotProductOfTwoSubsequences();
 //        start.numberOfFlowersInFullBloom();
 //        start.findTheMostCompetitiveSubsequence();
-        start.numberOfWaysToStayInTheSamePlaceAfterSomeSteps();
+//        start.numberOfWaysToStayInTheSamePlaceAfterSomeSteps();
+        start.doubleANumberRepresentedAsALinkedList();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -105,5 +108,15 @@ public class StartOctober {
         System.out.println("8 == " + nowtsitspass.numWays(4, 2));
         System.out.println("374847123 == " + nowtsitspass.numWays(500, 1000000));
         System.out.println("2188 == " + nowtsitspass.numWays(10, 50));
+    }
+
+    public void doubleANumberRepresentedAsALinkedList() {
+        DoubleANumberRepresentedAsALinkedList danraall = new DoubleANumberRepresentedAsALinkedList();
+
+        ListNode head1 = ListNode.makeChain(new int[]{1,8,9});
+        ListNode head2 = ListNode.makeChain(new int[]{9,9,9});
+
+        System.out.println("[3,7,8] == " + danraall.doubleIt(head1).getAsList());
+        System.out.println("[1,9,9,8] == " + danraall.doubleIt(head2).getAsList());
     }
 }
