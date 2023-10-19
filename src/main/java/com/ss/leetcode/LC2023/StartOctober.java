@@ -7,8 +7,10 @@ import com.ss.leetcode.LC2023.october.DoubleANumberRepresentedAsALinkedList;
 import com.ss.leetcode.LC2023.october.FindTheMostCompetitiveSubsequence;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
 import com.ss.leetcode.LC2023.october.MaxDotProductOfTwoSubsequences;
+import com.ss.leetcode.LC2023.october.MinimumSwapsToGroupAll1sTogetherII;
 import com.ss.leetcode.LC2023.october.NumberOfFlowersInFullBloom;
 import com.ss.leetcode.LC2023.october.NumberOfWaysToStayInTheSamePlaceAfterSomeSteps;
+import com.ss.leetcode.LC2023.october.ParallelCoursesIII;
 import com.ss.leetcode.LC2023.october.SumOfMutatedArrayClosestToTarget;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
@@ -26,7 +28,9 @@ public class StartOctober {
 //        start.numberOfFlowersInFullBloom();
 //        start.findTheMostCompetitiveSubsequence();
 //        start.numberOfWaysToStayInTheSamePlaceAfterSomeSteps();
-        start.doubleANumberRepresentedAsALinkedList();
+//        start.doubleANumberRepresentedAsALinkedList();
+//        start.parallelCoursesIII();
+        start.minimumSwapsToGroupAll1sTogetherII();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -118,5 +122,24 @@ public class StartOctober {
 
         System.out.println("[3,7,8] == " + danraall.doubleIt(head1).getAsList());
         System.out.println("[1,9,9,8] == " + danraall.doubleIt(head2).getAsList());
+    }
+
+    public void parallelCoursesIII() {
+        ParallelCoursesIII pciii = new ParallelCoursesIII();
+
+        System.out.println("8 == " + pciii.minimumTime(3, new int[][]{{1,3},{2,3}}, new int[]{3,2,5}));
+        System.out.println("12 == " + pciii.minimumTime(5, new int[][]{{1,5},{2,5},{3,5},{3,4},{4,5}}, new int[]{1,2,3,4,5}));
+        System.out.println("32 == " + pciii.minimumTime(9, new int[][]{{2,7},{2,6},{3,6},{4,6},{7,6},{2,1},{3,1},{4,1},{6,1},{7,1},{3,8},{5,8},{7,8},{1,9},{2,9},{6,9},{7,9}}, new int[]{9,5,9,5,8,7,7,8,4}));
+    }
+
+    public void minimumSwapsToGroupAll1sTogetherII() {
+        MinimumSwapsToGroupAll1sTogetherII mstga1t = new MinimumSwapsToGroupAll1sTogetherII();
+
+        System.out.println("1 == " + mstga1t.minSwaps(new int[]{0,1,0,1,1,0,0}));
+        System.out.println("2 == " + mstga1t.minSwaps(new int[]{0,1,1,1,0,0,1,1,0}));
+        System.out.println("0 == " + mstga1t.minSwaps(new int[]{1,1,0,0,1}));
+        System.out.println("0 == " + mstga1t.minSwaps(new int[]{1,1,0,0,1}));
+        System.out.println("2 == " + mstga1t.minSwaps(new int[]{1,1,1,0,0,0,1,1,0,0,0,0,1}));
+        System.out.println("1 == " + mstga1t.minSwaps(new int[]{1,0,1,0,0,0,1,0,1}));
     }
 }
