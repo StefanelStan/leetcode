@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
 import com.ss.leetcode.LC2023.october.DoubleANumberRepresentedAsALinkedList;
 import com.ss.leetcode.LC2023.october.FindTheMostCompetitiveSubsequence;
+import com.ss.leetcode.LC2023.october.FindingPairsWithACertainSum;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
 import com.ss.leetcode.LC2023.october.MaxDotProductOfTwoSubsequences;
 import com.ss.leetcode.LC2023.october.MinimumSwapsToGroupAll1sTogetherII;
@@ -30,7 +31,8 @@ public class StartOctober {
 //        start.numberOfWaysToStayInTheSamePlaceAfterSomeSteps();
 //        start.doubleANumberRepresentedAsALinkedList();
 //        start.parallelCoursesIII();
-        start.minimumSwapsToGroupAll1sTogetherII();
+//        start.minimumSwapsToGroupAll1sTogetherII();
+        start.findingPairsWithACertainSum();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -141,5 +143,17 @@ public class StartOctober {
         System.out.println("0 == " + mstga1t.minSwaps(new int[]{1,1,0,0,1}));
         System.out.println("2 == " + mstga1t.minSwaps(new int[]{1,1,1,0,0,0,1,1,0,0,0,0,1}));
         System.out.println("1 == " + mstga1t.minSwaps(new int[]{1,0,1,0,0,0,1,0,1}));
+    }
+
+    public void findingPairsWithACertainSum() {
+        FindingPairsWithACertainSum fpwacs = new FindingPairsWithACertainSum(new int[]{1,1,2,2,2,3}, new int[]{1,4,5,2,5,4});
+
+        System.out.println("8 == " + fpwacs.count(7));
+        fpwacs.add(3,2);
+        System.out.println("2 == " + fpwacs.count(8));
+        System.out.println("1 == " + fpwacs.count(4));
+        fpwacs.add(0,1);
+        fpwacs.add(1,1);
+        System.out.println("11 == " + fpwacs.count(7));
     }
 }
