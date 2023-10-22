@@ -6,8 +6,10 @@ import com.ss.leetcode.LC2023.october.CountGoodNumbers;
 import com.ss.leetcode.LC2023.october.DoubleANumberRepresentedAsALinkedList;
 import com.ss.leetcode.LC2023.october.FindTheMostCompetitiveSubsequence;
 import com.ss.leetcode.LC2023.october.FindingPairsWithACertainSum;
+import com.ss.leetcode.LC2023.october.GrumpyBookstoreOwner;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
 import com.ss.leetcode.LC2023.october.MaxDotProductOfTwoSubsequences;
+import com.ss.leetcode.LC2023.october.MaximumScoreOfAGoodSubarray;
 import com.ss.leetcode.LC2023.october.MinimumSwapsToGroupAll1sTogetherII;
 import com.ss.leetcode.LC2023.october.NumberOfFlowersInFullBloom;
 import com.ss.leetcode.LC2023.october.NumberOfWaysToStayInTheSamePlaceAfterSomeSteps;
@@ -32,7 +34,9 @@ public class StartOctober {
 //        start.doubleANumberRepresentedAsALinkedList();
 //        start.parallelCoursesIII();
 //        start.minimumSwapsToGroupAll1sTogetherII();
-        start.findingPairsWithACertainSum();
+//        start.findingPairsWithACertainSum();
+//        start.maximumScoreOfAGoodSubarray();
+        start.grumpyBookstoreOwner();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -155,5 +159,23 @@ public class StartOctober {
         fpwacs.add(0,1);
         fpwacs.add(1,1);
         System.out.println("11 == " + fpwacs.count(7));
+    }
+
+    public void maximumScoreOfAGoodSubarray() {
+        MaximumScoreOfAGoodSubarray mcoags = new MaximumScoreOfAGoodSubarray();
+
+        System.out.println("15 == " + mcoags.maximumScore(new int[]{1,4,3,7,4,5}, 3));
+        System.out.println("20 == " + mcoags.maximumScore(new int[]{5,5,4,5,4,1,1,1}, 0));
+    }
+
+    public void grumpyBookstoreOwner() {
+        GrumpyBookstoreOwner gbo = new GrumpyBookstoreOwner();
+
+        System.out.println("16 == " + gbo.maxSatisfied(new int[]{1,0,1,2,1,1,7,5}, new int[]{0,1,0,1,0,1,0,1}, 3));
+        System.out.println("1 == " + gbo.maxSatisfied(new int[]{1}, new int[]{0}, 1));
+        System.out.println("29 == " + gbo.maxSatisfied(new int[]{1,2,3,2,1,2,3,4,5,6,5,4,3,1,1}, new int[]{0,1,1,0,0,1,1,1,0,1,0,0,1,1,0}, 3));
+        System.out.println("25 == " + gbo.maxSatisfied(new int[]{1,2,3,2,1,2,3,4,5,6,5,4,3,1,1}, new int[]{0,1,1,0,0,1,1,1,0,1,0,0,1,1,0}, 1));
+        System.out.println("34 == " + gbo.maxSatisfied(new int[]{1,2,3,2,1,2,3,4,5,6,5,4,3,1,1}, new int[]{0,1,1,0,0,1,1,1,0,1,0,0,1,1,0}, 6));
+        System.out.println("32 == " + gbo.maxSatisfied(new int[]{1,2,3,2,1,2,3,4,5,6,5,4,3,1,1}, new int[]{0,1,1,0,0,1,1,1,0,1,0,0,1,1,0}, 4));
     }
 }
