@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.october.AlertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod;
+import com.ss.leetcode.LC2023.october.CheckIfStringsCanBeMadeEqualWithOperationsII;
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
 import com.ss.leetcode.LC2023.october.DoubleANumberRepresentedAsALinkedList;
@@ -36,7 +37,8 @@ public class StartOctober {
 //        start.minimumSwapsToGroupAll1sTogetherII();
 //        start.findingPairsWithACertainSum();
 //        start.maximumScoreOfAGoodSubarray();
-        start.grumpyBookstoreOwner();
+//        start.grumpyBookstoreOwner();
+        start.checkIfStringsCanBeMadeEqualWithOperationsII();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -177,5 +179,12 @@ public class StartOctober {
         System.out.println("25 == " + gbo.maxSatisfied(new int[]{1,2,3,2,1,2,3,4,5,6,5,4,3,1,1}, new int[]{0,1,1,0,0,1,1,1,0,1,0,0,1,1,0}, 1));
         System.out.println("34 == " + gbo.maxSatisfied(new int[]{1,2,3,2,1,2,3,4,5,6,5,4,3,1,1}, new int[]{0,1,1,0,0,1,1,1,0,1,0,0,1,1,0}, 6));
         System.out.println("32 == " + gbo.maxSatisfied(new int[]{1,2,3,2,1,2,3,4,5,6,5,4,3,1,1}, new int[]{0,1,1,0,0,1,1,1,0,1,0,0,1,1,0}, 4));
+    }
+
+    public void checkIfStringsCanBeMadeEqualWithOperationsII() {
+        CheckIfStringsCanBeMadeEqualWithOperationsII ciscbmqwoii = new CheckIfStringsCanBeMadeEqualWithOperationsII();
+
+        System.out.println("true == " + ciscbmqwoii.checkStrings("abcdba","cabdab"));
+        System.out.println("false == " + ciscbmqwoii.checkStrings("abe","bea"));
     }
 }
