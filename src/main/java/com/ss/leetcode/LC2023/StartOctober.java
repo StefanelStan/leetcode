@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.october.AlertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod;
+import com.ss.leetcode.LC2023.october.BinaryStringWithSubstringsRepresenting1ToN;
 import com.ss.leetcode.LC2023.october.CheckIfStringsCanBeMadeEqualWithOperationsII;
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
@@ -38,7 +39,8 @@ public class StartOctober {
 //        start.findingPairsWithACertainSum();
 //        start.maximumScoreOfAGoodSubarray();
 //        start.grumpyBookstoreOwner();
-        start.checkIfStringsCanBeMadeEqualWithOperationsII();
+//        start.checkIfStringsCanBeMadeEqualWithOperationsII();
+        start.binaryStringWithSubstringsRepresenting1ToN();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -186,5 +188,12 @@ public class StartOctober {
 
         System.out.println("true == " + ciscbmqwoii.checkStrings("abcdba","cabdab"));
         System.out.println("false == " + ciscbmqwoii.checkStrings("abe","bea"));
+    }
+
+    public void binaryStringWithSubstringsRepresenting1ToN() {
+        BinaryStringWithSubstringsRepresenting1ToN bswsr1tn = new BinaryStringWithSubstringsRepresenting1ToN();
+
+        System.out.println("true == " + bswsr1tn.queryString("0110", 3));
+        System.out.println("false == " + bswsr1tn.queryString("0110", 4));
     }
 }
