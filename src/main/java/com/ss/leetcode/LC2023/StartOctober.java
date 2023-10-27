@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.october.BinaryStringWithSubstringsRepresenting1ToN
 import com.ss.leetcode.LC2023.october.CheckIfStringsCanBeMadeEqualWithOperationsII;
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
+import com.ss.leetcode.LC2023.october.DistantBarcodes;
 import com.ss.leetcode.LC2023.october.DoubleANumberRepresentedAsALinkedList;
 import com.ss.leetcode.LC2023.october.FindTheMostCompetitiveSubsequence;
 import com.ss.leetcode.LC2023.october.FindingPairsWithACertainSum;
@@ -40,7 +41,8 @@ public class StartOctober {
 //        start.maximumScoreOfAGoodSubarray();
 //        start.grumpyBookstoreOwner();
 //        start.checkIfStringsCanBeMadeEqualWithOperationsII();
-        start.binaryStringWithSubstringsRepresenting1ToN();
+//        start.binaryStringWithSubstringsRepresenting1ToN();
+        start.distantBarcodes();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -195,5 +197,12 @@ public class StartOctober {
 
         System.out.println("true == " + bswsr1tn.queryString("0110", 3));
         System.out.println("false == " + bswsr1tn.queryString("0110", 4));
+    }
+
+    public void distantBarcodes() {
+        DistantBarcodes db = new DistantBarcodes();
+
+        System.out.println("[2,1,2,1,2,1] == " + Arrays.toString(db.rearrangeBarcodes(new int[]{1,1,1,2,2,2})));
+        System.out.println("[1,3,1,3,1,2,1,2] == " + Arrays.toString(db.rearrangeBarcodes(new int[]{1,1,1,1,2,2,3,3})));
     }
 }
