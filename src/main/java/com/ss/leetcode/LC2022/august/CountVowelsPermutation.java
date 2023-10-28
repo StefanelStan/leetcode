@@ -25,7 +25,36 @@ public class CountVowelsPermutation {
              permutations[row][u] = permutations[row][a]
          7. The answer if the sum of all permutations of row n-1.
      */
+    private static final int[][] allowedCombinations = new int[][]{{1},{0,2},{0,1,3,4},{2,4},{0}};
     public int countVowelPermutation(int n) {
+        int[][] combinationCount = new int[5][n];
+        combinationCount[0][n-1] = combinationCount[1][n-1] = combinationCount[2][n-1] = combinationCount[3][n-1] = combinationCount[4][n-1] = 1;
+        for (int j = n-2; j >= 0; j--) {
+            for (int i = 0; i < 5; i++) {
+                combinationCount[i][j] = sumAllowedCombinations(combinationCount, j + 1, allowedCombinations[i]);
+            }
+        }
+        return getSum(combinationCount);
+    }
+
+    private int sumAllowedCombinations(int[][] combinationCount, int j, int[] allowedIndices) {
+        int sum = 0;
+        for (int index : allowedIndices) {
+            sum = (sum + combinationCount[index][j]) % 1_000_000_007;
+        }
+        return sum;
+    }
+
+    private int getSum(int[][] combinationCount) {
+        int sum = 0;
+        for (int[] ints : combinationCount) {
+            sum = (sum + ints[0]) % 1_000_000_007;
+        }
+        return sum;
+    }
+
+
+    public int countVowelPermutation2(int n) {
         int[][] permutations = new int[n][5];
         Arrays.fill(permutations[0], 1);
         for (int i = 1; i < n; i++) {
