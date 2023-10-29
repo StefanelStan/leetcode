@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.october.AlertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod;
 import com.ss.leetcode.LC2023.october.BinaryStringWithSubstringsRepresenting1ToN;
+import com.ss.leetcode.LC2023.october.CheckIfMoveIsLegal;
 import com.ss.leetcode.LC2023.october.CheckIfStringsCanBeMadeEqualWithOperationsII;
 import com.ss.leetcode.LC2023.october.CountCollisionsOnARoad;
 import com.ss.leetcode.LC2023.october.CountGoodNumbers;
@@ -42,7 +43,8 @@ public class StartOctober {
 //        start.grumpyBookstoreOwner();
 //        start.checkIfStringsCanBeMadeEqualWithOperationsII();
 //        start.binaryStringWithSubstringsRepresenting1ToN();
-        start.distantBarcodes();
+//        start.distantBarcodes();
+        start.checkIfMoveIsLegal();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -204,5 +206,12 @@ public class StartOctober {
 
         System.out.println("[2,1,2,1,2,1] == " + Arrays.toString(db.rearrangeBarcodes(new int[]{1,1,1,2,2,2})));
         System.out.println("[1,3,1,3,1,2,1,2] == " + Arrays.toString(db.rearrangeBarcodes(new int[]{1,1,1,1,2,2,3,3})));
+    }
+
+    public void checkIfMoveIsLegal() {
+        CheckIfMoveIsLegal cimil = new CheckIfMoveIsLegal();
+
+        System.out.println("true == " + cimil.checkMove(new char[][]{{'.','.','.','B','.','.','.','.'},{'.','.','.','W','.','.','.','.'},{'.','.','.','W','.','.','.','.'},{'.','.','.','W','.','.','.','.'},{'W','B','B','.','W','W','W','B'},{'.','.','.','B','.','.','.','.'},{'.','.','.','B','.','.','.','.'},{'.','.','.','W','.','.','.','.'}}, 4, 3, 'B'));
+        System.out.println("false == " + cimil.checkMove(new char[][]{{'.','.','.','.','.','.','.','.'},{'.','B','.','.','W','.','.','.'},{'.','.','W','.','.','.','.','.'},{'.','.','.','W','B','.','.','.'},{'.','.','.','.','.','.','.','.'},{'.','.','.','.','B','W','.','.'},{'.','.','.','.','.','.','W','.'},{'.','.','.','.','.','.','.','B'}}, 4, 4, 'W'));
     }
 }
