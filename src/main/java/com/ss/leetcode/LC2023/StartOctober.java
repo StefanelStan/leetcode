@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2023.october.CountGoodNumbers;
 import com.ss.leetcode.LC2023.october.DistantBarcodes;
 import com.ss.leetcode.LC2023.october.DoubleANumberRepresentedAsALinkedList;
 import com.ss.leetcode.LC2023.october.FindTheMostCompetitiveSubsequence;
+import com.ss.leetcode.LC2023.october.FindTheOriginalArrayOfPrefixXor;
 import com.ss.leetcode.LC2023.october.FindingPairsWithACertainSum;
 import com.ss.leetcode.LC2023.october.GrumpyBookstoreOwner;
 import com.ss.leetcode.LC2023.october.MakeStringASubsequenceUsingCyclicIncrements;
@@ -44,7 +45,8 @@ public class StartOctober {
 //        start.checkIfStringsCanBeMadeEqualWithOperationsII();
 //        start.binaryStringWithSubstringsRepresenting1ToN();
 //        start.distantBarcodes();
-        start.checkIfMoveIsLegal();
+//        start.checkIfMoveIsLegal();
+        start.findTheOriginalArrayOfPrefixXor();
     }
 
     public void alertUsingSameKeyCardThreeOrMoreTimesInAOneHourPeriod() {
@@ -213,5 +215,12 @@ public class StartOctober {
 
         System.out.println("true == " + cimil.checkMove(new char[][]{{'.','.','.','B','.','.','.','.'},{'.','.','.','W','.','.','.','.'},{'.','.','.','W','.','.','.','.'},{'.','.','.','W','.','.','.','.'},{'W','B','B','.','W','W','W','B'},{'.','.','.','B','.','.','.','.'},{'.','.','.','B','.','.','.','.'},{'.','.','.','W','.','.','.','.'}}, 4, 3, 'B'));
         System.out.println("false == " + cimil.checkMove(new char[][]{{'.','.','.','.','.','.','.','.'},{'.','B','.','.','W','.','.','.'},{'.','.','W','.','.','.','.','.'},{'.','.','.','W','B','.','.','.'},{'.','.','.','.','.','.','.','.'},{'.','.','.','.','B','W','.','.'},{'.','.','.','.','.','.','W','.'},{'.','.','.','.','.','.','.','B'}}, 4, 4, 'W'));
+    }
+
+    public void findTheOriginalArrayOfPrefixXor() {
+        FindTheOriginalArrayOfPrefixXor ftoaopx = new FindTheOriginalArrayOfPrefixXor();
+
+        System.out.println("[5,7,2,3,2] == " + Arrays.toString(ftoaopx.findArray(new int[]{5,2,0,3,1})));
+        System.out.println("[13] == " + Arrays.toString(ftoaopx.findArray(new int[]{13})));
     }
 }
