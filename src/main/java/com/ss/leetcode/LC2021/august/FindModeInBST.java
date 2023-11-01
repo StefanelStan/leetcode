@@ -10,7 +10,36 @@ import java.util.Map;
 
 public class FindModeInBST {
     // https://leetcode.com/problems/find-mode-in-binary-search-tree/
+    // SMALL improvement; count how many high freq you have to generate an int[nr_of_high_freq]
     public int[] findMode(TreeNode root) {
+        int[] highestFreq = {0,0};
+        Map<Integer, Integer> frequencies = new HashMap<>();
+        traverseTree(root, frequencies, highestFreq);
+        int[] modes = new int[highestFreq[1]];
+        int insertIndex = 0;
+        for(Map.Entry<Integer, Integer> entry : frequencies.entrySet()) {
+            if (entry.getValue() == highestFreq[0]) {
+                modes[insertIndex++] = entry.getKey();
+            }
+        }
+        return modes;
+    }
+
+    private void traverseTree(TreeNode node, Map<Integer, Integer> frequencies, int[] highestFreq) {
+        if (node != null) {
+            int newFreq = frequencies.merge(node.val, 1, Integer::sum);
+            if (newFreq > highestFreq[0]) {
+                highestFreq[0] = newFreq;
+                highestFreq[1] = 1;
+            } else if (newFreq == highestFreq[0]) {
+                highestFreq[1]++;
+            }
+            traverseTree(node.left, frequencies, highestFreq);
+            traverseTree(node.right, frequencies, highestFreq);
+        }
+    }
+
+    public int[] findMode2(TreeNode root) {
         Map<Integer, Integer> modes =  new HashMap<>();
         int[] highestFreq = {-1};
         traverseAndCountNodes(root, highestFreq, modes);
