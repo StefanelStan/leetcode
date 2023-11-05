@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.november.BuildAnArrayWithStackOperations;
 import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
+import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
 
 public class StartNovember {
@@ -10,7 +11,8 @@ public class StartNovember {
 
 //        start.buildAnArrayWithStackOperations();
 //        start.countTheNumberOfGoodSubarrays();
-        start.lastMomentBeforeAllAntsFallOutOfAPlank();
+//        start.lastMomentBeforeAllAntsFallOutOfAPlank();
+        start.findTheWinnerOfAnArrayGame();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -34,5 +36,12 @@ public class StartNovember {
 
         System.out.println("4 == " + lmbaafoap.getLastMoment(4, new int[]{4,3}, new int[]{0,1}));
         System.out.println("7 == " + lmbaafoap.getLastMoment(7, new int[0], new int[]{0,1,2,3,4,5,6,7}));
+    }
+
+    public void findTheWinnerOfAnArrayGame() {
+        FindTheWinnerOfAnArrayGame ftwoaag = new FindTheWinnerOfAnArrayGame();
+
+        System.out.println("5 == " + ftwoaag.getWinner(new int[]{2,1,3,5,4,6,7}, 2));
+        System.out.println("3 == " + ftwoaag.getWinner(new int[]{3,2,1}, 10));
     }
 }
