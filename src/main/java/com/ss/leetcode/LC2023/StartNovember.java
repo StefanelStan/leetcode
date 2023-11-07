@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2023.november.BuildAnArrayWithStackOperations;
 import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
+import com.ss.leetcode.LC2023.november.Two2KeysKeyboard;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -12,7 +13,8 @@ public class StartNovember {
 //        start.buildAnArrayWithStackOperations();
 //        start.countTheNumberOfGoodSubarrays();
 //        start.lastMomentBeforeAllAntsFallOutOfAPlank();
-        start.findTheWinnerOfAnArrayGame();
+//        start.findTheWinnerOfAnArrayGame();
+        start.two2KeysKeyboard();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -43,5 +45,13 @@ public class StartNovember {
 
         System.out.println("5 == " + ftwoaag.getWinner(new int[]{2,1,3,5,4,6,7}, 2));
         System.out.println("3 == " + ftwoaag.getWinner(new int[]{3,2,1}, 10));
+    }
+
+    public void two2KeysKeyboard() {
+        Two2KeysKeyboard t2kk = new Two2KeysKeyboard();
+
+        System.out.println("3 == " + t2kk.minSteps(3));
+        System.out.println("0 == " + t2kk.minSteps(1));
+        System.out.println("334 == " + t2kk.minSteps(993));
     }
 }
