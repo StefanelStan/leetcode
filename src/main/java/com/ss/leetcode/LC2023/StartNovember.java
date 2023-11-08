@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.november.BuildAnArrayWithStackOperations;
 import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
+import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
 import com.ss.leetcode.LC2023.november.Two2KeysKeyboard;
@@ -14,7 +15,8 @@ public class StartNovember {
 //        start.countTheNumberOfGoodSubarrays();
 //        start.lastMomentBeforeAllAntsFallOutOfAPlank();
 //        start.findTheWinnerOfAnArrayGame();
-        start.two2KeysKeyboard();
+//        start.two2KeysKeyboard();
+        start.determineIfACellIsReachableAtAGivenTime();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -53,5 +55,14 @@ public class StartNovember {
         System.out.println("3 == " + t2kk.minSteps(3));
         System.out.println("0 == " + t2kk.minSteps(1));
         System.out.println("334 == " + t2kk.minSteps(993));
+    }
+
+    public void determineIfACellIsReachableAtAGivenTime() {
+        DetermineIfACellIsReachableAtAGivenTime diaciraagt = new DetermineIfACellIsReachableAtAGivenTime();
+
+        System.out.println("true == " + diaciraagt.isReachableAtTime(2, 4, 7, 7, 6));
+        System.out.println("false == " + diaciraagt.isReachableAtTime(3, 1, 7, 3, 3));
+        System.out.println("false == " + diaciraagt.isReachableAtTime(4, 4, 4, 4, 1));
+        System.out.println("true == " + diaciraagt.isReachableAtTime(4, 4, 4, 4, 2));
     }
 }
