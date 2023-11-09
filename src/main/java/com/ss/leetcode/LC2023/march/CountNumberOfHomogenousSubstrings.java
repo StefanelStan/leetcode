@@ -15,7 +15,21 @@ public class CountNumberOfHomogenousSubstrings {
         3. Determine the length of each homogenous, calculate the number of possible substring and add it
         4. Return the answer modulo.
      */
+
     public int countHomogenous(String s) {
+        int count = 0, sequenceLength = 0;
+        char prev = 0, current = 0;
+        for (int i = 0; i < s.length(); i++) {
+            current = s.charAt(i);
+            sequenceLength = prev == current ? sequenceLength + 1 : 1;
+            count = (count + sequenceLength) % 1_000_000_007;
+            prev = current;
+        }
+        return count;
+    }
+
+
+    public int countHomogenous2(String s) {
         long count = 0L;
         long seqLength = 1;
         char prev = s.charAt(0), current;

@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
 import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
+import com.ss.leetcode.LC2023.november.NumberOfSubstringsContainingAllThreeCharacters;
 import com.ss.leetcode.LC2023.november.Two2KeysKeyboard;
 
 public class StartNovember {
@@ -16,7 +17,8 @@ public class StartNovember {
 //        start.lastMomentBeforeAllAntsFallOutOfAPlank();
 //        start.findTheWinnerOfAnArrayGame();
 //        start.two2KeysKeyboard();
-        start.determineIfACellIsReachableAtAGivenTime();
+//        start.determineIfACellIsReachableAtAGivenTime();
+        start.numberOfSubstringsContainingAllThreeCharacters();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -64,5 +66,13 @@ public class StartNovember {
         System.out.println("false == " + diaciraagt.isReachableAtTime(3, 1, 7, 3, 3));
         System.out.println("false == " + diaciraagt.isReachableAtTime(4, 4, 4, 4, 1));
         System.out.println("true == " + diaciraagt.isReachableAtTime(4, 4, 4, 4, 2));
+    }
+
+    public void numberOfSubstringsContainingAllThreeCharacters() {
+        NumberOfSubstringsContainingAllThreeCharacters noscatc = new NumberOfSubstringsContainingAllThreeCharacters();
+
+        System.out.println("10 == " + noscatc.numberOfSubstrings("abcabc"));
+        System.out.println("3 == " + noscatc.numberOfSubstrings("aaacb"));
+        System.out.println("1 == " + noscatc.numberOfSubstrings("abc"));
     }
 }
