@@ -1,13 +1,55 @@
 package com.ss.leetcode.LC2021.february;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class RestoreTheArrayFromAdjacentPairs {
     // https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/
-    // change it with links: link 1 and link 2
+    // PRO MODE
     public int[] restoreArray(int[][] adjacentPairs) {
+        int[] restored = new int[adjacentPairs.length + 1];
+        int insertIndex = 0;
+        Map<Integer, List<Integer>> neighbours = getNeighbours(adjacentPairs);
+        List<Integer> nextNeighbours;
+        int nextElement = getFirstElement(neighbours), prevElement = Integer.MAX_VALUE;
+        restored[insertIndex++] = nextElement;
+        while(insertIndex < restored.length) {
+            nextNeighbours = neighbours.get(restored[insertIndex -1]);
+            if (!nextNeighbours.isEmpty() && nextNeighbours.get(0) != nextElement && nextNeighbours.get(0) != prevElement) {
+                restored[insertIndex++] = nextNeighbours.get(0);
+            } else if (nextNeighbours.size() > 1 && nextNeighbours.get(1) != nextElement && nextNeighbours.get(1) != prevElement) {
+                restored[insertIndex++] = nextNeighbours.get(1);
+            }
+            prevElement = nextElement;
+            nextElement = restored[insertIndex -1];
+        }
+        return restored;
+    }
+
+    private Map<Integer, List<Integer>> getNeighbours(int[][] adjacentPairs) {
+        Map<Integer, List<Integer>> neighbours = new HashMap<>();
+        for(int[] pair : adjacentPairs) {
+            neighbours.computeIfAbsent(pair[0], i -> new ArrayList<>()).add(pair[1]);
+            neighbours.computeIfAbsent(pair[1], i -> new ArrayList<>()).add(pair[0]);
+        }
+        return neighbours;
+    }
+
+    private int getFirstElement(Map<Integer, List<Integer>> neighbours) {
+        for(Map.Entry<Integer, List<Integer>> entry : neighbours.entrySet()) {
+            if (entry.getValue().size() == 1) {
+                return entry.getKey();
+            }
+        }
+        return 0;
+    }
+
+
+
+    // change it with links: link 1 and link 2
+    public int[] restoreArray2(int[][] adjacentPairs) {
         final Map<Integer, Neighbours> nodes = new HashMap<>();
         parseNumbersIntoPairs(nodes, adjacentPairs);
         int[] restoredArray = restoreArray(nodes);
