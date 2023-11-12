@@ -1,7 +1,9 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.november.BuildAnArrayWithStackOperations;
+import com.ss.leetcode.LC2023.november.BusRoutes;
 import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
+import com.ss.leetcode.LC2023.november.DesignGraphWithShortestPathCalculator;
 import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
@@ -18,7 +20,9 @@ public class StartNovember {
 //        start.findTheWinnerOfAnArrayGame();
 //        start.two2KeysKeyboard();
 //        start.determineIfACellIsReachableAtAGivenTime();
-        start.numberOfSubstringsContainingAllThreeCharacters();
+//        start.numberOfSubstringsContainingAllThreeCharacters();
+//        start.designGraphWithShortestPathCalculator();
+        start.busRoutes();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -74,5 +78,21 @@ public class StartNovember {
         System.out.println("10 == " + noscatc.numberOfSubstrings("abcabc"));
         System.out.println("3 == " + noscatc.numberOfSubstrings("aaacb"));
         System.out.println("1 == " + noscatc.numberOfSubstrings("abc"));
+    }
+
+    public void designGraphWithShortestPathCalculator() {
+        DesignGraphWithShortestPathCalculator dgwspc = new DesignGraphWithShortestPathCalculator(13, new int[][]{{7,2,10},
+            {9,4,62},{9,1,85},{1,3,39},{10,2,46},{6,7,9},{1,4,26},{8,0,84},{6,4,82},{10,3,56},{5,6,40},{4,7,88},{12,1,57},
+            {8,5,79},{10,9,68},{1,6,67},{3,6,97},{0,10,26},{1,11,59},{0,12,37},{11,5,57},{6,2,32},{5,1,82},{3,8,14},{2,9,97},
+            {7,0,10},{11,8,54},{3,11,6},{1,0,21}});
+
+        System.out.println("124 == " + dgwspc.shortestPath(9,3));
+    }
+
+    public void busRoutes() {
+        BusRoutes br = new BusRoutes();
+
+        System.out.println("2 == " + br.numBusesToDestination(new int[][]{{1,2,7},{3,6,7}}, 1, 6));
+        System.out.println("-1 == " + br.numBusesToDestination(new int[][]{{7,12},{4,5,15},{6},{15,19}}, 15, 12));
     }
 }
