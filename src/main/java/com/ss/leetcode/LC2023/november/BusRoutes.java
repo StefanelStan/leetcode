@@ -1,8 +1,8 @@
 package com.ss.leetcode.LC2023.november;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,6 +17,9 @@ public class BusRoutes {
             For each combination s1 x s2, if the two buses are in the same disjoint set, then find out the cost from bx to by.
      */
     public int numBusesToDestination(int[][] routes, int source, int target) {
+        if (source == target) {
+            return 0;
+        }
         UnionFind uf = new UnionFind(routes.length);
         Set<Integer>[] busHubs = new Set[routes.length];
         int[] minCost = {Integer.MAX_VALUE};
@@ -24,60 +27,55 @@ public class BusRoutes {
         if (bussesByBusStop == null) {
             return 1;
         }
-        return findMinBusses(bussesByBusStop, uf, busHubs, minCost, source, target);
+        findMinBusses(bussesByBusStop, uf, busHubs, minCost, source, target);
+        return minCost[0] == Integer.MAX_VALUE ? -1 : minCost[0] + 1;
     }
 
-    private int findMinBusses(Map<Integer, Set<Integer>> bussesByBusStop, UnionFind uf, Set<Integer>[] busHubs, int[] minCost, int source, int destination) {
+    private void findMinBusses(Map<Integer, Set<Integer>> bussesByBusStop, UnionFind uf, Set<Integer>[] busHubs, int[] minCost, int source, int destination) {
         int min = Integer.MAX_VALUE;
         Set<Integer> bussesOfSource = bussesByBusStop.get(source);
         Set<Integer> bussesOfDestination = bussesByBusStop.get(destination);
-        int candidateCost;
         if (bussesOfSource != null && bussesOfDestination != null) {
             for (int sourceBus : bussesOfSource) {
                 for (int destinationBus : bussesOfDestination) {
-                    candidateCost = findMinPath(uf, busHubs, minCost, sourceBus, destinationBus);
-                    if (candidateCost > -1) {
-                        min = Math.min(min, candidateCost);
+                    findMinPath(uf, busHubs, minCost, sourceBus, destinationBus);
+                }
+            }
+        }
+    }
+
+    private void findMinPath (UnionFind uf, Set<Integer>[] busHubs, int[] minCost, int fromBus, int toBus) {
+        if (!uf.areConnected(fromBus, toBus)) {
+            return;
+        }
+        boolean[] visited = new boolean[busHubs.length];
+        jumpBusses(busHubs, minCost, fromBus, toBus, visited);
+    }
+
+    private void jumpBusses(Set<Integer>[] busHubs, int[] minCost, int currentBus, int targetBus, boolean[] visited) {
+        if (currentBus == targetBus) {
+            minCost[0] = 0;
+            return;
+        }
+        LinkedList<int[]> nextStops = new LinkedList<>();
+        nextStops.add(new int[]{currentBus, 0});
+        visited[currentBus] = true;
+        int[] head;
+        while(!nextStops.isEmpty()) {
+            head = nextStops.removeFirst();
+            if (busHubs[head[0]] != null) {
+                for (int next : busHubs[head[0]]) {
+                    if (next == targetBus) {
+                        minCost[0] = Math.min(minCost[0], head[1] + 1);
+                        return;
+                    }
+                    if(!visited[next]) {
+                        visited[next] = true;
+                        nextStops.addLast(new int[]{next, head[1] + 1});
                     }
                 }
             }
         }
-        return min == Integer.MAX_VALUE ? -1 : min;
-    }
-
-    private int findMinPath (UnionFind uf, Set<Integer>[] busHubs, int[] minCost, int fromBus, int toBus) {
-        if (!uf.areConnected(fromBus, toBus)) {
-            return Integer.MAX_VALUE;
-        }
-        boolean[] visited = new boolean[busHubs.length];
-        int[] pathCost = new int[busHubs.length];
-        Arrays.fill(pathCost, -1);
-        jumpBusses(busHubs, minCost, 0, fromBus, toBus, visited, pathCost);
-        return pathCost[fromBus] + 1;
-    }
-
-    private int jumpBusses(Set<Integer>[] busHubs, int[] minCost, int costSoFar, int currentBus, int targetBus, boolean[] visited, int[] pathCost) {
-        if (currentBus == targetBus) {
-            minCost[0] = Math.min(minCost[0], costSoFar);
-            return 0;
-        }
-        if (costSoFar > minCost[0]) {
-            return -1;
-        }
-        if (visited[currentBus]) {
-            return pathCost[currentBus];
-        }
-        visited[currentBus] = true;
-        int candidateCost, costToReturn = Integer.MAX_VALUE;
-        for (int nextConnection : busHubs[currentBus]) {
-            candidateCost = jumpBusses(busHubs, minCost, costSoFar + 1, nextConnection, targetBus, visited, pathCost);
-            if (candidateCost != -1) {
-                costToReturn = Math.min(costToReturn, candidateCost);
-
-            }
-        }
-        pathCost[currentBus] = costToReturn != Integer.MAX_VALUE ? costToReturn + 1 : -1;
-        return pathCost[currentBus];
     }
 
     private Map<Integer, Set<Integer>> getBussesByBusStop(int[][] routes, UnionFind uf, Set<Integer>[] busHubs, int source, int target) {

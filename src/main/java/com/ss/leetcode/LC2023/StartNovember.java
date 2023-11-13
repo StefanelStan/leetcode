@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
 import com.ss.leetcode.LC2023.november.NumberOfSubstringsContainingAllThreeCharacters;
+import com.ss.leetcode.LC2023.november.SortVowelsInAString;
 import com.ss.leetcode.LC2023.november.Two2KeysKeyboard;
 
 public class StartNovember {
@@ -22,7 +23,8 @@ public class StartNovember {
 //        start.determineIfACellIsReachableAtAGivenTime();
 //        start.numberOfSubstringsContainingAllThreeCharacters();
 //        start.designGraphWithShortestPathCalculator();
-        start.busRoutes();
+//        start.busRoutes();
+        start.sortVowelsInAString();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -94,5 +96,14 @@ public class StartNovember {
 
         System.out.println("2 == " + br.numBusesToDestination(new int[][]{{1,2,7},{3,6,7}}, 1, 6));
         System.out.println("-1 == " + br.numBusesToDestination(new int[][]{{7,12},{4,5,15},{6},{15,19}}, 15, 12));
+        System.out.println("0 == " + br.numBusesToDestination(new int[][]{{1,7},{3,5}}, 5, 5));
+        System.out.println("0 == " + br.numBusesToDestination(new int[][]{{1,7},{3,5}}, 6, 6));
+    }
+
+    public void sortVowelsInAString() {
+        SortVowelsInAString svias = new SortVowelsInAString();
+
+        System.out.println("lEOtcede == " + svias.sortVowels("lEetcOde"));
+        System.out.println("lYmpH == " + svias.sortVowels("lYmpH"));
     }
 }
