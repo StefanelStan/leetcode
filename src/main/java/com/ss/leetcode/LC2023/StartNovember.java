@@ -24,7 +24,7 @@ public class StartNovember {
 //        start.numberOfSubstringsContainingAllThreeCharacters();
 //        start.designGraphWithShortestPathCalculator();
 //        start.busRoutes();
-        start.sortVowelsInAString();
+//        start.sortVowelsInAString();
     }
 
     public void buildAnArrayWithStackOperations() {
