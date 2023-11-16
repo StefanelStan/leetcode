@@ -7,6 +7,34 @@ import java.util.Set;
 
 public class FindUniqueBinaryString {
     // https://leetcode.com/problems/find-unique-binary-string/
+    public String findDifferentBinaryString(String[] nums) {
+        int[] numbers = getNumbers(nums);
+        int num = 0;
+        while(num < numbers.length && num == numbers[num]) {
+            num++;
+        }
+        return toBinaryString(num, nums[0].length());
+    }
+
+    private String toBinaryString(int num, int length) {
+        String binary = Integer.toBinaryString(num);
+        StringBuilder stb = new StringBuilder(length);
+        while(length-- > binary.length()) {
+            stb.append('0');
+        }
+        stb.append(binary);
+        return stb.toString();
+    }
+
+    private int[] getNumbers(String[] nums) {
+        int[] numbers = new int[nums.length];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = Integer.parseInt(nums[i], 2);
+        }
+        Arrays.sort(numbers);
+        return numbers;
+    }
+
     /** Algorithm 1
          1. We know that the set of nums has a very limited length: n.
          So for n = 3 it can only have 3 elements, out of 8 combinations.
@@ -18,7 +46,7 @@ public class FindUniqueBinaryString {
          3. From last index, check if nums contains it, if not, swap last digit to 1.
          4. Repeat step 3, changing last digit - i to 1.
      */
-    public String findDifferentBinaryString(String[] nums) {
+    public String findDifferentBinaryString2(String[] nums) {
         Set<String> numsSet = new HashSet<>();
         Collections.addAll(numsSet, nums);
         char[] candidate = new char[nums[0].length()];
@@ -45,7 +73,7 @@ public class FindUniqueBinaryString {
          3. Starting from index 0, loop, increment and check if the set contains given i.
          If it doesn't, format/pad a string with 0 and binary representation of i and return it
      */
-    public String findDifferentBinaryString2(String[] nums) {
+    public String findDifferentBinaryString3(String[] nums) {
         Set<Integer> nrs = new HashSet<>();
         for (String nr : nums) {
             nrs.add(Integer.parseInt(nr, 2));
