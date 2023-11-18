@@ -6,6 +6,8 @@ import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
 import com.ss.leetcode.LC2023.november.DesignGraphWithShortestPathCalculator;
 import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
+import com.ss.leetcode.LC2023.november.FreedomTrail;
+import com.ss.leetcode.LC2023.november.KnightDialer;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
 import com.ss.leetcode.LC2023.november.MaximumElementAfterDecreasingAndRearranging;
 import com.ss.leetcode.LC2023.november.NumberOfSubstringsContainingAllThreeCharacters;
@@ -26,7 +28,9 @@ public class StartNovember {
 //        start.designGraphWithShortestPathCalculator();
 //        start.busRoutes();
 //        start.sortVowelsInAString();
-        start.maximumElementAfterDecreasingAndRearranging();
+//        start.maximumElementAfterDecreasingAndRearranging();
+//        start.knightDialer();
+        start.freedomTrail();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -115,5 +119,20 @@ public class StartNovember {
         System.out.println("2 == " + meadar.maximumElementAfterDecrementingAndRearranging(new int[]{2,2,1,2,1}));
         System.out.println("3 == " + meadar.maximumElementAfterDecrementingAndRearranging(new int[]{100,1,1000}));
         System.out.println("5 == " + meadar.maximumElementAfterDecrementingAndRearranging(new int[]{1,2,3,4,5}));
+    }
+
+    public void knightDialer() {
+        KnightDialer kd = new KnightDialer();
+
+        System.out.println("10 == " + kd.knightDialer(1));
+        System.out.println("20 == " + kd.knightDialer(2));
+        System.out.println("136006598 == " + kd.knightDialer(3131));
+    }
+
+    public void freedomTrail() {
+        FreedomTrail ft = new FreedomTrail();
+
+        System.out.println("4 == " + ft.findRotateSteps("godding", "gd"));
+        System.out.println("13 == " + ft.findRotateSteps("godding", "godding"));
     }
 }
