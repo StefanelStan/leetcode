@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2023.november.KnightDialer;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
 import com.ss.leetcode.LC2023.november.MaximumElementAfterDecreasingAndRearranging;
 import com.ss.leetcode.LC2023.november.NumberOfSubstringsContainingAllThreeCharacters;
+import com.ss.leetcode.LC2023.november.ReductionOperationsToMakeTheArrayElementsEqual;
 import com.ss.leetcode.LC2023.november.SortVowelsInAString;
 import com.ss.leetcode.LC2023.november.Two2KeysKeyboard;
 
@@ -30,7 +31,8 @@ public class StartNovember {
 //        start.sortVowelsInAString();
 //        start.maximumElementAfterDecreasingAndRearranging();
 //        start.knightDialer();
-        start.freedomTrail();
+//        start.freedomTrail();
+        start.reductionOperationsToMakeTheArrayElementsEqual();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -134,5 +136,13 @@ public class StartNovember {
 
         System.out.println("4 == " + ft.findRotateSteps("godding", "gd"));
         System.out.println("13 == " + ft.findRotateSteps("godding", "godding"));
+    }
+
+    public void reductionOperationsToMakeTheArrayElementsEqual() {
+        ReductionOperationsToMakeTheArrayElementsEqual rotmtaee = new ReductionOperationsToMakeTheArrayElementsEqual();
+
+        System.out.println("3 == " + rotmtaee.reductionOperations(new int[]{5,1,3}));
+        System.out.println("0 == " + rotmtaee.reductionOperations(new int[]{1,1,1}));
+        System.out.println("4 == " + rotmtaee.reductionOperations(new int[]{1,1,2,2,3}));
     }
 }
