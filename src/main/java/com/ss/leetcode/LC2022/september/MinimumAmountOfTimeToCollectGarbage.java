@@ -3,6 +3,36 @@ package com.ss.leetcode.LC2022.september;
 public class MinimumAmountOfTimeToCollectGarbage {
     // https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/submissions/
     public int garbageCollection(String[] garbage, int[] travel) {
+        // MPG
+        int[] lastIndexSum = {0,0,0};
+        int costToTravel = 0, timeToCollect = 0;
+        for (int i = 0; i < garbage.length; i++) {
+            costToTravel += (i == 0 ? 0 : travel[i-1]);
+            timeToCollect += getGarbageCollectionCost(garbage[i], lastIndexSum, costToTravel);
+        }
+        return timeToCollect;
+    }
+
+    private int getGarbageCollectionCost(String house, int[] lastIndexSum, int costToTravel) {
+        int totalCost = house.length(), machineIndex;
+        for (int i = 0; i < house.length(); i++) {
+            machineIndex = getOrderIndexOf(house.charAt(i));
+            totalCost += costToTravel - lastIndexSum[machineIndex];
+            lastIndexSum[machineIndex] = costToTravel;
+        }
+        return totalCost;
+    }
+
+    private int getOrderIndexOf(char sign) {
+        return switch(sign) {
+            case 'M' -> 0;
+            case 'P' -> 1;
+            default -> 2;
+        };
+    }
+
+
+    public int garbageCollection2(String[] garbage, int[] travel) {
         GarbageTruck[] trucks = getGarbageTrucks();
         int travelTime = 0, codePoint;
         for (int g = 0; g < garbage.length; g++) {
@@ -50,7 +80,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
          the travelCumulatedTime of the lastVisitedHouse[codePoint].
          6. Return the answer.
      */
-    public int garbageCollection2(String[] garbage, int[] travel) {
+    public int garbageCollection3(String[] garbage, int[] travel) {
         int[] totalGarbage = new int[26];
         int[] lastCollectedHouse = new int[26];
         int[] travelCumulatedTime = new int[travel.length + 1];
