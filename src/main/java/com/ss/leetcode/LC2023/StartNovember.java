@@ -14,6 +14,8 @@ import com.ss.leetcode.LC2023.november.NumberOfSubstringsContainingAllThreeChara
 import com.ss.leetcode.LC2023.november.ReductionOperationsToMakeTheArrayElementsEqual;
 import com.ss.leetcode.LC2023.november.SortVowelsInAString;
 import com.ss.leetcode.LC2023.november.Two2KeysKeyboard;
+import com.ss.leetcode.LC2023.november.VowelSpellchecker;
+import java.util.Arrays;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -32,7 +34,8 @@ public class StartNovember {
 //        start.maximumElementAfterDecreasingAndRearranging();
 //        start.knightDialer();
 //        start.freedomTrail();
-        start.reductionOperationsToMakeTheArrayElementsEqual();
+//        start.reductionOperationsToMakeTheArrayElementsEqual();
+        start.vowelSpellchecker();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -144,5 +147,12 @@ public class StartNovember {
         System.out.println("3 == " + rotmtaee.reductionOperations(new int[]{5,1,3}));
         System.out.println("0 == " + rotmtaee.reductionOperations(new int[]{1,1,1}));
         System.out.println("4 == " + rotmtaee.reductionOperations(new int[]{1,1,2,2,3}));
+    }
+
+    public void vowelSpellchecker() {
+        VowelSpellchecker vs = new VowelSpellchecker();
+
+        System.out.println("[kite,KiTe,KiTe,Hare,hare,,,KiTe,,KiTe] == " + Arrays.toString(vs.spellchecker(new String[]{"KiTe","kite","hare","Hare"}, new String[]{"kite","Kite","KiTe","Hare","HARE","Hear","hear","keti","keet","keto"})));
+        System.out.println("[yellow] == " + Arrays.toString(vs.spellchecker(new String[]{"yellow"}, new String[]{"YellOw"})));
     }
 }
