@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022.march;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -9,8 +10,53 @@ import java.util.TreeSet;
 
 public class AllAncestorsOfANodeInADirectedAcyclicGraph {
     // https://leetcode.com/contest/biweekly-contest-73/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/
+    // DP and DFS
+    public List<List<Integer>> getAncestors(int n, int[][] edges) {
+        List<Integer>[] inDegree = getIndegree(n, edges);
+        Set<Integer>[] ancestorsArray = new Set[n];
+        populateAncestors(ancestorsArray, inDegree);
+        List<List<Integer>> ancestors = new ArrayList<>(n);
+        for (Set<Integer> ancestor : ancestorsArray) {
+            ancestors.add(new ArrayList<>(ancestor));
+        }
+        return ancestors;
+    }
+
+    private void populateAncestors(Set<Integer>[] ancestorsArray, List<Integer>[] inDegree) {
+        for (int i = 0; i < ancestorsArray.length; i++) {
+            findAncestor(i, ancestorsArray, inDegree);
+        }
+    }
+
+    private Set<Integer> findAncestor(int node, Set<Integer>[] ancestorsArray, List<Integer>[] inDegree) {
+        if (ancestorsArray[node] == null) {
+            if (inDegree[node] == null) {
+                ancestorsArray[node] = new HashSet<>();
+            } else {
+                Set<Integer> upperNodes = new TreeSet<>();
+                for (int parent : inDegree[node]) {
+                    upperNodes.add(parent);
+                    upperNodes.addAll(findAncestor(parent, ancestorsArray, inDegree));
+                }
+                ancestorsArray[node] = upperNodes;
+            }
+        }
+        return ancestorsArray[node];
+    }
+
+    private List<Integer>[] getIndegree(int n, int[][] edges) {
+        List<Integer>[] inDegree = new List[n];
+        for (int[] edge : edges) {
+            if (inDegree[edge[1]] == null) {
+                inDegree[edge[1]] = new ArrayList<>();
+            }
+            inDegree[edge[1]].add(edge[0]);
+        }
+        return inDegree;
+    }
+
     // TLE
-    public List<List<Integer>> getAncestors(final int n, int[][] edges) {
+    public List<List<Integer>> getAncestors2(final int n, int[][] edges) {
         Map<Integer, List<Integer>> leadingTo = new TreeMap<>();
         boolean[] nodes = new boolean[n];
         for (int[] edge : edges) {
