@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.november.BuildAnArrayWithStackOperations;
 import com.ss.leetcode.LC2023.november.BusRoutes;
+import com.ss.leetcode.LC2023.november.CheckIfWordCanBePlacedInCrossword;
 import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
 import com.ss.leetcode.LC2023.november.DesignGraphWithShortestPathCalculator;
 import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
@@ -35,7 +36,8 @@ public class StartNovember {
 //        start.knightDialer();
 //        start.freedomTrail();
 //        start.reductionOperationsToMakeTheArrayElementsEqual();
-        start.vowelSpellchecker();
+//        start.vowelSpellchecker();
+        start.checkIfWordCanBePlacedInCrossword();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -154,5 +156,17 @@ public class StartNovember {
 
         System.out.println("[kite,KiTe,KiTe,Hare,hare,,,KiTe,,KiTe] == " + Arrays.toString(vs.spellchecker(new String[]{"KiTe","kite","hare","Hare"}, new String[]{"kite","Kite","KiTe","Hare","HARE","Hear","hear","keti","keet","keto"})));
         System.out.println("[yellow] == " + Arrays.toString(vs.spellchecker(new String[]{"yellow"}, new String[]{"YellOw"})));
+    }
+
+    public void checkIfWordCanBePlacedInCrossword() {
+        CheckIfWordCanBePlacedInCrossword ciwcbpic = new CheckIfWordCanBePlacedInCrossword();
+
+        System.out.println("true == " + ciwcbpic.placeWordInCrossword(new char[][]{{'#', ' ','#'},{' ',' ','#'},{'#','c',' '}}, "abc"));
+        System.out.println("false == " + ciwcbpic.placeWordInCrossword(new char[][]{{' ','#','a'},{' ','#','c'},{' ','#','a'}}, "ca"));
+        System.out.println("true == " + ciwcbpic.placeWordInCrossword(new char[][]{{'#',' ','#'},{' ',' ','#'},{'#',' ','c'}}, "ca"));
+        System.out.println("true == " + ciwcbpic.placeWordInCrossword(new char[][]{{' ',' '}}, "ab"));
+        System.out.println("true == " + ciwcbpic.placeWordInCrossword(new char[][]{{' '},{'#'},{'o'},{' '},{'t'},{'m'},{'o'},{' '},{'#'},{' '}}, "octmor"));
+        System.out.println("true == " + ciwcbpic.placeWordInCrossword(new char[][]{{'#',' ','#'},{'#',' ','#'},{'#',' ','c'}}, "ca"));
+        System.out.println("false == " + ciwcbpic.placeWordInCrossword(new char[][]{{'#','a','#'},{' ',' ','#'},{'#','c',' '}}, "dbc"));
     }
 }
