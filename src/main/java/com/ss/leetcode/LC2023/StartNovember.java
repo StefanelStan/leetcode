@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.FreedomTrail;
 import com.ss.leetcode.LC2023.november.KnightDialer;
+import com.ss.leetcode.LC2023.november.LargestSubmatrixWithRearrangements;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
 import com.ss.leetcode.LC2023.november.MaximumElementAfterDecreasingAndRearranging;
 import com.ss.leetcode.LC2023.november.NumberOfSubstringsContainingAllThreeCharacters;
@@ -37,7 +38,8 @@ public class StartNovember {
 //        start.freedomTrail();
 //        start.reductionOperationsToMakeTheArrayElementsEqual();
 //        start.vowelSpellchecker();
-        start.checkIfWordCanBePlacedInCrossword();
+//        start.checkIfWordCanBePlacedInCrossword();
+        start.largestSubmatrixWithRearrangements();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -168,5 +170,14 @@ public class StartNovember {
         System.out.println("true == " + ciwcbpic.placeWordInCrossword(new char[][]{{' '},{'#'},{'o'},{' '},{'t'},{'m'},{'o'},{' '},{'#'},{' '}}, "octmor"));
         System.out.println("true == " + ciwcbpic.placeWordInCrossword(new char[][]{{'#',' ','#'},{'#',' ','#'},{'#',' ','c'}}, "ca"));
         System.out.println("false == " + ciwcbpic.placeWordInCrossword(new char[][]{{'#','a','#'},{' ',' ','#'},{'#','c',' '}}, "dbc"));
+    }
+
+    public void largestSubmatrixWithRearrangements() {
+        LargestSubmatrixWithRearrangements lswr = new LargestSubmatrixWithRearrangements();
+
+        System.out.println("4 == " + lswr.largestSubmatrix(new int[][]{{0,0,1},{1,1,1},{1,0,1}}));
+        System.out.println("3 == " + lswr.largestSubmatrix(new int[][]{{1,0,1,0,1}}));
+        System.out.println("2 == " + lswr.largestSubmatrix(new int[][]{{1,1,0},{1,0,1}}));
+        System.out.println("34 == " + lswr.largestSubmatrix(new int[][]{{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1},{0,1,1,0,1,1,1,1,0,1,1,0,0,1,0,1,1,1,1,0,1,1,1,1,1,1}}));
     }
 }
