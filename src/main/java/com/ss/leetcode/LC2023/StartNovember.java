@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2023.november.LargestSubmatrixWithRearrangements;
 import com.ss.leetcode.LC2023.november.LastMomentBeforeAllAntsFallOutOfAPlank;
 import com.ss.leetcode.LC2023.november.MaximumElementAfterDecreasingAndRearranging;
 import com.ss.leetcode.LC2023.november.NumberOfSubstringsContainingAllThreeCharacters;
+import com.ss.leetcode.LC2023.november.NumberOfWaysToDivideALongCorridor;
 import com.ss.leetcode.LC2023.november.ReductionOperationsToMakeTheArrayElementsEqual;
 import com.ss.leetcode.LC2023.november.SortVowelsInAString;
 import com.ss.leetcode.LC2023.november.Two2KeysKeyboard;
@@ -39,7 +40,8 @@ public class StartNovember {
 //        start.reductionOperationsToMakeTheArrayElementsEqual();
 //        start.vowelSpellchecker();
 //        start.checkIfWordCanBePlacedInCrossword();
-        start.largestSubmatrixWithRearrangements();
+//        start.largestSubmatrixWithRearrangements();
+        start.numberOfWaysToDivideALongCorridor();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -179,5 +181,15 @@ public class StartNovember {
         System.out.println("3 == " + lswr.largestSubmatrix(new int[][]{{1,0,1,0,1}}));
         System.out.println("2 == " + lswr.largestSubmatrix(new int[][]{{1,1,0},{1,0,1}}));
         System.out.println("34 == " + lswr.largestSubmatrix(new int[][]{{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1},{0,1,1,0,1,1,1,1,0,1,1,0,0,1,0,1,1,1,1,0,1,1,1,1,1,1}}));
+    }
+
+    public void numberOfWaysToDivideALongCorridor() {
+        NumberOfWaysToDivideALongCorridor noftdalc = new NumberOfWaysToDivideALongCorridor();
+
+        System.out.println("3 == " + noftdalc.numberOfWays("SSPPSPS"));
+        System.out.println("1 == " + noftdalc.numberOfWays("PPSPSP"));
+        System.out.println("0 == " + noftdalc.numberOfWays("S"));
+        System.out.println("768 == " + noftdalc.numberOfWays("PSPSPSSSSSPPSSPSPSPPPPPPSPSPSPPSSSPPPSSPPPSSSPPPSSSPPPSSSPPPSSSPPSPSPPPPSSS"));
+        System.out.println("160 == " + noftdalc.numberOfWays("PPPPPPPSSPPPSSPPPPSSPSSPPPSPPS"));
     }
 }
