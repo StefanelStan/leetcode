@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2023;
 import com.ss.leetcode.LC2023.november.BuildAnArrayWithStackOperations;
 import com.ss.leetcode.LC2023.november.BusRoutes;
 import com.ss.leetcode.LC2023.november.CheckIfWordCanBePlacedInCrossword;
+import com.ss.leetcode.LC2023.november.CheckKnightTourConfiguration;
 import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
 import com.ss.leetcode.LC2023.november.DesignGraphWithShortestPathCalculator;
 import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
@@ -41,7 +42,8 @@ public class StartNovember {
 //        start.vowelSpellchecker();
 //        start.checkIfWordCanBePlacedInCrossword();
 //        start.largestSubmatrixWithRearrangements();
-        start.numberOfWaysToDivideALongCorridor();
+//        start.numberOfWaysToDivideALongCorridor();
+        start.checkKnightTourConfiguration();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -191,5 +193,12 @@ public class StartNovember {
         System.out.println("0 == " + noftdalc.numberOfWays("S"));
         System.out.println("768 == " + noftdalc.numberOfWays("PSPSPSSSSSPPSSPSPSPPPPPPSPSPSPPSSSPPPSSPPPSSSPPPSSSPPPSSSPPPSSSPPSPSPPPPSSS"));
         System.out.println("160 == " + noftdalc.numberOfWays("PPPPPPPSSPPPSSPPPPSSPSSPPPSPPS"));
+    }
+
+    public void checkKnightTourConfiguration() {
+        CheckKnightTourConfiguration cktc = new CheckKnightTourConfiguration();
+
+        System.out.println("true == " + cktc.checkValidGrid(new int[][]{{0,11,16,5,20},{17,4,19,10,15},{12,1,8,21,6},{3,18,23,14,9},{24,13,2,7,22}}));
+        System.out.println("false == " + cktc.checkValidGrid(new int[][]{{0,3,6},{5,8,1},{2,7,4}}));
     }
 }
