@@ -7,6 +7,8 @@ import com.ss.leetcode.LC2023.november.CheckKnightTourConfiguration;
 import com.ss.leetcode.LC2023.november.CountTheNumberOfGoodSubarrays;
 import com.ss.leetcode.LC2023.november.DesignGraphWithShortestPathCalculator;
 import com.ss.leetcode.LC2023.november.DetermineIfACellIsReachableAtAGivenTime;
+import com.ss.leetcode.LC2023.november.FindIndicesWithIndexAndValueDifferenceII;
+import com.ss.leetcode.LC2023.november.FindTheLongestSemiRepetitiveSubstring;
 import com.ss.leetcode.LC2023.november.FindTheWinnerOfAnArrayGame;
 import com.ss.leetcode.LC2023.november.FreedomTrail;
 import com.ss.leetcode.LC2023.november.KnightDialer;
@@ -43,7 +45,9 @@ public class StartNovember {
 //        start.checkIfWordCanBePlacedInCrossword();
 //        start.largestSubmatrixWithRearrangements();
 //        start.numberOfWaysToDivideALongCorridor();
-        start.checkKnightTourConfiguration();
+//        start.checkKnightTourConfiguration();
+//        start.findIndicesWithIndexAndValueDifferenceII();
+        start.findTheLongestSemiRepetitiveSubstring();
     }
 
     public void buildAnArrayWithStackOperations() {
@@ -200,5 +204,21 @@ public class StartNovember {
 
         System.out.println("true == " + cktc.checkValidGrid(new int[][]{{0,11,16,5,20},{17,4,19,10,15},{12,1,8,21,6},{3,18,23,14,9},{24,13,2,7,22}}));
         System.out.println("false == " + cktc.checkValidGrid(new int[][]{{0,3,6},{5,8,1},{2,7,4}}));
+    }
+
+    public void findIndicesWithIndexAndValueDifferenceII() {
+        FindIndicesWithIndexAndValueDifferenceII fiwiavdii = new FindIndicesWithIndexAndValueDifferenceII();
+
+        System.out.println("[0,3] == " + Arrays.toString(fiwiavdii.findIndices(new int[]{5,1,4,1}, 2, 4)));
+        System.out.println("[0,0] == " + Arrays.toString(fiwiavdii.findIndices(new int[]{2,1}, 0, 0)));
+        System.out.println("[-1,-1] == " + Arrays.toString(fiwiavdii.findIndices(new int[]{1,2,3}, 2, 4)));
+    }
+
+    public void findTheLongestSemiRepetitiveSubstring() {
+        FindTheLongestSemiRepetitiveSubstring ftlsrs = new FindTheLongestSemiRepetitiveSubstring();
+
+        System.out.println("4 == " + ftlsrs.longestSemiRepetitiveSubstring("52233"));
+        System.out.println("4 == " + ftlsrs.longestSemiRepetitiveSubstring("5494"));
+        System.out.println("2 == " + ftlsrs.longestSemiRepetitiveSubstring("1111111"));
     }
 }
