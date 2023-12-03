@@ -5,6 +5,14 @@ import java.awt.geom.Point2D;
 public class MinimumTimeVisitingAllPoints {
     // https://leetcode.com/problems/minimum-time-visiting-all-points/
     public int minTimeToVisitAllPoints(int[][] points) {
+        int minTime = 0;
+        for (int i = 1; i < points.length; i++) {
+            minTime += Math.max(Math.abs(points[i][0] - points[i-1][0]), Math.abs(points[i][1] - points[i-1][1]));
+        }
+        return minTime;
+    }
+
+    public int minTimeToVisitAllPoints2(int[][] points) {
         int answer = 0;
         for (int i = 1; i < points.length; i++) {
             answer += Math.max(getDifference(points[i-1][0], points[i][0]), getDifference(points[i-1][1], points[i][1]));
