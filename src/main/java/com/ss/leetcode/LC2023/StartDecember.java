@@ -2,13 +2,16 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
+import com.ss.leetcode.LC2023.december.RemoveZeroSumConsecutiveNodesFromLinkedList;
+import com.ss.leetcode.shared.ListNode;
 
 public class StartDecember {
     public static void main(String[] args) {
         StartDecember start = new StartDecember();
 
 //        start.partitionStringIntoMinimumBeautifulSubstrings();
-        start.minimumAdditionsToMakeValidString();
+//        start.minimumAdditionsToMakeValidString();
+        start.removeZeroSumConsecutiveNodesFromLinkedList();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -27,5 +30,13 @@ public class StartDecember {
         System.out.println("2 == " + matmvs.addMinimum("b"));
         System.out.println("6 == " + matmvs.addMinimum("aaa"));
         System.out.println("0 == " + matmvs.addMinimum("abc"));
+    }
+
+    public void removeZeroSumConsecutiveNodesFromLinkedList() {
+        RemoveZeroSumConsecutiveNodesFromLinkedList rzscnfll = new RemoveZeroSumConsecutiveNodesFromLinkedList();
+
+        System.out.println("[3,1] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,-3,3,1})).getAsList());
+        System.out.println("[1,2,4] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,3,-3,4})).getAsList());
+        System.out.println("[1] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,3,-3,-2})).getAsList());
     }
 }
