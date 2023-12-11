@@ -33,7 +33,7 @@ public class StartJanuary {
 //        start.divideAStringIntoGroupsOfSizeK();
 //        start.minimumPathSum();
 //        start.binaryTreeLevelOrderTraversalII();
-        start.rangeSumQueryMutable();
+//        start.rangeSumQueryMutable();
 //        start.findSmallestLetterGreaterThanTarget();
 //        start.mostCommonWord();
 //        start.linkedListInBinaryTree();
@@ -46,7 +46,7 @@ public class StartJanuary {
 //        start.maximumDifferenceBetweenIncreasingElements();
 //        start.minimumCostOfBuyingCandiesWithDiscount();
 //        start.countTheHiddenSequences();
-//        start.kHighestRankedItemsWithinAPriceRange();
+        start.kHighestRankedItemsWithinAPriceRange();
 //        start.dayOfTheWeek();
 //        start.maximumScoreAfterSplittingAString();
 //        start.longestWordInDictionary();
@@ -403,7 +403,9 @@ public class StartJanuary {
     public void kHighestRankedItemsWithinAPriceRange() {
         KHighestRankedItemsWithinAPriceRange khriwapr = new KHighestRankedItemsWithinAPriceRange();
 
-        System.out.println("2 == " + khriwapr.highestRankedKItems(new int[][]{{1,2,0,1},{1,3,0,1},{0,2,5,1}}, new int[]{2,5}, new int[]{0,0}, 3));
+        System.out.println("[[0,1],[1,1],[2,1]] == " + khriwapr.highestRankedKItems(new int[][]{{1,2,0,1},{1,3,0,1},{0,2,5,1}}, new int[]{2,5}, new int[]{0,0}, 3));
+        System.out.println("[[2,1],[1,2]] == " + khriwapr.highestRankedKItems(new int[][]{{1,2,0,1},{1,3,3,1},{0,2,5,1}}, new int[]{2,3}, new int[]{2,3}, 2));
+        System.out.println("[[2,1],[2,0]] == " + khriwapr.highestRankedKItems(new int[][]{{1,1,1},{0,0,1},{2,3,4}}, new int[]{2,3}, new int[]{0,0}, 3));
     }
 
     public void dayOfTheWeek() {
