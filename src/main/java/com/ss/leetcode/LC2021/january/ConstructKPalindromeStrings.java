@@ -6,6 +6,37 @@ import java.util.Map;
 public class ConstructKPalindromeStrings {
     // https://leetcode.com/problems/construct-k-palindrome-strings/
     public boolean canConstruct(String s, int k) {
+        CharCount charCount = getCharCount(s);
+        return k >= charCount.oddTotalGroups &&
+            k - charCount.oddTotalGroups <= charCount.evenTotalChars + Math.max(0, charCount.oddTotalChars - charCount.oddSingleChars);
+    }
+
+    private CharCount getCharCount(String s) {
+        int[] count = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 'a']++;
+        }
+        CharCount charCount = new CharCount();
+        for (int c : count) {
+            if (c % 2 == 0) {
+                charCount.evenTotalChars += c;
+            } else {
+                charCount.oddTotalGroups++;
+                charCount.oddTotalChars += c;
+                charCount.oddSingleChars += (c > 1 ? 0 : c);
+            }
+        }
+        return charCount;
+    }
+
+    private static class CharCount {
+        int oddTotalGroups;
+        int oddSingleChars;
+        int oddTotalChars;
+        int evenTotalChars;
+    }
+
+    public boolean canConstruct2(String s, int k) {
         if (k > s.length()) {
             return false;
         }

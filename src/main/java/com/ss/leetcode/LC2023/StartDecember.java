@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.december.MaximumAbsoluteSumOfAnySubarray;
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
 import com.ss.leetcode.LC2023.december.RemoveZeroSumConsecutiveNodesFromLinkedList;
@@ -11,7 +12,8 @@ public class StartDecember {
 
 //        start.partitionStringIntoMinimumBeautifulSubstrings();
 //        start.minimumAdditionsToMakeValidString();
-        start.removeZeroSumConsecutiveNodesFromLinkedList();
+//        start.removeZeroSumConsecutiveNodesFromLinkedList();
+        start.maximumAbsoluteSumOfAnySubarray();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -38,5 +40,12 @@ public class StartDecember {
         System.out.println("[3,1] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,-3,3,1})).getAsList());
         System.out.println("[1,2,4] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,3,-3,4})).getAsList());
         System.out.println("[1] == " + rzscnfll.removeZeroSumSublists(ListNode.makeChain(new int[]{1,2,3,-3,-2})).getAsList());
+    }
+
+    public void maximumAbsoluteSumOfAnySubarray() {
+        MaximumAbsoluteSumOfAnySubarray masoas = new MaximumAbsoluteSumOfAnySubarray();
+
+        System.out.println("5 == " + masoas.maxAbsoluteSum(new int[]{1,-3,2,3,-4}));
+        System.out.println("8 == " + masoas.maxAbsoluteSum(new int[]{2,-5,1,-4,3,-2}));
     }
 }
