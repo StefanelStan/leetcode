@@ -1,9 +1,11 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.december.DesignAFoodRatingSystem;
 import com.ss.leetcode.LC2023.december.MaximumAbsoluteSumOfAnySubarray;
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
 import com.ss.leetcode.LC2023.december.RemoveZeroSumConsecutiveNodesFromLinkedList;
+import com.ss.leetcode.LC2023.december.SeparateBlackAndWhiteBalls;
 import com.ss.leetcode.shared.ListNode;
 
 public class StartDecember {
@@ -13,7 +15,9 @@ public class StartDecember {
 //        start.partitionStringIntoMinimumBeautifulSubstrings();
 //        start.minimumAdditionsToMakeValidString();
 //        start.removeZeroSumConsecutiveNodesFromLinkedList();
-        start.maximumAbsoluteSumOfAnySubarray();
+//        start.maximumAbsoluteSumOfAnySubarray();
+//        start.designAFoodRatingSystem();
+        start.separateBlackAndWhiteBalls();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -47,5 +51,23 @@ public class StartDecember {
 
         System.out.println("5 == " + masoas.maxAbsoluteSum(new int[]{1,-3,2,3,-4}));
         System.out.println("8 == " + masoas.maxAbsoluteSum(new int[]{2,-5,1,-4,3,-2}));
+    }
+
+    public void designAFoodRatingSystem() {
+        DesignAFoodRatingSystem dafrs = new DesignAFoodRatingSystem(new String[]{"czopaaeyl","lxoozsbh","kbaxapl"}, new String[]{"dmnuqeatj","dmnuqeatj","dmnuqeatj"}, new int[]{11,2,15});
+
+        dafrs.changeRating("czopaaeyl", 12);
+        System.out.println("kbaxapl == " + dafrs.highestRated("dmnuqeatj"));
+        dafrs.changeRating("kbaxapl", 8);
+        dafrs.changeRating("lxoozsbh", 5);
+        System.out.println("czopaaeyl == " + dafrs.highestRated("dmnuqeatj"));
+    }
+
+    public void separateBlackAndWhiteBalls() {
+        SeparateBlackAndWhiteBalls sbawb = new SeparateBlackAndWhiteBalls();
+
+        System.out.println("1 == " + sbawb.minimumSteps("101"));
+        System.out.println("2 == " + sbawb.minimumSteps("100"));
+        System.out.println("0 == " + sbawb.minimumSteps("0111"));
     }
 }
