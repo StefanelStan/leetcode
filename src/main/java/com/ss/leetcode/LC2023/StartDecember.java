@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.december.DesignAFoodRatingSystem;
+import com.ss.leetcode.LC2023.december.DetectSquares;
 import com.ss.leetcode.LC2023.december.MaximumAbsoluteSumOfAnySubarray;
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
@@ -17,7 +18,8 @@ public class StartDecember {
 //        start.removeZeroSumConsecutiveNodesFromLinkedList();
 //        start.maximumAbsoluteSumOfAnySubarray();
 //        start.designAFoodRatingSystem();
-        start.separateBlackAndWhiteBalls();
+//        start.separateBlackAndWhiteBalls();
+        start.detectSquares();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -69,5 +71,26 @@ public class StartDecember {
         System.out.println("1 == " + sbawb.minimumSteps("101"));
         System.out.println("2 == " + sbawb.minimumSteps("100"));
         System.out.println("0 == " + sbawb.minimumSteps("0111"));
+    }
+
+    public void detectSquares() {
+        DetectSquares ds = new DetectSquares();
+
+        ds.add(new int[]{3,10});
+        ds.add(new int[]{11,2});
+        ds.add(new int[]{3,2});
+        System.out.println("1 == " + ds.count(new int[]{11,10}));
+        ds.add(new int[]{11,2});
+        System.out.println("2 == " + ds.count(new int[]{11,10}));
+
+        ds = new DetectSquares();
+        ds.add(new int[]{5,10});
+        ds.add(new int[]{10,5});
+        ds.add(new int[]{10,10});
+        System.out.println("1 == " + ds.count(new int[]{5,5}));
+        ds.add(new int[]{3,0});
+        ds.add(new int[]{8,0});
+        ds.add(new int[]{8,5});
+        System.out.println("1 == " + ds.count(new int[]{3,5}));
     }
 }
