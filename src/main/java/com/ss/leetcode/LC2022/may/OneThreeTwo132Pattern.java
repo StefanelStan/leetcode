@@ -10,19 +10,18 @@ public class OneThreeTwo132Pattern {
         int[] leftMin = getLeftMin(nums);
         int minFromLower;
         LinkedList<Integer> lower = new LinkedList<>();
-        lower.addLast(nums[nums.length -1]);
+        lower.addFirst(nums[nums.length -1]);
         for (int i = nums.length - 2; i > 0; i--) {
             if (nums[i] < nums[i + 1]) {
-                lower.addLast(nums[i]);
+                lower.addFirst(nums[i]);
             } else if (nums[i] >= nums[i + 1]) {
-                lower.addLast(nums[i + 1]);
-                while (!lower.isEmpty() && nums[i] >= lower.peekLast()) {
-                    minFromLower = lower.removeLast();
+                while (!lower.isEmpty() && nums[i] >= lower.peekFirst()) {
+                    minFromLower = lower.removeFirst();
                     if (leftMin[i-1] < nums[i] && nums[i] > minFromLower && leftMin[i-1] < minFromLower) {
                         return true;
                     }
                 }
-                lower.addLast(nums[i]);
+                lower.addFirst(nums[i]);
             }
         }
         return false;

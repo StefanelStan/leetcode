@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2023;
 
 import com.ss.leetcode.LC2023.december.DesignAFoodRatingSystem;
 import com.ss.leetcode.LC2023.december.DetectSquares;
+import com.ss.leetcode.LC2023.december.FindChampionII;
 import com.ss.leetcode.LC2023.december.MaximumAbsoluteSumOfAnySubarray;
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
@@ -19,7 +20,8 @@ public class StartDecember {
 //        start.maximumAbsoluteSumOfAnySubarray();
 //        start.designAFoodRatingSystem();
 //        start.separateBlackAndWhiteBalls();
-        start.detectSquares();
+//        start.detectSquares();
+        start.findChampionII();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -92,5 +94,14 @@ public class StartDecember {
         ds.add(new int[]{8,0});
         ds.add(new int[]{8,5});
         System.out.println("1 == " + ds.count(new int[]{3,5}));
+    }
+
+    public void findChampionII() {
+        FindChampionII fcii = new FindChampionII();
+
+        System.out.println("0 == " + fcii.findChampion(3, new int[][]{{0,1},{1,2}}));
+        System.out.println("-1 == " + fcii.findChampion(4, new int[][]{{0,2},{1,3},{1,2}}));
+        System.out.println("0 == " + fcii.findChampion(1, new int[0][0]));
+        System.out.println("-1 == " + fcii.findChampion(3, new int[][]{{1,0}}));
     }
 }
