@@ -2,25 +2,29 @@ package com.ss.leetcode.LC2022.january;
 
 public class MaximumScoreAfterSplittingAString {
     // https://leetcode.com/problems/maximum-score-after-splitting-a-string/
+    /** Algorithm
+        1. Traverse the string and count total number of 1s.
+        2. Traverse the string again from 0 to n-2 (n-2 because you won't select the last index') and for each index:
+            - Keep  track of the currentZeroes and currentOnes.
+            - The number of 1s on the right side is totalOnes - currentOnes.
+            - Determine the max of currentZeroes + (totalOnes - currentOnes).
+     */
     public int maxScore(String s) {
-        int numberOfZeroes = 0;
-        int numberOfOnes = 0;
-        for(int i = 0; i < s.length(); i++) {
-            numberOfOnes += s.charAt(i) - '0';
-        }
-        numberOfZeroes = s.length() - numberOfOnes;
-        if (numberOfOnes == 0 || numberOfZeroes == 0) {
-            return s.length() - 1;
-        }
+        int totalOnes = 0, currentOnes = 0, currentZeroes = 0;
         int maxScore = 0;
-        int countedZeroes = 0, countedOnes = 0;
+        for (int i = 0; i < s.length(); i++) {
+            totalOnes += (s.charAt(i) - '0');
+        }
+        if (totalOnes == s.length() || totalOnes == 0) {
+            return s.length() -1;
+        }
         for (int i = 0; i < s.length() - 1; i++) {
             if (s.charAt(i) == '0') {
-                countedZeroes++;
+                currentZeroes++;
             } else {
-                countedOnes++;
+                currentOnes++;
             }
-            maxScore = Math.max(maxScore, countedZeroes + numberOfOnes - countedOnes);
+            maxScore = Math.max(maxScore, currentZeroes + (totalOnes - currentOnes));
         }
         return maxScore;
     }
