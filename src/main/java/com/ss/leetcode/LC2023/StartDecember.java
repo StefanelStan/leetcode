@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.december.DecodeWays;
 import com.ss.leetcode.LC2023.december.DesignAFoodRatingSystem;
 import com.ss.leetcode.LC2023.december.DetectSquares;
 import com.ss.leetcode.LC2023.december.FindChampionII;
@@ -21,7 +22,8 @@ public class StartDecember {
 //        start.designAFoodRatingSystem();
 //        start.separateBlackAndWhiteBalls();
 //        start.detectSquares();
-        start.findChampionII();
+//        start.findChampionII();
+        start.decodeWays();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -103,5 +105,14 @@ public class StartDecember {
         System.out.println("-1 == " + fcii.findChampion(4, new int[][]{{0,2},{1,3},{1,2}}));
         System.out.println("0 == " + fcii.findChampion(1, new int[0][0]));
         System.out.println("-1 == " + fcii.findChampion(3, new int[][]{{1,0}}));
+    }
+
+    public void decodeWays() {
+        DecodeWays dw = new DecodeWays();
+
+        System.out.println("2 == "+ dw.numDecodings("12"));
+        System.out.println("3 == "+ dw.numDecodings("226"));
+        System.out.println("0 == "+ dw.numDecodings("06"));
+        System.out.println("3 == "+ dw.numDecodings("112"));
     }
 }
