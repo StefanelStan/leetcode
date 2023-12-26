@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2023.december.DetectSquares;
 import com.ss.leetcode.LC2023.december.FindChampionII;
 import com.ss.leetcode.LC2023.december.MaximumAbsoluteSumOfAnySubarray;
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
+import com.ss.leetcode.LC2023.december.NumberOfDiceRollsWithTargetSum;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
 import com.ss.leetcode.LC2023.december.RemoveZeroSumConsecutiveNodesFromLinkedList;
 import com.ss.leetcode.LC2023.december.SeparateBlackAndWhiteBalls;
@@ -23,7 +24,8 @@ public class StartDecember {
 //        start.separateBlackAndWhiteBalls();
 //        start.detectSquares();
 //        start.findChampionII();
-        start.decodeWays();
+//        start.decodeWays();
+        start.numberOfDiceRollsWithTargetSum();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -114,5 +116,15 @@ public class StartDecember {
         System.out.println("3 == "+ dw.numDecodings("226"));
         System.out.println("0 == "+ dw.numDecodings("06"));
         System.out.println("3 == "+ dw.numDecodings("112"));
+    }
+
+    public void numberOfDiceRollsWithTargetSum() {
+        NumberOfDiceRollsWithTargetSum nodrwts = new NumberOfDiceRollsWithTargetSum();
+
+        System.out.println("1 == " + nodrwts.numRollsToTarget(1, 6, 3));
+        System.out.println("6 == " + nodrwts.numRollsToTarget(2, 6, 7));
+        System.out.println("222616187 == " + nodrwts.numRollsToTarget(30, 30, 500));
+        System.out.println("0 == " + nodrwts.numRollsToTarget(2, 4, 1));
+        System.out.println("0 == " + nodrwts.numRollsToTarget(2, 4, 9));
     }
 }
