@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2023.december.DetectSquares;
 import com.ss.leetcode.LC2023.december.FindChampionII;
 import com.ss.leetcode.LC2023.december.MaximumAbsoluteSumOfAnySubarray;
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
+import com.ss.leetcode.LC2023.december.MinimumTimeToMakeRopeColorful;
 import com.ss.leetcode.LC2023.december.NumberOfDiceRollsWithTargetSum;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
 import com.ss.leetcode.LC2023.december.RemoveZeroSumConsecutiveNodesFromLinkedList;
@@ -25,7 +26,8 @@ public class StartDecember {
 //        start.detectSquares();
 //        start.findChampionII();
 //        start.decodeWays();
-        start.numberOfDiceRollsWithTargetSum();
+//        start.numberOfDiceRollsWithTargetSum();
+        start.minimumTimeToMakeRopeColorful();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -126,5 +128,13 @@ public class StartDecember {
         System.out.println("222616187 == " + nodrwts.numRollsToTarget(30, 30, 500));
         System.out.println("0 == " + nodrwts.numRollsToTarget(2, 4, 1));
         System.out.println("0 == " + nodrwts.numRollsToTarget(2, 4, 9));
+    }
+
+    public void minimumTimeToMakeRopeColorful() {
+        MinimumTimeToMakeRopeColorful mttmrc = new MinimumTimeToMakeRopeColorful();
+
+        System.out.println("3 == " + mttmrc.minCost("abaac", new int[]{1,2,3,4,5}));
+        System.out.println("0 == " + mttmrc.minCost("abc", new int[]{1,2,3}));
+        System.out.println("2 == " + mttmrc.minCost("aabaa", new int[]{1,2,3,4,1}));
     }
 }
