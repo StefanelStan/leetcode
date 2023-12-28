@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023;
 
+import com.ss.leetcode.LC2023.december.CountLatticePointsInsideACircle;
 import com.ss.leetcode.LC2023.december.DecodeWays;
 import com.ss.leetcode.LC2023.december.DesignAFoodRatingSystem;
 import com.ss.leetcode.LC2023.december.DetectSquares;
@@ -11,6 +12,7 @@ import com.ss.leetcode.LC2023.december.NumberOfDiceRollsWithTargetSum;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
 import com.ss.leetcode.LC2023.december.RemoveZeroSumConsecutiveNodesFromLinkedList;
 import com.ss.leetcode.LC2023.december.SeparateBlackAndWhiteBalls;
+import com.ss.leetcode.LC2023.december.StringCompressionII;
 import com.ss.leetcode.shared.ListNode;
 
 public class StartDecember {
@@ -27,7 +29,9 @@ public class StartDecember {
 //        start.findChampionII();
 //        start.decodeWays();
 //        start.numberOfDiceRollsWithTargetSum();
-        start.minimumTimeToMakeRopeColorful();
+//        start.minimumTimeToMakeRopeColorful();
+//        start.stringCompressionII();
+        start.countLatticePointsInsideACircle();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -136,5 +140,21 @@ public class StartDecember {
         System.out.println("3 == " + mttmrc.minCost("abaac", new int[]{1,2,3,4,5}));
         System.out.println("0 == " + mttmrc.minCost("abc", new int[]{1,2,3}));
         System.out.println("2 == " + mttmrc.minCost("aabaa", new int[]{1,2,3,4,1}));
+    }
+
+    public void stringCompressionII() {
+        StringCompressionII scii = new StringCompressionII();
+
+        System.out.println("4 == " + scii.getLengthOfOptimalCompression("aaabcccd", 2));
+        System.out.println("2 == " + scii.getLengthOfOptimalCompression("aabbaa", 2));
+        System.out.println("3 == " + scii.getLengthOfOptimalCompression("aaaaaaaaaaa", 0));
+    }
+
+    public void countLatticePointsInsideACircle() {
+        CountLatticePointsInsideACircle clpiac = new CountLatticePointsInsideACircle();
+
+        System.out.println("5 == " + clpiac.countLatticePoints(new int[][]{{2,2,1}}));
+        System.out.println("16 == " + clpiac.countLatticePoints(new int[][]{{2,2,2},{3,4,1}}));
+        System.out.println("31417 == " + clpiac.countLatticePoints(new int[][]{{50,100,25},{100,100,100}}));
     }
 }
