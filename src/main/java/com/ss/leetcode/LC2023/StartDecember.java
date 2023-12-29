@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstr
 import com.ss.leetcode.LC2023.december.RemoveZeroSumConsecutiveNodesFromLinkedList;
 import com.ss.leetcode.LC2023.december.SeparateBlackAndWhiteBalls;
 import com.ss.leetcode.LC2023.december.StringCompressionII;
+import com.ss.leetcode.LC2023.december.TaskScheduler;
 import com.ss.leetcode.shared.ListNode;
 
 public class StartDecember {
@@ -31,7 +32,8 @@ public class StartDecember {
 //        start.numberOfDiceRollsWithTargetSum();
 //        start.minimumTimeToMakeRopeColorful();
 //        start.stringCompressionII();
-        start.countLatticePointsInsideACircle();
+//        start.countLatticePointsInsideACircle();
+        start.taskScheduler();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -156,5 +158,13 @@ public class StartDecember {
         System.out.println("5 == " + clpiac.countLatticePoints(new int[][]{{2,2,1}}));
         System.out.println("16 == " + clpiac.countLatticePoints(new int[][]{{2,2,2},{3,4,1}}));
         System.out.println("31417 == " + clpiac.countLatticePoints(new int[][]{{50,100,25},{100,100,100}}));
+    }
+
+    public void taskScheduler() {
+        TaskScheduler ts = new TaskScheduler();
+
+        System.out.println("8 == " + ts.leastInterval(new char[]{'A','A','A','B','B','B'}, 2));
+        System.out.println("6 == " + ts.leastInterval(new char[]{'A','A','A','B','B','B'}, 0));
+        System.out.println("16 == " + ts.leastInterval(new char[]{'A','A','A','A','A','A','B','C','D','E','F','G'}, 2));
     }
 }
