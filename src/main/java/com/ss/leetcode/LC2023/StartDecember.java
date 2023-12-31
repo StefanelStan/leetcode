@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2023.december.DetectSquares;
 import com.ss.leetcode.LC2023.december.FindChampionII;
 import com.ss.leetcode.LC2023.december.MaximumAbsoluteSumOfAnySubarray;
 import com.ss.leetcode.LC2023.december.MinimumAdditionsToMakeValidString;
+import com.ss.leetcode.LC2023.december.MinimumNumberOfChangesToMakeBinaryStringBeautiful;
 import com.ss.leetcode.LC2023.december.MinimumTimeToMakeRopeColorful;
 import com.ss.leetcode.LC2023.december.NumberOfDiceRollsWithTargetSum;
 import com.ss.leetcode.LC2023.december.PartitionStringIntoMinimumBeautifulSubstrings;
@@ -33,7 +34,8 @@ public class StartDecember {
 //        start.minimumTimeToMakeRopeColorful();
 //        start.stringCompressionII();
 //        start.countLatticePointsInsideACircle();
-        start.taskScheduler();
+//        start.taskScheduler();
+        start.minimumNumberOfChangesToMakeBinaryStringBeautiful();
     }
 
     public void partitionStringIntoMinimumBeautifulSubstrings() {
@@ -166,5 +168,16 @@ public class StartDecember {
         System.out.println("8 == " + ts.leastInterval(new char[]{'A','A','A','B','B','B'}, 2));
         System.out.println("6 == " + ts.leastInterval(new char[]{'A','A','A','B','B','B'}, 0));
         System.out.println("16 == " + ts.leastInterval(new char[]{'A','A','A','A','A','A','B','C','D','E','F','G'}, 2));
+    }
+
+    public void minimumNumberOfChangesToMakeBinaryStringBeautiful() {
+        MinimumNumberOfChangesToMakeBinaryStringBeautiful mnoctmbsb = new MinimumNumberOfChangesToMakeBinaryStringBeautiful();
+
+        System.out.println("2 == " + mnoctmbsb.minChanges("1001"));
+        System.out.println("1 == " + mnoctmbsb.minChanges("10"));
+        System.out.println("0 == " + mnoctmbsb.minChanges("0000"));
+        System.out.println("0 == " + mnoctmbsb.minChanges("0000"));
+        System.out.println("0 == " + mnoctmbsb.minChanges("11"));
+        System.out.println("32 == " + mnoctmbsb.minChanges("111100011001100101000101111010101010101010011110010100010100101101010101010010101001"));
     }
 }
