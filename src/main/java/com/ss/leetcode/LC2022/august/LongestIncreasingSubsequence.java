@@ -4,6 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LongestIncreasingSubsequence {
+    // https://leetcode.com/problems/longest-increasing-subsequence
+    // PRO MODE
+    public int lengthOfLIS(int[] nums) {
+        int maxLength = 1, currentLength;
+        int[] maxLengths =  new int[nums.length];
+        for (int i = nums.length - 1; i >= 0; i--) {
+            currentLength = 1;
+            for (int j = i + 1; j < nums.length && currentLength <= maxLength; j++) {
+                if (nums[i] == nums[j]) {
+                    currentLength = Math.max(currentLength, maxLengths[j]);
+                } else if (nums[i] < nums[j]) {
+                    currentLength = Math.max(currentLength, maxLengths[j] + 1);
+                }
+            }
+            maxLengths[i] = currentLength;
+            maxLength = Math.max(maxLength, currentLength);
+        }
+        return maxLength;
+    }
 
     /**
      *  Algorithm
@@ -13,7 +32,7 @@ public class LongestIncreasingSubsequence {
      *         and keep track of best case. Update the seqLengths and maybe foundSequences if it's the case.
      *      4. Return foundSequences.get(0)[1]
      */
-    public int lengthOfLIS(int[] nums) {
+    public int lengthOfLIS2(int[] nums) {
         // {startValue, length}
         List<int[]> longestSeqs = new ArrayList<>();
         int[] seqLengths = new int[nums.length];
