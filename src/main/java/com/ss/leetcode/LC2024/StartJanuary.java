@@ -1,9 +1,11 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.january.AdvantageShuffle;
+import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -11,7 +13,8 @@ public class StartJanuary {
 
 //        start.replaceElementsInAnArray();
 //        start.minimumNumberOfOperationsToMakeArrayEmpty();
-        start.advantageShuffle();
+//        start.advantageShuffle();
+        start.minimumIndexOfAValidSplit();
     }
 
     public void replaceElementsInAnArray() {
@@ -33,5 +36,13 @@ public class StartJanuary {
 
         System.out.println("[2,11,7,15] == " + Arrays.toString(as.advantageCount(new int[]{2,7,11,15}, new int[]{1,10,4,11})));
         System.out.println("[24,32,8,12] == " + Arrays.toString(as.advantageCount(new int[]{12,24,8,32}, new int[]{13,25,32,11})));
+    }
+
+    public void minimumIndexOfAValidSplit() {
+        MinimumIndexOfAValidSplit mioavs = new MinimumIndexOfAValidSplit();
+
+        System.out.println("2 == " + mioavs.minimumIndex(List.of(1,2,2,2)));
+        System.out.println("4 == " + mioavs.minimumIndex(List.of(2,1,3,1,1,1,7,1,2,1)));
+        System.out.println("-1 == " + mioavs.minimumIndex(List.of(3,3,3,3,7,2,2)));
     }
 }
