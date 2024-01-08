@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.january.AdvantageShuffle;
+import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
@@ -14,7 +15,8 @@ public class StartJanuary {
 //        start.replaceElementsInAnArray();
 //        start.minimumNumberOfOperationsToMakeArrayEmpty();
 //        start.advantageShuffle();
-        start.minimumIndexOfAValidSplit();
+//        start.minimumIndexOfAValidSplit();
+        start.countGoodMeals();
     }
 
     public void replaceElementsInAnArray() {
@@ -44,5 +46,12 @@ public class StartJanuary {
         System.out.println("2 == " + mioavs.minimumIndex(List.of(1,2,2,2)));
         System.out.println("4 == " + mioavs.minimumIndex(List.of(2,1,3,1,1,1,7,1,2,1)));
         System.out.println("-1 == " + mioavs.minimumIndex(List.of(3,3,3,3,7,2,2)));
+    }
+
+    public void countGoodMeals() {
+        CountGoodMeals cgm = new CountGoodMeals();
+
+        System.out.println("4 == " + cgm.countPairs(new int[]{1,3,5,7,9}));
+        System.out.println("15 == " + cgm.countPairs(new int[]{1,1,1,3,3,3,7}));
     }
 }
