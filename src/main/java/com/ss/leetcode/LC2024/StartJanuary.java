@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.january.AdvantageShuffle;
 import com.ss.leetcode.LC2024.january.CountGoodMeals;
+import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
@@ -16,7 +17,8 @@ public class StartJanuary {
 //        start.minimumNumberOfOperationsToMakeArrayEmpty();
 //        start.advantageShuffle();
 //        start.minimumIndexOfAValidSplit();
-        start.countGoodMeals();
+//        start.countGoodMeals();
+        start.furthestPointFromOrigin();
     }
 
     public void replaceElementsInAnArray() {
@@ -53,5 +55,13 @@ public class StartJanuary {
 
         System.out.println("4 == " + cgm.countPairs(new int[]{1,3,5,7,9}));
         System.out.println("15 == " + cgm.countPairs(new int[]{1,1,1,3,3,3,7}));
+    }
+
+    public void furthestPointFromOrigin() {
+        FurthestPointFromOrigin fpfo = new FurthestPointFromOrigin();
+
+        System.out.println("3 == " + fpfo.furthestDistanceFromOrigin("L_RL__R"));
+        System.out.println("5 == " + fpfo.furthestDistanceFromOrigin("_R__LL_"));
+        System.out.println("7 == " + fpfo.furthestDistanceFromOrigin("_______"));
     }
 }
