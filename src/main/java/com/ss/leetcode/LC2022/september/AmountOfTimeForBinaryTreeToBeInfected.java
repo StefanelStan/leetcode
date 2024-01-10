@@ -6,6 +6,44 @@ import java.util.List;
 
 public class AmountOfTimeForBinaryTreeToBeInfected {
     // https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/
+    // BETTER MODE
+    public int amountOfTime(TreeNode root, int start) {
+        TreeNode[] parents = new TreeNode[100_001];
+        boolean[] visited = new boolean[100_001];
+        TreeNode[] startNode = new TreeNode[1];
+        getParentsAndStart(root, start, parents, startNode);
+        visited[start] = true;
+        return Math.max(infectNode(parents[start], 0, parents, visited), Math.max(infectNode(startNode[0].left, 0, parents, visited),
+            infectNode(startNode[0].right, 0, parents, visited)));
+    }
+
+    private int infectNode(TreeNode node, int time, TreeNode[] parents, boolean[] visited) {
+        if (node == null || visited[node.val]) {
+            return time;
+        }
+        time++;
+        visited[node.val] = true;
+        return Math.max(infectNode(parents[node.val], time, parents, visited),
+            Math.max(infectNode(node.left, time, parents, visited), infectNode(node.right, time, parents, visited)));
+    }
+
+    private void getParentsAndStart(TreeNode node, int start, TreeNode[] parents, TreeNode[] startNode) {
+        if (node != null) {
+            if (node.val == start) {
+                startNode[0] = node;
+                return;
+            }
+            if (node.left != null) {
+                parents[node.left.val] = node;
+                getParentsAndStart(node.left, start, parents, startNode);
+            }
+            if (node.right != null) {
+                parents[node.right.val] = node;
+                getParentsAndStart(node.right, start, parents, startNode);
+            }
+        }
+    }
+
     /** Algorithm
          1. If root has no children, return 0 (single node)
          2. Else it is one of the nodes, so the tree has to be traversed and each node infected/transmitted
@@ -22,7 +60,7 @@ public class AmountOfTimeForBinaryTreeToBeInfected {
              - if left/right child is not infected, add them as well
          7. If the "newly" contaigious list is not empty, recall this function with this new list.
      */
-    public int amountOfTime(TreeNode root, int start) {
+    public int amountOfTime2(TreeNode root, int start) {
         int[] timeForInfection = {0};
         if (root.left == root.right) {
             return timeForInfection[0];

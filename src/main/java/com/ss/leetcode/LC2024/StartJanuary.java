@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
+import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,8 @@ public class StartJanuary {
 //        start.advantageShuffle();
 //        start.minimumIndexOfAValidSplit();
 //        start.countGoodMeals();
-        start.furthestPointFromOrigin();
+//        start.furthestPointFromOrigin();
+        start.minimumPathCostInAGrid();
     }
 
     public void replaceElementsInAnArray() {
@@ -63,5 +65,12 @@ public class StartJanuary {
         System.out.println("3 == " + fpfo.furthestDistanceFromOrigin("L_RL__R"));
         System.out.println("5 == " + fpfo.furthestDistanceFromOrigin("_R__LL_"));
         System.out.println("7 == " + fpfo.furthestDistanceFromOrigin("_______"));
+    }
+
+    public void minimumPathCostInAGrid() {
+        MinimumPathCostInAGrid mpciag = new MinimumPathCostInAGrid();
+
+        System.out.println("17 == " + mpciag.minPathCost(new int[][]{{5,3},{4,0},{2,1}}, new int[][]{{9,8},{1,5},{10,12},{18,6},{2,4},{14,3}}));
+        System.out.println("6 == " + mpciag.minPathCost(new int[][]{{5,1,2},{4,0,3}}, new int[][]{{12,10,15},{20,23,8},{21,7,1},{8,1,13},{9,10,25},{5,3,2}}));
     }
 }
