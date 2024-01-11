@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
+import com.ss.leetcode.LC2024.january.RotatingTheBox;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,7 +21,8 @@ public class StartJanuary {
 //        start.minimumIndexOfAValidSplit();
 //        start.countGoodMeals();
 //        start.furthestPointFromOrigin();
-        start.minimumPathCostInAGrid();
+//        start.minimumPathCostInAGrid();
+        start.rotatingTheBox();
     }
 
     public void replaceElementsInAnArray() {
@@ -72,5 +74,13 @@ public class StartJanuary {
 
         System.out.println("17 == " + mpciag.minPathCost(new int[][]{{5,3},{4,0},{2,1}}, new int[][]{{9,8},{1,5},{10,12},{18,6},{2,4},{14,3}}));
         System.out.println("6 == " + mpciag.minPathCost(new int[][]{{5,1,2},{4,0,3}}, new int[][]{{12,10,15},{20,23,8},{21,7,1},{8,1,13},{9,10,25},{5,3,2}}));
+    }
+
+    public void rotatingTheBox() {
+        RotatingTheBox rtb = new RotatingTheBox();
+
+        System.out.println("[[.],[#],[#]] == " + Arrays.deepToString(rtb.rotateTheBox(new char[][]{{'#','.','#'}})));
+        System.out.println("[[#,.],[#,#],[.,.]] == " + Arrays.deepToString(rtb.rotateTheBox(new char[][]{{'#','.','*','.'},{'#','#','*','.'}})));
+        System.out.println("[[.,#,#],[.,#,#],[#,#,*],[#,*,.],[#,.,*],[#,.,.]] == " + Arrays.deepToString(rtb.rotateTheBox(new char[][]{{'#','#','*','.','*','.'},{'#','#','#','*','.','.'},{'#','#','#','.','#','.'}})));
     }
 }
