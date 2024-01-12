@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.january.AdvantageShuffle;
+import com.ss.leetcode.LC2024.january.CircularPermutationInBinaryRepresentation;
 import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
@@ -22,7 +23,8 @@ public class StartJanuary {
 //        start.countGoodMeals();
 //        start.furthestPointFromOrigin();
 //        start.minimumPathCostInAGrid();
-        start.rotatingTheBox();
+//        start.rotatingTheBox();
+        start.circularPermutationInBinaryRepresentation();
     }
 
     public void replaceElementsInAnArray() {
@@ -82,5 +84,12 @@ public class StartJanuary {
         System.out.println("[[.],[#],[#]] == " + Arrays.deepToString(rtb.rotateTheBox(new char[][]{{'#','.','#'}})));
         System.out.println("[[#,.],[#,#],[.,.]] == " + Arrays.deepToString(rtb.rotateTheBox(new char[][]{{'#','.','*','.'},{'#','#','*','.'}})));
         System.out.println("[[.,#,#],[.,#,#],[#,#,*],[#,*,.],[#,.,*],[#,.,.]] == " + Arrays.deepToString(rtb.rotateTheBox(new char[][]{{'#','#','*','.','*','.'},{'#','#','#','*','.','.'},{'#','#','#','.','#','.'}})));
+    }
+
+    public void circularPermutationInBinaryRepresentation() {
+        CircularPermutationInBinaryRepresentation cpibr = new CircularPermutationInBinaryRepresentation();
+
+        System.out.println("[3,2,0,1] == " + cpibr.circularPermutation(2, 3));
+        System.out.println("[2,6,7,5,4,0,1,3] == " + cpibr.circularPermutation(3, 2));
     }
 }
