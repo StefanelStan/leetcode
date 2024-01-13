@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.january.AdvantageShuffle;
 import com.ss.leetcode.LC2024.january.CircularPermutationInBinaryRepresentation;
 import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
+import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
@@ -24,7 +25,8 @@ public class StartJanuary {
 //        start.furthestPointFromOrigin();
 //        start.minimumPathCostInAGrid();
 //        start.rotatingTheBox();
-        start.circularPermutationInBinaryRepresentation();
+//        start.circularPermutationInBinaryRepresentation();
+        start.lexicographicallySmallestStringAfterSubstringOperation();
     }
 
     public void replaceElementsInAnArray() {
@@ -91,5 +93,13 @@ public class StartJanuary {
 
         System.out.println("[3,2,0,1] == " + cpibr.circularPermutation(2, 3));
         System.out.println("[2,6,7,5,4,0,1,3] == " + cpibr.circularPermutation(3, 2));
+    }
+
+    public void lexicographicallySmallestStringAfterSubstringOperation() {
+        LexicographicallySmallestStringAfterSubstringOperation lssaso = new LexicographicallySmallestStringAfterSubstringOperation();
+
+        System.out.println("baabc == " + lssaso.smallestString("cbabc"));
+        System.out.println("abaab == " + lssaso.smallestString("acbbc"));
+        System.out.println("kddsbncd == " + lssaso.smallestString("leetcode"));
     }
 }
