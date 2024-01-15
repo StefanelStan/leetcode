@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstr
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
+import com.ss.leetcode.LC2024.january.NumberOfPairsOfInterchangeableRectangles;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import com.ss.leetcode.LC2024.january.RotatingTheBox;
 import java.util.Arrays;
@@ -26,7 +27,8 @@ public class StartJanuary {
 //        start.minimumPathCostInAGrid();
 //        start.rotatingTheBox();
 //        start.circularPermutationInBinaryRepresentation();
-        start.lexicographicallySmallestStringAfterSubstringOperation();
+//        start.lexicographicallySmallestStringAfterSubstringOperation();
+        start.numberOfPairsOfInterchangeableRectangles();
     }
 
     public void replaceElementsInAnArray() {
@@ -101,5 +103,12 @@ public class StartJanuary {
         System.out.println("baabc == " + lssaso.smallestString("cbabc"));
         System.out.println("abaab == " + lssaso.smallestString("acbbc"));
         System.out.println("kddsbncd == " + lssaso.smallestString("leetcode"));
+    }
+
+    public void numberOfPairsOfInterchangeableRectangles() {
+        NumberOfPairsOfInterchangeableRectangles nopoir = new NumberOfPairsOfInterchangeableRectangles();
+
+        System.out.println("6 == " + nopoir.interchangeableRectangles(new int[][]{{4,8},{3,6},{10,20},{15,30}}));
+        System.out.println("0 == " + nopoir.interchangeableRectangles(new int[][]{{4,5},{7,8}}));
     }
 }
