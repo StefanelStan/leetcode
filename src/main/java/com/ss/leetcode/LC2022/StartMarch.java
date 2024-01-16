@@ -67,7 +67,7 @@ public class StartMarch {
 //        start.nextGreaterNodeInLinkedList();
 //        start.scoreOfParentheses();
 //        start.backspaceStringCompare();
-//        start.smallestSubsequenceOfDistinctCharacters();
+        start.smallestSubsequenceOfDistinctCharacters();
 //        start.minimumDominoRotationsForEqualRow();
 //        start.divideArrayIntoEqualPairs();
 //        start.maximumFrequencyStack();
@@ -80,7 +80,7 @@ public class StartMarch {
 //        start.partitionArrayIntoThreePartsWithEqualSum();
 //        start.oneBitAndTwoBitCharacters();
 //        start.searchInRotatedSortedArrayII();
-        start.findTheDuplicateNumber();
+//        start.findTheDuplicateNumber();
 //        start.lowestCommonAncestorOfABinaryTree();
 //        start.magicSquaresInGrid();
 //        start.splitArrayLargestSum();

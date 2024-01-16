@@ -1,12 +1,63 @@
 package com.ss.leetcode.LC2022.march;
 
+import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 
 public class SmallestSubsequenceOfDistinctCharacters {
     // https://leetcode.com/problems/remove-duplicate-letters/
     // https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
-    // not working ....
+    // Not working completely correctly
     public String smallestSubsequence(String s) {
+        Map<Character, CharacterNode> mapOfNodes = new HashMap<>();
+        CharacterNode head, currentNode;
+        char current = s.charAt(s.length() - 1);
+        head = new CharacterNode(current);
+        mapOfNodes.put(current, head);
+        for (int i = s.length() - 2; i>= 0; i--) {
+            current = s.charAt(i);
+            if (!mapOfNodes.containsKey(current)) {
+                currentNode = new CharacterNode(current);
+                currentNode.next = head;
+                head.previous = currentNode;
+                head = currentNode;
+                mapOfNodes.put(current, currentNode);
+            } else if (current < head.value) {
+                currentNode = mapOfNodes.get(current);
+                // break the links
+                currentNode.previous.next = currentNode.next;
+                if (currentNode.next != null) {
+                    currentNode.next.previous = currentNode.previous;
+                }
+                // adjust head
+                head.previous = currentNode;
+                currentNode.next = head;
+                currentNode.previous = null;
+                head = currentNode;
+            }
+        }
+        StringBuilder stb = new StringBuilder(mapOfNodes.size());
+        while (head != null) {
+            stb.append(head.value);
+            head = head.next;
+        }
+        return stb.toString();
+    }
+
+    private static class CharacterNode {
+        char value;
+        CharacterNode previous;
+        CharacterNode next;
+
+        public CharacterNode(char value) {
+            this.value = value;
+        }
+    }
+
+
+
+    // not working ....
+    public String smallestSubsequence2(String s) {
         LinkedHashSet<Character> chars = new LinkedHashSet<>();
         char lastElement = 0, ch;
         for (int i = s.length() - 1; i >= 0; i--) {
@@ -26,7 +77,7 @@ public class SmallestSubsequenceOfDistinctCharacters {
         return stb.reverse().toString();
     }
 
-    public String smallestSubsequence2(String s) {
+    public String smallestSubsequence3(String s) {
         if (s.length() < 2) {
             return s;
         }

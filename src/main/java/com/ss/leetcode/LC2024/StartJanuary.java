@@ -4,11 +4,13 @@ import com.ss.leetcode.LC2024.january.AdvantageShuffle;
 import com.ss.leetcode.LC2024.january.CircularPermutationInBinaryRepresentation;
 import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
+import com.ss.leetcode.LC2024.january.HouseRobberII;
 import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
 import com.ss.leetcode.LC2024.january.NumberOfPairsOfInterchangeableRectangles;
+import com.ss.leetcode.LC2024.january.PointsThatIntersectWithCars;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import com.ss.leetcode.LC2024.january.RotatingTheBox;
 import java.util.Arrays;
@@ -28,7 +30,9 @@ public class StartJanuary {
 //        start.rotatingTheBox();
 //        start.circularPermutationInBinaryRepresentation();
 //        start.lexicographicallySmallestStringAfterSubstringOperation();
-        start.numberOfPairsOfInterchangeableRectangles();
+//        start.numberOfPairsOfInterchangeableRectangles();
+//        start.houseRobberII();
+        start.pointsThatIntersectWithCars();
     }
 
     public void replaceElementsInAnArray() {
@@ -110,5 +114,22 @@ public class StartJanuary {
 
         System.out.println("6 == " + nopoir.interchangeableRectangles(new int[][]{{4,8},{3,6},{10,20},{15,30}}));
         System.out.println("0 == " + nopoir.interchangeableRectangles(new int[][]{{4,5},{7,8}}));
+    }
+
+    public void houseRobberII() {
+        HouseRobberII hrii = new HouseRobberII();
+
+        System.out.println("3 == " + hrii.rob(new int[]{2,3,2}));
+        System.out.println("4 == " + hrii.rob(new int[]{1,2,3,1}));
+        System.out.println("3 == " + hrii.rob(new int[]{1,2,3}));
+        System.out.println("29 == " + hrii.rob(new int[]{3,2,4,5,6,7,8,9,0,1,2,3,4}));
+    }
+
+    public void pointsThatIntersectWithCars() {
+        PointsThatIntersectWithCars ptiwc = new PointsThatIntersectWithCars();
+
+        System.out.println("7 == " + ptiwc.numberOfPoints(List.of(List.of(3,6), List.of(1,5), List.of(4,7))));
+        System.out.println("7 == " + ptiwc.numberOfPoints(List.of(List.of(1,3), List.of(5,8))));
+        System.out.println("10 == " + ptiwc.numberOfPoints(List.of(List.of(1,8), List.of(5,10))));
     }
 }
