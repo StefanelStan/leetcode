@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.january.AdvantageShuffle;
 import com.ss.leetcode.LC2024.january.CircularPermutationInBinaryRepresentation;
 import com.ss.leetcode.LC2024.january.CountGoodMeals;
+import com.ss.leetcode.LC2024.january.DetectPatternOfLengthMRepeatedKOrMoreTimes;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.HouseRobberII;
 import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
@@ -32,7 +33,8 @@ public class StartJanuary {
 //        start.lexicographicallySmallestStringAfterSubstringOperation();
 //        start.numberOfPairsOfInterchangeableRectangles();
 //        start.houseRobberII();
-        start.pointsThatIntersectWithCars();
+//        start.pointsThatIntersectWithCars();
+        start.detectPatternOfLengthMRepeatedKOrMoreTimes();
     }
 
     public void replaceElementsInAnArray() {
@@ -131,5 +133,14 @@ public class StartJanuary {
         System.out.println("7 == " + ptiwc.numberOfPoints(List.of(List.of(3,6), List.of(1,5), List.of(4,7))));
         System.out.println("7 == " + ptiwc.numberOfPoints(List.of(List.of(1,3), List.of(5,8))));
         System.out.println("10 == " + ptiwc.numberOfPoints(List.of(List.of(1,8), List.of(5,10))));
+    }
+
+    public void detectPatternOfLengthMRepeatedKOrMoreTimes() {
+        DetectPatternOfLengthMRepeatedKOrMoreTimes dpolmrkomt = new DetectPatternOfLengthMRepeatedKOrMoreTimes();
+
+        System.out.println("true == " + dpolmrkomt.containsPattern(new int[]{1,2,4,4,4,4}, 1, 3));
+        System.out.println("true == " + dpolmrkomt.containsPattern(new int[]{1,2,1,2,1,1,1,3}, 2, 2));
+        System.out.println("false == " + dpolmrkomt.containsPattern(new int[]{1,2,3,1,2}, 2, 2));
+        System.out.println("false == " + dpolmrkomt.containsPattern(new int[]{1,2,1,2,1,3}, 2, 3));
     }
 }

@@ -7,51 +7,41 @@ import java.util.Map;
 public class SmallestSubsequenceOfDistinctCharacters {
     // https://leetcode.com/problems/remove-duplicate-letters/
     // https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
-    // Not working completely correctly
+    /** Algorithm
+        1. Use an int[26] last to get last pos for each char and a boolean[26] used to mark if a letter is present/used
+        2. Use a StringBuilder stb to append chars
+        3. From i = 0 to n -1
+        4. If currentChar is used, skip
+        5. Else, if currentChar < lastFromBuilder and lastPos[lastFromBuilder] > i (last char from builder exists somewhere at the end of the string), then remove that from builder.
+        6. Remove chars until builder is empty or last from builder < currentChar
+        7. Append to builder and mark used[currentChar] = true
+     */
     public String smallestSubsequence(String s) {
-        Map<Character, CharacterNode> mapOfNodes = new HashMap<>();
-        CharacterNode head, currentNode;
-        char current = s.charAt(s.length() - 1);
-        head = new CharacterNode(current);
-        mapOfNodes.put(current, head);
-        for (int i = s.length() - 2; i>= 0; i--) {
-            current = s.charAt(i);
-            if (!mapOfNodes.containsKey(current)) {
-                currentNode = new CharacterNode(current);
-                currentNode.next = head;
-                head.previous = currentNode;
-                head = currentNode;
-                mapOfNodes.put(current, currentNode);
-            } else if (current < head.value) {
-                currentNode = mapOfNodes.get(current);
-                // break the links
-                currentNode.previous.next = currentNode.next;
-                if (currentNode.next != null) {
-                    currentNode.next.previous = currentNode.previous;
+        char[] chars = s.toCharArray();
+        int[] lastPos = getLastPos(chars);
+        StringBuilder stb = new StringBuilder();
+        boolean[] used = new boolean[26];
+        int codePoint;
+        for(int i = 0; i < s.length(); i++) {
+            codePoint = chars[i] - 'a';
+            if (!used[codePoint]) {
+                while(!stb.isEmpty() && stb.charAt(stb.length() -1) > chars[i] && lastPos[stb.charAt(stb.length() -1) - 'a'] > i) {
+                    used[stb.charAt(stb.length() -1) - 'a'] = false;
+                    stb.setLength(stb.length() - 1);
                 }
-                // adjust head
-                head.previous = currentNode;
-                currentNode.next = head;
-                currentNode.previous = null;
-                head = currentNode;
+                stb.append(chars[i]);
+                used[codePoint] = true;
             }
-        }
-        StringBuilder stb = new StringBuilder(mapOfNodes.size());
-        while (head != null) {
-            stb.append(head.value);
-            head = head.next;
         }
         return stb.toString();
     }
 
-    private static class CharacterNode {
-        char value;
-        CharacterNode previous;
-        CharacterNode next;
-
-        public CharacterNode(char value) {
-            this.value = value;
+    private int[] getLastPos(char[] chars) {
+        int[] lastPos = new int[26];
+        for (int i = 0; i < chars.length; i++) {
+            lastPos[chars[i] - 'a'] = i;
         }
+        return lastPos;
     }
 
 
