@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.DetectPatternOfLengthMRepeatedKOrMoreTimes;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.HouseRobberII;
+import com.ss.leetcode.LC2024.january.LengthOfLongestSubarrayWithAtMostKFrequency;
 import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
@@ -16,6 +17,7 @@ import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import com.ss.leetcode.LC2024.january.RotatingTheBox;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -34,7 +36,8 @@ public class StartJanuary {
 //        start.numberOfPairsOfInterchangeableRectangles();
 //        start.houseRobberII();
 //        start.pointsThatIntersectWithCars();
-        start.detectPatternOfLengthMRepeatedKOrMoreTimes();
+//        start.detectPatternOfLengthMRepeatedKOrMoreTimes();
+        start.lengthOfLongestSubarrayWithAtMostKFrequency();
     }
 
     public void replaceElementsInAnArray() {
@@ -142,5 +145,15 @@ public class StartJanuary {
         System.out.println("true == " + dpolmrkomt.containsPattern(new int[]{1,2,1,2,1,1,1,3}, 2, 2));
         System.out.println("false == " + dpolmrkomt.containsPattern(new int[]{1,2,3,1,2}, 2, 2));
         System.out.println("false == " + dpolmrkomt.containsPattern(new int[]{1,2,1,2,1,3}, 2, 3));
+    }
+
+    public void lengthOfLongestSubarrayWithAtMostKFrequency() {
+        LengthOfLongestSubarrayWithAtMostKFrequency lolswamkf = new LengthOfLongestSubarrayWithAtMostKFrequency();
+
+        System.out.println("6 == " + lolswamkf.maxSubarrayLength(new int[]{1,2,3,1,2,3,1,2}, 2));
+        System.out.println("2 == " + lolswamkf.maxSubarrayLength(new int[]{1,2,1,2,1,2,1,2}, 1));
+        System.out.println("4 == " + lolswamkf.maxSubarrayLength(new int[]{5,5,5,5,5,5,5}, 4));
+        System.out.println("11 == " + lolswamkf.maxSubarrayLength(new int[]{1,2,3,4,5,6,7,8,9,11,12}, 2));
+        System.out.println("12 == " + lolswamkf.maxSubarrayLength(new int[]{2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2}, 3));
     }
 }
