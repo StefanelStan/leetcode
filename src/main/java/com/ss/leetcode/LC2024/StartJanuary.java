@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.HouseRobberII;
 import com.ss.leetcode.LC2024.january.LengthOfLongestSubarrayWithAtMostKFrequency;
 import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
+import com.ss.leetcode.LC2024.january.MaximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
@@ -37,7 +38,8 @@ public class StartJanuary {
 //        start.houseRobberII();
 //        start.pointsThatIntersectWithCars();
 //        start.detectPatternOfLengthMRepeatedKOrMoreTimes();
-        start.lengthOfLongestSubarrayWithAtMostKFrequency();
+//        start.lengthOfLongestSubarrayWithAtMostKFrequency();
+        start.maximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold();
     }
 
     public void replaceElementsInAnArray() {
@@ -155,5 +157,14 @@ public class StartJanuary {
         System.out.println("4 == " + lolswamkf.maxSubarrayLength(new int[]{5,5,5,5,5,5,5}, 4));
         System.out.println("11 == " + lolswamkf.maxSubarrayLength(new int[]{1,2,3,4,5,6,7,8,9,11,12}, 2));
         System.out.println("12 == " + lolswamkf.maxSubarrayLength(new int[]{2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2,2,3,2,1,2,3,4,5,6,5,4,3,2,2}, 3));
+    }
+
+    public void maximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold() {
+        MaximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold msloaswsltoett = new MaximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold();
+
+        System.out.println("2 == " + msloaswsltoett.maxSideLength(new int[][]{{1,1,3,2,4,3,2},{1,1,3,2,4,3,2},{1,1,3,2,4,3,2}}, 4));
+        System.out.println("0 == " + msloaswsltoett.maxSideLength(new int[][]{{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2}}, 1));
+        System.out.println("1 == " + msloaswsltoett.maxSideLength(new int[][]{{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2}}, 4));
+        System.out.println("2 == " + msloaswsltoett.maxSideLength(new int[][]{{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2}}, 9));
     }
 }
