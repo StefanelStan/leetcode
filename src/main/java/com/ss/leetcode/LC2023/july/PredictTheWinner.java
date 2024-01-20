@@ -33,46 +33,34 @@ public class PredictTheWinner {
         if (nums.length < 3) {
             return true;
         }
-        Score[][] score = initScore(nums);
-        return score[0][nums.length-1].maxScore >= score[0][nums.length-1].remaining;
+        StepScore[][] stepScore = new StepScore[nums.length][nums.length];
+        StepScore playerScore = findScore(0, nums.length -1, nums, stepScore);
+        return playerScore.maxGain >= playerScore.leftoverGain;
     }
 
-    private Score[][] initScore(int[] nums) {
-        Score[][] score = new Score[nums.length][nums.length];
-        for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = i; j < nums.length; j++) {
-                score[i][j] = i == j ? new Score(nums[i], 0) : determineScore(nums, score, i, j);
-            }
-        }
-        return score;
-    }
-
-    private Score determineScore(int[] nums, Score[][] score, int left, int right) {
-        if (score[left][right] == null) {
-            if (left + 1 == right) { // size of 2
-                score[left][right] = new Score(Math.max(nums[left], nums[right]), Math.min(nums[left], nums[right]));
+    private StepScore findScore(int left, int right, int[] nums, StepScore[][] stepScore) {
+        if (stepScore[left][right] == null) {
+            if (left + 1 == right) {
+                stepScore[left][right] = new StepScore(Math.max(nums[left], nums[right]), Math.min(nums[left], nums[right]));
             } else {
-                Score takeLeft = determineScore(nums, score, left + 1, right);
-                Score takeRight = determineScore(nums, score, left, right -1);
-                int maxTakeLeft = nums[left] + takeLeft.remaining;
-                int maxTakeRight = nums[right] + takeRight.remaining;
-                if (maxTakeLeft >= maxTakeRight) {
-                    score[left][right] = new Score(maxTakeLeft, takeLeft.maxScore);
+                StepScore selectLeft = findScore(left + 1, right, nums, stepScore);
+                StepScore selectRight = findScore(left, right - 1, nums, stepScore);
+                if (selectLeft.leftoverGain + nums[left] > selectRight.leftoverGain + nums[right]) {
+                    stepScore[left][right] = new StepScore(selectLeft.leftoverGain + nums[left], selectLeft.maxGain);
                 } else {
-                    score[left][right] = new Score(maxTakeRight, takeRight.maxScore);
+                    stepScore[left][right] = new StepScore(selectRight.leftoverGain + nums[right], selectRight.maxGain);
                 }
             }
         }
-        return score[left][right];
+        return stepScore[left][right];
     }
 
-    private static class Score {
-        private int maxScore;
-        private int remaining;
-
-        public Score(int maxScore, int remaining) {
-            this.maxScore = maxScore;
-            this.remaining = remaining;
+    private static class StepScore {
+        int maxGain;
+        int leftoverGain;
+        public StepScore(int maxGain, int leftoverGain) {
+            this.maxGain = maxGain;
+            this.leftoverGain = leftoverGain;
         }
     }
 }

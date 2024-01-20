@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2024.january.LengthOfLongestSubarrayWithAtMostKFrequenc
 import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
 import com.ss.leetcode.LC2024.january.MaximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
+import com.ss.leetcode.LC2024.january.MinimumNumberOfFrogsCroaking;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
 import com.ss.leetcode.LC2024.january.NumberOfPairsOfInterchangeableRectangles;
@@ -39,7 +40,9 @@ public class StartJanuary {
 //        start.pointsThatIntersectWithCars();
 //        start.detectPatternOfLengthMRepeatedKOrMoreTimes();
 //        start.lengthOfLongestSubarrayWithAtMostKFrequency();
-        start.maximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold();
+//        start.maximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold();
+        start.minimumNumberOfFrogsCroaking();
+
     }
 
     public void replaceElementsInAnArray() {
@@ -166,5 +169,13 @@ public class StartJanuary {
         System.out.println("0 == " + msloaswsltoett.maxSideLength(new int[][]{{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2}}, 1));
         System.out.println("1 == " + msloaswsltoett.maxSideLength(new int[][]{{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2}}, 4));
         System.out.println("2 == " + msloaswsltoett.maxSideLength(new int[][]{{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2},{2,2,2,2,2}}, 9));
+    }
+
+    public void minimumNumberOfFrogsCroaking() {
+        MinimumNumberOfFrogsCroaking mnofc = new MinimumNumberOfFrogsCroaking();
+
+        System.out.println("1 == " + mnofc.minNumberOfFrogs("croakcroak"));
+        System.out.println("2 == " + mnofc.minNumberOfFrogs("crcoakroak"));
+        System.out.println("-1 == " + mnofc.minNumberOfFrogs("croakcrook"));
     }
 }
