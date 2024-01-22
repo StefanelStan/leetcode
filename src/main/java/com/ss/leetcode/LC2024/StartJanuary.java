@@ -1,13 +1,16 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.january.AdvantageShuffle;
+import com.ss.leetcode.LC2024.january.CinemaSeatAllocation;
 import com.ss.leetcode.LC2024.january.CircularPermutationInBinaryRepresentation;
 import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.DetectPatternOfLengthMRepeatedKOrMoreTimes;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.HouseRobberII;
+import com.ss.leetcode.LC2024.january.JumpGameVII;
 import com.ss.leetcode.LC2024.january.LengthOfLongestSubarrayWithAtMostKFrequency;
 import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
+import com.ss.leetcode.LC2024.january.MaximumNumberOfWeeksForWhichYouCanWork;
 import com.ss.leetcode.LC2024.january.MaximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfFrogsCroaking;
@@ -41,8 +44,10 @@ public class StartJanuary {
 //        start.detectPatternOfLengthMRepeatedKOrMoreTimes();
 //        start.lengthOfLongestSubarrayWithAtMostKFrequency();
 //        start.maximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold();
-        start.minimumNumberOfFrogsCroaking();
-
+//        start.minimumNumberOfFrogsCroaking();
+//        start.cinemaSeatAllocation();
+//        start.jumpGameVII();
+        start.maximumNumberOfWeeksForWhichYouCanWork();
     }
 
     public void replaceElementsInAnArray() {
@@ -177,5 +182,45 @@ public class StartJanuary {
         System.out.println("1 == " + mnofc.minNumberOfFrogs("croakcroak"));
         System.out.println("2 == " + mnofc.minNumberOfFrogs("crcoakroak"));
         System.out.println("-1 == " + mnofc.minNumberOfFrogs("croakcrook"));
+    }
+
+    public void cinemaSeatAllocation() {
+        CinemaSeatAllocation csa = new CinemaSeatAllocation();
+
+        System.out.println("4 == " + csa.maxNumberOfFamilies(3, new int[][]{{1,2},{1,3},{1,8},{2,6},{3,1},{3,10}}));
+        System.out.println("2 == " + csa.maxNumberOfFamilies(2, new int[][]{{2,1},{1,8},{2,6}}));
+        System.out.println("4 == " + csa.maxNumberOfFamilies(4, new int[][]{{4,3},{1,4},{4,6},{1,7}}));
+        System.out.println("1 == " + csa.maxNumberOfFamilies(1, new int[][]{{1,3},{1,4}}));
+        System.out.println("1 == " + csa.maxNumberOfFamilies(1, new int[][]{{1,1},{1,6},{1,10}}));
+        System.out.println("2000000000 == " + csa.maxNumberOfFamilies(1000000000, new int[][]{{1,1}}));
+        System.out.println("6 == " + csa.maxNumberOfFamilies(6, new int[][]{{1,1},{1,4},{1,9},{2,7},{3,10},{4,5},{5,2},{5,5},{6,6}}));
+        System.out.println("5 == " + csa.maxNumberOfFamilies(3, new int[][]{{2,3}}));
+        System.out.println("15548 == " + csa.maxNumberOfFamilies(7778, new int[][]{{80,6},{10,8},{63,10},{72,4},{98,3},{73,7},{35,9},{15,2},{110,8}}));
+        System.out.println("232 == " + csa.maxNumberOfFamilies(120, new int[][]{{80,6},{10,8},{63,10},{72,4},{98,3},{73,7},{35,9},{15,2},{110,8}}));
+    }
+
+    public void jumpGameVII() {
+        JumpGameVII jgvii = new JumpGameVII();
+
+        System.out.println("true == " + jgvii.canReach("011010", 2, 3));
+        System.out.println("false == " + jgvii.canReach("01101110", 2, 3));
+        System.out.println("false == " + jgvii.canReach("010100110010101010101010101001111010101010101001", 2, 3));
+        System.out.println("false == " + jgvii.canReach("010100110010101010101010101001111010101010101000", 2, 3));
+        System.out.println("false == " + jgvii.canReach("01", 1, 1));
+        System.out.println("true == " + jgvii.canReach("00", 1, 1));
+    }
+
+    public void maximumNumberOfWeeksForWhichYouCanWork() {
+        MaximumNumberOfWeeksForWhichYouCanWork mnowfwycw = new MaximumNumberOfWeeksForWhichYouCanWork();
+
+        System.out.println("6 == " + mnowfwycw.numberOfWeeks(new int[]{1,2,3}));
+        System.out.println("7 == " + mnowfwycw.numberOfWeeks(new int[]{5,2,1}));
+        System.out.println("193 == " + mnowfwycw.numberOfWeeks(new int[]{1,2,3,4,5,6,7,8,9,8,7,6,5,4,3,32,1,1,2,3,4,5,6,7,6,5,4,3,32,1,1,2}));
+        System.out.println("5 == " + mnowfwycw.numberOfWeeks(new int[]{1,1,1,1,1}));
+        System.out.println("4 == " + mnowfwycw.numberOfWeeks(new int[]{1,1,1,1}));
+        System.out.println("10 == " + mnowfwycw.numberOfWeeks(new int[]{2,2,2,2,2}));
+        System.out.println("8 == " + mnowfwycw.numberOfWeeks(new int[]{2,2,2,2}));
+        System.out.println("9 == " + mnowfwycw.numberOfWeeks(new int[]{1,1,1,2,2,2}));
+
     }
 }
