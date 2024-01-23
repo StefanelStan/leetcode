@@ -16,10 +16,12 @@ import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfFrogsCroaking;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
+import com.ss.leetcode.LC2024.january.NumberOfOrdersInTheBacklog;
 import com.ss.leetcode.LC2024.january.NumberOfPairsOfInterchangeableRectangles;
 import com.ss.leetcode.LC2024.january.PointsThatIntersectWithCars;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import com.ss.leetcode.LC2024.january.RotatingTheBox;
+import com.ss.leetcode.LC2024.january.StoneGameVII;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +49,9 @@ public class StartJanuary {
 //        start.minimumNumberOfFrogsCroaking();
 //        start.cinemaSeatAllocation();
 //        start.jumpGameVII();
-        start.maximumNumberOfWeeksForWhichYouCanWork();
+//        start.maximumNumberOfWeeksForWhichYouCanWork();
+//        start.stoneGameVII();
+        start.numberOfOrdersInTheBacklog();
     }
 
     public void replaceElementsInAnArray() {
@@ -222,5 +226,24 @@ public class StartJanuary {
         System.out.println("8 == " + mnowfwycw.numberOfWeeks(new int[]{2,2,2,2}));
         System.out.println("9 == " + mnowfwycw.numberOfWeeks(new int[]{1,1,1,2,2,2}));
 
+    }
+
+    public void stoneGameVII() {
+        StoneGameVII sgvii = new StoneGameVII();
+
+        System.out.println("2 == " + sgvii.stoneGameVII(new int[]{1,4,2}));
+        System.out.println("6 == " + sgvii.stoneGameVII(new int[]{5,3,1,4,2}));
+        System.out.println("7 == " + sgvii.stoneGameVII(new int[]{5,3,1,4}));
+        System.out.println("1 == " + sgvii.stoneGameVII(new int[]{3,1,4}));
+        System.out.println("3 == " + sgvii.stoneGameVII(new int[]{5,3,1}));
+        System.out.println("122 == " + sgvii.stoneGameVII(new int[]{7,90,5,1,100,10,10,2}));
+        System.out.println("55 == " + sgvii.stoneGameVII(new int[]{5,6,7,8,9,7,6,5,4,3,2,1,2,3,4,5,6,7,8,8}));
+    }
+
+    public void numberOfOrdersInTheBacklog() {
+        NumberOfOrdersInTheBacklog nooitb = new NumberOfOrdersInTheBacklog();
+
+        System.out.println("6 == " + nooitb.getNumberOfBacklogOrders(new int[][]{{10,5,0},{15,2,1},{25,1,1},{30,4,0}}));
+        System.out.println("999999984 == " + nooitb.getNumberOfBacklogOrders(new int[][]{{7,1000000000,1},{15,3,0},{5,999999995,0},{5,1,1}}));
     }
 }

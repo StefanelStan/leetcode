@@ -58,7 +58,7 @@ public class StartDecember {
 //        start.twoFurthestHousesWithDifferentColors();
 //        start.perfectNumber();
 //        start.continuousSubarraySum();
-//        start.setMismatch();
+        start.setMismatch();
 //        start.romanToInteger();
 //        start.integerToRoman();
 //        start.flattenBinaryTreeToLinkedList();
@@ -75,7 +75,7 @@ public class StartDecember {
 //        start.insertionSortList();
 //        start.maximalSquare();
 //        start.base7();
-        start.decodeString();
+//        start.decodeString();
 //        start.longestPalindromicSubstring();
 //        start.reorderList();
 //        start.courseScheduleII();
@@ -161,7 +161,7 @@ public class StartDecember {
         SetMismatch sm = new SetMismatch();
 
         System.out.println("[2,3] == " + Arrays.toString(sm.findErrorNums(new int[]{4,1,2,2})));
-        System.out.println("[1,2] == " + Arrays.toString(sm.findErrorNums(new int[]{1,1})));
+//        System.out.println("[1,2] == " + Arrays.toString(sm.findErrorNums(new int[]{1,1})));
     }
 
     public void romanToInteger() {
