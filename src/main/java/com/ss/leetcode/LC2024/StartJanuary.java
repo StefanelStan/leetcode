@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2024.january.HouseRobberII;
 import com.ss.leetcode.LC2024.january.JumpGameVII;
 import com.ss.leetcode.LC2024.january.LengthOfLongestSubarrayWithAtMostKFrequency;
 import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstringOperation;
+import com.ss.leetcode.LC2024.january.MaximumLengthOfAConcatenatedStringWithUniqueCharacters;
 import com.ss.leetcode.LC2024.january.MaximumNumberOfWeeksForWhichYouCanWork;
 import com.ss.leetcode.LC2024.january.MaximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
@@ -51,7 +52,8 @@ public class StartJanuary {
 //        start.jumpGameVII();
 //        start.maximumNumberOfWeeksForWhichYouCanWork();
 //        start.stoneGameVII();
-        start.numberOfOrdersInTheBacklog();
+//        start.numberOfOrdersInTheBacklog();
+        start.maximumLengthOfAConcatenatedStringWithUniqueCharacters();
     }
 
     public void replaceElementsInAnArray() {
@@ -245,5 +247,14 @@ public class StartJanuary {
 
         System.out.println("6 == " + nooitb.getNumberOfBacklogOrders(new int[][]{{10,5,0},{15,2,1},{25,1,1},{30,4,0}}));
         System.out.println("999999984 == " + nooitb.getNumberOfBacklogOrders(new int[][]{{7,1000000000,1},{15,3,0},{5,999999995,0},{5,1,1}}));
+    }
+
+    public void maximumLengthOfAConcatenatedStringWithUniqueCharacters() {
+        MaximumLengthOfAConcatenatedStringWithUniqueCharacters mloacswuc = new MaximumLengthOfAConcatenatedStringWithUniqueCharacters();
+
+        System.out.println("4 == " + mloacswuc.maxLength(List.of("un","iq","ue")));
+        System.out.println("6 == " + mloacswuc.maxLength(List.of("cha","r","act","ers")));
+        System.out.println("26 == " + mloacswuc.maxLength(List.of("abcdefghijklmnopqrstuvwxyz")));
+        System.out.println("16 == " + mloacswuc.maxLength(List.of("ab","ba","cd","dc","ef","fe","gh","hg","ij","ji","kl","lk","mn","nm","op","po")));
     }
 }
