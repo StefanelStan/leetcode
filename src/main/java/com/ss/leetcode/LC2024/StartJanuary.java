@@ -23,6 +23,7 @@ import com.ss.leetcode.LC2024.january.PointsThatIntersectWithCars;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import com.ss.leetcode.LC2024.january.RotatingTheBox;
 import com.ss.leetcode.LC2024.january.StoneGameVII;
+import com.ss.leetcode.LC2024.january.TheTimeWhenTheNetworkBecomesIdle;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +54,8 @@ public class StartJanuary {
 //        start.maximumNumberOfWeeksForWhichYouCanWork();
 //        start.stoneGameVII();
 //        start.numberOfOrdersInTheBacklog();
-        start.maximumLengthOfAConcatenatedStringWithUniqueCharacters();
+//        start.maximumLengthOfAConcatenatedStringWithUniqueCharacters();
+        start.theTimeWhenTheNetworkBecomesIdle();
     }
 
     public void replaceElementsInAnArray() {
@@ -256,5 +258,13 @@ public class StartJanuary {
         System.out.println("6 == " + mloacswuc.maxLength(List.of("cha","r","act","ers")));
         System.out.println("26 == " + mloacswuc.maxLength(List.of("abcdefghijklmnopqrstuvwxyz")));
         System.out.println("16 == " + mloacswuc.maxLength(List.of("ab","ba","cd","dc","ef","fe","gh","hg","ij","ji","kl","lk","mn","nm","op","po")));
+    }
+
+    public void theTimeWhenTheNetworkBecomesIdle() {
+        TheTimeWhenTheNetworkBecomesIdle ttwtnbi = new TheTimeWhenTheNetworkBecomesIdle();
+
+        System.out.println("8 == " + ttwtnbi.networkBecomesIdle(new int[][]{{0,1},{1,2}}, new int[]{0,2,1}));
+        System.out.println("3 == " + ttwtnbi.networkBecomesIdle(new int[][]{{0,1},{0,2},{1,2}}, new int[]{0,10,10}));
+        System.out.println("20 == " + ttwtnbi.networkBecomesIdle(new int[][]{{0,1},{1,2},{0,3},{3,4},{2,4},{2,5},{6,5},{4,7},{4,8},{7,9},{8,11},{9,10}}, new int[]{0,2,3,4,3,2,4,4,6,3,3,3}));
     }
 }
