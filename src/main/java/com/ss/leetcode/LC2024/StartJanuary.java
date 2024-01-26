@@ -19,6 +19,7 @@ import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
 import com.ss.leetcode.LC2024.january.NumberOfOrdersInTheBacklog;
 import com.ss.leetcode.LC2024.january.NumberOfPairsOfInterchangeableRectangles;
+import com.ss.leetcode.LC2024.january.OutOfBoundaryPaths;
 import com.ss.leetcode.LC2024.january.PointsThatIntersectWithCars;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import com.ss.leetcode.LC2024.january.RotatingTheBox;
@@ -55,7 +56,8 @@ public class StartJanuary {
 //        start.stoneGameVII();
 //        start.numberOfOrdersInTheBacklog();
 //        start.maximumLengthOfAConcatenatedStringWithUniqueCharacters();
-        start.theTimeWhenTheNetworkBecomesIdle();
+//        start.theTimeWhenTheNetworkBecomesIdle();
+        start.outOfBoundaryPaths();
     }
 
     public void replaceElementsInAnArray() {
@@ -266,5 +268,12 @@ public class StartJanuary {
         System.out.println("8 == " + ttwtnbi.networkBecomesIdle(new int[][]{{0,1},{1,2}}, new int[]{0,2,1}));
         System.out.println("3 == " + ttwtnbi.networkBecomesIdle(new int[][]{{0,1},{0,2},{1,2}}, new int[]{0,10,10}));
         System.out.println("20 == " + ttwtnbi.networkBecomesIdle(new int[][]{{0,1},{1,2},{0,3},{3,4},{2,4},{2,5},{6,5},{4,7},{4,8},{7,9},{8,11},{9,10}}, new int[]{0,2,3,4,3,2,4,4,6,3,3,3}));
+    }
+
+    public void outOfBoundaryPaths() {
+        OutOfBoundaryPaths oobp = new OutOfBoundaryPaths();
+
+        System.out.println("6 == " + oobp.findPaths(2, 2, 2, 0, 0));
+        System.out.println("12 == " + oobp.findPaths(1, 3, 3, 0, 1));
     }
 }
