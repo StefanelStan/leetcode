@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.january.CinemaSeatAllocation;
 import com.ss.leetcode.LC2024.january.CircularPermutationInBinaryRepresentation;
 import com.ss.leetcode.LC2024.january.CountGoodMeals;
 import com.ss.leetcode.LC2024.january.DetectPatternOfLengthMRepeatedKOrMoreTimes;
+import com.ss.leetcode.LC2024.january.DivideIntervalsIntoMinimumNumberOfGroups;
 import com.ss.leetcode.LC2024.january.FurthestPointFromOrigin;
 import com.ss.leetcode.LC2024.january.HouseRobberII;
 import com.ss.leetcode.LC2024.january.JumpGameVII;
@@ -21,10 +22,12 @@ import com.ss.leetcode.LC2024.january.NumberOfOrdersInTheBacklog;
 import com.ss.leetcode.LC2024.january.NumberOfPairsOfInterchangeableRectangles;
 import com.ss.leetcode.LC2024.january.OutOfBoundaryPaths;
 import com.ss.leetcode.LC2024.january.PointsThatIntersectWithCars;
+import com.ss.leetcode.LC2024.january.ReachableNodesWithRestrictions;
 import com.ss.leetcode.LC2024.january.ReplaceElementsInAnArray;
 import com.ss.leetcode.LC2024.january.RotatingTheBox;
 import com.ss.leetcode.LC2024.january.StoneGameVII;
 import com.ss.leetcode.LC2024.january.TheTimeWhenTheNetworkBecomesIdle;
+import com.ss.leetcode.LC2024.january.TwoBestNonOverlappingEvents;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -57,7 +60,10 @@ public class StartJanuary {
 //        start.numberOfOrdersInTheBacklog();
 //        start.maximumLengthOfAConcatenatedStringWithUniqueCharacters();
 //        start.theTimeWhenTheNetworkBecomesIdle();
-        start.outOfBoundaryPaths();
+//        start.outOfBoundaryPaths();
+//        start.reachableNodesWithRestrictions();
+        start.divideIntervalsIntoMinimumNumberOfGroups();
+//        start.twoBestNonOverlappingEvents();
     }
 
     public void replaceElementsInAnArray() {
@@ -275,5 +281,28 @@ public class StartJanuary {
 
         System.out.println("6 == " + oobp.findPaths(2, 2, 2, 0, 0));
         System.out.println("12 == " + oobp.findPaths(1, 3, 3, 0, 1));
+    }
+
+    public void reachableNodesWithRestrictions() {
+        ReachableNodesWithRestrictions rnwr = new ReachableNodesWithRestrictions();
+
+        System.out.println("4 == " + rnwr.reachableNodes(7, new int[][]{{0,1},{1,2},{3,1},{4,0},{0,5},{5,6}}, new int[]{4,5}));
+        System.out.println("3 == " + rnwr.reachableNodes(7, new int[][]{{0,1},{0,2},{0,5},{0,4},{3,2},{6,5}}, new int[]{4,2,1}));
+        System.out.println("1 == " + rnwr.reachableNodes(2, new int[][]{{0,1}}, new int[]{1}));
+    }
+
+    public void divideIntervalsIntoMinimumNumberOfGroups() {
+        DivideIntervalsIntoMinimumNumberOfGroups diimnog = new DivideIntervalsIntoMinimumNumberOfGroups();
+
+        System.out.println("3 == " + diimnog.minGroups(new int[][]{{5,10},{6,8},{1,5},{2,3},{1,10}}));
+        System.out.println("1 == " + diimnog.minGroups(new int[][]{{1,3},{5,6},{8,10},{11,13}}));
+    }
+
+    public void twoBestNonOverlappingEvents() {
+        TwoBestNonOverlappingEvents tbnoe = new TwoBestNonOverlappingEvents();
+
+        System.out.println("4 == " + tbnoe.maxTwoEvents(new int[][]{{1,3,2},{4,5,2},{2,4,3}}));
+        System.out.println("5 == " + tbnoe.maxTwoEvents(new int[][]{{1,3,2},{4,5,2},{1,5,5}}));
+        System.out.println("8 == " + tbnoe.maxTwoEvents(new int[][]{{1,5,3},{1,5,1},{6,6,5}}));
     }
 }
