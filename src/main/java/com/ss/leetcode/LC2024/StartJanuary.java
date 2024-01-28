@@ -14,12 +14,14 @@ import com.ss.leetcode.LC2024.january.LexicographicallySmallestStringAfterSubstr
 import com.ss.leetcode.LC2024.january.MaximumLengthOfAConcatenatedStringWithUniqueCharacters;
 import com.ss.leetcode.LC2024.january.MaximumNumberOfWeeksForWhichYouCanWork;
 import com.ss.leetcode.LC2024.january.MaximumSideLengthOfASquareWithSumLessThanOrEqualToThreshold;
+import com.ss.leetcode.LC2024.january.MinimumConsecutiveCardsToPickUp;
 import com.ss.leetcode.LC2024.january.MinimumIndexOfAValidSplit;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfFrogsCroaking;
 import com.ss.leetcode.LC2024.january.MinimumNumberOfOperationsToMakeArrayEmpty;
 import com.ss.leetcode.LC2024.january.MinimumPathCostInAGrid;
 import com.ss.leetcode.LC2024.january.NumberOfOrdersInTheBacklog;
 import com.ss.leetcode.LC2024.january.NumberOfPairsOfInterchangeableRectangles;
+import com.ss.leetcode.LC2024.january.NumberOfSubmatricesThatSumToTarget;
 import com.ss.leetcode.LC2024.january.OutOfBoundaryPaths;
 import com.ss.leetcode.LC2024.january.PointsThatIntersectWithCars;
 import com.ss.leetcode.LC2024.january.ReachableNodesWithRestrictions;
@@ -28,6 +30,7 @@ import com.ss.leetcode.LC2024.january.RotatingTheBox;
 import com.ss.leetcode.LC2024.january.StoneGameVII;
 import com.ss.leetcode.LC2024.january.TheTimeWhenTheNetworkBecomesIdle;
 import com.ss.leetcode.LC2024.january.TwoBestNonOverlappingEvents;
+import com.ss.leetcode.LC2024.january.VowelsOfAllSubstrings;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -62,8 +65,11 @@ public class StartJanuary {
 //        start.theTimeWhenTheNetworkBecomesIdle();
 //        start.outOfBoundaryPaths();
 //        start.reachableNodesWithRestrictions();
-        start.divideIntervalsIntoMinimumNumberOfGroups();
+//        start.divideIntervalsIntoMinimumNumberOfGroups();
 //        start.twoBestNonOverlappingEvents();
+//        start.numberOfSubmatricesThatSumToTarget();
+//        start.minimumConsecutiveCardsToPickUp();
+        start.vowelsOfAllSubstrings();
     }
 
     public void replaceElementsInAnArray() {
@@ -304,5 +310,29 @@ public class StartJanuary {
         System.out.println("4 == " + tbnoe.maxTwoEvents(new int[][]{{1,3,2},{4,5,2},{2,4,3}}));
         System.out.println("5 == " + tbnoe.maxTwoEvents(new int[][]{{1,3,2},{4,5,2},{1,5,5}}));
         System.out.println("8 == " + tbnoe.maxTwoEvents(new int[][]{{1,5,3},{1,5,1},{6,6,5}}));
+    }
+
+    public void numberOfSubmatricesThatSumToTarget() {
+        NumberOfSubmatricesThatSumToTarget noststt = new NumberOfSubmatricesThatSumToTarget();
+
+        System.out.println("4 == " + noststt.numSubmatrixSumTarget(new int[][]{{0,1,0},{1,1,1},{0,1,0}}, 0));
+        System.out.println("5 == " + noststt.numSubmatrixSumTarget(new int[][]{{1,-1},{-1,1}}, 0));
+        System.out.println("0 == " + noststt.numSubmatrixSumTarget(new int[][]{{904}}, 0));
+    }
+
+    public void minimumConsecutiveCardsToPickUp() {
+        MinimumConsecutiveCardsToPickUp mcctpu = new MinimumConsecutiveCardsToPickUp();
+
+        System.out.println("4 == " + mcctpu.minimumCardPickup(new int[]{3,4,2,3,4,7}));
+        System.out.println("-1 == " + mcctpu.minimumCardPickup(new int[]{1,0,5,3}));
+    }
+
+    public void vowelsOfAllSubstrings() {
+        VowelsOfAllSubstrings voas = new VowelsOfAllSubstrings();
+
+        System.out.println("6 == " + voas.countVowels("aba"));
+        System.out.println("3 == " + voas.countVowels("abc"));
+        System.out.println("0 == " + voas.countVowels("ltcd"));
+        System.out.println("16734 == " + voas.countVowels("ogkewraofjerujfhwedheriufhuxneaoiudafiweopjiouykuyotyujyrt"));
     }
 }
