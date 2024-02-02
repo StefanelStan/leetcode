@@ -1,10 +1,62 @@
 package com.ss.leetcode.LC2021.february;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class SequentialDigits {
+    // https://leetcode.com/problems/sequential-digits
     public List<Integer> sequentialDigits(int low, int high) {
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = String.valueOf(low).length(); i <= String.valueOf(high).length(); i++) {
+            appendNumbers(templateOf(i), i, low, high, numbers);
+        }
+        return numbers;
+    }
+
+    private void appendNumbers(int[] template, int length, int low, int high, List<Integer> numbers) {
+        int next = valueOf(template);
+        while (next <= high) {
+            if (next >= low) {
+                numbers.add(next);
+            }
+            if (template[length -1] < 9) {
+                advanceTemplate(template);
+                next = valueOf(template);
+            } else {
+                break;
+            }
+        }
+    }
+
+    private void advanceTemplate(int[] template) {
+        for (int i = 1; i < template.length; i++) {
+            template[i-1] = template[i];
+        }
+        template[template.length -1]++;
+    }
+
+    private int[] templateOf(int length) {
+        int[] template = new int[length];
+        for (int i = 1; i <= length; i++) {
+            template[i-1] = i;
+        }
+        return template;
+    }
+
+    private int valueOf(int[] template) {
+        if (template.length == 9 && template[0] == 2) {
+            return 0;
+        }
+        int val = 0;
+        for(int digit : template) {
+            val = val * 10 + digit;
+        }
+        return val;
+    }
+
+
+    public List<Integer> sequentialDigits2(int low, int high) {
         List<Integer> sequences = new LinkedList<>();
         DigitNumber di = new DigitNumber(low);
         int nextSequence = di.getNextSequence();
