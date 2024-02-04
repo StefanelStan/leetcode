@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
+import com.ss.leetcode.LC2024.february.MinimumWindowSubstring;
 import com.ss.leetcode.LC2024.february.PartitionArrayForMaximumSum;
 import java.util.Arrays;
 import java.util.Set;
@@ -18,7 +19,8 @@ public class StartFebruary {
 //        start.countVowelSubstringsOfAString();
 //        start.partitionArrayForMaximumSum();
 //        start.additiveNumber();
-        start.insertDeleteGetRandomO1DuplicatesAllowed();
+//        start.insertDeleteGetRandomO1DuplicatesAllowed();
+        start.minimumWindowSubstring();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -104,5 +106,13 @@ public class StartFebruary {
         System.out.println("-1 == " + idgro1da.getRandom());
 
 
+    }
+
+    public void minimumWindowSubstring() {
+        MinimumWindowSubstring mws = new MinimumWindowSubstring();
+
+        System.out.println("BANC == " + mws.minWindow("ADOBECODEBANC", "ABC"));
+        System.out.println("a == " + mws.minWindow("a", "a"));
+        System.out.println(" == " + mws.minWindow("a", "aa"));
     }
 }
