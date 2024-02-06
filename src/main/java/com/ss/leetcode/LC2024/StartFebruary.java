@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
 import com.ss.leetcode.LC2024.february.MinimumWindowSubstring;
+import com.ss.leetcode.LC2024.february.NumberOfSubarraysWithBoundedMaximum;
 import com.ss.leetcode.LC2024.february.PartitionArrayForMaximumSum;
 import java.util.Arrays;
 import java.util.Set;
@@ -20,7 +21,8 @@ public class StartFebruary {
 //        start.partitionArrayForMaximumSum();
 //        start.additiveNumber();
 //        start.insertDeleteGetRandomO1DuplicatesAllowed();
-        start.minimumWindowSubstring();
+//        start.minimumWindowSubstring();
+        start.numberOfSubarraysWithBoundedMaximum();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -114,5 +116,14 @@ public class StartFebruary {
         System.out.println("BANC == " + mws.minWindow("ADOBECODEBANC", "ABC"));
         System.out.println("a == " + mws.minWindow("a", "a"));
         System.out.println(" == " + mws.minWindow("a", "aa"));
+    }
+
+    public void numberOfSubarraysWithBoundedMaximum() {
+        NumberOfSubarraysWithBoundedMaximum noswbm = new NumberOfSubarraysWithBoundedMaximum();
+
+        System.out.println("3 = " + noswbm.numSubarrayBoundedMax(new int[]{2,1,4,3}, 2, 3));
+        System.out.println("7 = " + noswbm.numSubarrayBoundedMax(new int[]{2,9,2,5,6}, 2, 8));
+        System.out.println("414 = " + noswbm.numSubarrayBoundedMax(new int[]{3,2,4,5,6,7,8,7,6,5,4,3,23,1,2,3,4,5,6,7,6,5,4,3,2,1,2,3,4,5,6,7,6,5,4,3,2,1,32,4,5,6,7,6,5,4,3,2}, 4, 14));
+        System.out.println("1 = " + noswbm.numSubarrayBoundedMax(new int[]{2}, 0, 10));
     }
 }
