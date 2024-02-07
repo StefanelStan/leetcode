@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2021.september;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class SortCharactersByFrequency {
     /**
@@ -13,6 +14,24 @@ public class SortCharactersByFrequency {
      */
     // https://leetcode.com/problems/sort-characters-by-frequency/
     public String frequencySort(String s) {
+        char[] chars = s.toCharArray();
+        int[][] freq = new int[1 + 'z'][2];
+        for (char aChar : chars) {
+            freq[aChar][0] = aChar;
+            freq[aChar][1]++;
+        }
+        int insertIndex = 0;
+        Arrays.sort(freq, Comparator.comparingInt(a -> a[1]));
+        for (int i = freq.length -1; i >=0 && freq[i][1] > 0; i--) {
+            while(freq[i][1]-- > 0) {
+                chars[insertIndex++] = (char)freq[i][0];
+            }
+        }
+        return new String(chars);
+    }
+
+
+    public String frequencySort2(String s) {
         if(s.length() == 1) {
             return s;
         }

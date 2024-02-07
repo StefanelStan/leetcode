@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.february.AdditiveNumber;
+import com.ss.leetcode.LC2024.february.CountElementsWithMaximumFrequency;
 import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
@@ -22,7 +23,8 @@ public class StartFebruary {
 //        start.additiveNumber();
 //        start.insertDeleteGetRandomO1DuplicatesAllowed();
 //        start.minimumWindowSubstring();
-        start.numberOfSubarraysWithBoundedMaximum();
+//        start.numberOfSubarraysWithBoundedMaximum();
+        start.countElementsWithMaximumFrequency();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -125,5 +127,16 @@ public class StartFebruary {
         System.out.println("7 = " + noswbm.numSubarrayBoundedMax(new int[]{2,9,2,5,6}, 2, 8));
         System.out.println("414 = " + noswbm.numSubarrayBoundedMax(new int[]{3,2,4,5,6,7,8,7,6,5,4,3,23,1,2,3,4,5,6,7,6,5,4,3,2,1,2,3,4,5,6,7,6,5,4,3,2,1,32,4,5,6,7,6,5,4,3,2}, 4, 14));
         System.out.println("1 = " + noswbm.numSubarrayBoundedMax(new int[]{2}, 0, 10));
+    }
+
+    public void countElementsWithMaximumFrequency() {
+        CountElementsWithMaximumFrequency cewmf = new CountElementsWithMaximumFrequency();
+
+        System.out.println("4 == " + cewmf.maxFrequencyElements(new int[]{1,2,2,3,1,4}));
+        System.out.println("5 == " + cewmf.maxFrequencyElements(new int[]{1,2,3,4,5}));
+        System.out.println("4 == " + cewmf.maxFrequencyElements(new int[]{1,2,3,4,5,6,7,8,7,6,5,6,7,6,5,4,3,2,1}));
+        System.out.println("1 == " + cewmf.maxFrequencyElements(new int[]{1}));
+        System.out.println("3 == " + cewmf.maxFrequencyElements(new int[]{1,1,1}));
+        System.out.println("2 == " + cewmf.maxFrequencyElements(new int[]{1,2,3,4,1}));
     }
 }
