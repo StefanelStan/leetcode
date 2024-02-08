@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFlo
 import com.ss.leetcode.LC2024.february.MinimumWindowSubstring;
 import com.ss.leetcode.LC2024.february.NumberOfSubarraysWithBoundedMaximum;
 import com.ss.leetcode.LC2024.february.PartitionArrayForMaximumSum;
+import com.ss.leetcode.LC2024.february.WaysToMakeAFairArray;
 import java.util.Arrays;
 import java.util.Set;
 
@@ -24,7 +25,8 @@ public class StartFebruary {
 //        start.insertDeleteGetRandomO1DuplicatesAllowed();
 //        start.minimumWindowSubstring();
 //        start.numberOfSubarraysWithBoundedMaximum();
-        start.countElementsWithMaximumFrequency();
+//        start.countElementsWithMaximumFrequency();
+        start.waysToMakeAFairArray();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -138,5 +140,16 @@ public class StartFebruary {
         System.out.println("1 == " + cewmf.maxFrequencyElements(new int[]{1}));
         System.out.println("3 == " + cewmf.maxFrequencyElements(new int[]{1,1,1}));
         System.out.println("2 == " + cewmf.maxFrequencyElements(new int[]{1,2,3,4,1}));
+    }
+
+    public void waysToMakeAFairArray() {
+        WaysToMakeAFairArray wtmafa = new WaysToMakeAFairArray();
+
+        System.out.println("1 == " + wtmafa.waysToMakeFair(new int[]{2,1,6,4}));
+        System.out.println("3 == " + wtmafa.waysToMakeFair(new int[]{1,1,1}));
+        System.out.println("0 == " + wtmafa.waysToMakeFair(new int[]{1,2,3}));
+        System.out.println("0 == " + wtmafa.waysToMakeFair(new int[]{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}));
+        System.out.println("23 == " + wtmafa.waysToMakeFair(new int[]{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}));
+        System.out.println("1 == " + wtmafa.waysToMakeFair(new int[]{1}));
     }
 }
