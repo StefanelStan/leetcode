@@ -26,7 +26,7 @@ public class StartJuly {
 //        start.customSortString();
 //        start.validTriangleNumber();
 //        start.fourSum();
-//        start.threeEqualParts();
+        start.threeEqualParts();
 //        start.reverseNodesInkGroup();
 //        start.numberOfRectanglesFormLargestSquare();
 //        start.lowestCommonAncestorOfaBST();
@@ -35,7 +35,7 @@ public class StartJuly {
 //        start.pushDominoes();
 //        start.partitionArrayIntoDisjointIntervals();
 //        start.maximumPopulationYear();
-        start.checkIfNAndDoubleExist();
+//        start.checkIfNAndDoubleExist();
 //        start.binaryTreePruning();
 //        start.longestCommonPrefix();
 //        start.implementStrStr();
@@ -237,10 +237,12 @@ public class StartJuly {
     public void threeEqualParts() {
         ThreeEqualParts tep = new ThreeEqualParts();
 
-        System.out.println("[0, 3] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,0,1,0,1})));
-        System.out.println("[-1, -1] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,1,1})));
-        System.out.println("[0, 2] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,0,1})));
-        System.out.println("[-1, -1] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,0,1,1,0})));
+//        System.out.println("[0, 3] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,0,1,0,1})));
+//        System.out.println("[-1, -1] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,1,1})));
+//        System.out.println("[0, 2] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,0,1})));
+//        System.out.println("[-1, -1] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,0,1,1,0})));
+        System.out.println("[2,8] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,0,0,1,1,0,0,0,1,1,0})));
+//        System.out.println("[1,6] == " + Arrays.toString(tep.threeEqualParts(new int[]{1,1,0,0,1,1,0,0,1,1})));
     }
 
     public void reverseNodesInkGroup() {

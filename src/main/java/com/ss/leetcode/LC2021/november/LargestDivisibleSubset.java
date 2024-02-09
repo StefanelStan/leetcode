@@ -7,6 +7,46 @@ import java.util.List;
 public class LargestDivisibleSubset {
     // https://leetcode.com/problems/largest-divisible-subset/
     public List<Integer> largestDivisibleSubset(int[] nums) {
+        Arrays.sort(nums);
+        int[][] divisibleSubsets = new int[nums.length][2];
+        // [size, nextIndex]
+        int maxLength = 1, maxLengthIndex = 0, currentMaxLength, currentMaxLengthIndex;
+        for (int i = 0; i < nums.length; i++) {
+            currentMaxLength = currentMaxLengthIndex = 0;
+            for (int j = i - 1; j >= 0; j--) {
+                if (nums[i] % nums[j] == 0) {
+                    if (divisibleSubsets[j][0] > currentMaxLength) {
+                        currentMaxLength = divisibleSubsets[j][0];
+                        currentMaxLengthIndex = j;
+                    }
+                }
+            }
+            if (currentMaxLength > 0) {
+                divisibleSubsets[i][0] = 1 + currentMaxLength;
+                divisibleSubsets[i][1] = currentMaxLengthIndex;
+            } else {
+                divisibleSubsets[i][0] = 1;
+                divisibleSubsets[i][1] = -1;
+            }
+            if (divisibleSubsets[i][0] > maxLength) {
+                maxLength = divisibleSubsets[i][0];
+                maxLengthIndex = i;
+            }
+        }
+        return fetchLongestsSubset(maxLengthIndex, divisibleSubsets, nums);
+    }
+
+    private List<Integer> fetchLongestsSubset(int from, int[][] divisibleSubsets, int[] nums) {
+        List<Integer> subset = new ArrayList<>(divisibleSubsets[from][0]);
+        while (from != -1) {
+            subset.add(nums[from]);
+            from = divisibleSubsets[from][1];
+        }
+        return subset;
+    }
+
+
+    public List<Integer> largestDivisibleSubset2(int[] nums) {
         List<Integer> longestSubset = new ArrayList<>();
         if (nums.length == 1) {
             longestSubset.add(nums[0]);
