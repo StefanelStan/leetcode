@@ -2,15 +2,18 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.february.AdditiveNumber;
 import com.ss.leetcode.LC2024.february.CountElementsWithMaximumFrequency;
+import com.ss.leetcode.LC2024.february.CountGoodTriplets;
 import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
+import com.ss.leetcode.LC2024.february.MaximumSumOfAlmostUniqueSubarray;
 import com.ss.leetcode.LC2024.february.MinimumWindowSubstring;
 import com.ss.leetcode.LC2024.february.NumberOfSubarraysWithBoundedMaximum;
 import com.ss.leetcode.LC2024.february.PartitionArrayForMaximumSum;
 import com.ss.leetcode.LC2024.february.WaysToMakeAFairArray;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 public class StartFebruary {
@@ -26,7 +29,9 @@ public class StartFebruary {
 //        start.minimumWindowSubstring();
 //        start.numberOfSubarraysWithBoundedMaximum();
 //        start.countElementsWithMaximumFrequency();
-        start.waysToMakeAFairArray();
+//        start.waysToMakeAFairArray();
+//        start.countGoodTriplets();
+        start.maximumSumOfAlmostUniqueSubarray();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -151,5 +156,20 @@ public class StartFebruary {
         System.out.println("0 == " + wtmafa.waysToMakeFair(new int[]{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}));
         System.out.println("23 == " + wtmafa.waysToMakeFair(new int[]{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2}));
         System.out.println("1 == " + wtmafa.waysToMakeFair(new int[]{1}));
+    }
+
+    public void countGoodTriplets() {
+        CountGoodTriplets cgt = new CountGoodTriplets();
+
+        System.out.println("4 ==" + cgt.countGoodTriplets(new int[]{3,0,1,1,9,7}, 7,2,3));
+        System.out.println("0 ==" + cgt.countGoodTriplets(new int[]{1,1,2,2,3}, 0, 0, 1));
+    }
+
+    public void maximumSumOfAlmostUniqueSubarray() {
+        MaximumSumOfAlmostUniqueSubarray msoaus = new MaximumSumOfAlmostUniqueSubarray();
+
+        System.out.println("18 == " + msoaus.maxSum(List.of(2,6,7,3,1,7), 3, 4));
+        System.out.println("23 == " + msoaus.maxSum(List.of(5,9,9,2,4,5,4), 1, 3));
+        System.out.println("0 == " + msoaus.maxSum(List.of(1,2,1,2,1,2,1), 3, 3));
     }
 }
