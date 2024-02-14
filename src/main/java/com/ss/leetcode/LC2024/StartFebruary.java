@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.february.AdditiveNumber;
+import com.ss.leetcode.LC2024.february.AverageWaitingTime;
 import com.ss.leetcode.LC2024.february.CountElementsWithMaximumFrequency;
 import com.ss.leetcode.LC2024.february.CountGoodTriplets;
 import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
@@ -31,7 +32,8 @@ public class StartFebruary {
 //        start.countElementsWithMaximumFrequency();
 //        start.waysToMakeAFairArray();
 //        start.countGoodTriplets();
-        start.maximumSumOfAlmostUniqueSubarray();
+//        start.maximumSumOfAlmostUniqueSubarray();
+        start.averageWaitingTime();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -171,5 +173,12 @@ public class StartFebruary {
         System.out.println("18 == " + msoaus.maxSum(List.of(2,6,7,3,1,7), 3, 4));
         System.out.println("23 == " + msoaus.maxSum(List.of(5,9,9,2,4,5,4), 1, 3));
         System.out.println("0 == " + msoaus.maxSum(List.of(1,2,1,2,1,2,1), 3, 3));
+    }
+
+    public void averageWaitingTime() {
+        AverageWaitingTime awt = new AverageWaitingTime();
+
+        System.out.println("5.0 == " + awt.averageWaitingTime(new int[][]{{1,2},{2,5},{4,3}}));
+        System.out.println("3.25 == " + awt.averageWaitingTime(new int[][]{{5,2},{5,4},{10,3},{20,1}}));
     }
 }

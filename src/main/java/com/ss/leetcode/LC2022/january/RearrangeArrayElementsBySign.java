@@ -2,6 +2,21 @@ package com.ss.leetcode.LC2022.january;
 
 public class RearrangeArrayElementsBySign {
     // https://leetcode.com/problems/rearrange-array-elements-by-sign/
+    public int[] rearrangeArray(int[] nums) {
+        int[] rearranged = new int[nums.length];
+        int positiveIndex = 0, negativeIndex = 1;
+        for (int num : nums) {
+            if (num > 0) {
+                rearranged[positiveIndex] = num;
+                positiveIndex += 2;
+            } else {
+                rearranged[negativeIndex] = num;
+                negativeIndex += 2;
+            }
+        }
+        return rearranged;
+    }
+
     /** Algorithm
          1. Declare a new array of same size that will hold the result (rearranged[])
          2. In a while loop from i to n ()
@@ -9,7 +24,7 @@ public class RearrangeArrayElementsBySign {
          - If not reached the end, copy nums[positive], nums[negative] to rearranged[i,i+1]
          3. Return the answer
      */
-    public int[] rearrangeArray(int[] nums) {
+    public int[] rearrangeArray2(int[] nums) {
         int[] rearranged = new int[nums.length];
         int pIndex = 0, nIndex = 0, index = 0;
         while(index < nums.length) {
