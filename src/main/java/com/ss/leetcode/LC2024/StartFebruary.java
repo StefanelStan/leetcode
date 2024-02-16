@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.february.CountGoodTriplets;
 import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.FindPolygonWithTheLargestPerimeter;
+import com.ss.leetcode.LC2024.february.FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance;
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
 import com.ss.leetcode.LC2024.february.MaximumSumOfAlmostUniqueSubarray;
@@ -35,7 +36,8 @@ public class StartFebruary {
 //        start.countGoodTriplets();
 //        start.maximumSumOfAlmostUniqueSubarray();
 //        start.averageWaitingTime();
-        start.findPolygonWithTheLargestPerimeter();
+//        start.findPolygonWithTheLargestPerimeter();
+        start.findTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -193,5 +195,12 @@ public class StartFebruary {
         System.out.println("21 == " + fpwtlp.largestPerimeter(new int[]{1,2,3,4,5,6}));
         System.out.println("-1 == " + fpwtlp.largestPerimeter(new int[]{1,4,10}));
         System.out.println("17876942274 == " + fpwtlp.largestPerimeter(new int[]{300005055,352368231,311935527,315829776,327065463,388851949,319541150,397875604,311309167,391897750,366860048,359976490,325522439,390648914,359891976,369105322,350430086,398592583,354559219,372400239,344759294,379931363,308829137,335032174,336962933,380797651,378305476,336617902,393487098,301391791,394314232,387440261,316040738,388074503,396614889,331609633,374723367,380418460,349845809,318514711,308782485,308291996,375362898,397542455,397628325,392446446,368662132,378781533,372327607,378737987}));
+    }
+
+    public void findTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance() {
+        FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance ftcwtsnonaatd = new FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance();
+
+        System.out.println("3 == " + ftcwtsnonaatd.findTheCity(4, new int[][]{{0,1,3},{1,2,1},{1,3,4},{2,3,1}}, 4));
+        System.out.println("0 == " + ftcwtsnonaatd.findTheCity(5, new int[][]{{0,1,2},{0,4,8},{1,2,3},{1,4,2},{2,3,1},{3,4,1}}, 2));
     }
 }
