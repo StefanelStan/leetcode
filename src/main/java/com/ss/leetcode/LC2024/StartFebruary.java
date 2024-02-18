@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2024.february.FindTheCityWithTheSmallestNumberOfNeighbo
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
 import com.ss.leetcode.LC2024.february.MaximumSumOfAlmostUniqueSubarray;
+import com.ss.leetcode.LC2024.february.MeetingRoomsIII;
 import com.ss.leetcode.LC2024.february.MinimumWindowSubstring;
 import com.ss.leetcode.LC2024.february.NumberOfSubarraysWithBoundedMaximum;
 import com.ss.leetcode.LC2024.february.PartitionArrayForMaximumSum;
@@ -37,7 +38,8 @@ public class StartFebruary {
 //        start.maximumSumOfAlmostUniqueSubarray();
 //        start.averageWaitingTime();
 //        start.findPolygonWithTheLargestPerimeter();
-        start.findTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance();
+//        start.findTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance();
+        start.meetingRoomsIII();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -202,5 +204,13 @@ public class StartFebruary {
 
         System.out.println("3 == " + ftcwtsnonaatd.findTheCity(4, new int[][]{{0,1,3},{1,2,1},{1,3,4},{2,3,1}}, 4));
         System.out.println("0 == " + ftcwtsnonaatd.findTheCity(5, new int[][]{{0,1,2},{0,4,8},{1,2,3},{1,4,2},{2,3,1},{3,4,1}}, 2));
+    }
+
+    public void meetingRoomsIII() {
+        MeetingRoomsIII mriii = new MeetingRoomsIII();
+
+        System.out.println("0 == " + mriii.mostBooked(2, new int[][]{{0,10},{1,5},{2,7},{3,4}}));
+        System.out.println("1 == " + mriii.mostBooked(3, new int[][]{{1,20},{2,10},{3,5},{4,9},{6,8}}));
+        System.out.println("0 == " + mriii.mostBooked(2, new int[][]{{1,3243},{2,6754},{3,56553},{4,123456},{5,12321},{6,3215},{7,23146}}));
     }
 }
