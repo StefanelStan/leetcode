@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.february.AdditiveNumber;
 import com.ss.leetcode.LC2024.february.AverageWaitingTime;
 import com.ss.leetcode.LC2024.february.CountElementsWithMaximumFrequency;
 import com.ss.leetcode.LC2024.february.CountGoodTriplets;
+import com.ss.leetcode.LC2024.february.CountSubIslands;
 import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.FindPolygonWithTheLargestPerimeter;
@@ -39,7 +40,8 @@ public class StartFebruary {
 //        start.averageWaitingTime();
 //        start.findPolygonWithTheLargestPerimeter();
 //        start.findTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance();
-        start.meetingRoomsIII();
+//        start.meetingRoomsIII();
+        start.countSubIslands();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -212,5 +214,12 @@ public class StartFebruary {
         System.out.println("0 == " + mriii.mostBooked(2, new int[][]{{0,10},{1,5},{2,7},{3,4}}));
         System.out.println("1 == " + mriii.mostBooked(3, new int[][]{{1,20},{2,10},{3,5},{4,9},{6,8}}));
         System.out.println("0 == " + mriii.mostBooked(2, new int[][]{{1,3243},{2,6754},{3,56553},{4,123456},{5,12321},{6,3215},{7,23146}}));
+    }
+
+    public void countSubIslands() {
+        CountSubIslands csi = new CountSubIslands();
+
+        System.out.println("3 == " + csi.countSubIslands(new int[][]{{1,1,1,0,0},{0,1,1,1,1},{0,0,0,0,0},{1,0,0,0,0},{1,1,0,1,1}}, new int[][]{{1,1,1,0,0},{0,0,1,1,1},{0,1,0,0,0},{1,0,1,1,0},{0,1,0,1,0}}));
+        System.out.println("2 == " + csi.countSubIslands(new int[][]{{1,0,1,0,1},{1,1,1,1,1},{0,0,0,0,0},{1,1,1,1,1},{1,0,1,0,1}}, new int[][]{{0,0,0,0,0},{1,1,1,1,1},{0,1,0,1,0},{0,1,0,1,0},{1,0,0,0,1}}));
     }
 }
