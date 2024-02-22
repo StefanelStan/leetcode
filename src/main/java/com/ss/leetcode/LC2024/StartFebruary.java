@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
 import com.ss.leetcode.LC2024.february.MaximumSumOfAlmostUniqueSubarray;
 import com.ss.leetcode.LC2024.february.MeetingRoomsIII;
+import com.ss.leetcode.LC2024.february.MinimizeHammingDistanceAfterSwapOperations;
 import com.ss.leetcode.LC2024.february.MinimumWindowSubstring;
 import com.ss.leetcode.LC2024.february.NumberOfSubarraysWithBoundedMaximum;
 import com.ss.leetcode.LC2024.february.PartitionArrayForMaximumSum;
@@ -41,7 +42,8 @@ public class StartFebruary {
 //        start.findPolygonWithTheLargestPerimeter();
 //        start.findTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance();
 //        start.meetingRoomsIII();
-        start.countSubIslands();
+//        start.countSubIslands();
+        start.minimizeHammingDistanceAfterSwapOperations();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -221,5 +223,13 @@ public class StartFebruary {
 
         System.out.println("3 == " + csi.countSubIslands(new int[][]{{1,1,1,0,0},{0,1,1,1,1},{0,0,0,0,0},{1,0,0,0,0},{1,1,0,1,1}}, new int[][]{{1,1,1,0,0},{0,0,1,1,1},{0,1,0,0,0},{1,0,1,1,0},{0,1,0,1,0}}));
         System.out.println("2 == " + csi.countSubIslands(new int[][]{{1,0,1,0,1},{1,1,1,1,1},{0,0,0,0,0},{1,1,1,1,1},{1,0,1,0,1}}, new int[][]{{0,0,0,0,0},{1,1,1,1,1},{0,1,0,1,0},{0,1,0,1,0},{1,0,0,0,1}}));
+    }
+
+    public void minimizeHammingDistanceAfterSwapOperations() {
+        MinimizeHammingDistanceAfterSwapOperations mhdaso = new MinimizeHammingDistanceAfterSwapOperations();
+
+        System.out.println("1 == " + mhdaso.minimumHammingDistance(new int[]{1,2,3,4}, new int[]{2,1,4,5}, new int[][]{{0,1},{2,3}}));
+        System.out.println("2 == " + mhdaso.minimumHammingDistance(new int[]{1,2,3,4}, new int[]{1,3,2,4}, new int[0][0]));
+        System.out.println("0 == " + mhdaso.minimumHammingDistance(new int[]{5,1,2,4,3}, new int[]{1,5,4,2,3}, new int[][]{{0,4},{4,2},{1,3},{1,4}}));
     }
 }
