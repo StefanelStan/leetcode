@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.FindPolygonWithTheLargestPerimeter;
 import com.ss.leetcode.LC2024.february.FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance;
+import com.ss.leetcode.LC2024.february.FindTheLengthOfTheLongestCommonPrefix;
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
 import com.ss.leetcode.LC2024.february.MaximumSumOfAlmostUniqueSubarray;
@@ -43,7 +44,8 @@ public class StartFebruary {
 //        start.findTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance();
 //        start.meetingRoomsIII();
 //        start.countSubIslands();
-        start.minimizeHammingDistanceAfterSwapOperations();
+//        start.minimizeHammingDistanceAfterSwapOperations();
+        start.findTheLengthOfTheLongestCommonPrefix();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -231,5 +233,12 @@ public class StartFebruary {
         System.out.println("1 == " + mhdaso.minimumHammingDistance(new int[]{1,2,3,4}, new int[]{2,1,4,5}, new int[][]{{0,1},{2,3}}));
         System.out.println("2 == " + mhdaso.minimumHammingDistance(new int[]{1,2,3,4}, new int[]{1,3,2,4}, new int[0][0]));
         System.out.println("0 == " + mhdaso.minimumHammingDistance(new int[]{5,1,2,4,3}, new int[]{1,5,4,2,3}, new int[][]{{0,4},{4,2},{1,3},{1,4}}));
+    }
+
+    public void findTheLengthOfTheLongestCommonPrefix() {
+        FindTheLengthOfTheLongestCommonPrefix ftlotlcp = new FindTheLengthOfTheLongestCommonPrefix();
+
+        System.out.println("3 == " + ftlotlcp.longestCommonPrefix(new int[]{1,10,100}, new int[]{1000}));
+        System.out.println("0 == " + ftlotlcp.longestCommonPrefix(new int[]{1,2,3}, new int[]{4,4,4}));
     }
 }
