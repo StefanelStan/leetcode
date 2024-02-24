@@ -22,34 +22,43 @@ public class AddressPlayground {
     public void testAddresses() {
         long now = System.currentTimeMillis();
         Trie trie = new Trie();
-        List<Address> addresses = new ArrayList<>(500_000);
-        for(int i = 0; i < 500_000; i++) {
-            addresses.add(new Address(genRandomString(300), genRandomString(366), genRandomString(36), genRandomString(26),genRandomString(16)));
+        List<Address> addresses = new ArrayList<>(100_000);
+        for(int i = 0; i < 100_000; i++) {
+            addresses.add(new Address(genRandomString(10), genRandomString(10), genRandomString(10), genRandomString(10),genRandomString(10)));
         }
         long afterCreateList = System.currentTimeMillis();
-//        addresses.forEach(trie::addAddressToTrie);
+        addresses.forEach(trie::addAddressToTrie);
 //        trie.addAddressToTrie(new Address("abcde", "fghij","klmn","opqr","stuvw"));
+        Mapper mapper = new Mapper();
+        mapper.addAdddresses(addresses);
         long afterAdding = System.currentTimeMillis();
 //        int size1 = trie.findLongestPrefix("ffff").size();
 //        int size2 = trie.findLongestPrefix("cd").size();
 //        int size3 = trie.findLongestPrefix("q").size();
 //        int size4 = trie.findLongestPrefix("vw").size();
 //        int size5 = trie.findLongestPrefix("hj").size();
-        int size1 = findAnswer("ffff", addresses).size();
+        int size1 = mapper.findLongestPrefix("ffff").size();
 //        int size2 = findAnswer("cd", addresses).size();
 //        int size3 = findAnswer("q", addresses).size();
 //        int size4 = findAnswer("vw", addresses).size();
 //        int size5 = findAnswer("hj", addresses).size();
-        int size6 = findAnswer("a", addresses).size();
-        for (int i = 0; i < 100; i++) {
-            findAnswer(genRandomString(5), addresses);
+        size1 = mapper.findLongestPrefix("aaa").size();
+        int size2 = mapper.findLongestPrefix("bbb").size();
+        int size3 = mapper.findLongestPrefix("ccc").size();
+        for (int i = 0; i < 5000; i++) {
+            findAnswer(genRandomString(4), addresses);
         }
         long afterSearch = System.currentTimeMillis();
 
         System.out.println("Generating the list took " + (afterCreateList - now) +" ms");
         System.out.println("Adding took " + (afterAdding - afterCreateList) + " ms and searching took " + (afterSearch -  afterAdding) + " ms");
 
-        System.out.println("size 6 = " + size6);
+        System.out.println("size 1 = " + size1);
+        System.out.println("size 6 = " + size2);
+        System.out.println("size 6 = " + size3);
+        System.out.println("size 6 = " + size3);
+        System.out.println("map size = " + mapper.mappedAddresses.size());
+        System.out.println("size 6 = " + size3);
     }
 
     private List<Address> findAnswer(String search, List<Address> addresses) {
@@ -64,6 +73,44 @@ public class AddressPlayground {
             stb.append((char)(rand.nextInt(26) + 'a'));
         }
         return stb.toString();
+    }
+
+    private static class Mapper {
+        Map<String, Set<Address>> mappedAddresses;
+
+        public Mapper() {
+            mappedAddresses = new HashMap<>(15000000);
+        }
+
+        public Set<Address> findLongestPrefix(String str) {
+            return mappedAddresses.getOrDefault(str, new HashSet<>());
+        }
+
+        public void addAdddresses(List<Address> addresses) {
+            addresses.forEach(this::addAddress);
+        }
+
+        private void addAddress(Address a) {
+            addWord(a.getCode1(), a);
+            addWord(a.getCode2(), a);
+            addWord(a.getCode3(), a);
+            addWord(a.getCode4(), a);
+            addWord(a.getCode5(), a);
+        }
+
+        private void addWord(String word, Address a) {
+            char[] chars =  word.toCharArray();
+            StringBuilder stb = new StringBuilder();
+            for (int i =0; i < chars.length -3; i++) {
+                stb.setLength(0);
+                stb.append(chars[i]).append(chars[i+1]);
+                for (int j = i + 2; j < chars.length; j++) {
+                    stb.append(chars[j]);
+                    mappedAddresses.computeIfAbsent(stb.toString(), k -> new HashSet<>()).add(a);
+                }
+            }
+        }
+
     }
 
     private static class Address {

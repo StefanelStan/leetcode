@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.february.CountGoodTriplets;
 import com.ss.leetcode.LC2024.february.CountSubIslands;
 import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
+import com.ss.leetcode.LC2024.february.FindAllPeopleWithSecret;
 import com.ss.leetcode.LC2024.february.FindPolygonWithTheLargestPerimeter;
 import com.ss.leetcode.LC2024.february.FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance;
 import com.ss.leetcode.LC2024.february.FindTheLengthOfTheLongestCommonPrefix;
@@ -45,7 +46,8 @@ public class StartFebruary {
 //        start.meetingRoomsIII();
 //        start.countSubIslands();
 //        start.minimizeHammingDistanceAfterSwapOperations();
-        start.findTheLengthOfTheLongestCommonPrefix();
+//        start.findTheLengthOfTheLongestCommonPrefix();
+        start.findAllPeopleWithSecret();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -240,5 +242,15 @@ public class StartFebruary {
 
         System.out.println("3 == " + ftlotlcp.longestCommonPrefix(new int[]{1,10,100}, new int[]{1000}));
         System.out.println("0 == " + ftlotlcp.longestCommonPrefix(new int[]{1,2,3}, new int[]{4,4,4}));
+    }
+
+    public void findAllPeopleWithSecret() {
+        FindAllPeopleWithSecret fapws = new FindAllPeopleWithSecret();
+
+        System.out.println("[0,1,2,3,5] == " + fapws.findAllPeople(6, new int[][]{{1,2,5},{2,3,8},{1,5,10}}, 1));
+        System.out.println("[0,1,3] == " + fapws.findAllPeople(6, new int[][]{{3,1,3},{1,2,2},{0,3,3}}, 3));
+        System.out.println("[0,1,2,3,4] == " + fapws.findAllPeople(5, new int[][]{{3,4,2},{1,2,1},{2,3,1}}, 1));
+        System.out.println("[0,3,12,17,24,28,37,38,42,43,45,46,48,51,52,53,55,56,62,63,68,69,77,81,83,87,88,93,95,96,98,100,101,105,111,115,117,121,126,129,133,134,135,145,148,152,153,158,162,166,170,172,174,178,180,186,188,189,194,198] == "
+            + fapws.findAllPeople(199, new int[][]{{38,56,716},{4,176,731},{70,11,751},{75,107,744},{81,152,718},{35,171,749},{186,126,734},{55,17,749},{125,150,709},{63,80,716},{100,38,711},{152,135,715},{129,111,754},{170,24,714},{196,104,740},{117,172,713},{150,181,708},{99,183,739},{150,99,712},{25,103,737},{69,121,748},{178,170,713},{105,68,733},{79,176,717},{79,119,723},{28,198,749},{63,166,753},{72,71,745},{115,186,718},{51,42,727},{126,37,756},{93,56,707},{120,76,731},{56,0,706},{80,113,713},{0,145,752},{51,81,735},{71,81,716},{175,147,739},{20,94,722},{152,56,708},{115,45,706},{178,166,720},{152,111,748},{68,119,729},{77,87,741},{87,17,735},{153,93,711},{172,134,729},{198,105,748},{186,87,726},{174,172,718},{93,117,709},{95,93,708},{100,3,708},{96,125,710},{29,76,739},{180,68,745},{101,100,729},{76,158,732},{117,88,712},{43,179,745},{179,189,719},{121,45,706},{115,188,743},{174,148,729},{83,105,740},{48,52,739},{170,38,712},{119,36,745},{194,178,716},{32,193,737},{63,168,721},{184,43,728},{98,93,750},{43,170,750},{0,53,749},{42,152,712},{95,148,722},{75,71,723},{46,166,722},{73,20,746},{99,31,718},{158,68,736},{12,189,727},{81,133,756},{95,48,710},{162,48,720},{113,68,730},{121,3,706},{158,174,735},{181,116,720},{133,11,711},{152,0,710},{80,71,723},{168,113,754},{121,56,706},{194,148,736},{121,101,745},{105,45,707},{24,96,740},{81,12,722},{12,62,736},{57,72,730}}, 53));
     }
 }
