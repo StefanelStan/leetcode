@@ -8,11 +8,13 @@ import com.ss.leetcode.LC2024.february.CountSubIslands;
 import com.ss.leetcode.LC2024.february.CountVowelSubstringsOfAString;
 import com.ss.leetcode.LC2024.february.DivideArrayIntoArraysWithMaxDifference;
 import com.ss.leetcode.LC2024.february.FindAllPeopleWithSecret;
+import com.ss.leetcode.LC2024.february.FindAndReplaceInString;
 import com.ss.leetcode.LC2024.february.FindPolygonWithTheLargestPerimeter;
 import com.ss.leetcode.LC2024.february.FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance;
 import com.ss.leetcode.LC2024.february.FindTheLengthOfTheLongestCommonPrefix;
 import com.ss.leetcode.LC2024.february.GreatestCommonDivisorTraversal;
 import com.ss.leetcode.LC2024.february.InsertDeleteGetRandomO1DuplicatesAllowed;
+import com.ss.leetcode.LC2024.february.LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit;
 import com.ss.leetcode.LC2024.february.MaximumConsecutiveFloorsWithoutSpecialFloors;
 import com.ss.leetcode.LC2024.february.MaximumSumOfAlmostUniqueSubarray;
 import com.ss.leetcode.LC2024.february.MeetingRoomsIII;
@@ -49,7 +51,9 @@ public class StartFebruary {
 //        start.minimizeHammingDistanceAfterSwapOperations();
 //        start.findTheLengthOfTheLongestCommonPrefix();
 //        start.findAllPeopleWithSecret();
-        start.greatestCommonDivisorTraversal();
+//        start.greatestCommonDivisorTraversal();
+//        start.longestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit();
+        start.findAndReplaceInString();
     }
 
     public void divideArrayIntoArraysWithMaxDifference() {
@@ -262,5 +266,21 @@ public class StartFebruary {
         System.out.println("true == " + gcdt.canTraverseAllPairs(new int[]{2,3,6}));
         System.out.println("false == " + gcdt.canTraverseAllPairs(new int[]{3,5,9}));
         System.out.println("true == " + gcdt.canTraverseAllPairs(new int[]{4,3,12,8}));
+    }
+
+    public void longestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit() {
+        LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit lcswadltoetl = new LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit();
+
+        System.out.println("2 == " + lcswadltoetl.longestSubarray(new int[]{8,2,4,7}, 4));
+        System.out.println("4 == " + lcswadltoetl.longestSubarray(new int[]{10,1,2,4,7,2}, 5));
+        System.out.println("3 == " + lcswadltoetl.longestSubarray(new int[]{4,2,2,2,4,4,2,2}, 0));
+    }
+
+    public void findAndReplaceInString() {
+        FindAndReplaceInString faris = new FindAndReplaceInString();
+
+        System.out.println("eeebffff == " + faris.findReplaceString("abcd", new int[]{0, 2}, new String[]{"a", "cd"}, new String[]{"eee","ffff"}));
+        System.out.println("eeecd == " + faris.findReplaceString("abcd", new int[]{0, 2}, new String[]{"ab", "ec"}, new String[]{"eee","ffff"}));
+        System.out.println("asasaeeeeeooo == " + faris.findReplaceString("aaa", new int[]{0,1,2}, new String[]{"a","b","a"}, new String[]{"asas","uuu","eeeeeooo"}));
     }
 }
