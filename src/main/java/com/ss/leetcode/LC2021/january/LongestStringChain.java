@@ -12,6 +12,80 @@ import java.util.TreeMap;
 
 public class LongestStringChain {
     // https://leetcode.com/problems/longest-string-chain/
+    public int longestStrChain(String[] words) {
+        List<LongestChain>[] chains = mapWords(words);
+        int longest = 0, candidate = 0;
+        for (int i = chains.length - 1; i > 0; i--) {
+            if (chains[i] != null) {
+                for (LongestChain chain : chains[i]) {
+                    chain.chainSize = 1 + findNextChain(chain.chars, i + 1, chains);
+                    longest = Math.max(longest, chain.chainSize);
+                }
+            }
+        }
+        return longest;
+    }
+
+    private int findNextChain(char[] chars, int nextPos, List<LongestChain>[] chains) {
+        if (nextPos >= chains.length || chains[nextPos] == null) {
+            return 0;
+        }
+        int candidate = 0;
+        for (LongestChain chain : chains[nextPos]) {
+            if (isPredecessor(chars, chain.chars)) {
+                candidate = Math.max(candidate, chain.chainSize);
+            }
+        }
+        return candidate;
+    }
+
+    private List<LongestChain>[] mapWords(String[] words) {
+        List<LongestChain>[] chains = new List[17];
+        for (String word : words) {
+            if (chains[word.length()] == null) {
+                chains[word.length()] = new ArrayList<>();
+            }
+            chains[word.length()].add(new LongestChain(word.toCharArray()));
+        }
+        return chains;
+    }
+
+    private boolean isPredecessor(char[] shortWord, char[] longWord) {
+        int diffs = 0;
+        for (int i = 0, j = 0; i < shortWord.length && j < longWord.length && diffs < 2;) {
+            if (shortWord[i] != longWord[j]) {
+                diffs++;
+                j++;
+            } else {
+                i++;
+                j++;
+            }
+
+        }
+        return diffs < 2;
+    }
+
+    private static class LongestChain {
+        char[] chars;
+        int chainSize;
+
+        public LongestChain(char[] chars) {
+            this.chars = chars;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     /** Algorithm
         1. Put each String into its own bucket based on length: 1,2.3 etc.
             This way, if we want to measure the chain made by a string of length 3 we need to look in the bucket of length 4
@@ -29,7 +103,7 @@ public class LongestStringChain {
             If you skip, then skip the f node, so you can jump into the path of x -> facb
         7. Return the longest chain ever build.
      */
-    public int longestStrChain(String[] words) {
+    public int longestStrChain2(String[] words) {
         WordChain[] wordChains = getWordChains(words);
         int longest = 1;
         for (int i = 15; i >= 1; i--) {
@@ -174,7 +248,7 @@ public class LongestStringChain {
 
 
 
-    public int longestStrChain2(String[] words) {
+    public int longestStrChain3(String[] words) {
         if (words.length == 1) {
             return 1;
         }
@@ -231,7 +305,7 @@ public class LongestStringChain {
         }
     }
 
-    public int longestStrChain3(String[] words) {
+    public int longestStrChain4(String[] words) {
         NavigableMap<Integer, List<String>> lenghtOfWords = putWordsIntoMap(words);
         Map<String, Integer> longestChain = new HashMap<>();
 
