@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
+import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
 
@@ -10,7 +11,8 @@ public class StartMarch {
 
 //        start.maximumOddBinaryNumber();
 //        start.largestMagicSquare();
-        start.numberOfWaysToSelectBuildings();
+//        start.numberOfWaysToSelectBuildings();
+        start.maximizeTheTopmostElementAfterKMoves();
     }
 
     public void maximumOddBinaryNumber() {
@@ -37,5 +39,14 @@ public class StartMarch {
 
         System.out.println("6 == " + nowtsb.numberOfWays("001101"));
         System.out.println("0 == " + nowtsb.numberOfWays("11100"));
+    }
+
+    public void maximizeTheTopmostElementAfterKMoves() {
+        MaximizeTheTopmostElementAfterKMoves mtteakm = new MaximizeTheTopmostElementAfterKMoves();
+
+        System.out.println("5 == " + mtteakm.maximumTop(new int[]{5,2,2,4,0,6}, 4));
+        System.out.println("-1 == " + mtteakm.maximumTop(new int[]{2}, 1));
+        System.out.println("2 == " + mtteakm.maximumTop(new int[]{3,2,1}, 1));
+        System.out.println("7 == " + mtteakm.maximumTop(new int[]{7,8,9}, 0));
     }
 }
