@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
+import com.ss.leetcode.LC2024.march.MinimizedMaximumOfProductsDistributedToAnyStore;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
 
 public class StartMarch {
@@ -12,7 +13,8 @@ public class StartMarch {
 //        start.maximumOddBinaryNumber();
 //        start.largestMagicSquare();
 //        start.numberOfWaysToSelectBuildings();
-        start.maximizeTheTopmostElementAfterKMoves();
+//        start.maximizeTheTopmostElementAfterKMoves();
+        start.minimizedMaximumOfProductsDistributedToAnyStore();
     }
 
     public void maximumOddBinaryNumber() {
@@ -48,5 +50,13 @@ public class StartMarch {
         System.out.println("-1 == " + mtteakm.maximumTop(new int[]{2}, 1));
         System.out.println("2 == " + mtteakm.maximumTop(new int[]{3,2,1}, 1));
         System.out.println("7 == " + mtteakm.maximumTop(new int[]{7,8,9}, 0));
+    }
+
+    public void minimizedMaximumOfProductsDistributedToAnyStore() {
+        MinimizedMaximumOfProductsDistributedToAnyStore mmopdtas = new MinimizedMaximumOfProductsDistributedToAnyStore();
+
+        System.out.println("3 == " + mmopdtas.minimizedMaximum(6, new int[]{11, 6}));
+        System.out.println("5 == " + mmopdtas.minimizedMaximum(7, new int[]{15,10,10}));
+        System.out.println("100000 == " + mmopdtas.minimizedMaximum(1, new int[]{100000}));
     }
 }
