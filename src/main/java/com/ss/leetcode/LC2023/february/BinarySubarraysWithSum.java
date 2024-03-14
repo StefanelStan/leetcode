@@ -1,10 +1,7 @@
 package com.ss.leetcode.LC2023.february;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class BinarySubarraysWithSum {
     // https://leetcode.com/problems/binary-subarrays-with-sum/
@@ -23,7 +20,26 @@ public class BinarySubarraysWithSum {
          Thus, we increment the count of subarrays by 5.
         3. The detailed mechanism from step 2 can be applied to the case 0111 with goal = 2.
      */
+
     public int numSubarraysWithSum(int[] nums, int goal) {
+        int[] sums = new int[nums.length + 1];
+        int rollingSum = 0;
+        int count = 0;
+        for (int num : nums) {
+            rollingSum += num;
+            if (rollingSum == goal) {
+                count++;
+            }
+            if (rollingSum >= goal) {
+                count += sums[rollingSum - goal];
+            }
+            sums[rollingSum]++;
+        }
+        return count;
+    }
+
+
+    public int numSubarraysWithSum2(int[] nums, int goal) {
         Map<Integer, Integer> prefixSumMap = new HashMap<>();
         int prefixSum = 0;
         int subarrays = 0;
