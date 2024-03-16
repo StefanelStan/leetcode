@@ -1,11 +1,37 @@
 package com.ss.leetcode.LC2021.february;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ContiguousArray {
     // https://leetcode.com/problems/contiguous-array/
+    /** Algorithm
+        1. Prefix Sum: change 0 to -1 and to the prefix sum. Cache it (if not exists) on a Map
+        2. A contiguous array means even length AND the sum should be 0, thus an extry with value prefix should exist
+            -1,-1,-1,-1,1,1,1,-1,-1,-1,-1,-1
+            -1,-2,-3,-4,-3,-2,-1,-2 => at index 6 we encounter -1 again, with a distance of 6.
+     */
     public int findMaxLength(int[] nums) {
+        int longest = 0;
+        int prefixSum = 0;
+        Map<Integer, Integer> prefixSums = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            prefixSum += nums[i] == 0 ? -1 : 1;
+            if (prefixSum == 0) {
+                longest = Math.max(longest, i + 1);
+            }
+            Integer encountered = prefixSums.get(prefixSum);
+            if (encountered != null) {
+                longest = Math.max(longest, i - encountered);
+            }
+            prefixSums.putIfAbsent(prefixSum, i);
+        }
+        return longest;
+    }
+
+    public int findMaxLength2(int[] nums) {
         int maxLength = 0;
         int[][] leftCount =  new int[2][nums.length];
         int[][] rightCount = new int[2][nums.length];
@@ -60,7 +86,7 @@ public class ContiguousArray {
 
     }
 
-    public int findMaxLength2(int[] nums) {
+    public int findMaxLength3(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
