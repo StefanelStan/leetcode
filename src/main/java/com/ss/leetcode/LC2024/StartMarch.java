@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.march.ApplyOperationsToMakeStringEmpty;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
@@ -14,7 +15,8 @@ public class StartMarch {
 //        start.largestMagicSquare();
 //        start.numberOfWaysToSelectBuildings();
 //        start.maximizeTheTopmostElementAfterKMoves();
-        start.minimizedMaximumOfProductsDistributedToAnyStore();
+//        start.minimizedMaximumOfProductsDistributedToAnyStore();
+        start.applyOperationsToMakeStringEmpty();
     }
 
     public void maximumOddBinaryNumber() {
@@ -58,5 +60,12 @@ public class StartMarch {
         System.out.println("3 == " + mmopdtas.minimizedMaximum(6, new int[]{11, 6}));
         System.out.println("5 == " + mmopdtas.minimizedMaximum(7, new int[]{15,10,10}));
         System.out.println("100000 == " + mmopdtas.minimizedMaximum(1, new int[]{100000}));
+    }
+
+    public void applyOperationsToMakeStringEmpty() {
+        ApplyOperationsToMakeStringEmpty aotmse = new ApplyOperationsToMakeStringEmpty();
+
+        System.out.println("ba == " + aotmse.lastNonEmptyString("aabcbbca"));
+        System.out.println("abcd == " + aotmse.lastNonEmptyString("abcd"));
     }
 }
