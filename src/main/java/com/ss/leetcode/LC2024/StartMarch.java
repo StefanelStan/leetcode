@@ -1,11 +1,13 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.march.ApplyOperationsToMakeStringEmpty;
+import com.ss.leetcode.LC2024.march.CycleLengthQueriesInATree;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
 import com.ss.leetcode.LC2024.march.MinimizedMaximumOfProductsDistributedToAnyStore;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
+import java.util.Arrays;
 
 public class StartMarch {
     public static void main(String[] args) {
@@ -16,7 +18,8 @@ public class StartMarch {
 //        start.numberOfWaysToSelectBuildings();
 //        start.maximizeTheTopmostElementAfterKMoves();
 //        start.minimizedMaximumOfProductsDistributedToAnyStore();
-        start.applyOperationsToMakeStringEmpty();
+//        start.applyOperationsToMakeStringEmpty();
+        start.cycleLengthQueriesInATree();
     }
 
     public void maximumOddBinaryNumber() {
@@ -67,5 +70,12 @@ public class StartMarch {
 
         System.out.println("ba == " + aotmse.lastNonEmptyString("aabcbbca"));
         System.out.println("abcd == " + aotmse.lastNonEmptyString("abcd"));
+    }
+
+    public void cycleLengthQueriesInATree() {
+        CycleLengthQueriesInATree clqiat = new CycleLengthQueriesInATree();
+
+        System.out.println("[4,5,3] == " + Arrays.toString(clqiat.cycleLengthQueries(3, new int[][]{{5,3},{4,7},{2,3}})));
+        System.out.println("[2] == " + Arrays.toString(clqiat.cycleLengthQueries(2, new int[][]{{1,2}})));
     }
 }
