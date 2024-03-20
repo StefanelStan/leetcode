@@ -5,6 +5,24 @@ import com.ss.leetcode.shared.ListNode;
 public class MergeInBetweenLinkedLists {
     // https://leetcode.com/problems/merge-in-between-linked-lists/
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
+        ListNode list1Head = list1, list2Head = list2, aMinusOne = list1;
+        int index = 0;
+        while (index <= b) {
+            if (index == a - 1) {
+                aMinusOne = list1;
+            }
+            list1 = list1.next;
+            index++;
+        }
+        while (list2.next != null) {
+            list2 = list2.next;
+        }
+        aMinusOne.next = list2Head;
+        list2.next = list1;
+        return list1Head;
+    }
+
+        public ListNode mergeInBetween2(ListNode list1, int a, int b, ListNode list2) {
         ListNode current = list1;
         ListNode firstInsertionPoint = null;
         ListNode secondInsertionPoint = null;
