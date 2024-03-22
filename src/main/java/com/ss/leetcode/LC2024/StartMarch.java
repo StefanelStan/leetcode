@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.march.ApplyOperationsToMakeStringEmpty;
 import com.ss.leetcode.LC2024.march.CycleLengthQueriesInATree;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
+import com.ss.leetcode.LC2024.march.LongestUnequalAdjacentGroupsSubsequenceI;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
 import com.ss.leetcode.LC2024.march.MinimizedMaximumOfProductsDistributedToAnyStore;
@@ -19,7 +20,8 @@ public class StartMarch {
 //        start.maximizeTheTopmostElementAfterKMoves();
 //        start.minimizedMaximumOfProductsDistributedToAnyStore();
 //        start.applyOperationsToMakeStringEmpty();
-        start.cycleLengthQueriesInATree();
+//        start.cycleLengthQueriesInATree();
+        start.longestUnequalAdjacentGroupsSubsequenceI();
     }
 
     public void maximumOddBinaryNumber() {
@@ -77,5 +79,12 @@ public class StartMarch {
 
         System.out.println("[4,5,3] == " + Arrays.toString(clqiat.cycleLengthQueries(3, new int[][]{{5,3},{4,7},{2,3}})));
         System.out.println("[2] == " + Arrays.toString(clqiat.cycleLengthQueries(2, new int[][]{{1,2}})));
+    }
+
+    public void longestUnequalAdjacentGroupsSubsequenceI() {
+        LongestUnequalAdjacentGroupsSubsequenceI luagsi = new LongestUnequalAdjacentGroupsSubsequenceI();
+
+        System.out.println("[e,b] == " + luagsi.getLongestSubsequence(new String[]{"e","a","b"}, new int[]{0,0,1}));
+        System.out.println("[a,b,c] == " + luagsi.getLongestSubsequence(new String[]{"a","b","c","d"}, new int[]{1,0,1,1}));
     }
 }

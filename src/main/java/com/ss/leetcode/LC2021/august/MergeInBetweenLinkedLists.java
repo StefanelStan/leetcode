@@ -22,7 +22,7 @@ public class MergeInBetweenLinkedLists {
         return list1Head;
     }
 
-        public ListNode mergeInBetween2(ListNode list1, int a, int b, ListNode list2) {
+    public ListNode mergeInBetween2(ListNode list1, int a, int b, ListNode list2) {
         ListNode current = list1;
         ListNode firstInsertionPoint = null;
         ListNode secondInsertionPoint = null;
