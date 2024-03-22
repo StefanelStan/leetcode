@@ -2,12 +2,15 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.march.ApplyOperationsToMakeStringEmpty;
 import com.ss.leetcode.LC2024.march.CycleLengthQueriesInATree;
+import com.ss.leetcode.LC2024.march.DivideAnArrayIntoSubarraysWithMinimumCostI;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
 import com.ss.leetcode.LC2024.march.LongestUnequalAdjacentGroupsSubsequenceI;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
 import com.ss.leetcode.LC2024.march.MinimizedMaximumOfProductsDistributedToAnyStore;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
+import com.ss.leetcode.LC2024.march.PalindromeLinkedList;
+import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 
 public class StartMarch {
@@ -21,7 +24,9 @@ public class StartMarch {
 //        start.minimizedMaximumOfProductsDistributedToAnyStore();
 //        start.applyOperationsToMakeStringEmpty();
 //        start.cycleLengthQueriesInATree();
-        start.longestUnequalAdjacentGroupsSubsequenceI();
+//        start.longestUnequalAdjacentGroupsSubsequenceI();
+//        start.palindromeLinkedList();
+        start.divideAnArrayIntoSubarraysWithMinimumCostI();
     }
 
     public void maximumOddBinaryNumber() {
@@ -86,5 +91,23 @@ public class StartMarch {
 
         System.out.println("[e,b] == " + luagsi.getLongestSubsequence(new String[]{"e","a","b"}, new int[]{0,0,1}));
         System.out.println("[a,b,c] == " + luagsi.getLongestSubsequence(new String[]{"a","b","c","d"}, new int[]{1,0,1,1}));
+    }
+
+    public void palindromeLinkedList() {
+        PalindromeLinkedList pll = new PalindromeLinkedList();
+
+        ListNode head1 = ListNode.makeChain(new int[]{1,2,2,1});
+        ListNode head2 = ListNode.makeChain(new int[]{1,2});
+
+        System.out.println("true == " + pll.isPalindrome(head1));
+        System.out.println("false == " + pll.isPalindrome(head2));
+    }
+
+    public void divideAnArrayIntoSubarraysWithMinimumCostI() {
+        DivideAnArrayIntoSubarraysWithMinimumCostI daaiswmci = new DivideAnArrayIntoSubarraysWithMinimumCostI();
+
+        System.out.println("6 == " + daaiswmci.minimumCost(new int[]{1,2,3,13}));
+        System.out.println("12 == " + daaiswmci.minimumCost(new int[]{5,4,3}));
+        System.out.println("12 == " + daaiswmci.minimumCost(new int[]{10,3,1,1}));
     }
 }
