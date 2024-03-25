@@ -74,12 +74,12 @@ public class StartAugust {
 //        start.naryTreePostorderTraversal();
 //        start.maximumDifferenceNodeAncestor();
 //        start.maximumDepthOfNaryTree();
-//        start.findAllDuplicatesInInArray();
+        start.findAllDuplicatesInInArray();
 //        start.mergeInBetweenLinkedLists();
 //        start.univaluedBinaryTree();
 //        start.incrementalMemoryLeak();
 //        start.invertBinaryTree();
-        start.baseballGame();
+//        start.baseballGame();
 //        start.rangeSumQueryImmutable();
 //        start.maximumLevelSumOfABinaryTree();
 //        start.findModeInBinarySearchTree();
