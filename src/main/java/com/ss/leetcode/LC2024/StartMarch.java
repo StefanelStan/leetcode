@@ -3,11 +3,13 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.march.ApplyOperationsToMakeStringEmpty;
 import com.ss.leetcode.LC2024.march.CycleLengthQueriesInATree;
 import com.ss.leetcode.LC2024.march.DivideAnArrayIntoSubarraysWithMinimumCostI;
+import com.ss.leetcode.LC2024.march.FindIndicesWithIndexAndValueDifferenceI;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
 import com.ss.leetcode.LC2024.march.LongestUnequalAdjacentGroupsSubsequenceI;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
 import com.ss.leetcode.LC2024.march.MinimizedMaximumOfProductsDistributedToAnyStore;
+import com.ss.leetcode.LC2024.march.MinimumSumOfMountainTripletsI;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
 import com.ss.leetcode.LC2024.march.PalindromeLinkedList;
 import com.ss.leetcode.shared.ListNode;
@@ -26,7 +28,9 @@ public class StartMarch {
 //        start.cycleLengthQueriesInATree();
 //        start.longestUnequalAdjacentGroupsSubsequenceI();
 //        start.palindromeLinkedList();
-        start.divideAnArrayIntoSubarraysWithMinimumCostI();
+//        start.divideAnArrayIntoSubarraysWithMinimumCostI();
+//        start.findIndicesWithIndexAndValueDifferenceI();
+        start.minimumSumOfMountainTripletsI();
     }
 
     public void maximumOddBinaryNumber() {
@@ -109,5 +113,21 @@ public class StartMarch {
         System.out.println("6 == " + daaiswmci.minimumCost(new int[]{1,2,3,13}));
         System.out.println("12 == " + daaiswmci.minimumCost(new int[]{5,4,3}));
         System.out.println("12 == " + daaiswmci.minimumCost(new int[]{10,3,1,1}));
+    }
+
+    public void findIndicesWithIndexAndValueDifferenceI() {
+        FindIndicesWithIndexAndValueDifferenceI fiwiavdi = new FindIndicesWithIndexAndValueDifferenceI();
+
+        System.out.println("[0,3] == " + Arrays.toString(fiwiavdi.findIndices(new int[]{5,1,4,1}, 2, 4)));
+        System.out.println("[0,0] == " + Arrays.toString(fiwiavdi.findIndices(new int[]{2,1}, 0, 0)));
+        System.out.println("[-1,-1] == " + Arrays.toString(fiwiavdi.findIndices(new int[]{1,2,3}, 2, 4)));
+    }
+
+    public void minimumSumOfMountainTripletsI() {
+        MinimumSumOfMountainTripletsI msomti = new MinimumSumOfMountainTripletsI();
+
+        System.out.println("9 == " + msomti.minimumSum(new int[]{8,6,1,5,3}));
+        System.out.println("13 == " + msomti.minimumSum(new int[]{5,4,8,7,10,2}));
+        System.out.println("-1 == " + msomti.minimumSum(new int[]{6,5,4,3,4,5}));
     }
 }

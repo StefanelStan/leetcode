@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2023.march;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,6 +32,21 @@ public class FirstMissingPositive {
     }
 
     public int firstMissingPositive2(int[] nums) {
+        int firstMissingPositive = 1;
+        Arrays.sort(nums);
+        for (int num : nums) {
+            if (num > 0) {
+                if (num == firstMissingPositive) {
+                    firstMissingPositive++;
+                } else if (num > firstMissingPositive) {
+                    break;
+                }
+            }
+        }
+        return firstMissingPositive;
+    }
+
+    public int firstMissingPositive3(int[] nums) {
         Set<Integer> positives = new HashSet<>();
         int min = Integer.MAX_VALUE;
         for (int num : nums) {
