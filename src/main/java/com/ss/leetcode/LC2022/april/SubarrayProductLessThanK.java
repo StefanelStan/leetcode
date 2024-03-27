@@ -3,6 +3,22 @@ package com.ss.leetcode.LC2022.april;
 public class SubarrayProductLessThanK {
     // https://leetcode.com/problems/subarray-product-less-than-k/
     public int numSubarrayProductLessThanK(int[] nums, int k) {
+        int total = 0, product = 1;
+        int left = 0, right = 0;
+        while (right < nums.length) {
+            product *= nums[right];
+            while (left <= right && product >= k) {
+                product = product / nums[left];
+                left++;
+            }
+            total += 1 + right - left;
+            right++;
+        }
+        return total;
+    }
+
+
+    public int numSubarrayProductLessThanK2(int[] nums, int k) {
         int subarrays =0;
         if (k != 0) {
             subarrays = countSubarrays(nums, k);

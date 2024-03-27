@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.march.LongestUnequalAdjacentGroupsSubsequenceI;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
 import com.ss.leetcode.LC2024.march.MinimizedMaximumOfProductsDistributedToAnyStore;
+import com.ss.leetcode.LC2024.march.MinimumOperationsToWriteTheLetterYOnAGrid;
 import com.ss.leetcode.LC2024.march.MinimumSumOfMountainTripletsI;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
 import com.ss.leetcode.LC2024.march.PalindromeLinkedList;
@@ -30,7 +31,8 @@ public class StartMarch {
 //        start.palindromeLinkedList();
 //        start.divideAnArrayIntoSubarraysWithMinimumCostI();
 //        start.findIndicesWithIndexAndValueDifferenceI();
-        start.minimumSumOfMountainTripletsI();
+//        start.minimumSumOfMountainTripletsI();
+        start.minimumOperationsToWriteTheLetterYOnAGrid();
     }
 
     public void maximumOddBinaryNumber() {
@@ -129,5 +131,12 @@ public class StartMarch {
         System.out.println("9 == " + msomti.minimumSum(new int[]{8,6,1,5,3}));
         System.out.println("13 == " + msomti.minimumSum(new int[]{5,4,8,7,10,2}));
         System.out.println("-1 == " + msomti.minimumSum(new int[]{6,5,4,3,4,5}));
+    }
+
+    public void minimumOperationsToWriteTheLetterYOnAGrid() {
+        MinimumOperationsToWriteTheLetterYOnAGrid motwtlyoag = new MinimumOperationsToWriteTheLetterYOnAGrid();
+
+        System.out.println("3 == " + motwtlyoag.minimumOperationsToWriteY(new int[][]{{1,2,2},{1,1,0},{0,1,0}}));
+        System.out.println("12 == " + motwtlyoag.minimumOperationsToWriteY(new int[][]{{0,1,0,1,0},{2,1,0,1,2},{2,2,2,0,1},{2,2,2,2,2},{2,1,2,2,2}}));
     }
 }
