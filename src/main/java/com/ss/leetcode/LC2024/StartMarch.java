@@ -1,12 +1,14 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.march.ApplyOperationsToMakeStringEmpty;
+import com.ss.leetcode.LC2024.march.CountBeautifulSubstringsI;
 import com.ss.leetcode.LC2024.march.CycleLengthQueriesInATree;
 import com.ss.leetcode.LC2024.march.DivideAnArrayIntoSubarraysWithMinimumCostI;
 import com.ss.leetcode.LC2024.march.FindIndicesWithIndexAndValueDifferenceI;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
 import com.ss.leetcode.LC2024.march.LongestUnequalAdjacentGroupsSubsequenceI;
 import com.ss.leetcode.LC2024.march.MaximizeTheTopmostElementAfterKMoves;
+import com.ss.leetcode.LC2024.march.MaximumLengthSubstringWithTwoOccurrences;
 import com.ss.leetcode.LC2024.march.MaximumOddBinaryNumber;
 import com.ss.leetcode.LC2024.march.MinimizedMaximumOfProductsDistributedToAnyStore;
 import com.ss.leetcode.LC2024.march.MinimumOperationsToWriteTheLetterYOnAGrid;
@@ -32,7 +34,9 @@ public class StartMarch {
 //        start.divideAnArrayIntoSubarraysWithMinimumCostI();
 //        start.findIndicesWithIndexAndValueDifferenceI();
 //        start.minimumSumOfMountainTripletsI();
-        start.minimumOperationsToWriteTheLetterYOnAGrid();
+//        start.minimumOperationsToWriteTheLetterYOnAGrid();
+//        start.maximumLengthSubstringWithTwoOccurrences();
+        start.countBeautifulSubstringsI();
     }
 
     public void maximumOddBinaryNumber() {
@@ -138,5 +142,25 @@ public class StartMarch {
 
         System.out.println("3 == " + motwtlyoag.minimumOperationsToWriteY(new int[][]{{1,2,2},{1,1,0},{0,1,0}}));
         System.out.println("12 == " + motwtlyoag.minimumOperationsToWriteY(new int[][]{{0,1,0,1,0},{2,1,0,1,2},{2,2,2,0,1},{2,2,2,2,2},{2,1,2,2,2}}));
+    }
+
+    public void maximumLengthSubstringWithTwoOccurrences() {
+        MaximumLengthSubstringWithTwoOccurrences mlswto = new MaximumLengthSubstringWithTwoOccurrences();
+
+        System.out.println("4 == " + mlswto.maximumLengthSubstring("bcbbbcba"));
+        System.out.println("2 == " + mlswto.maximumLengthSubstring("aaaa"));
+    }
+
+    public void countBeautifulSubstringsI() {
+        CountBeautifulSubstringsI cbsi = new CountBeautifulSubstringsI();
+
+        System.out.println("2 == " + cbsi.beautifulSubstrings("baeyh", 2));
+        System.out.println("3 == " + cbsi.beautifulSubstrings("abba", 1));
+        System.out.println("0 == " + cbsi.beautifulSubstrings("bcdf", 1));
+        System.out.println("36 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 2));
+        System.out.println("20 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 3));
+        System.out.println("3 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 6));
+        System.out.println("2 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 10));
+        System.out.println("11 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 5));
     }
 }
