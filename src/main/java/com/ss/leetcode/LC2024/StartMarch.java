@@ -15,6 +15,7 @@ import com.ss.leetcode.LC2024.march.MinimumOperationsToWriteTheLetterYOnAGrid;
 import com.ss.leetcode.LC2024.march.MinimumSumOfMountainTripletsI;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
 import com.ss.leetcode.LC2024.march.PalindromeLinkedList;
+import com.ss.leetcode.LC2024.march.SemiOrderedPermutation;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 
@@ -36,7 +37,8 @@ public class StartMarch {
 //        start.minimumSumOfMountainTripletsI();
 //        start.minimumOperationsToWriteTheLetterYOnAGrid();
 //        start.maximumLengthSubstringWithTwoOccurrences();
-        start.countBeautifulSubstringsI();
+//        start.countBeautifulSubstringsI();
+        start.semiOrderedPermutation();
     }
 
     public void maximumOddBinaryNumber() {
@@ -162,5 +164,18 @@ public class StartMarch {
         System.out.println("3 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 6));
         System.out.println("2 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 10));
         System.out.println("11 == " + cbsi.beautifulSubstrings("dfsafklsdjfaiouhsdjgujsfvdsgsdfstrigjsrteoifchjvffuihweiudhfsufasoidufsd", 5));
+    }
+
+    public void semiOrderedPermutation() {
+        SemiOrderedPermutation sop = new SemiOrderedPermutation();
+
+        System.out.println("2 == " + sop.semiOrderedPermutation(new int[]{2,1,3,4}));
+        System.out.println("3 == " + sop.semiOrderedPermutation(new int[]{2,4,1,3}));
+        System.out.println("0 == " + sop.semiOrderedPermutation(new int[]{1,3,4,2,5}));
+        System.out.println("5 == " + sop.semiOrderedPermutation(new int[]{3,2,6,1,4,5}));
+        System.out.println("14 == " + sop.semiOrderedPermutation(new int[]{10,8,7,6,5,4,1,2,3,9}));
+        System.out.println("13 == " + sop.semiOrderedPermutation(new int[]{10,8,7,11,6,5,4,1,2,3,9}));
+        System.out.println("1 == " + sop.semiOrderedPermutation(new int[]{2,1}));
+        System.out.println("0 == " + sop.semiOrderedPermutation(new int[]{1,2}));
     }
 }
