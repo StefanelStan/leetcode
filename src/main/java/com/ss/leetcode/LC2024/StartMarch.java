@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.march.ApplyOperationsToMakeStringEmpty;
 import com.ss.leetcode.LC2024.march.CountBeautifulSubstringsI;
 import com.ss.leetcode.LC2024.march.CycleLengthQueriesInATree;
+import com.ss.leetcode.LC2024.march.DetermineTheMinimumSumOfAKAvoidingArray;
 import com.ss.leetcode.LC2024.march.DivideAnArrayIntoSubarraysWithMinimumCostI;
 import com.ss.leetcode.LC2024.march.FindIndicesWithIndexAndValueDifferenceI;
 import com.ss.leetcode.LC2024.march.LargestMagicSquare;
@@ -40,7 +41,8 @@ public class StartMarch {
 //        start.maximumLengthSubstringWithTwoOccurrences();
 //        start.countBeautifulSubstringsI();
 //        start.semiOrderedPermutation();
-        start.subarraysWithKDifferentIntegers();
+//        start.subarraysWithKDifferentIntegers();
+        start.determineTheMinimumSumOfAKAvoidingArray();
     }
 
     public void maximumOddBinaryNumber() {
@@ -186,5 +188,17 @@ public class StartMarch {
 
         System.out.println("7 == " + swkdi.subarraysWithKDistinct(new int[]{1,2,1,2,3}, 2));
         System.out.println("3 == " + swkdi.subarraysWithKDistinct(new int[]{1,2,1,3,4}, 3));
+    }
+
+    public void determineTheMinimumSumOfAKAvoidingArray() {
+        DetermineTheMinimumSumOfAKAvoidingArray dtmsoakaa = new DetermineTheMinimumSumOfAKAvoidingArray();
+
+        System.out.println("18 == " + dtmsoakaa.minimumSum(5, 4));
+        System.out.println("3 == " + dtmsoakaa.minimumSum(2, 6));
+        System.out.println("1875 == " + dtmsoakaa.minimumSum(50, 50));
+        System.out.println("27 == " + dtmsoakaa.minimumSum(6, 8));
+        System.out.println("735 == " + dtmsoakaa.minimumSum(32, 1));
+        System.out.println("333 == " + dtmsoakaa.minimumSum(23, 40));
+        System.out.println("1 == " + dtmsoakaa.minimumSum(1, 1));
     }
 }
