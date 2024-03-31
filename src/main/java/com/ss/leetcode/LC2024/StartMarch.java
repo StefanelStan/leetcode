@@ -16,6 +16,7 @@ import com.ss.leetcode.LC2024.march.MinimumSumOfMountainTripletsI;
 import com.ss.leetcode.LC2024.march.NumberOfWaysToSelectBuildings;
 import com.ss.leetcode.LC2024.march.PalindromeLinkedList;
 import com.ss.leetcode.LC2024.march.SemiOrderedPermutation;
+import com.ss.leetcode.LC2024.march.SubarraysWithKDifferentIntegers;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 
@@ -38,7 +39,8 @@ public class StartMarch {
 //        start.minimumOperationsToWriteTheLetterYOnAGrid();
 //        start.maximumLengthSubstringWithTwoOccurrences();
 //        start.countBeautifulSubstringsI();
-        start.semiOrderedPermutation();
+//        start.semiOrderedPermutation();
+        start.subarraysWithKDifferentIntegers();
     }
 
     public void maximumOddBinaryNumber() {
@@ -177,5 +179,12 @@ public class StartMarch {
         System.out.println("13 == " + sop.semiOrderedPermutation(new int[]{10,8,7,11,6,5,4,1,2,3,9}));
         System.out.println("1 == " + sop.semiOrderedPermutation(new int[]{2,1}));
         System.out.println("0 == " + sop.semiOrderedPermutation(new int[]{1,2}));
+    }
+
+    public void subarraysWithKDifferentIntegers() {
+        SubarraysWithKDifferentIntegers swkdi = new SubarraysWithKDifferentIntegers();
+
+        System.out.println("7 == " + swkdi.subarraysWithKDistinct(new int[]{1,2,1,2,3}, 2));
+        System.out.println("3 == " + swkdi.subarraysWithKDistinct(new int[]{1,2,1,3,4}, 3));
     }
 }
