@@ -8,6 +8,25 @@ public class OneThreeTwo132Pattern {
     // LEFT MIN + NEXT GREATER ELEMENT
     public boolean find132pattern(int[] nums) {
         int[] leftMin = getLeftMin(nums);
+        LinkedList<Integer> lowers = new LinkedList<>();
+        lowers.add(nums[nums.length - 1]);
+        int polled;
+        for (int i = nums.length - 2; i >= 1; i--) {
+            if (nums[i] > leftMin[i-1]) {
+                while (!lowers.isEmpty() && nums[i] >= lowers.peekFirst()) {
+                    polled = lowers.removeFirst();
+                    if (polled > leftMin[i-1] && polled < nums[i]) {
+                        return true;
+                    }
+                }
+                lowers.addFirst(nums[i]);
+            }
+        }
+        return false;
+    }
+
+    public boolean find132pattern2(int[] nums) {
+        int[] leftMin = getLeftMin(nums);
         int minFromLower;
         LinkedList<Integer> lower = new LinkedList<>();
         lower.addFirst(nums[nums.length -1]);
@@ -38,7 +57,7 @@ public class OneThreeTwo132Pattern {
     }
 
     // INEFFICIENT
-    public boolean find132pattern2(int[] nums) {
+    public boolean find132pattern3(int[] nums) {
         int[] minLeftToRight = getMinLeftToRight(nums);
         int temp;
         PriorityQueue<Integer> queue = new PriorityQueue<>();

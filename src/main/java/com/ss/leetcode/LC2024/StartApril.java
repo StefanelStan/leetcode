@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
+import java.util.Arrays;
 
 public class StartApril {
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class StartApril {
     public void groupsOfStrings() {
         GroupsOfStrings gos = new GroupsOfStrings();
 
-        System.out.println("[2,3] == " + gos.groupStrings(new String[]{"a","b","ab","cde"}));
-        System.out.println("[1,3] == " + gos.groupStrings(new String[]{"a","ab","abc"}));
+        System.out.println("[2,3] == " + Arrays.toString(gos.groupStrings(new String[]{"a","b","ab","cde"})));
+        System.out.println("[1,3] == " + Arrays.toString(gos.groupStrings(new String[]{"a","ab","abc"})));
     }
 }
