@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
+import com.ss.leetcode.LC2024.april.ValidParenthesisString;
 import java.util.Arrays;
 
 public class StartApril {
@@ -9,7 +10,8 @@ public class StartApril {
         StartApril start = new StartApril();
 
 //        start.maximumMatchingOfPlayersWithTrainers();
-        start.groupsOfStrings();
+//        start.groupsOfStrings();
+        start.validParenthesisString();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -27,5 +29,20 @@ public class StartApril {
 
         System.out.println("[2,3] == " + Arrays.toString(gos.groupStrings(new String[]{"a","b","ab","cde"})));
         System.out.println("[1,3] == " + Arrays.toString(gos.groupStrings(new String[]{"a","ab","abc"})));
+    }
+
+    public void validParenthesisString() {
+        ValidParenthesisString vps = new ValidParenthesisString();
+
+        System.out.println("true == " + vps.checkValidString("()"));
+        System.out.println("true == " + vps.checkValidString("(*)"));
+        System.out.println("true == " + vps.checkValidString("(*))"));
+        System.out.println("false == " + vps.checkValidString("((((((()((((((*)*()*(*)(**)(*)((((()())()()()(((()())))))))))(())(()))())((()()((((()(())(()**)()()"));
+        System.out.println("true == " + vps.checkValidString("(((((())()))())())((*(*)*(*)*()*((*(*()()(**)(*(*))))))())())))(()))))(()())()"));
+        System.out.println("false == " + vps.checkValidString("((((()((*())*)(*)**()))()()()((((()()*((())))))(())()())(((())())())))))))(((((()))))(((()()))(*)()"));
+        System.out.println("false == " + vps.checkValidString("(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())"));
+        System.out.println("false == " + vps.checkValidString("((((((()(((((((((()())()()()(((()())))))))))(())(()))())((()()(((()((()(())*(()**)()(())"));
+        System.out.println("false == " + vps.checkValidString("((*()(*)())(*()*()*())((((()(((((((((()())()()()(((()))))))))))(()))())((()()(((()((()(())*(()**)())"));
+        System.out.println("false == " + vps.checkValidString("(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())"));
     }
 }
