@@ -53,13 +53,33 @@ public class RevealCardsInIncreasingOrder {
 //        return sortedDeck;
 //    }
 
+    public int[] deckRevealedIncreasing(int[] deck) {
+        Arrays.sort(deck);
+        int[] reveal = new int[deck.length];
+        int revealIndex = 0, countIndex = 2;
+        for (int sortedCard : deck) {
+            while (countIndex < 2) {
+                if (reveal[revealIndex] == 0) {
+                    countIndex++;
+                    if (countIndex == 2) {
+                        break;
+                    }
+                }
+                revealIndex = (revealIndex + 1) % deck.length;
+            }
+            countIndex = 0;
+            reveal[revealIndex] = sortedCard;
+        }
+        return reveal;
+    }
+
     /**
      * The basic idea is to sort the deck.
      * Begin filling by the tactic: fill one, skip one spot (in case the spot is free) with the numbers from the sorted deck.
      * I tried something similar by skipping/filling every 4 spots
      * https://leetcode.com/problems/reveal-cards-in-increasing-order/discuss/504896/java-solution-without-queue
      */
-    public int[] deckRevealedIncreasing(int[] deck) {
+    public int[] deckRevealedIncreasing2(int[] deck) {
         Arrays.sort(deck);
         int i = 0;
         int j = 0;

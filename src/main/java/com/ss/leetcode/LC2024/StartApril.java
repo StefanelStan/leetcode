@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.april.AccountBalanceAfterRoundedPurchase;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
 import com.ss.leetcode.LC2024.april.ValidParenthesisString;
@@ -11,7 +12,8 @@ public class StartApril {
 
 //        start.maximumMatchingOfPlayersWithTrainers();
 //        start.groupsOfStrings();
-        start.validParenthesisString();
+//        start.validParenthesisString();
+        start.accountBalanceAfterRoundedPurchase();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -44,5 +46,13 @@ public class StartApril {
         System.out.println("false == " + vps.checkValidString("((((((()(((((((((()())()()()(((()())))))))))(())(()))())((()()(((()((()(())*(()**)()(())"));
         System.out.println("false == " + vps.checkValidString("((*()(*)())(*()*()*())((((()(((((((((()())()()()(((()))))))))))(()))())((()()(((()((()(())*(()**)())"));
         System.out.println("false == " + vps.checkValidString("(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())"));
+    }
+
+    public void accountBalanceAfterRoundedPurchase() {
+        AccountBalanceAfterRoundedPurchase abarp = new AccountBalanceAfterRoundedPurchase();
+
+        System.out.println("90 == " + abarp.accountBalanceAfterPurchase(9));
+        System.out.println("80 == " + abarp.accountBalanceAfterPurchase(15));
+        System.out.println("100 == " + abarp.accountBalanceAfterPurchase(4));
     }
 }
