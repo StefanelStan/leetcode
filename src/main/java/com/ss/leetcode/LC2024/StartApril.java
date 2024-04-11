@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.april.AccountBalanceAfterRoundedPurchase;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
+import com.ss.leetcode.LC2024.april.RemoveKDigits;
 import com.ss.leetcode.LC2024.april.ValidParenthesisString;
 import java.util.Arrays;
 
@@ -13,7 +14,8 @@ public class StartApril {
 //        start.maximumMatchingOfPlayersWithTrainers();
 //        start.groupsOfStrings();
 //        start.validParenthesisString();
-        start.accountBalanceAfterRoundedPurchase();
+//        start.accountBalanceAfterRoundedPurchase();
+        start.removeKDigits();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -54,5 +56,13 @@ public class StartApril {
         System.out.println("90 == " + abarp.accountBalanceAfterPurchase(9));
         System.out.println("80 == " + abarp.accountBalanceAfterPurchase(15));
         System.out.println("100 == " + abarp.accountBalanceAfterPurchase(4));
+    }
+
+    public void removeKDigits() {
+        RemoveKDigits rkd = new RemoveKDigits();
+
+        System.out.println("1219 == " + rkd.removeKdigits("1432219", 3));
+        System.out.println("200 == " + rkd.removeKdigits("10200", 1));
+        System.out.println("0 == " + rkd.removeKdigits("10", 2));
     }
 }
