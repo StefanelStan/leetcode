@@ -6,7 +6,41 @@ import java.util.stream.Collectors;
 
 public class TrappingRainWater {
     // https://leetcode.com/problems/trapping-rain-water/
-    public int trap(int[] height) {
+    // PRO MODE
+    /** Algorithm
+        1. At any given index i, the height could be underwater or above water
+        2. If it's underwater, it means that height h will contribute wl - h units to total
+            (wl = water level)
+        3. The water level is the min between max on the right on the left
+            - EG: 0,4,2,3,5,1
+            - the indices [2,3] are under water. The water level is min(4,5) = 4.
+            - they contribute 2 (4,2) and 1 (4-3) to the total trapped water
+        4. So precumpute the leftMax for each index i = 0..n
+        5. Traverse from n-2 and keep track of max encountered. (rightMax)
+            - each index will contribute max(0, min(leftMax[i-1], rightMax)) to total
+            - adjust rightMax with current Index
+    */
+     int trap(int[] height) {
+        int trapped = 0, maxOnRight = height[height.length - 1];
+        int[] leftMax = getLeftMax(height);
+        for (int i = height.length -2; i >= 1; i--) {
+            trapped += Math.max(0, Math.min(leftMax[i-1], maxOnRight) - height[i]);
+            maxOnRight = Math.max(maxOnRight, height[i]);
+        }
+        return trapped;
+    }
+
+    private int[] getLeftMax(int[] height) {
+        int[] leftMax = new int[height.length];
+        leftMax[0] = height[0];
+        for (int i = 1; i < height.length; i++) {
+            leftMax[i] = Math.max(leftMax[i-1], height[i]);
+        }
+        return leftMax;
+    }
+
+
+    public int trap2(int[] height) {
         if (height.length < 3) {
             return 0;
         }
