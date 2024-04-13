@@ -20,7 +20,7 @@ public class TrappingRainWater {
             - each index will contribute max(0, min(leftMax[i-1], rightMax)) to total
             - adjust rightMax with current Index
     */
-     int trap(int[] height) {
+     public int trap(int[] height) {
         int trapped = 0, maxOnRight = height[height.length - 1];
         int[] leftMax = getLeftMax(height);
         for (int i = height.length -2; i >= 1; i--) {

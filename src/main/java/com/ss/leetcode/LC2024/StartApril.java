@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.april.AccountBalanceAfterRoundedPurchase;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
+import com.ss.leetcode.LC2024.april.MaximalRectangle;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
 import com.ss.leetcode.LC2024.april.RemoveKDigits;
 import com.ss.leetcode.LC2024.april.ValidParenthesisString;
@@ -15,7 +16,8 @@ public class StartApril {
 //        start.groupsOfStrings();
 //        start.validParenthesisString();
 //        start.accountBalanceAfterRoundedPurchase();
-        start.removeKDigits();
+//        start.removeKDigits();
+        start.maximalRectangle();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -64,5 +66,13 @@ public class StartApril {
         System.out.println("1219 == " + rkd.removeKdigits("1432219", 3));
         System.out.println("200 == " + rkd.removeKdigits("10200", 1));
         System.out.println("0 == " + rkd.removeKdigits("10", 2));
+    }
+
+    public void maximalRectangle() {
+        MaximalRectangle mr = new MaximalRectangle();
+
+        System.out.println("6 == " + mr.maximalRectangle(new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}}));
+        System.out.println("0 == " + mr.maximalRectangle(new char[][]{{'0'}}));
+        System.out.println("1 == " + mr.maximalRectangle(new char[][]{{'1'}}));
     }
 }
