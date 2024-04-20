@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.april.AccountBalanceAfterRoundedPurchase;
+import com.ss.leetcode.LC2024.april.FindTheValueOfThePartition;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximalRectangle;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
@@ -17,7 +18,8 @@ public class StartApril {
 //        start.validParenthesisString();
 //        start.accountBalanceAfterRoundedPurchase();
 //        start.removeKDigits();
-        start.maximalRectangle();
+//        start.maximalRectangle();
+        start.findTheValueOfThePartition();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -74,5 +76,16 @@ public class StartApril {
         System.out.println("6 == " + mr.maximalRectangle(new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}}));
         System.out.println("0 == " + mr.maximalRectangle(new char[][]{{'0'}}));
         System.out.println("1 == " + mr.maximalRectangle(new char[][]{{'1'}}));
+    }
+
+    public void findTheValueOfThePartition() {
+        FindTheValueOfThePartition ftvotp = new FindTheValueOfThePartition();
+
+        System.out.println("1 == " + ftvotp.findValueOfPartition(new int[]{1,3,2,4}));
+        System.out.println("9 == " + ftvotp.findValueOfPartition(new int[]{100,1,10}));
+        System.out.println("9 == " + ftvotp.findValueOfPartition(new int[]{100,1,10}));
+        System.out.println("5 == " + ftvotp.findValueOfPartition(new int[]{1,6}));
+        System.out.println("0 == " + ftvotp.findValueOfPartition(new int[]{1,1}));
+        System.out.println("0 == " + ftvotp.findValueOfPartition(new int[]{145,3123,12154,63421,76743,52312,332323,51123,73568,35626,5563234,12445254,124324,5464,324243,565655,23235,12135,4234356,121245,342134,2324,53434,56564,676656,787845,298983,334324,334362,5634343,45324,543,645,6426534,54321,543,642,534,543434,343435,12126,21334,5313432,31315,4131336,5313147}));
     }
 }
