@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.april.FindTheValueOfThePartition;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximalRectangle;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
+import com.ss.leetcode.LC2024.april.OpenTheLock;
 import com.ss.leetcode.LC2024.april.RemoveKDigits;
 import com.ss.leetcode.LC2024.april.ValidParenthesisString;
 import java.util.Arrays;
@@ -19,7 +20,8 @@ public class StartApril {
 //        start.accountBalanceAfterRoundedPurchase();
 //        start.removeKDigits();
 //        start.maximalRectangle();
-        start.findTheValueOfThePartition();
+//        start.findTheValueOfThePartition();
+        start.openTheLock();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -87,5 +89,14 @@ public class StartApril {
         System.out.println("5 == " + ftvotp.findValueOfPartition(new int[]{1,6}));
         System.out.println("0 == " + ftvotp.findValueOfPartition(new int[]{1,1}));
         System.out.println("0 == " + ftvotp.findValueOfPartition(new int[]{145,3123,12154,63421,76743,52312,332323,51123,73568,35626,5563234,12445254,124324,5464,324243,565655,23235,12135,4234356,121245,342134,2324,53434,56564,676656,787845,298983,334324,334362,5634343,45324,543,645,6426534,54321,543,642,534,543434,343435,12126,21334,5313432,31315,4131336,5313147}));
+    }
+
+    public void openTheLock() {
+        OpenTheLock otl = new OpenTheLock();
+
+        System.out.println("6 == " + otl.openLock(new String[]{"0201","0101","0102","1212","2002"}, "0202"));
+        System.out.println("1 == " + otl.openLock(new String[]{"8888"}, "0009"));
+        System.out.println("-1 == " + otl.openLock(new String[]{"8887","8889","8878","8898","8788","8988","7888","9888"}, "8888"));
+        System.out.println("1 == " + otl.openLock(new String[]{"0201","0101","0102","1212","2002"}, "0001"));
     }
 }
