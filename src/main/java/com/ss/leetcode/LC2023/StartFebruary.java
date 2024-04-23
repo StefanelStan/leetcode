@@ -83,7 +83,7 @@ public class StartFebruary {
 //        start.minimumCommonValue();
 //        start.takeGiftsFromTheRichestPile();
 //        start.fruitIntoBaskets();
-        start.slidingWindowMaximum();
+//        start.slidingWindowMaximum();
 //        start.maximalScoreAfterApplyingKOperations();
 //        start.jumpGameII();
 //        start.singleNumberII();
@@ -118,7 +118,7 @@ public class StartFebruary {
 //        start.maxConsecutiveOnesIII();
 //        start.smallestStringWithSwaps();
 //        start.minimumNumberOfVerticesToReachAllNodes();
-//        start.minimumHeightTrees();
+        start.minimumHeightTrees();
 //        start.mergeTwo2DArraysBySummingValues();
 //        start.capacityToShipPackagesWithinDDays();
 //        start.minimumOperationsToReduceAnIntegerTo0();
@@ -675,8 +675,11 @@ public class StartFebruary {
     public void minimumHeightTrees() {
         MinimumHeightTrees mht = new MinimumHeightTrees();
 
+        System.out.println("[0] == " + mht.findMinHeightTrees(1, new int[0][0]));
         System.out.println("[1] == " + mht.findMinHeightTrees(4, new int[][]{{1,0},{1,2},{1,3}}));
         System.out.println("[3,4] == " + mht.findMinHeightTrees(6, new int[][]{{3,0},{3,1},{3,2},{3,4},{5,4}}));
+        System.out.println("[1,2] == " + mht.findMinHeightTrees(7, new int[][]{{0,1},{1,2},{1,3},{2,4},{3,5},{4,6}}));
+        System.out.println("[3] == " + mht.findMinHeightTrees(6, new int[][]{{0,1},{0,2},{0,3},{3,4},{4,5}}));
     }
 
     public void mergeTwo2DArraysBySummingValues() {
