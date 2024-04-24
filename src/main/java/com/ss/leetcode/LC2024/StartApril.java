@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.april.FindTheValueOfThePartition;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximalRectangle;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
+import com.ss.leetcode.LC2024.april.NthTribonacciNumber;
 import com.ss.leetcode.LC2024.april.OpenTheLock;
 import com.ss.leetcode.LC2024.april.RemoveKDigits;
 import com.ss.leetcode.LC2024.april.ValidParenthesisString;
@@ -21,7 +22,8 @@ public class StartApril {
 //        start.removeKDigits();
 //        start.maximalRectangle();
 //        start.findTheValueOfThePartition();
-        start.openTheLock();
+//        start.openTheLock();
+        start.nthTribonacciNumber();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -98,5 +100,17 @@ public class StartApril {
         System.out.println("1 == " + otl.openLock(new String[]{"8888"}, "0009"));
         System.out.println("-1 == " + otl.openLock(new String[]{"8887","8889","8878","8898","8788","8988","7888","9888"}, "8888"));
         System.out.println("1 == " + otl.openLock(new String[]{"0201","0101","0102","1212","2002"}, "0001"));
+    }
+
+    public void nthTribonacciNumber() {
+        NthTribonacciNumber ntn = new NthTribonacciNumber();
+
+        System.out.println("4 == " + ntn.tribonacci(4));
+        System.out.println("1389537 == " + ntn.tribonacci(25));
+        System.out.println("2082876103 == " + ntn.tribonacci(37));
+        System.out.println("0 == " + ntn.tribonacci(0));
+        System.out.println("1 == " + ntn.tribonacci(1));
+        System.out.println("1 == " + ntn.tribonacci(2));
+        System.out.println("35890 == " + ntn.tribonacci(19));
     }
 }
