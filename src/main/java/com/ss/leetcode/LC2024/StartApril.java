@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.april.AccountBalanceAfterRoundedPurchase;
+import com.ss.leetcode.LC2024.april.CountFertilePyramidsInALand;
 import com.ss.leetcode.LC2024.april.FindTheValueOfThePartition;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximalRectangle;
@@ -23,7 +24,8 @@ public class StartApril {
 //        start.maximalRectangle();
 //        start.findTheValueOfThePartition();
 //        start.openTheLock();
-        start.nthTribonacciNumber();
+//        start.nthTribonacciNumber();
+        start.countFertilePyramidsInALand();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -112,5 +114,15 @@ public class StartApril {
         System.out.println("1 == " + ntn.tribonacci(1));
         System.out.println("1 == " + ntn.tribonacci(2));
         System.out.println("35890 == " + ntn.tribonacci(19));
+    }
+
+    public void countFertilePyramidsInALand() {
+        CountFertilePyramidsInALand cfpial = new CountFertilePyramidsInALand();
+
+        System.out.println("2 == " + cfpial.countPyramids(new int[][]{{0,1,1,0}, {1,1,1,1}}));
+        System.out.println("2 == " + cfpial.countPyramids(new int[][]{{1,1,1}, {1,1,1}}));
+        System.out.println("13 == " + cfpial.countPyramids(new int[][]{{1,1,1,1,0}, {1,1,1,1,1},{1,1,1,1,1},{0,1,0,0,1}}));
+        System.out.println("6 == " + cfpial.countPyramids(new int[][]{{0,0,1,0,0}, {0,1,1,1,0},{1,1,1,1,1}}));
+        System.out.println("12 == " + cfpial.countPyramids(new int[][]{{0,0,0,1,0,0,0}, {0,0,1,1,1,0,0},{0,1,1,1,1,0,0},{1,1,1,1,1,1,1}}));
     }
 }
