@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2024.april.FindTheValueOfThePartition;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.MaximalRectangle;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
+import com.ss.leetcode.LC2024.april.MinimumFallingPathSumII;
 import com.ss.leetcode.LC2024.april.NthTribonacciNumber;
 import com.ss.leetcode.LC2024.april.OpenTheLock;
 import com.ss.leetcode.LC2024.april.RemoveKDigits;
@@ -25,7 +26,8 @@ public class StartApril {
 //        start.findTheValueOfThePartition();
 //        start.openTheLock();
 //        start.nthTribonacciNumber();
-        start.countFertilePyramidsInALand();
+//        start.countFertilePyramidsInALand();
+        start.minimumFallingPathSumII();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -124,5 +126,12 @@ public class StartApril {
         System.out.println("13 == " + cfpial.countPyramids(new int[][]{{1,1,1,1,0}, {1,1,1,1,1},{1,1,1,1,1},{0,1,0,0,1}}));
         System.out.println("6 == " + cfpial.countPyramids(new int[][]{{0,0,1,0,0}, {0,1,1,1,0},{1,1,1,1,1}}));
         System.out.println("12 == " + cfpial.countPyramids(new int[][]{{0,0,0,1,0,0,0}, {0,0,1,1,1,0,0},{0,1,1,1,1,0,0},{1,1,1,1,1,1,1}}));
+    }
+
+    public void minimumFallingPathSumII() {
+        MinimumFallingPathSumII mfpsii = new MinimumFallingPathSumII();
+
+        System.out.println("13 == " + mfpsii.minFallingPathSum(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
+        System.out.println("7 == " + mfpsii.minFallingPathSum(new int[][]{{7}}));
     }
 }
