@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.april.AccountBalanceAfterRoundedPurchase;
 import com.ss.leetcode.LC2024.april.CountFertilePyramidsInALand;
 import com.ss.leetcode.LC2024.april.FindTheValueOfThePartition;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
+import com.ss.leetcode.LC2024.april.Largest1BorderedSquare;
 import com.ss.leetcode.LC2024.april.MaximalRectangle;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
 import com.ss.leetcode.LC2024.april.MinimumFallingPathSumII;
@@ -27,7 +28,8 @@ public class StartApril {
 //        start.openTheLock();
 //        start.nthTribonacciNumber();
 //        start.countFertilePyramidsInALand();
-        start.minimumFallingPathSumII();
+//        start.minimumFallingPathSumII();
+        start.largest1BorderedSquare();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -133,5 +135,16 @@ public class StartApril {
 
         System.out.println("13 == " + mfpsii.minFallingPathSum(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
         System.out.println("7 == " + mfpsii.minFallingPathSum(new int[][]{{7}}));
+    }
+
+    public void largest1BorderedSquare() {
+        Largest1BorderedSquare l1bs = new Largest1BorderedSquare();
+
+        System.out.println("1 == " + l1bs.largest1BorderedSquare(new int[][]{{1,1,0,0}}));
+        System.out.println("9 == " + l1bs.largest1BorderedSquare(new int[][]{{1,1,1},{1,0,1},{1,1,1}}));
+        System.out.println("4 == " + l1bs.largest1BorderedSquare(new int[][]{{1,0,0,1,1,1},{1,1,0,0,1,1},{1,1,0,0,1,1},{1,1,1,1,1,0},{1,1,1,1,1,0}}));
+        System.out.println("1 == " + l1bs.largest1BorderedSquare(new int[][]{{1}}));
+        System.out.println("0 == " + l1bs.largest1BorderedSquare(new int[][]{{0}}));
+        System.out.println("1 == " + l1bs.largest1BorderedSquare(new int[][]{{0},{1},{1}}));
     }
 }
