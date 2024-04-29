@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2024.april.Largest1BorderedSquare;
 import com.ss.leetcode.LC2024.april.MaximalRectangle;
 import com.ss.leetcode.LC2024.april.MaximumMatchingOfPlayersWithTrainers;
 import com.ss.leetcode.LC2024.april.MinimumFallingPathSumII;
+import com.ss.leetcode.LC2024.april.MinimumNumberOfOperationsToMakeArrayXOREqualToK;
 import com.ss.leetcode.LC2024.april.NthTribonacciNumber;
 import com.ss.leetcode.LC2024.april.OpenTheLock;
 import com.ss.leetcode.LC2024.april.RemoveKDigits;
@@ -29,7 +30,8 @@ public class StartApril {
 //        start.nthTribonacciNumber();
 //        start.countFertilePyramidsInALand();
 //        start.minimumFallingPathSumII();
-        start.largest1BorderedSquare();
+//        start.largest1BorderedSquare();
+        start.minimumNumberOfOperationsToMakeArrayXOREqualToK();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -146,5 +148,12 @@ public class StartApril {
         System.out.println("1 == " + l1bs.largest1BorderedSquare(new int[][]{{1}}));
         System.out.println("0 == " + l1bs.largest1BorderedSquare(new int[][]{{0}}));
         System.out.println("1 == " + l1bs.largest1BorderedSquare(new int[][]{{0},{1},{1}}));
+    }
+
+    public void minimumNumberOfOperationsToMakeArrayXOREqualToK() {
+        MinimumNumberOfOperationsToMakeArrayXOREqualToK mnootmaxetk = new MinimumNumberOfOperationsToMakeArrayXOREqualToK();
+
+        System.out.println("2 == " + mnootmaxetk.minOperations(new int[]{2,1,3,4}, 1));
+        System.out.println("0 == " + mnootmaxetk.minOperations(new int[]{2,0,2,0}, 0));
     }
 }
