@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.april.AccountBalanceAfterRoundedPurchase;
 import com.ss.leetcode.LC2024.april.CountFertilePyramidsInALand;
+import com.ss.leetcode.LC2024.april.ExistenceOfASubstringInAStringAndItsReverse;
 import com.ss.leetcode.LC2024.april.FindTheValueOfThePartition;
 import com.ss.leetcode.LC2024.april.GroupsOfStrings;
 import com.ss.leetcode.LC2024.april.Largest1BorderedSquare;
@@ -31,7 +32,8 @@ public class StartApril {
 //        start.countFertilePyramidsInALand();
 //        start.minimumFallingPathSumII();
 //        start.largest1BorderedSquare();
-        start.minimumNumberOfOperationsToMakeArrayXOREqualToK();
+//        start.minimumNumberOfOperationsToMakeArrayXOREqualToK();
+        start.existenceOfASubstringInAStringAndItsReverse();
     }
 
     public void maximumMatchingOfPlayersWithTrainers() {
@@ -155,5 +157,13 @@ public class StartApril {
 
         System.out.println("2 == " + mnootmaxetk.minOperations(new int[]{2,1,3,4}, 1));
         System.out.println("0 == " + mnootmaxetk.minOperations(new int[]{2,0,2,0}, 0));
+    }
+
+    public void existenceOfASubstringInAStringAndItsReverse() {
+        ExistenceOfASubstringInAStringAndItsReverse eoasiasair = new ExistenceOfASubstringInAStringAndItsReverse();
+
+        System.out.println("true == " + eoasiasair.isSubstringPresent("leetcode"));
+        System.out.println("true == " + eoasiasair.isSubstringPresent("abcba"));
+        System.out.println("false == " + eoasiasair.isSubstringPresent("abcd"));
     }
 }

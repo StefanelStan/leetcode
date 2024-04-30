@@ -3,7 +3,7 @@ package com.ss.leetcode.LC2024.april;
 import java.util.LinkedList;
 
 public class OpenTheLock {
-    //
+    // https://leetcode.com/problems/open-the-lock
     /** Algorithm
         1. Looking at the number 123, we see 6 possibilities: [023, 223] (turn left/right on 1st digit),
             [113,133]  -turn left/right the 2nd digit, [122,124] - turn right the 3rd digit.
