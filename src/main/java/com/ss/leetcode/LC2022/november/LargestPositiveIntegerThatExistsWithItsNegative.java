@@ -16,6 +16,21 @@ public class LargestPositiveIntegerThatExistsWithItsNegative {
      */
     public int findMaxK(int[] nums) {
         boolean[] present = new boolean[2001];
+        int maxK = -1, adjustedNum, mirror;
+        for (int num : nums) {
+            adjustedNum = num < 0 ? Math.abs(num) : num + 1000;
+            present[adjustedNum] = true;
+            mirror = adjustedNum <= 1000 ? adjustedNum + 1000 : adjustedNum - 1000;
+            if (present[mirror]) {
+                maxK = Math.max(maxK, Math.max(adjustedNum, mirror));
+            }
+        }
+        return maxK == -1 ? -1 : maxK - 1000;
+    }
+
+
+    public int findMaxK2(int[] nums) {
+        boolean[] present = new boolean[2001];
         int maxPositive = -1;
         for (int num : nums) {
             if (num < 0) {
