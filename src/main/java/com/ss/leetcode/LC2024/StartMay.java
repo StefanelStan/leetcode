@@ -1,6 +1,6 @@
 package com.ss.leetcode.LC2024;
 
-import com.ss.leetcode.LC2024.april.MaximumNumberOfGroupsEnteringACompetition;
+import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
 
 public class StartMay {
     public static void main(String[] args) {
