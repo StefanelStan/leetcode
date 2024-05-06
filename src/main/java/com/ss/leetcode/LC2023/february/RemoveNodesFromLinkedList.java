@@ -17,6 +17,22 @@ public class RemoveNodesFromLinkedList {
         5. Return LL.peekFirst().
      */
     public ListNode removeNodes(ListNode head) {
+        LinkedList<ListNode> left = new LinkedList<>();
+        while (head != null) {
+            while (!left.isEmpty() && head.val > left.peekLast().val) {
+                left.removeLast().next = null;
+                if (!left.isEmpty()) {
+                    left.peekLast().next = head;
+                }
+            }
+            left.addLast(head);
+            head = head.next;
+        }
+        return left.peekFirst();
+    }
+
+
+    public ListNode removeNodes2(ListNode head) {
         LinkedList<ListNode> greaterNodes = new LinkedList<>();
         while(head.next != null) {
             if (head.val < head.next.val) {
