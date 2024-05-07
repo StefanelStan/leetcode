@@ -1,12 +1,15 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
+import com.ss.leetcode.LC2024.may.Minesweeper;
+import java.util.Arrays;
 
 public class StartMay {
     public static void main(String[] args) {
         StartMay start = new StartMay();
 
-        start.maximumNumberOfGroupsEnteringACompetition();
+//        start.maximumNumberOfGroupsEnteringACompetition();
+        start.minesweeper();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -19,5 +22,12 @@ public class StartMay {
         System.out.println("6 == " + mnogeac.maximumGroups(new int[]{1,6,5,4,3,2,3,4,5,4,3,1,2,3,4,2,100,1000,10000,20000,30000}));
         System.out.println("1 == " + mnogeac.maximumGroups(new int[]{1}));
         System.out.println("1 == " + mnogeac.maximumGroups(new int[]{7}));
+    }
+
+    public void minesweeper() {
+        Minesweeper m = new Minesweeper();
+
+        System.out.println("[[B,1,E,1,B],[B,1,M,1,B],[B,1,1,1,B],[B,B,B,B,B]] == " + Arrays.deepToString(m.updateBoard(new char[][]{{'E','E','E','E','E'},{'E','E','M','E','E'},{'E','E','E','E','E'},{'E','E','E','E','E'}}, new int[]{3,0})));
+        System.out.println("[[B,1,E,1,B],[B,1,X,1,B],[B,1,1,1,B],[B,B,B,B,B]] == " + Arrays.deepToString(m.updateBoard(new char[][]{{'B','1','E','1','B'},{'B','1','M','1','B'},{'B','1','1','1','B'},{'B','B','B','B','B'}}, new int[]{3,0})));
     }
 }
