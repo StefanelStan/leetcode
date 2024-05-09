@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.may.MaximizeHappinessOfSelectedChildren;
 import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
 import com.ss.leetcode.LC2024.may.Minesweeper;
 import java.util.Arrays;
@@ -9,7 +10,8 @@ public class StartMay {
         StartMay start = new StartMay();
 
 //        start.maximumNumberOfGroupsEnteringACompetition();
-        start.minesweeper();
+//        start.minesweeper();
+        start.maximizeHappinessOfSelectedChildren();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -29,5 +31,13 @@ public class StartMay {
 
         System.out.println("[[B,1,E,1,B],[B,1,M,1,B],[B,1,1,1,B],[B,B,B,B,B]] == " + Arrays.deepToString(m.updateBoard(new char[][]{{'E','E','E','E','E'},{'E','E','M','E','E'},{'E','E','E','E','E'},{'E','E','E','E','E'}}, new int[]{3,0})));
         System.out.println("[[B,1,E,1,B],[B,1,X,1,B],[B,1,1,1,B],[B,B,B,B,B]] == " + Arrays.deepToString(m.updateBoard(new char[][]{{'B','1','E','1','B'},{'B','1','M','1','B'},{'B','1','1','1','B'},{'B','B','B','B','B'}}, new int[]{3,0})));
+    }
+
+    public void maximizeHappinessOfSelectedChildren() {
+        MaximizeHappinessOfSelectedChildren mhosc = new MaximizeHappinessOfSelectedChildren();
+
+        System.out.println("4 == " + mhosc.maximumHappinessSum(new int[]{1,2,3}, 2));
+        System.out.println("1 == " + mhosc.maximumHappinessSum(new int[]{1,1,1,1}, 2));
+        System.out.println("5 == " + mhosc.maximumHappinessSum(new int[]{2,3,4,5}, 1));
     }
 }
