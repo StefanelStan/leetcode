@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2024.may.MatrixSimilarityAfterCyclicShifts;
 import com.ss.leetcode.LC2024.may.MaximizeHappinessOfSelectedChildren;
 import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
 import com.ss.leetcode.LC2024.may.Minesweeper;
+import com.ss.leetcode.LC2024.may.MinimumCostToHireKWorkers;
 import java.util.Arrays;
 
 public class StartMay {
@@ -17,7 +18,8 @@ public class StartMay {
 //        start.maximizeHappinessOfSelectedChildren();
 //        start.kthSmallestPrimeFraction();
 //        start.matrixSimilarityAfterCyclicShifts();
-        start.longestStrictlyIncreasingOrStrictlyDecreasingSubarray();
+//        start.longestStrictlyIncreasingOrStrictlyDecreasingSubarray();
+        start.minimumCostToHireKWorkers();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -75,5 +77,12 @@ public class StartMay {
         System.out.println("3 == " + lsiosds.longestMonotonicSubarray(new int[]{3,2,1}));
         System.out.println("5 == " + lsiosds.longestMonotonicSubarray(new int[]{1,2,3,4,3,2,3,4,5,6,5,34,3,5,6,34,2,43,46,5,43,44,32,48,5,34,45,24,5,43,45,23,45,4,34,45,5,34,6,15,6,47}));
         System.out.println("1 == " + lsiosds.longestMonotonicSubarray(new int[]{5}));
+    }
+
+    public void minimumCostToHireKWorkers() {
+        MinimumCostToHireKWorkers mcthkw = new MinimumCostToHireKWorkers();
+
+        System.out.println("105.0 == " + mcthkw.mincostToHireWorkers2(new int[]{10,20,5}, new int[]{70,50,30}, 2));
+        System.out.println("30.66667 == " + mcthkw.mincostToHireWorkers2(new int[]{3,1,10,10,1}, new int[]{4,8,2,2,7}, 3));
     }
 }
