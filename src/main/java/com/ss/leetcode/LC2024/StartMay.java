@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.may.MaximizeHappinessOfSelectedChildren;
 import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
 import com.ss.leetcode.LC2024.may.Minesweeper;
 import com.ss.leetcode.LC2024.may.MinimumCostToHireKWorkers;
+import com.ss.leetcode.LC2024.may.MinimumNumberOfPushesToTypeWordII;
 import java.util.Arrays;
 
 public class StartMay {
@@ -19,7 +20,8 @@ public class StartMay {
 //        start.kthSmallestPrimeFraction();
 //        start.matrixSimilarityAfterCyclicShifts();
 //        start.longestStrictlyIncreasingOrStrictlyDecreasingSubarray();
-        start.minimumCostToHireKWorkers();
+//        start.minimumCostToHireKWorkers();
+        start.minimumNumberOfPushesToTypeWordII();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -84,5 +86,15 @@ public class StartMay {
 
         System.out.println("105.0 == " + mcthkw.mincostToHireWorkers2(new int[]{10,20,5}, new int[]{70,50,30}, 2));
         System.out.println("30.66667 == " + mcthkw.mincostToHireWorkers2(new int[]{3,1,10,10,1}, new int[]{4,8,2,2,7}, 3));
+    }
+
+    public void minimumNumberOfPushesToTypeWordII() {
+        MinimumNumberOfPushesToTypeWordII mnopttwii = new MinimumNumberOfPushesToTypeWordII();
+
+        System.out.println("5 == " + mnopttwii.minimumPushes("abcde"));
+        System.out.println("12 == " + mnopttwii.minimumPushes("xyzxyzxyzxyz"));
+        System.out.println("24 == " + mnopttwii.minimumPushes("aabbccddeeffgghhiiiiii"));
+        System.out.println("7 == " + mnopttwii.minimumPushes("aaaaaaa"));
+        System.out.println("154 == " + mnopttwii.minimumPushes("ogdgoifgjewifwjeiofepofewifwjhidofwfhjwogfajeofduienmizzkowzokwzmoziwznzwuiwzhgzywgzwuzwnwzoizwhwzizwoizwnpnbzhgvztrdfr"));
     }
 }
