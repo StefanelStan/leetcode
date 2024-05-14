@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
 import com.ss.leetcode.LC2024.may.Minesweeper;
 import com.ss.leetcode.LC2024.may.MinimumCostToHireKWorkers;
 import com.ss.leetcode.LC2024.may.MinimumNumberOfPushesToTypeWordII;
+import com.ss.leetcode.LC2024.may.NumberOfVisiblePeopleInAQueue;
 import java.util.Arrays;
 
 public class StartMay {
@@ -21,7 +22,8 @@ public class StartMay {
 //        start.matrixSimilarityAfterCyclicShifts();
 //        start.longestStrictlyIncreasingOrStrictlyDecreasingSubarray();
 //        start.minimumCostToHireKWorkers();
-        start.minimumNumberOfPushesToTypeWordII();
+//        start.minimumNumberOfPushesToTypeWordII();
+        start.numberOfVisiblePeopleInAQueue();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -96,5 +98,18 @@ public class StartMay {
         System.out.println("24 == " + mnopttwii.minimumPushes("aabbccddeeffgghhiiiiii"));
         System.out.println("7 == " + mnopttwii.minimumPushes("aaaaaaa"));
         System.out.println("154 == " + mnopttwii.minimumPushes("ogdgoifgjewifwjeiofepofewifwjhidofwfhjwogfajeofduienmizzkowzokwzmoziwznzwuiwzhgzywgzwuzwnwzoizwhwzizwoizwnpnbzhgvztrdfr"));
+    }
+
+    public void numberOfVisiblePeopleInAQueue() {
+        NumberOfVisiblePeopleInAQueue novpiaq = new NumberOfVisiblePeopleInAQueue();
+
+        System.out.println("[3,1,2,1,1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{10,6,8,5,11,9})));
+        System.out.println("[4,1,1,1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{5,1,2,3,10})));
+        System.out.println("[1,1,1,1,1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{1,2,3,4,5,6})));
+        System.out.println("[2,2,2,1,1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{10,8,7,6,11,9})));
+        System.out.println("[1,3,1,2,1,3,2,1,1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{11,19,12,15,14,18,7,1,8,9})));
+        System.out.println("[0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{5})));
+        System.out.println("[1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{5,4})));
+        System.out.println("[1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{4,5})));
     }
 }
