@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.may.FindTheSafestPathInAGrid;
 import com.ss.leetcode.LC2024.may.KthSmallestPrimeFraction;
 import com.ss.leetcode.LC2024.may.LongestStrictlyIncreasingOrStrictlyDecreasingSubarray;
 import com.ss.leetcode.LC2024.may.MatrixSimilarityAfterCyclicShifts;
@@ -10,6 +11,7 @@ import com.ss.leetcode.LC2024.may.MinimumCostToHireKWorkers;
 import com.ss.leetcode.LC2024.may.MinimumNumberOfPushesToTypeWordII;
 import com.ss.leetcode.LC2024.may.NumberOfVisiblePeopleInAQueue;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartMay {
     public static void main(String[] args) {
@@ -23,7 +25,8 @@ public class StartMay {
 //        start.longestStrictlyIncreasingOrStrictlyDecreasingSubarray();
 //        start.minimumCostToHireKWorkers();
 //        start.minimumNumberOfPushesToTypeWordII();
-        start.numberOfVisiblePeopleInAQueue();
+//        start.numberOfVisiblePeopleInAQueue();
+        start.findTheSafestPathInAGrid();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -111,5 +114,13 @@ public class StartMay {
         System.out.println("[0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{5})));
         System.out.println("[1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{5,4})));
         System.out.println("[1,0] == " + Arrays.toString(novpiaq.canSeePersonsCount(new int[]{4,5})));
+    }
+
+    public void findTheSafestPathInAGrid() {
+        FindTheSafestPathInAGrid ftspiag = new FindTheSafestPathInAGrid();
+
+//        System.out.println("0 == " + ftspiag.maximumSafenessFactor(List.of(List.of(1,0,0), List.of(0,0,0), List.of(0,0,1))));
+        System.out.println("2 == " + ftspiag.maximumSafenessFactor(List.of(List.of(0,0,1), List.of(0,0,0), List.of(0,0,0))));
+//        System.out.println("2 == " + ftspiag.maximumSafenessFactor(List.of(List.of(0,0,0,1), List.of(0,0,0,0), List.of(0,0,0,0), List.of(1,0,0,0))));
     }
 }
