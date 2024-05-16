@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.may.FindTheSafestPathInAGrid;
+import com.ss.leetcode.LC2024.may.GroupsOfSpecialEquivalentStrings;
 import com.ss.leetcode.LC2024.may.KthSmallestPrimeFraction;
 import com.ss.leetcode.LC2024.may.LongestStrictlyIncreasingOrStrictlyDecreasingSubarray;
 import com.ss.leetcode.LC2024.may.MatrixSimilarityAfterCyclicShifts;
@@ -26,7 +27,8 @@ public class StartMay {
 //        start.minimumCostToHireKWorkers();
 //        start.minimumNumberOfPushesToTypeWordII();
 //        start.numberOfVisiblePeopleInAQueue();
-        start.findTheSafestPathInAGrid();
+//        start.findTheSafestPathInAGrid();
+        start.groupsOfSpecialEquivalentStrings();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -119,8 +121,16 @@ public class StartMay {
     public void findTheSafestPathInAGrid() {
         FindTheSafestPathInAGrid ftspiag = new FindTheSafestPathInAGrid();
 
-//        System.out.println("0 == " + ftspiag.maximumSafenessFactor(List.of(List.of(1,0,0), List.of(0,0,0), List.of(0,0,1))));
+        System.out.println("0 == " + ftspiag.maximumSafenessFactor(List.of(List.of(1,0,0), List.of(0,0,0), List.of(0,0,1))));
         System.out.println("2 == " + ftspiag.maximumSafenessFactor(List.of(List.of(0,0,1), List.of(0,0,0), List.of(0,0,0))));
-//        System.out.println("2 == " + ftspiag.maximumSafenessFactor(List.of(List.of(0,0,0,1), List.of(0,0,0,0), List.of(0,0,0,0), List.of(1,0,0,0))));
+        System.out.println("2 == " + ftspiag.maximumSafenessFactor(List.of(List.of(0,0,0,1), List.of(0,0,0,0), List.of(0,0,0,0), List.of(1,0,0,0))));
+    }
+
+    public void groupsOfSpecialEquivalentStrings() {
+        GroupsOfSpecialEquivalentStrings goses = new GroupsOfSpecialEquivalentStrings();
+
+        System.out.println("3 == " + goses.numSpecialEquivGroups(new String[]{"abcd","cdab","cbad","xyzz","zzxy","zzyx"}));
+        System.out.println("3 == " + goses.numSpecialEquivGroups(new String[]{"abc","acb","bac","bca","cab","cba"}));
+        System.out.println("1 == " + goses.numSpecialEquivGroups(new String[]{"abcd","cdab","adcb","cbad"}));
     }
 }
