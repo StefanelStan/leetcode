@@ -4,6 +4,7 @@ import com.ss.leetcode.shared.TreeNode;
 
 public class DeleteLeavesWithGivenValue {
     // https://leetcode.com/problems/delete-leaves-with-a-given-value/
+    // PRO MODE
     /** Algorithm
         1. Use PreOrder DFS in a recursive function that takes the current node and parent node
         2. If current node is leaf and has the target value, set parent.left/right to null
@@ -33,7 +34,6 @@ public class DeleteLeavesWithGivenValue {
             }
         }
     }
-
 
 
     public TreeNode removeLeafNodes2(TreeNode root, int target) {

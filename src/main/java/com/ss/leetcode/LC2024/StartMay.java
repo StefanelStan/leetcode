@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.may.DifferenceOfNumberOfDistinctValuesOnDiagonals;
 import com.ss.leetcode.LC2024.may.FindTheSafestPathInAGrid;
 import com.ss.leetcode.LC2024.may.GroupsOfSpecialEquivalentStrings;
 import com.ss.leetcode.LC2024.may.KthSmallestPrimeFraction;
@@ -28,7 +29,8 @@ public class StartMay {
 //        start.minimumNumberOfPushesToTypeWordII();
 //        start.numberOfVisiblePeopleInAQueue();
 //        start.findTheSafestPathInAGrid();
-        start.groupsOfSpecialEquivalentStrings();
+//        start.groupsOfSpecialEquivalentStrings();
+        start.differenceOfNumberOfDistinctValuesOnDiagonals();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -132,5 +134,15 @@ public class StartMay {
         System.out.println("3 == " + goses.numSpecialEquivGroups(new String[]{"abcd","cdab","cbad","xyzz","zzxy","zzyx"}));
         System.out.println("3 == " + goses.numSpecialEquivGroups(new String[]{"abc","acb","bac","bca","cab","cba"}));
         System.out.println("1 == " + goses.numSpecialEquivGroups(new String[]{"abcd","cdab","adcb","cbad"}));
+    }
+
+    public void differenceOfNumberOfDistinctValuesOnDiagonals() {
+        DifferenceOfNumberOfDistinctValuesOnDiagonals donodvod = new DifferenceOfNumberOfDistinctValuesOnDiagonals();
+
+        System.out.println("[[1,1,0],[1,0,1],[0,1,1]] == " + Arrays.deepToString(new int[][]{{1,2,3},{3,1,5},{3,2,1}}));
+        System.out.println("[[0]] == " + Arrays.deepToString(new int[][]{{1}}));
+        System.out.println("[[3,3,3,4,4,3,3,2,1,0],[3,2,2,2,2,2,1,1,0,1],[2,1,0,0,0,0,0,0,1,2],[1,0,1,1,1,1,1,1,1,2],[0,1,2,3,3,2,2,3,3,2]] == " + Arrays.deepToString(new int[][]{{1,2,3,4,5,6,7,8,9,10},{12,3,5,6,5,4,3,2,1,1},{1,2,3,2,3,4,5,6,7,8},{1,2,3,4,5,6,6,6,6,6},{1,9,8,7,6,6,7,8,9,1}}));
+        System.out.println("[[0],[0],[0],[0],[0],[0]] == " + Arrays.deepToString(new int[][]{{4},{5},{9},{1},{3},{10}}));
+        System.out.println("[[0,0,0,0,0,0,0,0,0,0,0,0,0,0]] == " + Arrays.deepToString(new int[][]{{3,2,1,2,3,4,5,6,7,8,9,8,7,6}}));
     }
 }
