@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.may.DifferenceOfNumberOfDistinctValuesOnDiagonals;
 import com.ss.leetcode.LC2024.may.FindTheSafestPathInAGrid;
+import com.ss.leetcode.LC2024.may.FindTheScoreOfAllPrefixesOfAnArray;
 import com.ss.leetcode.LC2024.may.GroupsOfSpecialEquivalentStrings;
 import com.ss.leetcode.LC2024.may.KthSmallestPrimeFraction;
 import com.ss.leetcode.LC2024.may.LongestStrictlyIncreasingOrStrictlyDecreasingSubarray;
@@ -30,7 +31,8 @@ public class StartMay {
 //        start.numberOfVisiblePeopleInAQueue();
 //        start.findTheSafestPathInAGrid();
 //        start.groupsOfSpecialEquivalentStrings();
-        start.differenceOfNumberOfDistinctValuesOnDiagonals();
+//        start.differenceOfNumberOfDistinctValuesOnDiagonals();
+        start.findTheScoreOfAllPrefixesOfAnArray();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -144,5 +146,14 @@ public class StartMay {
         System.out.println("[[3,3,3,4,4,3,3,2,1,0],[3,2,2,2,2,2,1,1,0,1],[2,1,0,0,0,0,0,0,1,2],[1,0,1,1,1,1,1,1,1,2],[0,1,2,3,3,2,2,3,3,2]] == " + Arrays.deepToString(new int[][]{{1,2,3,4,5,6,7,8,9,10},{12,3,5,6,5,4,3,2,1,1},{1,2,3,2,3,4,5,6,7,8},{1,2,3,4,5,6,6,6,6,6},{1,9,8,7,6,6,7,8,9,1}}));
         System.out.println("[[0],[0],[0],[0],[0],[0]] == " + Arrays.deepToString(new int[][]{{4},{5},{9},{1},{3},{10}}));
         System.out.println("[[0,0,0,0,0,0,0,0,0,0,0,0,0,0]] == " + Arrays.deepToString(new int[][]{{3,2,1,2,3,4,5,6,7,8,9,8,7,6}}));
+    }
+
+    private void findTheScoreOfAllPrefixesOfAnArray() {
+        FindTheScoreOfAllPrefixesOfAnArray ftsoapoaa = new FindTheScoreOfAllPrefixesOfAnArray();
+
+        System.out.println("[4,10,24,36,56] == " + Arrays.toString(ftsoapoaa.findPrefixScore(new int[]{2,3,7,5,10})));
+        System.out.println("[2,4,8,16,32,64] == " + Arrays.toString(ftsoapoaa.findPrefixScore(new int[]{1,1,2,4,8,16})));
+        System.out.println("[8,15,21,28,36,126,238,372,446,519,591,662,732,811] == " + Arrays.toString(ftsoapoaa.findPrefixScore(new int[]{4,3,2,3,4,45,56,67,7,6,5,4,3,12})));
+        System.out.println("[68] == " + Arrays.toString(ftsoapoaa.findPrefixScore(new int[]{34})));
     }
 }
