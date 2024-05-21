@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.may.DifferenceOfNumberOfDistinctValuesOnDiagonals;
+import com.ss.leetcode.LC2024.may.FindChampionI;
 import com.ss.leetcode.LC2024.may.FindTheSafestPathInAGrid;
 import com.ss.leetcode.LC2024.may.FindTheScoreOfAllPrefixesOfAnArray;
 import com.ss.leetcode.LC2024.may.GroupsOfSpecialEquivalentStrings;
@@ -34,7 +35,8 @@ public class StartMay {
 //        start.groupsOfSpecialEquivalentStrings();
 //        start.differenceOfNumberOfDistinctValuesOnDiagonals();
 //        start.findTheScoreOfAllPrefixesOfAnArray();
-        start.sumOfAllSubsetXORTotals();
+//        start.sumOfAllSubsetXORTotals();
+        start.findChampionI();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -159,11 +161,18 @@ public class StartMay {
         System.out.println("[68] == " + Arrays.toString(ftsoapoaa.findPrefixScore(new int[]{34})));
     }
 
-    private void sumOfAllSubsetXORTotals() {
+    public void sumOfAllSubsetXORTotals() {
         SumOfAllSubsetXORTotals soasxort = new SumOfAllSubsetXORTotals();
 
         System.out.println("6 == " + soasxort.subsetXORSum(new int[]{1,3}));
         System.out.println("28 == " + soasxort.subsetXORSum(new int[]{5,1,6}));
         System.out.println("480 == " + soasxort.subsetXORSum(new int[]{3,4,5,6,7,8}));
+    }
+
+    public void findChampionI() {
+        FindChampionI fci = new FindChampionI();
+
+        System.out.println("0 == " + fci.findChampion(new int[][]{{0,1},{0,0}}));
+        System.out.println("1 == " + fci.findChampion(new int[][]{{0,0,1},{1,0,1},{0,0,0}}));
     }
 }
