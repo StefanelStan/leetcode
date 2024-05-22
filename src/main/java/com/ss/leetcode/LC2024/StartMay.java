@@ -9,12 +9,14 @@ import com.ss.leetcode.LC2024.may.KthSmallestPrimeFraction;
 import com.ss.leetcode.LC2024.may.LongestStrictlyIncreasingOrStrictlyDecreasingSubarray;
 import com.ss.leetcode.LC2024.may.MatrixSimilarityAfterCyclicShifts;
 import com.ss.leetcode.LC2024.may.MaximizeHappinessOfSelectedChildren;
+import com.ss.leetcode.LC2024.may.MaximumGoodSubarraySum;
 import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
 import com.ss.leetcode.LC2024.may.Minesweeper;
 import com.ss.leetcode.LC2024.may.MinimumCostToHireKWorkers;
 import com.ss.leetcode.LC2024.may.MinimumNumberOfPushesToTypeWordII;
 import com.ss.leetcode.LC2024.may.NumberOfVisiblePeopleInAQueue;
 import com.ss.leetcode.LC2024.may.SumOfAllSubsetXORTotals;
+import com.ss.leetcode.LC2024.may.SumOfBeautyInTheArray;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,7 +38,9 @@ public class StartMay {
 //        start.differenceOfNumberOfDistinctValuesOnDiagonals();
 //        start.findTheScoreOfAllPrefixesOfAnArray();
 //        start.sumOfAllSubsetXORTotals();
-        start.findChampionI();
+//        start.findChampionI();
+//        start.maximumGoodSubarraySum();
+        start.sumOfBeautyInTheArray();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -174,5 +178,24 @@ public class StartMay {
 
         System.out.println("0 == " + fci.findChampion(new int[][]{{0,1},{0,0}}));
         System.out.println("1 == " + fci.findChampion(new int[][]{{0,0,1},{1,0,1},{0,0,0}}));
+    }
+
+    public void maximumGoodSubarraySum() {
+        MaximumGoodSubarraySum mgss = new MaximumGoodSubarraySum();
+
+        System.out.println("11 == " + mgss.maximumSubarraySum(new int[]{1,2,3,4,5,6}, 1));
+        System.out.println("11 == " + mgss.maximumSubarraySum(new int[]{-1,3,2,4,5}, 3));
+        System.out.println("-6 == " + mgss.maximumSubarraySum(new int[]{-1,-2,-3,-4}, 2));
+    }
+
+    public void sumOfBeautyInTheArray() {
+        SumOfBeautyInTheArray sobita = new SumOfBeautyInTheArray();
+
+        System.out.println("2 == " + sobita.sumOfBeauties(new int[]{1,2,3}));
+        System.out.println("1 == " + sobita.sumOfBeauties(new int[]{2,4,6,4}));
+        System.out.println("0 == " + sobita.sumOfBeauties(new int[]{3,2,1}));
+        System.out.println("6 == " + sobita.sumOfBeauties(new int[]{4,3,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2}));
+        System.out.println("20 == " + sobita.sumOfBeauties(new int[]{12,13,14,23,24,25,34,35,36,45,46,47}));
+        System.out.println("0 == " + sobita.sumOfBeauties(new int[]{5,5,5,5,5,8}));
     }
 }
