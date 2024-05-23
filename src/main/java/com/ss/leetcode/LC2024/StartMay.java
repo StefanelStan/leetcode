@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2024.may.MinimumNumberOfPushesToTypeWordII;
 import com.ss.leetcode.LC2024.may.NumberOfVisiblePeopleInAQueue;
 import com.ss.leetcode.LC2024.may.SumOfAllSubsetXORTotals;
 import com.ss.leetcode.LC2024.may.SumOfBeautyInTheArray;
+import com.ss.leetcode.LC2024.may.TheNumberOfBeautifulSubsets;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,7 +41,8 @@ public class StartMay {
 //        start.sumOfAllSubsetXORTotals();
 //        start.findChampionI();
 //        start.maximumGoodSubarraySum();
-        start.sumOfBeautyInTheArray();
+//        start.sumOfBeautyInTheArray();
+        start.theNumberOfBeautifulSubsets();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -197,5 +199,18 @@ public class StartMay {
         System.out.println("6 == " + sobita.sumOfBeauties(new int[]{4,3,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2}));
         System.out.println("20 == " + sobita.sumOfBeauties(new int[]{12,13,14,23,24,25,34,35,36,45,46,47}));
         System.out.println("0 == " + sobita.sumOfBeauties(new int[]{5,5,5,5,5,8}));
+    }
+
+    public void theNumberOfBeautifulSubsets() {
+        TheNumberOfBeautifulSubsets tnobs = new TheNumberOfBeautifulSubsets();
+
+        System.out.println("4 == " + tnobs.beautifulSubsets(new int[]{2,4,6}, 2));
+        System.out.println("1 == " + tnobs.beautifulSubsets(new int[]{1}, 1));
+        System.out.println("19403 == " + tnobs.beautifulSubsets(new int[]{4,3,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8,9,1}, 5));
+        System.out.println("17710 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 1));
+        System.out.println("20735 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 2));
+        System.out.println("24275 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 3));
+        System.out.println("28560 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 4));
+        System.out.println("32767 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 5));
     }
 }
