@@ -18,6 +18,7 @@ import com.ss.leetcode.LC2024.may.NumberOfVisiblePeopleInAQueue;
 import com.ss.leetcode.LC2024.may.SumOfAllSubsetXORTotals;
 import com.ss.leetcode.LC2024.may.SumOfBeautyInTheArray;
 import com.ss.leetcode.LC2024.may.TheNumberOfBeautifulSubsets;
+import com.ss.leetcode.LC2024.may.WordBreakII;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,7 +43,8 @@ public class StartMay {
 //        start.findChampionI();
 //        start.maximumGoodSubarraySum();
 //        start.sumOfBeautyInTheArray();
-        start.theNumberOfBeautifulSubsets();
+//        start.theNumberOfBeautifulSubsets();
+        start.wordBreakII();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -212,5 +214,13 @@ public class StartMay {
         System.out.println("24275 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 3));
         System.out.println("28560 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 4));
         System.out.println("32767 == " + tnobs.beautifulSubsets(new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}, 5));
+    }
+
+    public void wordBreakII() {
+        WordBreakII wbii = new WordBreakII();
+
+        System.out.println("[cats and dog, cat sand dog] == " + wbii.wordBreak("catsanddog", List.of("cat","cats","and","sand","dog")));
+//        System.out.println("[pine apple pen apple, pineapple pen apple, pine applepen apple] == " + wbii.wordBreak("pineapplepenapple", List.of("apple","pen","applepen","pine","pineapple")));
+//        System.out.println("[] == " + wbii.wordBreak("catsandog", List.of("cats","dog","sand","and","cat")));
     }
 }
