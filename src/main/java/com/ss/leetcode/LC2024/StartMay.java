@@ -15,6 +15,7 @@ import com.ss.leetcode.LC2024.may.Minesweeper;
 import com.ss.leetcode.LC2024.may.MinimumCostToHireKWorkers;
 import com.ss.leetcode.LC2024.may.MinimumNumberOfPushesToTypeWordII;
 import com.ss.leetcode.LC2024.may.NumberOfVisiblePeopleInAQueue;
+import com.ss.leetcode.LC2024.may.SpecialArrayWithXElementsGreaterThanOrEqualX;
 import com.ss.leetcode.LC2024.may.SumOfAllSubsetXORTotals;
 import com.ss.leetcode.LC2024.may.SumOfBeautyInTheArray;
 import com.ss.leetcode.LC2024.may.TheNumberOfBeautifulSubsets;
@@ -44,7 +45,8 @@ public class StartMay {
 //        start.maximumGoodSubarraySum();
 //        start.sumOfBeautyInTheArray();
 //        start.theNumberOfBeautifulSubsets();
-        start.wordBreakII();
+//        start.wordBreakII();
+        start.specialArrayWithXElementsGreaterThanOrEqualX();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -222,5 +224,13 @@ public class StartMay {
         System.out.println("[cats and dog, cat sand dog] == " + wbii.wordBreak("catsanddog", List.of("cat","cats","and","sand","dog")));
 //        System.out.println("[pine apple pen apple, pineapple pen apple, pine applepen apple] == " + wbii.wordBreak("pineapplepenapple", List.of("apple","pen","applepen","pine","pineapple")));
 //        System.out.println("[] == " + wbii.wordBreak("catsandog", List.of("cats","dog","sand","and","cat")));
+    }
+
+    public void specialArrayWithXElementsGreaterThanOrEqualX() {
+        SpecialArrayWithXElementsGreaterThanOrEqualX sawxegtoex = new SpecialArrayWithXElementsGreaterThanOrEqualX();
+
+        System.out.println("2 == " + sawxegtoex.specialArray(new int[]{3,5}));
+        System.out.println("-1 == " + sawxegtoex.specialArray(new int[]{0,0}));
+        System.out.println("3 == " + sawxegtoex.specialArray(new int[]{0,4,3,0,4}));
     }
 }
