@@ -46,7 +46,8 @@ public class StartMay {
 //        start.sumOfBeautyInTheArray();
 //        start.theNumberOfBeautifulSubsets();
 //        start.wordBreakII();
-        start.specialArrayWithXElementsGreaterThanOrEqualX();
+//        start.specialArrayWithXElementsGreaterThanOrEqualX();
+        System.out.println("1 == " + start.equalSubstring("anryddgaqpjdw", "zjhotgdlmadcf", 5));
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -232,5 +233,26 @@ public class StartMay {
         System.out.println("2 == " + sawxegtoex.specialArray(new int[]{3,5}));
         System.out.println("-1 == " + sawxegtoex.specialArray(new int[]{0,0}));
         System.out.println("3 == " + sawxegtoex.specialArray(new int[]{0,4,3,0,4}));
+    }
+
+
+    public int equalSubstring(String s, String t, int maxCost) {
+        int currentCost = 0, maxLength = 0;
+        int left = 0, right = 0;
+        while (right < s.length()) {
+            while (right < s.length()) {
+                currentCost += Math.abs(s.charAt(right) - t.charAt(right));
+                System.out.println("current cost = " + currentCost);
+                right++;
+                if (currentCost <= maxCost) {
+                    maxLength = Math.max(maxLength, right - left);
+                }
+            }
+            while (left < right && currentCost > maxCost) {
+                currentCost -= Math.abs(s.charAt(left) - t.charAt(left));
+                left++;
+            }
+        }
+        return maxLength;
     }
 }

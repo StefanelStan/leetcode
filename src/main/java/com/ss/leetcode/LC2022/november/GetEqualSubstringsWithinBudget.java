@@ -2,6 +2,27 @@ package com.ss.leetcode.LC2022.november;
 
 public class GetEqualSubstringsWithinBudget {
     // https://leetcode.com/problems/get-equal-substrings-within-budget/
+    public int equalSubstring(String s, String t, int maxCost) {
+        char[] sChars = s.toCharArray(), tChars = t.toCharArray();
+        int currentCost = 0, maxLength = 0;
+        int left = 0, right = 0;
+        while (right < s.length()) {
+            while (right < s.length() && currentCost <= maxCost) {
+                currentCost += Math.abs(sChars[right] - tChars[right]);
+                right++;
+                if (currentCost <= maxCost) {
+                    maxLength = Math.max(maxLength, right - left);
+                }
+            }
+            while (left < right && currentCost > maxCost) {
+                currentCost -= Math.abs(sChars[left] - tChars[left]);
+                left++;
+            }
+        }
+        return maxLength;
+    }
+
+
     /** Algorithm
          1. Use a flexible window technique that will hold start, end, size and cost
          2. Traverse each index i=[0,n] of both strings and attempt to expand the window
@@ -9,7 +30,7 @@ public class GetEqualSubstringsWithinBudget {
          4. If the cost if over the budget, reduce the window size from the left until under the budget
          5. Return the longest/max window size.
      */
-    public int equalSubstring(String s, String t, int maxCost) {
+    public int equalSubstring2(String s, String t, int maxCost) {
         int maxLength = 0;
         FlexibleWindow fw = new FlexibleWindow(s.toCharArray(), t.toCharArray());
         while(fw.increase()) {
