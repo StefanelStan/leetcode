@@ -14,6 +14,7 @@ import com.ss.leetcode.LC2024.may.MaximumNumberOfGroupsEnteringACompetition;
 import com.ss.leetcode.LC2024.may.Minesweeper;
 import com.ss.leetcode.LC2024.may.MinimumCostToHireKWorkers;
 import com.ss.leetcode.LC2024.may.MinimumNumberOfPushesToTypeWordII;
+import com.ss.leetcode.LC2024.may.NumberOfStepsToReduceANumberInBinaryRepresentationToOne;
 import com.ss.leetcode.LC2024.may.NumberOfVisiblePeopleInAQueue;
 import com.ss.leetcode.LC2024.may.SpecialArrayWithXElementsGreaterThanOrEqualX;
 import com.ss.leetcode.LC2024.may.SumOfAllSubsetXORTotals;
@@ -47,7 +48,8 @@ public class StartMay {
 //        start.theNumberOfBeautifulSubsets();
 //        start.wordBreakII();
 //        start.specialArrayWithXElementsGreaterThanOrEqualX();
-        System.out.println("1 == " + start.equalSubstring("anryddgaqpjdw", "zjhotgdlmadcf", 5));
+        start.numberOfStepsToReduceANumberInBinaryRepresentationToOne();
+
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -235,24 +237,15 @@ public class StartMay {
         System.out.println("3 == " + sawxegtoex.specialArray(new int[]{0,4,3,0,4}));
     }
 
+    public void numberOfStepsToReduceANumberInBinaryRepresentationToOne() {
+        NumberOfStepsToReduceANumberInBinaryRepresentationToOne nostranibrto = new NumberOfStepsToReduceANumberInBinaryRepresentationToOne();
 
-    public int equalSubstring(String s, String t, int maxCost) {
-        int currentCost = 0, maxLength = 0;
-        int left = 0, right = 0;
-        while (right < s.length()) {
-            while (right < s.length()) {
-                currentCost += Math.abs(s.charAt(right) - t.charAt(right));
-                System.out.println("current cost = " + currentCost);
-                right++;
-                if (currentCost <= maxCost) {
-                    maxLength = Math.max(maxLength, right - left);
-                }
-            }
-            while (left < right && currentCost > maxCost) {
-                currentCost -= Math.abs(s.charAt(left) - t.charAt(left));
-                left++;
-            }
-        }
-        return maxLength;
+        System.out.println("6 == " + nostranibrto.numSteps("1101"));
+        System.out.println("1 == " + nostranibrto.numSteps("10"));
+        System.out.println("0 == " + nostranibrto.numSteps("1"));
+        System.out.println("0 == " + nostranibrto.numSteps("1"));
+        System.out.println("33 == " + nostranibrto.numSteps("100101010101010010101"));
+        System.out.println("5 == " + nostranibrto.numSteps("101"));
+        System.out.println("3 == " + nostranibrto.numSteps("11"));
     }
 }
