@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.may.CountTripletsThatCanFormTwoArraysOfEqualXOR;
 import com.ss.leetcode.LC2024.may.DifferenceOfNumberOfDistinctValuesOnDiagonals;
 import com.ss.leetcode.LC2024.may.FindChampionI;
 import com.ss.leetcode.LC2024.may.FindTheSafestPathInAGrid;
@@ -48,8 +49,8 @@ public class StartMay {
 //        start.theNumberOfBeautifulSubsets();
 //        start.wordBreakII();
 //        start.specialArrayWithXElementsGreaterThanOrEqualX();
-        start.numberOfStepsToReduceANumberInBinaryRepresentationToOne();
-
+//        start.numberOfStepsToReduceANumberInBinaryRepresentationToOne();
+        start.countTripletsThatCanFormTwoArraysOfEqualXOR();
     }
 
     public void maximumNumberOfGroupsEnteringACompetition() {
@@ -247,5 +248,13 @@ public class StartMay {
         System.out.println("33 == " + nostranibrto.numSteps("100101010101010010101"));
         System.out.println("5 == " + nostranibrto.numSteps("101"));
         System.out.println("3 == " + nostranibrto.numSteps("11"));
+    }
+
+    public void countTripletsThatCanFormTwoArraysOfEqualXOR() {
+        CountTripletsThatCanFormTwoArraysOfEqualXOR cttcftaoexor = new CountTripletsThatCanFormTwoArraysOfEqualXOR();
+
+        System.out.println("4 == " + cttcftaoexor.countTriplets(new int[]{2,3,1,6,7}));
+        System.out.println("10 == " + cttcftaoexor.countTriplets(new int[]{1,1,1,1,1}));
+        System.out.println("10425 == " + cttcftaoexor.countTriplets(new int[]{7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7}));
     }
 }
