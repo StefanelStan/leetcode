@@ -5,22 +5,17 @@ import java.util.Map;
 
 public class ContinuousSubarraySum {
     // https://leetcode.com/problems/continuous-subarray-sum/
-    // TLE
     public boolean checkSubarraySum(int[] nums, int k) {
-        // initialize the hash map with index 0 for sum 0
-        Map<Integer, Integer> hashMap = new HashMap<>(Map.of(0,0));
-        int sum = 0;
+        Map<Integer, Integer> modulos = new HashMap<>(nums.length);
+        modulos.put(0, -1);
+        int moduloSum = 0, prev = -1;
         for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            // if the remainder sum % k occurs for the first time
-            Integer prevIndex = hashMap.get(sum % k);
-            if (prevIndex != null) {
-                if (prevIndex < i) {
-                    return true;
-                }
-            } else {
-                hashMap.put(sum % k, i + 1);
+            moduloSum = (moduloSum + nums[i]) % k;
+            if ((nums[i] == 0 && prev == 0) || (nums[i] != 0 && i - modulos.getOrDefault(moduloSum, i) > 1)) {
+                return true;
             }
+            modulos.putIfAbsent(moduloSum, i);
+            prev = nums[i];
         }
         return false;
     }
