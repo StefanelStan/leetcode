@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.june.MinimumIncrementToMakeArrayUnique;
 import com.ss.leetcode.LC2024.june.MinimumMovesToCaptureTheQueen;
 import com.ss.leetcode.LC2024.june.ScoreOfAString;
 
@@ -8,7 +9,8 @@ public class StartJune {
         StartJune start = new StartJune();
 
 //        start.scoreOfAString();
-        start.minimumMovesToCaptureTheQueen();
+//        start.minimumMovesToCaptureTheQueen();
+        start.minimumIncrementToMakeArrayUnique();
     }
 
     public void scoreOfAString() {
@@ -24,5 +26,12 @@ public class StartJune {
         System.out.println("2 == " + mmtctq.minMovesToCaptureTheQueen(1,1,8,8,2,3));
         System.out.println("1 == " + mmtctq.minMovesToCaptureTheQueen(5,3,3,4,5,2));
         System.out.println("2 == " + mmtctq.minMovesToCaptureTheQueen(4,3,3,4,5,2));
+    }
+
+    public void minimumIncrementToMakeArrayUnique() {
+        MinimumIncrementToMakeArrayUnique mitmau = new MinimumIncrementToMakeArrayUnique();
+
+        System.out.println("1 == " + mitmau.minIncrementForUnique(new int[]{2,1,2}));
+        System.out.println("6 == " + mitmau.minIncrementForUnique(new int[]{3,2,1,2,1,7}));
     }
 }
