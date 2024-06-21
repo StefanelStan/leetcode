@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.june.MagneticForceBetweenTwoBalls;
 import com.ss.leetcode.LC2024.june.MinimumIncrementToMakeArrayUnique;
 import com.ss.leetcode.LC2024.june.MinimumMovesToCaptureTheQueen;
 import com.ss.leetcode.LC2024.june.ScoreOfAString;
@@ -10,7 +11,8 @@ public class StartJune {
 
 //        start.scoreOfAString();
 //        start.minimumMovesToCaptureTheQueen();
-        start.minimumIncrementToMakeArrayUnique();
+//        start.minimumIncrementToMakeArrayUnique();
+        start.magneticForceBetweenTwoBalls();
     }
 
     public void scoreOfAString() {
@@ -33,5 +35,12 @@ public class StartJune {
 
         System.out.println("1 == " + mitmau.minIncrementForUnique(new int[]{2,1,2}));
         System.out.println("6 == " + mitmau.minIncrementForUnique(new int[]{3,2,1,2,1,7}));
+    }
+
+    public void magneticForceBetweenTwoBalls() {
+        MagneticForceBetweenTwoBalls mfbtb = new MagneticForceBetweenTwoBalls();
+
+        System.out.println("3 == " + mfbtb.maxDistance(new int[]{7,4,1,3,2}, 3));
+        System.out.println("999999999 == " + mfbtb.maxDistance(new int[]{5,4,3,2,1,1000000000}, 2));
     }
 }
