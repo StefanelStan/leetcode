@@ -16,6 +16,26 @@ public class GrumpyBookstoreOwner {
         6. Readjust the window (windowDefaultSatisfaction, windowMaxSatisfaction) each time you move to the right.
      */
     public int maxSatisfied(int[] customers, int[] grumpy, int minutes) {
+        int totalDefaultSatisfaction = 0, windowDefaultSatisfaction = 0, windowMaxSatisfaction = 0;
+        int maxSatisfaction = 0;
+        for (int i = 0; i < customers.length; i++) {
+            totalDefaultSatisfaction += grumpy[i] == 1 ? 0 : customers[i];
+        }
+        for (int i = 0; i < minutes; i++) {
+            windowDefaultSatisfaction += grumpy[i] == 1 ? 0 : customers[i];
+            windowMaxSatisfaction += customers[i];
+        }
+        maxSatisfaction = Math.max(maxSatisfaction, windowMaxSatisfaction + (totalDefaultSatisfaction -  windowDefaultSatisfaction));
+        for (int i = minutes, j = 0; i < customers.length; i++, j++) {
+            windowDefaultSatisfaction += (grumpy[i] == 1 ? 0 : customers[i]) - (grumpy[j] == 1 ? 0 : customers[j]);
+            windowMaxSatisfaction = windowMaxSatisfaction + customers[i] - customers[j];
+            maxSatisfaction = Math.max(maxSatisfaction, windowMaxSatisfaction + (totalDefaultSatisfaction - windowDefaultSatisfaction));
+        }
+        return maxSatisfaction;
+    }
+
+
+    public int maxSatisfied2(int[] customers, int[] grumpy, int minutes) {
         int maxSatisfied = 0, windowMaxSatisfaction = 0, windowSatisfaction = 0;
         int totalSatisfied = getDefaultTotalSatisfied(customers, grumpy);
         for (int i = 0; i < minutes; i++) {
