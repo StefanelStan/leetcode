@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.june.FindMinimumOperationsToMakeAllElementsDivisibleByThree;
 import com.ss.leetcode.LC2024.june.MagneticForceBetweenTwoBalls;
 import com.ss.leetcode.LC2024.june.MinimumIncrementToMakeArrayUnique;
 import com.ss.leetcode.LC2024.june.MinimumMovesToCaptureTheQueen;
@@ -12,7 +13,8 @@ public class StartJune {
 //        start.scoreOfAString();
 //        start.minimumMovesToCaptureTheQueen();
 //        start.minimumIncrementToMakeArrayUnique();
-        start.magneticForceBetweenTwoBalls();
+//        start.magneticForceBetweenTwoBalls();
+        start.findMinimumOperationsToMakeAllElementsDivisibleByThree();
     }
 
     public void scoreOfAString() {
@@ -42,5 +44,13 @@ public class StartJune {
 
         System.out.println("3 == " + mfbtb.maxDistance(new int[]{7,4,1,3,2}, 3));
         System.out.println("999999999 == " + mfbtb.maxDistance(new int[]{5,4,3,2,1,1000000000}, 2));
+    }
+
+    public void findMinimumOperationsToMakeAllElementsDivisibleByThree() {
+        FindMinimumOperationsToMakeAllElementsDivisibleByThree fmotmaedbt = new FindMinimumOperationsToMakeAllElementsDivisibleByThree();
+
+        System.out.println("3 == " + fmotmaedbt.minimumOperations(new int[]{1,2,3,4}));
+        System.out.println("0 == " + fmotmaedbt.minimumOperations(new int[]{3,6,9}));
+        System.out.println("10 == " + fmotmaedbt.minimumOperations(new int[]{1,2,3,4,5,6,7,6,50,4,3,2,1,49}));
     }
 }
