@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.june.FindMinimumOperationsToMakeAllElementsDivisib
 import com.ss.leetcode.LC2024.june.MagneticForceBetweenTwoBalls;
 import com.ss.leetcode.LC2024.june.MinimumIncrementToMakeArrayUnique;
 import com.ss.leetcode.LC2024.june.MinimumMovesToCaptureTheQueen;
+import com.ss.leetcode.LC2024.june.MinimumNumberOfKConsecutiveBitFlips;
 import com.ss.leetcode.LC2024.june.ScoreOfAString;
 
 public class StartJune {
@@ -14,7 +15,8 @@ public class StartJune {
 //        start.minimumMovesToCaptureTheQueen();
 //        start.minimumIncrementToMakeArrayUnique();
 //        start.magneticForceBetweenTwoBalls();
-        start.findMinimumOperationsToMakeAllElementsDivisibleByThree();
+//        start.findMinimumOperationsToMakeAllElementsDivisibleByThree();
+        start.minimumNumberOfKConsecutiveBitFlips();
     }
 
     public void scoreOfAString() {
@@ -52,5 +54,13 @@ public class StartJune {
         System.out.println("3 == " + fmotmaedbt.minimumOperations(new int[]{1,2,3,4}));
         System.out.println("0 == " + fmotmaedbt.minimumOperations(new int[]{3,6,9}));
         System.out.println("10 == " + fmotmaedbt.minimumOperations(new int[]{1,2,3,4,5,6,7,6,50,4,3,2,1,49}));
+    }
+
+    public void minimumNumberOfKConsecutiveBitFlips() {
+        MinimumNumberOfKConsecutiveBitFlips mnokcbf = new MinimumNumberOfKConsecutiveBitFlips();
+
+        System.out.println("2 == " + mnokcbf.minKBitFlips(new int[]{0,1,0}, 1));
+        System.out.println("-1 == " + mnokcbf.minKBitFlips(new int[]{1,1,0}, 2));
+        System.out.println("3 == " + mnokcbf.minKBitFlips(new int[]{0,0,0,1,0,1,1,0}, 3));
     }
 }
