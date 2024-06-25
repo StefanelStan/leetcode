@@ -8,7 +8,33 @@ import java.util.List;
 
 public class BinarySearchTreeToGreaterSumTree {
     // https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+    // PRO MODE
     public TreeNode bstToGst(TreeNode root) {
+        int sum = getBSTSum(root);
+        traverseTree(root, new int[]{0}, sum);
+        return root;
+    }
+
+    private void traverseTree(TreeNode node, int[] partialSum, int sum) {
+        if (node != null) {
+            traverseTree(node.left, partialSum, sum);
+            int originalValue = node.val;
+            node.val = sum - partialSum[0];
+            partialSum[0] += originalValue;
+            traverseTree(node.right, partialSum, sum);
+        }
+    }
+
+    private int getBSTSum(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return getBSTSum(node.left) + node.val + getBSTSum(node.right);
+    }
+
+
+    // INEFFICIENT
+    public TreeNode bstToGst2(TreeNode root) {
         if (root == null) {
             return root;
         }
