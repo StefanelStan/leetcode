@@ -8,7 +8,36 @@ import java.util.stream.Collectors;
 
 public class BalanceABST {
     // https://leetcode.com/problems/balance-a-binary-search-tree/
+    /** Algorithm
+        1. Traverse the tree in order and put the values into a List<Integer>
+        2. Use a recursive function that will accept the list, start and end and will return a tree node
+            - The returned TreeNode will have the value of list.get(mid) and left / right nodes as rec(left, mid -1) and rec(mid+1, right);
+        3. So, recursively, build left and right nodes/subtrees.
+     */
     public TreeNode balanceBST(TreeNode root) {
+        List<Integer> nodeValues = new ArrayList<>();
+        getNodes(root, nodeValues);
+        return buildBST(nodeValues, 0, nodeValues.size() - 1);
+    }
+
+    private TreeNode buildBST(List<Integer> nodeValues, int left, int right) {
+        if (left > right) {
+            return null;
+        }
+        int mid = left + (right - left) / 2;
+        return new TreeNode(nodeValues.get(mid), buildBST(nodeValues, left, mid - 1), buildBST(nodeValues, mid + 1, right));
+    }
+
+    private void getNodes(TreeNode node, List<Integer> nodeValues) {
+        if (node != null) {
+            getNodes(node.left, nodeValues);
+            nodeValues.add(node.val);
+            getNodes(node.right, nodeValues);
+        }
+    }
+
+
+    public TreeNode balanceBST2(TreeNode root) {
         if (root == null) {
             return root;
         }
