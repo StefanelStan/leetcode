@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2022.march;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -10,8 +11,60 @@ import java.util.TreeSet;
 
 public class AllAncestorsOfANodeInADirectedAcyclicGraph {
     // https://leetcode.com/contest/biweekly-contest-73/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/
-    // DP and DFS
+    /** Algorithm
+        1. Get a list<Integer>[]  inbound for each node: [3,4] -> [4] = {3}. Node 3 goes to node 4
+        2. Use an List<Integer>[] ancestors to populate and cache the list of ancesters.
+        3. For each i (0, n) if ancestors[i] is null, apply DFS to get the list of inbound nodes for each inbound node. Use a set to eliminate duplicates.
+        4. If for a node x with 2 inbounds  (y and z), you already have ancestors[y], then just use that and do not calculate ancestors[y] again.
+     */
     public List<List<Integer>> getAncestors(int n, int[][] edges) {
+        List<Integer>[] inbound = getInboundNodes(n, edges);
+        List<Integer>[] ancestors = new List[n];
+        for (int i = 0; i < ancestors.length; i++) {
+            if (ancestors[i] == null) {
+                ancestors[i] = getAncestors(i, ancestors, inbound);
+            }
+        }
+        return formatAncestors(ancestors);
+    }
+
+    private List<Integer> getAncestors(int node, List<Integer>[] ancestors, List<Integer>[] inbound) {
+        if (ancestors[node] == null) {
+            Set<Integer> foundAncestors = new HashSet<>();
+            if (inbound[node] != null) {
+                for (int ancestor : inbound[node]) {
+                    foundAncestors.add(ancestor);
+                    foundAncestors.addAll(getAncestors(ancestor, ancestors, inbound));
+                }
+            }
+            ancestors[node] = new ArrayList<>(foundAncestors);
+        }
+        return ancestors[node];
+    }
+
+    private List<Integer>[] getInboundNodes(int n, int[][] edges) {
+        List<Integer>[] inbound = new List[n];
+        for (int[] edge : edges) {
+            if (inbound[edge[1]] == null) {
+                inbound[edge[1]] = new ArrayList<>();
+            }
+            inbound[edge[1]].add(edge[0]);
+        }
+        return inbound;
+    }
+
+    private List<List<Integer>> formatAncestors(List<Integer>[] ancestors) {
+        List<List<Integer>> formatted = new ArrayList<>(ancestors.length);
+        for (List<Integer> ancestor : ancestors) {
+            Collections.sort(ancestor);
+            formatted.add(ancestor);
+        }
+        return formatted;
+    }
+
+
+    // DP and DFS
+    public List<List<Integer>> getAncestors2(int n, int[][] edges) {
         List<Integer>[] inDegree = getIndegree(n, edges);
         Set<Integer>[] ancestorsArray = new Set[n];
         populateAncestors(ancestorsArray, inDegree);
@@ -56,7 +109,7 @@ public class AllAncestorsOfANodeInADirectedAcyclicGraph {
     }
 
     // TLE
-    public List<List<Integer>> getAncestors2(final int n, int[][] edges) {
+    public List<List<Integer>> getAncestors3(final int n, int[][] edges) {
         Map<Integer, List<Integer>> leadingTo = new TreeMap<>();
         boolean[] nodes = new boolean[n];
         for (int[] edge : edges) {
