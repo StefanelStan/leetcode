@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2023.april;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable {
     // https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable
@@ -17,18 +18,72 @@ public class RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable {
             - Check explanation from #4
      */
     public int maxNumEdgesToRemove(int n, int[][] edges) {
-        Arrays.sort(edges, (a,b) -> b[0] - a[0]);
-        UnionFind bobGraph = new UnionFind(n);
+        Arrays.sort(edges, Comparator.comparingInt(e -> e[0]));
         UnionFind aliceGraph = new UnionFind(n);
+        UnionFind bobGraph = new UnionFind(n);
+        int edgesToRemove = 0;
+        for (int i = edges.length - 1; i >= 0; i--) {
+            if (edges[i][0] == 3) {
+                edgesToRemove += aliceGraph.connect(edges[i][1] - 1, edges[i][2] - 1);
+                bobGraph.connect(edges[i][1] - 1, edges[i][2] - 1);
+            } else if (edges[i][0] == 1) {
+                edgesToRemove += aliceGraph.connect(edges[i][1] - 1, edges[i][2] - 1);
+            } else {
+                edgesToRemove += bobGraph.connect(edges[i][1] - 1, edges[i][2] - 1);
+            }
+        }
+        return aliceGraph.isFullyConnected() && bobGraph.isFullyConnected() ? edgesToRemove : -1;
+    }
+
+    private static class UnionFind {
+        int[] root;
+        int connections;
+
+        public UnionFind(int n) {
+            root = new int[n];
+            for (int i = 0; i < n; i++) {
+                root[i] = i;
+            }
+        }
+
+        public int connect(int node1, int node2) {
+            int connectionResult = 1;
+            int root1 = find(node1);
+            int root2 = find(node2);
+            if (root1 != root2) {
+                root[root2] = root1;
+                connectionResult = 0;
+                connections++;
+            }
+            return connectionResult;
+        }
+
+        public boolean isFullyConnected() {
+            return root.length == connections + 1;
+        }
+
+        private int find(int node) {
+            if (root[node] != node) {
+                root[node] = find(root[node]);
+            }
+            return root[node];
+        }
+    }
+
+
+    public int maxNumEdgesToRemove2(int n, int[][] edges) {
+        Arrays.sort(edges, (a,b) -> b[0] - a[0]);
+        UnionFind2 bobGraph = new UnionFind2(n);
+        UnionFind2 aliceGraph = new UnionFind2(n);
         int duplicatedEdges = connectVertices(aliceGraph, bobGraph, edges);
         return canBeFullyTraversed(aliceGraph, bobGraph) ? duplicatedEdges : -1;
     }
 
-    public boolean canBeFullyTraversed(UnionFind aliceGraph, UnionFind bobGraph) {
+    public boolean canBeFullyTraversed(UnionFind2 aliceGraph, UnionFind2 bobGraph) {
         return aliceGraph.isFullyConnected() && bobGraph.isFullyConnected();
     }
 
-    private int connectVertices(UnionFind aliceGraph, UnionFind bobGraph, int[][] edges) {
+    private int connectVertices(UnionFind2 aliceGraph, UnionFind2 bobGraph, int[][] edges) {
         int duplicatedEdges = 0;
         int duplicatedEdge;
         for (int[] edge : edges) {
@@ -47,12 +102,11 @@ public class RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable {
         return duplicatedEdges;
     }
 
-
-    private static class UnionFind {
+    private static class UnionFind2 {
         int[] root;
         int[] rank;
         int edges;
-        public UnionFind(int n) {
+        public UnionFind2(int n) {
             root = new int[n + 1];
             rank = new int[n + 1];
             while(--n >= 0) {
