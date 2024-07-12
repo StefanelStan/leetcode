@@ -11,6 +11,40 @@ public class MaximumScoreFromRemovingSubstrings {
             the min score grouping
      */
     public int maximumGain(String s, int x, int y) {
+        int[] maxGain = {0};
+        String maxString, minString;
+        int maxPoints, minPoints;
+        if (x <= y) {
+            maxPoints = y;
+            maxString = "ba";
+            minPoints = x;
+            minString = "ab";
+        } else {
+            maxPoints = x;
+            maxString = "ab";
+            minPoints = y;
+            minString = "ba";
+        }
+        eliminateChars(eliminateChars(s, maxString, maxPoints, maxGain), minString, minPoints, maxGain);
+        return maxGain[0];
+    }
+
+    private String eliminateChars(String s, String str, int gain, int[] maxGain) {
+        StringBuilder stb = new StringBuilder(s.length());
+        char char1 = str.charAt(0), char2 = str.charAt(1), currentChar;
+        for (int i = 0; i < s.length(); i++) {
+            currentChar = s.charAt(i);
+            if (currentChar == char2 && !stb.isEmpty() && stb.charAt(stb.length() - 1) == char1) {
+                stb.setLength(stb.length() - 1);
+                maxGain[0] += gain;
+            } else {
+                stb.append(currentChar);
+            }
+        }
+        return stb.toString();
+    }
+
+    public int maximumGain2(String s, int x, int y) {
         int maxScore = Math.max(x, y);
         int minScore = Math.min(x, y);
         char[] min = x <= y ? new char[]{'a', 'b'} : new char[]{'b', 'a'};
