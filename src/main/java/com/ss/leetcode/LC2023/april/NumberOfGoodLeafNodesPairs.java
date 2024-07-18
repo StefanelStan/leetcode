@@ -30,6 +30,37 @@ public class NumberOfGoodLeafNodesPairs {
     }
 
     private int[] traverseTree(TreeNode node, int distance, int[] count) {
+        if (node == null) {
+            return new int[10];
+        }
+        if (node.left == null && node.right == null) {
+            return new int[]{0,1,0,0,0,0,0,0,0,0};
+        }
+        int[] leftDistances = traverseTree(node.left, distance,count);
+        int[] rightDistances = traverseTree(node.right, distance, count);
+        for (int i = 1; i <= distance - 1; i++) {
+            if (leftDistances[i] > 0) {
+                for (int j = distance - i; j >= 1; j--) {
+                    count[0] += (rightDistances[j] == 0 ? 0 : (leftDistances[i] * rightDistances[j]));
+                }
+            }
+        }
+        for (int i = 9; i >= 1; i--) {
+            leftDistances[i] = leftDistances[i-1] + rightDistances[i-1];
+        }
+        return leftDistances;
+    }
+
+    public int countPairs2(TreeNode root, int distance) {
+        if (distance == 1) {
+            return 0;
+        }
+        int[] count = {0};
+        traverseTree2(root, distance, count);
+        return count[0];
+    }
+
+    private int[] traverseTree2(TreeNode node, int distance, int[] count) {
         int[] distances = null;
         if (node != null) {
             if (node.left == node.right) {
