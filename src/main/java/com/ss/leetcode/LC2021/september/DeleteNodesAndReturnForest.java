@@ -16,37 +16,65 @@ public class DeleteNodesAndReturnForest {
      *  5. If the current node is not to be deleted but its parent was deleted, then add it to forest
      */
     public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
-        boolean[] toDelete = new boolean[1001];
-        for (int deleted : to_delete) {
-            toDelete[deleted] = true;
+        List<TreeNode> forest = new ArrayList<>();
+        boolean[] deleted = new boolean[1001];
+        for (int node: to_delete) {
+            deleted[node] = true;
         }
-        List<TreeNode> remaining = new ArrayList<>();
-        traverseTree(root, toDelete, false, remaining);
-        return remaining;
+        traverseTree(root, deleted, true, forest);
+        return forest;
     }
 
-    private void traverseTree(TreeNode node, boolean[] toDelete, boolean parentAdded, List<TreeNode> remaining) {
-        if (node != null) {
-            if (!toDelete[node.val]) {
-                if (!parentAdded) {
-                    remaining.add(node);
-                }
-                traverseTree(node.left, toDelete, true, remaining);
-                if (node.left != null && toDelete[node.left.val]) {
-                    node.left = null;
-                }
-                traverseTree(node.right, toDelete, true, remaining);
-                if (node.right != null && toDelete[node.right.val]) {
-                    node.right = null;
-                }
-            } else {
-                traverseTree(node.left, toDelete, false, remaining);
-                traverseTree(node.right, toDelete, false, remaining);
+    private void traverseTree(TreeNode node, boolean[] deleted, boolean parentDeleted, List<TreeNode> forest) {
+        if (parentDeleted && !deleted[node.val]) {
+            forest.add(node);
+        }
+        if (node.left != null) {
+            traverseTree(node.left, deleted, deleted[node.val], forest);
+            if (deleted[node.left.val]) {
+                node.left = null;
+            }
+        }
+        if (node.right != null) {
+            traverseTree(node.right, deleted, deleted[node.val], forest);
+            if (deleted[node.right.val]) {
+                node.right = null;
             }
         }
     }
 
     public List<TreeNode> delNodes2(TreeNode root, int[] to_delete) {
+        boolean[] toDelete = new boolean[1001];
+        for (int deleted : to_delete) {
+            toDelete[deleted] = true;
+        }
+        List<TreeNode> remaining = new ArrayList<>();
+        traverseTree2(root, toDelete, false, remaining);
+        return remaining;
+    }
+
+    private void traverseTree2(TreeNode node, boolean[] toDelete, boolean parentAdded, List<TreeNode> remaining) {
+        if (node != null) {
+            if (!toDelete[node.val]) {
+                if (!parentAdded) {
+                    remaining.add(node);
+                }
+                traverseTree2(node.left, toDelete, true, remaining);
+                if (node.left != null && toDelete[node.left.val]) {
+                    node.left = null;
+                }
+                traverseTree2(node.right, toDelete, true, remaining);
+                if (node.right != null && toDelete[node.right.val]) {
+                    node.right = null;
+                }
+            } else {
+                traverseTree2(node.left, toDelete, false, remaining);
+                traverseTree2(node.right, toDelete, false, remaining);
+            }
+        }
+    }
+
+    public List<TreeNode> delNodes3(TreeNode root, int[] to_delete) {
         if (to_delete.length == 0) {
             return List.of(root);
         }
