@@ -15,6 +15,34 @@ public class CreateBinaryTreeFromDescriptions {
          Loop over mapping and return this specific node.
      */
     public TreeNode createBinaryTree(int[][] descriptions) {
+        TreeNode[] nodemap = new TreeNode[100_001];
+        boolean[] hasParent = new boolean[100_001];
+        populateNodes(descriptions, nodemap, hasParent);
+        for (TreeNode node : nodemap) {
+            if (node != null && !hasParent[node.val]) {
+                return node;
+            }
+        }
+        return null;
+    }
+
+    private void populateNodes(int[][] descriptions, TreeNode[] nodeMap, boolean[] hasParent) {
+        for (int[] description : descriptions) {
+            if (nodeMap[description[0]] == null) {
+                nodeMap[description[0]] = new TreeNode(description[0]);
+            }
+            if (nodeMap[description[1]] == null) {
+                nodeMap[description[1]] = new TreeNode(description[1]);
+            }
+            hasParent[description[1]] = true;
+            if (description[2] == 1) {
+                nodeMap[description[0]].left = nodeMap[description[1]];
+            } else {
+                nodeMap[description[0]].right = nodeMap[description[1]];
+            }
+        }
+    }
+    public TreeNode createBinaryTree2(int[][] descriptions) {
         Map<Integer, TreeNode> nodeMap = new HashMap<>();
         boolean[] children = new boolean[100_001];
         for (int[] description : descriptions) {
