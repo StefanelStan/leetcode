@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.july.CrawlerLogFolder;
 import com.ss.leetcode.LC2024.july.FindTheWinnerOfTheCircularGame;
+import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
 import com.ss.leetcode.LC2024.july.RobotCollisions;
 
 public class StartJuly {
@@ -10,7 +11,8 @@ public class StartJuly {
 
 //        start.findTheWinnerOfTheCircularGame();
 //        start.crawlerLogFolder();
-        start.robotCollisions();
+//        start.robotCollisions();
+        start.findValidMatrixGivenRowAndColumnSums();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -35,5 +37,13 @@ public class StartJuly {
         System.out.println("[2,17,9,15,10] == " + rc.survivedRobotsHealths(new int[]{5,4,3,2,1}, new int[]{2,17,9,15,10}, "RRRRR"));
         System.out.println("[14] == " + rc.survivedRobotsHealths(new int[]{3,5,2,6}, new int[]{10,10,15,12}, "RLRL"));
         System.out.println("[] == " + rc.survivedRobotsHealths(new int[]{1,2,5,6}, new int[]{10,10,11,11}, "RLRL"));
+    }
+
+    public void findValidMatrixGivenRowAndColumnSums() {
+        FindValidMatrixGivenRowAndColumnSums fvmgracs = new FindValidMatrixGivenRowAndColumnSums();
+
+        System.out.println("[[3,0],[1,7]] == " + fvmgracs.restoreMatrix(new int[]{3,8}, new int[]{4,7}));
+        System.out.println("[[0,5,0],[6,1,0],[2,0,8]] == " + fvmgracs.restoreMatrix(new int[]{5,7,0}, new int[]{8,6,8}));
+
     }
 }
