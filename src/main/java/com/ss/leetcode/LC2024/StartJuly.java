@@ -5,8 +5,10 @@ import com.ss.leetcode.LC2024.july.CrawlerLogFolder;
 import com.ss.leetcode.LC2024.july.FindOccurrencesOfAnElementInAnArray;
 import com.ss.leetcode.LC2024.july.FindTheWinnerOfTheCircularGame;
 import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
+import com.ss.leetcode.LC2024.july.PartitionArraySuchThatMaximumDifferenceIsK;
 import com.ss.leetcode.LC2024.july.RobotCollisions;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -17,7 +19,8 @@ public class StartJuly {
 //        start.robotCollisions();
 //        start.findValidMatrixGivenRowAndColumnSums();
 //        start.buildAMatrixWithConditions();
-        start.findOccurrencesOfAnElementInAnArray();
+//        start.findOccurrencesOfAnElementInAnArray();
+        start.partitionArraySuchThatMaximumDifferenceIsK();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -66,5 +69,24 @@ public class StartJuly {
 
         System.out.println("[0,-1,2,-1] == " + Arrays.toString(fooaeiaa.occurrencesOfElement(new int[]{1,3,1,7}, new int[]{1,3,2,4}, 1)));
         System.out.println("[-1] == " + Arrays.toString(fooaeiaa.occurrencesOfElement(new int[]{1,2,3}, new int[]{10}, 5)));
+    }
+
+    public void partitionArraySuchThatMaximumDifferenceIsK() {
+        PartitionArraySuchThatMaximumDifferenceIsK pastmdik = new PartitionArraySuchThatMaximumDifferenceIsK();
+
+        System.out.println("2 == " + pastmdik.partitionArray(new int[]{3,6,1,2,5}, 2));
+        System.out.println("2 == " + pastmdik.partitionArray(new int[]{1,2,3}, 1));
+    }
+
+    public String[] sortPeople(String[] names, int[] heights) {
+        Person[] people = new Person[names.length];
+        for (int i = 0; i < names.length; i++) {
+            people[i] = new Person(names[i], heights[i]);
+        }
+        return Arrays.stream(people).sorted(Comparator.comparing(Person::height).thenComparing(Person::name).reversed()).toArray(String[]::new);
+    }
+
+    public record Person (String name, int height) {
+
     }
 }
