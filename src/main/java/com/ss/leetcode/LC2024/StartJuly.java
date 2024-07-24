@@ -8,7 +8,6 @@ import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
 import com.ss.leetcode.LC2024.july.PartitionArraySuchThatMaximumDifferenceIsK;
 import com.ss.leetcode.LC2024.july.RobotCollisions;
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -76,17 +75,5 @@ public class StartJuly {
 
         System.out.println("2 == " + pastmdik.partitionArray(new int[]{3,6,1,2,5}, 2));
         System.out.println("2 == " + pastmdik.partitionArray(new int[]{1,2,3}, 1));
-    }
-
-    public String[] sortPeople(String[] names, int[] heights) {
-        Person[] people = new Person[names.length];
-        for (int i = 0; i < names.length; i++) {
-            people[i] = new Person(names[i], heights[i]);
-        }
-        return Arrays.stream(people).sorted(Comparator.comparing(Person::height).thenComparing(Person::name).reversed()).toArray(String[]::new);
-    }
-
-    public record Person (String name, int height) {
-
     }
 }

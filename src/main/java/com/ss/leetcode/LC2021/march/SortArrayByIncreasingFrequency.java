@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2021.march;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,7 +8,35 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class SortArrayByIncreasingFrequency {
+    // https://leetcode.com/problems/sort-array-by-increasing-frequency
     public int[] frequencySort(int[] nums) {
+        int[][] freq = new int[201][2];
+        for (int num : nums) {
+            freq[num + 100][0] = num;
+            freq[num + 100][1]++;
+        }
+        Arrays.sort(freq, (a,b) -> a[1] == b[1] ? Integer.compare(b[0], a[0]) : Integer.compare(a[1], b[1]));
+        int[] answer = new int[nums.length];
+        int insertIndex = nums.length - 1;
+        for (int i = 200; i >= 0 && insertIndex >= 0; i--) {
+            while (freq[i][1]-- > 0) {
+                answer[insertIndex--] = freq[i][0];
+            }
+        }
+        return answer;
+    }
+
+    public int[] frequencySort2(int[] nums) {
+        int[] freq = new int[201];
+        List<Integer> numbers = new ArrayList<>(nums.length);
+        for (int num : nums) {
+            numbers.add(num + 100);
+            freq[num + 100]++;
+        }
+        return numbers.stream().sorted((a,b) -> freq[a] == freq[b] ? Integer.compare(b, a) : Integer.compare(freq[a], freq[b])).mapToInt(a -> a - 100).toArray();
+    }
+
+    public int[] frequencySort3(int[] nums) {
         Arrays.sort(nums);
         TreeMap<Integer, List<Integer>> frequencies = new TreeMap<>();
         sortByFrequency(nums, frequencies);
