@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.july.CrawlerLogFolder;
 import com.ss.leetcode.LC2024.july.FindOccurrencesOfAnElementInAnArray;
 import com.ss.leetcode.LC2024.july.FindTheWinnerOfTheCircularGame;
 import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
+import com.ss.leetcode.LC2024.july.MinimumNumberOfIncrementsOnSubarraysToFormATargetArray;
 import com.ss.leetcode.LC2024.july.PartitionArraySuchThatMaximumDifferenceIsK;
 import com.ss.leetcode.LC2024.july.RobotCollisions;
 import java.util.Arrays;
@@ -19,7 +20,8 @@ public class StartJuly {
 //        start.findValidMatrixGivenRowAndColumnSums();
 //        start.buildAMatrixWithConditions();
 //        start.findOccurrencesOfAnElementInAnArray();
-        start.partitionArraySuchThatMaximumDifferenceIsK();
+//        start.partitionArraySuchThatMaximumDifferenceIsK();
+        start.minimumNumberOfIncrementsOnSubarraysToFormATargetArray();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -75,5 +77,15 @@ public class StartJuly {
 
         System.out.println("2 == " + pastmdik.partitionArray(new int[]{3,6,1,2,5}, 2));
         System.out.println("2 == " + pastmdik.partitionArray(new int[]{1,2,3}, 1));
+    }
+
+    public void minimumNumberOfIncrementsOnSubarraysToFormATargetArray() {
+        MinimumNumberOfIncrementsOnSubarraysToFormATargetArray mnoiostfata = new MinimumNumberOfIncrementsOnSubarraysToFormATargetArray();
+
+        System.out.println("3 == " + mnoiostfata.minNumberOperations(new int[]{1,2,3,2,1}));
+        System.out.println("4 == " + mnoiostfata.minNumberOperations(new int[]{3,1,1,2}));
+        System.out.println("7 == " + mnoiostfata.minNumberOperations(new int[]{3,1,5,4,2}));
+        System.out.println("5 == " + mnoiostfata.minNumberOperations(new int[]{5,4,3,2,1}));
+        System.out.println("145 == " + mnoiostfata.minNumberOperations(new int[]{2,3,1,2,3,4,5,6,7,8,7,6,5,6,7,8,7,6,5,4,3,23,1,1,2,3,4,5,6,7,7,7,5,4,3,32,2,1,2,3,3,5,6,7,78}));
     }
 }
