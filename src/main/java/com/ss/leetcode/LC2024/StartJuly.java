@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.july.CrawlerLogFolder;
 import com.ss.leetcode.LC2024.july.FindOccurrencesOfAnElementInAnArray;
 import com.ss.leetcode.LC2024.july.FindTheWinnerOfTheCircularGame;
 import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
+import com.ss.leetcode.LC2024.july.MinimumCostToConvertStringI;
 import com.ss.leetcode.LC2024.july.MinimumNumberOfIncrementsOnSubarraysToFormATargetArray;
 import com.ss.leetcode.LC2024.july.PartitionArraySuchThatMaximumDifferenceIsK;
 import com.ss.leetcode.LC2024.july.RobotCollisions;
@@ -21,7 +22,8 @@ public class StartJuly {
 //        start.buildAMatrixWithConditions();
 //        start.findOccurrencesOfAnElementInAnArray();
 //        start.partitionArraySuchThatMaximumDifferenceIsK();
-        start.minimumNumberOfIncrementsOnSubarraysToFormATargetArray();
+//        start.minimumNumberOfIncrementsOnSubarraysToFormATargetArray();
+        start.minimumCostToConvertStringI();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -87,5 +89,15 @@ public class StartJuly {
         System.out.println("7 == " + mnoiostfata.minNumberOperations(new int[]{3,1,5,4,2}));
         System.out.println("5 == " + mnoiostfata.minNumberOperations(new int[]{5,4,3,2,1}));
         System.out.println("145 == " + mnoiostfata.minNumberOperations(new int[]{2,3,1,2,3,4,5,6,7,8,7,6,5,6,7,8,7,6,5,4,3,23,1,1,2,3,4,5,6,7,7,7,5,4,3,32,2,1,2,3,3,5,6,7,78}));
+    }
+
+    public void minimumCostToConvertStringI() {
+        MinimumCostToConvertStringI mctcsi = new MinimumCostToConvertStringI();
+
+        System.out.println("28 == " + mctcsi.minimumCost("abcd", "acbe", new char[]{'a','b','c','c','e','d'}, new char[]{'b','c','b','e','b','e'}, new int[]{2,5,5,1,2,20}));
+        System.out.println("12 == " + mctcsi.minimumCost("aaaa", "bbbb", new char[]{'a','c'}, new char[]{'c','b'}, new int[]{1,2}));
+        System.out.println("-1 == " + mctcsi.minimumCost("abcd", "abce", new char[]{'a'}, new char[]{'e'}, new int[]{10000}));
+        System.out.println("39 == " + mctcsi.minimumCost("aaadbdcdac", "cdbabaddba", new char[]{'a','c','b','d','b','a','c'}, new char[]{'c','a','d','b','c','b','d'}, new int[]{7,2,1,3,6,1,7}));
+        System.out.println("-1 == " + mctcsi.minimumCost("aabbddccbc", "abbbaabaca", new char[]{'a','b','c','b','a','d'}, new char[]{'d','c','b','d','b','b'}, new int[]{3,8,7,6,7,10}));
     }
 }
