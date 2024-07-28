@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.july.CrawlerLogFolder;
 import com.ss.leetcode.LC2024.july.FindOccurrencesOfAnElementInAnArray;
 import com.ss.leetcode.LC2024.july.FindTheWinnerOfTheCircularGame;
 import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
+import com.ss.leetcode.LC2024.july.MaximumTotalDamageWithSpellCasting;
 import com.ss.leetcode.LC2024.july.MinimumCostToConvertStringI;
 import com.ss.leetcode.LC2024.july.MinimumNumberOfIncrementsOnSubarraysToFormATargetArray;
 import com.ss.leetcode.LC2024.july.PartitionArraySuchThatMaximumDifferenceIsK;
@@ -23,7 +24,8 @@ public class StartJuly {
 //        start.findOccurrencesOfAnElementInAnArray();
 //        start.partitionArraySuchThatMaximumDifferenceIsK();
 //        start.minimumNumberOfIncrementsOnSubarraysToFormATargetArray();
-        start.minimumCostToConvertStringI();
+//        start.minimumCostToConvertStringI();
+        start.maximumTotalDamageWithSpellCasting();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -99,5 +101,14 @@ public class StartJuly {
         System.out.println("-1 == " + mctcsi.minimumCost("abcd", "abce", new char[]{'a'}, new char[]{'e'}, new int[]{10000}));
         System.out.println("39 == " + mctcsi.minimumCost("aaadbdcdac", "cdbabaddba", new char[]{'a','c','b','d','b','a','c'}, new char[]{'c','a','d','b','c','b','d'}, new int[]{7,2,1,3,6,1,7}));
         System.out.println("-1 == " + mctcsi.minimumCost("aabbddccbc", "abbbaabaca", new char[]{'a','b','c','b','a','d'}, new char[]{'d','c','b','d','b','b'}, new int[]{3,8,7,6,7,10}));
+    }
+
+    public void maximumTotalDamageWithSpellCasting() {
+        MaximumTotalDamageWithSpellCasting mtdwsc = new MaximumTotalDamageWithSpellCasting();
+
+        System.out.println("6 == " + mtdwsc.maximumTotalDamage(new int[]{1,1,3,4}));
+        System.out.println("13 == " + mtdwsc.maximumTotalDamage(new int[]{7,1,6,6}));
+        System.out.println("18 == " + mtdwsc.maximumTotalDamage(new int[]{4,5,5,6,3,6,5,3,4}));
+        System.out.println("33 == " + mtdwsc.maximumTotalDamage(new int[]{4,3,1,2,3,4,5,6,5,4,3,4,5,6,7,6,5,4,3,1,2,3,4}));
     }
 }
