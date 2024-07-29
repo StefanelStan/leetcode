@@ -5,12 +5,15 @@ import com.ss.leetcode.LC2024.july.CrawlerLogFolder;
 import com.ss.leetcode.LC2024.july.FindOccurrencesOfAnElementInAnArray;
 import com.ss.leetcode.LC2024.july.FindTheWinnerOfTheCircularGame;
 import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
+import com.ss.leetcode.LC2024.july.GetWatchedVideosByYourFriends;
 import com.ss.leetcode.LC2024.july.MaximumTotalDamageWithSpellCasting;
 import com.ss.leetcode.LC2024.july.MinimumCostToConvertStringI;
 import com.ss.leetcode.LC2024.july.MinimumNumberOfIncrementsOnSubarraysToFormATargetArray;
+import com.ss.leetcode.LC2024.july.NumberOfSubarraysThatMatchAPatternI;
 import com.ss.leetcode.LC2024.july.PartitionArraySuchThatMaximumDifferenceIsK;
 import com.ss.leetcode.LC2024.july.RobotCollisions;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartJuly {
     public static void main(String[] args) {
@@ -25,7 +28,9 @@ public class StartJuly {
 //        start.partitionArraySuchThatMaximumDifferenceIsK();
 //        start.minimumNumberOfIncrementsOnSubarraysToFormATargetArray();
 //        start.minimumCostToConvertStringI();
-        start.maximumTotalDamageWithSpellCasting();
+//        start.maximumTotalDamageWithSpellCasting();
+//        start.numberOfSubarraysThatMatchAPatternI();
+        start.getWatchedVideosByYourFriends();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -110,5 +115,25 @@ public class StartJuly {
         System.out.println("13 == " + mtdwsc.maximumTotalDamage(new int[]{7,1,6,6}));
         System.out.println("18 == " + mtdwsc.maximumTotalDamage(new int[]{4,5,5,6,3,6,5,3,4}));
         System.out.println("33 == " + mtdwsc.maximumTotalDamage(new int[]{4,3,1,2,3,4,5,6,5,4,3,4,5,6,7,6,5,4,3,1,2,3,4}));
+    }
+
+    public void numberOfSubarraysThatMatchAPatternI() {
+        NumberOfSubarraysThatMatchAPatternI nostmap = new NumberOfSubarraysThatMatchAPatternI();
+
+        System.out.println("4 == " + nostmap.countMatchingSubarrays(new int[]{1,2,3,4,5,6}, new int[]{1,1}));
+        System.out.println("1 == " + nostmap.countMatchingSubarrays(new int[]{1,4,4,1,3,5,5,3}, new int[]{1,0,-1}));
+        System.out.println("1 == " + nostmap.countMatchingSubarrays(new int[]{1,1}, new int[]{0}));
+        System.out.println("6 == " + nostmap.countMatchingSubarrays(new int[]{3,2,3,4,5,6,5,4,4,5,6,7,6,5,3,4,5,43,2,1,2,2,2,2,1,2,1,2,1,2,3,4,5,4,3,2}, new int[]{1,1,1}));
+        System.out.println("1 == " + nostmap.countMatchingSubarrays(new int[]{3,2,3,4,5,6,5,4,4,5,6,7,6,5,3,4,5,43,2,1,2,2,2,2,1,2,1,2,1,2,3,4,5,4,3,2}, new int[]{1,1,0}));
+        System.out.println("1 == " + nostmap.countMatchingSubarrays(new int[]{3,2,3,4,5,6,5,4,4,5,6,7,6,5,3,4,5,43,2,1,2,2,2,2,1,2,1,2,1,2,3,4,5,4,3,2}, new int[]{-1,1,0}));
+        System.out.println("17 == " + nostmap.countMatchingSubarrays(new int[]{3,2,3,4,5,6,5,4,4,5,6,7,6,5,3,4,5,43,2,1,2,2,2,2,1,2,1,2,1,2,3,4,5,4,3,2}, new int[]{1}));
+        System.out.println("4 == " + nostmap.countMatchingSubarrays(new int[]{3,2,3,4,5,6,5,4,4,5,6,7,6,5,3,4,5,43,2,1,2,2,2,2,1,2,1,2,1,2,3,4,5,4,3,2}, new int[]{0}));
+    }
+
+    public void getWatchedVideosByYourFriends() {
+        GetWatchedVideosByYourFriends gwvbyf = new GetWatchedVideosByYourFriends();
+
+        System.out.println("[B,C] == " + gwvbyf.watchedVideosByFriends(List.of(List.of("A","B"), List.of("C"), List.of("B","C"), List.of("D")), new int[][]{{1,2},{0,3}, {0,3},{1,2}}, 0, 1));
+        System.out.println("[D] == " + gwvbyf.watchedVideosByFriends(List.of(List.of("A","B"), List.of("C"), List.of("B","C"), List.of("D")), new int[][]{{1,2},{0,3}, {0,3},{1,2}}, 0, 2));
     }
 }
