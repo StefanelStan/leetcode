@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
 import com.ss.leetcode.LC2024.july.GetWatchedVideosByYourFriends;
 import com.ss.leetcode.LC2024.july.MaximumTotalDamageWithSpellCasting;
 import com.ss.leetcode.LC2024.july.MinimumCostToConvertStringI;
+import com.ss.leetcode.LC2024.july.MinimumDeletionsToMakeStringBalanced;
 import com.ss.leetcode.LC2024.july.MinimumNumberOfIncrementsOnSubarraysToFormATargetArray;
 import com.ss.leetcode.LC2024.july.NumberOfSubarraysThatMatchAPatternI;
 import com.ss.leetcode.LC2024.july.PartitionArraySuchThatMaximumDifferenceIsK;
@@ -30,7 +31,8 @@ public class StartJuly {
 //        start.minimumCostToConvertStringI();
 //        start.maximumTotalDamageWithSpellCasting();
 //        start.numberOfSubarraysThatMatchAPatternI();
-        start.getWatchedVideosByYourFriends();
+//        start.getWatchedVideosByYourFriends();
+        start.minimumDeletionsToMakeStringBalanced();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -135,5 +137,18 @@ public class StartJuly {
 
         System.out.println("[B,C] == " + gwvbyf.watchedVideosByFriends(List.of(List.of("A","B"), List.of("C"), List.of("B","C"), List.of("D")), new int[][]{{1,2},{0,3}, {0,3},{1,2}}, 0, 1));
         System.out.println("[D] == " + gwvbyf.watchedVideosByFriends(List.of(List.of("A","B"), List.of("C"), List.of("B","C"), List.of("D")), new int[][]{{1,2},{0,3}, {0,3},{1,2}}, 0, 2));
+    }
+
+    public void minimumDeletionsToMakeStringBalanced() {
+        MinimumDeletionsToMakeStringBalanced mdtmsb = new MinimumDeletionsToMakeStringBalanced();
+
+        System.out.println("2 == " + mdtmsb.minimumDeletions("aababbab"));
+        System.out.println("2 == " + mdtmsb.minimumDeletions("bbaaaaabb"));
+        System.out.println("11 == " + mdtmsb.minimumDeletions("abbababbababbaabbabababbbaa"));
+        System.out.println("0 == " + mdtmsb.minimumDeletions("a"));
+        System.out.println("0 == " + mdtmsb.minimumDeletions("ab"));
+        System.out.println("1 == " + mdtmsb.minimumDeletions("ba"));
+        System.out.println("1 == " + mdtmsb.minimumDeletions("baaaaaaaaaa"));
+        System.out.println("10 == " + mdtmsb.minimumDeletions("babbabbbabbabbababababbaba"));
     }
 }
