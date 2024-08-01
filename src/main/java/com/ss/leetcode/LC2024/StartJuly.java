@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.july.BuildAMatrixWithConditions;
 import com.ss.leetcode.LC2024.july.CrawlerLogFolder;
+import com.ss.leetcode.LC2024.july.FillingBookcaseShelves;
 import com.ss.leetcode.LC2024.july.FindOccurrencesOfAnElementInAnArray;
 import com.ss.leetcode.LC2024.july.FindTheWinnerOfTheCircularGame;
 import com.ss.leetcode.LC2024.july.FindValidMatrixGivenRowAndColumnSums;
@@ -32,7 +33,8 @@ public class StartJuly {
 //        start.maximumTotalDamageWithSpellCasting();
 //        start.numberOfSubarraysThatMatchAPatternI();
 //        start.getWatchedVideosByYourFriends();
-        start.minimumDeletionsToMakeStringBalanced();
+//        start.minimumDeletionsToMakeStringBalanced();
+        start.fillingBookcaseShelves();
     }
 
     public void findTheWinnerOfTheCircularGame() {
@@ -150,5 +152,12 @@ public class StartJuly {
         System.out.println("1 == " + mdtmsb.minimumDeletions("ba"));
         System.out.println("1 == " + mdtmsb.minimumDeletions("baaaaaaaaaa"));
         System.out.println("10 == " + mdtmsb.minimumDeletions("babbabbbabbabbababababbaba"));
+    }
+
+    public void fillingBookcaseShelves() {
+        FillingBookcaseShelves fbs = new FillingBookcaseShelves();
+
+        System.out.println("6 == " + fbs.minHeightShelves(new int[][]{{1,1},{2,3},{2,3},{1,1},{1,1},{1,1},{1,2}}, 4));
+        System.out.println("4 == " + fbs.minHeightShelves(new int[][]{{1,3},{2,4},{3,2}}, 6));
     }
 }
