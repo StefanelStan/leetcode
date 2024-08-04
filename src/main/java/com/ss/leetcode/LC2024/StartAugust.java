@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.august.ClearDigits;
 import com.ss.leetcode.LC2024.august.DistributeElementsIntoTwoArraysI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
+import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import java.util.Arrays;
 
 public class StartAugust {
@@ -11,7 +12,8 @@ public class StartAugust {
 
 //        start.findTheMinimumAreaToCoverAllOnesI();
 //        start.distributeElementsIntoTwoArraysI();
-        start.clearDigits();
+//        start.clearDigits();
+        start.findTheSumOfEncryptedIntegers();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -33,5 +35,12 @@ public class StartAugust {
 
         System.out.println("abc == " + cd.clearDigits("abc"));
         System.out.println(" == " + cd.clearDigits("cb34"));
+    }
+
+    public void findTheSumOfEncryptedIntegers() {
+        FindTheSumOfEncryptedIntegers ftsoei = new FindTheSumOfEncryptedIntegers();
+
+        System.out.println("6 == " + ftsoei.sumOfEncryptedInt(new int[]{1,2,3}));
+        System.out.println("66 == " + ftsoei.sumOfEncryptedInt(new int[]{10,21,33}));
     }
 }
