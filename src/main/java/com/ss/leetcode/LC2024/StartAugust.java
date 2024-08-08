@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.august.DistributeElementsIntoTwoArraysI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.IntegerToEnglishWords;
+import com.ss.leetcode.LC2024.august.SpiralMatrixIII;
 import java.util.Arrays;
 
 public class StartAugust {
@@ -15,7 +16,8 @@ public class StartAugust {
 //        start.distributeElementsIntoTwoArraysI();
 //        start.clearDigits();
 //        start.findTheSumOfEncryptedIntegers();
-        start.integerToEnglishWords();
+//        start.integerToEnglishWords();
+        start.spiralMatrixIII();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -56,5 +58,12 @@ public class StartAugust {
         System.out.println("One Billion One == " + itew.numberToWords(1000000001));
         System.out.println("One Billion One Million One Thousand One == " + itew.numberToWords(1001001001));
         System.out.println("One Hundred Nine == " + itew.numberToWords(109));
+    }
+
+    public void spiralMatrixIII() {
+        SpiralMatrixIII smiii = new SpiralMatrixIII();
+
+        System.out.println("[[0,0],[0,1],[0,2],[0,3]] == " + Arrays.deepToString(smiii.spiralMatrixIII(1,4,0,0)));
+        System.out.println("[[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]] == " + Arrays.deepToString(smiii.spiralMatrixIII(5,6,1,4)));
     }
 }
