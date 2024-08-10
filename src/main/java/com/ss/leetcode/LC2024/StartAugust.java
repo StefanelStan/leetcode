@@ -1,11 +1,13 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.august.ClearDigits;
+import com.ss.leetcode.LC2024.august.CountNumberOfMaximumBitwiseORSubsets;
 import com.ss.leetcode.LC2024.august.DistributeElementsIntoTwoArraysI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
 import com.ss.leetcode.LC2024.august.IntegerToEnglishWords;
+import com.ss.leetcode.LC2024.august.RegionsCutBySlashes;
 import com.ss.leetcode.LC2024.august.SpiralMatrixIII;
 import java.util.Arrays;
 
@@ -19,7 +21,9 @@ public class StartAugust {
 //        start.findTheSumOfEncryptedIntegers();
 //        start.integerToEnglishWords();
 //        start.spiralMatrixIII();
-        start.generateBinaryStringsWithoutAdjacentZeros();
+//        start.generateBinaryStringsWithoutAdjacentZeros();
+//        start.regionsCutBySlashes();
+        start.countNumberOfMaximumBitwiseORSubsets();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -74,5 +78,26 @@ public class StartAugust {
 
         System.out.println("[010,011,101,110,111] == " + gbswaz.validStrings(3));
         System.out.println("[0,1] == " + gbswaz.validStrings(1));
+    }
+
+    public void regionsCutBySlashes() {
+        RegionsCutBySlashes rcbs = new RegionsCutBySlashes();
+
+        System.out.println("2 == " + rcbs.regionsBySlashes(new String[]{" /","/ "}));
+        System.out.println("1 == " + rcbs.regionsBySlashes(new String[]{" /","  "}));
+        System.out.println("5 == " + rcbs.regionsBySlashes(new String[]{"/\\","\\/"}));
+        System.out.println("12 == " + rcbs.regionsBySlashes(new String[]{"/\\/\\", "\\/\\/", "/\\/\\", "\\/\\\\"}));
+        System.out.println("1 == " + rcbs.regionsBySlashes(new String[]{"   ", "   ", "   "}));
+        System.out.println("4 == " + rcbs.regionsBySlashes(new String[]{" /\\"," \\/","\\  "}));
+    }
+
+    public void countNumberOfMaximumBitwiseORSubsets() {
+        CountNumberOfMaximumBitwiseORSubsets cnombos = new CountNumberOfMaximumBitwiseORSubsets();
+
+        System.out.println("2 == " + cnombos.countMaxOrSubsets(new int[]{3, 1}));
+        System.out.println("7 == " + cnombos.countMaxOrSubsets(new int[]{2,2,2}));
+        System.out.println("6 == " + cnombos.countMaxOrSubsets(new int[]{3,2,1,5}));
+        System.out.println("65535 == " + cnombos.countMaxOrSubsets(new int[]{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}));
+        System.out.println("65535 == " + cnombos.countMaxOrSubsets(new int[]{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}));
     }
 }
