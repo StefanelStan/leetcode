@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
 import com.ss.leetcode.LC2024.august.IntegerToEnglishWords;
+import com.ss.leetcode.LC2024.august.MinimumNumberOfDaysToDisconnectIsland;
 import com.ss.leetcode.LC2024.august.RegionsCutBySlashes;
 import com.ss.leetcode.LC2024.august.SpiralMatrixIII;
 import java.util.Arrays;
@@ -23,7 +24,8 @@ public class StartAugust {
 //        start.spiralMatrixIII();
 //        start.generateBinaryStringsWithoutAdjacentZeros();
 //        start.regionsCutBySlashes();
-        start.countNumberOfMaximumBitwiseORSubsets();
+//        start.countNumberOfMaximumBitwiseORSubsets();
+        start.minimumNumberOfDaysToDisconnectIsland();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -93,11 +95,23 @@ public class StartAugust {
 
     public void countNumberOfMaximumBitwiseORSubsets() {
         CountNumberOfMaximumBitwiseORSubsets cnombos = new CountNumberOfMaximumBitwiseORSubsets();
-
         System.out.println("2 == " + cnombos.countMaxOrSubsets(new int[]{3, 1}));
         System.out.println("7 == " + cnombos.countMaxOrSubsets(new int[]{2,2,2}));
         System.out.println("6 == " + cnombos.countMaxOrSubsets(new int[]{3,2,1,5}));
         System.out.println("65535 == " + cnombos.countMaxOrSubsets(new int[]{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}));
         System.out.println("65535 == " + cnombos.countMaxOrSubsets(new int[]{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}));
+    }
+
+    public void minimumNumberOfDaysToDisconnectIsland() {
+        MinimumNumberOfDaysToDisconnectIsland mnodtdi = new MinimumNumberOfDaysToDisconnectIsland();
+
+        System.out.println("2 == " + mnodtdi.minDays(new int[][]{{0,1,1,0},{0,1,1,0},{0,0,0,0}}));
+        System.out.println("1 == " + mnodtdi.minDays(new int[][]{{0,0,0},{0,1,0},{0,0,0}}));
+        System.out.println("2 == " + mnodtdi.minDays(new int[][]{{1,1,1},{1,1,1},{1,1,1}}));
+        System.out.println("0 == " + mnodtdi.minDays(new int[][]{{0,1},{1,0}}));
+        System.out.println("0 == " + mnodtdi.minDays(new int[][]{{1,0,1},{0,0,0},{1,0,1}}));
+        System.out.println("2 == " + mnodtdi.minDays(new int[][]{{1,1,0,1,1},{1,1,1,1,1},{1,1,0,1,1},{1,1,1,1,1}}));
+        System.out.println("1 == " + mnodtdi.minDays(new int[][]{{0,0,1,1,1,1,0,1},{1,1,1,1,0,1,1,1},{0,1,1,1,0,0,1,1},{1,1,0,1,1,1,1,1},{1,1,1,1,1,0,0,0}}));
+        System.out.println("1 == " + mnodtdi.minDays(new int[][]{{0,1,1},{1,1,1},{1,1,0}}));
     }
 }
