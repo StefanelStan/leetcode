@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.august.ClearDigits;
 import com.ss.leetcode.LC2024.august.CountNumberOfMaximumBitwiseORSubsets;
 import com.ss.leetcode.LC2024.august.DistributeElementsIntoTwoArraysI;
+import com.ss.leetcode.LC2024.august.FindTheIntegerAddedToArrayI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
@@ -25,7 +26,8 @@ public class StartAugust {
 //        start.generateBinaryStringsWithoutAdjacentZeros();
 //        start.regionsCutBySlashes();
 //        start.countNumberOfMaximumBitwiseORSubsets();
-        start.minimumNumberOfDaysToDisconnectIsland();
+//        start.minimumNumberOfDaysToDisconnectIsland();
+        start.findTheIntegerAddedToArrayI();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -113,5 +115,13 @@ public class StartAugust {
         System.out.println("2 == " + mnodtdi.minDays(new int[][]{{1,1,0,1,1},{1,1,1,1,1},{1,1,0,1,1},{1,1,1,1,1}}));
         System.out.println("1 == " + mnodtdi.minDays(new int[][]{{0,0,1,1,1,1,0,1},{1,1,1,1,0,1,1,1},{0,1,1,1,0,0,1,1},{1,1,0,1,1,1,1,1},{1,1,1,1,1,0,0,0}}));
         System.out.println("1 == " + mnodtdi.minDays(new int[][]{{0,1,1},{1,1,1},{1,1,0}}));
+    }
+
+    public void findTheIntegerAddedToArrayI() {
+        FindTheIntegerAddedToArrayI ftiatai = new FindTheIntegerAddedToArrayI();
+
+        System.out.println("3 == " + ftiatai.addedInteger(new int[]{2,6,4}, new int[]{9,7,5}));
+        System.out.println("-5 == " + ftiatai.addedInteger(new int[]{10}, new int[]{5}));
+        System.out.println("0 == " + ftiatai.addedInteger(new int[]{1,1,1,1}, new int[]{1,1,1,1}));
     }
 }
