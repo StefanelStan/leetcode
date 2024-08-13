@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.august.ClearDigits;
+import com.ss.leetcode.LC2024.august.ConstructStringWithMinimumCost;
 import com.ss.leetcode.LC2024.august.CountNumberOfMaximumBitwiseORSubsets;
 import com.ss.leetcode.LC2024.august.DistributeElementsIntoTwoArraysI;
 import com.ss.leetcode.LC2024.august.FindTheIntegerAddedToArrayI;
@@ -27,7 +28,8 @@ public class StartAugust {
 //        start.regionsCutBySlashes();
 //        start.countNumberOfMaximumBitwiseORSubsets();
 //        start.minimumNumberOfDaysToDisconnectIsland();
-        start.findTheIntegerAddedToArrayI();
+//        start.findTheIntegerAddedToArrayI();
+        start.constructStringWithMinimumCost();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -123,5 +125,14 @@ public class StartAugust {
         System.out.println("3 == " + ftiatai.addedInteger(new int[]{2,6,4}, new int[]{9,7,5}));
         System.out.println("-5 == " + ftiatai.addedInteger(new int[]{10}, new int[]{5}));
         System.out.println("0 == " + ftiatai.addedInteger(new int[]{1,1,1,1}, new int[]{1,1,1,1}));
+    }
+
+    public void constructStringWithMinimumCost() {
+        ConstructStringWithMinimumCost cswmc = new ConstructStringWithMinimumCost();
+
+        System.out.println("7 == " + cswmc.minimumCost("abcdef", new String[]{"abdef","abc","d","def","ef"}, new int[]{100,1,1,10,5}));
+        System.out.println("-1 == " + cswmc.minimumCost("aaaa", new String[]{"z","zz","zzz"}, new int[]{1,10,100}));
+        System.out.println("16 == " + cswmc.minimumCost("sgsipzma", new String[]{"s","s","g","ipzma"}, new int[]{3,3,3,7}));
+        System.out.println("1 == " + cswmc.minimumCost("r", new String[]{"r","r","r","r"}, new int[]{1,6,3,3}));
     }
 }
