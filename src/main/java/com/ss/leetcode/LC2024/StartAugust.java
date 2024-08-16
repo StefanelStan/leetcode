@@ -4,15 +4,19 @@ import com.ss.leetcode.LC2024.august.ClearDigits;
 import com.ss.leetcode.LC2024.august.ConstructStringWithMinimumCost;
 import com.ss.leetcode.LC2024.august.CountNumberOfMaximumBitwiseORSubsets;
 import com.ss.leetcode.LC2024.august.DistributeElementsIntoTwoArraysI;
+import com.ss.leetcode.LC2024.august.FindKthSmallestPairDistance;
 import com.ss.leetcode.LC2024.august.FindTheIntegerAddedToArrayI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
 import com.ss.leetcode.LC2024.august.IntegerToEnglishWords;
+import com.ss.leetcode.LC2024.august.MaximumDistanceInArrays;
 import com.ss.leetcode.LC2024.august.MinimumNumberOfDaysToDisconnectIsland;
+import com.ss.leetcode.LC2024.august.OnlineElection;
 import com.ss.leetcode.LC2024.august.RegionsCutBySlashes;
 import com.ss.leetcode.LC2024.august.SpiralMatrixIII;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartAugust {
     public static void main(String[] args) {
@@ -29,7 +33,10 @@ public class StartAugust {
 //        start.countNumberOfMaximumBitwiseORSubsets();
 //        start.minimumNumberOfDaysToDisconnectIsland();
 //        start.findTheIntegerAddedToArrayI();
-        start.constructStringWithMinimumCost();
+//        start.constructStringWithMinimumCost();
+//        start.onlineElection();
+//        start.findKthSmallestPairDistance();
+        start.maximumDistanceInArrays();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -134,5 +141,32 @@ public class StartAugust {
         System.out.println("-1 == " + cswmc.minimumCost("aaaa", new String[]{"z","zz","zzz"}, new int[]{1,10,100}));
         System.out.println("16 == " + cswmc.minimumCost("sgsipzma", new String[]{"s","s","g","ipzma"}, new int[]{3,3,3,7}));
         System.out.println("1 == " + cswmc.minimumCost("r", new String[]{"r","r","r","r"}, new int[]{1,6,3,3}));
+    }
+
+    public void onlineElection() {
+        OnlineElection oe = new OnlineElection(new int[]{0, 1, 1, 0, 0, 1, 0}, new int[]{0, 5, 10, 15, 20, 25, 30});
+
+        System.out.println("0 == " + oe.q(3));
+        System.out.println("1 == " + oe.q(12));
+        System.out.println("1 == " + oe.q(25));
+        System.out.println("0 == " + oe.q(15));
+        System.out.println("0 == " + oe.q(24));
+        System.out.println("1 == " + oe.q(8));
+    }
+
+    public void findKthSmallestPairDistance(){
+        FindKthSmallestPairDistance fkspd = new FindKthSmallestPairDistance();
+
+        System.out.println("0 == " + fkspd.smallestDistancePair(new int[]{1,3,1}, 1));
+        System.out.println("0 == " + fkspd.smallestDistancePair(new int[]{1,1,1}, 2));
+        System.out.println("5 == " + fkspd.smallestDistancePair(new int[]{1,6,1}, 3));
+    }
+
+    public void maximumDistanceInArrays() {
+        MaximumDistanceInArrays mdia = new MaximumDistanceInArrays();
+
+        System.out.println("4 == " + mdia.maxDistance(List.of(List.of(1,2,3),List.of(4,5), List.of(1,2,3))));
+        System.out.println("0 == " + mdia.maxDistance(List.of(List.of(1), List.of(1))));
+        System.out.println("4 == " + mdia.maxDistance(List.of(List.of(1,4), List.of(0,5))));
     }
 }
