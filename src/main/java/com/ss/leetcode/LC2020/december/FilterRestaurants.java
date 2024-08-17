@@ -4,7 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FilterRestaurants {
+    // https://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance
     public List<Integer> filterRestaurants(int[][] restaurants, int veganFriendly, int maxPrice, int maxDistance) {
+        List<Integer> restaurantIndexes = new ArrayList<>();
+        for (int i = 0; i < restaurants.length; i++) {
+            if (restaurants[i][2] >= veganFriendly && restaurants[i][3] <= maxPrice && restaurants[i][4] <= maxDistance) {
+                restaurantIndexes.add(i);
+            }
+        }
+        restaurantIndexes.sort((a, b) -> restaurants[b][1] == restaurants[a][1]
+            ? Integer.compare(restaurants[b][0], restaurants[a][0])
+            : Integer.compare(restaurants[b][1], restaurants[a][1]));
+        List<Integer> ids = new ArrayList<>(restaurantIndexes.size());
+        for (int index : restaurantIndexes) {
+            ids.add(restaurants[index][0]);
+        }
+        return ids;
+    }
+
+
+    public List<Integer> filterRestaurants2(int[][] restaurants, int veganFriendly, int maxPrice, int maxDistance) {
         List<int[]> list = new ArrayList<>();
         if (veganFriendly == 0) {
             list = getListOfNormalRestaurants(restaurants, maxPrice, maxDistance);

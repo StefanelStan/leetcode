@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
 import com.ss.leetcode.LC2024.august.IntegerToEnglishWords;
 import com.ss.leetcode.LC2024.august.MaximumDistanceInArrays;
+import com.ss.leetcode.LC2024.august.MaximumNumberOfPointsWithCost;
 import com.ss.leetcode.LC2024.august.MinimumNumberOfDaysToDisconnectIsland;
 import com.ss.leetcode.LC2024.august.OnlineElection;
 import com.ss.leetcode.LC2024.august.RegionsCutBySlashes;
@@ -36,7 +37,8 @@ public class StartAugust {
 //        start.constructStringWithMinimumCost();
 //        start.onlineElection();
 //        start.findKthSmallestPairDistance();
-        start.maximumDistanceInArrays();
+//        start.maximumDistanceInArrays();
+        start.maximumNumberOfPointsWithCost();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -168,5 +170,12 @@ public class StartAugust {
         System.out.println("4 == " + mdia.maxDistance(List.of(List.of(1,2,3),List.of(4,5), List.of(1,2,3))));
         System.out.println("0 == " + mdia.maxDistance(List.of(List.of(1), List.of(1))));
         System.out.println("4 == " + mdia.maxDistance(List.of(List.of(1,4), List.of(0,5))));
+    }
+
+    public void maximumNumberOfPointsWithCost() {
+        MaximumNumberOfPointsWithCost mnopwc = new MaximumNumberOfPointsWithCost();
+
+        System.out.println("9 == " + mnopwc.maxPoints(new int[][]{{1,2,3},{1,5,1},{3,1,1}}));
+        System.out.println("11 == " + mnopwc.maxPoints(new int[][]{{1,5},{2,3},{4,2}}));
     }
 }
