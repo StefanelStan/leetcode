@@ -15,6 +15,7 @@ import com.ss.leetcode.LC2024.august.MaximumNumberOfPointsWithCost;
 import com.ss.leetcode.LC2024.august.MinimumNumberOfDaysToDisconnectIsland;
 import com.ss.leetcode.LC2024.august.OnlineElection;
 import com.ss.leetcode.LC2024.august.RegionsCutBySlashes;
+import com.ss.leetcode.LC2024.august.SmallestMissingIntegerGreaterThanSequentialPrefixSum;
 import com.ss.leetcode.LC2024.august.SpiralMatrixIII;
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +39,8 @@ public class StartAugust {
 //        start.onlineElection();
 //        start.findKthSmallestPairDistance();
 //        start.maximumDistanceInArrays();
-        start.maximumNumberOfPointsWithCost();
+//        start.maximumNumberOfPointsWithCost();
+        start.smallestMissingIntegerGreaterThanSequentialPrefixSum();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -177,5 +179,15 @@ public class StartAugust {
 
         System.out.println("9 == " + mnopwc.maxPoints(new int[][]{{1,2,3},{1,5,1},{3,1,1}}));
         System.out.println("11 == " + mnopwc.maxPoints(new int[][]{{1,5},{2,3},{4,2}}));
+    }
+
+    public void smallestMissingIntegerGreaterThanSequentialPrefixSum() {
+        SmallestMissingIntegerGreaterThanSequentialPrefixSum smigtsps = new SmallestMissingIntegerGreaterThanSequentialPrefixSum();
+
+        System.out.println("6 == " + smigtsps.missingInteger(new int[]{1,2,3,2,5}));
+        System.out.println("15 == " + smigtsps.missingInteger(new int[]{3,4,5,1,12,14,13}));
+        System.out.println("297 == " + smigtsps.missingInteger(new int[]{29,30,31,32,33,34,35,36,37}));
+        System.out.println("47 == " + smigtsps.missingInteger(new int[]{46,8,2,4,1,4,10,2,4,10,2,5,7,3,1}));
+        System.out.println("38 == " + smigtsps.missingInteger(new int[]{37,1,2,9,5,8,5,2,9,4}));
     }
 }
