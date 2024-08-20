@@ -5,6 +5,8 @@ import com.ss.leetcode.LC2024.august.ConstructStringWithMinimumCost;
 import com.ss.leetcode.LC2024.august.CountNumberOfMaximumBitwiseORSubsets;
 import com.ss.leetcode.LC2024.august.DistributeElementsIntoTwoArraysI;
 import com.ss.leetcode.LC2024.august.FindKthSmallestPairDistance;
+import com.ss.leetcode.LC2024.august.FindLongestSpecialSubstringThatOccursThriceI;
+import com.ss.leetcode.LC2024.august.FindLongestSpecialSubstringThatOccursThriceII;
 import com.ss.leetcode.LC2024.august.FindTheIntegerAddedToArrayI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
@@ -40,7 +42,9 @@ public class StartAugust {
 //        start.findKthSmallestPairDistance();
 //        start.maximumDistanceInArrays();
 //        start.maximumNumberOfPointsWithCost();
-        start.smallestMissingIntegerGreaterThanSequentialPrefixSum();
+//        start.smallestMissingIntegerGreaterThanSequentialPrefixSum();
+        start.findLongestSpecialSubstringThatOccursThriceII();
+        start.findLongestSpecialSubstringThatOccursThriceI();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -189,5 +193,31 @@ public class StartAugust {
         System.out.println("297 == " + smigtsps.missingInteger(new int[]{29,30,31,32,33,34,35,36,37}));
         System.out.println("47 == " + smigtsps.missingInteger(new int[]{46,8,2,4,1,4,10,2,4,10,2,5,7,3,1}));
         System.out.println("38 == " + smigtsps.missingInteger(new int[]{37,1,2,9,5,8,5,2,9,4}));
+    }
+
+    public void findLongestSpecialSubstringThatOccursThriceII() {
+        FindLongestSpecialSubstringThatOccursThriceII flsstotii = new FindLongestSpecialSubstringThatOccursThriceII();
+
+        System.out.println("-1 == " + flsstotii.maximumLength("abcdefghijaoipp"));
+        System.out.println("1 == " + flsstotii.maximumLength("abcdefjkhgffrsrgtyuikjhgfdtrdyujhgfdrtyuilkjhmgfyjuikjhgfdseaw"));
+        System.out.println("1 == " + flsstotii.maximumLength("abpoiuytrtyujkjhgfgnbvcsertyujhgfdcfghygtfdcasdfghgewaertyuikjhgfdba"));
+        System.out.println("2 == " + flsstotii.maximumLength("aaabcaaufjdskfsaa"));
+        System.out.println("16 == " + flsstotii.maximumLength("aaaaaaaaaaaaaaaaaa"));
+        System.out.println("1 == " + flsstotii.maximumLength("kfsjdfsdhfsiufhsufhufhufhdhfuhdufhfhhuhuxhcssdhdhshsudsdojsdsjdjsdjsdjjddfosfofmdscndsfussduyhfisufhniufhncusashvbusfbshdjbvhdskjbfnusbdkfwbefiuefncjuhvneia"));
+        System.out.println("1 == " + flsstotii.maximumLength("safsdfdsfkdoirjfeiurvnbeuribvnecwiuhneoiuhnsiu"));
+        System.out.println("5 == " + flsstotii.maximumLength("abbbbbggggggyyyggggg"));
+    }
+
+    public void findLongestSpecialSubstringThatOccursThriceI() {
+        FindLongestSpecialSubstringThatOccursThriceI flsstoti = new FindLongestSpecialSubstringThatOccursThriceI();
+
+        System.out.println("-1 == " + flsstoti.maximumLength("abcdefghijaoipp"));
+        System.out.println("1 == " + flsstoti.maximumLength("abcdefjkhgffrsrgtyuikjhgfdtrdyujhgfdrtyuilkjhmgfyjuikjhgfdseaw"));
+        System.out.println("1 == " + flsstoti.maximumLength("abpoiuytrtyujkjhgfgnbvcsertyujhgfdcfghygtfdcasdfghgewaertyuikjhgfdba"));
+        System.out.println("2 == " + flsstoti.maximumLength("aaabcaaufjdskfsaa"));
+        System.out.println("16 == " + flsstoti.maximumLength("aaaaaaaaaaaaaaaaaa"));
+        System.out.println("1 == " + flsstoti.maximumLength("kfsjdfsdhfsiufhsufhufhufhdhfuhdufhfhhuhuxhcssdhdhshsudsdojsdsjdjsdjsdjjddfosfofmdscndsfussduyhfisufhniufhncusashvbusfbshdjbvhdskjbfnusbdkfwbefiuefncjuhvneia"));
+        System.out.println("1 == " + flsstoti.maximumLength("safsdfdsfkdoirjfeiurvnbeuribvnecwiuhneoiuhnsiu"));
+        System.out.println("5 == " + flsstoti.maximumLength("abbbbbggggggyyyggggg"));
     }
 }
