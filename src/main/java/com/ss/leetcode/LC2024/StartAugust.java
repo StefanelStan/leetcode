@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.august.ApplyDiscountToPrices;
 import com.ss.leetcode.LC2024.august.ClearDigits;
 import com.ss.leetcode.LC2024.august.ConstructStringWithMinimumCost;
 import com.ss.leetcode.LC2024.august.CountNumberOfMaximumBitwiseORSubsets;
@@ -43,8 +44,9 @@ public class StartAugust {
 //        start.maximumDistanceInArrays();
 //        start.maximumNumberOfPointsWithCost();
 //        start.smallestMissingIntegerGreaterThanSequentialPrefixSum();
-        start.findLongestSpecialSubstringThatOccursThriceII();
-        start.findLongestSpecialSubstringThatOccursThriceI();
+//        start.findLongestSpecialSubstringThatOccursThriceII();
+//        start.findLongestSpecialSubstringThatOccursThriceI();
+        start.applyDiscountToPrices();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -219,5 +221,12 @@ public class StartAugust {
         System.out.println("1 == " + flsstoti.maximumLength("kfsjdfsdhfsiufhsufhufhufhdhfuhdufhfhhuhuxhcssdhdhshsudsdojsdsjdjsdjsdjjddfosfofmdscndsfussduyhfisufhniufhncusashvbusfbshdjbvhdskjbfnusbdkfwbefiuefncjuhvneia"));
         System.out.println("1 == " + flsstoti.maximumLength("safsdfdsfkdoirjfeiurvnbeuribvnecwiuhneoiuhnsiu"));
         System.out.println("5 == " + flsstoti.maximumLength("abbbbbggggggyyyggggg"));
+    }
+
+    public void applyDiscountToPrices() {
+        ApplyDiscountToPrices adtp = new ApplyDiscountToPrices();
+
+        System.out.println("there are $0.50 $1.00 and 5$ candies in the shop == " + adtp.discountPrices("there are $1 $2 and 5$ candies in the shop", 50));
+        System.out.println("1 2 $0.00 4 $0.00 $0.00 7 8$ $0.00 $10$ == " + adtp.discountPrices("1 2 $3 4 $5 $6 7 8$ $9 $10$", 100));
     }
 }
