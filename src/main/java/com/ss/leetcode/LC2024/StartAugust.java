@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2024.august.FindLongestSpecialSubstringThatOccursThrice
 import com.ss.leetcode.LC2024.august.FindTheIntegerAddedToArrayI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
+import com.ss.leetcode.LC2024.august.FractionAdditionAndSubtraction;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
 import com.ss.leetcode.LC2024.august.IntegerToEnglishWords;
 import com.ss.leetcode.LC2024.august.MaximumDistanceInArrays;
@@ -46,7 +47,8 @@ public class StartAugust {
 //        start.smallestMissingIntegerGreaterThanSequentialPrefixSum();
 //        start.findLongestSpecialSubstringThatOccursThriceII();
 //        start.findLongestSpecialSubstringThatOccursThriceI();
-        start.applyDiscountToPrices();
+//        start.applyDiscountToPrices();
+        start.fractionAdditionAndSubtraction();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -228,5 +230,14 @@ public class StartAugust {
 
         System.out.println("there are $0.50 $1.00 and 5$ candies in the shop == " + adtp.discountPrices("there are $1 $2 and 5$ candies in the shop", 50));
         System.out.println("1 2 $0.00 4 $0.00 $0.00 7 8$ $0.00 $10$ == " + adtp.discountPrices("1 2 $3 4 $5 $6 7 8$ $9 $10$", 100));
+    }
+
+    public void fractionAdditionAndSubtraction() {
+        FractionAdditionAndSubtraction faas = new FractionAdditionAndSubtraction();
+
+        System.out.println("0/1 == " + faas.fractionAddition("-1/2+1/2"));
+        System.out.println("1/3 == " + faas.fractionAddition("-1/2+1/2+1/3"));
+        System.out.println("-1/6 == " + faas.fractionAddition("1/3-1/2"));
+        System.out.println("68/15 == " + faas.fractionAddition("7/3+5/2-3/10"));
     }
 }
