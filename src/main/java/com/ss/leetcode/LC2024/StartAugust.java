@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2024.august.FindLongestSpecialSubstringThatOccursThrice
 import com.ss.leetcode.LC2024.august.FindLongestSpecialSubstringThatOccursThriceII;
 import com.ss.leetcode.LC2024.august.FindTheIntegerAddedToArrayI;
 import com.ss.leetcode.LC2024.august.FindTheMinimumAreaToCoverAllOnesI;
+import com.ss.leetcode.LC2024.august.FindThePeaks;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.FractionAdditionAndSubtraction;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
@@ -48,7 +49,8 @@ public class StartAugust {
 //        start.findLongestSpecialSubstringThatOccursThriceII();
 //        start.findLongestSpecialSubstringThatOccursThriceI();
 //        start.applyDiscountToPrices();
-        start.fractionAdditionAndSubtraction();
+//        start.fractionAdditionAndSubtraction();
+        start.findThePeaks();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -239,5 +241,14 @@ public class StartAugust {
         System.out.println("1/3 == " + faas.fractionAddition("-1/2+1/2+1/3"));
         System.out.println("-1/6 == " + faas.fractionAddition("1/3-1/2"));
         System.out.println("68/15 == " + faas.fractionAddition("7/3+5/2-3/10"));
+    }
+
+    public void findThePeaks() {
+        FindThePeaks ftp = new FindThePeaks();
+
+        System.out.println("[] == " + ftp.findPeaks(new int[]{2,4,4}));
+        System.out.println("[1,3] == " + ftp.findPeaks(new int[]{1,4,3,8,5}));
+        System.out.println("[] == " + ftp.findPeaks(new int[]{1,2,3}));
+        System.out.println("[1,3,5,7,11,13,15,17,19,24,30,41] == " + ftp.findPeaks(new int[]{1,2,1,2,1,2,1,2,1,1,1,2,1,2,1,2,1,2,1,2,1,3,4,4,5,4,3,4,5,7,8,7,7,6,5,4,3,3,4,5,6,7,6,5,4,3,2}));
     }
 }
