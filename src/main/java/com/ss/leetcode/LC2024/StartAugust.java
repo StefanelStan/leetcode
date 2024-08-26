@@ -14,14 +14,17 @@ import com.ss.leetcode.LC2024.august.FindThePeaks;
 import com.ss.leetcode.LC2024.august.FindTheSumOfEncryptedIntegers;
 import com.ss.leetcode.LC2024.august.FractionAdditionAndSubtraction;
 import com.ss.leetcode.LC2024.august.GenerateBinaryStringsWithoutAdjacentZeros;
+import com.ss.leetcode.LC2024.august.InsertGreatestCommonDivisorsInLinkedList;
 import com.ss.leetcode.LC2024.august.IntegerToEnglishWords;
 import com.ss.leetcode.LC2024.august.MaximumDistanceInArrays;
 import com.ss.leetcode.LC2024.august.MaximumNumberOfPointsWithCost;
 import com.ss.leetcode.LC2024.august.MinimumNumberOfDaysToDisconnectIsland;
 import com.ss.leetcode.LC2024.august.OnlineElection;
+import com.ss.leetcode.LC2024.august.PermutationDifferenceBetweenTwoStrings;
 import com.ss.leetcode.LC2024.august.RegionsCutBySlashes;
 import com.ss.leetcode.LC2024.august.SmallestMissingIntegerGreaterThanSequentialPrefixSum;
 import com.ss.leetcode.LC2024.august.SpiralMatrixIII;
+import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,7 +53,9 @@ public class StartAugust {
 //        start.findLongestSpecialSubstringThatOccursThriceI();
 //        start.applyDiscountToPrices();
 //        start.fractionAdditionAndSubtraction();
-        start.findThePeaks();
+//        start.findThePeaks();
+//        start.insertGreatestCommonDivisorsInLinkedList();
+        start.permutationDifferenceBetweenTwoStrings();
     }
 
     public void findTheMinimumAreaToCoverAllOnesI() {
@@ -250,5 +255,19 @@ public class StartAugust {
         System.out.println("[1,3] == " + ftp.findPeaks(new int[]{1,4,3,8,5}));
         System.out.println("[] == " + ftp.findPeaks(new int[]{1,2,3}));
         System.out.println("[1,3,5,7,11,13,15,17,19,24,30,41] == " + ftp.findPeaks(new int[]{1,2,1,2,1,2,1,2,1,1,1,2,1,2,1,2,1,2,1,2,1,3,4,4,5,4,3,4,5,7,8,7,7,6,5,4,3,3,4,5,6,7,6,5,4,3,2}));
+    }
+
+    public void insertGreatestCommonDivisorsInLinkedList() {
+        InsertGreatestCommonDivisorsInLinkedList igcdill = new InsertGreatestCommonDivisorsInLinkedList();
+
+        System.out.println("[18,6,6,2,10,1,3] == " + igcdill.insertGreatestCommonDivisors(ListNode.makeChain(new int[]{18,6,10,3})).getAsList());
+        System.out.println("[7] == " + igcdill.insertGreatestCommonDivisors(ListNode.makeChain(new int[]{7})).getAsList());
+    }
+
+    public void permutationDifferenceBetweenTwoStrings() {
+        PermutationDifferenceBetweenTwoStrings pdbts = new PermutationDifferenceBetweenTwoStrings();
+
+        System.out.println("2 == " + pdbts.findPermutationDifference("abc", "bac"));
+        System.out.println("12 == " + pdbts.findPermutationDifference("abcde", "edbac"));
     }
 }

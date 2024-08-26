@@ -2,7 +2,6 @@ package com.ss.leetcode.shared;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.StringJoiner;
 
 public class ListNode {
     public int val;
