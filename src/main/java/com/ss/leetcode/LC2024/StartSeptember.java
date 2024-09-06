@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.september.DeleteNodesFromLinkedListPresentInArray;
 import com.ss.leetcode.LC2024.september.FindTheStudentThatWillReplaceTheChalk;
 import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
 import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
+import com.ss.leetcode.shared.ListNode;
 
 public class StartSeptember {
     public static void main(String[] args) {
@@ -10,7 +12,8 @@ public class StartSeptember {
 
 //        start.findTheStudentThatWillReplaceTheChalk();
 //        start.largestSumOfAverages();
-        start.lexicographicallyMinimumStringAfterRemovingStars();
+//        start.lexicographicallyMinimumStringAfterRemovingStars();
+        start.deleteNodesFromLinkedListPresentInArray();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -35,5 +38,17 @@ public class StartSeptember {
 
         System.out.println("aab == " + lmsars.clearStars("aaba*"));
         System.out.println("abc == " + lmsars.clearStars("abc"));
+    }
+
+    public void deleteNodesFromLinkedListPresentInArray() {
+        DeleteNodesFromLinkedListPresentInArray dnfllpia = new DeleteNodesFromLinkedListPresentInArray();
+
+        System.out.println("[4,5] == " + dnfllpia.modifiedList(new int[]{1,2,3}, ListNode.makeChain(new int[]{1,2,3,4,5})).getAsList());
+        System.out.println("[2,2,2] == " + dnfllpia.modifiedList(new int[]{1}, ListNode.makeChain(new int[]{1,2,1,2,1,2})).getAsList());
+        System.out.println("[1,2,3,4] == " + dnfllpia.modifiedList(new int[]{5}, ListNode.makeChain(new int[]{1,2,3,4})).getAsList());
+        System.out.println("[1] == " + dnfllpia.modifiedList(new int[]{4,5,6,7,34,3,2}, ListNode.makeChain(new int[]{3,4,5,6,7,1})).getAsList());
+        System.out.println("[9] == " + dnfllpia.modifiedList(new int[]{1,2,3,4,5,6,7}, ListNode.makeChain(new int[]{1,1,1,1,1,1,1,1,1,1,9})).getAsList());
+        System.out.println("[11] == " + dnfllpia.modifiedList(new int[]{1,2,3,4,5,6,7,8,9,10}, ListNode.makeChain(new int[]{1,2,3,4,5,6,7,8,9,10,11})).getAsList());
+        System.out.println("[1] == " + dnfllpia.modifiedList(new int[]{2,3,4,5,6,7}, ListNode.makeChain(new int[]{1,2,3,4,5,6,7})).getAsList());
     }
 }
