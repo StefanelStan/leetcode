@@ -2,13 +2,15 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.september.FindTheStudentThatWillReplaceTheChalk;
 import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
+import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
 
 public class StartSeptember {
     public static void main(String[] args) {
         StartSeptember start = new StartSeptember();
 
 //        start.findTheStudentThatWillReplaceTheChalk();
-        start.largestSumOfAverages();
+//        start.largestSumOfAverages();
+        start.lexicographicallyMinimumStringAfterRemovingStars();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -26,5 +28,12 @@ public class StartSeptember {
 
         System.out.println("20.0 == " + lsoa.largestSumOfAverages(new int[]{9,1,2,3,9}, 3));
         System.out.println("20.5 == " + lsoa.largestSumOfAverages(new int[]{1,2,3,4,5,6,7}, 4));
+    }
+
+    public void lexicographicallyMinimumStringAfterRemovingStars() {
+        LexicographicallyMinimumStringAfterRemovingStars lmsars = new LexicographicallyMinimumStringAfterRemovingStars();
+
+        System.out.println("aab == " + lmsars.clearStars("aaba*"));
+        System.out.println("abc == " + lmsars.clearStars("abc"));
     }
 }
