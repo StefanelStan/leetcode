@@ -14,6 +14,8 @@ public class StartPlayground {
 //        start.fenwickTree();
 //        start.topologicalSort();
 //        start.kahnTopologicalSort();
+        start.dijkstra();
+//        start.bellmanFord();
     }
 
     public void addNumerical() {
@@ -165,5 +167,29 @@ public class StartPlayground {
 
         KahnTopologicalSort kts = new KahnTopologicalSort(7, new int[][]{{1, 0},{0,4},{0,6}, {2,6},{3,1}, {3,5},{3,6},{4,3},{4,6}});
         System.out.println(kts.getTopologicalSort());
+    }
+
+    public void dijkstra() {
+        Dijkstra dijkstra = new Dijkstra();
+
+        int[][] edges = {{3,5,20},{0,3,40},{4,5,25},{1,3,20},{0,1,5},{1,4,25},{2,5,30},{0,2,35},{4,3,45},{2,4,30}};
+        int[][] edgesWithNegativeCost = {{3,5,20},{0,3,40},{4,5,25},{1,3,20},{0,1,5},{1,4,25},{2,5,30},{0,2,35},{4,3,45},{2,4,-30}};
+
+        System.out.println("45 == " + dijkstra.shortestPathCost(6, edges, 0, 5));
+        System.out.println("45 == " + dijkstra.shortestPathCost(6, edgesWithNegativeCost, 0, 5));
+        System.out.println("25 == " + dijkstra.shortestPathCost(6, edges, 0, 3));
+        System.out.println("2147483647 == " + dijkstra.shortestPathCost(6, edges, 1, 2));
+    }
+
+    public void bellmanFord() {
+        BellmanFord bellmanFord = new BellmanFord();
+
+        int[][] edges = {{3,5,20},{0,3,40},{4,5,25},{1,3,20},{0,1,5},{1,4,25},{2,5,30},{0,2,35},{4,3,45},{2,4,30}};
+        int[][] edgesWithNegativeCost = {{3,5,20},{0,3,40},{4,5,25},{1,3,20},{0,1,5},{1,4,25},{2,5,30},{0,2,35},{4,3,45},{2,4,-30}};
+
+        System.out.println("45 == " + bellmanFord.shortestPathCost(6, edges, 0, 5));
+        System.out.println("30 == " + bellmanFord.shortestPathCost(6, edgesWithNegativeCost, 0, 5));
+        System.out.println("25 == " + bellmanFord.shortestPathCost(6, edges, 0, 3));
+        System.out.println("2147483647 == " + bellmanFord.shortestPathCost(6, edges, 1, 2));
     }
 }

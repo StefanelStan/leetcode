@@ -4,33 +4,41 @@ import com.ss.leetcode.shared.ListNode;
 
 public class SplitLinkedListInParts {
     // https://leetcode.com/problems/split-linked-list-in-parts/
+    /** Algorithm
+        1. Fail fast: if k == 1, return List[head];
+        2. Get the size of the list. Each segment will have a length of average (size / k) + 1 (depending on size % k).
+        3. For each expected segment, traverse in average + (1/0) steps and assign the head to parts[i].
+        4. Remember to nullify the tail of each segment.
+     */
     public ListNode[] splitListToParts(ListNode head, int k) {
-        int size = getSize(head);
+        if (k == 1) {
+            return new ListNode[]{head};
+        }
         ListNode[] parts = new ListNode[k];
-        int modulo = size % k, partSize = size / k;
+        ListNode[] currentHead = { head };
+        int size = getSize(head);
+        int averagePageSize = size / k, extraSegments = size % k;
         for (int i = 0; i < k; i++) {
-            head = splitInSize(head, parts, i, modulo, partSize);
-            modulo--;
+            parts[i] = getSegment(currentHead, averagePageSize + (extraSegments > 0 ? 1 : 0));
+            extraSegments--;
         }
         return parts;
     }
 
-    private ListNode splitInSize(ListNode head, ListNode[] parts, int i, int modulo, int length) {
-        if (head == null) {
-            return null;
+    private ListNode getSegment(ListNode[] head, int size) {
+        ListNode headToReturn = head[0];
+        while (head[0] != null && size > 1) {
+            head[0] = head[0].next;
+            size--;
         }
-        length += (modulo > 0 ? 1 : 0);
-        parts[i] = head;
-        while (head != null && length-- > 1) {
-            head = head.next;
+        if (head[0] != null) {
+            ListNode next = head[0].next;
+            head[0].next = null;
+            head[0] = next;
         }
-        ListNode toReturn = head;
-        if (head != null) {
-            toReturn = head.next;
-            head.next = null;
-        }
-        return toReturn;
+        return headToReturn;
     }
+
 
     public ListNode[] splitListToParts2(ListNode head, int k) {
         int listSize = getSize(head);
