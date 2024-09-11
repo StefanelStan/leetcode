@@ -36,7 +36,6 @@ public class BellmanFord {
         lowestCost[source] = 0;
         int[] predecessors = new int[nodes];
 
-        boolean updated = true;
         // run normal cycle
         runCycle(nodes, edges,false, lowestCost, predecessors);
         // run negative cycle detection

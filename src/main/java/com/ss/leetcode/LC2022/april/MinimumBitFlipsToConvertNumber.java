@@ -2,7 +2,22 @@ package com.ss.leetcode.LC2022.april;
 
 public class MinimumBitFlipsToConvertNumber {
     // https://leetcode.com/contest/biweekly-contest-75/problems/minimum-bit-flips-to-convert-number/
+    /** Algorithm
+        1. While start > 0 OR goal  > 0, check their last bit match
+        2. If it does not match, then you need to flip it, so increment flips by 1
+        3. Return total number of flips.
+     */
+    public int minBitFlips(int start, int goal) {
+        int flips = 0;
+        while (start > 0 || goal > 0) {
+            flips += ((start & 1) == (goal & 1) ? 0 : 1);
+            start = start >> 1;
+            goal = goal >> 1;
+        }
+        return flips;
+    }
 
+    // LOL SOLUTION
     /** Algorithm
      *  1. Convert start and goal to binary String representation
      *     eg:  7 = 111 , 17 = 10001
@@ -13,7 +28,7 @@ public class MinimumBitFlipsToConvertNumber {
      *     100 => only one bit is 1.
      *  4. This sum will be the difference between the two binary representations of numbers
      */
-    public int minBitFlips(int start, int goal) {
+    public int minBitFlips2(int start, int goal) {
         String binaryStart = Integer.toBinaryString(start);
         String binaryGoal = Integer.toBinaryString(goal);
 
