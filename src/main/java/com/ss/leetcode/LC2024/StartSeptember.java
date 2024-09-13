@@ -4,7 +4,9 @@ import com.ss.leetcode.LC2024.september.DeleteNodesFromLinkedListPresentInArray;
 import com.ss.leetcode.LC2024.september.FindTheStudentThatWillReplaceTheChalk;
 import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
 import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
+import com.ss.leetcode.LC2024.september.XORQueriesOfASubarray;
 import com.ss.leetcode.shared.ListNode;
+import java.util.Arrays;
 
 public class StartSeptember {
     public static void main(String[] args) {
@@ -13,7 +15,8 @@ public class StartSeptember {
 //        start.findTheStudentThatWillReplaceTheChalk();
 //        start.largestSumOfAverages();
 //        start.lexicographicallyMinimumStringAfterRemovingStars();
-        start.deleteNodesFromLinkedListPresentInArray();
+//        start.deleteNodesFromLinkedListPresentInArray();
+        start.xorQueriesOfASubarray();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -50,5 +53,13 @@ public class StartSeptember {
         System.out.println("[9] == " + dnfllpia.modifiedList(new int[]{1,2,3,4,5,6,7}, ListNode.makeChain(new int[]{1,1,1,1,1,1,1,1,1,1,9})).getAsList());
         System.out.println("[11] == " + dnfllpia.modifiedList(new int[]{1,2,3,4,5,6,7,8,9,10}, ListNode.makeChain(new int[]{1,2,3,4,5,6,7,8,9,10,11})).getAsList());
         System.out.println("[1] == " + dnfllpia.modifiedList(new int[]{2,3,4,5,6,7}, ListNode.makeChain(new int[]{1,2,3,4,5,6,7})).getAsList());
+    }
+
+    public void xorQueriesOfASubarray() {
+        XORQueriesOfASubarray xorqoas = new XORQueriesOfASubarray();
+
+        System.out.println("[2,7,14,8] == " + Arrays.toString(xorqoas.xorQueries(new int[]{1,3,4,8}, new int[][]{{0,1},{1,2},{0,3},{3,3}})));
+        System.out.println("[8,0,4,4] == " + Arrays.toString(xorqoas.xorQueries(new int[]{4,8,2,10}, new int[][]{{2,3},{1,3},{0,0},{0,3}})));
+        System.out.println("[7,5,1,4,3,1,4,4] == " + Arrays.toString(xorqoas.xorQueries(new int[]{1,2,3,4,5,5,4,3,1,1,2,3,5,6,76,43,1}, new int[][]{{2,3},{1,3},{0,0},{0,3},{0,1},{1,2},{0,3},{3,3}})));
     }
 }
