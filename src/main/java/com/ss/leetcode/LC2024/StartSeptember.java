@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.september.DeleteNodesFromLinkedListPresentInArray;
 import com.ss.leetcode.LC2024.september.FindTheStudentThatWillReplaceTheChalk;
 import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
 import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
+import com.ss.leetcode.LC2024.september.LongestSubarrayWithMaximumBitwiseAND;
 import com.ss.leetcode.LC2024.september.XORQueriesOfASubarray;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
@@ -16,7 +17,8 @@ public class StartSeptember {
 //        start.largestSumOfAverages();
 //        start.lexicographicallyMinimumStringAfterRemovingStars();
 //        start.deleteNodesFromLinkedListPresentInArray();
-        start.xorQueriesOfASubarray();
+//        start.xorQueriesOfASubarray();
+        start.longestSubarrayWithMaximumBitwiseAND();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -61,5 +63,12 @@ public class StartSeptember {
         System.out.println("[2,7,14,8] == " + Arrays.toString(xorqoas.xorQueries(new int[]{1,3,4,8}, new int[][]{{0,1},{1,2},{0,3},{3,3}})));
         System.out.println("[8,0,4,4] == " + Arrays.toString(xorqoas.xorQueries(new int[]{4,8,2,10}, new int[][]{{2,3},{1,3},{0,0},{0,3}})));
         System.out.println("[7,5,1,4,3,1,4,4] == " + Arrays.toString(xorqoas.xorQueries(new int[]{1,2,3,4,5,5,4,3,1,1,2,3,5,6,76,43,1}, new int[][]{{2,3},{1,3},{0,0},{0,3},{0,1},{1,2},{0,3},{3,3}})));
+    }
+
+    public void longestSubarrayWithMaximumBitwiseAND() {
+        LongestSubarrayWithMaximumBitwiseAND lswmband = new LongestSubarrayWithMaximumBitwiseAND();
+
+        System.out.println("2 == " + lswmband.longestSubarray(new int[]{1,2,2,3,3,2,2}));
+        System.out.println("1 == " + lswmband.longestSubarray(new int[]{1,2,3,4}));
     }
 }
