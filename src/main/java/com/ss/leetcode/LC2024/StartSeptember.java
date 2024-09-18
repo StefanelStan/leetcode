@@ -5,9 +5,11 @@ import com.ss.leetcode.LC2024.september.FindTheStudentThatWillReplaceTheChalk;
 import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
 import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
 import com.ss.leetcode.LC2024.september.LongestSubarrayWithMaximumBitwiseAND;
+import com.ss.leetcode.LC2024.september.MaximumNumberOfAlloys;
 import com.ss.leetcode.LC2024.september.XORQueriesOfASubarray;
 import com.ss.leetcode.shared.ListNode;
 import java.util.Arrays;
+import java.util.List;
 
 public class StartSeptember {
     public static void main(String[] args) {
@@ -18,7 +20,8 @@ public class StartSeptember {
 //        start.lexicographicallyMinimumStringAfterRemovingStars();
 //        start.deleteNodesFromLinkedListPresentInArray();
 //        start.xorQueriesOfASubarray();
-        start.longestSubarrayWithMaximumBitwiseAND();
+//        start.longestSubarrayWithMaximumBitwiseAND();
+        start.maximumNumberOfAlloys();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -70,5 +73,13 @@ public class StartSeptember {
 
         System.out.println("2 == " + lswmband.longestSubarray(new int[]{1,2,2,3,3,2,2}));
         System.out.println("1 == " + lswmband.longestSubarray(new int[]{1,2,3,4}));
+    }
+
+    public void maximumNumberOfAlloys() {
+        MaximumNumberOfAlloys mnoa = new MaximumNumberOfAlloys();
+
+        System.out.println("2 == " + mnoa.maxNumberOfAlloys(3,2,15, List.of(List.of(1,1,1), List.of(1,1,10)), List.of(0,0,0), List.of(1,2,3)));
+        System.out.println("5 == " + mnoa.maxNumberOfAlloys(3,2,15, List.of(List.of(1,1,1), List.of(1,1,10)), List.of(0,0,100), List.of(1,2,3)));
+        System.out.println("2 == " + mnoa.maxNumberOfAlloys(3,2,10, List.of(List.of(2,1), List.of(1,2), List.of(1,1)), List.of(1,1), List.of(5,5)));
     }
 }

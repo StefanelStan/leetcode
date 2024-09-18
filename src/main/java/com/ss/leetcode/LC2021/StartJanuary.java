@@ -24,10 +24,10 @@ public class StartJanuary {
     public static void main(String[] args) {
         StartJanuary start = new StartJanuary();
 
-        start.longestStringChain();
+//        start.longestStringChain();
 //        start.constructKPalindrome(); //unfinished
 //        start.excelSheetColumnNumber();
-//        start.largestNumber();
+        start.largestNumber();
 //        start.addToArrayForm();
 //        start.productOfArrayExceptSelf();
 //        start.subrectangleQueries();
@@ -77,11 +77,15 @@ public class StartJanuary {
         int[] nums3 = { 3, 30, 34, 5, 9, 9125, 90, 925 };
         int[] nums4 = { 432, 43243 };
         int[] nums5 = { 8308, 8308, 830 };
+        int[] nums6 = { 9, 901, 90, 9999 };
+        int[] nums7 = { 0, 0 };
 //        System.out.println("210 ==" + ln.largestNumber(nums));
 //        System.out.println("9534330 ==" + ln.largestNumber(nums2));
 //        System.out.println("9925912590 ==" + ln.largestNumber(nums3));
 //        System.out.println("43243432 ==" + ln.largestNumber(nums4));
-        System.out.println("83088308830 == " + ln.largestNumber(nums5));
+//        System.out.println("83088308830 == " + ln.largestNumber(nums5));
+        System.out.println("9999990901 == " + ln.largestNumber(nums6));
+        System.out.println("0 == " + ln.largestNumber(nums6));
     }
 
     private void addToArrayForm() {

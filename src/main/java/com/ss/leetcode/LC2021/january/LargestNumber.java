@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2021.january;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +10,38 @@ import java.util.TreeMap;
 public class LargestNumber {
     // https://leetcode.com/problems/largest-number/
     public String largestNumber(int[] nums) {
+        List<String>[] bucket = new List[10];
+        for (int num : nums) {
+            addToBucket(bucket, String.valueOf(num));
+        }
+        StringBuilder stb = new StringBuilder();
+        for (int i = 9; i > 0; i--) {
+            if (bucket[i] != null) {
+                bucket[i].sort((a,b) -> (a + b).compareTo(b + a));
+                for (String s : bucket[i]) {
+                    stb.append(s);
+                }
+            }
+        }
+        if (bucket[0] != null) {
+            if (stb.isEmpty()) {
+                stb.append(0);
+            } else {
+                bucket[0].forEach(stb::append);
+            }
+        }
+        return stb.toString();
+    }
+
+    private void addToBucket(List<String>[] bucket, String num) {
+        int firstChar = num.charAt(0) - '0';
+        if (bucket[firstChar] == null) {
+            bucket[firstChar] = new ArrayList<>();
+        }
+        bucket[firstChar].add(num);
+    }
+
+    public String largestNumber2(int[] nums) {
         NavigableMap<Integer, List<String>> sortedNumbers = putNumbersIntoSortedMap(nums);
         StringBuilder stb = new StringBuilder();
         for (int i = 9; i >= 1; i--) {
