@@ -3,11 +3,14 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.september.DeleteNodesFromLinkedListPresentInArray;
 import com.ss.leetcode.LC2024.september.FindTheStudentThatWillReplaceTheChalk;
 import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
+import com.ss.leetcode.LC2024.september.LexicographicalNumbers;
 import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
 import com.ss.leetcode.LC2024.september.LongestSubarrayWithMaximumBitwiseAND;
 import com.ss.leetcode.LC2024.september.MaximumNumberOfAlloys;
 import com.ss.leetcode.LC2024.september.XORQueriesOfASubarray;
+import com.ss.leetcode.LC2024.september.HeightOfBinaryTreeAfterSubtreeRemovalQueries;
 import com.ss.leetcode.shared.ListNode;
+import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +24,9 @@ public class StartSeptember {
 //        start.deleteNodesFromLinkedListPresentInArray();
 //        start.xorQueriesOfASubarray();
 //        start.longestSubarrayWithMaximumBitwiseAND();
-        start.maximumNumberOfAlloys();
+//        start.maximumNumberOfAlloys();
+//        start.lexicographicalNumbers();
+        start.heightOfBinaryTreeAfterSubtreeRemovalQueries();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -81,5 +86,23 @@ public class StartSeptember {
         System.out.println("2 == " + mnoa.maxNumberOfAlloys(3,2,15, List.of(List.of(1,1,1), List.of(1,1,10)), List.of(0,0,0), List.of(1,2,3)));
         System.out.println("5 == " + mnoa.maxNumberOfAlloys(3,2,15, List.of(List.of(1,1,1), List.of(1,1,10)), List.of(0,0,100), List.of(1,2,3)));
         System.out.println("2 == " + mnoa.maxNumberOfAlloys(3,2,10, List.of(List.of(2,1), List.of(1,2), List.of(1,1)), List.of(1,1), List.of(5,5)));
+    }
+
+    public void lexicographicalNumbers() {
+        LexicographicalNumbers ln = new LexicographicalNumbers();
+
+        System.out.println("[1,10,11,12,13,2,3,4,5,6,7,8,9] == " + ln.lexicalOrder(13));
+        System.out.println("[1,2] == " + ln.lexicalOrder(2));
+    }
+
+    public void heightOfBinaryTreeAfterSubtreeRemovalQueries() {
+        HeightOfBinaryTreeAfterSubtreeRemovalQueries hobtastq = new HeightOfBinaryTreeAfterSubtreeRemovalQueries();
+
+        System.out.println("[2] == " + Arrays.toString(hobtastq.treeQueries(
+            new TreeNode(1, new TreeNode(3, new TreeNode(2), null), new TreeNode(4, new TreeNode(6), new TreeNode(5, null, new TreeNode(7)))),
+            new int[]{4})));
+        System.out.println("[3,2,3,2] == " + Arrays.toString(hobtastq.treeQueries(
+            new TreeNode(5, new TreeNode(8, new TreeNode(2, new TreeNode(4), new TreeNode(6)), new TreeNode(1)), new TreeNode(9, new TreeNode(3), new TreeNode(7))),
+            new int[]{3,2,4,8})));
     }
 }
