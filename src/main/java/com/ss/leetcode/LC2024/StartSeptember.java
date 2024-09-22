@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.september.DeleteNodesFromLinkedListPresentInArray;
+import com.ss.leetcode.LC2024.september.FindTheNumberOfDistinctColorsAmongTheBalls;
 import com.ss.leetcode.LC2024.september.FindTheStudentThatWillReplaceTheChalk;
 import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
 import com.ss.leetcode.LC2024.september.LexicographicalNumbers;
@@ -26,7 +27,8 @@ public class StartSeptember {
 //        start.longestSubarrayWithMaximumBitwiseAND();
 //        start.maximumNumberOfAlloys();
 //        start.lexicographicalNumbers();
-        start.heightOfBinaryTreeAfterSubtreeRemovalQueries();
+//        start.heightOfBinaryTreeAfterSubtreeRemovalQueries();
+        start.findTheNumberOfDistinctColorsAmongTheBalls();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -104,5 +106,12 @@ public class StartSeptember {
         System.out.println("[3,2,3,2] == " + Arrays.toString(hobtastq.treeQueries(
             new TreeNode(5, new TreeNode(8, new TreeNode(2, new TreeNode(4), new TreeNode(6)), new TreeNode(1)), new TreeNode(9, new TreeNode(3), new TreeNode(7))),
             new int[]{3,2,4,8})));
+    }
+
+    public void findTheNumberOfDistinctColorsAmongTheBalls() {
+        FindTheNumberOfDistinctColorsAmongTheBalls ftnodcatb = new FindTheNumberOfDistinctColorsAmongTheBalls();
+
+        System.out.println("[1,2,3,4] == " + Arrays.toString(ftnodcatb.queryResults(4, new int[][]{{1,4},{2,5},{1,3},{3,4}})));
+        System.out.println("[1,2,2,3,4] == " + Arrays.toString(ftnodcatb.queryResults(4, new int[][]{{0,1},{1,2},{2,2},{3,4},{4,5}})));
     }
 }
