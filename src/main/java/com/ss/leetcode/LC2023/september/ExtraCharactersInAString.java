@@ -1,7 +1,5 @@
 package com.ss.leetcode.LC2023.september;
 
-import java.util.Arrays;
-
 public class ExtraCharactersInAString {
     // https://leetcode.com/problems/extra-characters-in-a-string
     /** Algorithm
@@ -18,82 +16,71 @@ public class ExtraCharactersInAString {
         5. Not picking. If we decide to NOT pick current index, we jump to index 1 and we try to walk.
             - skipping fast-forward, if we keep skipping, we will reach index 3, which was already calculated, so we make use of that.
      */
-    private static final int NOT_VISITED = 100;
     public int minExtraChar(String s, String[] dictionary) {
-        Trie root = insertDictionary(dictionary);
-        int[] minExtra = new int[s.length()];
-        Arrays.fill(minExtra, NOT_VISITED);
-        return visitString(s.toCharArray(), 0, minExtra, root);
+        return traverse(0, s.toCharArray(), buildTrie(dictionary), new Integer[s.length()]);
     }
 
-    private int visitString(char[] chars, int index, int[] minExtra, Trie root) {
-        if (index >= chars.length) {
+    private int traverse(int index, char[] sentence, TrieNode trie, Integer[] extraChars) {
+        if (index == sentence.length) {
             return 0;
         }
-        if (minExtra[index] == NOT_VISITED) {
-            // pick
+        if (extraChars[index] == null) {
+            extraChars[index] = 100;
+            // pick and walk
+            TrieNode trieHead = trie;
             int start = index;
-            Trie rootCopy = root;
-            while(start < chars.length && rootCopy.hasNode(chars[start] - 'a')) {
-                rootCopy = rootCopy.getNode(chars[start] - 'a');
-                if (rootCopy.isWord()) {
-                    minExtra[index] = Math.min(minExtra[index], visitString(chars, start + 1, minExtra, root));
+            while (start < sentence.length && trieHead.getNode(sentence[start] - 'a') != null) {
+                trieHead = trieHead.getNode(sentence[start] - 'a');
+                if (trieHead.isWord()) {
+                    extraChars[index] = Math.min(extraChars[index], traverse(start + 1, sentence, trie, extraChars));
                 }
                 start++;
             }
-
-            //not pick
-            minExtra[index] = Math.min(minExtra[index], 1 + visitString(chars, index +  1, minExtra, root));
+            //skip
+            extraChars[index] = Math.min(extraChars[index], 1 + traverse(index + 1, sentence, trie, extraChars));
         }
-        return minExtra[index];
+        return extraChars[index];
     }
 
-    private Trie insertDictionary(String[] dictionary) {
-        Trie root = new Trie(), temp;
-        int codePoint, i;
+    private TrieNode buildTrie(String[] dictionary) {
+        TrieNode root = new TrieNode();
         for (String word : dictionary) {
-            temp = root;
-            i = 0;
-            for (; i < word.length(); i++) {
-                codePoint = word.charAt(i) - 'a';
-                if (!temp.hasNode(codePoint)) {
-                    temp = temp.addNode(codePoint);
-                } else {
-                    temp = temp.getNode(codePoint);
-                }
-            }
-            temp.setWord();
+            addToTrie(root, word);
         }
         return root;
     }
 
-    private static class Trie {
-        private final Trie[] nodes;
-        private boolean isWord;
+    private void addToTrie(TrieNode root, String word) {
+        for (int i = 0; i < word.length(); i++) {
+            root = root.addNode(word.charAt(i) - 'a');
+        }
+        root.setWord();
+    }
 
-        public Trie() {
-            nodes = new Trie[26];
+    private static class TrieNode {
+        TrieNode[] nodes;
+        boolean isWord;
+        public TrieNode() {
+            nodes = new TrieNode[26];
         }
 
-        public Trie getNode(int index) {
-            return nodes[index];
+        public TrieNode addNode(int codePoint) {
+            if (nodes[codePoint] == null) {
+                nodes[codePoint] = new TrieNode();
+            }
+            return nodes[codePoint];
         }
 
-        public boolean hasNode(int index) {
-            return nodes[index] != null;
-        }
-
-        public Trie addNode(int index) {
-            nodes[index] = new Trie();
-            return nodes[index];
+        public TrieNode getNode(int codePoint) {
+            return nodes[codePoint];
         }
 
         public boolean isWord() {
-            return isWord;
+            return this.isWord;
         }
 
         public void setWord() {
-            isWord = true;
+            this.isWord = true;
         }
     }
 }
