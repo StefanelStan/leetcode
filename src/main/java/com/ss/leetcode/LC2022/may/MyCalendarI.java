@@ -1,16 +1,40 @@
 package com.ss.leetcode.LC2022.may;
 
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
 public class MyCalendarI {
     // https://leetcode.com/problems/my-calendar-i/
-    TreeMap<Integer, Integer> calendar;
+    /** Algorithm
+        1. Use a TreeMap<Integer, Integer> bookings to map each booking (start,end). Because it is a TreeMap, you can get the bookings sorted by start.
+        2. For each new booking, you want to see if you can FIT it between two other bookings. (previous and next)
+        3. Previous booking: get the booking done with the closest number lower (or equal to current) (floor). Check if its endTime <= new booking start time
+        4. Next booking: find the entry with the ceiling value. Check if this has the key (starttime) >= new booking end time.
+        5. Insert the new booking or reject it.
+     */
+    private final TreeMap<Integer,Integer> bookings;
     public MyCalendarI() {
-        calendar = new TreeMap<>();
+        bookings = new TreeMap<>();
     }
 
     public boolean book(int start, int end) {
+        Map.Entry<Integer, Integer> prevBooking = bookings.floorEntry(start);
+        Integer nextBooking = bookings.ceilingKey(start);
+        boolean canBook = (prevBooking == null || prevBooking.getValue() <= start) && (nextBooking == null || nextBooking >= end);
+        if (canBook) {
+            bookings.put(start, end);
+        }
+        return canBook;
+    }
+
+
+    TreeMap<Integer, Integer> calendar = new TreeMap<>();
+//    public MyCalendarI() {
+//        calendar = new TreeMap<>();
+//    }
+
+    public boolean book2(int start, int end) {
         if (calendar.isEmpty()) {
             calendar.put(start, end);
             return true;
