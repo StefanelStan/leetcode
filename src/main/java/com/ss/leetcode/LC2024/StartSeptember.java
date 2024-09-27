@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2024.september.LexicographicalNumbers;
 import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
 import com.ss.leetcode.LC2024.september.LongestSubarrayWithMaximumBitwiseAND;
 import com.ss.leetcode.LC2024.september.MaximumNumberOfAlloys;
+import com.ss.leetcode.LC2024.september.TheNumberOfTheSmallestUnoccupiedChair;
 import com.ss.leetcode.LC2024.september.XORQueriesOfASubarray;
 import com.ss.leetcode.LC2024.september.HeightOfBinaryTreeAfterSubtreeRemovalQueries;
 import com.ss.leetcode.shared.ListNode;
@@ -28,7 +29,8 @@ public class StartSeptember {
 //        start.maximumNumberOfAlloys();
 //        start.lexicographicalNumbers();
 //        start.heightOfBinaryTreeAfterSubtreeRemovalQueries();
-        start.findTheNumberOfDistinctColorsAmongTheBalls();
+//        start.findTheNumberOfDistinctColorsAmongTheBalls();
+        start.theNumberOfTheSmallestUnoccupiedChair();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -113,5 +115,13 @@ public class StartSeptember {
 
         System.out.println("[1,2,3,4] == " + Arrays.toString(ftnodcatb.queryResults(4, new int[][]{{1,4},{2,5},{1,3},{3,4}})));
         System.out.println("[1,2,2,3,4] == " + Arrays.toString(ftnodcatb.queryResults(4, new int[][]{{0,1},{1,2},{2,2},{3,4},{4,5}})));
+    }
+
+    public void theNumberOfTheSmallestUnoccupiedChair() {
+        TheNumberOfTheSmallestUnoccupiedChair tnotsuc = new TheNumberOfTheSmallestUnoccupiedChair();
+
+        System.out.println("1 == " + tnotsuc.smallestChair(new int[][]{{1,4}, {2,3},{4,6}}, 1));
+        System.out.println("2 == " + tnotsuc.smallestChair(new int[][]{{3,10}, {1,5},{2,6}}, 0));
+        System.out.println("2 == " + tnotsuc.smallestChair(new int[][]{{33889,98676},{80071,89737},{44118,52565},{52992,84310},{78492,88209},{21695,67063},{84622,95452},{98048,98856},{98411,99433},{55333,56548},{65375,88566},{55011,62821},{48548,48656},{87396,94825},{55273,81868},{75629,91467}}, 6));
     }
 }
