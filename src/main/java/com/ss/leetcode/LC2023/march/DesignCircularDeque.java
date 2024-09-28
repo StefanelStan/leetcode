@@ -2,86 +2,72 @@ package com.ss.leetcode.LC2023.march;
 
 public class DesignCircularDeque {
     // https://leetcode.com/problems/design-circular-deque/
-    private int[] queue;
-    private int capacity, size;
-    private int head, tail;
+    /** Algorithm
+        1. Use an int[k] to insert elements into the queue.
+        2. Use 2 pointers (head, tail) to keep them positioned on the current head and tail. Also, keep track of current queue size.
+        3. If size == 0, you return -1 as you cannot delete from head/tail. If size == queue.length, you cannot insert head/tail.
+        4. Insert (Same idea for deletion)
+            - if your size is 0, then set your queue[head] or queue[tail] value and increase the size.
+            - if size > 0, then move head to left or tail to right and set the value of that index. Increase the size.
+     */
+    int head = 0, tail = 0, size = 0;
+    int[] queue;
     public DesignCircularDeque(int k) {
-        capacity = k;
         queue = new int[k];
-        head = tail = k-1;
     }
 
     public boolean insertFront(int value) {
-        boolean result = false;
-        if (!isFull()) {
-           head--;
-           if (head < 0) {
-               head = capacity - 1;
-           }
-           queue[head] = value;
-           result = true;
-           if(++size <= 1) {
-               tail = head;
-           }
+        if (size < queue.length) {
+            if (size > 0) {
+                head = head == 0 ? queue.length -1 : head - 1;
+            }
+            queue[head] = value;
+            size++;
+            return true;
         }
-        return result;
+        return false;
     }
 
     public boolean insertLast(int value) {
-        boolean result = false;
-        if(!isFull()) {
-            tail = (tail + 1) % capacity;
-            if (++size <= 1) {
-                head = tail;
+        if (size < queue.length) {
+            if (size > 0) {
+                tail = (tail + 1) % queue.length;
             }
             queue[tail] = value;
-            result = true;
+            size++;
+            return true;
         }
-        return result;
+        return false;
     }
 
     public boolean deleteFront() {
-        boolean result = false;
-        if(!isEmpty()) {
-            head = (head + 1) % capacity;
-            if(--size <= 1) {
-                tail = head;
+        if (size > 0) {
+            if (size > 1) {
+                head = (head + 1) % queue.length;
             }
-            result = true;
+            size--;
+            return true;
         }
-
-        return result;
+        return false;
     }
 
     public boolean deleteLast() {
-        boolean result = false;
-        if (!isEmpty()) {
-            tail--;
-            if (tail < 0) {
-                tail = capacity -1;
+        if (size > 0) {
+            if (size > 1) {
+                tail = tail == 0 ? queue.length -1 : tail - 1;
             }
-            if(-- size <= 1) {
-                head = tail;
-            }
-            result = true;
+            size--;
+            return true;
         }
-        return result;
+        return false;
     }
 
     public int getFront() {
-        int result = -1;
-        if (!isEmpty()) {
-            result = queue[head];
-        }
-        return result;
+        return size == 0 ? -1 : queue[head];
     }
 
     public int getRear() {
-        int result = -1;
-        if (!isEmpty()) {
-            result = queue[tail];
-        }
-        return result;
+        return size == 0 ? -1 : queue[tail];
     }
 
     public boolean isEmpty() {
@@ -89,7 +75,7 @@ public class DesignCircularDeque {
     }
 
     public boolean isFull() {
-        return size == capacity;
+        return size == queue.length;
     }
 
 
