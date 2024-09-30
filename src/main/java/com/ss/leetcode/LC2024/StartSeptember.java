@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.september.LargestSumOfAverages;
 import com.ss.leetcode.LC2024.september.LexicographicalNumbers;
 import com.ss.leetcode.LC2024.september.LexicographicallyMinimumStringAfterRemovingStars;
 import com.ss.leetcode.LC2024.september.LongestSubarrayWithMaximumBitwiseAND;
+import com.ss.leetcode.LC2024.september.MakeThreeStringsEqual;
 import com.ss.leetcode.LC2024.september.MaximumNumberOfAlloys;
 import com.ss.leetcode.LC2024.september.TheNumberOfTheSmallestUnoccupiedChair;
 import com.ss.leetcode.LC2024.september.XORQueriesOfASubarray;
@@ -30,7 +31,8 @@ public class StartSeptember {
 //        start.lexicographicalNumbers();
 //        start.heightOfBinaryTreeAfterSubtreeRemovalQueries();
 //        start.findTheNumberOfDistinctColorsAmongTheBalls();
-        start.theNumberOfTheSmallestUnoccupiedChair();
+//        start.theNumberOfTheSmallestUnoccupiedChair();
+        start.makeThreeStringsEqual();
     }
 
     public void findTheStudentThatWillReplaceTheChalk() {
@@ -123,5 +125,16 @@ public class StartSeptember {
         System.out.println("1 == " + tnotsuc.smallestChair(new int[][]{{1,4}, {2,3},{4,6}}, 1));
         System.out.println("2 == " + tnotsuc.smallestChair(new int[][]{{3,10}, {1,5},{2,6}}, 0));
         System.out.println("2 == " + tnotsuc.smallestChair(new int[][]{{33889,98676},{80071,89737},{44118,52565},{52992,84310},{78492,88209},{21695,67063},{84622,95452},{98048,98856},{98411,99433},{55333,56548},{65375,88566},{55011,62821},{48548,48656},{87396,94825},{55273,81868},{75629,91467}}, 6));
+    }
+
+    public void makeThreeStringsEqual() {
+        MakeThreeStringsEqual mtse = new MakeThreeStringsEqual();
+
+        System.out.println("2 == " + mtse.findMinimumOperations("abc", "abb", "ab"));
+        System.out.println("-1 == " + mtse.findMinimumOperations("dac", "bac", "cac"));
+        System.out.println("21 == " + mtse.findMinimumOperations("asasasadaasa", "asasasdasasa", "asasdasaa"));
+        System.out.println("-1 == " + mtse.findMinimumOperations("asasasasas", "asasasasas", "sasasaasasa"));
+        System.out.println("-1 == " + mtse.findMinimumOperations("asasasasas", "asasasasas", "sasasaasasa"));
+        System.out.println("15 == " + mtse.findMinimumOperations("assdad", "assdasa", "asdadsas"));
     }
 }
