@@ -1,12 +1,15 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
+import java.util.Arrays;
 
 public class StartOctober {
     public static void main(String[] args) {
         StartOctober start = new StartOctober();
 
-        start.splitArrayIntoMaximumNumberOfSubarrays();
+//        start.splitArrayIntoMaximumNumberOfSubarrays();
+        start.findTheGridOfRegionAverage();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -20,5 +23,13 @@ public class StartOctober {
         System.out.println("3 == " + saimnos.maxSubarrays(new int[]{3,2,34,5,7,98,9,7,5,4,2}));
         System.out.println("2 == " + saimnos.maxSubarrays(new int[]{1234,3423,354,43534,56456,3524,425435,452341,2343,6576,24123}));
         System.out.println("1 == " + saimnos.maxSubarrays(new int[]{22,21,29,22}));
+    }
+
+    public void findTheGridOfRegionAverage() {
+        FindTheGridOfRegionAverage ftgora = new FindTheGridOfRegionAverage();
+
+        System.out.println("[[9,9,9,9],[9,9,9,9],[9,9,9,9]] == " + Arrays.deepToString(ftgora.resultGrid(new int[][]{{5,6,7,10}, {8,9,10,10},{11,12,13,10}}, 3)));
+        System.out.println("[[25,25,25],[27,27,27],[27,27,27],[30,30,30]] == " + Arrays.deepToString(ftgora.resultGrid(new int[][]{{10,20,30}, {15,25,35},{20,30,40},{25,35,45}}, 12)));
+        System.out.println("[[5,6,7],[8,9,10],[11,12,13]] == " + Arrays.deepToString(ftgora.resultGrid(new int[][]{{5,6,7}, {8,9,10},{11,12,13}}, 1)));
     }
 }
