@@ -1,8 +1,11 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
+import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
+import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 
 public class StartOctober {
@@ -11,7 +14,9 @@ public class StartOctober {
 
 //        start.splitArrayIntoMaximumNumberOfSubarrays();
 //        start.findTheGridOfRegionAverage();
-        start.makeSumDivisibleByP();
+//        start.makeSumDivisibleByP();
+//        start.dividePlayersIntoTeamsOfEqualSkill();
+        start.maximumSumBSTInBinaryTree();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -45,4 +50,21 @@ public class StartOctober {
         System.out.println("3 == " + msdbp.minSubarray(new int[]{26,19,11,14,18,4,7,1,30,23,19,8,10,6,26,3}, 26));
         System.out.println("7 == " + msdbp.minSubarray(new int[]{8,32,31,18,34,20,21,13,1,27,23,22,11,15,30,4,2}, 148));
     }
+
+    public void dividePlayersIntoTeamsOfEqualSkill() {
+        DividePlayersIntoTeamsOfEqualSkill dpitoes = new DividePlayersIntoTeamsOfEqualSkill();
+
+        System.out.println("22 == " + dpitoes.dividePlayers(new int[]{3,2,5,1,3,4}));
+        System.out.println("12 == " + dpitoes.dividePlayers(new int[]{3,4}));
+        System.out.println("-1 == " + dpitoes.dividePlayers(new int[]{1,1,2,3}));
+    }
+
+    public void maximumSumBSTInBinaryTree() {
+        MaximumSumBSTInBinaryTree msbstibt = new MaximumSumBSTInBinaryTree();
+
+        System.out.println("20 == " + msbstibt.maxSumBST(new TreeNode(1, new TreeNode(4, new TreeNode(2), new TreeNode(4)), new TreeNode(3, new TreeNode(2),new TreeNode(5, new TreeNode(4), new TreeNode(6))))));
+        System.out.println("2 == " + msbstibt.maxSumBST(new TreeNode(4, new TreeNode(3, new TreeNode(1), new TreeNode(2)), null)));
+        System.out.println("0 == " + msbstibt.maxSumBST(new TreeNode(-4, new TreeNode(-2), new TreeNode(-5))));
+    }
+
 }
