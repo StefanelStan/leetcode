@@ -39,4 +39,74 @@ public class PermutationInString {
         }
         return true;
     }
+
+    /** This Algorithm Runs in O(n) time, and not O(n) * 26.
+     *  Each time it adds or removes a char, it increases a sensitive count
+     *  only if the original has that letter and the count goes up/down by 1
+     */
+    public boolean checkInclusion2(String s1, String s2) {
+        if (s1.length() > s2.length()) {
+            return false;
+        }
+        int[] s1Chars = countChars(s1);
+        PermutationWindow pw = new PermutationWindow(s1Chars);
+        for (int i = 0; i < s1.length(); i++) {
+            pw.addChar(s2.charAt(i) - 'a');
+        }
+        boolean isMatching = pw.isMatching();
+        for (int i = 0, j = s1.length(); !isMatching && j < s2.length(); i++, j++) {
+            pw.addChar(s2.charAt(j) - 'a');
+            pw.removeChar(s2.charAt(i) - 'a');
+            isMatching = pw.isMatching();
+        }
+        return isMatching;
+    }
+
+    private int[] countChars(String str) {
+        int[] count = new int[26];
+        for(int i = 0; i < str.length(); i++) {
+            count[str.charAt(i) - 'a']++;
+        }
+        return count;
+    }
+
+    private static class PermutationWindow {
+        int[] originalCount;
+        int[] windowCount;
+        int originalMatches = 0;
+        int windowMatches;
+        public PermutationWindow(int[] count) {
+            originalCount = count;
+            windowCount = new int[26];
+            for (int j : count) {
+                originalMatches += j > 0 ? 1 : 0;
+            }
+        }
+
+        public void addChar(int codePoint) {
+            windowCount[codePoint]++;
+            if (originalCount[codePoint] > 0) {
+                if (windowCount[codePoint] == originalCount[codePoint]) {
+                    windowMatches++;
+                } else if (windowCount[codePoint] -1 == originalCount[codePoint]) {
+                    windowMatches--;
+                }
+            }
+        }
+
+        public void removeChar(int codePoint) {
+            windowCount[codePoint]--;
+            if (originalCount[codePoint] > 0) {
+                if (windowCount[codePoint] == originalCount[codePoint]) {
+                    windowMatches++;
+                } else if (windowCount[codePoint] + 1 == originalCount[codePoint]) {
+                    windowMatches--;
+                }
+            }
+        }
+
+        public boolean isMatching() {
+            return originalMatches == windowMatches;
+        }
+    }
 }
