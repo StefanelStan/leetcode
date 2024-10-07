@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
 import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
+import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
@@ -16,7 +17,8 @@ public class StartOctober {
 //        start.findTheGridOfRegionAverage();
 //        start.makeSumDivisibleByP();
 //        start.dividePlayersIntoTeamsOfEqualSkill();
-        start.maximumSumBSTInBinaryTree();
+//        start.maximumSumBSTInBinaryTree();
+        start.minimumStringLengthAfterRemovingSubstrings();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -65,6 +67,14 @@ public class StartOctober {
         System.out.println("20 == " + msbstibt.maxSumBST(new TreeNode(1, new TreeNode(4, new TreeNode(2), new TreeNode(4)), new TreeNode(3, new TreeNode(2),new TreeNode(5, new TreeNode(4), new TreeNode(6))))));
         System.out.println("2 == " + msbstibt.maxSumBST(new TreeNode(4, new TreeNode(3, new TreeNode(1), new TreeNode(2)), null)));
         System.out.println("0 == " + msbstibt.maxSumBST(new TreeNode(-4, new TreeNode(-2), new TreeNode(-5))));
+    }
+
+    public void minimumStringLengthAfterRemovingSubstrings() {
+        MinimumStringLengthAfterRemovingSubstrings mslars = new MinimumStringLengthAfterRemovingSubstrings();
+
+        System.out.println("2 == " + mslars.minLength("ABFCACDB"));
+        System.out.println("5 == " + mslars.minLength("ACBBD"));
+        System.out.println("1 == " + mslars.minLength("D"));
     }
 
 }
