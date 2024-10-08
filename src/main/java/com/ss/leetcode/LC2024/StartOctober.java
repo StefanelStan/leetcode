@@ -4,10 +4,16 @@ import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
 import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
+import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalanced;
+import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
 import com.ss.leetcode.shared.TreeNode;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -18,7 +24,10 @@ public class StartOctober {
 //        start.makeSumDivisibleByP();
 //        start.dividePlayersIntoTeamsOfEqualSkill();
 //        start.maximumSumBSTInBinaryTree();
-        start.minimumStringLengthAfterRemovingSubstrings();
+//        start.minimumStringLengthAfterRemovingSubstrings();
+//        System.out.println("1== " + start.minSwaps("][]["));
+//        start.minimumNumberOfSwapsToMakeTheStringBalanced();
+        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneI();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -75,6 +84,31 @@ public class StartOctober {
         System.out.println("2 == " + mslars.minLength("ABFCACDB"));
         System.out.println("5 == " + mslars.minLength("ACBBD"));
         System.out.println("1 == " + mslars.minLength("D"));
+    }
+
+    public void minimumNumberOfSwapsToMakeTheStringBalanced() {
+        MinimumNumberOfSwapsToMakeTheStringBalanced mnostmsb = new MinimumNumberOfSwapsToMakeTheStringBalanced();
+
+        System.out.println("3 == " + mnostmsb.minSwaps("[][]]]]]][[[][[[[[]]][[][]"));
+        System.out.println("2 == " + mnostmsb.minSwaps("]]][[]]][][[[[]]]][[[[[][[[]]][][[[[][]]][[[]][]]]"));
+        System.out.println("4 == " + mnostmsb.minSwaps("]][[]][][[][[[[]][]][][[]]]][[][]]][[]]]]]][[[][]]][[[][[[[[[]]]][][][][[][[][][[]]]][[["));
+        System.out.println("1 == " + mnostmsb.minSwaps("][[[][][][[[]]]][][][][[][[][[[[[][][]][[]]][]][[[[][]]]][]]][[]][][]]"));
+        System.out.println("1 == " + mnostmsb.minSwaps("][]][[][][[[[]]]][[]][][][[][[][][]]]][][["));
+        System.out.println("2 == " + mnostmsb.minSwaps("]][[[][]][[[][[]][][[]][][[][[][]]][[[[]][]][]][][[[[[]]][[]]]]]]]][[[[][]]][][[[]][[]]][][["));
+        System.out.println("1 == " + mnostmsb.minSwaps("][[][][[[][][]]][[]]"));
+        System.out.println("1 == " + mnostmsb.minSwaps("[][[][[[][[]]][]]]]][[][[][][][][[[[][]]]]"));
+    }
+
+    public void minimumOperationsToMakeBinaryArrayElementsEqualToOneI() {
+        MinimumOperationsToMakeBinaryArrayElementsEqualToOneI motmbaeetoi = new MinimumOperationsToMakeBinaryArrayElementsEqualToOneI();
+
+        System.out.println("3 == " + motmbaeetoi.minOperations(new int[]{0,1,1,1,0,0}));
+        System.out.println("-1 == " + motmbaeetoi.minOperations(new int[]{0,1,1,1}));
+        System.out.println("4 == " + motmbaeetoi.minOperations(new int[]{1,1,1,0,0,1,1,0,1,0,1}));
+        System.out.println("-1 == " + motmbaeetoi.minOperations(new int[]{0,0,1,1,0}));
+        System.out.println("0 == " + motmbaeetoi.minOperations(new int[]{1,1,1,1,1}));
+        System.out.println("-1 == " + motmbaeetoi.minOperations(new int[]{0,0,0,0,0}));
+        System.out.println("1 == " + motmbaeetoi.minOperations(new int[]{0,0,0}));
     }
 
 }
