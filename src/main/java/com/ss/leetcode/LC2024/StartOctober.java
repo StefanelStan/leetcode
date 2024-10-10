@@ -1,9 +1,11 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.october.CheckIfStringsCanBeMadeEqualWithOperationsI;
 import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
 import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
+import com.ss.leetcode.LC2024.october.MaximumWidthRamp;
 import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalanced;
 import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
@@ -27,7 +29,9 @@ public class StartOctober {
 //        start.minimumStringLengthAfterRemovingSubstrings();
 //        System.out.println("1== " + start.minSwaps("][]["));
 //        start.minimumNumberOfSwapsToMakeTheStringBalanced();
-        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneI();
+//        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneI();
+//        start.maximumWidthRamp();
+        start.checkIfStringsCanBeMadeEqualWithOperationsI();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -109,6 +113,24 @@ public class StartOctober {
         System.out.println("0 == " + motmbaeetoi.minOperations(new int[]{1,1,1,1,1}));
         System.out.println("-1 == " + motmbaeetoi.minOperations(new int[]{0,0,0,0,0}));
         System.out.println("1 == " + motmbaeetoi.minOperations(new int[]{0,0,0}));
+    }
+
+    public void maximumWidthRamp() {
+        MaximumWidthRamp mwr = new MaximumWidthRamp();
+
+        System.out.println("4 == " + mwr.maxWidthRamp(new int[]{6,0,8,2,1,5}));
+        System.out.println("7 == " + mwr.maxWidthRamp(new int[]{9,8,1,0,1,9,4,0,4,1}));
+        System.out.println("22 == " + mwr.maxWidthRamp(new int[]{4,3,1,2,3,4,5,6,7,6,5,3,5,6,4,3,1,2,4,5,6,5,4,3}));
+        System.out.println("1 == " + mwr.maxWidthRamp(new int[]{10,9,8,7,6,5,4,3,2,1,1,0}));
+        System.out.println("1 == " + mwr.maxWidthRamp(new int[]{0,1}));
+        System.out.println("1 == " + mwr.maxWidthRamp(new int[]{3,4,1,2}));
+    }
+
+    public void checkIfStringsCanBeMadeEqualWithOperationsI() {
+        CheckIfStringsCanBeMadeEqualWithOperationsI ciscbmewoi = new CheckIfStringsCanBeMadeEqualWithOperationsI();
+
+        System.out.println("true == " + ciscbmewoi.canBeEqual("abcd", "cdab"));
+        System.out.println("false == " + ciscbmewoi.canBeEqual("abcd", "dacb"));
     }
 
 }
