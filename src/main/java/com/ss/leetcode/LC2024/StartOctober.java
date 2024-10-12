@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.october.MaximumWidthRamp;
 import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalanced;
 import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
+import com.ss.leetcode.LC2024.october.ReportSpamMessage;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.ArrayList;
@@ -31,7 +32,8 @@ public class StartOctober {
 //        start.minimumNumberOfSwapsToMakeTheStringBalanced();
 //        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneI();
 //        start.maximumWidthRamp();
-        start.checkIfStringsCanBeMadeEqualWithOperationsI();
+//        start.checkIfStringsCanBeMadeEqualWithOperationsI();
+        start.reportSpamMessage();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -131,6 +133,14 @@ public class StartOctober {
 
         System.out.println("true == " + ciscbmewoi.canBeEqual("abcd", "cdab"));
         System.out.println("false == " + ciscbmewoi.canBeEqual("abcd", "dacb"));
+    }
+
+    public void reportSpamMessage() {
+        ReportSpamMessage rsm = new ReportSpamMessage();
+
+        System.out.println("true == " + rsm.reportSpam(new String[]{"hello","world","leetcode"}, new String[]{"world","hello"}));
+        System.out.println("true == " + rsm.reportSpam(new String[]{"hello","programming","fun", "programming"}, new String[]{"world","programming","leetcode"}));
+        System.out.println("false == " + rsm.reportSpam(new String[]{"hello","programming","fun"}, new String[]{"world","programming","leetcode"}));
     }
 
 }
