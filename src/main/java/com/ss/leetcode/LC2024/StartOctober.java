@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.october.CheckIfStringsCanBeMadeEqualWithOperationsI;
+import com.ss.leetcode.LC2024.october.CountSubstringsStartingAndEndingWithGivenCharacter;
 import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
@@ -33,7 +34,8 @@ public class StartOctober {
 //        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneI();
 //        start.maximumWidthRamp();
 //        start.checkIfStringsCanBeMadeEqualWithOperationsI();
-        start.reportSpamMessage();
+//        start.reportSpamMessage();
+        start.countSubstringsStartingAndEndingWithGivenCharacter();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -143,4 +145,10 @@ public class StartOctober {
         System.out.println("false == " + rsm.reportSpam(new String[]{"hello","programming","fun"}, new String[]{"world","programming","leetcode"}));
     }
 
+    public void countSubstringsStartingAndEndingWithGivenCharacter() {
+        CountSubstringsStartingAndEndingWithGivenCharacter cssaewgc = new CountSubstringsStartingAndEndingWithGivenCharacter();
+
+        System.out.println("6 == " + cssaewgc.countSubstrings("abada", 'a'));
+        System.out.println("6 == " + cssaewgc.countSubstrings("zzz", 'z'));
+    }
 }
