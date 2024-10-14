@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2024.october.MaximumWidthRamp;
 import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalanced;
 import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
+import com.ss.leetcode.LC2024.october.MonotoneIncreasingDigits;
 import com.ss.leetcode.LC2024.october.ReportSpamMessage;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
 import com.ss.leetcode.shared.TreeNode;
@@ -35,7 +36,8 @@ public class StartOctober {
 //        start.maximumWidthRamp();
 //        start.checkIfStringsCanBeMadeEqualWithOperationsI();
 //        start.reportSpamMessage();
-        start.countSubstringsStartingAndEndingWithGivenCharacter();
+//        start.countSubstringsStartingAndEndingWithGivenCharacter();
+        start.monotoneIncreasingDigits();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -150,5 +152,19 @@ public class StartOctober {
 
         System.out.println("6 == " + cssaewgc.countSubstrings("abada", 'a'));
         System.out.println("6 == " + cssaewgc.countSubstrings("zzz", 'z'));
+    }
+
+    public void monotoneIncreasingDigits() {
+        MonotoneIncreasingDigits mid = new MonotoneIncreasingDigits();
+
+        System.out.println("9 == " + mid.monotoneIncreasingDigits(10));
+        System.out.println("1234 == " + mid.monotoneIncreasingDigits(1234));
+        System.out.println("299 == " + mid.monotoneIncreasingDigits(332));
+        System.out.println("123456789 == " + mid.monotoneIncreasingDigits(123456789));
+        System.out.println("1229999 == " + mid.monotoneIncreasingDigits(1231312));
+        System.out.println("129999999 == " + mid.monotoneIncreasingDigits(131232323));
+        System.out.println("59999999 == " + mid.monotoneIncreasingDigits(64564323));
+        System.out.println("122999 == " + mid.monotoneIncreasingDigits(123143));
+        System.out.println("799999 == " + mid.monotoneIncreasingDigits(865832));
     }
 }
