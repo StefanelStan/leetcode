@@ -2,6 +2,18 @@ package com.ss.leetcode.LC2023.december;
 
 public class SeparateBlackAndWhiteBalls {
     // https://leetcode.com/problems/separate-black-and-white-balls
+    public long minimumSteps(String s) {
+        long minSteps = 0;
+        int whiteBallIndex = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '0') {
+                minSteps += (i - whiteBallIndex);
+                whiteBallIndex++;
+            }
+        }
+        return minSteps;
+    }
+
     /** Algorithm
         1. Use two pointers: left starts at 0, right at n-1;
         2. Move left to the first 1; move right to the first 0;
@@ -9,7 +21,7 @@ public class SeparateBlackAndWhiteBalls {
         4. Add the diff to total and move left / right to next (left++, right--)
         5. Return total;
      */
-    public long minimumSteps(String s) {
+    public long minimumSteps2(String s) {
         int left = 0, right = s.length() - 1;
         long total = 0;
         while (left < right) {
