@@ -14,61 +14,46 @@ public class LongestHappyString {
             - This is to cover the edge cases of 10a4b -> aabaabaabaabaa.
      */
     public String longestDiverseString(int a, int b, int c) {
-        StringBuilder stb = new StringBuilder(a + b + c);
-        PriorityQueue<CharCount> queue = appendToQueue(a,b,c);
-        CharCount head;
-        char lastAdded = 0;
-        while(!queue.isEmpty()) {
-            head = queue.poll();
-            if (lastAdded != head.ch) {
-                lastAdded = appendAndInsert(stb, queue, head, queue.peek());
-            } else if (!queue.isEmpty()) {
-                appendAndInsert(stb, queue, queue.poll(), head);
-                lastAdded = appendAndInsert(stb, queue, head, queue.peek());
-            } else {
+        PriorityQueue<CharAndCount> letters = getLetters(a,b,c);
+        StringBuilder stb = new StringBuilder();
+        CharAndCount firstOnQueue;
+        char prevAdded = 0;
+        while(!letters.isEmpty()) {
+            firstOnQueue = letters.poll();
+            prevAdded = stb.isEmpty() ? 0 : stb.charAt(stb.length() - 1);
+            if (firstOnQueue.ch != prevAdded || stb.length() == 1 || stb.charAt(stb.length() - 2) != prevAdded) {
+                appendAndAddToQueue(firstOnQueue, letters, stb);
+            } else if (letters.isEmpty()) {
                 break;
+            } else {
+                appendAndAddToQueue(letters.poll(), letters, stb);
+                appendAndAddToQueue(firstOnQueue, letters, stb);
             }
         }
         return stb.toString();
     }
 
-    private char appendAndInsert(StringBuilder stb, PriorityQueue<CharCount> queue, CharCount element, CharCount maybeNext) {
-        // add 1 or 2 ?
-        boolean shouldAddTwo = true;
-        if (maybeNext != null) {
-            shouldAddTwo = element.count - maybeNext.count > 2;
+    private PriorityQueue<CharAndCount> getLetters(int... cardinal) {
+        PriorityQueue<CharAndCount> letters = new PriorityQueue<>((x,y) -> Integer.compare(y.count, x.count));
+        for (int i = 0; i < cardinal.length; i++) {
+            if (cardinal[i] > 0) {
+                letters.add(new CharAndCount((char)('a' + i), cardinal[i]));
+            }
         }
-        if (element.count-- > 0) {
-            stb.append(element.ch);
-        }
-        if (shouldAddTwo && element.count-- > 0) {
-            stb.append(element.ch);
-        }
-        if (element.count > 0) {
-            queue.add(element);
-        }
-        return element.ch;
+        return letters;
     }
 
-    private PriorityQueue<CharCount> appendToQueue(int a, int b, int c) {
-        PriorityQueue<CharCount> queue = new PriorityQueue<>((e1,e2) -> Integer.compare(e2.count, e1.count));
-        append(queue, 'a', a);
-        append(queue, 'b', b);
-        append(queue, 'c', c);
-        return queue;
-    }
-
-    private void append(PriorityQueue<CharCount> queue, char ch, int count) {
-        if (count > 0) {
-            queue.add(new CharCount(ch, count));
+    private void appendAndAddToQueue(CharAndCount charAndCount, PriorityQueue<CharAndCount> letters, StringBuilder stb) {
+        stb.append(charAndCount.ch);
+        if(--charAndCount.count > 0) {
+            letters.add(charAndCount);
         }
     }
 
-    private static class CharCount {
-        private final char ch;
-        private int count;
-
-        public CharCount(char ch, int count) {
+    private static class CharAndCount {
+        char ch;
+        int count;
+        public CharAndCount(char ch, int count) {
             this.ch = ch;
             this.count = count;
         }
