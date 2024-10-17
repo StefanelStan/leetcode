@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
 import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
+import com.ss.leetcode.LC2024.october.MaximumSwap;
 import com.ss.leetcode.LC2024.october.MaximumWidthRamp;
 import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalanced;
 import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
@@ -37,7 +38,8 @@ public class StartOctober {
 //        start.checkIfStringsCanBeMadeEqualWithOperationsI();
 //        start.reportSpamMessage();
 //        start.countSubstringsStartingAndEndingWithGivenCharacter();
-        start.monotoneIncreasingDigits();
+//        start.monotoneIncreasingDigits();
+        start.maximumSwap();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -166,5 +168,18 @@ public class StartOctober {
         System.out.println("59999999 == " + mid.monotoneIncreasingDigits(64564323));
         System.out.println("122999 == " + mid.monotoneIncreasingDigits(123143));
         System.out.println("799999 == " + mid.monotoneIncreasingDigits(865832));
+    }
+
+    public void maximumSwap() {
+        MaximumSwap ms = new MaximumSwap();
+
+        System.out.println("99975952 == " + ms.maximumSwap(99275959));
+        System.out.println("1 == " + ms.maximumSwap(1));
+        System.out.println("52341 == " + ms.maximumSwap(12345));
+        System.out.println("8765321 == " + ms.maximumSwap(8765321));
+        System.out.println("72123455 == " + ms.maximumSwap(52123457));
+        System.out.println("98123431 == " + ms.maximumSwap(89123431));
+        System.out.println("72343211 == " + ms.maximumSwap(12343217));
+        System.out.println("98863 == " + ms.maximumSwap(98368));
     }
 }
