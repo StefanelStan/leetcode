@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.october.CheckIfStringsCanBeMadeEqualWithOperationsI;
 import com.ss.leetcode.LC2024.october.CountSubstringsStartingAndEndingWithGivenCharacter;
 import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
+import com.ss.leetcode.LC2024.october.FindKthBitInNthBinaryString;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
 import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
@@ -41,7 +42,8 @@ public class StartOctober {
 //        start.countSubstringsStartingAndEndingWithGivenCharacter();
 //        start.monotoneIncreasingDigits();
 //        start.maximumSwap();
-        start.shortestDistanceAfterRoadAdditionQueriesI();
+//        start.shortestDistanceAfterRoadAdditionQueriesI();
+        start.findKthBitInNthBinaryString();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -190,5 +192,16 @@ public class StartOctober {
 
         System.out.println("[3,2,1] == " + Arrays.toString(sdaraqi.shortestDistanceAfterQueries(5, new int[][]{{2,4},{0,2},{0,4}})));
         System.out.println("[1,1] == " + Arrays.toString(sdaraqi.shortestDistanceAfterQueries(4, new int[][]{{0,3},{0,2}})));
+    }
+
+    public void findKthBitInNthBinaryString() {
+        FindKthBitInNthBinaryString fkbinbs = new FindKthBitInNthBinaryString();
+
+        System.out.println("0 == " + fkbinbs.findKthBit(3, 1));
+        System.out.println("1 == " + fkbinbs.findKthBit(4, 11));
+        System.out.println("0 == " + fkbinbs.findKthBit(2, 1));
+        System.out.println("1 == " + fkbinbs.findKthBit(2, 2));
+        System.out.println("0 == " + fkbinbs.findKthBit(20, 1000721));
+        System.out.println("0 == " + fkbinbs.findKthBit(17, 56129));
     }
 }
