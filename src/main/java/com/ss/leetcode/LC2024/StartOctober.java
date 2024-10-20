@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalance
 import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
 import com.ss.leetcode.LC2024.october.MonotoneIncreasingDigits;
+import com.ss.leetcode.LC2024.october.ParsingABooleanExpression;
 import com.ss.leetcode.LC2024.october.ReportSpamMessage;
 import com.ss.leetcode.LC2024.october.ShortestDistanceAfterRoadAdditionQueriesI;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
@@ -43,7 +44,8 @@ public class StartOctober {
 //        start.monotoneIncreasingDigits();
 //        start.maximumSwap();
 //        start.shortestDistanceAfterRoadAdditionQueriesI();
-        start.findKthBitInNthBinaryString();
+//        start.findKthBitInNthBinaryString();
+        start.parsingABooleanExpression();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -203,5 +205,19 @@ public class StartOctober {
         System.out.println("1 == " + fkbinbs.findKthBit(2, 2));
         System.out.println("0 == " + fkbinbs.findKthBit(20, 1000721));
         System.out.println("0 == " + fkbinbs.findKthBit(17, 56129));
+    }
+
+    public void parsingABooleanExpression() {
+        ParsingABooleanExpression pabe = new ParsingABooleanExpression();
+
+        System.out.println("false == " + pabe.parseBoolExpr("&(|(f))"));
+        System.out.println("true == " + pabe.parseBoolExpr("|(f,f,f,t)"));
+        System.out.println("true == " + pabe.parseBoolExpr("!(&(f,t))"));
+        System.out.println("false == " + pabe.parseBoolExpr("&(|(t,f),!(|(t,!(f))),&(t,f))"));
+        System.out.println("true == " + pabe.parseBoolExpr("|(&(t,t),!(f))"));
+        System.out.println("false == " + pabe.parseBoolExpr("!(|(t,t,f))"));
+        System.out.println("false == " + pabe.parseBoolExpr("&(|(t),|(f,t),&(t,f))"));
+        System.out.println("false == " + pabe.parseBoolExpr("!(t)"));
+        System.out.println("false == " + pabe.parseBoolExpr("&(&(t),&(t),&(t),&(t),&(f))"));
     }
 }
