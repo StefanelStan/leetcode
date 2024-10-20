@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElements
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
 import com.ss.leetcode.LC2024.october.MonotoneIncreasingDigits;
 import com.ss.leetcode.LC2024.october.ReportSpamMessage;
+import com.ss.leetcode.LC2024.october.ShortestDistanceAfterRoadAdditionQueriesI;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.ArrayList;
@@ -39,7 +40,8 @@ public class StartOctober {
 //        start.reportSpamMessage();
 //        start.countSubstringsStartingAndEndingWithGivenCharacter();
 //        start.monotoneIncreasingDigits();
-        start.maximumSwap();
+//        start.maximumSwap();
+        start.shortestDistanceAfterRoadAdditionQueriesI();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -181,5 +183,12 @@ public class StartOctober {
         System.out.println("98123431 == " + ms.maximumSwap(89123431));
         System.out.println("72343211 == " + ms.maximumSwap(12343217));
         System.out.println("98863 == " + ms.maximumSwap(98368));
+    }
+
+    public void shortestDistanceAfterRoadAdditionQueriesI() {
+        ShortestDistanceAfterRoadAdditionQueriesI sdaraqi = new ShortestDistanceAfterRoadAdditionQueriesI();
+
+        System.out.println("[3,2,1] == " + Arrays.toString(sdaraqi.shortestDistanceAfterQueries(5, new int[][]{{2,4},{0,2},{0,4}})));
+        System.out.println("[1,1] == " + Arrays.toString(sdaraqi.shortestDistanceAfterQueries(4, new int[][]{{0,3},{0,2}})));
     }
 }
