@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.october.CheckIfStringsCanBeMadeEqualWithOperationsI;
 import com.ss.leetcode.LC2024.october.CountSubstringsStartingAndEndingWithGivenCharacter;
+import com.ss.leetcode.LC2024.october.CountSubstringsWithKFrequencyCharactersI;
 import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindKthBitInNthBinaryString;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
@@ -45,7 +46,8 @@ public class StartOctober {
 //        start.maximumSwap();
 //        start.shortestDistanceAfterRoadAdditionQueriesI();
 //        start.findKthBitInNthBinaryString();
-        start.parsingABooleanExpression();
+//        start.parsingABooleanExpression();
+        start.countSubstringsWithKFrequencyCharactersI();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -219,5 +221,18 @@ public class StartOctober {
         System.out.println("false == " + pabe.parseBoolExpr("&(|(t),|(f,t),&(t,f))"));
         System.out.println("false == " + pabe.parseBoolExpr("!(t)"));
         System.out.println("false == " + pabe.parseBoolExpr("&(&(t),&(t),&(t),&(t),&(f))"));
+    }
+
+    public void countSubstringsWithKFrequencyCharactersI() {
+        CountSubstringsWithKFrequencyCharactersI cswkfci = new CountSubstringsWithKFrequencyCharactersI();
+
+        System.out.println("15 == " + cswkfci.numberOfSubstrings("abcde", 1));
+        System.out.println("703 == " + cswkfci.numberOfSubstrings("retergtrehagrtyhtyhtyhtjyyhtgfdgdfgfe", 1));
+        System.out.println("8528 == " + cswkfci.numberOfSubstrings("gdsgjdhgdfjgdgfdbfgdgdsghjuytghnytrfddfgbfbfdvfdvfdgfhfhgfhsshghtrryjtjgfbfdvdsfghyufdvdscdsfdgfgnhgngbfdvfbgfbgfbfgnhgngwefgjynbvdcds", 2));
+        System.out.println("7897 == " + cswkfci.numberOfSubstrings("gdsgjdhgdfjgdgfdbfgdgdsghjuytghnytrfddfgbfbfdvfdvfdgfhfhgfhsshghtrryjtjgfbfdvdsfghyufdvdscdsfdgfgnhgngbfdvfbgfbgfbfgnhgngwefgjynbvdcds", 3));
+        System.out.println("7408 == " + cswkfci.numberOfSubstrings("gdsgjdhgdfjgdgfdbfgdgdsghjuytghnytrfddfgbfbfdvfdvfdgfhfhgfhsshghtrryjtjgfbfdvdsfghyufdvdscdsfdgfgnhgngbfdvfbgfbgfbfgnhgngwefgjynbvdcds", 4));
+        System.out.println("6804 == " + cswkfci.numberOfSubstrings("gdsgjdhgdfjgdgfdbfgdgdsghjuytghnytrfddfgbfbfdvfdvfdgfhfhgfhsshghtrryjtjgfbfdvdsfghyufdvdscdsfdgfgnhgngbfdvfbgfbgfbfgnhgngwefgjynbvdcds", 5));
+        System.out.println("6207 == " + cswkfci.numberOfSubstrings("gdsgjdhgdfjgdgfdbfgdgdsghjuytghnytrfddfgbfbfdvfdvfdgfhfhgfhsshghtrryjtjgfbfdvdsfghyufdvdscdsfdgfgnhgngbfdvfbgfbgfbfgnhgngwefgjynbvdcds", 6));
+        System.out.println("4 == " + cswkfci.numberOfSubstrings("toxqq", 2));
     }
 }
