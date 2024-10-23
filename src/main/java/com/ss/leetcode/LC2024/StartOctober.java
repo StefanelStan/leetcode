@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
 import com.ss.leetcode.LC2024.october.FindKthBitInNthBinaryString;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
+import com.ss.leetcode.LC2024.october.MarkElementsOnArrayByPerformingQueries;
 import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
 import com.ss.leetcode.LC2024.october.MaximumSwap;
 import com.ss.leetcode.LC2024.october.MaximumWidthRamp;
@@ -47,7 +48,8 @@ public class StartOctober {
 //        start.shortestDistanceAfterRoadAdditionQueriesI();
 //        start.findKthBitInNthBinaryString();
 //        start.parsingABooleanExpression();
-        start.countSubstringsWithKFrequencyCharactersI();
+//        start.countSubstringsWithKFrequencyCharactersI();
+        start.markElementsOnArrayByPerformingQueries();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -234,5 +236,12 @@ public class StartOctober {
         System.out.println("6804 == " + cswkfci.numberOfSubstrings("gdsgjdhgdfjgdgfdbfgdgdsghjuytghnytrfddfgbfbfdvfdvfdgfhfhgfhsshghtrryjtjgfbfdvdsfghyufdvdscdsfdgfgnhgngbfdvfbgfbgfbfgnhgngwefgjynbvdcds", 5));
         System.out.println("6207 == " + cswkfci.numberOfSubstrings("gdsgjdhgdfjgdgfdbfgdgdsghjuytghnytrfddfgbfbfdvfdvfdgfhfhgfhsshghtrryjtjgfbfdvdsfghyufdvdscdsfdgfgnhgngbfdvfbgfbgfbfgnhgngwefgjynbvdcds", 6));
         System.out.println("4 == " + cswkfci.numberOfSubstrings("toxqq", 2));
+    }
+
+    public void markElementsOnArrayByPerformingQueries() {
+        MarkElementsOnArrayByPerformingQueries meoabpq = new MarkElementsOnArrayByPerformingQueries();
+
+        System.out.println("[8,3,0] == " + Arrays.toString(meoabpq.unmarkedSumArray(new int[]{1,2,2,1,2,3,1}, new int[][]{{1,2},{3,3},{4,2}})));
+        System.out.println("[7] == " + Arrays.toString(meoabpq.unmarkedSumArray(new int[]{1,4,2,3}, new int[][]{{0,1}})));
     }
 }
