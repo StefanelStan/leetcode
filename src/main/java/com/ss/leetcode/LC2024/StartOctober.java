@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2024.october.MarkElementsOnArrayByPerformingQueries;
 import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
 import com.ss.leetcode.LC2024.october.MaximumSwap;
 import com.ss.leetcode.LC2024.october.MaximumWidthRamp;
+import com.ss.leetcode.LC2024.october.MinimumDeletionsToMakeStringKSpecial;
 import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalanced;
 import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
@@ -23,7 +24,9 @@ import com.ss.leetcode.shared.TreeNode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class StartOctober {
@@ -49,7 +52,9 @@ public class StartOctober {
 //        start.findKthBitInNthBinaryString();
 //        start.parsingABooleanExpression();
 //        start.countSubstringsWithKFrequencyCharactersI();
-        start.markElementsOnArrayByPerformingQueries();
+//        start.markElementsOnArrayByPerformingQueries();
+        start.minimumDeletionsToMakeStringKSpecial();
+//        System.out.println("11 == " + start.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 4));
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -243,5 +248,18 @@ public class StartOctober {
 
         System.out.println("[8,3,0] == " + Arrays.toString(meoabpq.unmarkedSumArray(new int[]{1,2,2,1,2,3,1}, new int[][]{{1,2},{3,3},{4,2}})));
         System.out.println("[7] == " + Arrays.toString(meoabpq.unmarkedSumArray(new int[]{1,4,2,3}, new int[][]{{0,1}})));
+    }
+
+    public void minimumDeletionsToMakeStringKSpecial() {
+        MinimumDeletionsToMakeStringKSpecial mdtmsks = new MinimumDeletionsToMakeStringKSpecial();
+
+        System.out.println("3 == " + mdtmsks.minimumDeletions("aabcaba", 0));
+        System.out.println("2 == " + mdtmsks.minimumDeletions("dabdcbdcdcd", 2));
+        System.out.println("1 == " + mdtmsks.minimumDeletions("aaabaaa", 2));
+        System.out.println("19 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 2));
+        System.out.println("11 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 4));
+        System.out.println("24 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 1));
+        System.out.println("1 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 7));
+        System.out.println("7 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 5));
     }
 }
