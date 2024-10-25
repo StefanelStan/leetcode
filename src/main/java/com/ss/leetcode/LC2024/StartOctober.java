@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElements
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
 import com.ss.leetcode.LC2024.october.MonotoneIncreasingDigits;
 import com.ss.leetcode.LC2024.october.ParsingABooleanExpression;
+import com.ss.leetcode.LC2024.october.RemoveSubFolderFromTheFilesystem;
 import com.ss.leetcode.LC2024.october.ReportSpamMessage;
 import com.ss.leetcode.LC2024.october.ShortestDistanceAfterRoadAdditionQueriesI;
 import com.ss.leetcode.LC2024.october.SplitArrayIntoMaximumNumberOfSubarrays;
@@ -53,8 +54,8 @@ public class StartOctober {
 //        start.parsingABooleanExpression();
 //        start.countSubstringsWithKFrequencyCharactersI();
 //        start.markElementsOnArrayByPerformingQueries();
-        start.minimumDeletionsToMakeStringKSpecial();
-//        System.out.println("11 == " + start.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 4));
+//        start.minimumDeletionsToMakeStringKSpecial();
+        start.removeSubFolderFromTheFilesystem();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -261,5 +262,13 @@ public class StartOctober {
         System.out.println("24 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 1));
         System.out.println("1 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 7));
         System.out.println("7 == " + mdtmsks.minimumDeletions("gdgdfdfgdsghjfgfddsfgbhnjuytrdfsfgfbhnjytrsewsadcvfgbhtyrsewas", 5));
+    }
+
+    public void removeSubFolderFromTheFilesystem() {
+        RemoveSubFolderFromTheFilesystem rsftf = new RemoveSubFolderFromTheFilesystem();
+
+        System.out.println("[/a, /c/d, /c/f] == " + rsftf.removeSubfolders(new String[]{"/a","/a/b","/c/d","/c/d/e","/c/f"}));
+        System.out.println("[/a] == " + rsftf.removeSubfolders(new String[]{"/a","/a/b/c","/a/b/d"}));
+        System.out.println("[/a/b/c, /a/b/ca, /a/b/d] == " + rsftf.removeSubfolders(new String[]{"/a/b/c","/a/b/ca","/a/b/d"}));
     }
 }
