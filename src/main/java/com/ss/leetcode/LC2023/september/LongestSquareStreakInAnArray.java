@@ -1,5 +1,7 @@
 package com.ss.leetcode.LC2023.september;
 
+import java.util.Arrays;
+
 public class LongestSquareStreakInAnArray {
     // https://leetcode.com/problems/longest-square-streak-in-an-array
     /** Algorithm
@@ -27,5 +29,33 @@ public class LongestSquareStreakInAnArray {
             presentNums[num] = 1;
         }
         return presentNums;
+    }
+
+    // Sort + Binary Search square solution
+    public int longestSquareStreak2(int[] nums) {
+        Arrays.sort(nums);
+        int[] streaks = new int[nums.length];
+        int longestStreak = 0, prev = Integer.MAX_VALUE;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            streaks[i] = nums[i] == prev ? streaks[i + 1] : 1 + findSquareStreak(i, nums.length -1, nums[i] * nums[i], nums, streaks);
+            longestStreak = Math.max(longestStreak, streaks[i]);
+            prev = nums[i];
+        }
+        return longestStreak == 1 ? -1 : longestStreak;
+    }
+
+    private int findSquareStreak(int left, int right, int target, int[] nums, int[] streaks) {
+        int pivot;
+        while (left <= right) {
+            pivot = left + (right - left) / 2;
+            if (nums[pivot] == target) {
+                return streaks[pivot];
+            } else if (nums[pivot] > target) {
+                right = pivot - 1;
+            } else {
+                left = pivot + 1;
+            }
+        }
+        return 0;
     }
 }
