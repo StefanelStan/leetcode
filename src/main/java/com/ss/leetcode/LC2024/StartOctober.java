@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2024.october.MaximumSumBSTInBinaryTree;
 import com.ss.leetcode.LC2024.october.MaximumSwap;
 import com.ss.leetcode.LC2024.october.MaximumWidthRamp;
 import com.ss.leetcode.LC2024.october.MinimumDeletionsToMakeStringKSpecial;
+import com.ss.leetcode.LC2024.october.MinimumNumberOfRemovalsToMakeMountainArray;
 import com.ss.leetcode.LC2024.october.MinimumNumberOfSwapsToMakeTheStringBalanced;
 import com.ss.leetcode.LC2024.october.MinimumOperationsToMakeBinaryArrayElementsEqualToOneI;
 import com.ss.leetcode.LC2024.october.MinimumStringLengthAfterRemovingSubstrings;
@@ -55,7 +56,8 @@ public class StartOctober {
 //        start.countSubstringsWithKFrequencyCharactersI();
 //        start.markElementsOnArrayByPerformingQueries();
 //        start.minimumDeletionsToMakeStringKSpecial();
-        start.removeSubFolderFromTheFilesystem();
+//        start.removeSubFolderFromTheFilesystem();
+        start.minimumNumberOfRemovalsToMakeMountainArray();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -270,5 +272,19 @@ public class StartOctober {
         System.out.println("[/a, /c/d, /c/f] == " + rsftf.removeSubfolders(new String[]{"/a","/a/b","/c/d","/c/d/e","/c/f"}));
         System.out.println("[/a] == " + rsftf.removeSubfolders(new String[]{"/a","/a/b/c","/a/b/d"}));
         System.out.println("[/a/b/c, /a/b/ca, /a/b/d] == " + rsftf.removeSubfolders(new String[]{"/a/b/c","/a/b/ca","/a/b/d"}));
+    }
+
+    public void minimumNumberOfRemovalsToMakeMountainArray() {
+        MinimumNumberOfRemovalsToMakeMountainArray mnortmma = new MinimumNumberOfRemovalsToMakeMountainArray();
+
+        System.out.println("3 == " + mnortmma.minimumMountainRemovals(new int[]{2,1,1,5,6,2,3,1}));
+        System.out.println("2 == " + mnortmma.minimumMountainRemovals(new int[]{9,8,1,7,6,5,4,3,2,1}));
+        System.out.println("2 == " + mnortmma.minimumMountainRemovals(new int[]{1,2,3,4,5,1000,999,954,953,952,951,950,949,6,7,8,9,10,11,12,13,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,1}));
+        System.out.println("7 == " + mnortmma.minimumMountainRemovals(new int[]{1,2,3,4,5,4,5,6,5,4,8,1,3,5,6,4,2,1}));
+        System.out.println("10 == " + mnortmma.minimumMountainRemovals(new int[]{5,4,3,2,3,4,5,76,8,7,6,5,3,2,4,5,7,8,67,5,3,2}));
+        System.out.println("3 == " + mnortmma.minimumMountainRemovals(new int[]{4,3,7,1,2,4,5,7,8,9,7,5,3,2,1}));
+        System.out.println("2 == " + mnortmma.minimumMountainRemovals(new int[]{9,8,1,7,6,5,4,3,2,1}));
+        System.out.println("0 == " + mnortmma.minimumMountainRemovals(new int[]{1,2,3,4,5,4}));
+        System.out.println("6 == " + mnortmma.minimumMountainRemovals(new int[]{100,92,89,77,74,66,64,66,64}));
     }
 }
