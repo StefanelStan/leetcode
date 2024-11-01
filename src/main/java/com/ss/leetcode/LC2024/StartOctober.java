@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.october.CheckIfStringsCanBeMadeEqualWithOperations
 import com.ss.leetcode.LC2024.october.CountSubstringsStartingAndEndingWithGivenCharacter;
 import com.ss.leetcode.LC2024.october.CountSubstringsWithKFrequencyCharactersI;
 import com.ss.leetcode.LC2024.october.DividePlayersIntoTeamsOfEqualSkill;
+import com.ss.leetcode.LC2024.october.EqualSumArraysWithMinimumNumberOfOperations;
 import com.ss.leetcode.LC2024.october.FindKthBitInNthBinaryString;
 import com.ss.leetcode.LC2024.october.FindTheGridOfRegionAverage;
 import com.ss.leetcode.LC2024.october.MakeSumDivisibleByP;
@@ -57,7 +58,8 @@ public class StartOctober {
 //        start.markElementsOnArrayByPerformingQueries();
 //        start.minimumDeletionsToMakeStringKSpecial();
 //        start.removeSubFolderFromTheFilesystem();
-        start.minimumNumberOfRemovalsToMakeMountainArray();
+//        start.minimumNumberOfRemovalsToMakeMountainArray();
+        start.equalSumArraysWithMinimumNumberOfOperations();
     }
 
     public void splitArrayIntoMaximumNumberOfSubarrays() {
@@ -286,5 +288,16 @@ public class StartOctober {
         System.out.println("2 == " + mnortmma.minimumMountainRemovals(new int[]{9,8,1,7,6,5,4,3,2,1}));
         System.out.println("0 == " + mnortmma.minimumMountainRemovals(new int[]{1,2,3,4,5,4}));
         System.out.println("6 == " + mnortmma.minimumMountainRemovals(new int[]{100,92,89,77,74,66,64,66,64}));
+    }
+
+    public void equalSumArraysWithMinimumNumberOfOperations() {
+        EqualSumArraysWithMinimumNumberOfOperations esawmnoo = new EqualSumArraysWithMinimumNumberOfOperations();
+
+        System.out.println("3 == " + esawmnoo.minOperations(new int[]{1,2,3,4,5,6}, new int[]{1,1,2,2,2,2}));
+        System.out.println("-1 == " + esawmnoo.minOperations(new int[]{1,1,1,1,1,1,1}, new int[]{6}));
+        System.out.println("3 == " + esawmnoo.minOperations(new int[]{1}, new int[]{6,6}));
+        System.out.println("3 == " + esawmnoo.minOperations(new int[]{3,2,1,2,3,4,3,2,1,1,2,3,4,5,6,5,4,3,2,1,1}, new int[]{6,5,4,5,5,6,4,2,1,2,4,3}));
+        System.out.println("11 == " + esawmnoo.minOperations(new int[]{1,1,1}, new int[]{6,6,6,6,6,6,6,6,6}));
+        System.out.println("-1 == " + esawmnoo.minOperations(new int[]{6}, new int[]{2,2,2,2,2,2,2,2,2,2}));
     }
 }
