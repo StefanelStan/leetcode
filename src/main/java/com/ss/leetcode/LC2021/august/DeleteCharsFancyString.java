@@ -2,7 +2,28 @@ package com.ss.leetcode.LC2021.august;
 
 public class DeleteCharsFancyString {
     // https://leetcode.com/contest/biweekly-contest-58/problems/delete-characters-to-make-fancy-string/
+    /** Algorithm
+        1. Use a StringBuilder to append the good chars into it
+        2. Use 2 variables: prev and prevPrev to retain the last 2 inserted chars
+        3. If current char is != prev and currentChar != prevPrev , insert new char in stringbuilder. Also shift prev and prevPrev to new char.
+        4. Return stb.toString().
+     */
     public String makeFancyString(String s) {
+        StringBuilder stb = new StringBuilder();
+        char currentChar, prev = 0, prevPrev = 0;
+        for (int i = 0; i < s.length(); i++) {
+            currentChar = s.charAt(i);
+            if (currentChar != prev || currentChar != prevPrev) {
+                prevPrev = prev;
+                prev = currentChar;
+                stb.append(currentChar);
+            }
+        }
+        return stb.toString();
+    }
+
+
+    public String makeFancyString2(String s) {
         char[] ch = new char[s.length()];
         int chIndex = 0;
         int endSeqIndex = 0;
