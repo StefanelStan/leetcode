@@ -3,7 +3,10 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.november.CountAlternatingSubarrays;
 import com.ss.leetcode.LC2024.november.KthLargestPerfectSubtreeSizeInBinaryTree;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
+import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
+import com.ss.leetcode.LC2024.november.StringCompressionIII;
 import com.ss.leetcode.shared.TreeNode;
+import java.util.List;
 
 public class StartNovember {
     public static void main(String[] args) {
@@ -11,7 +14,9 @@ public class StartNovember {
 
 //        start.countAlternatingSubarrays();
 //        start.minimizeMalwareSpreadII();
-        start.kthLargestPerfectSubtreeSizeInBinaryTree();
+//        start.kthLargestPerfectSubtreeSizeInBinaryTree();
+//        start.stringCompressionIII();
+        start.peopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList();
     }
 
     public void countAlternatingSubarrays() {
@@ -46,5 +51,24 @@ public class StartNovember {
         System.out.println("3 == " + klpssibt.kthLargestPerfectSubtree(root1, 2));
         System.out.println("7 == " + klpssibt.kthLargestPerfectSubtree(root2, 1));
         System.out.println("-1 == " + klpssibt.kthLargestPerfectSubtree(root3, 3));
+    }
+
+    public void stringCompressionIII() {
+        StringCompressionIII sciii = new StringCompressionIII();
+
+        System.out.println("1a1b1c1d1e == " + sciii.compressedString("abcde"));
+        System.out.println("9a5a2b == " + sciii.compressedString("aaaaaaaaaaaaaabb"));
+        System.out.println("1a == " + sciii.compressedString("a"));
+        System.out.println("9a4a9b6b6a8b == " + sciii.compressedString("aaaaaaaaaaaaabbbbbbbbbbbbbbbaaaaaabbbbbbbb"));
+        System.out.println("7b5a1b7a7b9a7a2b5a1b == " + sciii.compressedString("bbbbbbbaaaaabaaaaaaabbbbbbbaaaaaaaaaaaaaaaabbaaaaab"));
+        System.out.println("1a1b1c1d1e1f == " + sciii.compressedString("abcdef"));
+    }
+
+    public void peopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList() {
+        PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList pwlofcinasoal = new PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList();
+
+        System.out.println("[0,1,4] == " + pwlofcinasoal.peopleIndexes(List.of(List.of("leetcode","google","facebook"), List.of("google","microsoft"), List.of("google","facebook"), List.of("google"), List.of("amazon"))));
+        System.out.println("[0,1] == " + pwlofcinasoal.peopleIndexes(List.of(List.of("leetcode","google","facebook"), List.of("leetcode","amazon"), List.of("facebook","google"))));
+        System.out.println("[0,1,2,3] == " + pwlofcinasoal.peopleIndexes(List.of(List.of("leetcode"), List.of("google"), List.of("facebook"), List.of("amazon"))));
     }
 }
