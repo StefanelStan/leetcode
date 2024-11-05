@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.november.CountAlternatingSubarrays;
+import com.ss.leetcode.LC2024.november.FindTheMaximumAchievableNumber;
 import com.ss.leetcode.LC2024.november.KthLargestPerfectSubtreeSizeInBinaryTree;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
+import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
 import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
 import com.ss.leetcode.LC2024.november.StringCompressionIII;
 import com.ss.leetcode.shared.TreeNode;
@@ -16,7 +18,9 @@ public class StartNovember {
 //        start.minimizeMalwareSpreadII();
 //        start.kthLargestPerfectSubtreeSizeInBinaryTree();
 //        start.stringCompressionIII();
-        start.peopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList();
+//        start.peopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList();
+//        start.minimumAbsoluteDifferenceBetweenElementsWithConstraint();
+        start.findTheMaximumAchievableNumber();
     }
 
     public void countAlternatingSubarrays() {
@@ -70,5 +74,29 @@ public class StartNovember {
         System.out.println("[0,1,4] == " + pwlofcinasoal.peopleIndexes(List.of(List.of("leetcode","google","facebook"), List.of("google","microsoft"), List.of("google","facebook"), List.of("google"), List.of("amazon"))));
         System.out.println("[0,1] == " + pwlofcinasoal.peopleIndexes(List.of(List.of("leetcode","google","facebook"), List.of("leetcode","amazon"), List.of("facebook","google"))));
         System.out.println("[0,1,2,3] == " + pwlofcinasoal.peopleIndexes(List.of(List.of("leetcode"), List.of("google"), List.of("facebook"), List.of("amazon"))));
+    }
+
+    public void minimumAbsoluteDifferenceBetweenElementsWithConstraint() {
+        MinimumAbsoluteDifferenceBetweenElementsWithConstraint madbewc = new MinimumAbsoluteDifferenceBetweenElementsWithConstraint();
+
+        System.out.println("0 == " + madbewc.minAbsoluteDifference(List.of(4,3,2,4), 2));
+        System.out.println("1 == " + madbewc.minAbsoluteDifference(List.of(5,3,2,10,15), 1));
+        System.out.println("3 == " + madbewc.minAbsoluteDifference(List.of(1,2,3,4), 3));
+        System.out.println("0 == " + madbewc.minAbsoluteDifference(List.of(4,3,1,2,3,4,5,6,7,8,7,6,4,2,1,3,5,7,8,6,4,2,1), 12));
+        System.out.println("0 == " + madbewc.minAbsoluteDifference(List.of(4,3,1,2,3,4,5,6,7,8,7,6,4,2,1,3,5,7,8,6,4,2,1), 7));
+        System.out.println("0 == " + madbewc.minAbsoluteDifference(List.of(4,3,1,2,3,4,5,6,7,8,7,6,4,2,1,3,5,7,8,6,4,2,1), 2));
+        System.out.println("0 == " + madbewc.minAbsoluteDifference(List.of(4,3,1,2,3,4,5,6,7,8,7,6,4,2,1,3,5,7,8,6,4,2,1), 1));
+        System.out.println("24 == " + madbewc.minAbsoluteDifference(List.of(61,85,196,17), 1));
+    }
+
+    public void findTheMaximumAchievableNumber() {
+        FindTheMaximumAchievableNumber ftman = new FindTheMaximumAchievableNumber();
+
+        System.out.println("6 == " + ftman.theMaximumAchievableX(4, 1));
+        System.out.println("7 == " + ftman.theMaximumAchievableX(3, 2));
+        System.out.println("110 == " + ftman.theMaximumAchievableX(10, 50));
+        System.out.println("150 == " + ftman.theMaximumAchievableX(50, 50));
+        System.out.println("57 == " + ftman.theMaximumAchievableX(23, 17));
+        System.out.println("101 == " + ftman.theMaximumAchievableX(1, 50));
     }
 }
