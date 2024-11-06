@@ -1,13 +1,16 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.november.CountAlternatingSubarrays;
+import com.ss.leetcode.LC2024.november.FindIfArrayCanBeSorted;
 import com.ss.leetcode.LC2024.november.FindTheMaximumAchievableNumber;
 import com.ss.leetcode.LC2024.november.KthLargestPerfectSubtreeSizeInBinaryTree;
+import com.ss.leetcode.LC2024.november.MaximumEqualFrequency;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
 import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
 import com.ss.leetcode.LC2024.november.StringCompressionIII;
 import com.ss.leetcode.shared.TreeNode;
+import java.util.Arrays;
 import java.util.List;
 
 public class StartNovember {
@@ -20,7 +23,9 @@ public class StartNovember {
 //        start.stringCompressionIII();
 //        start.peopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList();
 //        start.minimumAbsoluteDifferenceBetweenElementsWithConstraint();
-        start.findTheMaximumAchievableNumber();
+//        start.findTheMaximumAchievableNumber();
+//        start.maximumEqualFrequency();
+        start.findIfArrayCanBeSorted();
     }
 
     public void countAlternatingSubarrays() {
@@ -98,5 +103,29 @@ public class StartNovember {
         System.out.println("150 == " + ftman.theMaximumAchievableX(50, 50));
         System.out.println("57 == " + ftman.theMaximumAchievableX(23, 17));
         System.out.println("101 == " + ftman.theMaximumAchievableX(1, 50));
+    }
+
+    public void maximumEqualFrequency() {
+        MaximumEqualFrequency mef = new MaximumEqualFrequency();
+
+        System.out.println("7 == " + mef.maxEqualFreq(new int[]{2,2,1,1,5,3,3,5}));
+        System.out.println("13 == " + mef.maxEqualFreq(new int[]{1,1,1,2,2,2,3,3,3,4,4,4,5}));
+        System.out.println("9 == " + mef.maxEqualFreq(new int[]{2,1,2,3,4,4,3,2,1,2,3,4,4,3,2,1,2,3,4,5,4,3,2,1}));
+        System.out.println("3 == " + mef.maxEqualFreq(new int[]{2,2,3}));
+        System.out.println("3 == " + mef.maxEqualFreq(new int[]{2,2,3}));
+        System.out.println("7 == " + mef.maxEqualFreq(new int[]{3,4,5,6,5,4,3,4,5,4,6,6,5,4,3,3,4,5,6,5,4}));
+        System.out.println("5 == " + mef.maxEqualFreq(new int[]{1,1,1,2,2,2}));
+        System.out.println("2 == " + mef.maxEqualFreq(new int[]{1,1}));
+        System.out.println("7 == " + mef.maxEqualFreq(new int[]{1,1,1,2,2,2,3,3,3}));
+    }
+
+    public void findIfArrayCanBeSorted() {
+        FindIfArrayCanBeSorted fiacbs = new FindIfArrayCanBeSorted();
+
+        System.out.println("true == " + fiacbs.canSortArray(new int[]{8,4,2,30,15}));
+        System.out.println("true == " + fiacbs.canSortArray(new int[]{1,2,3,4,5}));
+        System.out.println("false == " + fiacbs.canSortArray(new int[]{3,16,8,4,2}));
+        System.out.println("false == " + fiacbs.canSortArray(new int[]{3,2,1,2,3,4,5,76,8,9,7}));
+        System.out.println("false == " + fiacbs.canSortArray(new int[]{20, 16}));
     }
 }
