@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.november.CountAlternatingSubarrays;
 import com.ss.leetcode.LC2024.november.FindIfArrayCanBeSorted;
 import com.ss.leetcode.LC2024.november.FindTheMaximumAchievableNumber;
 import com.ss.leetcode.LC2024.november.KthLargestPerfectSubtreeSizeInBinaryTree;
+import com.ss.leetcode.LC2024.november.LargestCombinationWithBitwiseANDGreaterThanZero;
 import com.ss.leetcode.LC2024.november.MaximumEqualFrequency;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
@@ -25,7 +26,8 @@ public class StartNovember {
 //        start.minimumAbsoluteDifferenceBetweenElementsWithConstraint();
 //        start.findTheMaximumAchievableNumber();
 //        start.maximumEqualFrequency();
-        start.findIfArrayCanBeSorted();
+//        start.findIfArrayCanBeSorted();
+        start.largestCombinationWithBitwiseANDGreaterThanZero();
     }
 
     public void countAlternatingSubarrays() {
@@ -127,5 +129,12 @@ public class StartNovember {
         System.out.println("false == " + fiacbs.canSortArray(new int[]{3,16,8,4,2}));
         System.out.println("false == " + fiacbs.canSortArray(new int[]{3,2,1,2,3,4,5,76,8,9,7}));
         System.out.println("false == " + fiacbs.canSortArray(new int[]{20, 16}));
+    }
+
+    public void largestCombinationWithBitwiseANDGreaterThanZero() {
+        LargestCombinationWithBitwiseANDGreaterThanZero lcwbagtz = new LargestCombinationWithBitwiseANDGreaterThanZero();
+
+        System.out.println("4 == " + lcwbagtz.largestCombination(new int[]{16,17,71,62,12,24,14}));
+        System.out.println("2 == " + lcwbagtz.largestCombination(new int[]{8,8}));
     }
 }
