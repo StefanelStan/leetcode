@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.november.MaximumEqualFrequency;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
 import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
+import com.ss.leetcode.LC2024.november.ShortestSubarrayWithORAtLeastKII;
 import com.ss.leetcode.LC2024.november.StringCompressionIII;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
@@ -27,7 +28,8 @@ public class StartNovember {
 //        start.findTheMaximumAchievableNumber();
 //        start.maximumEqualFrequency();
 //        start.findIfArrayCanBeSorted();
-        start.largestCombinationWithBitwiseANDGreaterThanZero();
+//        start.largestCombinationWithBitwiseANDGreaterThanZero();
+        start.shortestSubarrayWithORAtLeastKII();
     }
 
     public void countAlternatingSubarrays() {
@@ -136,5 +138,14 @@ public class StartNovember {
 
         System.out.println("4 == " + lcwbagtz.largestCombination(new int[]{16,17,71,62,12,24,14}));
         System.out.println("2 == " + lcwbagtz.largestCombination(new int[]{8,8}));
+    }
+
+    public void shortestSubarrayWithORAtLeastKII() {
+        ShortestSubarrayWithORAtLeastKII sswoalkii = new ShortestSubarrayWithORAtLeastKII();
+
+        System.out.println("1 == " + sswoalkii.minimumSubarrayLength(new int[]{1,2,3}, 2));
+        System.out.println("3 == " + sswoalkii.minimumSubarrayLength(new int[]{2,1,8}, 10));
+        System.out.println("1 == " + sswoalkii.minimumSubarrayLength(new int[]{1,2}, 0));
+        System.out.println("3 == " + sswoalkii.minimumSubarrayLength(new int[]{1,2,32,21}, 55));
     }
 }
