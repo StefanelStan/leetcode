@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.november.MaximumEqualFrequency;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
 import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
+import com.ss.leetcode.LC2024.november.PrimeSubtractionOperation;
 import com.ss.leetcode.LC2024.november.ShortestSubarrayWithORAtLeastKII;
 import com.ss.leetcode.LC2024.november.StringCompressionIII;
 import com.ss.leetcode.shared.TreeNode;
@@ -29,7 +30,8 @@ public class StartNovember {
 //        start.maximumEqualFrequency();
 //        start.findIfArrayCanBeSorted();
 //        start.largestCombinationWithBitwiseANDGreaterThanZero();
-        start.shortestSubarrayWithORAtLeastKII();
+//        start.shortestSubarrayWithORAtLeastKII();
+        start.primeSubtractionOperation();
     }
 
     public void countAlternatingSubarrays() {
@@ -147,5 +149,13 @@ public class StartNovember {
         System.out.println("3 == " + sswoalkii.minimumSubarrayLength(new int[]{2,1,8}, 10));
         System.out.println("1 == " + sswoalkii.minimumSubarrayLength(new int[]{1,2}, 0));
         System.out.println("3 == " + sswoalkii.minimumSubarrayLength(new int[]{1,2,32,21}, 55));
+    }
+
+    public void primeSubtractionOperation() {
+        PrimeSubtractionOperation pso = new PrimeSubtractionOperation();
+
+        System.out.println("true == " + pso.primeSubOperation(new int[]{4,9,6,10}));
+        System.out.println("true == " + pso.primeSubOperation(new int[]{6,8,11,12}));
+        System.out.println("false == " + pso.primeSubOperation(new int[]{5,8,3}));
     }
 }
