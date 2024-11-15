@@ -5,9 +5,12 @@ import com.ss.leetcode.LC2024.november.FindIfArrayCanBeSorted;
 import com.ss.leetcode.LC2024.november.FindTheMaximumAchievableNumber;
 import com.ss.leetcode.LC2024.november.KthLargestPerfectSubtreeSizeInBinaryTree;
 import com.ss.leetcode.LC2024.november.LargestCombinationWithBitwiseANDGreaterThanZero;
+import com.ss.leetcode.LC2024.november.MakeASquareWithTheSameColor;
 import com.ss.leetcode.LC2024.november.MaximumEqualFrequency;
+import com.ss.leetcode.LC2024.november.MaximumNumberOfOperationsToMoveOnesToTheEnd;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
+import com.ss.leetcode.LC2024.november.MinimumSumOfMountainTripletsII;
 import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
 import com.ss.leetcode.LC2024.november.PrimeSubtractionOperation;
 import com.ss.leetcode.LC2024.november.ShortestSubarrayWithORAtLeastKII;
@@ -31,7 +34,10 @@ public class StartNovember {
 //        start.findIfArrayCanBeSorted();
 //        start.largestCombinationWithBitwiseANDGreaterThanZero();
 //        start.shortestSubarrayWithORAtLeastKII();
-        start.primeSubtractionOperation();
+//        start.primeSubtractionOperation();
+//        start.minimumSumOfMountainTripletsII();
+//        start.makeASquareWithTheSameColor();
+        start.maximumNumberOfOperationsToMoveOnesToTheEnd();
     }
 
     public void countAlternatingSubarrays() {
@@ -157,5 +163,34 @@ public class StartNovember {
         System.out.println("true == " + pso.primeSubOperation(new int[]{4,9,6,10}));
         System.out.println("true == " + pso.primeSubOperation(new int[]{6,8,11,12}));
         System.out.println("false == " + pso.primeSubOperation(new int[]{5,8,3}));
+    }
+
+    public void minimumSumOfMountainTripletsII() {
+        MinimumSumOfMountainTripletsII msomtii = new MinimumSumOfMountainTripletsII();
+
+        System.out.println("9 == " + msomtii.minimumSum(new int[]{8,6,1,5,3}));
+        System.out.println("13 == " + msomtii.minimumSum(new int[]{5,4,8,7,10,2}));
+        System.out.println("-1 == " + msomtii.minimumSum(new int[]{6,5,4,3,4,5}));
+    }
+
+    public void makeASquareWithTheSameColor() {
+        MakeASquareWithTheSameColor maswtsc = new MakeASquareWithTheSameColor();
+
+        System.out.println("true == " + maswtsc.canMakeSquare(new char[][]{{'B','W','B'}, {'B','W','W'},{'B','W','B'}}));
+        System.out.println("false == " + maswtsc.canMakeSquare(new char[][]{{'B','W','B'}, {'W','B','W'},{'B','W','B'}}));
+        System.out.println("true == " + maswtsc.canMakeSquare(new char[][]{{'B','W','B'}, {'B','W','W'},{'B','W','W'}}));
+    }
+
+    public void maximumNumberOfOperationsToMoveOnesToTheEnd() {
+        MaximumNumberOfOperationsToMoveOnesToTheEnd mnootmotte = new MaximumNumberOfOperationsToMoveOnesToTheEnd();
+
+        System.out.println("4 == " + mnootmotte.maxOperations("1001101"));
+        System.out.println("0 == " + mnootmotte.maxOperations("00111"));
+        System.out.println("21 == " + mnootmotte.maxOperations("10010100010100101"));
+        System.out.println("0 == " + mnootmotte.maxOperations("1"));
+        System.out.println("0 == " + mnootmotte.maxOperations("0000"));
+        System.out.println("36 == " + mnootmotte.maxOperations("1001000001010100101010"));
+        System.out.println("26 == " + mnootmotte.maxOperations("100101001001011111100"));
+        System.out.println("3 == " + mnootmotte.maxOperations("000001001011"));
     }
 }
