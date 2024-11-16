@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.november.CountAlternatingSubarrays;
 import com.ss.leetcode.LC2024.november.FindIfArrayCanBeSorted;
 import com.ss.leetcode.LC2024.november.FindTheMaximumAchievableNumber;
+import com.ss.leetcode.LC2024.november.FindThePowerOfKSizeSubarraysI;
 import com.ss.leetcode.LC2024.november.KthLargestPerfectSubtreeSizeInBinaryTree;
 import com.ss.leetcode.LC2024.november.LargestCombinationWithBitwiseANDGreaterThanZero;
 import com.ss.leetcode.LC2024.november.MakeASquareWithTheSameColor;
@@ -37,7 +38,8 @@ public class StartNovember {
 //        start.primeSubtractionOperation();
 //        start.minimumSumOfMountainTripletsII();
 //        start.makeASquareWithTheSameColor();
-        start.maximumNumberOfOperationsToMoveOnesToTheEnd();
+//        start.maximumNumberOfOperationsToMoveOnesToTheEnd();
+        start.findThePowerOfKSizeSubarraysI();
     }
 
     public void countAlternatingSubarrays() {
@@ -192,5 +194,18 @@ public class StartNovember {
         System.out.println("36 == " + mnootmotte.maxOperations("1001000001010100101010"));
         System.out.println("26 == " + mnootmotte.maxOperations("100101001001011111100"));
         System.out.println("3 == " + mnootmotte.maxOperations("000001001011"));
+    }
+
+    public void findThePowerOfKSizeSubarraysI() {
+        FindThePowerOfKSizeSubarraysI ftpokssi = new FindThePowerOfKSizeSubarraysI();
+
+        System.out.println("[3,4,-1,-1,-1] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{1,2,3,4,3,2,5}, 3)));
+        System.out.println("[-1,-1] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,2,2,2,2}, 2)));
+        System.out.println("[-1,3,-1,3,-1] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{3,2,3,2,3,2}, 2)));
+        System.out.println("[6,7,8,9,10,-1,-1,-1,-1,5,6,7,8,9,1] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 5)));
+        System.out.println("[3,4,5,6,7,8,9,10,-1,2,3,4,5,6,7,8,9,10] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 2)));
+        System.out.println("[8,9,10,-1,-1,-1,-1,-1,-1,7,8,9,10] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 7)));
+        System.out.println("[10,-1,-1,-1,-1,-1,-1,-1,-1,9,10] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 9)));
+        System.out.println("[7,8,9,10,-1,-1,-1,-1,-1,6,7,8,9,10] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 6)));
     }
 }
