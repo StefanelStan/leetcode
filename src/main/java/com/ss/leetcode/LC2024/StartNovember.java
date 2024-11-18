@@ -12,6 +12,7 @@ import com.ss.leetcode.LC2024.november.MaximumNumberOfOperationsToMoveOnesToTheE
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
 import com.ss.leetcode.LC2024.november.MinimumSumOfMountainTripletsII;
+import com.ss.leetcode.LC2024.november.PancakeSorting;
 import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
 import com.ss.leetcode.LC2024.november.PrimeSubtractionOperation;
 import com.ss.leetcode.LC2024.november.ShortestSubarrayWithORAtLeastKII;
@@ -39,7 +40,8 @@ public class StartNovember {
 //        start.minimumSumOfMountainTripletsII();
 //        start.makeASquareWithTheSameColor();
 //        start.maximumNumberOfOperationsToMoveOnesToTheEnd();
-        start.findThePowerOfKSizeSubarraysI();
+//        start.findThePowerOfKSizeSubarraysI();
+        start.pancakeSorting();
     }
 
     public void countAlternatingSubarrays() {
@@ -207,5 +209,12 @@ public class StartNovember {
         System.out.println("[8,9,10,-1,-1,-1,-1,-1,-1,7,8,9,10] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 7)));
         System.out.println("[10,-1,-1,-1,-1,-1,-1,-1,-1,9,10] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 9)));
         System.out.println("[7,8,9,10,-1,-1,-1,-1,-1,6,7,8,9,10] == " + Arrays.toString(ftpokssi.resultsArray(new int[]{2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10}, 6)));
+    }
+
+    public void pancakeSorting() {
+        PancakeSorting ps = new PancakeSorting();
+
+        System.out.println("[3,4,2,3,2] == " + ps.pancakeSort(new int[]{3,2,4,1}));
+        System.out.println("[] == " + ps.pancakeSort(new int[]{1,2,3}));
     }
 }

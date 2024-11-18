@@ -2,11 +2,51 @@ package com.ss.leetcode.LC2021.october;
 
 public class DefuseTheBomb {
     // https://leetcode.com/problems/defuse-the-bomb/
+    public int[] decrypt(int[] code, int k) {
+        if (k == 0) {
+            return new int[code.length];
+        }
+        int[] prefixSum = new int[code.length];
+        prefixSum[0] = code[0];
+        for (int i = 1; i < code.length; i++) {
+            prefixSum[i] = prefixSum[i-1] + code[i];
+        }
+        return decrypt(code, k, prefixSum);
+    }
+
+    private int[] decrypt(int[] code, int k, int[] prefixSum) {
+        int[] decrypted = new int[code.length];
+        for (int i = 0; i < code.length; i++) {
+            decrypted[i] = getSum(i, k, prefixSum);
+        }
+        return decrypted;
+    }
+
+    private int getSum(int i, int k, int[] prefixSum) {
+        int left = 0, right = 0;
+        if (k > 0) {
+            right = i + k < prefixSum.length ? prefixSum[i + k] - prefixSum[i] : (prefixSum[prefixSum.length - 1] - prefixSum[i]);
+            left = i + k < prefixSum.length ? 0 : prefixSum[k - (prefixSum.length - i)];
+        } else {
+            k = -k;
+            left = i >= k
+                ? i == k ? getLeftPrefix(i-1, prefixSum) : getLeftPrefix(i-1, prefixSum) - getLeftPrefix((i - k) - 1, prefixSum)
+                : getLeftPrefix(i-1, prefixSum);
+            right = i >= k ? 0 : prefixSum[prefixSum.length - 1] - prefixSum[prefixSum.length - (k - i) - 1];
+        }
+        return left + right;
+    }
+
+    private int getLeftPrefix(int i, int[] prefix) {
+        return i < 0 ? 0 : prefix[i];
+    }
+
+
     /**
      * Algorithm: 1. Calculate and cache the sum of number starting from left and starting from right.
      *  This way if we have 2 indices, we can calculate the sum of the segment by deducting sum of left + sum of right from the total sum
      */
-    public int[] decrypt(int[] code, int k) {
+    public int[] decrypt2(int[] code, int k) {
         int[] decrypt = new int[code.length];
         if (k == 0) {
             return decrypt;
