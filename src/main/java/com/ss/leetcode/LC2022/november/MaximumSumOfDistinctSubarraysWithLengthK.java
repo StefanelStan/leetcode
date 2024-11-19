@@ -2,6 +2,69 @@ package com.ss.leetcode.LC2022.november;
 
 public class MaximumSumOfDistinctSubarraysWithLengthK {
     // https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/
+    public long maximumSubarraySum(int[] nums, int k) {
+        int max = 0;
+        long maxSum = 0;
+        for (int num : nums) {
+            max = Math.max(max, num);
+        }
+        SubarrayWindow window = new SubarrayWindow(max + 1, k);
+        for (int i = 0; i < k; i++) {
+            window.add(nums[i]);
+        }
+        if (window.isValid()) {
+            maxSum = Math.max(maxSum, window.sum);
+        }
+        for (int left = 0, right = k; right < nums.length; left++, right++) {
+            window.add(nums[right]);
+            window.remove(nums[left]);
+            if (window.isValid()) {
+                maxSum = Math.max(maxSum, window.sum);
+            }
+        }
+        return maxSum;
+    }
+
+    private static final class SubarrayWindow {
+        int maxUnique;
+        int unique;
+        long sum;
+        int[] count;
+
+        public SubarrayWindow(int length, int maxUnique) {
+            this.count = new int[length];
+            this.maxUnique = maxUnique;
+        }
+
+        public void add(int num) {
+            sum += num;
+            count[num]++;
+            if (count[num] == 1) {
+                unique++;
+            } else if (count[num] == 2) {
+                unique--;
+            }
+        }
+
+        public void remove(int num) {
+            count[num]--;
+            sum -= num;
+            if (count[num] == 1) {
+                unique++;
+            } else if (count[num] == 0) {
+                unique--;
+            }
+        }
+
+        public boolean isValid() {
+            return maxUnique == unique;
+        }
+    }
+
+
+
+
+
     /** Algorithm
          1. Use a int[100_0001] to store the count/presence of each number
          2. Start with a window of size k. Determine the sum of window, the present[] numbers AND an int[] duplication.
@@ -16,7 +79,7 @@ public class MaximumSumOfDistinctSubarraysWithLengthK {
             unique elements, so the window sum can be checked against maxWindowSum known so far.
          7. Return max window sum
      */
-    public long maximumSubarraySum(int[] nums, int k) {
+    public long maximumSubarraySum2(int[] nums, int k) {
         int[] duplicates = {0};
         int[] present = new int[100_001];
         long sum = getWindowSum(nums, k, present, duplicates);
