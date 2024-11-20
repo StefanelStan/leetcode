@@ -17,6 +17,7 @@ import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotAS
 import com.ss.leetcode.LC2024.november.PrimeSubtractionOperation;
 import com.ss.leetcode.LC2024.november.ShortestSubarrayWithORAtLeastKII;
 import com.ss.leetcode.LC2024.november.StringCompressionIII;
+import com.ss.leetcode.LC2024.november.TakeKOfEachCharacterFromLeftAndRight;
 import com.ss.leetcode.shared.TreeNode;
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +42,8 @@ public class StartNovember {
 //        start.makeASquareWithTheSameColor();
 //        start.maximumNumberOfOperationsToMoveOnesToTheEnd();
 //        start.findThePowerOfKSizeSubarraysI();
-        start.pancakeSorting();
+//        start.pancakeSorting();
+        start.takeKOfEachCharacterFromLeftAndRight();
     }
 
     public void countAlternatingSubarrays() {
@@ -216,5 +218,14 @@ public class StartNovember {
 
         System.out.println("[3,4,2,3,2] == " + ps.pancakeSort(new int[]{3,2,4,1}));
         System.out.println("[] == " + ps.pancakeSort(new int[]{1,2,3}));
+    }
+
+    public void takeKOfEachCharacterFromLeftAndRight() {
+        TakeKOfEachCharacterFromLeftAndRight tkoacflar = new TakeKOfEachCharacterFromLeftAndRight();
+
+        System.out.println("8 == " + tkoacflar.takeCharacters("aabaaaacaabc", 2));
+        System.out.println("-1 == " + tkoacflar.takeCharacters("a", 1));
+        System.out.println("3 == " + tkoacflar.takeCharacters("abc", 1));
+        System.out.println("3 == " + tkoacflar.takeCharacters("bcca", 1));
     }
 }
