@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.november.CountAlternatingSubarrays;
+import com.ss.leetcode.LC2024.november.CountSubmatricesWithTopLeftElementAndSumLessThanK;
 import com.ss.leetcode.LC2024.november.FindIfArrayCanBeSorted;
 import com.ss.leetcode.LC2024.november.FindTheMaximumAchievableNumber;
 import com.ss.leetcode.LC2024.november.FindThePowerOfKSizeSubarraysI;
@@ -43,7 +44,8 @@ public class StartNovember {
 //        start.maximumNumberOfOperationsToMoveOnesToTheEnd();
 //        start.findThePowerOfKSizeSubarraysI();
 //        start.pancakeSorting();
-        start.takeKOfEachCharacterFromLeftAndRight();
+//        start.takeKOfEachCharacterFromLeftAndRight();
+        start.countSubmatricesWithTopLeftElementAndSumLessThanK();
     }
 
     public void countAlternatingSubarrays() {
@@ -227,5 +229,13 @@ public class StartNovember {
         System.out.println("-1 == " + tkoacflar.takeCharacters("a", 1));
         System.out.println("3 == " + tkoacflar.takeCharacters("abc", 1));
         System.out.println("3 == " + tkoacflar.takeCharacters("bcca", 1));
+    }
+
+    public void countSubmatricesWithTopLeftElementAndSumLessThanK() {
+        CountSubmatricesWithTopLeftElementAndSumLessThanK sbwtleasltk = new CountSubmatricesWithTopLeftElementAndSumLessThanK();
+
+        System.out.println("4 == " + sbwtleasltk.countSubmatrices(new int[][]{{7,6,3},{6,6,1}}, 18));
+        System.out.println("6 == " + sbwtleasltk.countSubmatrices(new int[][]{{7,2,9},{1,5,0},{2,6,6}}, 20));
+        System.out.println("7 == " + sbwtleasltk.countSubmatrices(new int[][]{{7,7,10,9},{10,5,10,3}}, 54));
     }
 }
