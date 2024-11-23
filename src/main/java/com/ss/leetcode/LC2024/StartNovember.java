@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2024.november.MaximumNumberOfOperationsToMoveOnesToTheE
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
 import com.ss.leetcode.LC2024.november.MinimumSumOfMountainTripletsII;
+import com.ss.leetcode.LC2024.november.NeighboringBitwiseXOR;
 import com.ss.leetcode.LC2024.november.PancakeSorting;
 import com.ss.leetcode.LC2024.november.PeopleWhoseListOfFavoriteCompaniesIsNotASubsetOfAnotherList;
 import com.ss.leetcode.LC2024.november.PrimeSubtractionOperation;
@@ -45,7 +46,8 @@ public class StartNovember {
 //        start.findThePowerOfKSizeSubarraysI();
 //        start.pancakeSorting();
 //        start.takeKOfEachCharacterFromLeftAndRight();
-        start.countSubmatricesWithTopLeftElementAndSumLessThanK();
+//        start.countSubmatricesWithTopLeftElementAndSumLessThanK();
+        start.neighboringBitwiseXOR();
     }
 
     public void countAlternatingSubarrays() {
@@ -237,5 +239,18 @@ public class StartNovember {
         System.out.println("4 == " + sbwtleasltk.countSubmatrices(new int[][]{{7,6,3},{6,6,1}}, 18));
         System.out.println("6 == " + sbwtleasltk.countSubmatrices(new int[][]{{7,2,9},{1,5,0},{2,6,6}}, 20));
         System.out.println("7 == " + sbwtleasltk.countSubmatrices(new int[][]{{7,7,10,9},{10,5,10,3}}, 54));
+    }
+
+    public void neighboringBitwiseXOR() {
+        NeighboringBitwiseXOR nbxor = new NeighboringBitwiseXOR();
+
+        System.out.println("true == " + nbxor.doesValidArrayExist(new int[]{1,1,0}));
+        System.out.println("true == " + nbxor.doesValidArrayExist(new int[]{1,1}));
+        System.out.println("false == " + nbxor.doesValidArrayExist(new int[]{1,0}));
+        System.out.println("false == " + nbxor.doesValidArrayExist(new int[]{1}));
+        System.out.println("true == " + nbxor.doesValidArrayExist(new int[]{0}));
+        System.out.println("true == " + nbxor.doesValidArrayExist(new int[]{1,1,0,0,0}));
+        System.out.println("false == " + nbxor.doesValidArrayExist(new int[]{1,1,1,1,1}));
+        System.out.println("false == " + nbxor.doesValidArrayExist(new int[]{1,1,0,0,0,1,1,1,0}));
     }
 }
