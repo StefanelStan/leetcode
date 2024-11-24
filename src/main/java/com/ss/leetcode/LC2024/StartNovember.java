@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2024.november.LargestCombinationWithBitwiseANDGreaterTh
 import com.ss.leetcode.LC2024.november.MakeASquareWithTheSameColor;
 import com.ss.leetcode.LC2024.november.MaximumEqualFrequency;
 import com.ss.leetcode.LC2024.november.MaximumNumberOfOperationsToMoveOnesToTheEnd;
+import com.ss.leetcode.LC2024.november.MaximumProductAfterKIncrements;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
 import com.ss.leetcode.LC2024.november.MinimumSumOfMountainTripletsII;
@@ -47,7 +48,8 @@ public class StartNovember {
 //        start.pancakeSorting();
 //        start.takeKOfEachCharacterFromLeftAndRight();
 //        start.countSubmatricesWithTopLeftElementAndSumLessThanK();
-        start.neighboringBitwiseXOR();
+//        start.neighboringBitwiseXOR();
+        start.maximumProductAfterKIncrements();
     }
 
     public void countAlternatingSubarrays() {
@@ -252,5 +254,12 @@ public class StartNovember {
         System.out.println("true == " + nbxor.doesValidArrayExist(new int[]{1,1,0,0,0}));
         System.out.println("false == " + nbxor.doesValidArrayExist(new int[]{1,1,1,1,1}));
         System.out.println("false == " + nbxor.doesValidArrayExist(new int[]{1,1,0,0,0,1,1,1,0}));
+    }
+
+    public void maximumProductAfterKIncrements() {
+        MaximumProductAfterKIncrements mpaki = new MaximumProductAfterKIncrements();
+
+        System.out.println("20 == " + mpaki.maximumProduct(new int[]{0,4}, 5));
+        System.out.println("216 == " + mpaki.maximumProduct(new int[]{6,3,3,2}, 2));
     }
 }
