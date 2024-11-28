@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2024;
 import com.ss.leetcode.LC2024.november.CountAlternatingSubarrays;
 import com.ss.leetcode.LC2024.november.CountSubmatricesWithTopLeftElementAndSumLessThanK;
 import com.ss.leetcode.LC2024.november.FindIfArrayCanBeSorted;
+import com.ss.leetcode.LC2024.november.FindKthLargestXORCoordinateValue;
 import com.ss.leetcode.LC2024.november.FindTheMaximumAchievableNumber;
 import com.ss.leetcode.LC2024.november.FindThePowerOfKSizeSubarraysI;
 import com.ss.leetcode.LC2024.november.KthLargestPerfectSubtreeSizeInBinaryTree;
@@ -49,7 +50,8 @@ public class StartNovember {
 //        start.takeKOfEachCharacterFromLeftAndRight();
 //        start.countSubmatricesWithTopLeftElementAndSumLessThanK();
 //        start.neighboringBitwiseXOR();
-        start.maximumProductAfterKIncrements();
+//        start.maximumProductAfterKIncrements();
+        start.findKthLargestXORCoordinateValue();
     }
 
     public void countAlternatingSubarrays() {
@@ -261,5 +263,13 @@ public class StartNovember {
 
         System.out.println("20 == " + mpaki.maximumProduct(new int[]{0,4}, 5));
         System.out.println("216 == " + mpaki.maximumProduct(new int[]{6,3,3,2}, 2));
+    }
+
+    public void findKthLargestXORCoordinateValue() {
+        FindKthLargestXORCoordinateValue fklxorcv = new FindKthLargestXORCoordinateValue();
+
+        System.out.println("7 == " + fklxorcv.kthLargestValue(new int[][]{{5,2},{1,6}}, 1));
+        System.out.println("5 == " + fklxorcv.kthLargestValue(new int[][]{{5,2},{1,6}}, 2));
+        System.out.println("4 == " + fklxorcv.kthLargestValue(new int[][]{{5,2},{1,6}}, 3));
     }
 }
