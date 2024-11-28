@@ -14,6 +14,7 @@ import com.ss.leetcode.LC2024.november.MaximumNumberOfOperationsToMoveOnesToTheE
 import com.ss.leetcode.LC2024.november.MaximumProductAfterKIncrements;
 import com.ss.leetcode.LC2024.november.MinimizeMalwareSpreadII;
 import com.ss.leetcode.LC2024.november.MinimumAbsoluteDifferenceBetweenElementsWithConstraint;
+import com.ss.leetcode.LC2024.november.MinimumObstacleRemovalToReachCorner;
 import com.ss.leetcode.LC2024.november.MinimumSumOfMountainTripletsII;
 import com.ss.leetcode.LC2024.november.NeighboringBitwiseXOR;
 import com.ss.leetcode.LC2024.november.PancakeSorting;
@@ -51,7 +52,8 @@ public class StartNovember {
 //        start.countSubmatricesWithTopLeftElementAndSumLessThanK();
 //        start.neighboringBitwiseXOR();
 //        start.maximumProductAfterKIncrements();
-        start.findKthLargestXORCoordinateValue();
+//        start.findKthLargestXORCoordinateValue();
+        start.minimumObstacleRemovalToReachCorner();
     }
 
     public void countAlternatingSubarrays() {
@@ -271,5 +273,12 @@ public class StartNovember {
         System.out.println("7 == " + fklxorcv.kthLargestValue(new int[][]{{5,2},{1,6}}, 1));
         System.out.println("5 == " + fklxorcv.kthLargestValue(new int[][]{{5,2},{1,6}}, 2));
         System.out.println("4 == " + fklxorcv.kthLargestValue(new int[][]{{5,2},{1,6}}, 3));
+    }
+
+    public void minimumObstacleRemovalToReachCorner() {
+        MinimumObstacleRemovalToReachCorner mortrc = new MinimumObstacleRemovalToReachCorner();
+
+        System.out.println("2 == " + mortrc.minimumObstacles(new int[][]{{0,1,1},{1,1,0},{1,1,0}}));
+        System.out.println("0 == " + mortrc.minimumObstacles(new int[][]{{0,1,0,0,0},{0,1,0,1,0},{0,0,0,1,0}}));
     }
 }
