@@ -1,12 +1,14 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.december.BeautifulTowersI;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 
 public class StartDecember {
     public static void main(String[] args) {
         StartDecember start = new StartDecember();
 
-        start.lexicographicallySmallestStringAfterOperationsWithConstraint();
+//        start.lexicographicallySmallestStringAfterOperationsWithConstraint();
+        start.beautifulTowersI();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -20,5 +22,13 @@ public class StartDecember {
         System.out.println("addsguasuhisdhgfsdjf == " + lssaowc.getSmallestString("gldsguasuhisdhgfsdjf", 14));
         System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab == " + lssaowc.getSmallestString("dsfdhyjjghgfhgfhsgregtyjthgglierjf", 217));
         System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa == " + lssaowc.getSmallestString("fdgfdhgsregtrhrtsghtrghrrt", 631));
+    }
+
+    public void beautifulTowersI() {
+        BeautifulTowersI bti = new BeautifulTowersI();
+
+        System.out.println("13 == " + bti.maximumSumOfHeights(new int[]{5,3,4,1,1}));
+        System.out.println("22 == " + bti.maximumSumOfHeights(new int[]{6,5,3,9,2,7}));
+        System.out.println("18 == " + bti.maximumSumOfHeights(new int[]{3,2,5,5,2,3}));
     }
 }
