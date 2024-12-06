@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.december.BeautifulTowersI;
+import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.ValidWord;
@@ -12,7 +13,8 @@ public class StartDecember {
 //        start.lexicographicallySmallestStringAfterOperationsWithConstraint();
 //        start.beautifulTowersI();
 //        start.validWord();
-        start.minimizeMalwareSpread();
+//        start.minimizeMalwareSpread();
+        start.countCompleteSubarraysInAnArray();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -50,5 +52,12 @@ public class StartDecember {
         System.out.println("0 == " + mms.minMalwareSpread(new int[][]{{1,1,0},{1,1,0},{0,0,1}}, new int[]{0,1}));
         System.out.println("0 == " + mms.minMalwareSpread(new int[][]{{1,0,0},{0,1,0},{0,0,1}}, new int[]{0,2}));
         System.out.println("1 == " + mms.minMalwareSpread(new int[][]{{1,1,1},{1,1,1},{1,1,1}}, new int[]{1,2}));
+    }
+
+    public void countCompleteSubarraysInAnArray() {
+        CountCompleteSubarraysInAnArray ccsiaa = new CountCompleteSubarraysInAnArray();
+
+        System.out.println("4 == " + ccsiaa.countCompleteSubarrays(new int[]{1,3,1,2,2}));
+        System.out.println("10 == " + ccsiaa.countCompleteSubarrays(new int[]{5,5,5,5}));
     }
 }
