@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.december.BeautifulTowersI;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
+import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.ValidWord;
 
 public class StartDecember {
@@ -14,7 +15,8 @@ public class StartDecember {
 //        start.beautifulTowersI();
 //        start.validWord();
 //        start.minimizeMalwareSpread();
-        start.countCompleteSubarraysInAnArray();
+//        start.countCompleteSubarraysInAnArray();
+        start.minimumLimitOfBallsInABag();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -60,4 +62,17 @@ public class StartDecember {
         System.out.println("4 == " + ccsiaa.countCompleteSubarrays(new int[]{1,3,1,2,2}));
         System.out.println("10 == " + ccsiaa.countCompleteSubarrays(new int[]{5,5,5,5}));
     }
+
+   public void minimumLimitOfBallsInABag() {
+       MinimumLimitOfBallsInABag mlobiab = new MinimumLimitOfBallsInABag();
+
+       System.out.println("3 == " + mlobiab.minimumSize(new int[]{9}, 2));
+       System.out.println("2 == " + mlobiab.minimumSize(new int[]{2,4,8,2}, 4));
+       System.out.println("4 == " + mlobiab.minimumSize(new int[]{5,4,3,3,4,5,6,7,8}, 7));
+       System.out.println("6 == " + mlobiab.minimumSize(new int[]{5,4,3,3,4,5,6,7,8}, 2));
+       System.out.println("3 == " + mlobiab.minimumSize(new int[]{5,4,3,3,4,5,6,7,8}, 12));
+       System.out.println("8 == " + mlobiab.minimumSize(new int[]{7,6,5,56,6,7,8,9,7,6,5,4,3,2,3,5,67}, 16));
+       System.out.println("12 == " + mlobiab.minimumSize(new int[]{7,6,5,56,6,7,8,9,7,6,5,4,3,2,3,5,67}, 9));
+       System.out.println("10 == " + mlobiab.minimumSize(new int[]{7,6,5,56,6,7,8,9,7,6,5,4,3,2,3,5,67}, 11));
+   }
 }
