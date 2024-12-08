@@ -5,6 +5,38 @@ import java.util.Comparator;
 
 public class TwoBestNonOverlappingEvents {
     // https://leetcode.com/problems/two-best-non-overlapping-events
+    public int maxTwoEvents(int[][] events) {
+        int maxValue = 0;
+        Arrays.sort(events, Comparator.comparingInt(a -> a[0]));
+        int[] bestValue = getBestValue(events);
+        for (int i = 0; i < events.length; i++) {
+            maxValue = Math.max(maxValue, events[i][2] + findNextBestEvent(events, bestValue, events[i][1] + 1, i + 1));
+        }
+        return maxValue;
+    }
+
+    private int findNextBestEvent(int[][] events, int[] bestValue, int target, int low) {
+        int high = events.length -1, pivot;
+        while (low <= high) {
+            pivot = low + (high - low) / 2;
+            if (events[pivot][0] >= target) {
+                high = pivot - 1;
+            } else {
+                low = pivot + 1;
+            }
+        }
+        return low == events.length ? 0 : bestValue[low];
+    }
+
+    private int[] getBestValue(int[][] events) {
+        int[] bestValue = new int[events.length];
+        bestValue[bestValue.length - 1] = events[events.length -1][2];
+        for (int i = bestValue.length - 2; i >= 0; i--) {
+            bestValue[i] = Math.max(bestValue[i+1], events[i][2]);
+        }
+        return bestValue;
+    }
+
     /** Algorithm
         1. Sort the events by start time
         2. Use an Integer[n][2] pickedEvents to cache the max value of picking state
@@ -21,7 +53,7 @@ public class TwoBestNonOverlappingEvents {
             if last event is [1,3,2], then you need to find 4 in your events, as 4 is nest available start time.
         7. Return pickedEvents[i][state/picks]
      */
-    public int maxTwoEvents(int[][] events) {
+    public int maxTwoEvents2(int[][] events) {
         Arrays.sort(events, Comparator.comparingInt(a -> a[0]));
         Integer[][] pickedEvents = new Integer[events.length][2];
         return pickEvent(0, 0, events, pickedEvents);

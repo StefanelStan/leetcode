@@ -2,10 +2,13 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.december.BeautifulTowersI;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
+import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.ValidWord;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class StartDecember {
     public static void main(String[] args) {
@@ -16,7 +19,9 @@ public class StartDecember {
 //        start.validWord();
 //        start.minimizeMalwareSpread();
 //        start.countCompleteSubarraysInAnArray();
-        start.minimumLimitOfBallsInABag();
+//        start.minimumLimitOfBallsInABag();
+//        start.findScoreOfAnArrayAfterMarkingAllElements();
+        System.out.println("165 == " + start.maxTwoEvents(new int[][]{{66,97,90},{98,98,68},{38,49,63},{91,100,42},{92,100,22},{1,77,50},{64,72,97}}));
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -75,4 +80,43 @@ public class StartDecember {
        System.out.println("12 == " + mlobiab.minimumSize(new int[]{7,6,5,56,6,7,8,9,7,6,5,4,3,2,3,5,67}, 9));
        System.out.println("10 == " + mlobiab.minimumSize(new int[]{7,6,5,56,6,7,8,9,7,6,5,4,3,2,3,5,67}, 11));
    }
+
+   public void findScoreOfAnArrayAfterMarkingAllElements() {
+       FindScoreOfAnArrayAfterMarkingAllElements fsoaaamae = new FindScoreOfAnArrayAfterMarkingAllElements();
+
+       System.out.println("7 == " + fsoaaamae.findScore(new int[]{2,1,3,4,5,2}));
+       System.out.println("5 == " + fsoaaamae.findScore(new int[]{2,3,5,1,3,2}));
+   }
+
+    public int maxTwoEvents(int[][] events) {
+        int maxValue = 0;
+        Arrays.sort(events, Comparator.comparingInt(a -> a[0]));
+        int[] bestValue = getBestValue(events);
+        for (int i = 0; i < events.length; i++) {
+            maxValue = Math.max(maxValue, events[i][2] + findNextBestEvent(events, bestValue, events[i][1] + 1, i + 1));
+        }
+        return maxValue;
+    }
+
+    private int findNextBestEvent(int[][] events, int[] bestValue, int target, int low) {
+        int high = events.length -1, pivot;
+        while (low <= high) {
+            pivot = low + (high - low) / 2;
+            if (events[pivot][0] >= target) {
+                high = pivot - 1;
+            } else {
+                low = pivot + 1;
+            }
+        }
+        return low == events.length ? 0 : bestValue[low];
+    }
+
+    private int[] getBestValue(int[][] events) {
+        int[] bestValue = new int[events.length];
+        bestValue[bestValue.length - 1] = events[events.length -1][2];
+        for (int i = bestValue.length - 2; i >= 0; i--) {
+            bestValue[i] = Math.max(bestValue[i+1], events[i][2]);
+        }
+        return bestValue;
+    }
 }
