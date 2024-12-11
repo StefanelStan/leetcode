@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2024.december.BeautifulTowersI;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
+import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.SpecialArrayII;
@@ -22,7 +23,8 @@ public class StartDecember {
 //        start.countCompleteSubarraysInAnArray();
 //        start.minimumLimitOfBallsInABag();
 //        start.findScoreOfAnArrayAfterMarkingAllElements();
-        start.specialArrayII();
+//        start.specialArrayII();
+        start.maximumBeautyOfAnArrayAfterApplyingOperation();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -94,5 +96,12 @@ public class StartDecember {
 
         System.out.println("[false] == " + Arrays.toString(saii.isArraySpecial(new int[]{3,4,1,2,6}, new int[][]{{0,4}})));
         System.out.println("[false, true] == " + Arrays.toString(saii.isArraySpecial(new int[]{4,3,1,6}, new int[][]{{0,2},{2,3}})));
+    }
+
+    public void maximumBeautyOfAnArrayAfterApplyingOperation() {
+        MaximumBeautyOfAnArrayAfterApplyingOperation mboaaaao = new MaximumBeautyOfAnArrayAfterApplyingOperation();
+
+        System.out.println("3 == " + mboaaaao.maximumBeauty(new int[]{4,6,1,2}, 2));
+        System.out.println("4 == " + mboaaaao.maximumBeauty(new int[]{1,1,1,1}, 10));
     }
 }
