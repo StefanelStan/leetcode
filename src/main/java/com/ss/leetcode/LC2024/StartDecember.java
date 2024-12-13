@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.SpecialArrayII;
 import com.ss.leetcode.LC2024.december.ValidWord;
+import com.ss.leetcode.LC2024.december.VowelsGameInAString;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -24,7 +25,8 @@ public class StartDecember {
 //        start.minimumLimitOfBallsInABag();
 //        start.findScoreOfAnArrayAfterMarkingAllElements();
 //        start.specialArrayII();
-        start.maximumBeautyOfAnArrayAfterApplyingOperation();
+//        start.maximumBeautyOfAnArrayAfterApplyingOperation();
+        start.vowelsGameInAString();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -103,5 +105,12 @@ public class StartDecember {
 
         System.out.println("3 == " + mboaaaao.maximumBeauty(new int[]{4,6,1,2}, 2));
         System.out.println("4 == " + mboaaaao.maximumBeauty(new int[]{1,1,1,1}, 10));
+    }
+
+    public void vowelsGameInAString() {
+        VowelsGameInAString vgias = new VowelsGameInAString();
+
+        System.out.println("true == " +  vgias.doesAliceWin("leetcoder"));
+        System.out.println("false == " +  vgias.doesAliceWin("bbcd"));
     }
 }
