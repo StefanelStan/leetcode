@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.december.BeautifulTowersI;
+import com.ss.leetcode.LC2024.december.ContinuousSubarrays;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
@@ -26,7 +27,8 @@ public class StartDecember {
 //        start.findScoreOfAnArrayAfterMarkingAllElements();
 //        start.specialArrayII();
 //        start.maximumBeautyOfAnArrayAfterApplyingOperation();
-        start.vowelsGameInAString();
+//        start.vowelsGameInAString();
+        start.continuousSubarrays();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -112,5 +114,13 @@ public class StartDecember {
 
         System.out.println("true == " +  vgias.doesAliceWin("leetcoder"));
         System.out.println("false == " +  vgias.doesAliceWin("bbcd"));
+    }
+
+    public void continuousSubarrays() {
+        ContinuousSubarrays cs = new ContinuousSubarrays();
+
+        System.out.println("8 == " + cs.continuousSubarrays(new int[]{5,4,2,4}));
+        System.out.println("6 == " + cs.continuousSubarrays(new int[]{1,2,3}));
+        System.out.println("26 == " + cs.continuousSubarrays(new int[]{4,3,5,4,3,6,7,9,3,2,1}));
     }
 }
