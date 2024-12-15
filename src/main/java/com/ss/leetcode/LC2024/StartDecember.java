@@ -5,6 +5,7 @@ import com.ss.leetcode.LC2024.december.ContinuousSubarrays;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
+import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
 import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
@@ -13,6 +14,7 @@ import com.ss.leetcode.LC2024.december.ValidWord;
 import com.ss.leetcode.LC2024.december.VowelsGameInAString;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class StartDecember {
     public static void main(String[] args) {
@@ -28,7 +30,8 @@ public class StartDecember {
 //        start.specialArrayII();
 //        start.maximumBeautyOfAnArrayAfterApplyingOperation();
 //        start.vowelsGameInAString();
-        start.continuousSubarrays();
+//        start.continuousSubarrays();
+        start.maximumAveragePassRatio();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -75,7 +78,7 @@ public class StartDecember {
         System.out.println("10 == " + ccsiaa.countCompleteSubarrays(new int[]{5,5,5,5}));
     }
 
-   public void minimumLimitOfBallsInABag() {
+    public void minimumLimitOfBallsInABag() {
        MinimumLimitOfBallsInABag mlobiab = new MinimumLimitOfBallsInABag();
 
        System.out.println("3 == " + mlobiab.minimumSize(new int[]{9}, 2));
@@ -88,7 +91,7 @@ public class StartDecember {
        System.out.println("10 == " + mlobiab.minimumSize(new int[]{7,6,5,56,6,7,8,9,7,6,5,4,3,2,3,5,67}, 11));
    }
 
-   public void findScoreOfAnArrayAfterMarkingAllElements() {
+    public void findScoreOfAnArrayAfterMarkingAllElements() {
        FindScoreOfAnArrayAfterMarkingAllElements fsoaaamae = new FindScoreOfAnArrayAfterMarkingAllElements();
 
        System.out.println("7 == " + fsoaaamae.findScore(new int[]{2,1,3,4,5,2}));
@@ -122,5 +125,17 @@ public class StartDecember {
         System.out.println("8 == " + cs.continuousSubarrays(new int[]{5,4,2,4}));
         System.out.println("6 == " + cs.continuousSubarrays(new int[]{1,2,3}));
         System.out.println("26 == " + cs.continuousSubarrays(new int[]{4,3,5,4,3,6,7,9,3,2,1}));
+    }
+
+    public void maximumAveragePassRatio() {
+        MaximumAveragePassRatio mapr = new MaximumAveragePassRatio();
+
+        System.out.println("0.783333 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{1,2},{3,5},{2,2}}, 2)));
+        System.out.println("0.53485 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{2,4},{3,9},{4,5},{2,10}}, 4)));
+        System.out.println("0.34529 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 1)));
+        System.out.println("0.41050 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 9)));
+        System.out.println("0.46747 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 19)));
+        System.out.println("0.50928 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 29)));
+        System.out.println("0.44688 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 15)));
     }
 }
