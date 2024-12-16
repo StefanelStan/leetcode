@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2024;
 
+import com.ss.leetcode.LC2024.december.AngleBetweenHandsOfAClock;
 import com.ss.leetcode.LC2024.december.BeautifulTowersI;
 import com.ss.leetcode.LC2024.december.ContinuousSubarrays;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
+import com.ss.leetcode.LC2024.december.FinalArrayStateAfterKMultiplicationOperationsI;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
@@ -31,7 +33,9 @@ public class StartDecember {
 //        start.maximumBeautyOfAnArrayAfterApplyingOperation();
 //        start.vowelsGameInAString();
 //        start.continuousSubarrays();
-        start.maximumAveragePassRatio();
+//        start.maximumAveragePassRatio();
+//        start.angleBetweenHandsOfAClock();
+        start.finalArrayStateAfterKMultiplicationOperationsI();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -137,5 +141,20 @@ public class StartDecember {
         System.out.println("0.46747 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 19)));
         System.out.println("0.50928 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 29)));
         System.out.println("0.44688 == " + String.format("%.5f", mapr.maxAverageRatio(new int[][]{{3,7},{2,9},{45,123},{23,172},{4,12},{5,9},{3,10}}, 15)));
+    }
+
+    public void angleBetweenHandsOfAClock() {
+        AngleBetweenHandsOfAClock abhoac = new AngleBetweenHandsOfAClock();
+
+        System.out.println("165 == " + abhoac.angleClock(12, 30));
+        System.out.println("75 == " + abhoac.angleClock(3, 30));
+        System.out.println("7.5 == " + abhoac.angleClock(3, 15));
+    }
+
+    public void finalArrayStateAfterKMultiplicationOperationsI() {
+        FinalArrayStateAfterKMultiplicationOperationsI fasakmoi = new FinalArrayStateAfterKMultiplicationOperationsI();
+
+        System.out.println("[8,4,6,5,6] == " + Arrays.toString(fasakmoi.getFinalState(new int[]{2,1,3,5,6}, 5, 2)));
+        System.out.println("[16,8] == " + Arrays.toString(fasakmoi.getFinalState(new int[]{1,2}, 3, 4)));
     }
 }
