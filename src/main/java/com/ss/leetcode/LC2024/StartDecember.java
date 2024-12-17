@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
 import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
+import com.ss.leetcode.LC2024.december.MinimumOperationsToMakeBinaryArrayElementsEqualToOneII;
 import com.ss.leetcode.LC2024.december.SpecialArrayII;
 import com.ss.leetcode.LC2024.december.ValidWord;
 import com.ss.leetcode.LC2024.december.VowelsGameInAString;
@@ -35,7 +36,8 @@ public class StartDecember {
 //        start.continuousSubarrays();
 //        start.maximumAveragePassRatio();
 //        start.angleBetweenHandsOfAClock();
-        start.finalArrayStateAfterKMultiplicationOperationsI();
+//        start.finalArrayStateAfterKMultiplicationOperationsI();
+        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneII();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -156,5 +158,12 @@ public class StartDecember {
 
         System.out.println("[8,4,6,5,6] == " + Arrays.toString(fasakmoi.getFinalState(new int[]{2,1,3,5,6}, 5, 2)));
         System.out.println("[16,8] == " + Arrays.toString(fasakmoi.getFinalState(new int[]{1,2}, 3, 4)));
+    }
+
+    public void minimumOperationsToMakeBinaryArrayElementsEqualToOneII() {
+        MinimumOperationsToMakeBinaryArrayElementsEqualToOneII motmbaeetoii = new MinimumOperationsToMakeBinaryArrayElementsEqualToOneII();
+
+        System.out.println("4 == " + motmbaeetoii.minOperations(new int[]{0,1,1,0,1}));
+        System.out.println("1 == " + motmbaeetoii.minOperations(new int[]{1,0,0,0}));
     }
 }

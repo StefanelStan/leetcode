@@ -3,6 +3,59 @@ package com.ss.leetcode.LC2023.march;
 public class ConstructStringWithRepeatLimit {
     // https://leetcode.com/problems/construct-string-with-repeat-limit/
     public String repeatLimitedString(String s, int repeatLimit) {
+        int[] charCount = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            charCount[s.charAt(i) - 'a']++;
+        }
+        return repeatString(charCount, repeatLimit);
+    }
+
+    private String repeatString(int[] charCount, int limit) {
+        StringBuilder stb = new StringBuilder();
+        boolean finished = false;
+        int currentLargest = 25, nextLargest;
+        int lastAppendedCount = 0;
+        int lastAppendedChar = -1;
+        while (!finished) {
+            while (currentLargest >= 0 && charCount[currentLargest] == 0) {
+                currentLargest--;
+            }
+            if (currentLargest == -1) {
+                finished = true;
+            } else {
+                lastAppendedCount = currentLargest == lastAppendedChar
+                    ? Math.min(limit - lastAppendedCount, charCount[currentLargest])
+                    : Math.min(limit, charCount[currentLargest]);
+                lastAppendedChar = currentLargest;
+                append(stb, (char)(currentLargest + 'a'), lastAppendedCount);
+                charCount[currentLargest] -= lastAppendedCount;
+
+                if (charCount[currentLargest] > 0) {
+                    nextLargest = currentLargest - 1;
+                    while (nextLargest >= 0 && charCount[nextLargest] == 0) {
+                        nextLargest--;
+                    }
+                    if (nextLargest == -1) {
+                        finished = true;
+                    } else {
+                        lastAppendedChar = nextLargest;
+                        lastAppendedCount = 1;
+                        append(stb, (char)(nextLargest + 'a'), lastAppendedCount);
+                        charCount[nextLargest] -= lastAppendedCount;
+                    }
+                }
+            }
+        }
+        return stb.toString();
+    }
+
+    private void append(StringBuilder stb, char ch, int times) {
+        while (times-- > 0) {
+            stb.append(ch);
+        }
+    }
+
+    public String repeatLimitedString2(String s, int repeatLimit) {
         CharNode[] tail = countChars(s);
 
         StringHolder sh = new StringHolder();
