@@ -1,5 +1,7 @@
 package com.ss.leetcode.LC2021.august;
 
+import java.util.LinkedList;
+
 public class FinalPricesWithSpecialDiscount {
     // https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/
     public int[] finalPrices(int[] prices) {
@@ -12,5 +14,19 @@ public class FinalPricesWithSpecialDiscount {
             }
         }
         return prices;
+    }
+
+    // Next Lower Element - Monotonic Stack
+    public int[] finalPrices2(int[] prices) {
+        int[] finalPrices = new int[prices.length];
+        LinkedList<Integer> higherPrices = new LinkedList<>();
+        for (int i = 0; i < prices.length; i++) {
+            finalPrices[i] = prices[i];
+            while (!higherPrices.isEmpty() && finalPrices[higherPrices.peekLast()] >= prices[i]) {
+                finalPrices[higherPrices.removeLast()] -= prices[i];
+            }
+            higherPrices.addLast(i);
+        }
+        return finalPrices;
     }
 }

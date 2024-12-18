@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2024;
 
 import com.ss.leetcode.LC2024.december.AngleBetweenHandsOfAClock;
 import com.ss.leetcode.LC2024.december.BeautifulTowersI;
+import com.ss.leetcode.LC2024.december.BestSightseeingPair;
 import com.ss.leetcode.LC2024.december.ContinuousSubarrays;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.FinalArrayStateAfterKMultiplicationOperationsI;
@@ -9,6 +10,7 @@ import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
 import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
+import com.ss.leetcode.LC2024.december.MaximumPointsAfterEnemyBattles;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.MinimumOperationsToMakeBinaryArrayElementsEqualToOneII;
@@ -37,7 +39,9 @@ public class StartDecember {
 //        start.maximumAveragePassRatio();
 //        start.angleBetweenHandsOfAClock();
 //        start.finalArrayStateAfterKMultiplicationOperationsI();
-        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneII();
+//        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneII();
+//        start.maximumPointsAfterEnemyBattles();
+        start.bestSightseeingPair();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -165,5 +169,22 @@ public class StartDecember {
 
         System.out.println("4 == " + motmbaeetoii.minOperations(new int[]{0,1,1,0,1}));
         System.out.println("1 == " + motmbaeetoii.minOperations(new int[]{1,0,0,0}));
+    }
+
+    public void maximumPointsAfterEnemyBattles() {
+        MaximumPointsAfterEnemyBattles mpaeb = new MaximumPointsAfterEnemyBattles();
+
+        System.out.println("3 == " + mpaeb.maximumPoints(new int[]{3,2,2}, 2));
+        System.out.println("5 == " + mpaeb.maximumPoints(new int[]{2}, 10));
+    }
+
+    public void bestSightseeingPair() {
+        BestSightseeingPair bsp = new BestSightseeingPair();
+
+        System.out.println("11 == " + bsp.maxScoreSightseeingPair(new int[]{8,1,5,2,6}));
+        System.out.println("2 == " + bsp.maxScoreSightseeingPair(new int[]{1,2}));
+        System.out.println("14 == " + bsp.maxScoreSightseeingPair(new int[]{4,5,6,7,8,6,5,4}));
+        System.out.println("12 == " + bsp.maxScoreSightseeingPair(new int[]{6,6,6,7}));
+        System.out.println("16 == " + bsp.maxScoreSightseeingPair(new int[]{5,6,7,8,9,8,7,7,8,7,6,5,3,7,1,2,3,4,6,}));
     }
 }
