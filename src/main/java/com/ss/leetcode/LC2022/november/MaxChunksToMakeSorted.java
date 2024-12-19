@@ -2,6 +2,17 @@ package com.ss.leetcode.LC2022.november;
 
 public class MaxChunksToMakeSorted {
     // https://leetcode.com/problems/max-chunks-to-make-sorted
+    public int maxChunksToSorted(int[] arr) {
+        int chunks = 0, maxSoFar = -1;
+        for (int i = 0; i < arr.length; i++) {
+            maxSoFar = Math.max(maxSoFar, arr[i]);
+            if (maxSoFar == i) {
+                chunks++;
+            }
+        }
+        return chunks;
+    }
+
     /** Algorithm
          [0,1,4,2,3,5]
         1. Loop from i 0 to n and check:
@@ -14,7 +25,7 @@ public class MaxChunksToMakeSorted {
         - i = 5. at 5 we have 5, it's already sorted so a solo segment of 1.
       2. So we have a total of 4 segments of size 1,1,3,1
      */
-    public int maxChunksToSorted(int[] arr) {
+    public int maxChunksToSorted2(int[] arr) {
         int maxChunks = 0;
         int[] pos =  new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
