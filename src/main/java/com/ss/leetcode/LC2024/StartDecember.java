@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
 import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
+import com.ss.leetcode.LC2024.december.MaximumNumberOfKDivisibleComponents;
 import com.ss.leetcode.LC2024.december.MaximumPointsAfterEnemyBattles;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
@@ -41,7 +42,8 @@ public class StartDecember {
 //        start.finalArrayStateAfterKMultiplicationOperationsI();
 //        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneII();
 //        start.maximumPointsAfterEnemyBattles();
-        start.bestSightseeingPair();
+//        start.bestSightseeingPair();
+        start.maximumNumberOfKDivisibleComponents();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -186,5 +188,13 @@ public class StartDecember {
         System.out.println("14 == " + bsp.maxScoreSightseeingPair(new int[]{4,5,6,7,8,6,5,4}));
         System.out.println("12 == " + bsp.maxScoreSightseeingPair(new int[]{6,6,6,7}));
         System.out.println("16 == " + bsp.maxScoreSightseeingPair(new int[]{5,6,7,8,9,8,7,7,8,7,6,5,3,7,1,2,3,4,6,}));
+    }
+
+    public void maximumNumberOfKDivisibleComponents() {
+        MaximumNumberOfKDivisibleComponents mnokdc = new MaximumNumberOfKDivisibleComponents();
+
+        System.out.println("2 == " + mnokdc.maxKDivisibleComponents(5, new int[][]{{0,2},{1,2},{1,3},{2,4}}, new int[]{1,8,1,4,4}, 6));
+        System.out.println("3 == " + mnokdc.maxKDivisibleComponents(7, new int[][]{{0,1},{0,2},{1,3},{1,4},{2,5},{2,6}}, new int[]{3,0,6,1,5,2,1}, 3));
+        System.out.println("2 == " + mnokdc.maxKDivisibleComponents(9, new int[][]{{1,2},{1,7},{0,6},{0,8},{0,3},{3,4},{0,5},{2,5}}, new int[]{1,4,4,0,2,1,1,6,2}, 7));
     }
 }
