@@ -6,6 +6,7 @@ import com.ss.leetcode.LC2024.december.BestSightseeingPair;
 import com.ss.leetcode.LC2024.december.ContinuousSubarrays;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.FinalArrayStateAfterKMultiplicationOperationsI;
+import com.ss.leetcode.LC2024.december.FindBuildingWhereAliceAndBobCanMeet;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
@@ -43,7 +44,8 @@ public class StartDecember {
 //        start.minimumOperationsToMakeBinaryArrayElementsEqualToOneII();
 //        start.maximumPointsAfterEnemyBattles();
 //        start.bestSightseeingPair();
-        start.maximumNumberOfKDivisibleComponents();
+//        start.maximumNumberOfKDivisibleComponents();
+        start.findBuildingWhereAliceAndBobCanMeet();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -196,5 +198,12 @@ public class StartDecember {
         System.out.println("2 == " + mnokdc.maxKDivisibleComponents(5, new int[][]{{0,2},{1,2},{1,3},{2,4}}, new int[]{1,8,1,4,4}, 6));
         System.out.println("3 == " + mnokdc.maxKDivisibleComponents(7, new int[][]{{0,1},{0,2},{1,3},{1,4},{2,5},{2,6}}, new int[]{3,0,6,1,5,2,1}, 3));
         System.out.println("2 == " + mnokdc.maxKDivisibleComponents(9, new int[][]{{1,2},{1,7},{0,6},{0,8},{0,3},{3,4},{0,5},{2,5}}, new int[]{1,4,4,0,2,1,1,6,2}, 7));
+    }
+
+    public void findBuildingWhereAliceAndBobCanMeet() {
+        FindBuildingWhereAliceAndBobCanMeet fbwaabcm = new FindBuildingWhereAliceAndBobCanMeet();
+
+        System.out.println("[2,5,-1,5,2] == " + Arrays.toString(fbwaabcm.leftmostBuildingQueries(new int[]{6,4,8,5,2,7}, new int[][]{{0,1},{0,3},{2,4},{3,4},{2,2}})));
+        System.out.println("[7,6,-1,4,6] == " + Arrays.toString(fbwaabcm.leftmostBuildingQueries(new int[]{5,3,8,2,6,1,4,6}, new int[][]{{0,7},{3,5},{5,2},{3,0},{1,6}})));
     }
 }
