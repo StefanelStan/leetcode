@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
 import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
 import com.ss.leetcode.LC2024.december.MaximumNumberOfKDivisibleComponents;
 import com.ss.leetcode.LC2024.december.MaximumPointsAfterEnemyBattles;
+import com.ss.leetcode.LC2024.december.MaximumTastinessOfCandyBasket;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.MinimumOperationsToMakeBinaryArrayElementsEqualToOneII;
@@ -45,7 +46,8 @@ public class StartDecember {
 //        start.maximumPointsAfterEnemyBattles();
 //        start.bestSightseeingPair();
 //        start.maximumNumberOfKDivisibleComponents();
-        start.findBuildingWhereAliceAndBobCanMeet();
+//        start.findBuildingWhereAliceAndBobCanMeet();
+        start.maximumTastinessOfCandyBasket();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -205,5 +207,13 @@ public class StartDecember {
 
         System.out.println("[2,5,-1,5,2] == " + Arrays.toString(fbwaabcm.leftmostBuildingQueries(new int[]{6,4,8,5,2,7}, new int[][]{{0,1},{0,3},{2,4},{3,4},{2,2}})));
         System.out.println("[7,6,-1,4,6] == " + Arrays.toString(fbwaabcm.leftmostBuildingQueries(new int[]{5,3,8,2,6,1,4,6}, new int[][]{{0,7},{3,5},{5,2},{3,0},{1,6}})));
+    }
+
+    public void maximumTastinessOfCandyBasket() {
+        MaximumTastinessOfCandyBasket mtocb = new MaximumTastinessOfCandyBasket();
+
+        System.out.println("8 == " + mtocb.maximumTastiness(new int[]{13,5,1,8,21,2}, 3));
+        System.out.println("2 == " + mtocb.maximumTastiness(new int[]{1,3,1}, 2));
+        System.out.println("0 == " + mtocb.maximumTastiness(new int[]{7,7,7,7}, 2));
     }
 }

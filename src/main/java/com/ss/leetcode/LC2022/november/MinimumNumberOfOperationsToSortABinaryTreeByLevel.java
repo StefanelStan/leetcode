@@ -2,10 +2,69 @@ package com.ss.leetcode.LC2022.november;
 
 import com.ss.leetcode.shared.TreeNode;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MinimumNumberOfOperationsToSortABinaryTreeByLevel {
     // https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level
+    public int minimumOperations(TreeNode root) {
+        List<List<Integer>> nodes = new ArrayList<>();
+        traverseTree(root, 1, nodes);
+        int minOps = 0;
+        for (List<Integer> listOfNodes : nodes) {
+            minOps += getMinOps(listOfNodes);
+        }
+        return minOps;
+    }
+
+    private int getMinOps(List<Integer> nodes) {
+        List<NumberPos> nodesCopy = new ArrayList<>(nodes.size());
+        List<NumberPos> sortedNodes = new ArrayList<>(nodes.size());
+        for (int i = 0; i < nodes.size(); i++) {
+            NumberPos numberPos = new NumberPos(nodes.get(i), i);
+            nodesCopy.add(numberPos);
+            sortedNodes.add(numberPos);
+        }
+        Collections.sort(sortedNodes, Comparator.comparingInt(n -> n.number));
+        int swaps = 0;
+        NumberPos temp;
+        for (int i = 0; i < nodesCopy.size(); i++) {
+            if (nodesCopy.get(i).number != sortedNodes.get(i).number) {
+                temp = nodesCopy.get(i);
+                nodesCopy.set(i, sortedNodes.get(i));
+                nodesCopy.set(sortedNodes.get(i).pos, temp);
+                temp.pos = sortedNodes.get(i).pos;
+                swaps++;
+            }
+        }
+
+        return swaps;
+    }
+
+    private void traverseTree(TreeNode node, int level, List<List<Integer>> nodes) {
+        if (node == null) {
+            return;
+        }
+        if (level >= nodes.size()) {
+            nodes.add(new ArrayList<>());
+        }
+        nodes.get(level - 1).add(node.val);
+        traverseTree(node.left, level + 1, nodes);
+        traverseTree(node.right, level + 1, nodes);
+    }
+
+    private static class NumberPos {
+        int number;
+        int pos;
+        public NumberPos(int number, int pos) {
+            this.number = number;
+            this.pos = pos;
+        }
+
+    }
+
+
     /** Algorithm
          1. How to count the swaps of a list/array? [7,5,1,2]
             a) on position[0] we need the min nr which is 1: put 1 on [0] and 7 on position[2] -> 1,5,7,2
@@ -23,7 +82,7 @@ public class MinimumNumberOfOperationsToSortABinaryTreeByLevel {
          5. Traverse from min to max (1 to 100_001) and check if the current node sits at the right insertion position in its level. If not, swap it to that position and mark the position.
      */
 
-    public int minimumOperations(TreeNode root) {
+    public int minimumOperations2(TreeNode root) {
         if (root.left == root.right) {
             return 0;
         }
