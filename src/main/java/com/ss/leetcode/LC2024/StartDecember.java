@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2024.december.ContinuousSubarrays;
 import com.ss.leetcode.LC2024.december.CountCompleteSubarraysInAnArray;
 import com.ss.leetcode.LC2024.december.FinalArrayStateAfterKMultiplicationOperationsI;
 import com.ss.leetcode.LC2024.december.FindBuildingWhereAliceAndBobCanMeet;
+import com.ss.leetcode.LC2024.december.FindMinimumDiameterAfterMergingTwoTrees;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
@@ -47,7 +48,8 @@ public class StartDecember {
 //        start.bestSightseeingPair();
 //        start.maximumNumberOfKDivisibleComponents();
 //        start.findBuildingWhereAliceAndBobCanMeet();
-        start.maximumTastinessOfCandyBasket();
+//        start.maximumTastinessOfCandyBasket();
+        start.findMinimumDiameterAfterMergingTwoTrees();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -215,5 +217,13 @@ public class StartDecember {
         System.out.println("8 == " + mtocb.maximumTastiness(new int[]{13,5,1,8,21,2}, 3));
         System.out.println("2 == " + mtocb.maximumTastiness(new int[]{1,3,1}, 2));
         System.out.println("0 == " + mtocb.maximumTastiness(new int[]{7,7,7,7}, 2));
+    }
+
+    public void findMinimumDiameterAfterMergingTwoTrees() {
+        FindMinimumDiameterAfterMergingTwoTrees fmdamtt = new FindMinimumDiameterAfterMergingTwoTrees();
+
+        System.out.println("3 == " + fmdamtt.minimumDiameterAfterMerge(new int[][]{{0,1},{0,2},{0,3}}, new int[][]{{0,1}}));
+        System.out.println("5 == " + fmdamtt.minimumDiameterAfterMerge(new int[][]{{0,1},{0,2},{0,3},{2,4},{2,5},{3,6},{2,7}}, new int[][]{{0,1},{0,2},{0,3},{2,4},{2,5},{3,6},{2,7}}));
+        System.out.println("6/7 == " + fmdamtt.minimumDiameterAfterMerge(new int[][]{{0,1},{0,2},{2,3},{3,6},{8,7},{4,8},{5,4},{3,5},{3,9}}, new int[][]{{0,1},{0,2},{0,3}}));
     }
 }
