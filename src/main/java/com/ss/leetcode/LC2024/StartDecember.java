@@ -19,6 +19,7 @@ import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.MinimumOperationsToMakeBinaryArrayElementsEqualToOneII;
 import com.ss.leetcode.LC2024.december.SpecialArrayII;
+import com.ss.leetcode.LC2024.december.TargetSum;
 import com.ss.leetcode.LC2024.december.ValidWord;
 import com.ss.leetcode.LC2024.december.VowelsGameInAString;
 import java.util.Arrays;
@@ -49,7 +50,8 @@ public class StartDecember {
 //        start.maximumNumberOfKDivisibleComponents();
 //        start.findBuildingWhereAliceAndBobCanMeet();
 //        start.maximumTastinessOfCandyBasket();
-        start.findMinimumDiameterAfterMergingTwoTrees();
+//        start.findMinimumDiameterAfterMergingTwoTrees();
+        start.targetSum();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -224,6 +226,13 @@ public class StartDecember {
 
         System.out.println("3 == " + fmdamtt.minimumDiameterAfterMerge(new int[][]{{0,1},{0,2},{0,3}}, new int[][]{{0,1}}));
         System.out.println("5 == " + fmdamtt.minimumDiameterAfterMerge(new int[][]{{0,1},{0,2},{0,3},{2,4},{2,5},{3,6},{2,7}}, new int[][]{{0,1},{0,2},{0,3},{2,4},{2,5},{3,6},{2,7}}));
-        System.out.println("6/7 == " + fmdamtt.minimumDiameterAfterMerge(new int[][]{{0,1},{0,2},{2,3},{3,6},{8,7},{4,8},{5,4},{3,5},{3,9}}, new int[][]{{0,1},{0,2},{0,3}}));
+        System.out.println("7 == " + fmdamtt.minimumDiameterAfterMerge(new int[][]{{0,1},{0,2},{2,3},{3,6},{8,7},{4,8},{5,4},{3,5},{3,9}}, new int[][]{{0,1},{0,2},{0,3}}));
+    }
+
+    public void targetSum() {
+        TargetSum ts = new TargetSum();
+
+        System.out.println("5 == " + ts.findTargetSumWays(new int[]{1,1,1,1,1}, 3));
+        System.out.println("1 == " + ts.findTargetSumWays(new int[]{1}, 1));
     }
 }

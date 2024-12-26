@@ -6,14 +6,26 @@ import java.util.List;
 
 public class FindMinimumDiameterAfterMergingTwoTrees {
     // https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees
-    // LC as wrong answers!
+    /** Algorithm
+        1. Build a List[] of connections for each edge/node and also determine the degree of each node.
+        2. The nodes will indegree 1 will be leafs.
+        3. Use BFS to "pluck" the leafs from the tree, peeling one layer at a time, similar to doing Kahn Topological Sort.
+            - Keep count of layers
+        4. When you reach the "center" of the tree, you might have 1 or 2 more nodes as "core".
+            - if you have a core of 1, then your half diameter is layers - 1 and diameter is 2 * layers - 2.
+            - for a core of 2+ nodes: half diameter = layers, diameter = 2 * layers - 1
+        5. Your answer is either the max diameter of T1, T2 Or halfDiameterT1 + halfDiamT2 + 1;
+     */
     public int minimumDiameterAfterMerge(int[][] edges1, int[][] edges2) {
-        return diameterOf(edges1) + diameterOf(edges2) + 1;
+        int[] diameter1 = diameterOf(edges1);
+        int[] diameter2 = diameterOf(edges2);
+
+        return Math.max(diameter1[0] + diameter2[0] + 1, Math.max(diameter1[1], diameter2[1]));
     }
 
-    private int diameterOf(int[][] edges) {
+    private int[] diameterOf(int[][] edges) {
         if (edges.length <= 1) {
-            return edges.length;
+            return new int[]{edges.length, edges.length};
         }
         int[] degrees = new int[edges.length + 1];
         List<Integer>[] connections = new List[edges.length + 1];
@@ -39,7 +51,10 @@ public class FindMinimumDiameterAfterMergingTwoTrees {
                 size--;
             }
         }
-        return lastSize == 1 ? layers - 1 : layers;
+        int halfDiameter = lastSize == 1 ? layers - 1 : layers;
+        int totalDiameter = lastSize == 1 ? 2 * layers - 2 : 2 * layers - 1;
+        return new int[]{halfDiameter, totalDiameter};
+
     }
 
     private LinkedList<Integer> getLeafs(boolean[] visited, int[] indegree) {
