@@ -16,7 +16,9 @@ import com.ss.leetcode.LC2024.december.MaximumNumberOfKDivisibleComponents;
 import com.ss.leetcode.LC2024.december.MaximumPointsAfterEnemyBattles;
 import com.ss.leetcode.LC2024.december.MaximumTastinessOfCandyBasket;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
+import com.ss.leetcode.LC2024.december.MinimumCostToMakeAllCharactersEqual;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
+import com.ss.leetcode.LC2024.december.MinimumNumberOfOperationsToReinitializeAPermutation;
 import com.ss.leetcode.LC2024.december.MinimumOperationsToMakeBinaryArrayElementsEqualToOneII;
 import com.ss.leetcode.LC2024.december.SpecialArrayII;
 import com.ss.leetcode.LC2024.december.TargetSum;
@@ -51,7 +53,9 @@ public class StartDecember {
 //        start.findBuildingWhereAliceAndBobCanMeet();
 //        start.maximumTastinessOfCandyBasket();
 //        start.findMinimumDiameterAfterMergingTwoTrees();
-        start.targetSum();
+//        start.targetSum();
+//        start.minimumCostToMakeAllCharactersEqual();
+        start.minimumNumberOfOperationsToReinitializeAPermutation();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -234,5 +238,27 @@ public class StartDecember {
 
         System.out.println("5 == " + ts.findTargetSumWays(new int[]{1,1,1,1,1}, 3));
         System.out.println("1 == " + ts.findTargetSumWays(new int[]{1}, 1));
+    }
+
+    public void minimumCostToMakeAllCharactersEqual() {
+        MinimumCostToMakeAllCharactersEqual mctmace = new MinimumCostToMakeAllCharactersEqual();
+
+        System.out.println("2 == " + mctmace.minimumCost("0011"));
+        System.out.println("9 == " + mctmace.minimumCost("010101"));
+        System.out.println("54 == " + mctmace.minimumCost("01010100100100101"));
+        System.out.println("5 == " + mctmace.minimumCost("00101"));
+        System.out.println("117 == " + mctmace.minimumCost("010101010010110100101010"));
+        System.out.println("66 == " + mctmace.minimumCost("10010100100100100011"));
+        System.out.println("152 == " + mctmace.minimumCost("1100100010001000010100001011110101"));
+        System.out.println("577 == " + mctmace.minimumCost("11010101000101010001010101010111001010001001000101101001"));
+    }
+
+    public void minimumNumberOfOperationsToReinitializeAPermutation() {
+        MinimumNumberOfOperationsToReinitializeAPermutation mnootrap = new MinimumNumberOfOperationsToReinitializeAPermutation();
+
+        System.out.println("1 == " + mnootrap.reinitializePermutation(2));
+        System.out.println("2 == " + mnootrap.reinitializePermutation(4));
+        System.out.println("4 == " + mnootrap.reinitializePermutation(6));
+        System.out.println("36 == " + mnootrap.reinitializePermutation(1000));
     }
 }
