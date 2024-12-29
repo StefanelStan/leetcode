@@ -9,6 +9,7 @@ import com.ss.leetcode.LC2024.december.FinalArrayStateAfterKMultiplicationOperat
 import com.ss.leetcode.LC2024.december.FindBuildingWhereAliceAndBobCanMeet;
 import com.ss.leetcode.LC2024.december.FindMinimumDiameterAfterMergingTwoTrees;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
+import com.ss.leetcode.LC2024.december.FindTheEncryptedString;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
 import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
@@ -19,6 +20,7 @@ import com.ss.leetcode.LC2024.december.MaximumTastinessOfCandyBasket;
 import com.ss.leetcode.LC2024.december.MinimizeMalwareSpread;
 import com.ss.leetcode.LC2024.december.MinimumCostToMakeAllCharactersEqual;
 import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
+import com.ss.leetcode.LC2024.december.MinimumNumberOfFlipsToMakeBinaryGridPalindromicI;
 import com.ss.leetcode.LC2024.december.MinimumNumberOfOperationsToReinitializeAPermutation;
 import com.ss.leetcode.LC2024.december.MinimumOperationsToMakeBinaryArrayElementsEqualToOneII;
 import com.ss.leetcode.LC2024.december.SpecialArrayII;
@@ -59,7 +61,9 @@ public class StartDecember {
 //        start.targetSum();
 //        start.minimumCostToMakeAllCharactersEqual();
 //        start.minimumNumberOfOperationsToReinitializeAPermutation();
-        start.maximumSumOf3NonOverlappingSubarrays();
+//        start.maximumSumOf3NonOverlappingSubarrays();
+//        start.minimumNumberOfFlipsToMakeBinaryGridPalindromicI();
+        start.findTheEncryptedString();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -273,5 +277,20 @@ public class StartDecember {
         System.out.println("[0,2,4] == " + Arrays.toString(mso3noa.maxSumOfThreeSubarrays(new int[]{1,2,1,2,1,2,1,2,1}, 2)));
         System.out.println("[1,10,11] == " + Arrays.toString(mso3noa.maxSumOfThreeSubarrays(new int[]{1,7,1,1,1,1,1,1,1,1,7,7,7}, 1)));
         System.out.println("[4,5,7] == " + Arrays.toString(mso3noa.maxSumOfThreeSubarrays(new int[]{4,5,10,6,11,17,4,11,1,3}, 1)));
+    }
+
+    public void minimumNumberOfFlipsToMakeBinaryGridPalindromicI() {
+        MinimumNumberOfFlipsToMakeBinaryGridPalindromicI mnoftmbgpi = new MinimumNumberOfFlipsToMakeBinaryGridPalindromicI();
+
+        System.out.println("2 == " + mnoftmbgpi.minFlips(new int[][]{{1,0,0},{0,0,0},{0,0,1}}));
+        System.out.println("1 == " + mnoftmbgpi.minFlips(new int[][]{{0,1},{0,1},{0,0}}));
+        System.out.println("0 == " + mnoftmbgpi.minFlips(new int[][]{{0},{1}}));
+    }
+
+    public void findTheEncryptedString() {
+        FindTheEncryptedString ftes = new FindTheEncryptedString();
+
+        System.out.println("tdar == " + ftes.getEncryptedString("dart", 3));
+        System.out.println("aaa == " + ftes.getEncryptedString("aaa", 1));
     }
 }
