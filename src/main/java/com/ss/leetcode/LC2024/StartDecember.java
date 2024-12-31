@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2024.december.FindBuildingWhereAliceAndBobCanMeet;
 import com.ss.leetcode.LC2024.december.FindMinimumDiameterAfterMergingTwoTrees;
 import com.ss.leetcode.LC2024.december.FindScoreOfAnArrayAfterMarkingAllElements;
 import com.ss.leetcode.LC2024.december.FindTheEncryptedString;
+import com.ss.leetcode.LC2024.december.LargestPalindromicNumber;
 import com.ss.leetcode.LC2024.december.LexicographicallySmallestStringAfterOperationsWithConstraint;
 import com.ss.leetcode.LC2024.december.MaximumAveragePassRatio;
 import com.ss.leetcode.LC2024.december.MaximumBeautyOfAnArrayAfterApplyingOperation;
@@ -23,6 +24,7 @@ import com.ss.leetcode.LC2024.december.MinimumLimitOfBallsInABag;
 import com.ss.leetcode.LC2024.december.MinimumNumberOfFlipsToMakeBinaryGridPalindromicI;
 import com.ss.leetcode.LC2024.december.MinimumNumberOfOperationsToReinitializeAPermutation;
 import com.ss.leetcode.LC2024.december.MinimumOperationsToMakeBinaryArrayElementsEqualToOneII;
+import com.ss.leetcode.LC2024.december.NumberOfPeopleAwareOfASecret;
 import com.ss.leetcode.LC2024.december.SpecialArrayII;
 import com.ss.leetcode.LC2024.december.TargetSum;
 import com.ss.leetcode.LC2024.december.ValidWord;
@@ -63,7 +65,9 @@ public class StartDecember {
 //        start.minimumNumberOfOperationsToReinitializeAPermutation();
 //        start.maximumSumOf3NonOverlappingSubarrays();
 //        start.minimumNumberOfFlipsToMakeBinaryGridPalindromicI();
-        start.findTheEncryptedString();
+//        start.findTheEncryptedString();
+//        start.numberOfPeopleAwareOfASecret();
+        start.largestPalindromicNumber();
     }
 
     public void lexicographicallySmallestStringAfterOperationsWithConstraint() {
@@ -292,5 +296,21 @@ public class StartDecember {
 
         System.out.println("tdar == " + ftes.getEncryptedString("dart", 3));
         System.out.println("aaa == " + ftes.getEncryptedString("aaa", 1));
+    }
+
+    public void numberOfPeopleAwareOfASecret() {
+        NumberOfPeopleAwareOfASecret nopaoas = new NumberOfPeopleAwareOfASecret();
+
+        System.out.println("5 == " + nopaoas.peopleAwareOfSecret(6,2,4));
+        System.out.println("6 == " + nopaoas.peopleAwareOfSecret(4,1,3));
+    }
+
+    public void largestPalindromicNumber() {
+        LargestPalindromicNumber lpn = new LargestPalindromicNumber();
+
+        System.out.println("7449447 == " + lpn.largestPalindromic("444947137"));
+        System.out.println("9 == " + lpn.largestPalindromic("00009"));
+        System.out.println("0 == " + lpn.largestPalindromic("0"));
+        System.out.println("0 == " + lpn.largestPalindromic("000"));
     }
 }
