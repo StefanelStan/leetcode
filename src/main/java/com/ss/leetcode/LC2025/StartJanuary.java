@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.january.CoordinateWithMaximumNetworkQuality;
+import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
@@ -13,7 +14,8 @@ public class StartJanuary {
 //        start.findTheLexicographicallyLargestStringFromTheBoxI();
 //        start.maximumTotalRewardUsingOperationsI();
 //        start.flowerPlantingWithNoAdjacent();
-        start.coordinateWithMaximumNetworkQuality();
+//        start.coordinateWithMaximumNetworkQuality();
+        start.countTheNumberOfSpecialCharactersII();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -52,5 +54,13 @@ public class StartJanuary {
         System.out.println("[2,5] == " + Arrays.toString(cwmnq.bestCoordinate(new int[][]{{2,5,10},{10,5,10}}, 5)));
         System.out.println("[1,6] == " + Arrays.toString(cwmnq.bestCoordinate(new int[][]{{30,34,31},{10,44,24},{14,28,23},{50,38,1},{40,13,6},{16,27,9},{2,22,23},{1,6,41},{34,22,40},{40,10,11}},20)));
         System.out.println("[1,6] == " + Arrays.toString(cwmnq.bestCoordinate(new int[][]{{30,34,31},{10,44,24},{16,27,9},{2,22,23},{1,6,41},{34,22,40},{40,10,11}},20)));
+    }
+
+    public void countTheNumberOfSpecialCharactersII() {
+        CountTheNumberOfSpecialCharactersII ctnoscii = new CountTheNumberOfSpecialCharactersII();
+
+        System.out.println("3 == " + ctnoscii.numberOfSpecialChars("aaAbcBC"));
+        System.out.println("0 == " + ctnoscii.numberOfSpecialChars("abc"));
+        System.out.println("0 == " + ctnoscii.numberOfSpecialChars("AbBCab"));
     }
 }
