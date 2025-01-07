@@ -4,6 +4,7 @@ import com.ss.leetcode.LC2025.january.CoordinateWithMaximumNetworkQuality;
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
+import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
 import java.util.Arrays;
 
@@ -15,7 +16,8 @@ public class StartJanuary {
 //        start.maximumTotalRewardUsingOperationsI();
 //        start.flowerPlantingWithNoAdjacent();
 //        start.coordinateWithMaximumNetworkQuality();
-        start.countTheNumberOfSpecialCharactersII();
+//        start.countTheNumberOfSpecialCharactersII();
+        start.maximumRowsCoveredByColumns();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -62,5 +64,13 @@ public class StartJanuary {
         System.out.println("3 == " + ctnoscii.numberOfSpecialChars("aaAbcBC"));
         System.out.println("0 == " + ctnoscii.numberOfSpecialChars("abc"));
         System.out.println("0 == " + ctnoscii.numberOfSpecialChars("AbBCab"));
+    }
+
+    public void maximumRowsCoveredByColumns() {
+        MaximumRowsCoveredByColumns mrcbc = new MaximumRowsCoveredByColumns();
+
+        System.out.println("3 == " + mrcbc.maximumRows(new int[][]{{0,0,0},{1,0,1},{0,1,1},{0,0,1}}, 2));
+        System.out.println("2 == " + mrcbc.maximumRows(new int[][]{{1},{0}}, 1));
+        System.out.println("2 == " + mrcbc.maximumRows(new int[][]{{0,0,1,0,0,1},{1,1,0,0,1,1},{1,1,1,1,1,0},{0,0,0,1,1,1},{0,1,0,0,1,1}}, 4));
     }
 }
