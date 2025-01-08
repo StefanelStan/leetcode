@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.january.CoordinateWithMaximumNetworkQuality;
+import com.ss.leetcode.LC2025.january.CountPrefixAndSuffixPairsI;
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
@@ -17,7 +18,8 @@ public class StartJanuary {
 //        start.flowerPlantingWithNoAdjacent();
 //        start.coordinateWithMaximumNetworkQuality();
 //        start.countTheNumberOfSpecialCharactersII();
-        start.maximumRowsCoveredByColumns();
+//        start.maximumRowsCoveredByColumns();
+        start.countPrefixAndSuffixPairsI();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -72,5 +74,14 @@ public class StartJanuary {
         System.out.println("3 == " + mrcbc.maximumRows(new int[][]{{0,0,0},{1,0,1},{0,1,1},{0,0,1}}, 2));
         System.out.println("2 == " + mrcbc.maximumRows(new int[][]{{1},{0}}, 1));
         System.out.println("2 == " + mrcbc.maximumRows(new int[][]{{0,0,1,0,0,1},{1,1,0,0,1,1},{1,1,1,1,1,0},{0,0,0,1,1,1},{0,1,0,0,1,1}}, 4));
+    }
+
+    public void countPrefixAndSuffixPairsI() {
+        CountPrefixAndSuffixPairsI cpaspi = new CountPrefixAndSuffixPairsI();
+
+        System.out.println("4 == " + cpaspi.countPrefixSuffixPairs(new String[]{"a","aba","ababa","aa"}));
+        System.out.println("2 == " + cpaspi.countPrefixSuffixPairs(new String[]{"pa","papa","ma","mama"}));
+        System.out.println("0 == " + cpaspi.countPrefixSuffixPairs(new String[]{"abab","ab"}));
+        System.out.println("1 == " + cpaspi.countPrefixSuffixPairs(new String[]{"aabb","aabb","ab"}));
     }
 }
