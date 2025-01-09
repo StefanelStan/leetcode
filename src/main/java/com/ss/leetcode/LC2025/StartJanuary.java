@@ -7,6 +7,7 @@ import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromT
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
+import com.ss.leetcode.LC2025.january.SumOfDistances;
 import java.util.Arrays;
 
 public class StartJanuary {
@@ -19,7 +20,8 @@ public class StartJanuary {
 //        start.coordinateWithMaximumNetworkQuality();
 //        start.countTheNumberOfSpecialCharactersII();
 //        start.maximumRowsCoveredByColumns();
-        start.countPrefixAndSuffixPairsI();
+//        start.countPrefixAndSuffixPairsI();
+        start.sumOfDistances();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -83,5 +85,12 @@ public class StartJanuary {
         System.out.println("2 == " + cpaspi.countPrefixSuffixPairs(new String[]{"pa","papa","ma","mama"}));
         System.out.println("0 == " + cpaspi.countPrefixSuffixPairs(new String[]{"abab","ab"}));
         System.out.println("1 == " + cpaspi.countPrefixSuffixPairs(new String[]{"aabb","aabb","ab"}));
+    }
+
+    public void sumOfDistances() {
+        SumOfDistances sod = new SumOfDistances();
+
+        System.out.println("[5,0,3,4,0] == " + Arrays.toString(sod.distance(new int[]{1,3,1,1,2})));
+        System.out.println("[0,0,0] == " + Arrays.toString(sod.distance(new int[]{0,5,3})));
     }
 }
