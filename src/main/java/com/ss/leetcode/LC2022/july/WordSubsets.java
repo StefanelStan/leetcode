@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2022.july;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,6 +22,43 @@ public class WordSubsets {
          5. Return the list of universal words
      */
     public List<String> wordSubsets(String[] words1, String[] words2) {
+        int[] maxLetterCount = getMaxLetterCount(words2);
+        List<String> subsets = new ArrayList<>();
+        int[] currentWordCount;
+        boolean isUniversal;
+        for (String word : words1) {
+            currentWordCount = new int[26];
+            isUniversal = true;
+            for (int i = 0; i < word.length(); i++) {
+                currentWordCount[word.charAt(i) - 'a']++;
+            }
+            for (int i = 0; i < currentWordCount.length && isUniversal; i++) {
+                isUniversal = currentWordCount[i] >= maxLetterCount[i];
+            }
+            if (isUniversal) {
+                subsets.add(word);
+            }
+        }
+        return subsets;
+    }
+
+    private int[] getMaxLetterCount(String[] words) {
+        int[] maxLetterCount = new int[26];
+        int[] currentWordCount;
+        for (String word : words) {
+            currentWordCount = new int[26];
+            for (int i = 0; i < word.length(); i++) {
+                currentWordCount[word.charAt(i) - 'a']++;
+            }
+            for (int i = 0; i < maxLetterCount.length; i++) {
+                maxLetterCount[i] = Math.max(maxLetterCount[i], currentWordCount[i]);
+            }
+        }
+        return maxLetterCount;
+    }
+
+
+    public List<String> wordSubsets2(String[] words1, String[] words2) {
         List<String> subsets = new LinkedList<>();
         int[] joinedWords = joinAndCountWords(words2);
         for (String word : words1) {

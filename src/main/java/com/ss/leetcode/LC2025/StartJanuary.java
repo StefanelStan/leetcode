@@ -5,8 +5,10 @@ import com.ss.leetcode.LC2025.january.CountPrefixAndSuffixPairsI;
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
+import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappingElements;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
+import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
 import java.util.Arrays;
 
@@ -21,7 +23,9 @@ public class StartJanuary {
 //        start.countTheNumberOfSpecialCharactersII();
 //        start.maximumRowsCoveredByColumns();
 //        start.countPrefixAndSuffixPairsI();
-        start.sumOfDistances();
+//        start.sumOfDistances();
+//        start.minimumLengthOfAnagramConcatenation();
+        start.makeLexicographicallySmallestArrayBySwappingElements();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -92,5 +96,26 @@ public class StartJanuary {
 
         System.out.println("[5,0,3,4,0] == " + Arrays.toString(sod.distance(new int[]{1,3,1,1,2})));
         System.out.println("[0,0,0] == " + Arrays.toString(sod.distance(new int[]{0,5,3})));
+    }
+
+    public void minimumLengthOfAnagramConcatenation() {
+        MinimumLengthOfAnagramConcatenation mloac = new MinimumLengthOfAnagramConcatenation();
+
+        System.out.println("2 == " + mloac.minAnagramLength("abba"));
+        System.out.println("4 == " + mloac.minAnagramLength("cdef"));
+        System.out.println("1 == " + mloac.minAnagramLength("aaaaaa"));
+        System.out.println("3 == " + mloac.minAnagramLength("abcabcabcabc"));
+        System.out.println("10 == " + mloac.minAnagramLength("abcabcabceabcabcabce"));
+        System.out.println("20 == " + mloac.minAnagramLength("abcabcabceabcabcabcf"));
+        System.out.println("1 == " + mloac.minAnagramLength("a"));
+    }
+
+    public void makeLexicographicallySmallestArrayBySwappingElements() {
+        MakeLexicographicallySmallestArrayBySwappingElements mlsabse = new MakeLexicographicallySmallestArrayBySwappingElements();
+
+        System.out.println("[1,3,5,8,9] == " + Arrays.toString(mlsabse.lexicographicallySmallestArray(new int[]{1,5,3,9,8}, 2)));
+        System.out.println("[1,6,7,18,1,2] == " + Arrays.toString(mlsabse.lexicographicallySmallestArray(new int[]{1,7,6,18,2,1}, 3)));
+        System.out.println("[1,7,28,19,10] == " + Arrays.toString(mlsabse.lexicographicallySmallestArray(new int[]{1,7,28,19,10}, 3)));
+        System.out.println("[1000000000] == " + Arrays.toString(mlsabse.lexicographicallySmallestArray(new int[]{1000000000}, 1)));
     }
 }
