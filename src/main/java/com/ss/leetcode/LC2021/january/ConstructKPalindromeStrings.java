@@ -5,7 +5,36 @@ import java.util.Map;
 
 public class ConstructKPalindromeStrings {
     // https://leetcode.com/problems/construct-k-palindrome-strings/
+    /** Algorithm
+        1. Fail fast: if k > s.length(), return false. If k == s.length() return true;
+        2. Your number of palindromes is influenced by the count of the letters that have an ODD cardinal.
+            - each palindrome can have 0 or 1 odd letters (the middle if the length is odd)
+        3. The even count letters can form between 0 and count new palindromes.
+            - eg: 4 letters of a can form
+            - 0 palindromes (if grouped with an ODD count of leters)
+            - 1 palindrome (aaaa),  2 palindromes (a, aaa),  3 palindromes (a, a, aa)  or 4 palindromes (a,a,a,a)
+        4. So your K must be >= the count of the odd letter groups.
+     */
     public boolean canConstruct(String s, int k) {
+        if (k >= s.length()) {
+            return k == s.length();
+        }
+        return k >= getOddLettersGroupCount(s);
+    }
+
+    private int getOddLettersGroupCount(String s) {
+        int[] letterCount = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            letterCount[s.charAt(i) - 'a']++;
+        }
+        int count = 0;
+        for (int j : letterCount) {
+            count += (j % 2);
+        }
+        return count;
+    }
+
+    public boolean canConstruct2(String s, int k) {
         CharCount charCount = getCharCount(s);
         return k >= charCount.oddTotalGroups &&
             k - charCount.oddTotalGroups <= charCount.evenTotalChars + Math.max(0, charCount.oddTotalChars - charCount.oddSingleChars);
@@ -36,7 +65,7 @@ public class ConstructKPalindromeStrings {
         int evenTotalChars;
     }
 
-    public boolean canConstruct2(String s, int k) {
+    public boolean canConstruct3(String s, int k) {
         if (k > s.length()) {
             return false;
         }
