@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2025;
 
+import com.ss.leetcode.LC2025.january.CheckIfAParenthesesStringCanBeValid;
 import com.ss.leetcode.LC2025.january.CoordinateWithMaximumNetworkQuality;
 import com.ss.leetcode.LC2025.january.CountPrefixAndSuffixPairsI;
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
@@ -11,6 +12,8 @@ import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Stack;
 
 public class StartJanuary {
     public static void main(String[] args) {
@@ -25,7 +28,8 @@ public class StartJanuary {
 //        start.countPrefixAndSuffixPairsI();
 //        start.sumOfDistances();
 //        start.minimumLengthOfAnagramConcatenation();
-        start.makeLexicographicallySmallestArrayBySwappingElements();
+//        start.makeLexicographicallySmallestArrayBySwappingElements();
+        start.checkIfAParenthesesStringCanBeValid();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -117,5 +121,14 @@ public class StartJanuary {
         System.out.println("[1,6,7,18,1,2] == " + Arrays.toString(mlsabse.lexicographicallySmallestArray(new int[]{1,7,6,18,2,1}, 3)));
         System.out.println("[1,7,28,19,10] == " + Arrays.toString(mlsabse.lexicographicallySmallestArray(new int[]{1,7,28,19,10}, 3)));
         System.out.println("[1000000000] == " + Arrays.toString(mlsabse.lexicographicallySmallestArray(new int[]{1000000000}, 1)));
+    }
+
+    public void checkIfAParenthesesStringCanBeValid() {
+        CheckIfAParenthesesStringCanBeValid ciapscbv = new CheckIfAParenthesesStringCanBeValid();
+
+        System.out.println("true == " + ciapscbv.canBeValid("))()))", "010100"));
+        System.out.println("true == " + ciapscbv.canBeValid("()()", "0000"));
+        System.out.println("false == " + ciapscbv.canBeValid(")", "0"));
+        System.out.println("true == " + ciapscbv.canBeValid("((()(()()))()((()()))))()((()(()", "10111100100101001110100010001001"));
     }
 }
