@@ -4,12 +4,14 @@ import com.ss.leetcode.LC2025.january.CheckIfAParenthesesStringCanBeValid;
 import com.ss.leetcode.LC2025.january.CoordinateWithMaximumNetworkQuality;
 import com.ss.leetcode.LC2025.january.CountPrefixAndSuffixPairsI;
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
+import com.ss.leetcode.LC2025.january.FindCommonElementsBetweenTwoArrays;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
 import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappingElements;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
+import com.ss.leetcode.LC2025.january.MinimumLengthOfStringAfterOperations;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -29,7 +31,9 @@ public class StartJanuary {
 //        start.sumOfDistances();
 //        start.minimumLengthOfAnagramConcatenation();
 //        start.makeLexicographicallySmallestArrayBySwappingElements();
-        start.checkIfAParenthesesStringCanBeValid();
+//        start.checkIfAParenthesesStringCanBeValid();
+//        start.findCommonElementsBetweenTwoArrays();
+        start.minimumLengthOfStringAfterOperations();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -130,5 +134,24 @@ public class StartJanuary {
         System.out.println("true == " + ciapscbv.canBeValid("()()", "0000"));
         System.out.println("false == " + ciapscbv.canBeValid(")", "0"));
         System.out.println("true == " + ciapscbv.canBeValid("((()(()()))()((()()))))()((()(()", "10111100100101001110100010001001"));
+    }
+
+    public void findCommonElementsBetweenTwoArrays() {
+        FindCommonElementsBetweenTwoArrays fcebta = new FindCommonElementsBetweenTwoArrays();
+
+        System.out.println("[2,1] == " + Arrays.toString(fcebta.findIntersectionValues(new int[]{2,3,2}, new int[]{1,2})));
+        System.out.println("[3,4] == " + Arrays.toString(fcebta.findIntersectionValues(new int[]{4,3,2,3,1}, new int[]{2,2,5,2,3,6})));
+        System.out.println("[0,0] == " + Arrays.toString(fcebta.findIntersectionValues(new int[]{3,4,2,3}, new int[]{1,5})));
+        System.out.println("[2,2] == " + Arrays.toString(fcebta.findIntersectionValues(new int[]{3,2,1,2,4,5,6,7}, new int[]{6,3,10,11})));
+        System.out.println("[9,1] == " + Arrays.toString(fcebta.findIntersectionValues(new int[]{1,1,1,1,1,1,1,1,1,6,7,8,9,10}, new int[]{1,2,3,4,5})));
+    }
+
+    public void minimumLengthOfStringAfterOperations() {
+        MinimumLengthOfStringAfterOperations mlosao = new MinimumLengthOfStringAfterOperations();
+
+        System.out.println("5 == " + mlosao.minimumLength("abaacbcbb"));
+        System.out.println("2 == " + mlosao.minimumLength("aa"));
+        System.out.println("5 == " + mlosao.minimumLength("aaaaabbbbaaacccccaccacacacaccaa"));
+        System.out.println("1 == " + mlosao.minimumLength("a"));
     }
 }
