@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
 import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappingElements;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
+import com.ss.leetcode.LC2025.january.MinimizeXOR;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfStringAfterOperations;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
@@ -33,7 +34,8 @@ public class StartJanuary {
 //        start.makeLexicographicallySmallestArrayBySwappingElements();
 //        start.checkIfAParenthesesStringCanBeValid();
 //        start.findCommonElementsBetweenTwoArrays();
-        start.minimumLengthOfStringAfterOperations();
+//        start.minimumLengthOfStringAfterOperations();
+        start.minimizeXOR();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -153,5 +155,17 @@ public class StartJanuary {
         System.out.println("2 == " + mlosao.minimumLength("aa"));
         System.out.println("5 == " + mlosao.minimumLength("aaaaabbbbaaacccccaccacacacaccaa"));
         System.out.println("1 == " + mlosao.minimumLength("a"));
+    }
+
+    public void minimizeXOR() {
+        MinimizeXOR mxor = new MinimizeXOR();
+
+        System.out.println("3 == " + mxor.minimizeXor(3, 5));
+        System.out.println("3 == " + mxor.minimizeXor(1, 12));
+        System.out.println("63 == " + mxor.minimizeXor(1, 100000));
+        System.out.println("24575 == " + mxor.minimizeXor(23323, 45435535));
+        System.out.println("353280 == " + mxor.minimizeXor(353454, 2323));
+        System.out.println("213123199 == " + mxor.minimizeXor(213123123, 3432432));
+        System.out.println("123903 == " + mxor.minimizeXor(123213, 56546565));
     }
 }
