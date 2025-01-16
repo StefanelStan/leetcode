@@ -1,8 +1,10 @@
 package com.ss.leetcode.LC2025;
 
+import com.ss.leetcode.LC2025.january.AdjacentIncreasingSubarraysDetectionI;
 import com.ss.leetcode.LC2025.january.CheckIfAParenthesesStringCanBeValid;
 import com.ss.leetcode.LC2025.january.CoordinateWithMaximumNetworkQuality;
 import com.ss.leetcode.LC2025.january.CountPrefixAndSuffixPairsI;
+import com.ss.leetcode.LC2025.january.CountSubstringsThatCanBeRearrangedToContainAStringII;
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
 import com.ss.leetcode.LC2025.january.FindCommonElementsBetweenTwoArrays;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
@@ -14,8 +16,10 @@ import com.ss.leetcode.LC2025.january.MinimizeXOR;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfStringAfterOperations;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
+import com.ss.leetcode.LC2025.january.WaterBottlesII;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 public class StartJanuary {
@@ -35,7 +39,10 @@ public class StartJanuary {
 //        start.checkIfAParenthesesStringCanBeValid();
 //        start.findCommonElementsBetweenTwoArrays();
 //        start.minimumLengthOfStringAfterOperations();
-        start.minimizeXOR();
+//        start.minimizeXOR();
+//        start.adjacentIncreasingSubarraysDetectionI();
+//        start.waterBottlesII();
+        start.countSubstringsThatCanBeRearrangedToContainAStringII();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -167,5 +174,36 @@ public class StartJanuary {
         System.out.println("353280 == " + mxor.minimizeXor(353454, 2323));
         System.out.println("213123199 == " + mxor.minimizeXor(213123123, 3432432));
         System.out.println("123903 == " + mxor.minimizeXor(123213, 56546565));
+    }
+
+    public void adjacentIncreasingSubarraysDetectionI() {
+        AdjacentIncreasingSubarraysDetectionI aisdi = new AdjacentIncreasingSubarraysDetectionI();
+
+        System.out.println("true == " + aisdi.hasIncreasingSubarrays(List.of(2,5,7,8,9,2,3,4,3,1), 3));
+        System.out.println("false == " + aisdi.hasIncreasingSubarrays(List.of(1,2,3,4,4,4,4,5,6,7), 5));
+        System.out.println("true == " + aisdi.hasIncreasingSubarrays(List.of(5,8,-2,-1), 2));
+    }
+
+    public void waterBottlesII() {
+        WaterBottlesII wbii = new WaterBottlesII();
+
+        System.out.println("15 == " + wbii.maxBottlesDrunk(13, 6));
+        System.out.println("13 == " + wbii.maxBottlesDrunk(10, 3));
+        System.out.println("24 == " + wbii.maxBottlesDrunk(23, 12));
+        System.out.println("69 == " + wbii.maxBottlesDrunk(65, 12));
+        System.out.println("66 == " + wbii.maxBottlesDrunk(56, 2));
+        System.out.println("108 == " + wbii.maxBottlesDrunk(98, 6));
+        System.out.println("68 == " + wbii.maxBottlesDrunk(59, 3));
+    }
+
+    public void countSubstringsThatCanBeRearrangedToContainAStringII() {
+        CountSubstringsThatCanBeRearrangedToContainAStringII cstcbrtcasii = new CountSubstringsThatCanBeRearrangedToContainAStringII();
+
+        System.out.println("1 == " + cstcbrtcasii.validSubstringCount("bcca", "abc"));
+        System.out.println("10 == " + cstcbrtcasii.validSubstringCount("abcabc", "abc"));
+        System.out.println("0 == " + cstcbrtcasii.validSubstringCount("abcabc", "aaabc"));
+        System.out.println("3 == " + cstcbrtcasii.validSubstringCount("eeded", "dde"));
+        System.out.println("0 == " + cstcbrtcasii.validSubstringCount("abbabababa", "abbabababbababa"));
+        System.out.println("23 == " + cstcbrtcasii.validSubstringCount("eeddeeded", "dde"));
     }
 }
