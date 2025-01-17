@@ -15,6 +15,8 @@ import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
 import com.ss.leetcode.LC2025.january.MinimizeXOR;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfStringAfterOperations;
+import com.ss.leetcode.LC2025.january.MinimumLevelsToGainMorePoints;
+import com.ss.leetcode.LC2025.january.MinimumSubstringPartitionOfEqualCharacterFrequency;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
 import com.ss.leetcode.LC2025.january.WaterBottlesII;
 import java.util.Arrays;
@@ -42,7 +44,9 @@ public class StartJanuary {
 //        start.minimizeXOR();
 //        start.adjacentIncreasingSubarraysDetectionI();
 //        start.waterBottlesII();
-        start.countSubstringsThatCanBeRearrangedToContainAStringII();
+//        start.countSubstringsThatCanBeRearrangedToContainAStringII();
+//        start.minimumLevelsToGainMorePoints();
+        start.minimumSubstringPartitionOfEqualCharacterFrequency();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -205,5 +209,33 @@ public class StartJanuary {
         System.out.println("3 == " + cstcbrtcasii.validSubstringCount("eeded", "dde"));
         System.out.println("0 == " + cstcbrtcasii.validSubstringCount("abbabababa", "abbabababbababa"));
         System.out.println("23 == " + cstcbrtcasii.validSubstringCount("eeddeeded", "dde"));
+    }
+
+    public void minimumLevelsToGainMorePoints() {
+        MinimumLevelsToGainMorePoints mltgmp = new MinimumLevelsToGainMorePoints();
+
+        System.out.println("1 == " + mltgmp.minimumLevels(new int[]{1,0,1,0}));
+        System.out.println("3 == " + mltgmp.minimumLevels(new int[]{1,1,1,1,1}));
+        System.out.println("-1 == " + mltgmp.minimumLevels(new int[]{0,0}));
+        System.out.println("1 == " + mltgmp.minimumLevels(new int[]{0,0,0}));
+        System.out.println("3 == " + mltgmp.minimumLevels(new int[]{1,1,1,0,1,1}));
+        System.out.println("1 == " + mltgmp.minimumLevels(new int[]{1,0,0}));
+        System.out.println("-1 == " + mltgmp.minimumLevels(new int[]{0,1,1}));
+        System.out.println("5 == " + mltgmp.minimumLevels(new int[]{1,0,1,1,1,1,0,1,1,0,0,1}));
+        System.out.println("1 == " + mltgmp.minimumLevels(new int[]{1,0,0,1,1,0,0,1,1,0,0,1,1,0}));
+        System.out.println("2 == " + mltgmp.minimumLevels(new int[]{1,1,1}));
+    }
+
+    public void minimumSubstringPartitionOfEqualCharacterFrequency() {
+        MinimumSubstringPartitionOfEqualCharacterFrequency mspoecf = new MinimumSubstringPartitionOfEqualCharacterFrequency();
+
+        System.out.println("3 == " + mspoecf.minimumSubstringsInPartition("fabccddg"));
+        System.out.println("2 == " + mspoecf.minimumSubstringsInPartition("abababaccddb"));
+        System.out.println("1 == " + mspoecf.minimumSubstringsInPartition("a"));
+        System.out.println("1 == " + mspoecf.minimumSubstringsInPartition("aaaa"));
+        System.out.println("3 == " + mspoecf.minimumSubstringsInPartition("dsadsasasddadsdsdsa"));
+        System.out.println("9 == " + mspoecf.minimumSubstringsInPartition("adssaddfdsfdfhfjjkghdfsdffgfd"));
+        System.out.println("3 == " + mspoecf.minimumSubstringsInPartition("safghtujuthrefddf"));
+        System.out.println("5 == " + mspoecf.minimumSubstringsInPartition("sadfdgjuyjtyhbveeftrhrgf"));
     }
 }
