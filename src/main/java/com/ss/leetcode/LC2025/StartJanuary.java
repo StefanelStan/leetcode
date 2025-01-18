@@ -13,6 +13,7 @@ import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappi
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
 import com.ss.leetcode.LC2025.january.MinimizeXOR;
+import com.ss.leetcode.LC2025.january.MinimumEqualSumOfTwoArraysAfterReplacingZeros;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfStringAfterOperations;
 import com.ss.leetcode.LC2025.january.MinimumLevelsToGainMorePoints;
@@ -46,7 +47,8 @@ public class StartJanuary {
 //        start.waterBottlesII();
 //        start.countSubstringsThatCanBeRearrangedToContainAStringII();
 //        start.minimumLevelsToGainMorePoints();
-        start.minimumSubstringPartitionOfEqualCharacterFrequency();
+//        start.minimumSubstringPartitionOfEqualCharacterFrequency();
+        start.minimumEqualSumOfTwoArraysAfterReplacingZeros();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -237,5 +239,18 @@ public class StartJanuary {
         System.out.println("9 == " + mspoecf.minimumSubstringsInPartition("adssaddfdsfdfhfjjkghdfsdffgfd"));
         System.out.println("3 == " + mspoecf.minimumSubstringsInPartition("safghtujuthrefddf"));
         System.out.println("5 == " + mspoecf.minimumSubstringsInPartition("sadfdgjuyjtyhbveeftrhrgf"));
+    }
+
+    public void minimumEqualSumOfTwoArraysAfterReplacingZeros() {
+        MinimumEqualSumOfTwoArraysAfterReplacingZeros mesotaarz = new MinimumEqualSumOfTwoArraysAfterReplacingZeros();
+
+        System.out.println("12 == " + mesotaarz.minSum(new int[]{3,2,0,1,0}, new int[]{6,5,0}));
+        System.out.println("-1 == " + mesotaarz.minSum(new int[]{2,0,2,0}, new int[]{1,4}));
+        System.out.println("-1 == " + mesotaarz.minSum(new int[]{2,3,4,5,6,7,0}, new int[]{1,2,3,4}));
+        System.out.println("12 == " + mesotaarz.minSum(new int[]{0,0,0,0,0,0,0,0,4}, new int[]{12}));
+        System.out.println("13 == " + mesotaarz.minSum(new int[]{0,0,0,0,0,0,0,0,4}, new int[]{13}));
+        System.out.println("-1 == " + mesotaarz.minSum(new int[]{0,0,0,0,0,0,0,0,4}, new int[]{11}));
+        System.out.println("5 == " + mesotaarz.minSum(new int[]{0}, new int[]{5}));
+        System.out.println("6 == " + mesotaarz.minSum(new int[]{0}, new int[]{5,0}));
     }
 }
