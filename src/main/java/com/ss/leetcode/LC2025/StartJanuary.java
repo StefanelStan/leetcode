@@ -11,13 +11,16 @@ import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromT
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
 import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappingElements;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
+import com.ss.leetcode.LC2025.january.MaximumStarSumOfAGraph;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
 import com.ss.leetcode.LC2025.january.MinimizeXOR;
 import com.ss.leetcode.LC2025.january.MinimumEqualSumOfTwoArraysAfterReplacingZeros;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfAnagramConcatenation;
 import com.ss.leetcode.LC2025.january.MinimumLengthOfStringAfterOperations;
 import com.ss.leetcode.LC2025.january.MinimumLevelsToGainMorePoints;
+import com.ss.leetcode.LC2025.january.MinimumOperationsToMakeASpecialNumber;
 import com.ss.leetcode.LC2025.january.MinimumSubstringPartitionOfEqualCharacterFrequency;
+import com.ss.leetcode.LC2025.january.ModifyTheMatrix;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
 import com.ss.leetcode.LC2025.january.WaterBottlesII;
 import java.util.Arrays;
@@ -48,7 +51,10 @@ public class StartJanuary {
 //        start.countSubstringsThatCanBeRearrangedToContainAStringII();
 //        start.minimumLevelsToGainMorePoints();
 //        start.minimumSubstringPartitionOfEqualCharacterFrequency();
-        start.minimumEqualSumOfTwoArraysAfterReplacingZeros();
+//        start.minimumEqualSumOfTwoArraysAfterReplacingZeros();
+//        start.modifyTheMatrix();
+//        start.minimumOperationsToMakeASpecialNumber();
+        start.maximumStarSumOfAGraph();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -252,5 +258,36 @@ public class StartJanuary {
         System.out.println("-1 == " + mesotaarz.minSum(new int[]{0,0,0,0,0,0,0,0,4}, new int[]{11}));
         System.out.println("5 == " + mesotaarz.minSum(new int[]{0}, new int[]{5}));
         System.out.println("6 == " + mesotaarz.minSum(new int[]{0}, new int[]{5,0}));
+    }
+
+    public void modifyTheMatrix() {
+        ModifyTheMatrix mtm = new ModifyTheMatrix();
+
+        System.out.println("[[1,2,8],[4,8,8],[7,8,8]] == " + Arrays.deepToString(mtm.modifiedMatrix(new int[][]{{1,2,-1},{4,-1,-1},{7,8,8}})));
+        System.out.println("[[1,2,9],[4,8,6],[7,8,9]] == " + Arrays.deepToString(mtm.modifiedMatrix(new int[][]{{1,2,-1},{4,-1,6},{7,8,9}})));
+        System.out.println("[[3,2],[5,2]] == " + Arrays.deepToString(mtm.modifiedMatrix(new int[][]{{3,-1},{5,2}})));
+    }
+
+    public void minimumOperationsToMakeASpecialNumber() {
+        MinimumOperationsToMakeASpecialNumber motmasn = new MinimumOperationsToMakeASpecialNumber();
+
+        System.out.println("2 == " + motmasn.minimumOperations("2245047"));
+        System.out.println("3 == " + motmasn.minimumOperations("2908305"));
+        System.out.println("1 == " + motmasn.minimumOperations("10"));
+        System.out.println("2 == " + motmasn.minimumOperations("110"));
+        System.out.println("1 == " + motmasn.minimumOperations("10010101001001010"));
+        System.out.println("4 == " + motmasn.minimumOperations("1024320340923059033590324"));
+        System.out.println("8 == " + motmasn.minimumOperations("120149248738597435948543"));
+        System.out.println("5 == " + motmasn.minimumOperations("309348397129438732095013241"));
+        System.out.println("18 == " + motmasn.minimumOperations("121211112121212121"));
+    }
+
+    public void maximumStarSumOfAGraph() {
+        MaximumStarSumOfAGraph mssoag = new MaximumStarSumOfAGraph();
+
+        System.out.println("16 == " + mssoag.maxStarSum(new int[]{1,2,3,4,10,-10,-20}, new int[][]{{0,1},{1,2},{1,3},{3,4},{3,5},{3,6}}, 2));
+        System.out.println("-5 == " + mssoag.maxStarSum(new int[]{-5}, new int[0][0], 0));
+        System.out.println("20 == " + mssoag.maxStarSum(new int[]{1,2,3,4,10,-10,-20,-17,8,5,2,3,4}, new int[][]{{0,1},{1,2},{1,3},{3,4},{3,5},{3,6},{6,9},{7,5},{10,12},{11,12},{8,11},{7,12},{11,9}}, 3));
+        System.out.println("20 == " + mssoag.maxStarSum(new int[]{1,2,3,4,10,-10,-20,-17,8,5,2,3,4}, new int[][]{{0,1},{1,2},{1,3},{3,4},{3,5},{3,6},{6,9},{7,5},{10,12},{11,12},{8,11},{7,12},{11,9}}, 4));
     }
 }
