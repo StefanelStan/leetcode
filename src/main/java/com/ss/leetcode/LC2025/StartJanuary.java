@@ -8,6 +8,7 @@ import com.ss.leetcode.LC2025.january.CountSubstringsThatCanBeRearrangedToContai
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
 import com.ss.leetcode.LC2025.january.FindCommonElementsBetweenTwoArrays;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
+import com.ss.leetcode.LC2025.january.FirstCompletelyPaintedRowOrColumn;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
 import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappingElements;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
@@ -54,7 +55,8 @@ public class StartJanuary {
 //        start.minimumEqualSumOfTwoArraysAfterReplacingZeros();
 //        start.modifyTheMatrix();
 //        start.minimumOperationsToMakeASpecialNumber();
-        start.maximumStarSumOfAGraph();
+//        start.maximumStarSumOfAGraph();
+        start.firstCompletelyPaintedRowOrColumn();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -289,5 +291,12 @@ public class StartJanuary {
         System.out.println("-5 == " + mssoag.maxStarSum(new int[]{-5}, new int[0][0], 0));
         System.out.println("20 == " + mssoag.maxStarSum(new int[]{1,2,3,4,10,-10,-20,-17,8,5,2,3,4}, new int[][]{{0,1},{1,2},{1,3},{3,4},{3,5},{3,6},{6,9},{7,5},{10,12},{11,12},{8,11},{7,12},{11,9}}, 3));
         System.out.println("20 == " + mssoag.maxStarSum(new int[]{1,2,3,4,10,-10,-20,-17,8,5,2,3,4}, new int[][]{{0,1},{1,2},{1,3},{3,4},{3,5},{3,6},{6,9},{7,5},{10,12},{11,12},{8,11},{7,12},{11,9}}, 4));
+    }
+
+    public void firstCompletelyPaintedRowOrColumn() {
+        FirstCompletelyPaintedRowOrColumn fcproc = new FirstCompletelyPaintedRowOrColumn();
+
+        System.out.println("2 == " + fcproc.firstCompleteIndex(new int[]{1,3,4,2}, new int[][]{{1,4},{2,3}}));
+        System.out.println("3 == " + fcproc.firstCompleteIndex(new int[]{2,8,7,4,1,3,5,6,9}, new int[][]{{3,2,5},{1,4,6},{8,7,9}}));
     }
 }
