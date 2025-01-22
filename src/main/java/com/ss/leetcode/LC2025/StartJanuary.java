@@ -22,6 +22,7 @@ import com.ss.leetcode.LC2025.january.MinimumLevelsToGainMorePoints;
 import com.ss.leetcode.LC2025.january.MinimumOperationsToMakeASpecialNumber;
 import com.ss.leetcode.LC2025.january.MinimumSubstringPartitionOfEqualCharacterFrequency;
 import com.ss.leetcode.LC2025.january.ModifyTheMatrix;
+import com.ss.leetcode.LC2025.january.NumberOfBitChangesToMakeTwoIntegersEqual;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
 import com.ss.leetcode.LC2025.january.WaterBottlesII;
 import java.util.Arrays;
@@ -56,7 +57,8 @@ public class StartJanuary {
 //        start.modifyTheMatrix();
 //        start.minimumOperationsToMakeASpecialNumber();
 //        start.maximumStarSumOfAGraph();
-        start.firstCompletelyPaintedRowOrColumn();
+//        start.firstCompletelyPaintedRowOrColumn();
+        start.numberOfBitChangesToMakeTwoIntegersEqual();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -298,5 +300,13 @@ public class StartJanuary {
 
         System.out.println("2 == " + fcproc.firstCompleteIndex(new int[]{1,3,4,2}, new int[][]{{1,4},{2,3}}));
         System.out.println("3 == " + fcproc.firstCompleteIndex(new int[]{2,8,7,4,1,3,5,6,9}, new int[][]{{3,2,5},{1,4,6},{8,7,9}}));
+    }
+
+    public void numberOfBitChangesToMakeTwoIntegersEqual() {
+        NumberOfBitChangesToMakeTwoIntegersEqual nobctmtie = new NumberOfBitChangesToMakeTwoIntegersEqual();
+
+        System.out.println("2 == " + nobctmtie.minChanges(13, 4));
+        System.out.println("0 == " + nobctmtie.minChanges(21, 21));
+        System.out.println("-1 == " + nobctmtie.minChanges(14, 13));
     }
 }
