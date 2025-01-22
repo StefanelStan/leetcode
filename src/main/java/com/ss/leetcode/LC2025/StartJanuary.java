@@ -11,6 +11,7 @@ import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromT
 import com.ss.leetcode.LC2025.january.FirstCompletelyPaintedRowOrColumn;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
 import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappingElements;
+import com.ss.leetcode.LC2025.january.MapOfHighestPeak;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
 import com.ss.leetcode.LC2025.january.MaximumStarSumOfAGraph;
 import com.ss.leetcode.LC2025.january.MaximumTotalRewardUsingOperationsI;
@@ -58,7 +59,8 @@ public class StartJanuary {
 //        start.minimumOperationsToMakeASpecialNumber();
 //        start.maximumStarSumOfAGraph();
 //        start.firstCompletelyPaintedRowOrColumn();
-        start.numberOfBitChangesToMakeTwoIntegersEqual();
+//        start.numberOfBitChangesToMakeTwoIntegersEqual();
+        start.mapOfHighestPeak();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -308,5 +310,12 @@ public class StartJanuary {
         System.out.println("2 == " + nobctmtie.minChanges(13, 4));
         System.out.println("0 == " + nobctmtie.minChanges(21, 21));
         System.out.println("-1 == " + nobctmtie.minChanges(14, 13));
+    }
+
+    public void mapOfHighestPeak() {
+        MapOfHighestPeak mohp = new MapOfHighestPeak();
+
+        System.out.println("[[1,0],[2,1]] == " + Arrays.deepToString(mohp.highestPeak(new int[][]{{0,1},{0,0}})));
+        System.out.println("[[1,1,0],[0,1,1],[1,2,2]] == " + Arrays.deepToString(mohp.highestPeak(new int[][]{{0,0,1},{1,0,0},{0,0,0}})));
     }
 }
