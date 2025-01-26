@@ -10,6 +10,7 @@ import com.ss.leetcode.LC2025.january.FindCommonElementsBetweenTwoArrays;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
 import com.ss.leetcode.LC2025.january.FirstCompletelyPaintedRowOrColumn;
 import com.ss.leetcode.LC2025.january.FlowerPlantingWithNoAdjacent;
+import com.ss.leetcode.LC2025.january.LongestUnequalAdjacentGroupsSubsequenceII;
 import com.ss.leetcode.LC2025.january.MakeLexicographicallySmallestArrayBySwappingElements;
 import com.ss.leetcode.LC2025.january.MapOfHighestPeak;
 import com.ss.leetcode.LC2025.january.MaximumRowsCoveredByColumns;
@@ -25,10 +26,14 @@ import com.ss.leetcode.LC2025.january.MinimumSubstringPartitionOfEqualCharacterF
 import com.ss.leetcode.LC2025.january.ModifyTheMatrix;
 import com.ss.leetcode.LC2025.january.NumberOfBitChangesToMakeTwoIntegersEqual;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
+import com.ss.leetcode.LC2025.january.TakingMaximumEnergyFromTheMysticDungeon;
 import com.ss.leetcode.LC2025.january.WaterBottlesII;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 public class StartJanuary {
@@ -60,7 +65,10 @@ public class StartJanuary {
 //        start.maximumStarSumOfAGraph();
 //        start.firstCompletelyPaintedRowOrColumn();
 //        start.numberOfBitChangesToMakeTwoIntegersEqual();
-        start.mapOfHighestPeak();
+//        start.mapOfHighestPeak();
+//        start.takingMaximumEnergyFromTheMysticDungeon();
+        start.longestUnequalAdjacentGroupsSubsequenceII();
+
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -317,5 +325,21 @@ public class StartJanuary {
 
         System.out.println("[[1,0],[2,1]] == " + Arrays.deepToString(mohp.highestPeak(new int[][]{{0,1},{0,0}})));
         System.out.println("[[1,1,0],[0,1,1],[1,2,2]] == " + Arrays.deepToString(mohp.highestPeak(new int[][]{{0,0,1},{1,0,0},{0,0,0}})));
+    }
+
+    public void takingMaximumEnergyFromTheMysticDungeon() {
+        TakingMaximumEnergyFromTheMysticDungeon tmeftmd = new TakingMaximumEnergyFromTheMysticDungeon();
+
+        System.out.println("3 == " + tmeftmd.maximumEnergy(new int[]{5,2,-10,-5,1}, 3));
+        System.out.println("-1 == " + tmeftmd.maximumEnergy(new int[]{-2,-3,-1}, 2));
+        System.out.println("7 == " + tmeftmd.maximumEnergy(new int[]{4,3,1,6,-3,1,-2,-3,-2,-2,4,-2,-1,1,2,1,-7,3,-4,2,-4,-5,-6,4,3,7}, 3));
+        System.out.println("16 == " + tmeftmd.maximumEnergy(new int[]{4,3,1,6,-3,1,-2,-3,-2,-2,4,-2,-1,1,2,1,-7,3,-4,2,-4,-5,-6,4,3,7}, 2));
+    }
+
+    public void longestUnequalAdjacentGroupsSubsequenceII() {
+        LongestUnequalAdjacentGroupsSubsequenceII luagsii = new LongestUnequalAdjacentGroupsSubsequenceII();
+
+        System.out.println("[bab, cab] == " + luagsii.getWordsInLongestSubsequence(new String[]{"bab","dab","cab"}, new int[]{1,2,2}));
+        System.out.println("[a, b, c, d] == " + luagsii.getWordsInLongestSubsequence(new String[]{"a","b","c","d"}, new int[]{1,2,3,4}));
     }
 }
