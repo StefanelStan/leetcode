@@ -1,11 +1,13 @@
 package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.january.AdjacentIncreasingSubarraysDetectionI;
+import com.ss.leetcode.LC2025.january.AlternatingGroupsII;
 import com.ss.leetcode.LC2025.january.CheckIfAParenthesesStringCanBeValid;
 import com.ss.leetcode.LC2025.january.CoordinateWithMaximumNetworkQuality;
 import com.ss.leetcode.LC2025.january.CountPrefixAndSuffixPairsI;
 import com.ss.leetcode.LC2025.january.CountSubstringsThatCanBeRearrangedToContainAStringII;
 import com.ss.leetcode.LC2025.january.CountTheNumberOfSpecialCharactersII;
+import com.ss.leetcode.LC2025.january.CourseScheduleIV;
 import com.ss.leetcode.LC2025.january.FindCommonElementsBetweenTwoArrays;
 import com.ss.leetcode.LC2025.january.FindTheLexicographicallyLargestStringFromTheBoxI;
 import com.ss.leetcode.LC2025.january.FirstCompletelyPaintedRowOrColumn;
@@ -67,8 +69,9 @@ public class StartJanuary {
 //        start.numberOfBitChangesToMakeTwoIntegersEqual();
 //        start.mapOfHighestPeak();
 //        start.takingMaximumEnergyFromTheMysticDungeon();
-        start.longestUnequalAdjacentGroupsSubsequenceII();
-
+//        start.longestUnequalAdjacentGroupsSubsequenceII();
+//        start.courseScheduleIV();
+        start.alternatingGroupsII();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -341,5 +344,21 @@ public class StartJanuary {
 
         System.out.println("[bab, cab] == " + luagsii.getWordsInLongestSubsequence(new String[]{"bab","dab","cab"}, new int[]{1,2,2}));
         System.out.println("[a, b, c, d] == " + luagsii.getWordsInLongestSubsequence(new String[]{"a","b","c","d"}, new int[]{1,2,3,4}));
+    }
+
+    public void courseScheduleIV() {
+        CourseScheduleIV csiv = new CourseScheduleIV();
+
+        System.out.println("[false,true] == " + csiv.checkIfPrerequisite(2, new int[][]{{1,0}}, new int[][]{{0,1},{1,0}}));
+        System.out.println("[false,false] == " + csiv.checkIfPrerequisite(2, new int[0][0], new int[][]{{1,0},{0,1}}));
+        System.out.println("[true,true] == " + csiv.checkIfPrerequisite(3, new int[][]{{1,2},{1,0},{2,0}}, new int[][]{{1,0},{1,2}}));
+    }
+
+    public void alternatingGroupsII() {
+        AlternatingGroupsII agii = new AlternatingGroupsII();
+
+        System.out.println("3 == " +  agii.numberOfAlternatingGroups(new int[]{0,1,0,1,0}, 3));
+        System.out.println("2 == " +  agii.numberOfAlternatingGroups(new int[]{0,1,0,0,1,0,1}, 6));
+        System.out.println("0 == " +  agii.numberOfAlternatingGroups(new int[]{1,1,0,1}, 4));
     }
 }
