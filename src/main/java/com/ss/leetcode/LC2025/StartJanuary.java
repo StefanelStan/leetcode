@@ -26,6 +26,7 @@ import com.ss.leetcode.LC2025.january.MinimumLevelsToGainMorePoints;
 import com.ss.leetcode.LC2025.january.MinimumOperationsToMakeASpecialNumber;
 import com.ss.leetcode.LC2025.january.MinimumSubstringPartitionOfEqualCharacterFrequency;
 import com.ss.leetcode.LC2025.january.ModifyTheMatrix;
+import com.ss.leetcode.LC2025.january.NextGreaterElementIV;
 import com.ss.leetcode.LC2025.january.NumberOfBitChangesToMakeTwoIntegersEqual;
 import com.ss.leetcode.LC2025.january.SumOfDistances;
 import com.ss.leetcode.LC2025.january.TakingMaximumEnergyFromTheMysticDungeon;
@@ -71,7 +72,8 @@ public class StartJanuary {
 //        start.takingMaximumEnergyFromTheMysticDungeon();
 //        start.longestUnequalAdjacentGroupsSubsequenceII();
 //        start.courseScheduleIV();
-        start.alternatingGroupsII();
+//        start.alternatingGroupsII();
+        start.nextGreaterElementIV();
     }
 
     public void findTheLexicographicallyLargestStringFromTheBoxI() {
@@ -360,5 +362,13 @@ public class StartJanuary {
         System.out.println("3 == " +  agii.numberOfAlternatingGroups(new int[]{0,1,0,1,0}, 3));
         System.out.println("2 == " +  agii.numberOfAlternatingGroups(new int[]{0,1,0,0,1,0,1}, 6));
         System.out.println("0 == " +  agii.numberOfAlternatingGroups(new int[]{1,1,0,1}, 4));
+    }
+
+    public void nextGreaterElementIV() {
+        NextGreaterElementIV ngeiv = new NextGreaterElementIV();
+
+        System.out.println("[9,6,6,-1,-1] == " + Arrays.toString(ngeiv.secondGreaterElement(new int[]{2,4,0,9,6})));
+        System.out.println("[-1,-1] == " + Arrays.toString(ngeiv.secondGreaterElement(new int[]{3,3})));
+        System.out.println("[32,32,32,56,4,67,7,-1,9,-1,-1,-1,-1] == " + Arrays.toString(ngeiv.secondGreaterElement(new int[]{3,2,1,23,1,32,4,56,7,9,9,67,5})));
     }
 }
