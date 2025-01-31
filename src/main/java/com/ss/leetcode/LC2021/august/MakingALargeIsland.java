@@ -10,7 +10,102 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MakingALargeIsland {
     // https://leetcode.com/problems/making-a-large-island/
+    /** Algorithm
+        1. Create a class Cell that will hold and ID and SIZE of the island it belongs to.
+        2. You will use a Cell[n][n] to remap each island to a collections of cells that hold the ID and SIZE of the whole island.
+        3. Apply DFS and get the SIZE of each island. Populate the cells inside cells[][] matrix.
+        4. Traverse cells and if current cell is NULL (which means it's water), then look in all 4directions and try to sum up all the unique islands.
+            - use an int[4] ids to store and check if the same island has not been added twice for the same empty/water cell.
+     */
+    private static final int[][] DIRECTIONS = {{-1,0}, {0,1}, {1,0}, {0,-1}};
     public int largestIsland(int[][] grid) {
+        Cell[][] cells = visitAndMarkIslands(grid);
+        return findLargestGroup(cells);
+    }
+
+    private Cell[][] visitAndMarkIslands(int[][] grid) {
+        Cell[][] cells = new Cell[grid.length][grid.length];
+        boolean[][] visited = new boolean[grid.length][grid.length];
+        int id = 1;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                if (grid[i][j] == 1) {
+                    int currentSize = findIslandSize(i, j, grid, visited);
+                    markIslandSize(i, j, grid, new Cell(id,currentSize), cells);
+                    id++;
+                }
+            }
+        }
+        return cells;
+    }
+
+    private int findIslandSize(int i, int j, int[][] grid, boolean[][] visited) {
+        if (i < 0 || i == grid.length || j < 0 || j == grid.length || grid[i][j] == 0 || visited[i][j]) {
+            return 0;
+        }
+        visited[i][j] = true;
+        int size = 1;
+        for (int[] direction : DIRECTIONS) {
+            size += findIslandSize(i + direction[0], j + direction[1], grid, visited);
+        }
+        return size;
+    }
+
+    private void markIslandSize(int i, int j, int[][] grid, Cell cell, Cell[][] cells) {
+        if (i < 0 || i == grid.length || j < 0 || j == grid.length || grid[i][j] == 0 || cells[i][j] != null) {
+            return;
+        }
+        cells[i][j] = cell;
+        for (int[] direction : DIRECTIONS) {
+            markIslandSize(i + direction[0], j + direction[1], grid, cell, cells);
+        }
+    }
+
+    private int findLargestGroup(Cell[][] cells) {
+        int largestIslandGroup = 0;
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells.length; j++) {
+                if (cells[i][j] != null) {
+                    largestIslandGroup = Math.max(largestIslandGroup, cells[i][j].islandSize);
+                } else {
+                    largestIslandGroup = Math.max(largestIslandGroup, connectNeighbours(cells, i, j));
+                }
+            }
+        }
+        return largestIslandGroup;
+    }
+
+    private int connectNeighbours(Cell[][] cells, int i, int j) {
+        int groupSize = 1;
+        int[] connected = new int[4];
+        int index = 0, nextI, nextJ;
+        for (int[] direction : DIRECTIONS) {
+            nextI = i + direction[0];
+            nextJ = j + direction[1];
+            if (nextI >= 0 && nextI < cells.length && nextJ >= 0 && nextJ < cells.length && cells[nextI][nextJ] != null) {
+                if (!hasBeenConnected(index, connected, cells[nextI][nextJ].id)) {
+                    connected[index++] = cells[nextI][nextJ].id;
+                    groupSize += cells[nextI][nextJ].islandSize;
+                }
+            }
+        }
+        return groupSize;
+    }
+
+    private boolean hasBeenConnected(int end, int[] connected, int id) {
+        for (int i = 0; i < end; i++) {
+            if (connected[i] == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private record Cell(int id, int islandSize) {}
+
+
+
+    public int largestIsland2(int[][] grid) {
         Map<Integer, Island> islandMap = new HashMap<>();
         final int[][] islandGrid = getIslandGrid(grid, islandMap);
         int result =  formLargestPossibleIsland(grid, islandGrid, islandMap);

@@ -13,7 +13,7 @@ public class StartAugust {
     public static void main(String[] args) {
         StartAugust start = new StartAugust();
 
-//        start.makingALargeIsland();
+        start.makingALargeIsland();
 //        start.plusOne();
 //        start.makeTwoArraysEqual();
 //        start.sumRootToLeaf();
@@ -74,7 +74,7 @@ public class StartAugust {
 //        start.naryTreePostorderTraversal();
 //        start.maximumDifferenceNodeAncestor();
 //        start.maximumDepthOfNaryTree();
-        start.findAllDuplicatesInInArray();
+//        start.findAllDuplicatesInInArray();
 //        start.mergeInBetweenLinkedLists();
 //        start.univaluedBinaryTree();
 //        start.incrementalMemoryLeak();
@@ -139,15 +139,19 @@ public class StartAugust {
 
         MakingALargeIsland mali = new MakingALargeIsland();
 
+
+        System.out.println("3 == " + mali.largestIsland(new int[][]{{1,0},{0,1}}));
+        System.out.println("4 == " + mali.largestIsland(new int[][]{{1,1},{0,1}}));
+        System.out.println("4 == " + mali.largestIsland(new int[][]{{1,1},{1,1}}));
+        System.out.println("13 == " + mali.largestIsland(new int[][]{{1,1,1,1,0},{1,0,0,1,0},{0,1,0,1,0},{1,0,0,1,0},{1,0,0,1,0}}));
+        System.out.println("15 == " + mali.largestIsland(new int[][]{{1,0,1,0,1},{0,1,1,0,1},{1,1,1,0,0},{1,0,1,1,1},{0,0,1,1,0}}));
         System.out.println("29 == " + mali.largestIsland(new int[][]{{1,0,0,0,0,0,0,0},{1,1,1,1,0,0,0,1},{1,0,0,0,1,1,1,0},
                                                         {1,1,1,0,1,0,0,1},{1,0,1,1,0,1,1,0},{0,0,1,0,1,0,0,0},{1,1,1,1,1,0,1,0},{1,0,1,1,0,1,0,1}}));
         System.out.println("12 == " + mali.largestIsland(new int[][]{{1,0,1,1,0},{1,0,0,0,0},{0,1,0,0,1},{1,1,0,1,1},{0,1,1,1,0}}));
         System.out.println("15 == " + mali.largestIsland(new int[][]{{1,0,1,0,1},{0,1,1,0,1},{1,1,1,0,0},{1,0,1,1,1},{0,0,1,1,0}}));
         System.out.println("18 == " + mali.largestIsland(new int[][]{{0,0,0,0,0,0,0},{0,1,1,1,1,0,0},{0,1,0,0,1,0,0},
                                                         {1,0,1,0,1,0,0},{0,1,0,0,1,0,0},{0,1,0,0,1,0,0},{0,1,1,1,1,0,0}}));
-        System.out.println("3 == " + mali.largestIsland(new int[][]{{1,0},{0,1}}));
-        System.out.println("4 == " + mali.largestIsland(new int[][]{{1,1},{0,1}}));
-        System.out.println("4 == " + mali.largestIsland(new int[][]{{1,1},{1,1}}));
+
     }
 
     public void plusOne() {
