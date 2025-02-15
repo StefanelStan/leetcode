@@ -2,7 +2,40 @@ package com.ss.leetcode.LC2021.july;
 
 public class RemoveAllOccureencesOfASubstring {
     // https://leetcode.com/problems/remove-all-occurrences-of-a-substring/
+    /** Algorithm
+        1. Use a StringBuilder as a stack to put the last chars
+        2. If current char matches last char of part and the last n-1 chars of stringbuilder match last n-1 chars of part,
+            remove the n-1 chars from stringbuilder, else append current char.
+        3. Return the remaining stringbuilder
+     */
     public String removeOccurrences(String s, String part) {
+        StringBuilder stb = new StringBuilder();
+        char current;
+        char[] partChars = part.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            current = s.charAt(i);
+            if (current == partChars[part.length( )- 1] && hasPart(stb, partChars)) {
+                stb.setLength(1 + stb.length() - part.length());
+            } else {
+                stb.append(current);
+            }
+        }
+        return stb.toString();
+    }
+
+    private boolean hasPart(StringBuilder stb, char[] part) {
+        if (stb.length() < part.length - 1){
+            return false;
+        }
+        for (int i = stb.length() -1, j=part.length -2; i>=0&&j>=0; i--,j--){
+            if (stb.charAt(i) != part[j]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String removeOccurrences2(String s, String part) {
         if (s.length() < part.length()) {
             return s;
         }
@@ -94,7 +127,7 @@ public class RemoveAllOccureencesOfASubstring {
     }
 
     // much faster, easier but ..dumber!
-    public String removeOccurrences2(String s, String part) {
+    public String removeOccurrences3(String s, String part) {
         while(true) {
             int index = s.indexOf(part);
             if (index < 0) {
