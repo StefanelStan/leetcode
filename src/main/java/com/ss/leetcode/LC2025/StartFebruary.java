@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.february.EncryptAndDecryptStrings;
+import com.ss.leetcode.LC2025.february.MinimumOperationsToExceedThresholdValueII;
 import com.ss.leetcode.LC2025.february.SpecialArrayI;
 
 public class StartFebruary {
@@ -8,7 +9,8 @@ public class StartFebruary {
         StartFebruary start = new StartFebruary();
 
 //        start.specialArrayI();
-        start.encryptAndDecryptStrings();
+//        start.encryptAndDecryptStrings();
+        start.minimumOperationsToExceedThresholdValueII();
     }
 
     public void specialArrayI() {
@@ -25,5 +27,12 @@ public class StartFebruary {
 
         System.out.println("eizfeiam == " + eads.encrypt("abcd"));
         System.out.println("2 == " + eads.decrypt("eizfeiam"));
+    }
+
+    public void minimumOperationsToExceedThresholdValueII() {
+        MinimumOperationsToExceedThresholdValueII motetvii = new MinimumOperationsToExceedThresholdValueII();
+
+        System.out.println("2 == " + motetvii.minOperations(new int[]{2,11,10,1,3}, 10));
+        System.out.println("4 == " + motetvii.minOperations(new int[]{1,1,2,4,9}, 20));
     }
 }
