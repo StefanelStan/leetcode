@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2025;
 
+import com.ss.leetcode.LC2025.march.CountDaysWithoutMeetings;
 import com.ss.leetcode.LC2025.march.FindMissingAndRepeatedValues;
 import com.ss.leetcode.LC2025.march.HouseRobberIV;
 import com.ss.leetcode.LC2025.march.MaximumCandiesAllocatedToKChildren;
@@ -11,7 +12,8 @@ public class StartMarch {
 
 //        start.findMissingAndRepeatedValues();
 //        start.maximumCandiesAllocatedToKChildren();
-        start.houseRobberIV();
+//        start.houseRobberIV();
+        start.countDaysWithoutMeetings();
     }
 
     public void findMissingAndRepeatedValues() {
@@ -42,5 +44,14 @@ public class StartMarch {
         System.out.println("7 == " + hriv.minCapability(new int[]{4,6,7,5,6,7,9,2,3,4,5,6,1,2,3,4,5,7}, 9));
         System.out.println("2 == " + hriv.minCapability(new int[]{4,6,7,5,6,7,9,2,3,4,5,6,1,2,3,4,5,7}, 2));
         System.out.println("1 == " + hriv.minCapability(new int[]{4,6,7,5,6,7,9,2,3,4,5,6,1,2,3,4,5,7}, 1));
+    }
+
+    public void countDaysWithoutMeetings() {
+        CountDaysWithoutMeetings cdwm = new CountDaysWithoutMeetings();
+
+        System.out.println("2 == " + cdwm.countDays(10, new int[][]{{5,7},{1,3},{9,10}}));
+        System.out.println("1 == " + cdwm.countDays(5, new int[][]{{2,4},{1,3}}));
+        System.out.println("0 == " + cdwm.countDays(6, new int[][]{{1,6}}));
+        System.out.println("48 == " + cdwm.countDays(100, new int[][]{{1,6},{5,9},{13,19},{22,28},{14,18},{46,52},{52,57},{68,74},{76,82},{75,77},{99,100}}));
     }
 }
