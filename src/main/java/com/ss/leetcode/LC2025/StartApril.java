@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.april.MaximumValueOfAnOrderedTripletI;
 import com.ss.leetcode.LC2025.april.MaximumValueOfAnOrderedTripletII;
+import com.ss.leetcode.LC2025.april.MinimumNumberOfOperationsToMakeElementsInArrayDistinct;
 import com.ss.leetcode.LC2025.april.PartitionEqualSubsetSum;
 
 public class StartApril {
@@ -10,7 +11,8 @@ public class StartApril {
 
 //        start.maximumValueOfAnOrderedTripletI();
 //        start.maximumValueOfAnOrderedTripletII();
-        start.partitionEqualSubsetSum();
+//        start.partitionEqualSubsetSum();
+        start.minimumNumberOfOperationsToMakeElementsInArrayDistinct();
     }
 
     public void maximumValueOfAnOrderedTripletI() {
@@ -42,5 +44,16 @@ public class StartApril {
         System.out.println("false == " + pess.canPartition(new int[]{1,1,1}));
         System.out.println("true == " + pess.canPartition(new int[]{1,1,1,1}));
         System.out.println("false == " + pess.canPartition(new int[]{8,1,2,6,2,2}));
+    }
+
+    public void minimumNumberOfOperationsToMakeElementsInArrayDistinct() {
+        MinimumNumberOfOperationsToMakeElementsInArrayDistinct mnootmeiad = new MinimumNumberOfOperationsToMakeElementsInArrayDistinct();
+
+        System.out.println("2 == " + mnootmeiad.minimumOperations(new int[]{1,2,3,4,2,3,3,5,7}));
+        System.out.println("2 == " + mnootmeiad.minimumOperations(new int[]{4,5,6,4,4}));
+        System.out.println("0 == " + mnootmeiad.minimumOperations(new int[]{6,7,8,9}));
+        System.out.println("1 == " + mnootmeiad.minimumOperations(new int[]{1,2,3,1,2,3,4}));
+        System.out.println("5 == " + mnootmeiad.minimumOperations(new int[]{5,6,76,56,34,32,43,64,46,4,23,43,45,6,12,23,24,6,4,3}));
+        System.out.println("0 == " + mnootmeiad.minimumOperations(new int[]{5}));
     }
 }
