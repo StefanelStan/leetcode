@@ -6,6 +6,17 @@ import java.util.List;
 public class CountEqualAndDivisiblePairsInAnArray {
     // https://leetcode.com/contest/biweekly-contest-72/problems/count-equal-and-divisible-pairs-in-an-array/
     public int countPairs(int[] nums, int k) {
+        int pairs = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                pairs += (nums[i] == nums[j] && (i * j % k == 0) ? 1 : 0);
+            }
+        }
+        return pairs;
+    }
+
+
+    public int countPairs2(int[] nums, int k) {
         List<Integer>[] count = countNums(nums);
         int pairs = 0;
         for (List times : count) {
