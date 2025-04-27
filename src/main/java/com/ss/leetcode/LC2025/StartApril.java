@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2025;
 
+import com.ss.leetcode.LC2025.april.CountSubarraysOfLengthThreeWithACondition;
 import com.ss.leetcode.LC2025.april.MaximumValueOfAnOrderedTripletI;
 import com.ss.leetcode.LC2025.april.MaximumValueOfAnOrderedTripletII;
 import com.ss.leetcode.LC2025.april.MinimumNumberOfOperationsToMakeElementsInArrayDistinct;
@@ -12,7 +13,8 @@ public class StartApril {
 //        start.maximumValueOfAnOrderedTripletI();
 //        start.maximumValueOfAnOrderedTripletII();
 //        start.partitionEqualSubsetSum();
-        start.minimumNumberOfOperationsToMakeElementsInArrayDistinct();
+//        start.minimumNumberOfOperationsToMakeElementsInArrayDistinct();
+        start.countSubarraysOfLengthThreeWithACondition();
     }
 
     public void maximumValueOfAnOrderedTripletI() {
@@ -55,5 +57,14 @@ public class StartApril {
         System.out.println("1 == " + mnootmeiad.minimumOperations(new int[]{1,2,3,1,2,3,4}));
         System.out.println("5 == " + mnootmeiad.minimumOperations(new int[]{5,6,76,56,34,32,43,64,46,4,23,43,45,6,12,23,24,6,4,3}));
         System.out.println("0 == " + mnootmeiad.minimumOperations(new int[]{5}));
+    }
+
+    public void countSubarraysOfLengthThreeWithACondition() {
+        CountSubarraysOfLengthThreeWithACondition csoltwac = new CountSubarraysOfLengthThreeWithACondition();
+
+        System.out.println("1 == " + csoltwac.countSubarrays(new int[]{1,2,1,4,1}));
+        System.out.println("0 == " + csoltwac.countSubarrays(new int[]{1,1,1}));
+        System.out.println("0 == " + csoltwac.countSubarrays(new int[]{1,5,1}));
+        System.out.println("0 == " + csoltwac.countSubarrays(new int[]{0,-4,-4}));
     }
 }
