@@ -2,6 +2,7 @@ package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.may.TotalCharactersInStringAfterTransformationsI;
 import com.ss.leetcode.LC2025.may.TotalCharactersInStringAfterTransformationsII;
+import com.ss.leetcode.LC2025.may.TypeOfTriangle;
 import java.util.List;
 
 public class StartMay {
@@ -9,7 +10,8 @@ public class StartMay {
         StartMay start = new StartMay();
 
 //        start.totalCharactersInStringAfterTransformationsI();
-        start.totalCharactersInStringAfterTransformationsII();
+//        start.totalCharactersInStringAfterTransformationsII();
+        start.typeOfTriangle();
     }
 
     public void totalCharactersInStringAfterTransformationsI() {
@@ -27,5 +29,14 @@ public class StartMay {
 
         System.out.println("7 == " + tcisatii.lengthAfterTransformations("abcyy", 2, List.of(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2)));
         System.out.println("8 == " + tcisatii.lengthAfterTransformations("azbk", 1, List.of(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)));
+    }
+
+    public void typeOfTriangle() {
+        TypeOfTriangle tot = new TypeOfTriangle();
+
+        System.out.println("equilateral == " + tot.triangleType(new int[]{3,3,3}));
+        System.out.println("scalene == " + tot.triangleType(new int[]{3,4,5}));
+        System.out.println("isosceles == " + tot.triangleType(new int[]{9,4,9}));
+        System.out.println("none == " + tot.triangleType(new int[]{5,3,8}));
     }
 }
