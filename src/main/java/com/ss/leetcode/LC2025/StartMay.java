@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2025;
 
+import com.ss.leetcode.LC2025.may.FindWordsContainingCharacter;
 import com.ss.leetcode.LC2025.may.TotalCharactersInStringAfterTransformationsI;
 import com.ss.leetcode.LC2025.may.TotalCharactersInStringAfterTransformationsII;
 import com.ss.leetcode.LC2025.may.TypeOfTriangle;
@@ -11,7 +12,8 @@ public class StartMay {
 
 //        start.totalCharactersInStringAfterTransformationsI();
 //        start.totalCharactersInStringAfterTransformationsII();
-        start.typeOfTriangle();
+//        start.typeOfTriangle();
+        start.findWordsContainingCharacter();
     }
 
     public void totalCharactersInStringAfterTransformationsI() {
@@ -39,4 +41,12 @@ public class StartMay {
         System.out.println("isosceles == " + tot.triangleType(new int[]{9,4,9}));
         System.out.println("none == " + tot.triangleType(new int[]{5,3,8}));
     }
-}
+
+    public void findWordsContainingCharacter() {
+        FindWordsContainingCharacter fwcc = new FindWordsContainingCharacter();
+
+        System.out.println("[0,1] == " + fwcc.findWordsContaining(new String[]{"leet","code"}, 'e'));
+        System.out.println("[0,2] == " + fwcc.findWordsContaining(new String[]{"abc","bcd","aaaa","cbc"}, 'a'));
+        System.out.println("[] == " + fwcc.findWordsContaining(new String[]{"abc","bcd","aaaa","cbc"}, 'z'));
+    }
+ }
