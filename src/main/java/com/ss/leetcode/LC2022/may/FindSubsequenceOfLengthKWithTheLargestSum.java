@@ -50,4 +50,21 @@ public class FindSubsequenceOfLengthKWithTheLargestSum {
         }
         return answer;
     }
+
+    public int[] maxSubsequence3(int[] nums, int k) {
+        if (k == nums.length) {
+            return nums;
+        }
+        Integer[] indices = new Integer[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            indices[i] = i;
+        }
+        Arrays.sort(indices, Comparator.comparingInt(a -> nums[a]));
+        Arrays.sort(indices, nums.length - k, nums.length);
+        int[] maxSubseq = new int[k];
+        for (int i = nums.length - k, j = 0; j < k; i++, j++) {
+            maxSubseq[j] = nums[indices[i]];
+        }
+        return maxSubseq;
+    }
 }
