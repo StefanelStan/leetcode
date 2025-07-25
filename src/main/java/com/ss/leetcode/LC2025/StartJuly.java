@@ -2,13 +2,15 @@ package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.july.FindTheKthCharacterInStringGameI;
 import com.ss.leetcode.LC2025.july.FindTheOriginalTypedStringI;
+import com.ss.leetcode.LC2025.july.MaximumUniqueSubarraySumAfterDeletion;
 
 public class StartJuly {
     public static void main(String[] args) {
         StartJuly start = new StartJuly();
 
 //        start.findTheOriginalTypedStringI();
-        start.findTheKthCharacterInStringGameI();
+//        start.findTheKthCharacterInStringGameI();
+        start.maximumUniqueSubarraySumAfterDeletion();
     }
 
     public void findTheOriginalTypedStringI() {
@@ -29,5 +31,14 @@ public class StartJuly {
         System.out.println("c == " + ftkcisgi.kthCharacter(7));
         System.out.println("d == " + ftkcisgi.kthCharacter(12));
         System.out.println("e == " + ftkcisgi.kthCharacter(211));
+    }
+
+    public void maximumUniqueSubarraySumAfterDeletion() {
+        MaximumUniqueSubarraySumAfterDeletion mussad = new MaximumUniqueSubarraySumAfterDeletion();
+
+        System.out.println("15 == " + mussad.maxSum(new int[]{1,2,3,4,5}));
+        System.out.println("1 == " + mussad.maxSum(new int[]{1,1,0,1,1}));
+        System.out.println("-1 == " + mussad.maxSum(new int[]{-1,-2,-3,-4,-1,-2,-3,-4}));
+        System.out.println("229 == " + mussad.maxSum(new int[]{5,4,6,7,8,7,6,5,4,2,-23,43,5,6,7,8,98,7,56,4,2}));
     }
 }
