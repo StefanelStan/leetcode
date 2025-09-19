@@ -1,5 +1,6 @@
 package com.ss.leetcode.LC2025;
 
+import com.ss.leetcode.LC2025.september.DesignSpreadsheet;
 import com.ss.leetcode.LC2025.september.DesignTaskManager;
 import com.ss.leetcode.LC2025.september.FindClosestPerson;
 import com.ss.leetcode.LC2025.september.FindMostFrequentVowelAndConsonant;
@@ -11,7 +12,8 @@ public class StartSeptember {
 
 //        start.findClosestPerson();
 //        start.findMostFrequentVowelAndConsonant();
-        start.designTaskManager();
+//        start.designTaskManager();
+        start.designSpreadsheet();
     }
 
     public void findClosestPerson() {
@@ -42,5 +44,17 @@ public class StartSeptember {
         dtm.rmv(101);
         dtm.add(5, 105, 15);
         System.out.println("5 == " + dtm.execTop());
+    }
+
+    public void designSpreadsheet() {
+        DesignSpreadsheet ds = new DesignSpreadsheet(3);
+
+        System.out.println("12 == " + ds.getValue("=5+7"));
+        ds.setCell("A1", 10);
+        System.out.println("16 == " + ds.getValue("=A1+6"));
+        ds.setCell("B2", 15);
+        System.out.println("25 == " + ds.getValue("=A1+B2"));
+        ds.resetCell("A1");
+        System.out.println("15 == " + ds.getValue("=A1+B2"));
     }
 }
