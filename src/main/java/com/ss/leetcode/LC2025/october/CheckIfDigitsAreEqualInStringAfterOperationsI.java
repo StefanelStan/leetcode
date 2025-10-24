@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2025.october;
 
 public class CheckIfDigitsAreEqualInStringAfterOperationsI {
+    // https://leetcode.com/problems/check-if-digits-are-equal-in-string-after-operations-i
     /** Algorithm
         1. Get the chars from s.
         2. Using 2 pointers (end = s.length -1)
