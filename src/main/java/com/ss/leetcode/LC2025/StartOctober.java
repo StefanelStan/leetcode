@@ -1,6 +1,7 @@
 package com.ss.leetcode.LC2025;
 
 import com.ss.leetcode.LC2025.october.CheckIfDigitsAreEqualInStringAfterOperationsI;
+import com.ss.leetcode.LC2025.october.MakeArrayElementsEqualToZero;
 import com.ss.leetcode.LC2025.october.NextGreaterNumericallyBalancedNumber;
 
 public class StartOctober {
@@ -8,7 +9,8 @@ public class StartOctober {
         StartOctober start = new StartOctober();
 
 //        start.checkIfDigitsAreEqualInStringAfterOperationsI();
-        start.nextGreaterNumericallyBalancedNumber();
+//        start.nextGreaterNumericallyBalancedNumber();
+        start.makeArrayElementsEqualToZero();
     }
 
     public void checkIfDigitsAreEqualInStringAfterOperationsI() {
@@ -29,5 +31,14 @@ public class StartOctober {
         System.out.println("1333 = " + ngnbn.nextBeautifulNumber(1000));
         System.out.println("3133 = " + ngnbn.nextBeautifulNumber(3000));
         System.out.println("1224444 = " + ngnbn.nextBeautifulNumber(899000));
+    }
+
+    public void makeArrayElementsEqualToZero() {
+        MakeArrayElementsEqualToZero maeetz = new MakeArrayElementsEqualToZero();
+
+        System.out.println("2 == " + maeetz.countValidSelections(new int[]{1,0,2,0,3}));
+        System.out.println("0 == " + maeetz.countValidSelections(new int[]{2,3,4,0,4,1,0}));
+        System.out.println("2 == " + maeetz.countValidSelections(new int[]{2}));
+        System.out.println("6 == " + maeetz.countValidSelections(new int[]{0,0,0}));
     }
 }
