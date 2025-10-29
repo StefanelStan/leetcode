@@ -3,6 +3,7 @@ package com.ss.leetcode.LC2025;
 import com.ss.leetcode.LC2025.october.CheckIfDigitsAreEqualInStringAfterOperationsI;
 import com.ss.leetcode.LC2025.october.MakeArrayElementsEqualToZero;
 import com.ss.leetcode.LC2025.october.NextGreaterNumericallyBalancedNumber;
+import com.ss.leetcode.LC2025.october.SmallestNumberWithAllSetBits;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -10,7 +11,8 @@ public class StartOctober {
 
 //        start.checkIfDigitsAreEqualInStringAfterOperationsI();
 //        start.nextGreaterNumericallyBalancedNumber();
-        start.makeArrayElementsEqualToZero();
+//        start.makeArrayElementsEqualToZero();
+        start.smallestNumberWithAllSetBits();
     }
 
     public void checkIfDigitsAreEqualInStringAfterOperationsI() {
@@ -40,5 +42,15 @@ public class StartOctober {
         System.out.println("0 == " + maeetz.countValidSelections(new int[]{2,3,4,0,4,1,0}));
         System.out.println("2 == " + maeetz.countValidSelections(new int[]{2}));
         System.out.println("6 == " + maeetz.countValidSelections(new int[]{0,0,0}));
+    }
+
+    public void smallestNumberWithAllSetBits() {
+        SmallestNumberWithAllSetBits snwasb = new SmallestNumberWithAllSetBits();
+
+        System.out.println("7 == " + snwasb.smallestNumber(5));
+        System.out.println("15 == " + snwasb.smallestNumber(10));
+        System.out.println("3 == " + snwasb.smallestNumber(3));
+        System.out.println("31 == " + snwasb.smallestNumber(19));
+        System.out.println("127 == " + snwasb.smallestNumber(99));
     }
 }
