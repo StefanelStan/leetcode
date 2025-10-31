@@ -4,6 +4,8 @@ import com.ss.leetcode.LC2025.october.CheckIfDigitsAreEqualInStringAfterOperatio
 import com.ss.leetcode.LC2025.october.MakeArrayElementsEqualToZero;
 import com.ss.leetcode.LC2025.october.NextGreaterNumericallyBalancedNumber;
 import com.ss.leetcode.LC2025.october.SmallestNumberWithAllSetBits;
+import com.ss.leetcode.LC2025.october.TheTwoSneakyNumbersOfDigitville;
+import java.util.Arrays;
 
 public class StartOctober {
     public static void main(String[] args) {
@@ -12,7 +14,8 @@ public class StartOctober {
 //        start.checkIfDigitsAreEqualInStringAfterOperationsI();
 //        start.nextGreaterNumericallyBalancedNumber();
 //        start.makeArrayElementsEqualToZero();
-        start.smallestNumberWithAllSetBits();
+//        start.smallestNumberWithAllSetBits();
+        start.theTwoSneakyNumbersOfDigitville();
     }
 
     public void checkIfDigitsAreEqualInStringAfterOperationsI() {
@@ -52,5 +55,13 @@ public class StartOctober {
         System.out.println("3 == " + snwasb.smallestNumber(3));
         System.out.println("31 == " + snwasb.smallestNumber(19));
         System.out.println("127 == " + snwasb.smallestNumber(99));
+    }
+
+    public void theTwoSneakyNumbersOfDigitville() {
+        TheTwoSneakyNumbersOfDigitville ttsnod = new TheTwoSneakyNumbersOfDigitville();
+
+        System.out.println("[0,1] == " + Arrays.toString(ttsnod.getSneakyNumbers(new int[]{0, 1, 1, 0})));
+        System.out.println("[3,2] == " + Arrays.toString(ttsnod.getSneakyNumbers(new int[]{0,3,2,1,3,2})));
+        System.out.println("[4,5] == " + Arrays.toString(ttsnod.getSneakyNumbers(new int[]{7,1,5,4,3,4,6,0,9,5,8,2})));
     }
 }
